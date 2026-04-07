@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기출 분석</title>
+<style>
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-primary); line-height: 1.5; padding: 2rem 1rem; }
+
+.wrap { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  background: var(--bg-card); 
+  padding: 2.5rem; 
+  border-radius: var(--radius-xl); 
+  box-shadow: var(--shadow-md); 
+}
+
+h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+
+/* Tabs */
+.tabs { display: flex; gap: 8px; margin-bottom: 2rem; flex-wrap: wrap; background: var(--bg-secondary); padding: 6px; border-radius: var(--radius-lg); }
+.tab { 
+  flex: 1; 
+  text-align: center; 
+  padding: 10px 16px; 
+  font-size: 14px; 
+  font-weight: 500; 
+  border: none; 
+  border-radius: var(--radius-md); 
+  cursor: pointer; 
+  background: transparent; 
+  color: var(--text-secondary); 
+  transition: all 0.2s ease; 
+}
+.tab:hover { color: var(--text-primary); }
+.tab.active { background: var(--bg-card); color: var(--primary); font-weight: 600; box-shadow: var(--shadow-sm); }
+
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Stat Cards */
+.stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 2rem; }
+.stat-card { 
+  flex: 1; 
+  min-width: 140px; 
+  background: var(--bg-secondary); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-lg); 
+  padding: 1.25rem; 
+  text-align: center; 
+  transition: transform 0.2s ease;
+}
+.stat-card:hover { transform: translateY(-2px); }
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-card .lbl { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+
+/* Frequency Bars */
+.freq-container { background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1.5rem; border: 1px solid var(--border); }
+.freq-title { font-size: 15px; font-weight: 600; margin-bottom: 1.2rem; display: block; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;}
+.freq-bar-wrap { margin-bottom: 0.8rem; }
+.freq-bar-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; display: flex; justify-content: space-between; font-weight: 500;}
+.freq-bar-bg { background: var(--border); border-radius: 99px; height: 10px; overflow: hidden; }
+.freq-bar-fill { height: 100%; border-radius: 99px; transition: width 0.8s ease-out; }
+
+/* Table */
+.table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.repeat-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
+.repeat-table th { padding: 12px 16px; font-weight: 600; font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); }
+.repeat-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text-primary); line-height: 1.5;}
+.repeat-table tr:last-child td { border-bottom: none; }
+.repeat-table tr:hover td { background: var(--bg-secondary); }
+
+/* Badges & Chips */
+.badge { display: inline-flex; align-items: center; justify-content: center; padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.b-all { background: #d1fae5; color: #065f46; } /* 3년 연속 - Green */
+.b-two { background: #dbeafe; color: #1e40af; } /* 2년 출제 - Blue */
+.q-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.q-chip { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border); font-weight: 500;}
+
+/* Cards */
+.topic-card { 
+  background: var(--bg-card); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius-lg); 
+  padding: 1.5rem; 
+  margin-bottom: 1rem; 
+  box-shadow: var(--shadow-sm); 
+}
+.topic-card h4 { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;}
+.topic-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.topic-card strong { color: var(--text-primary); font-weight: 600; }
+
+/* Tips Section Variants */
+.tip-green { border-left: 4px solid var(--success); }
+.tip-green h4 { color: var(--success); }
+.tip-blue { border-left: 4px solid var(--primary); }
+.tip-blue h4 { color: var(--primary); }
+.tip-orange { border-left: 4px solid var(--warning); }
+.tip-orange h4 { color: var(--warning); }
+
+.desc-text { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h2>홍성태 교수님 Back 기출 분석 (2021·2023·2025)</h2>
+  <p class="sub">3개년 기출문제의 출제 유형 및 반복 경향 분석</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="show('overview')">전체 개요</button>
+    <button class="tab" onclick="show('repeat')">반복 출제 문항</button>
+    <button class="tab" onclick="show('types')">문항 유형별</button>
+    <button class="tab" onclick="show('tips')">시험 전략</button>
+  </div>
+
+  <div class="section active" id="sec-overview">
+    <div class="stat-row">
+      <div class="stat-card"><div class="num" style="color:var(--success)">~85%</div><div class="lbl">핵심 주제 반복률</div></div>
+      <div class="stat-card"><div class="num">7개</div><div class="lbl">매년 반복 주제군</div></div>
+      <div class="stat-card"><div class="num">3가지</div><div class="lbl">주요 문항 형식</div></div>
+    </div>
+
+    <p class="desc-text">3개년 모두 <strong>그림 보기 → 기호/이름 매칭</strong> 방식이 중심이며, T/F 문항과 발생·혈관 단답형이 고정 출제됩니다. 문항 번호와 배치는 해마다 달라지지만, <strong>묻는 내용은 거의 동일</strong>합니다.</p>
+
+    <div class="freq-container">
+      <span class="freq-title">주제별 출제 빈도</span>
+      
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>깊은 등 근육 / 척추 안정화</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>호흡 관련 근육</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>척추세움근 (Erector spinae)</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>C1 posterior tubercle 붙는 근육</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>C2 spinous process 붙는 근육 (3개)</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>어깨뼈 올리는/뒤로 모으는 근육</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>뒷통수·목근육·등근육 구분 (비등 근육)</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>Alar/Cruciate/Tectorial → atlanto-axial T/F</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>Basivertebral vein T/F</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>Denticulate lig. + arachnoid trabeculae T/F</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>척수신경 개수 T/F</span><span>3/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>Posterior ramus 지배 근육 4개</span><span>2/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:67%;background:var(--primary)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>Erector spinae / Interspinalis T/F 관찰</span><span>2/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:67%;background:var(--primary)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>척추뼈 발생 옳은 설명 3개</span><span>2/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:67%;background:var(--primary)"></div></div></div>
+      <div class="freq-bar-wrap"><div class="freq-bar-label"><span>Tectorial membrane 기원 ligament</span><span>2/3년</span></div><div class="freq-bar-bg"><div class="freq-bar-fill" style="width:67%;background:var(--primary)"></div></div></div>
+    </div>
+  </div>
+
+  <div class="section" id="sec-repeat">
+    <p class="desc-text">아래는 2개년 이상 반복 출제된 문항입니다. <span class="badge b-all">3년 연속</span>은 거의 확정 출제로 봐야 합니다.</p>
+
+    <div class="table-wrap">
+      <table class="repeat-table">
+        <thead><tr><th>핵심 주제 및 관련 구조물</th><th>출제 빈도</th><th>연도별 문항번호</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>가장 깊은 등 근육 중 척추 안정화 근육</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Rotatores / Interspinales</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q11</span><span class="q-chip">2023 Q11</span><span class="q-chip">2025 Q1</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>호흡에 직/간접 관여 근육 3개</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Serratus post. sup/inf, Levatores costarum 등</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q10</span><span class="q-chip">2023 Q12</span><span class="q-chip">2025 Q2</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>척추세움근 해당 근육 3개</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Iliocostalis / Longissimus / Spinalis</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q12</span><span class="q-chip">2023 Q13</span><span class="q-chip">2025 Q3</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>C1 posterior tubercle에 붙는 근육</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Rectus cap. post. minor, Obliquus cap. sup.</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q6</span><span class="q-chip">2023 Q7</span><span class="q-chip">2025 Q9</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>C2 spinous process에 붙는 근육 3개</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Obliquus cap. inf., Rectus cap. post. major, Semispinalis cervicis</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q7</span><span class="q-chip">2023 Q8</span><span class="q-chip">2025 Q8</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>어깨뼈 머리쪽으로 올리는 근육</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Levator scapulae, Trapezius(상부) 등</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q2</span><span class="q-chip">2023 Q3A</span><span class="q-chip">2025 Q5</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>어깨뼈 뒤로 모으는 근육 (retraction)</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Trapezius(중부), Rhomboids</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q3</span><span class="q-chip">2023 Q3B</span><span class="q-chip">2025 Q6</span></div></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>뒷통수·목근육·등근육 제외 근육 선별</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">Serratus ant., Gluteus max. 등 비배부 근육</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q1</span><span class="q-chip">2023 Q5</span><span class="q-chip">2025 Q4</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>Posterior ramus 지배 근육 4개</strong></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2023 Q4</span><span class="q-chip">2025 Q7</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>Erector spinae / Interspinalis 관찰 T/F</strong></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q8</span><span class="q-chip">2023 Q9·10</span><span class="q-chip">2025 Q10·11</span></div></td>
+          </tr>
+          
+          <tr><td colspan="3" style="background:var(--bg-tertiary);font-weight:600;font-size:13px;color:var(--text-secondary);padding:10px 16px;text-align:center;">T/F 및 단답형 고정 문항</td></tr>
+          
+          <tr>
+            <td><strong>Alar + Cruciate + Tectorial → atlanto-axial joint</strong></td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2021 Q17</span><span class="q-chip">2023 Q17</span><span class="q-chip">2025 Q12</span></div>
+              <div style="font-size:12px;color:var(--danger);margin-top:6px;font-weight:500;">정답: False (Tectorial은 atlanto-occipital 관련)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Basivertebral v. = 척추 몸통 정맥 배출</strong></td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2021 Q20</span><span class="q-chip">2023 Q23</span><span class="q-chip">2025 Q18</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:500;">정답: True</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Denticulate lig. + arachnoid trabeculae → spinal meninges 연결</strong></td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2021 Q19</span><span class="q-chip">2023 Q22</span><span class="q-chip">2025 Q17</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:500;">정답: True</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>목7·가슴12·허리5·꼬리1 척수신경 개수</strong></td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2021 Q16</span><span class="q-chip">2023 Q20</span><span class="q-chip">2025 Q15</span></div>
+              <div style="font-size:12px;color:var(--danger);margin-top:6px;font-weight:500;">정답: False (가슴신경은 12쌍, 꼬리 1→5쌍)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Filum terminale 발생 (spinal meninges 기원)</strong></td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2021 추정</span><span class="q-chip">2023 Q19</span><span class="q-chip">2025 Q14</span></div>
+              <div style="font-size:12px;color:var(--danger);margin-top:6px;font-weight:500;">정답: False (pia mater 기원)</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>척추뼈 발생 옳은 설명 3개 고르기</strong></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q15</span><span class="q-chip">2023 Q16</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>Tectorial membrane 기원</strong></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q15</span><span class="q-chip">2025 Q22</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:500;">정답: ② Posterior longitudinal ligament</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="sec-types">
+    <div class="topic-card">
+      <h4>① 그림 보기 → 기호·이름 매칭 (메인 문항)</h4>
+      <p>매년 전체 문항의 50~60%를 차지합니다. 근육 그림에 알파벳 기호가 붙어있고, 보기에 근육명 소문자 나열되어 선택하여 작성합니다. 3개년 모두 동일한 방식입니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2021: 그림 2장 (등근육, 후두하)</span>
+        <span class="q-chip">2023: 그림 3장 (등근육, 후두하, 깊은등)</span>
+        <span class="q-chip">2025: 그림 3장 (등근육, 후두하, 깊은등)</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <h4>② True / False (고정 후반부)</h4>
+      <p>T/F 문항은 매년 후반부에 집중 배치됩니다. 2021년 5~6개에서 2023·2025년 8~10개로 증가 추세이며 내용은 거의 동일하게 반복됩니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2021: Q16~Q20 (5문항)</span>
+        <span class="q-chip">2023: Q17~Q25 (8문항)</span>
+        <span class="q-chip">2025: Q12~Q20 (9문항)</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <h4>③ 혈관·척추뼈 그림 매칭 (중반부)</h4>
+      <p>척추뼈 단면 사진(대문자 인디)과 혈관 분포도(소문자 인디)를 매칭합니다. Segmental medullary a., Radicular a., Basivertebral v., Vertebral a. 등이 고정 출제됩니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2021: 혈관 위치 2문항</span>
+        <span class="q-chip">2023: Q26~Q28 (3문항)</span>
+        <span class="q-chip">2025: 포함 추정</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <h4>④ 객관식 / 단답 (발생·구조)</h4>
+      <p>척추뼈 개수(33→26) 빈칸 채우기, Tectorial membrane 기원 선택, 척추 발생 옳은 설명 고르기가 반복 출제됩니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">척추뼈 개수: 3개년 등장</span>
+        <span class="q-chip">Tectorial membrane: 2개년</span>
+        <span class="q-chip">척추 발생: 2개년</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="sec-tips">
+    <div class="topic-card tip-green">
+      <h4>최우선 암기: 매년 100% 출제</h4>
+      <p style="margin-bottom: 8px;">① <strong>Rotatores + Interspinales</strong> (척추 안정화 가장 깊은 근육)</p>
+      <p style="margin-bottom: 8px;">② <strong>Serratus post. sup./inf. + Levatores costarum</strong> (호흡 관련 3개)</p>
+      <p style="margin-bottom: 8px;">③ <strong>Iliocostalis · Longissimus · Spinalis</strong> (척추세움근 3개)</p>
+      <p style="margin-bottom: 8px;">④ <strong>C1 posterior tubercle</strong>: Rectus capitis post. minor, Obliquus capitis superior</p>
+      <p>⑤ <strong>C2 spinous process</strong>: Obliquus capitis inf., Rectus capitis post. major, Semispinalis cervicis</p>
+    </div>
+    <div class="topic-card tip-blue">
+      <h4>T/F 고정답: 외워두면 확실한 점수</h4>
+      <p style="margin-bottom: 6px;"><strong style="color:var(--danger)">False</strong>: Alar+Cruciate+Tectorial → atlanto-axial joint (Tectorial은 다름)</p>
+      <p style="margin-bottom: 6px;"><strong style="color:var(--danger)">False</strong>: 목7·가슴2·허리5·꼬리1 (가슴은 12쌍)</p>
+      <p style="margin-bottom: 6px;"><strong style="color:var(--danger)">False</strong>: Filum terminale = spinal meninges 기원 (pia mater 기원)</p>
+      <p style="margin-bottom: 6px;"><strong style="color:var(--success)">True</strong>: Basivertebral v. = 척추 몸통 정맥 배출</p>
+      <p style="margin-bottom: 6px;"><strong style="color:var(--success)">True</strong>: Denticulate lig. + arachnoid trabeculae로 척수 고정</p>
+      <p><strong>②번</strong>: Tectorial membrane → Posterior longitudinal ligament 기원</p>
+    </div>
+    <div class="topic-card tip-orange">
+      <h4>교수님 출제 스타일 특징</h4>
+      <p style="margin-bottom: 6px;">• <strong>그림 중심</strong>: 근육 명칭을 텍스트로 묻지 않고 반드시 해부도 그림으로 확인</p>
+      <p style="margin-bottom: 6px;">• <strong>기호+이름 동시 작성</strong> 요구: 기호만 또는 이름만으로는 오답 처리</p>
+      <p style="margin-bottom: 6px;">• <strong>보기 수 &gt; 표시 수</strong>: 보기가 문항 수보다 많아 단순 매칭 불가 → 그림 정확 인식 필수</p>
+      <p style="margin-bottom: 6px;">• <strong>T/F 내용이 매년 거의 동일</strong>: 문장 표현까지 유사하게 반복</p>
+      <p>• 혈관 문항은 척추뼈 위치와 연결하여 복합적으로 출제</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
