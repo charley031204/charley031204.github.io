@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김수일 Neck 기출 분석</title>
+<style>
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-primary); line-height: 1.5; padding: 2rem 1rem; }
+
+.wrap { max-width: 1000px; margin: 0 auto; background: var(--bg-card); padding: 3rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+
+h2 { font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 2rem; flex-wrap: wrap; background: var(--bg-secondary); padding: 6px; border-radius: var(--radius-lg); }
+.tab { flex: 1; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 500; border: none; border-radius: var(--radius-md); cursor: pointer; background: transparent; color: var(--text-secondary); transition: all 0.2s ease; }
+.tab:hover { color: var(--text-primary); }
+.tab.active { background: var(--bg-card); color: var(--primary); font-weight: 600; box-shadow: var(--shadow-sm); }
+
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 2rem; }
+.stat-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; transition: transform 0.2s ease; }
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.stat-card .num { font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.stat-card .lbl { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+
+.freq-container { background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); margin-top: 2rem; border: 1px solid var(--border); }
+.freq-title { font-size: 16px; font-weight: 600; margin-bottom: 1.5rem; display: block; border-bottom: 2px solid var(--border); padding-bottom: 0.75rem; color: var(--primary); }
+.freq-bar-wrap { margin-bottom: 1.2rem; }
+.freq-bar-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; display: flex; justify-content: space-between; font-weight: 500; }
+.freq-bar-bg { background: var(--border); border-radius: 99px; height: 12px; overflow: hidden; }
+.freq-bar-fill { height: 100%; border-radius: 99px; transition: width 0.8s ease-out; }
+
+.repeat-table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+.repeat-table th { padding: 12px 14px; font-weight: 600; font-size: 12px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); }
+.repeat-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text-primary); line-height: 1.5; }
+.repeat-table tr:hover td { background: var(--bg-tertiary); }
+
+.badge { display: inline-flex; align-items: center; justify-content: center; padding: 5px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.b-all { background: #d1fae5; color: #065f46; font-weight: 700; }
+.b-two { background: #dbeafe; color: #1e40af; }
+
+.q-chip { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border); font-weight: 500; display: inline-block; margin-right: 4px; margin-bottom: 4px; }
+
+.topic-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
+.topic-card h4 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+.topic-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
+
+.tip-green { border-left: 5px solid var(--success); background: #f0fdf4; }
+.tip-green h4 { color: var(--success); }
+.tip-blue { border-left: 5px solid var(--primary); background: #f0f9ff; }
+.tip-blue h4 { color: var(--primary); }
+.tip-orange { border-left: 5px solid var(--warning); background: #fffbf0; }
+.tip-orange h4 { color: var(--warning); }
+
+.desc-text { font-size: 15px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; }
+
+.footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; }
+.footer-brand { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.05em; font-weight: 500; }
+
+.table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-top: 1.5rem; }
+
+.highlight { background: #fef3c7; padding: 2px 4px; border-radius: 3px; font-weight: 500; }
+
+ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+li { margin-bottom: 0.5rem; }
+
+.year-chip { display: inline-block; padding: 4px 10px; background: var(--primary); color: white; border-radius: 4px; font-size: 12px; font-weight: 600; margin-right: 6px; margin-bottom: 4px; }
+.year-chip.y2021 { background: #8b5cf6; }
+.year-chip.y2023 { background: #ec4899; }
+.year-chip.y2025 { background: #10b981; }
+
+.topic-row-3year { background: #f0fdf4 !important; }
+.topic-row-2year { background: #f9fafb; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h2>김수일 교수님 Neck 기출 분석</h2>
+<p class="sub">2021·2023·2025년 기출문제 분석 | 3개년 63문항 종합 연구</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="show('overview')">📊 전체 개요</button>
+  <button class="tab" onclick="show('repeat')">🔄 반복 출제 (14개 주제)</button>
+  <button class="tab" onclick="show('types')">📋 출제 전략</button>
+  <button class="tab" onclick="show('tips')">⚡ 시험 대비</button>
+</div>
+
+<!-- 탭 1: 전체 개요 -->
+<div class="section active" id="sec-overview">
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">63</div>
+      <div class="lbl">전체 기출 문항</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">35</div>
+      <div class="lbl">반복 출제 문항</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">55.6%</div>
+      <div class="lbl">반복률</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">14</div>
+      <div class="lbl">반복 주제</div>
+    </div>
+  </div>
+
+  <p class="desc-text">
+  김수일 교수님의 Neck 기출은 <span class="highlight">55.6% 반복률</span>로 매우 높은 재출제 경향을 보입니다. 
+  특히 <strong>Thyroglossal duct, Retropharyngeal space, Carotid sheath</strong> 3개 주제는 
+  <strong>3개년 모두 출제</strong>되어 필수 암기 사항입니다.
+  </p>
+
+  <div class="freq-container">
+    <span class="freq-title">📈 연도별 문항 분포</span>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span class="year-chip y2021">2021년</span><span>22문항 (35%)</span></div>
+      <div class="freq-bar-bg">
+        <div class="freq-bar-fill" style="width:35%;background:#8b5cf6"></div>
+      </div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span class="year-chip y2023">2023년</span><span>27문항 (43%)</span></div>
+      <div class="freq-bar-bg">
+        <div class="freq-bar-fill" style="width:43%;background:#ec4899"></div>
+      </div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span class="year-chip y2025">2025년</span><span>14문항 (22%)</span></div>
+      <div class="freq-bar-bg">
+        <div class="freq-bar-fill" style="width:22%;background:#10b981"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="freq-container" style="margin-top: 2rem;">
+    <span class="freq-title">🎯 주제 구성</span>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>전체 고유 주제</span><span>42개</span></div>
+      <div class="freq-bar-bg">
+        <div class="freq-bar-fill" style="width:100%;background:#cbd5e1"></div>
+      </div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>2개년 이상 반복</span><span>14개 (33.3%)</span></div>
+      <div class="freq-bar-bg">
+        <div class="freq-bar-fill" style="width:33.3%;background:var(--primary)"></div>
+      </div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>3개년 연속 반복</span><span>3개 (필수)</span></div>
+      <div class="freq-bar-bg">
+        <div class="freq-bar-fill" style="width:7.1%;background:var(--success)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 탭 2: 반복 출제 주제 (전체 14개) -->
+<div class="section" id="sec-repeat">
+  <p class="desc-text">
+  아래 14개 주제는 <strong>2개년 이상 반복 출제</strong>되었습니다. 
+  <span class="badge b-all">3개년 연속</span>은 시험 필출, <span class="badge b-two">2년 반복</span>도 높은 확률로 재출제됩니다.
+  </p>
+  
+  <div class="table-wrap">
+    <table class="repeat-table">
+      <thead>
+        <tr>
+          <th>순위</th>
+          <th>주제</th>
+          <th>반복 연도</th>
+          <th>문항 수</th>
+          <th>문항 번호</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 3개년 연속 (필수) -->
+        <tr class="topic-row-3year">
+          <td>1</td>
+          <td><strong>Thyroglossal Duct</strong><br><span style="font-size:11px;color:var(--text-tertiary)">갑상혀관과 낭종</span></td>
+          <td><span class="badge b-all">3개년 연속</span></td>
+          <td>3개</td>
+          <td><span class="q-chip">21년 22번</span><span class="q-chip">23년 17번</span><span class="q-chip">25년 1번</span></td>
+        </tr>
+        <tr class="topic-row-3year">
+          <td>2</td>
+          <td><strong>Retropharyngeal Space</strong><br><span style="font-size:11px;color:var(--text-tertiary)">인두뒤 공간</span></td>
+          <td><span class="badge b-all">3개년 연속</span></td>
+          <td>3개</td>
+          <td><span class="q-chip">21년 24번</span><span class="q-chip">23년 18번</span><span class="q-chip">25년 2번</span></td>
+        </tr>
+        <tr class="topic-row-3year">
+          <td>3</td>
+          <td><strong>Carotid Sheath</strong><br><span style="font-size:11px;color:var(--text-tertiary)">목혈관신경집</span></td>
+          <td><span class="badge b-all">3개년 연속</span></td>
+          <td>3개</td>
+          <td><span class="q-chip">21년 21번</span><span class="q-chip">23년 19번</span><span class="q-chip">25년 3번</span></td>
+        </tr>
+        <!-- 2개년 반복 -->
+        <tr class="topic-row-2year">
+          <td>4</td>
+          <td><strong>Deep Cervical Structures</strong><br><span style="font-size:11px;color:var(--text-tertiary)">심경부 해부</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>4개</td>
+          <td><span class="q-chip">23년 22번</span><span class="q-chip">23년 24번</span><span class="q-chip">25년 6번</span><span class="q-chip">25년 8번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>5</td>
+          <td><strong>Thoracic Duct</strong><br><span style="font-size:11px;color:var(--text-tertiary)">흉곽관</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>3개</td>
+          <td><span class="q-chip">23년 3번</span><span class="q-chip">23년 25번</span><span class="q-chip">25년 9번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>6</td>
+          <td><strong>지문 해석</strong><br><span style="font-size:11px;color:var(--text-tertiary)">지문 분석 문제</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>3개</td>
+          <td><span class="q-chip">21년 15~17번</span><span class="q-chip">21년 18~19번</span><span class="q-chip">23년 12~14번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>7</td>
+          <td><strong>Recurrent Laryngeal Nerve</strong><br><span style="font-size:11px;color:var(--text-tertiary)">반회후두신경</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">23년 21번</span><span class="q-chip">25년 5번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>8</td>
+          <td><strong>Parathyroid Gland</strong><br><span style="font-size:11px;color:var(--text-tertiary)">부갑상선</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">23년 20번</span><span class="q-chip">25년 4번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>9</td>
+          <td><strong>목의 신경점에 대한 문제</strong><br><span style="font-size:11px;color:var(--text-tertiary)">신경해부 중심</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">23년 26번</span><span class="q-chip">25년 10번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>10</td>
+          <td><strong>목의 자율신경계</strong><br><span style="font-size:11px;color:var(--text-tertiary)">자율신경 기능</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">23년 27번</span><span class="q-chip">25년 11번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>11</td>
+          <td><strong>뇌 보호 기능</strong><br><span style="font-size:11px;color:var(--text-tertiary)">해부학적 구조</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">23년 29번</span><span class="q-chip">25년 13번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>12</td>
+          <td><strong>중추신경계의 신경세포</strong><br><span style="font-size:11px;color:var(--text-tertiary)">신경생물학</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">23년 30번</span><span class="q-chip">25년 14번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>13</td>
+          <td><strong>Sternocleidomastoid Muscle</strong><br><span style="font-size:11px;color:var(--text-tertiary)">흉쇄유돌근</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">21년 13번</span><span class="q-chip">23년 4번</span></td>
+        </tr>
+        <tr class="topic-row-2year">
+          <td>14</td>
+          <td><strong>Omoclavicular Triangle</strong><br><span style="font-size:11px;color:var(--text-tertiary)">견쇄골상삼각형</span></td>
+          <td><span class="badge b-two">2년 반복</span></td>
+          <td>2개</td>
+          <td><span class="q-chip">21년 14번</span><span class="q-chip">23년 6번</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 탭 3: 출제 전략 -->
+<div class="section" id="sec-types">
+  <p class="desc-text">
+  2021~2025년 기출 패턴 분석을 통해 도출한 교수님의 출제 방식입니다.
+  </p>
+
+  <div class="topic-card tip-blue">
+    <h4>💻 패턴 1: 임상-해부 연계 (가장 많음)</h4>
+    <p>
+    해부학적 구조 + <strong>임상 질환/증상</strong>을 연결하는 형태
+    </p>
+    <ul>
+      <li>"Thyroglossal duct cyst의 위치 특징 및 진단법"</li>
+      <li>"Recurrent laryngeal nerve 손상 시 음성 변화 기전"</li>
+      <li>"Retropharyngeal abscess의 감염 전파 경로"</li>
+    </ul>
+    <p style="margin-top:1rem;"><strong>전략:</strong> 구조만 아니라 <strong>임상 의의까지 설명</strong>할 수 있어야 함</p>
+  </div>
+
+  <div class="topic-card tip-green">
+    <h4>📐 패턴 2: 공간해부 중심</h4>
+    <p>
+    목의 횡단면, 종주면에서 구조들의 <strong>3D 위치 관계</strong> 파악
+    </p>
+    <ul>
+      <li>"Carotid sheath 내 구조의 좌우 위치"</li>
+      <li>"Retropharyngeal space의 경계 구조(fascia)"</li>
+      <li>"Larynx의 3구획 - vestibule, ventricle, infraglottic"</li>
+    </ul>
+    <p style="margin-top:1rem;"><strong>전략:</strong> 자필 드로잉으로 3D 이해 강화</p>
+  </div>
+
+  <div class="topic-card tip-orange">
+    <h4>🧠 패턴 3: 신경 주행과 손상 추론</h4>
+    <p>
+    CN X(vagus), SLN, RLN의 <strong>주행 경로와 손상 시 결과</strong>
+    </p>
+    <ul>
+      <li>"Superior laryngeal nerve vs Recurrent laryngeal nerve 손상 차이"</li>
+      <li>"각 신경 손상 시 임상 증상"</li>
+      <li>"신경 주행 경로 추적 및 해부학적 landmark"</li>
+    </ul>
+    <p style="margin-top:1rem;"><strong>전략:</strong> 신경별 흐름도 작성 · 손상 증상 연결</p>
+  </div>
+</div>
+
+<!-- 탭 4: 시험 대비 -->
+<div class="section" id="sec-tips">
+  <div class="topic-card tip-green">
+    <h4>🎯 3개년 연속 필출 항목</h4>
+    <p>이 3개 주제는 <strong>반드시 시험에 나온다</strong>고 봐도 됩니다:</p>
+    <ul style="margin-top:1rem;">
+      <li><strong>① Thyroglossal Duct Cyst</strong><br>
+        정중선 위치 · hyoid bone 근처 · 연하/혀내밀 때 상하이동 · pyramidal lobe 잔유물</li>
+      
+      <li><strong>② Retropharyngeal Space</strong><br>
+        buccopharyngeal fascia ↔ prevertebral fascia · superior mediastinum으로 개방 · 감염 위험 · mediastinitis</li>
+      
+      <li><strong>③ Carotid Sheath</strong><br>
+        내측: common/internal carotid artery · 외측: internal jugular vein · 후방: vagus nerve (CN X) · deep cervical lymph nodes</li>
+    </ul>
+  </div>
+
+  <div class="topic-card tip-blue">
+    <h4>💡 교수님 출제 특징</h4>
+    <ul>
+      <li>✓ <strong>해부학 + 임상:</strong> 순수 해부만 절대 나오지 않음. 반드시 임상 의의 함께 요구</li>
+      <li>✓ <strong>3D 공간감각:</strong> 2D 암기보다 횡단면/종주면 이해 필수</li>
+      <li>✓ <strong>신경 중심:</strong> 구조명보다 신경 주행과 손상 증상 중심</li>
+      <li>✓ <strong>비교와 구분:</strong> SLN vs RLN, 동맥 vs 정맥 위치 구분</li>
+      <li>✓ <strong>높은 반복률:</strong> 55.6%의 반복 출제 → 과거 기출이 최고의 교재</li>
+    </ul>
+  </div>
+
+  <div class="topic-card tip-orange">
+    <h4>⚡ D-79 집중 대비 전략</h4>
+    <p><strong>주: 2026-06-26(금) 호심시험</strong></p>
+    <ul style="margin-top:1rem;">
+      <li><strong>[1주차]</strong> 2023년 27문항 정독 (핵심 개념 이해)</li>
+      <li><strong>[2주차]</strong> 반복 주제 14개 심화 학습 (특히 3개년 연속 3개)</li>
+      <li><strong>[3주차]</strong> 자필 드로잉 (횡단면, larynx, carotid sheath 구조)</li>
+      <li><strong>[4주차]</strong> 신경 주행도 작성 및 손상 증상 연결</li>
+      <li><strong>[5~9주차]</strong> 2023 기출 5회독 + 2021, 2025 기출 검증</li>
+      <li><strong>[마지막 1주일]</strong> 최종 요점 점검 + 시뮬레이션</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 푸터 -->
+<div class="footer">
+  <span class="footer-brand">KAISTUDY_WJ</span>
+</div>
+
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
