@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김수일 교수님 호흡심혈관계 해부 기출 분석</title>
+<style>
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --font: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg-body); color: var(--text-primary); line-height: 1.5; padding: 2rem 1rem; }
+.wrap { max-width: 820px; margin: 0 auto; background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+.tabs { display: flex; gap: 6px; margin-bottom: 2rem; flex-wrap: wrap; background: var(--bg-secondary); padding: 6px; border-radius: var(--radius-lg); }
+.tab { flex: 1; min-width: 90px; text-align: center; padding: 9px 10px; font-size: 13px; font-weight: 500; border: none; border-radius: var(--radius-md); cursor: pointer; background: transparent; color: var(--text-secondary); transition: all 0.2s; }
+.tab.active { background: var(--bg-card); color: var(--primary); font-weight: 700; box-shadow: var(--shadow-sm); }
+.section { display: none; animation: fadeIn 0.25s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+.stat-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 1.8rem; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.2rem; text-align: center; }
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-card .lbl { font-size: 12px; font-weight: 500; color: var(--text-secondary); }
+.freq-container { background: var(--bg-secondary); padding: 1.4rem; border-radius: var(--radius-lg); margin-top: 1.2rem; border: 1px solid var(--border); }
+.freq-title { font-size: 14px; font-weight: 600; margin-bottom: 1rem; display: block; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.freq-bar-wrap { margin-bottom: 0.9rem; }
+.freq-bar-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 5px; display: flex; justify-content: space-between; font-weight: 500; }
+.freq-bar-bg { background: var(--border); border-radius: 99px; height: 11px; overflow: hidden; }
+.freq-bar-fill { height: 100%; border-radius: 99px; transition: width 1s ease-out; }
+.table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.repeat-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.repeat-table th { padding: 11px 14px; font-weight: 600; font-size: 12px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); text-align: left; }
+.repeat-table td { padding: 13px 14px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-primary); line-height: 1.55; }
+.repeat-table tr:last-child td { border-bottom: none; }
+.repeat-table tr:hover td { background: var(--bg-secondary); }
+.badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.b-all { background: #d1fae5; color: #065f46; }
+.b-two-25-23 { background: #dbeafe; color: #1e3a5f; }
+.b-two-23-21 { background: #ede9fe; color: #3b0764; }
+.q-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.q-chip { font-size: 11px; padding: 3px 8px; border-radius: 5px; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border); font-weight: 500; }
+.topic-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.4rem; margin-bottom: 1rem; box-shadow: var(--shadow-sm); }
+.topic-card h4 { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.topic-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 5px; }
+.q-ref { font-size: 12px; color: var(--text-primary); padding: 3px 0; line-height: 1.55; }
+.q-ref .yr { font-weight: 600; color: var(--primary); margin-right: 5px; }
+.has-fig { display: inline-block; background: #fff7ed; color: #c2410c; border-radius: 3px; font-size: 10px; font-weight: 700; padding: 1px 5px; margin-left: 4px; }
+.tip-green { border-left: 4px solid var(--success); }
+.tip-green h4 { color: var(--success); }
+.tip-blue { border-left: 4px solid var(--primary); }
+.tip-blue h4 { color: var(--primary); }
+.tip-orange { border-left: 4px solid var(--warning); }
+.tip-orange h4 { color: var(--warning); }
+.tip-red { border-left: 4px solid var(--danger); }
+.tip-red h4 { color: var(--danger); }
+.desc-text { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.75; }
+.matrix-wrap { overflow-x: auto; margin-top: 1.5rem; }
+.matrix-table { border-collapse: collapse; font-size: 13px; width: 100%; }
+.matrix-table th, .matrix-table td { border: 1px solid var(--border); padding: 10px 14px; text-align: center; }
+.matrix-table th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); }
+.matrix-table td.cell-hi { background: #d1fae5; color: #065f46; font-weight: 700; }
+.matrix-table td.cell-mid { background: #dbeafe; color: #1e40af; font-weight: 600; }
+.matrix-table td.cell-lo { background: #f3f4f6; color: #374151; font-weight: 500; }
+.matrix-table td.cell-dash { color: var(--text-tertiary); }
+.section-sep { background: var(--bg-tertiary); font-weight: 600; font-size: 12px; color: var(--text-secondary); padding: 8px 14px; text-align: center; }
+.unique-section { margin-bottom: 1.5rem; }
+.unique-section h3 { font-size: 15px; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.unique-section h3 .count { background: var(--bg-tertiary); color: var(--text-secondary); border-radius: 99px; padding: 2px 10px; font-size: 12px; font-weight: 600; }
+.unique-q { font-size: 13px; padding: 7px 0; border-bottom: 1px solid var(--bg-tertiary); color: var(--text-primary); line-height: 1.55; display: flex; align-items: flex-start; gap: 8px; }
+.unique-q .qnum { font-size: 11px; font-weight: 700; color: var(--text-tertiary); min-width: 28px; padding-top: 1px; }
+.footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; }
+.footer-brand { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.05em; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h2>김수일 교수님 호흡심혈관계 해부 기출 분석 (2021 · 2023 · 2025)</h2>
+<p class="sub">3개년 기출문제 출제 유형 및 반복 경향 분석 — KAISTUDY_WJ 야마 문항집 기반</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="show('overview',this)">전체 개요</button>
+  <button class="tab" onclick="show('repeat',this)">반복 출제 문항</button>
+  <button class="tab" onclick="show('unique',this)">신규 문항</button>
+  <button class="tab" onclick="show('types',this)">문항 유형별</button>
+  <button class="tab" onclick="show('tips',this)">시험 전략</button>
+</div>
+
+<!-- TAB 1: 전체 개요 -->
+<div class="section active" id="sec-overview">
+  <div class="stat-row">
+    <div class="stat-card"><div class="num" style="color:var(--success)">29개</div><div class="lbl">반복 출제 주제 (2회 이상)</div></div>
+    <div class="stat-card"><div class="num">5개</div><div class="lbl">3년 연속 출제 (거의 확정)</div></div>
+    <div class="stat-card"><div class="num">3가지</div><div class="lbl">주요 문항 형식</div></div>
+    <div class="stat-card"><div class="num" style="color:var(--warning)">109</div><div class="lbl">총 분석 문항 수</div></div>
+  </div>
+  <p class="desc-text">김수일 교수님은 <strong>서술형 + 단답형 병행</strong> 출제 스타일로, 특히 <strong>혈관계 기시·주행·임상의의</strong>와 <strong>태아 순환 발생학</strong>이 3년 연속 반복 출제됩니다. 2023년은 전체 35문항 중 29문항(82.9%)이 타 연도와 겹쳐 반복률이 가장 높고, 2025년은 19문항 중 11문항(57.9%), 2021년은 55문항 중 23문항(41.8%)이 겹칩니다. <strong>(25, 23, 21) 3회 5주제는 다음 시험에서도 100% 출제를 예상해야 합니다.</strong></p>
+
+  <div class="freq-container">
+    <span class="freq-title">연도별 반복률 (겹친 문항 수 / 전체 문항 수)</span>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>2023년</span><span>29 / 35문항 (82.9%)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:82.9%;background:var(--success)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>2025년</span><span>11 / 19문항 (57.9%)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:57.9%;background:var(--primary)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>2021년</span><span>23 / 55문항 (41.8%)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:41.8%;background:var(--text-tertiary)"></div></div>
+    </div>
+  </div>
+
+  <div class="matrix-wrap">
+    <div class="freq-title" style="margin-top:1.5rem;">연도 × 연도 겹침 매트릭스 (겹친 문항 수)</div>
+    <table class="matrix-table">
+      <thead><tr><th></th><th>2021</th><th>2023</th><th>2025</th></tr></thead>
+      <tbody>
+        <tr><th>2021</th><td class="cell-dash">—</td><td class="cell-hi">23문항</td><td class="cell-lo">5문항</td></tr>
+        <tr><th>2023</th><td class="cell-hi">23문항</td><td class="cell-dash">—</td><td class="cell-mid">11문항</td></tr>
+        <tr><th>2025</th><td class="cell-lo">5문항</td><td class="cell-mid">11문항</td><td class="cell-dash">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="freq-container" style="margin-top:1.5rem;">
+    <span class="freq-title">주제별 출제 빈도 (3년 연속)</span>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>Ascending lumbar vein 역할</span><span>3/3년</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>Bronchial artery</span><span>3/3년</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>Internal thoracic artery</span><span>3/3년</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>심장동맥 잘 막히는 부위</span><span>3/3년</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>흉골각 단면 구조물 (15개 이상)</span><span>3/3년</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>Foramen ovale 형성 및 혈류</span><span>2/3년 (25·23)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:66.7%;background:var(--primary)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>태아 vs 신생아 순환 구조물 5가지</span><span>2/3년 (25·23)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:66.7%;background:var(--primary)"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>기관지암 임상 사례 (recurrent laryngeal n.)</span><span>2/3년 (23·21)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:66.7%;background:#7c3aed"></div></div>
+    </div>
+    <div class="freq-bar-wrap">
+      <div class="freq-bar-label"><span>(23, 21) 단답형 16문항 주제군</span><span>2/3년 (23·21)</span></div>
+      <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:66.7%;background:#7c3aed"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: 반복 출제 문항 -->
+<div class="section" id="sec-repeat">
+  <p class="desc-text">2개년 이상 반복 출제된 29주제입니다. <span class="badge b-all">3년 연속</span>은 거의 확정 출제로 봐야 합니다.</p>
+
+  <div class="table-wrap">
+    <table class="repeat-table">
+      <thead>
+        <tr>
+          <th style="width:42%">주제</th>
+          <th style="width:14%">빈도</th>
+          <th>연도별 원문 발문 / 정답 힌트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3" class="section-sep">🔴 3년 연속 — 서술형 (25·23·21)</td></tr>
+        <tr>
+          <td><strong>Ascending lumbar vein의 역할</strong><br><span style="font-size:11px;color:var(--text-tertiary)">azygos system ↔ IVC 연결, 측부혈행로</span></td>
+          <td><span class="badge b-all">3년 연속</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023·2021</span>오름허리정맥(ascending lumbar vein)의 역할(significance)은?</div>
+            <div style="font-size:11px;color:var(--success);margin-top:5px;font-weight:600;">핵심: azygos/hemiazygos ↔ IVC 연결 · IVC 폐쇄 시 우회로</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Bronchial artery</strong><br><span style="font-size:11px;color:var(--text-tertiary)">기시·주행·분포·정맥 배출</span></td>
+          <td><span class="badge b-all">3년 연속</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023·2021</span>기관지동맥(bronchial artery)에 대해 쓰시오.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:5px;font-weight:600;">핵심: Lt. thoracic aorta 2개 / Rt. 1개(sup. post. intercostal a.) / pulmonary a.와 anastomosis</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Internal thoracic artery</strong><br><span style="font-size:11px;color:var(--text-tertiary)">기시·주행·말단분지·임상(CABG)</span></td>
+          <td><span class="badge b-all">3년 연속</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023·2021</span>속가슴동맥(internal thoracic artery)에 대해 설명하시오.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:5px;font-weight:600;">핵심: subclavian a. 1st part → 6th ICS → superior epigastric a. + musculophrenic a. / CABG</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>심장동맥 잘 막히는 부위</strong><br><span style="font-size:11px;color:var(--text-tertiary)">빈도순 3위까지</span></td>
+          <td><span class="badge b-all">3년 연속</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023·2021</span>심장동맥(coronary artery)에서 잘 막히는 부위를 쓰시오.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:5px;font-weight:600;">1위: LAD(40~50%) / 2위: RCA(30~40%) / 3위: Circumflex(15~20%)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>흉골각 단면 구조물</strong><br><span style="font-size:11px;color:var(--text-tertiary)">15개 이상 → 만점 / RAT PLANT 암기</span></td>
+          <td><span class="badge b-all">3년 연속</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023·2021</span>흉골각(sternal angle)에서 수평으로 가로 절단하였을 때 관찰할 수 있는 구조물에 대하여 쓰시오. (15개 이상 작성 시 만점)</div>
+            <div style="font-size:11px;color:var(--success);margin-top:5px;font-weight:600;">RAT PLANT: 2nd Costal Cartilage, Aortic arch, Trachea, Pleura/Lung, Recurrent laryngeal n., Azygos v., Phrenic n., Thoracic duct/Thymus</div>
+          </td>
+        </tr>
+        <tr><td colspan="3" class="section-sep">🟠 2회 출제 — 서술형 (25·23)</td></tr>
+        <tr>
+          <td><strong>Foramen ovale 형성 과정 및 혈류</strong></td>
+          <td><span class="badge b-two-25-23">25·23</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023</span>원오목(oval fossa) 형성 과정과 난원구멍(foramen ovale)을 통한 혈류의 흐름을 설명하시오.</div>
+            <div style="font-size:11px;color:var(--primary);margin-top:5px;font-weight:600;">핵심: septum primum → foramen primum → secundum → septum secundum → foramen ovale → 출생 후 fossa ovalis</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Ligamentum arteriosum과 주변 구조물</strong></td>
+          <td><span class="badge b-two-25-23">25·23</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023</span>동맥관인대(ligamentum arteriosum)와 주변 구조물에 대해 쓰시오.</div>
+            <div style="font-size:11px;color:var(--primary);margin-top:5px;font-weight:600;">핵심: ductus arteriosus remnant / Lt. recurrent laryngeal n. hooks around / PDA</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Metaplasia (조직 사진 포함)</strong></td>
+          <td><span class="badge b-two-25-23">25·23</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023</span>Metaplasia에 대해 쓰시오. (Metaplasia 조직 사진 주고 사진에서 볼 수 있는 것에 대해 쓰시오.) <span class="has-fig">사진</span></div>
+            <div style="font-size:11px;color:var(--primary);margin-top:5px;font-weight:600;">핵심: ciliated pseudostratified columnar → stratified squamous / goblet cell·섬모 소실 / dysplasia → SCC</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Pleural recess</strong></td>
+          <td><span class="badge b-two-25-23">25·23</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023</span>가슴막오목(pleural recess)에 대해 설명하시오.</div>
+            <div style="font-size:11px;color:var(--primary);margin-top:5px;font-weight:600;">핵심: costodiaphragmatic(흉수 고임, thoracentesis MAL ICS8~9) + costomediastinal(lingula)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>심방 벽 매끈/근육 부분 발생학적 차이</strong></td>
+          <td><span class="badge b-two-25-23">25·23</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023</span>심방의 벽에서 매끈한 부분(1)과 심방귀와 근육이 있는 부분(2)의 발생학적 차이를 설명하시오.</div>
+            <div style="font-size:11px;color:var(--primary);margin-top:5px;font-weight:600;">Rt. 매끈: sinus venosus Rt.horn 흡수 → sinus venarum / Lt. 매끈: primitive pulmonary v. 흡수(1→4개)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>태아 vs 신생아 순환 구조물 차이 5가지</strong></td>
+          <td><span class="badge b-two-25-23">25·23</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2025·2023</span>태아 혈액 순환과 신생아 혈액 순환에서 보이는 구조물 차이 5가지에 대해 쓰시오.</div>
+            <div style="font-size:11px;color:var(--primary);margin-top:5px;font-weight:600;">umbilical v.→lig.teres / ductus venosus→lig.venosum / foramen ovale→fossa ovalis / ductus arteriosus→lig.arteriosum / umbilical aa.→sup.vesical aa./medial umbilical lig.</div>
+          </td>
+        </tr>
+        <tr><td colspan="3" class="section-sep">🟠 2회 출제 — 서술형 (23·21)</td></tr>
+        <tr>
+          <td><strong>기관지암 임상 사례</strong><br><span style="font-size:11px;color:var(--text-tertiary)">전이·성대마비·좌우 차이 3문</span></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>담배를 많이 피우는 50세 남자, 목소리 변화, 체중 감소, 기침, 혈담. 왼폐 상엽 종괴, 왼쪽 mediastinum 확대. → Bronchogenic carcinoma. 1) 전이 부위 2) vocal fold 마비 이유 3) 오른쪽 폐에 암이 걸렸어도 같은 증상?</div>
+            <div style="font-size:11px;color:#5b21b6;margin-top:5px;font-weight:600;">핵심: Lt. recurrent laryngeal n. 압박(aortic arch 돌아 상행) / Rt.는 subclavian a. 돌아 상행 → 다른 증상</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>심장 판막 위치 vs 청진 위치</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>다음 사진을 참고하여 심장의 valve 위치와 청진 위치에 대해 설명하시오. <span class="has-fig">사진</span></div>
+            <div style="font-size:11px;color:#5b21b6;margin-top:5px;font-weight:600;">P→Lt.2ndICS / A→Rt.2ndICS / M→Lt.5thICS MCL / T→Rt.lower sternum body</div>
+          </td>
+        </tr>
+        <tr><td colspan="3" class="section-sep">🟠 2회 출제 — 단답형 (23·21) × 16문항</td></tr>
+        <tr>
+          <td><strong>Bucket-handle movement</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>Transverse dimension of thorax increase slightly — resulting in elevation and depression of the lateral-most portions of these ribs. ( ___ )</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: bucket-handle movement (가로지름 증가 / 비교: pump-handle = A-P 지름)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Cervical ribs (목갈비뼈)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>( ___ ) are relatively common (0.5~2%) and may interfere with neurovascular structures exiting the superior thoracic aperture.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: cervical ribs / C7 costal process / inf. trunk of brachial plexus 압박</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Cardiac referred pain</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>( ___ ) is a phenomenon whereby noxious stimuli originating in the heart are perceived as pain arising from a superficial part of the body.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: cardiac referred pain / T1~T4(5) 척수 진입 → 왼쪽 어깨·상지 내측</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Dextrocardia / Situs inversus</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>( ___ ) is the most common positional abnormality of the heart... or affect only the heart. ( ___ ) is part of general transposition of thoracic and abdominal viscera.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">1. dextrocardia / 2. situs inversus</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>External intercostal membrane</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>External intercostal muscles occupy ICS from tubercles of ribs posterior to the costochondral junction anteriorly. Anteriorly, the muscle fibers are replaced by the ( ___ ).</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: external intercostal membrane</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Flail chest (동요갈비)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>Multiple rib fractures — loose segment moves paradoxically (inward on inspiration, outward on expiration). ( ___ ) is an extremely painful injury and impairs ventilation.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: flail chest / paradoxical movement / 환기 장애</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Hyaline membrane disease (HMD)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>Respiratory distress syndrome (RDS) affects ~2% of neonates. RDS is also known as ( ___ ).</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: hyaline membrane disease (HMD) / surfactant 부족 / 20주부터 분비 · 만삭 전 2주 최대</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Pericardiocentesis</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>Drainage of fluid from the pericardial cavity, ( ___ ), is usually necessary to relieve cardiac tamponade. Needle inserted through 5th or 6th ICS near sternum.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: pericardiocentesis / cardiac tamponade 완화 / Lt. 5th or 6th ICS</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Pericardiacophrenic artery</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>가로막 상면 공급 동맥: ( ___ ) and musculophrenic arteries. 심장막 주 공급 동맥: ( ___ ) — accompanies phrenic nerve.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">양쪽 모두: pericardiacophrenic artery / internal thoracic a. 분지 / phrenic n. 동반</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>가슴막 신경 지배 (A/B)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>Costal pleura & peripheral diaphragmatic pleura: supplied by ( A ). Central diaphragmatic pleura & mediastinal pleura: supplied by ( B ).</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">A: intercostal nerves / B: phrenic nerve (C3~5) → 목·어깨 연관통</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Sternal biopsy</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>( ___ ) is commonly used to obtain specimens of marrow for transplantation and for detection of metastatic cancer and blood dyscrasias.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: sternal biopsy</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Supraclavicular lymph nodes (sentinel)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>( ___ ) was once called sentinel lymph nodes.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: supraclavicular lymph nodes (= Virchow's node, Lt.)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Stroke / CVA</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>Thrombi from left atrium detach → systemic circulation → occlude peripheral arteries. Occlusion of artery supplying the brain results in a ( ___ ).</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: stroke / CVA (cerebrovascular accident)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Tracheoesophageal septum</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>In the 4th week of development, ( ___ ) separates trachea from foregut, dividing foregut to lung bud anteriorly and esophagus posteriorly.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: tracheoesophageal septum / 불완전 → TEF (esophageal atresia 85%)</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Thoracoabdominal nerves (흉복신경)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>The 7~11th intercostal nerves cross the costal margin and continue on to supply abdominal skin and muscles. No longer being between the ribs, they now become ( ___ ) of the anterior abdominal wall.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: thoracoabdominal nerves / T12 → subcostal n.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Transversus thoracis (가슴가로근)</strong></td>
+          <td><span class="badge b-two-23-21">23·21</span></td>
+          <td>
+            <div class="q-ref"><span class="yr">2023·2021</span>The ( ___ ) consists of four or five slips that radiate superiorlaterally from the posterior aspect of the inferior sternum.</div>
+            <div style="font-size:11px;color:var(--success);margin-top:4px;font-weight:600;">답: transversus thoracis / 기시: inferior sternum 후면 / 닿는곳: costal cartilages 2~6 내면</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TAB 3: 신규 문항 -->
+<div class="section" id="sec-unique">
+  <p class="desc-text">각 연도에서 다른 연도와 겹치지 않는 신규(unique) 문항입니다. 반복될 가능성은 낮지만, 교수님의 출제 범위를 보여줍니다.</p>
+  <div class="unique-section">
+    <h3>2025년 신규 문항 <span class="count">8문항</span></h3>
+    <div class="unique-q"><span class="qnum">서1</span>Azygos v. &amp; Hemiazygos v. 특징 (해부학실습에서 관찰)</div>
+    <div class="unique-q"><span class="qnum">서2</span>Coronary atherosclerosis 시 혈관의 변화 설명</div>
+    <div class="unique-q"><span class="qnum">서3</span>Purkinje fiber가 위치하는 층과 세포 특징</div>
+    <div class="unique-q"><span class="qnum">서4</span>Thoracic duct(가슴관) 관찰 방법</div>
+    <div class="unique-q"><span class="qnum">서5</span>Thoracic outlet syndrome — 2가지 유형</div>
+    <div class="unique-q"><span class="qnum">서6</span>모세혈관(capillary) 종류 3가지와 예</div>
+    <div class="unique-q"><span class="qnum">서7</span>앞가슴 열기(1) / 폐 적출 시 절단 구조물(2)</div>
+    <div class="unique-q"><span class="qnum">서8</span>흉추 번호 판별 근거 (costal facet 패턴)</div>
+  </div>
+  <div class="unique-section">
+    <h3>2023년 신규 문항 <span class="count">6문항</span></h3>
+    <div class="unique-q"><span class="qnum">서1</span>26주 조산 신생아 자발 호흡 가능 조건</div>
+    <div class="unique-q"><span class="qnum">서2</span>Primary vs Secondary pulmonary lobule</div>
+    <div class="unique-q"><span class="qnum">서3</span>심실사이막 막부분 &amp; 방실중격 조직학적 설명</div>
+    <div class="unique-q"><span class="qnum">서4</span>되돌이후두신경 좌우 주행경로 차이</div>
+    <div class="unique-q"><span class="qnum">단1</span>태아 폐 우회 구조물: ( ___ ) → 답: ductus arteriosus</div>
+    <div class="unique-q"><span class="qnum">단2</span>Primary lymphoid organ in superior mediastinum: ( ___ ) → 답: thymus</div>
+  </div>
+  <div class="unique-section">
+    <h3>2021년 신규 문항 <span class="count">32문항 (대부분 객관식)</span></h3>
+    <div class="unique-q"><span class="qnum">서1</span>이물질 흡인 시 가장 잘 들어가는 기관지 → Rt. lower lobe superior segment (S6)</div>
+    <div class="unique-q"><span class="qnum">서2</span>Foramen primum이 닫히는 이유 → septum primum + endocardial cushion 융합</div>
+    <div class="unique-q"><span class="qnum">서3</span>허파 암 → 폐문 앞쪽 침범 → 호흡곤란 원인 신경 → phrenic n.</div>
+    <div class="unique-q"><span class="qnum">서4</span>허파 중간엽(middle lobe) 청진 위치 → Rt. MCL 4~5th ICS</div>
+    <div class="unique-q"><span class="qnum">서5</span>허파와 가슴막에 대한 옳은 설명 → 교감신경: bronchodilator·vasoconstrictor·gland inhibitor</div>
+    <div class="unique-q"><span class="qnum">서6</span>흉막 통증 연관통 부위 → All (흉벽·어깨·앞복벽·목)</div>
+    <div class="unique-q"><span class="qnum">서7</span>강제호기(forced expiration) 시 작용하는 근육</div>
+    <div class="unique-q"><span class="qnum">단1</span>Transverse pericardial sinus (ascending aorta + pulmonary trunk 후방, CABG clamp)</div>
+    <div class="unique-q"><span class="qnum">객1</span>ASD 원인 구조물 → foramen ovale 불완전 폐쇄</div>
+    <div class="unique-q"><span class="qnum">객2</span>Bronchopulmonary segment 옳은 설명 → terminal bronchiole 분포</div>
+    <div class="unique-q"><span class="qnum">객3</span>Ductus arteriosus 기원 → 6th left aortic arch 원위부</div>
+    <div class="unique-q"><span class="qnum">객4</span>PA radiograph 심장혈관음영 왼쪽 경계 → aortic arch + pulmonary trunk + Lt. ventricle</div>
+    <div class="unique-q"><span class="qnum">객5</span>SA node(pacemaker) 혈액 공급 동맥 → RCA (60%)</div>
+    <div class="unique-q"><span class="qnum">객6</span>Pectoralis minor 가쪽 모서리 구조 → lat. thoracic a.</div>
+    <div class="unique-q"><span class="qnum">객7</span>Post. interventricular a. 손상 시 동반 정맥 → middle cardiac v.</div>
+    <div class="unique-q"><span class="qnum">객8</span>Sternum 외상 시 가장 손상 큰 심장 부분 → Rt. ventricle (sternocostal surface)</div>
+    <div class="unique-q"><span class="qnum">객9</span>Superior mediastinum 진행성 암 → 영향 안 받는 구조 → hemiazygos v.</div>
+    <div class="unique-q"><span class="qnum">객10</span>Thoracocentesis 위치 (5th ICS 흉수) → MAL 5th ICS</div>
+    <div class="unique-q"><span class="qnum">객11</span>Total mastectomy 후 위팔·겨드랑이 이상감각 → intercostobrachial n.</div>
+    <div class="unique-q"><span class="qnum">객12</span>Valve of oval foramen 형성 구조물 → septum primum</div>
+    <div class="unique-q"><span class="qnum">객13</span>VSD membranous part 관련 구조 → endocardial cushion</div>
+    <div class="unique-q"><span class="qnum">객14~</span>가장 아래 위치 구조 / TEF 발생 이상 / 기흉 마취 깊이 / 동맥위기관지 / 소아 복장뼈 제거 / 심장막 절개 시 주의 / 앞가슴 피하조직 / 오른허파뿌리 위 종양 / 왼허파 특징 / 원시 우심방으로 합쳐지는 것 등 (11문항)</div>
+  </div>
+</div>
+
+<!-- TAB 4: 문항 유형별 -->
+<div class="section" id="sec-types">
+  <div class="topic-card">
+    <h4>① 서술형 / 주관식 — 전체의 약 25%</h4>
+    <p>5개 3회 연속 문항, (25·23) 6문항, (23·21) 2문항 등 핵심 서술형이 반복됩니다. 혈관계 기시·주행·임상의의를 완전 서술로 요구하며, 조직 사진·해부도 동반이 많습니다.</p>
+    <div class="q-row" style="margin-top:10px;">
+      <span class="q-chip">2025: 서술형 집중</span><span class="q-chip">2023: 서술형 + 단답형 혼합</span><span class="q-chip">2021: 단답·객관식 위주</span>
+    </div>
+  </div>
+  <div class="topic-card">
+    <h4>② 단답형 (영어 빈칸 채우기) — 전체의 약 18%</h4>
+    <p>주로 2023·2021 공통 출제. 영어 문장 빈칸에 해부학 용어를 쓰는 형식. 답이 단어 1~3개로 정해져 있어 암기하면 확실한 점수입니다. 16개 주제 모두 (23·21) 겹침 — 2025에서도 출제 가능성 높음.</p>
+    <div class="q-row" style="margin-top:10px;">
+      <span class="q-chip">bucket-handle</span><span class="q-chip">cervical ribs</span><span class="q-chip">pericardiocentesis</span><span class="q-chip">flail chest</span><span class="q-chip">HMD</span><span class="q-chip">stroke</span>
+    </div>
+  </div>
+  <div class="topic-card">
+    <h4>③ 객관식 (MCQ, 5지선다) — 전체의 약 57%</h4>
+    <p>주로 2021년 단독 출제. 발생학·임상 응용·해부학 구조 위치를 묻는 문제가 많습니다. 2023·2025에는 거의 없고, 다음 시험에서 재출제 가능성은 낮지만 해부학적 이해를 위한 학습은 유효합니다.</p>
+    <div class="q-row" style="margin-top:10px;">
+      <span class="q-chip">ASD / VSD 발생학</span><span class="q-chip">PA radiograph</span><span class="q-chip">SA node 공급 동맥</span><span class="q-chip">수술 임상 응용</span>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5: 시험 전략 -->
+<div class="section" id="sec-tips">
+  <div class="topic-card tip-green">
+    <h4>최우선 암기 — 3년 연속 100% 출제 (거의 확정)</h4>
+    <p style="margin-bottom:8px;">① <strong>Ascending lumbar vein</strong>: azygos/hemiazygos ↔ IVC 연결 + IVC 폐쇄 시 우회로 역할 완전 서술</p>
+    <p style="margin-bottom:8px;">② <strong>Bronchial artery</strong>: Lt. thoracic aorta 2개 / Rt. 1개(sup.post.intercostal a.) / 영양혈관 / pulmonary a. 문합 / 정맥 배출 경로</p>
+    <p style="margin-bottom:8px;">③ <strong>Internal thoracic artery</strong>: subclavian a. 1st part 기시 → 6th ICS → superior epigastric a. + musculophrenic a. / CABG 이식혈관</p>
+    <p style="margin-bottom:8px;">④ <strong>심장동맥 잘 막히는 부위</strong>: LAD 40~50% / RCA 30~40% / Circumflex 15~20%</p>
+    <p>⑤ <strong>흉골각 단면 구조물</strong>: RAT PLANT 15개 이상 — 외우면 만점</p>
+  </div>
+  <div class="topic-card tip-blue">
+    <h4>단답형 고정 암기 — (23·21) 공통 16주제</h4>
+    <p style="margin-bottom:6px;"><strong>bucket-handle</strong>: 가로지름 증가 / <strong>pump-handle</strong>: A-P 지름 증가 / <strong>diaphragm</strong>: 세로지름 증가</p>
+    <p style="margin-bottom:6px;"><strong>cervical ribs</strong>: C7 / inf. trunk brachial plexus / 0.5~1% 유병률</p>
+    <p style="margin-bottom:6px;"><strong>pericardiacophrenic a.</strong>: internal thoracic a. 분지, phrenic n. 동반</p>
+    <p style="margin-bottom:6px;"><strong>tracheoesophageal septum</strong>: 4주 형성, 불완전 → TEF</p>
+    <p style="margin-bottom:6px;"><strong>thoracoabdominal nerves</strong>: T7~11 / T12 → subcostal n.</p>
+    <p><strong>supraclavicular LN</strong>: Virchow's node (Lt.) / sentinel lymph nodes</p>
+  </div>
+  <div class="topic-card tip-red">
+    <h4>고빈도 (25·23) 발생학 — 다음 시험도 출제 유력</h4>
+    <p style="margin-bottom:6px;">① <strong>Foramen ovale</strong>: septum primum/secundum 순서 완전 암기 / 출생 후 fossa ovalis / 혈류 crista dividens → Rt-to-Lt shunt</p>
+    <p style="margin-bottom:6px;">② <strong>태아 vs 신생아 순환 5가지</strong>: 각 태아 구조 → 출생 후 변화 표 암기</p>
+    <p style="margin-bottom:6px;">③ <strong>Ligamentum arteriosum</strong>: Lt. recurrent laryngeal n. hooks around → 기관-식도 사이 상행</p>
+    <p>④ <strong>심방 벽 발생학</strong>: Rt. 매끈 = sinus venosus Rt.horn / Lt. 매끈 = primitive pulmonary v. 흡수</p>
+  </div>
+  <div class="topic-card tip-orange">
+    <h4>교수님 출제 스타일 특징</h4>
+    <p style="margin-bottom:6px;">• <strong>영어 빈칸 단답형</strong>: 교과서 그대로 나오는 영어 문장 → 핵심 용어 1~3개 암기</p>
+    <p style="margin-bottom:6px;">• <strong>조직 사진 동반</strong>: Metaplasia, 심장 판막 등 사진 주고 설명 요구 패턴</p>
+    <p style="margin-bottom:6px;">• <strong>임상 응용</strong>: 기관지암·폐문 종양 임상 사례 → 해부학적 구조 연결</p>
+    <p style="margin-bottom:6px;">• <strong>숫자 요구</strong>: "15개 이상 작성 시 만점", "5가지 쓰시오" 등 구체적 개수 명시</p>
+    <p>• <strong>좌우 비교</strong>: Lt. vs Rt. 차이 (recurrent laryngeal n. 경로, bronchial a. 기시 등)</p>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="footer-brand">KAISTUDY_WJ</span>
+</div>
+
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
