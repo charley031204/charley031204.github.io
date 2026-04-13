@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전영주 인체대사학 기출 분석</title>
+<style>
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-primary); line-height: 1.5; padding: 2rem 1rem; }
+.wrap { max-width: 820px; margin: 0 auto; background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+.tabs { display: flex; gap: 8px; margin-bottom: 2rem; flex-wrap: wrap; background: var(--bg-secondary); padding: 6px; border-radius: var(--radius-lg); }
+.tab { flex: 1; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 500; border: none; border-radius: var(--radius-md); cursor: pointer; background: transparent; color: var(--text-secondary); transition: all 0.2s ease; }
+.tab:hover { color: var(--text-primary); }
+.tab.active { background: var(--bg-card); color: var(--primary); font-weight: 600; box-shadow: var(--shadow-sm); }
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 2rem; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; transition: transform 0.2s ease; }
+.stat-card:hover { transform: translateY(-2px); }
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-card .lbl { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+.freq-container { background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1.5rem; border: 1px solid var(--border); }
+.freq-title { font-size: 15px; font-weight: 600; margin-bottom: 1.2rem; display: block; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.freq-bar-wrap { margin-bottom: 1rem; }
+.freq-bar-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; display: flex; justify-content: space-between; font-weight: 500; }
+.freq-bar-bg { background: var(--border); border-radius: 99px; height: 10px; overflow: hidden; }
+.freq-bar-fill { height: 100%; border-radius: 99px; }
+.matrix-section { margin-top: 2rem; }
+.matrix-title { font-size: 15px; font-weight: 600; margin-bottom: 1rem; }
+.matrix-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.matrix-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: center; }
+.matrix-table th { padding: 10px 16px; font-weight: 600; font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); }
+.matrix-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.matrix-table tr:last-child td { border-bottom: none; }
+.matrix-table .row-header { font-weight: 600; color: var(--text-secondary); background: var(--bg-secondary); text-align: left; }
+.matrix-table .cell-high { background: #d1fae5; color: #065f46; font-weight: 700; }
+.matrix-table .cell-mid { background: #dbeafe; color: #1e40af; font-weight: 600; }
+.matrix-table .cell-low { background: var(--bg-tertiary); color: var(--text-secondary); }
+.matrix-table .cell-dash { background: var(--bg-tertiary); color: var(--text-tertiary); }
+.table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.repeat-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
+.repeat-table th { padding: 12px 16px; font-weight: 600; font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); }
+.repeat-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text-primary); line-height: 1.5; }
+.repeat-table tr:last-child td { border-bottom: none; }
+.repeat-table tr:hover td { background: var(--bg-secondary); }
+.badge { display: inline-flex; align-items: center; justify-content: center; padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.b-all { background: #d1fae5; color: #065f46; }
+.b-three { background: #e0e7ff; color: #3730a3; }
+.b-two { background: #dbeafe; color: #1e40af; }
+.q-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.q-chip { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border); font-weight: 500; }
+.topic-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-sm); }
+.topic-card h4 { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+.topic-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.topic-card strong { color: var(--text-primary); font-weight: 600; }
+.tip-green { border-left: 4px solid var(--success); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.tip-green h4 { color: var(--success); }
+.tip-blue { border-left: 4px solid var(--primary); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.tip-blue h4 { color: var(--primary); }
+.tip-orange { border-left: 4px solid var(--warning); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.tip-orange h4 { color: var(--warning); }
+.desc-text { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+.section-divider { background: var(--bg-tertiary); font-weight: 600; font-size: 13px; color: var(--text-secondary); padding: 10px 16px; text-align: center; }
+.unique-section { margin-bottom: 1.5rem; }
+.unique-section h4 { font-size: 15px; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
+.unique-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); }
+.unique-item:last-child { border-bottom: none; }
+.qnum-badge { flex-shrink: 0; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; }
+.footer-brand { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.05em; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2>전영주 교수님 인체대사학 기출 분석 (2021·2022·2023·2025)</h2>
+  <p class="sub">4개년 기출문제(총 53문항)의 출제 유형 및 반복 경향 분석</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="show('overview', this)">전체 개요</button>
+    <button class="tab" onclick="show('repeat', this)">반복 출제 문항</button>
+    <button class="tab" onclick="show('unique', this)">신규 문항</button>
+    <button class="tab" onclick="show('types', this)">문항 유형별</button>
+    <button class="tab" onclick="show('tips', this)">시험 전략</button>
+  </div>
+
+  <!-- 탭 1: 전체 개요 -->
+  <div class="section active" id="sec-overview">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num" style="color:var(--success)">4개년</div>
+        <div class="lbl">분석 연도</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">14개</div>
+        <div class="lbl">반복 출제 주제</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" style="color:var(--danger)">2개</div>
+        <div class="lbl">4년 연속 출제</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" style="color:#7c3aed">4개</div>
+        <div class="lbl">3년 출제 주제</div>
+      </div>
+    </div>
+
+    <p class="desc-text">전영주 교수님은 <strong>Hemolytic Jaundice</strong>와 <strong>Urea cycle stoichiometry</strong>를 4개년 모두 출제하는 초강력 반복 패턴을 보입니다. 2025년 기준 출제된 10문항 중 10문항이 과거 기출과 겹쳐 <strong>반복률 100%</strong>를 기록했습니다. 서술형 비중이 높으며, 최근 들어 객관식 반복도 증가하는 추세입니다.</p>
+
+    <div class="freq-container">
+      <span class="freq-title">연도별 반복률 (겹친 문항 수 / 전체 문항 수)</span>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2025년</span><span>10 / 10문항 (100%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--danger)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2022년</span><span>9 / 11문항 (81.8%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:81.8%;background:var(--warning)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2023년</span><span>9 / 14문항 (64.3%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:64.3%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2021년</span><span>8 / 18문항 (44.4%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:44.4%;background:var(--success)"></div></div>
+      </div>
+    </div>
+
+    <div class="freq-container" style="margin-top:1.5rem;">
+      <span class="freq-title">주제별 출제 빈도 (상위 14개 반복 주제)</span>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Hemolytic Jaundice</span><span>4/4년 (100%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--danger)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Urea cycle stoichiometry</span><span>4/4년 (100%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--danger)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>5-FU → Thymidylate synthase</span><span>3/4년 (75%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:#7c3aed"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>GDH disposal</span><span>3/4년 (75%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:#7c3aed"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Cystinuria</span><span>3/4년 (75%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:#7c3aed"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>아미노산 대사 옳은 것 (객관식)</span><span>3/4년 (75%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:#7c3aed"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>PKU / Homocystinuria / 5-PRA / Lesch-Nyhan 外</span><span>2/4년 (50%)</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:50%;background:var(--primary)"></div></div>
+      </div>
+    </div>
+
+    <div class="matrix-section">
+      <div class="matrix-title">연도 × 연도 겹침 매트릭스 (셀 = 겹친 문항 수)</div>
+      <div class="matrix-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>기준 연도</th>
+              <th>2021</th>
+              <th>2022</th>
+              <th>2023</th>
+              <th>2025</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">2021</td>
+              <td class="cell-dash">—</td>
+              <td class="cell-high">7</td>
+              <td class="cell-low">3</td>
+              <td class="cell-mid">5</td>
+            </tr>
+            <tr>
+              <td class="row-header">2022</td>
+              <td class="cell-high">7</td>
+              <td class="cell-dash">—</td>
+              <td class="cell-low">4</td>
+              <td class="cell-mid">5</td>
+            </tr>
+            <tr>
+              <td class="row-header">2023</td>
+              <td class="cell-low">3</td>
+              <td class="cell-low">4</td>
+              <td class="cell-dash">—</td>
+              <td class="cell-high">8</td>
+            </tr>
+            <tr>
+              <td class="row-header">2025</td>
+              <td class="cell-mid">5</td>
+              <td class="cell-mid">5</td>
+              <td class="cell-high">8</td>
+              <td class="cell-dash">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--text-tertiary);margin-top:8px;">초록(7~8개 겹침) · 파랑(5개) · 회색(3~4개)</p>
+    </div>
+  </div>
+
+  <!-- 탭 2: 반복 출제 문항 -->
+  <div class="section" id="sec-repeat">
+    <p class="desc-text">2개년 이상 반복 출제된 14개 주제 목록입니다. <span class="badge b-all">4년 연속</span>은 거의 확정 출제로 봐야 합니다.</p>
+
+    <div class="table-wrap">
+      <table class="repeat-table">
+        <thead>
+          <tr>
+            <th style="width:36%">주제</th>
+            <th style="width:16%">빈도</th>
+            <th>연도별 문항 번호</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3" class="section-divider">⭐ 4개년 연속 출제 (최우선 야마)</td></tr>
+          <tr>
+            <td>
+              <strong>Hemolytic Jaundice</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">3가지 원인 (Sickle cell · PK결핍 · G6PD결핍) 서술형</span>
+            </td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2021 Q16 서술</span>
+                <span class="q-chip">2022 주관11 서술</span>
+                <span class="q-chip">2023 Q13 서술</span>
+                <span class="q-chip">2025 Q7 서술</span>
+              </div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">핵심: UCB↑↑ | CB정상 | urobilinogen↑ | 소변 bilirubin 음성</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Urea cycle stoichiometry</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">ATP 계수 완성 (3, 2, 2)</span>
+            </td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2021 Q11 서술</span>
+                <span class="q-chip">2022 주관3 단답</span>
+                <span class="q-chip">2023 Q11 단답</span>
+                <span class="q-chip">2025 Q6 단답</span>
+              </div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: 3ATP → 2ADP + AMP / CPS-I 2ATP + ASS 1ATP</div>
+            </td>
+          </tr>
+
+          <tr><td colspan="3" class="section-divider">⭐ 3개년 출제</td></tr>
+          <tr>
+            <td>
+              <strong>5-FU → Thymidylate synthase</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">피리미딘 길항제 단답형</span>
+            </td>
+            <td><span class="badge b-three">3년 출제</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2022 주관1 단답</span>
+                <span class="q-chip">2023 Q9 단답</span>
+                <span class="q-chip">2025 Q10 단답</span>
+              </div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: Thymidylate synthase (dUMP→dTMP 차단)</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>GDH disposal of amino acids</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">allosteric 조절 + coenzyme 포함 서술</span>
+            </td>
+            <td><span class="badge b-three">3년 출제</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2021 Q14 서술†</span>
+                <span class="q-chip">2022 주관4 서술</span>
+                <span class="q-chip">2025 Q9 서술</span>
+              </div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">†2021 = disposal+synthesis 통합 / GTP억제·ADP활성화</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Cystinuria</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">원인(수송체 결함) + 증상(요로결석)</span>
+            </td>
+            <td><span class="badge b-three">3년 출제</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2021 Q13 서술</span>
+                <span class="q-chip">2022 주관10 서술</span>
+                <span class="q-chip">2025 Q8 서술</span>
+              </div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">COLA 수송체 결함 → 시스틴만 불용성 → 요로결석</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>아미노산 대사 옳은 것 (객관식)</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">glutamine 운반·첫 단계 transamination</span>
+            </td>
+            <td><span class="badge b-three">3년 출제</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2021 Q8 객관식</span>
+                <span class="q-chip">2023 Q8 객관식</span>
+                <span class="q-chip">2025 Q4 객관식</span>
+              </div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: 근육 glutamine → 간·콩팥 NH₃ 운반체</div>
+            </td>
+          </tr>
+
+          <tr><td colspan="3" class="section-divider">▲ 2개년 출제</td></tr>
+          <tr>
+            <td><strong>PKU (특징·진단·치료)</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">PAH 결핍, BH₄, Phe↑ Tyr↓</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q15 서술</span><span class="q-chip">2022 주관6 서술</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>Homocystinuria</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">CBS 결핍 / 혈전·렌즈탈구</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2022 주관5 서술</span><span class="q-chip">2023 Q14 서술</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>5-Phosphoribosylamine 합성</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">PRPP→5-PRA, committed step</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q17 서술</span><span class="q-chip">2022 주관7 서술</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>Lesch-Nyhan syndrome</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">HGPRT 결핍, X-linked recessive</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td><div class="q-row"><span class="q-chip">2021 Q18 서술</span><span class="q-chip">2022 주관8 서술</span></div></td>
+          </tr>
+          <tr>
+            <td><strong>Proteasome inhibitor → Protein A 수↑</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">26S proteasome 차단 기전 객관식</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q4 객관식</span><span class="q-chip">2025 Q3 객관식</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: ④ Protein A의 수 증가</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Urea cycle 장애 최소 관련 효소</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">CPT-1은 지방산 β-산화 효소 — 무관</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q6 객관식</span><span class="q-chip">2025 Q2 객관식</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: ③ CPT-1 결핍</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>PAH 돌연변이 → Tyr 감소</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">PAH 결핍 → Phe↑ Tyr↓</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q7 객관식</span><span class="q-chip">2025 Q5 객관식</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: ③ tyrosine</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>아미노산 분해의 질소 배출 원소</strong><br><span style="font-size:12px;color:var(--text-tertiary);display:block;margin-top:3px;">NH₃→urea → N 배출</span></td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q5 객관식</span><span class="q-chip">2025 Q1 객관식</span></div>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답: ① 질소(N)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 탭 3: 신규 문항 -->
+  <div class="section" id="sec-unique">
+    <p class="desc-text">각 연도별로 다른 연도와 겹치지 않는 신규(unique) 문항 목록입니다. 신규 문항은 다음 시험에서 반복될 가능성이 낮지만, 교수님의 새로운 출제 영역을 파악할 수 있습니다.</p>
+
+    <div class="unique-section">
+      <h4>2025년 — 신규 문항 없음 (전 문항 기출 반복)</h4>
+      <p style="font-size:14px;color:var(--text-tertiary);padding:12px 0;">2025년 10문항 전부가 이전 기출과 겹칩니다. 반복률 100%.</p>
+    </div>
+
+    <div class="unique-section" style="border-top:1px solid var(--border);padding-top:1.5rem;">
+      <h4>2023년 — 신규 문항 5개 (추정)</h4>
+      <div class="unique-item">
+        <span class="qnum-badge">Q1~Q3</span>
+        <span>2023년 앞부분 객관식 문항 (기출 표에 등장하지 않은 문항, 내용 확인 필요)</span>
+      </div>
+      <div class="unique-item">
+        <span class="qnum-badge">Q10</span>
+        <span>2023년 10번 문항 (기출 표 미수록 신규)</span>
+      </div>
+      <div class="unique-item">
+        <span class="qnum-badge">Q12</span>
+        <span>2023년 12번 문항 (기출 표 미수록 신규)</span>
+      </div>
+    </div>
+
+    <div class="unique-section" style="border-top:1px solid var(--border);padding-top:1.5rem;">
+      <h4>2022년 — 신규 문항 2개 (추정)</h4>
+      <div class="unique-item">
+        <span class="qnum-badge">주관2</span>
+        <span>2022년 2번 주관식 (기출 표 미수록 신규)</span>
+      </div>
+      <div class="unique-item">
+        <span class="qnum-badge">주관9</span>
+        <span>2022년 9번 주관식 (기출 표 미수록 신규)</span>
+      </div>
+    </div>
+
+    <div class="unique-section" style="border-top:1px solid var(--border);padding-top:1.5rem;">
+      <h4>2021년 — 신규 문항 10개</h4>
+      <div class="unique-item">
+        <span class="qnum-badge">Q1~Q7</span>
+        <span>2021년 앞부분 문항 7개 — 기출 표에 등장하지 않는 주제 (Km, Lineweaver-Burk 등 효소 관련 포함)</span>
+      </div>
+      <div class="unique-item">
+        <span class="qnum-badge">Q9</span>
+        <span>2021년 9번 문항</span>
+      </div>
+      <div class="unique-item">
+        <span class="qnum-badge">Q10</span>
+        <span>2021년 10번 문항</span>
+      </div>
+      <div class="unique-item">
+        <span class="qnum-badge">Q12</span>
+        <span>2021년 12번 문항</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 4: 문항 유형별 -->
+  <div class="section" id="sec-types">
+    <div class="topic-card">
+      <h4>① 서술형 (상세 기전 기술) — 전체의 약 55%</h4>
+      <p>전영주 교수님의 핵심 문항 유형. 단순 암기가 아닌 <strong>기전 전체 흐름</strong>을 써야 하며, 3~5문장 이상의 분량이 요구됩니다. Hemolytic Jaundice·Cystinuria·GDH·PKU·Lesch-Nyhan이 대표 서술 주제입니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2021: Q11~Q18 (8문항)</span>
+        <span class="q-chip">2022: 주관3~주관11 (대부분 서술)</span>
+        <span class="q-chip">2023: Q9·Q11·Q13~Q14</span>
+        <span class="q-chip">2025: Q6~Q9</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <h4>② 단답형 (수치·효소명 직접 기입) — 전체의 약 20%</h4>
+      <p>정확한 숫자나 효소명을 쓰는 유형. Urea cycle ATP 계수(3, 2, 2)와 5-FU 표적 효소(Thymidylate synthase)가 대표 단답 주제로 매년 반복됩니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">5-FU 표적: Thymidylate synthase</span>
+        <span class="q-chip">Urea cycle ATP: 3·2·2</span>
+        <span class="q-chip">PRPP committed step</span>
+      </div>
+    </div>
+    <div class="topic-card">
+      <h4>③ 객관식 (5지선다 또는 4지선다) — 전체의 약 25%</h4>
+      <p>최근 2023·2025년 들어 객관식 비중이 증가하는 추세입니다. <strong>아미노산 대사 옳은 것</strong> 유형이 3개년 연속 출제되어 사실상 고정 객관식 주제입니다. CPT-1·PAH·Proteasome 관련 객관식도 23→25 연속 반복 중입니다.</p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2021: Q8 (아미노산 대사)</span>
+        <span class="q-chip">2023: Q1~Q8 (객관식 파트)</span>
+        <span class="q-chip">2025: Q1~Q5 (객관식 파트)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 5: 시험 전략 -->
+  <div class="section" id="sec-tips">
+    <div class="topic-card tip-green">
+      <h4>최우선 암기: 4년 연속 = 거의 확정 출제</h4>
+      <p style="margin-bottom:8px;">① <strong>Hemolytic Jaundice</strong> — 3가지 원인(Sickle cell anemia·PK 결핍·G6PD 결핍)을 기전과 함께 완전히 숙지. 공통 검사 소견(UCB↑↑·CB정상·urobilinogen↑)도 필수.</p>
+      <p style="margin-bottom:8px;">② <strong>Urea cycle stoichiometry</strong> — 빈칸 답 3·2·2 암기. CPS-I 2ATP, Argininosuccinate synthase 1ATP(→AMP+PPᵢ) 근거도 설명 가능해야 함.</p>
+      <p style="margin-bottom:0;">③ <strong>5-FU → Thymidylate synthase</strong> (3년) — 표적 효소명과 dUMP→dTMP 차단 기전 암기.</p>
+    </div>
+    <div class="topic-card tip-green" style="margin-top:1rem;">
+      <h4>차순위 암기: 3년 출제 주제</h4>
+      <p style="margin-bottom:8px;">④ <strong>GDH</strong> — Allosteric 조절(GTP↓억제·ADP↑활성화), Disposal(NAD⁺), Synthesis(NADPH) 양방향 모두 서술 가능해야 함.</p>
+      <p style="margin-bottom:8px;">⑤ <strong>Cystinuria</strong> — COLA 수송체 이형이합체(rBAT+b⁰⁺AT) 결함, 시스틴만 불용성 → 요로결석 기전.</p>
+      <p>⑥ <strong>아미노산 대사 객관식</strong> — 근육 glutamine의 NH₃ 운반체 역할, 분해 첫 단계 = transamination(not 산화탈아미노화) 반드시 구분.</p>
+    </div>
+    <div class="topic-card tip-blue" style="margin-top:1rem;">
+      <h4>객관식 고정 정답: 외워두면 확실한 점수</h4>
+      <p style="margin-bottom:6px;"><strong style="color:var(--success)">정답 ①질소</strong>: 아미노산 분해에서 배출되는 원소 → N(질소)</p>
+      <p style="margin-bottom:6px;"><strong style="color:var(--success)">정답 ③CPT-1 결핍</strong>: Urea cycle 장애와 가장 무관한 효소 (지방산 β-산화 효소)</p>
+      <p style="margin-bottom:6px;"><strong style="color:var(--success)">정답 ③tyrosine</strong>: PAH 돌연변이로 감소하는 아미노산</p>
+      <p style="margin-bottom:0;"><strong style="color:var(--success)">정답 ④Protein A의 수 증가</strong>: Proteasome inhibitor 투여 시 결과</p>
+    </div>
+    <div class="topic-card tip-orange" style="margin-top:1rem;">
+      <h4>전영주 교수님 출제 스타일 특징</h4>
+      <p style="margin-bottom:6px;">• <strong>반복 충실</strong>: 매 시험 60~100%가 이전 기출과 겹침 — 기출 완벽 소화가 최고의 전략</p>
+      <p style="margin-bottom:6px;">• <strong>서술 깊이</strong>: 단순 나열이 아닌 기전(mechanism) 중심 서술 요구 — "왜 그런지"까지 설명</p>
+      <p style="margin-bottom:6px;">• <strong>최근 객관식 증가</strong>: 2023·2025 객관식 비중 확대, 특히 2023→2025 동일 객관식 주제 반복(8문항 겹침)</p>
+      <p style="margin-bottom:0;">• <strong>질환 집중</strong>: PKU·Cystinuria·Homocystinuria·Lesch-Nyhan 등 아미노산/퓨린 대사 선천성 질환이 핵심 서술 자원</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-brand">KAISTUDY_WJ</span>
+  </div>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
