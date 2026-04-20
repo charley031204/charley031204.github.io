@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김진환 호흡 영상 기출 분석</title>
+<style>
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-primary); line-height: 1.5; padding: 2rem 1rem; }
+.wrap { max-width: 800px; margin: 0 auto; background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+.tabs { display: flex; gap: 8px; margin-bottom: 2rem; flex-wrap: wrap; background: var(--bg-secondary); padding: 6px; border-radius: var(--radius-lg); }
+.tab { flex: 1; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 500; border: none; border-radius: var(--radius-md); cursor: pointer; background: transparent; color: var(--text-secondary); transition: all 0.2s ease; }
+.tab:hover { color: var(--text-primary); }
+.tab.active { background: var(--bg-card); color: var(--primary); font-weight: 600; box-shadow: var(--shadow-sm); }
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 2rem; }
+.stat-card { flex: 1; min-width: 140px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; transition: transform 0.2s ease; }
+.stat-card:hover { transform: translateY(-2px); }
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-card .lbl { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+.freq-container { background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1.5rem; border: 1px solid var(--border); }
+.freq-title { font-size: 15px; font-weight: 600; margin-bottom: 1.2rem; display: block; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.freq-bar-wrap { margin-bottom: 0.8rem; }
+.freq-bar-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; display: flex; justify-content: space-between; font-weight: 500; }
+.freq-bar-bg { background: var(--border); border-radius: 99px; height: 10px; overflow: hidden; }
+.freq-bar-fill { height: 100%; border-radius: 99px; transition: width 0.8s ease-out; }
+.table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.repeat-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
+.repeat-table th { padding: 12px 16px; font-weight: 600; font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); }
+.repeat-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; color: var(--text-primary); line-height: 1.5; }
+.repeat-table tr:last-child td { border-bottom: none; }
+.repeat-table tr:hover td { background: var(--bg-secondary); }
+.badge { display: inline-flex; align-items: center; justify-content: center; padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.b-all { background: #d1fae5; color: #065f46; }
+.b-two { background: #dbeafe; color: #1e40af; }
+.q-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.q-chip { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border); font-weight: 500; }
+.topic-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-sm); }
+.topic-card h4 { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+.topic-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.topic-card strong { color: var(--text-primary); font-weight: 600; }
+.tip-green { border-left: 4px solid var(--success); }
+.tip-green h4 { color: var(--success); }
+.tip-blue { border-left: 4px solid var(--primary); }
+.tip-blue h4 { color: var(--primary); }
+.tip-orange { border-left: 4px solid var(--warning); }
+.tip-orange h4 { color: var(--warning); }
+.tip-red { border-left: 4px solid var(--danger); }
+.tip-red h4 { color: var(--danger); }
+.desc-text { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+.footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; }
+.footer-brand { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.05em; font-weight: 500; }
+.year-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; margin-right: 4px; }
+.section-divider { background: var(--bg-tertiary); font-weight: 600; font-size: 13px; color: var(--text-secondary); padding: 10px 16px; text-align: center; }
+.note-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 1.5rem; font-size: 13px; color: #92400e; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 헤더 -->
+  <h2>김진환 교수님 호흡기계 영상의학 기출 분석</h2>
+  <p class="sub">5개년(2020·2021·2022·2023·2025) 기출문제의 출제 유형 및 반복 경향 분석</p>
+
+  <!-- 탭 네비게이션 -->
+  <div class="tabs">
+    <button class="tab active" onclick="show('overview', this)">전체 개요</button>
+    <button class="tab" onclick="show('repeat', this)">반복 출제 문항</button>
+    <button class="tab" onclick="show('types', this)">문항 유형별</button>
+    <button class="tab" onclick="show('tips', this)">시험 전략</button>
+  </div>
+
+  <!-- ===== 탭 1: 전체 개요 ===== -->
+  <div class="section active" id="sec-overview">
+
+    <div class="note-box">
+      ⚠️ 2021년도는 복기 불완전으로 2문항만 수록되어 있습니다. 전체 출제 문항 수에 영향을 줄 수 있습니다.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num" style="color:var(--success)">60%</div>
+        <div class="lbl">핵심 주제 반복률</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">4개</div>
+        <div class="lbl">3년 이상 반복 주제</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">3가지</div>
+        <div class="lbl">주요 문항 형식</div>
+      </div>
+    </div>
+
+    <p class="desc-text">
+      총 10개 고유 주제 중 6개(60%)가 2개년 이상 반복 출제되었습니다.
+      <strong>CTR 판정</strong>, <strong>흉부 구조물 명칭 식별</strong>, <strong>허탈(Atelectasis) 판독</strong>, <strong>흉부 X선 임상 증례 판독</strong>은 3~4년 연속 출제된 핵심 주제입니다.
+      반면 기흉, calcification 종류, 이차폐소엽, Bronchial artery 서술은 1회만 확인되어 야마 우선순위는 낮습니다.
+      모든 문항이 <strong>영상(X선·CT·기관지경) 판독 중심</strong>으로 출제되며, 이론 암기보다 영상 해석 능력이 핵심입니다.
+    </p>
+
+    <div class="freq-container">
+      <span class="freq-title">주제별 출제 빈도 (5개년 기준)</span>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>흉부 구조물 명칭 식별·매칭</span><span>4/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:80%;background:var(--success)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>CTR (Cardiothoracic Ratio) 판정</span><span>3/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:60%;background:var(--success)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>허탈(Atelectasis) 영상 판독</span><span>3/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:60%;background:var(--success)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>흉부 X선 임상 증례 판독</span><span>3/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:60%;background:var(--success)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Pleura (흉막) 관련</span><span>2/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:40%;background:var(--primary)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Hilum 해부 · 판독</span><span>2/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:40%;background:var(--primary)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>기흉(Pneumothorax)</span><span>1/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:20%;background:var(--text-tertiary)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Calcification 종류</span><span>1/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:20%;background:var(--text-tertiary)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>이차폐소엽 CT 구조물</span><span>1/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:20%;background:var(--text-tertiary)"></div></div>
+      </div>
+
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Bronchial artery 서술</span><span>1/5년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:20%;background:var(--text-tertiary)"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 탭 2: 반복 출제 문항 ===== -->
+  <div class="section" id="sec-repeat">
+
+    <p class="desc-text">
+      아래는 2개년 이상 반복 출제된 문항입니다.
+      <span class="badge b-all">3년 이상</span>은 거의 확정 출제로 봐야 하며,
+      <span class="badge b-two">2년 출제</span>도 출제 가능성이 높습니다.
+    </p>
+
+    <div class="table-wrap">
+      <table class="repeat-table">
+        <thead>
+          <tr>
+            <th>주제</th>
+            <th>빈도</th>
+            <th>연도별 문항 / 핵심 포인트</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- 구분 행 -->
+          <tr>
+            <td colspan="3" class="section-divider">🔴 3년 이상 반복 출제 — 최우선 암기</td>
+          </tr>
+
+          <!-- 흉부 구조물 명칭 식별 -->
+          <tr>
+            <td>
+              <strong>흉부 구조물 명칭 식별 · 매칭</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">X선·CT 영상의 알파벳·화살표로 표시된 구조물 이름 맞추기</span>
+            </td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2020 Q55</span>
+                <span class="q-chip">2022 야마3</span>
+                <span class="q-chip">2023 Q4</span>
+                <span class="q-chip">2025 Q4</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6;">
+                <strong>2020:</strong> X-ray ABCD 매칭 → trachea / aortic arch / 왼쪽 폐 / right atrium<br>
+                <strong>2022:</strong> Moguls of left heart border → 1st~5th mogul (aortic arch, main PA, LAA, LV 등)<br>
+                <strong>2023:</strong> CT에서 화살표 → calcification 종류 (eccentric)<br>
+                <strong>2025:</strong> 측면 X선 각 부분 → aortic arch / SVC / 우심방
+              </div>
+            </td>
+          </tr>
+
+          <!-- CTR 판정 -->
+          <tr>
+            <td>
+              <strong>CTR (Cardiothoracic Ratio) 판정</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">CTR 0.5 기준, 측정 조건, 정상 vs 심비대 감별</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2020 Q53</span>
+                <span class="q-chip">2022 야마1</span>
+                <span class="q-chip">2025 Q1</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6;">
+                <strong>핵심 정답 포인트:</strong> CTR = 심장 최대 횡경 / 흉곽 최대 횡경 (정상 &lt; 0.5)<br>
+                측정 조건: PA view, 완전 흡기(inspiration), 흉곽 transverse diameter는 <strong>폐문 레벨</strong>에서 측정<br>
+                supine/AP view에서는 CTR이 과대평가됨 → 조건 선지 자주 출제
+              </div>
+            </td>
+          </tr>
+
+          <!-- 허탈 판독 -->
+          <tr>
+            <td>
+              <strong>허탈(Atelectasis) 영상 판독</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">폐엽별 허탈 부위 식별, 경화와의 감별</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2020 Q57</span>
+                <span class="q-chip">2022 야마4</span>
+                <span class="q-chip">2023 Q2</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6;">
+                <strong>2020:</strong> 우상엽/우중엽/좌상엽 허탈·경화 선지 감별<br>
+                <strong>2022:</strong> 우하엽 허탈 (PA 사진 병인 설명)<br>
+                <strong>2023:</strong> 기관지경 영상 → 우상엽 폐허탈 소견
+              </div>
+            </td>
+          </tr>
+
+          <!-- X선 임상 판독 -->
+          <tr>
+            <td>
+              <strong>흉부 X선 임상 증례 판독</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">증례 사진 주고 진단·처치 선택하는 유형</span>
+            </td>
+            <td><span class="badge b-all">3년 연속</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2021 Q65</span>
+                <span class="q-chip">2023 Q1·Q3</span>
+                <span class="q-chip">2025 Q2·Q3</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6;">
+                <strong>2021:</strong> X선 소견 - 심비대증 판독<br>
+                <strong>2023:</strong> CT 폐결절 → 조직검사 / X선 기흉 진단<br>
+                <strong>2025:</strong> 기관 협착 → bronchoscopy / loculated pleural effusion
+              </div>
+            </td>
+          </tr>
+
+          <!-- 구분 행 -->
+          <tr>
+            <td colspan="3" class="section-divider">🔵 2년 출제 — 준비 필요</td>
+          </tr>
+
+          <!-- Pleura -->
+          <tr>
+            <td>
+              <strong>Pleura (흉막) 관련</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">visceral/parietal pleura 구분, pleural effusion</span>
+            </td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2022 야마2</span>
+                <span class="q-chip">2025 Q3</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6;">
+                <strong>2022:</strong> 빨간 화살표 → visceral pleura (폐허탈 영상, 폐 가장자리)<br>
+                <strong>2025:</strong> 좌측 흉강 loculated pleural effusion
+              </div>
+            </td>
+          </tr>
+
+          <!-- Hilum -->
+          <tr>
+            <td>
+              <strong>Hilum 해부 · 위치</strong><br>
+              <span style="font-size:12px;color:var(--text-tertiary);margin-top:4px;display:block;">좌우 hilum 높이 차이, hilum 구성 구조물</span>
+            </td>
+            <td><span class="badge b-two">2년 출제</span></td>
+            <td>
+              <div class="q-row">
+                <span class="q-chip">2020 Q57</span>
+                <span class="q-chip">2022 야마4</span>
+              </div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6;">
+                좌측 hilum이 우측보다 높다 (좌측 pulmonary a.가 bronchus보다 위에 위치하기 때문)<br>
+                hilum이 폐에 대해 concave하면 → 종양/허탈 의심
+              </div>
+            </td>
+          </tr>
+
+          <!-- 구분 행 -->
+          <tr>
+            <td colspan="3" class="section-divider">⚪ 1년만 출제 — 반복 패턴 없음</td>
+          </tr>
+
+          <tr>
+            <td><strong>기흉(Pneumothorax)</strong></td>
+            <td><span style="font-size:12px;color:var(--text-tertiary);">1회</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q3</span></div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">23세 남자 갑자기 흉통 → 기흉 (X선 판독의 일환)</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Calcification 종류</strong></td>
+            <td><span style="font-size:12px;color:var(--text-tertiary);">1회</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2023 Q4</span></div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">CT 폐결절 calcification → eccentric (central/eccentric/laminated/popcorn/diffuse)</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>이차폐소엽 CT 구조물</strong></td>
+            <td><span style="font-size:12px;color:var(--text-tertiary);">1회</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2020 Q56</span></div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">이차폐소엽(secondary pulmonary lobule) CT 화살표 구조물 식별</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><strong>Bronchial artery 서술</strong></td>
+            <td><span style="font-size:12px;color:var(--text-tertiary);">1회</span></td>
+            <td>
+              <div class="q-row"><span class="q-chip">2021 Q64</span></div>
+              <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">서술형 — 기관지동맥의 기시, 분포, 기능 서술 (복기 불완전)</div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== 탭 3: 문항 유형별 ===== -->
+  <div class="section" id="sec-types">
+
+    <p class="desc-text">
+      김진환 교수님은 매 시험 <strong>4문항</strong>을 출제하며(2021년 제외), 모든 문항이 영상 자료(X선, CT, 기관지경)와 함께 제시됩니다.
+      문항 형식은 크게 세 가지로 구분됩니다.
+    </p>
+
+    <div class="topic-card">
+      <h4>① 객관식 5지선다 — 영상 소견 판독형 <span style="font-size:13px;font-weight:400;color:var(--text-secondary)">(전체의 약 65%)</span></h4>
+      <p>
+        가장 많은 비중을 차지하는 유형. 흉부 X선 또는 CT 영상을 보여주고 <strong>옳은 설명 하나</strong>를 고르거나,
+        영상 소견에 맞는 <strong>처치/진단</strong>을 선택합니다. 오답 선지는 전형적인 영상 판독 오류(위치 혼동, 구조물 명칭 오류 등)로 구성됩니다.
+      </p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2025 Q1·Q2·Q3</span>
+        <span class="q-chip">2023 Q3·Q4</span>
+        <span class="q-chip">2021 Q65</span>
+        <span class="q-chip">2020 Q53·Q57</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h4>② 매칭형 (알파벳·화살표 → 구조물 이름) <span style="font-size:13px;font-weight:400;color:var(--text-secondary)">(전체의 약 25%)</span></h4>
+      <p>
+        영상 위에 A~D 또는 화살표로 표시된 구조물의 이름을 맞추는 형식.
+        <strong>흉부 X선 PA·Lateral, CT 모두 사용</strong>됩니다.
+        정답 구조물: trachea, aortic arch, SVC, right atrium, 좌심실, main pulmonary artery, visceral pleura 등이 반복됩니다.
+      </p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2025 Q4 — Lateral X선 명칭</span>
+        <span class="q-chip">2023 Q4 — CT calcification 화살표</span>
+        <span class="q-chip">2022 야마3 — Left heart border moguls</span>
+        <span class="q-chip">2020 Q55·Q56 — ABCD 매칭 / 이차폐소엽</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h4>③ 단답형 / 서술형 <span style="font-size:13px;font-weight:400;color:var(--text-secondary)">(전체의 약 10%)</span></h4>
+      <p>
+        영상을 보고 <strong>소견을 직접 서술</strong>하거나 특정 구조물·질환을 설명하는 형식.
+        2023년 Q1(CT 폐결절 대처), Q2(기관지경 소견)처럼 짧은 단답에 가깝거나,
+        2021년 Q64(Bronchial artery 서술)처럼 본격적인 서술형도 드물게 출제됩니다.
+      </p>
+      <div class="q-row" style="margin-top:12px;">
+        <span class="q-chip">2023 Q1 — CT 폐결절 대처</span>
+        <span class="q-chip">2023 Q2 — 기관지경 소견</span>
+        <span class="q-chip">2021 Q64 — Bronchial artery 서술</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== 탭 4: 시험 전략 ===== -->
+  <div class="section" id="sec-tips">
+
+    <div class="topic-card tip-green">
+      <h4>🟢 최우선 암기: 4년 연속 출제 — 구조물 명칭</h4>
+      <p style="margin-bottom:8px;">① <strong>흉부 X선 PA view 구조물</strong>: trachea, carina, aortic arch, SVC, right atrium, main pulmonary artery, left atrial appendage, left ventricle, right ventricle</p>
+      <p style="margin-bottom:8px;">② <strong>Lateral X선 구조물</strong>: aortic arch, SVC, 우심방, retrosternal airspace, 좌심실 후면</p>
+      <p style="margin-bottom:8px;">③ <strong>Moguls of left heart border</strong>: 1st=aortic arch, 2nd=main PA, 3rd=left atrial appendage, 4th=LV, 5th=pericardial fat pad</p>
+      <p>④ <strong>이차폐소엽 CT</strong>: centrilobular artery, bronchiole, 폐포, interlobular septum 위치 관계 파악</p>
+    </div>
+
+    <div class="topic-card tip-green">
+      <h4>🟢 최우선 암기: 3년 연속 출제 — CTR</h4>
+      <p style="margin-bottom:8px;">① <strong>CTR 정상 기준</strong>: &lt; 0.5 (심장 최대 횡경 / 흉곽 최대 횡경)</p>
+      <p style="margin-bottom:8px;">② <strong>정확한 CTR 측정 조건</strong>: PA view (not AP), 완전 흡기(inspiration), 서있는 자세(not supine), 흉곽 횡경은 폐문 레벨의 최대 흉곽 직경</p>
+      <p>③ <strong>함정 선지 패턴</strong>: supine/AP view → CTR 과대평가, 호기 시 → CTR 증가 → 선지에서 걸러내는 능력 필요</p>
+    </div>
+
+    <div class="topic-card tip-green">
+      <h4>🟢 최우선 암기: 3년 연속 출제 — 허탈(Atelectasis)</h4>
+      <p style="margin-bottom:8px;">① <strong>우상엽 허탈</strong>: 우측 폐문이 상방으로 이동, 기관이 우측으로 편향</p>
+      <p style="margin-bottom:8px;">② <strong>우하엽 허탈</strong>: 우횡격막 상승, 우심장 경계 불명확</p>
+      <p style="margin-bottom:8px;">③ <strong>허탈 vs 경화 감별</strong>: 허탈 = 폐엽 크기 감소 + 음영 증가 / 경화 = 크기 유지 + 음영 증가 (air bronchogram 有)</p>
+      <p>④ <strong>기관지경 소견</strong>: 점막이 우상엽 기관지를 막으면 우상엽 허탈 → 기관지경으로 확인</p>
+    </div>
+
+    <div class="topic-card tip-blue">
+      <h4>🔵 준비 필요: Pleura & Hilum</h4>
+      <p style="margin-bottom:8px;"><strong>Pleura:</strong> visceral pleura = 폐 표면, parietal pleura = 흉벽/횡격막. 기흉/폐허탈 시 폐의 가장자리를 이루는 것 = visceral pleura</p>
+      <p style="margin-bottom:8px;"><strong>Pleural effusion:</strong> loculated = 국소적으로 격리된 흉막액 → 측면 사진에서 lenticular/D자형 음영</p>
+      <p style="margin-bottom:8px;"><strong>Hilum 높이:</strong> 좌측 hilum &gt; 우측 hilum (left pulmonary a.가 bronchus보다 위쪽에 위치)</p>
+      <p><strong>Hilum 모양:</strong> 정상 = convex outward. concave = 종양에 의한 당김 의심</p>
+    </div>
+
+    <div class="topic-card tip-orange">
+      <h4>🟡 교수님 출제 스타일 특징</h4>
+      <p style="margin-bottom:8px;">• <strong>반드시 영상 자료 동반</strong>: 이론만 묻는 문제 없음. 모든 문항에 X선·CT·기관지경 영상이 첨부됨</p>
+      <p style="margin-bottom:8px;">• <strong>"옳은 것 하나"형 선지 패턴</strong>: 오답 선지는 좌·우 혼동, 허탈·경화 혼동, 구조물 명칭 오류로 구성됨</p>
+      <p style="margin-bottom:8px;">• <strong>CT + X선 혼합 출제</strong>: 같은 시험에 CT와 X선이 함께 출제됨. 두 영상 모두 판독 연습 필수</p>
+      <p style="margin-bottom:8px;">• <strong>임상 상황 기반</strong>: "흉통으로 내원한 N세 환자" → 처치/진단을 고르는 증례형 자주 출제</p>
+      <p>• <strong>야마 충실도 높음</strong>: 2023년 총평에 "이전 야마와 비슷한 느낌으로 출제"라고 명시 → 야마 내용 그대로 반복 출제 경향</p>
+    </div>
+
+    <div class="topic-card tip-red">
+      <h4>🔴 비효율 영역: 1회만 출제된 주제 (시간 부족 시 건너뛰기)</h4>
+      <p style="margin-bottom:8px;">• <strong>Bronchial artery 서술</strong> (2021): 1회 확인. 단, 서술형이므로 기시(descending aorta), 분포(기관지 벽 영양), pulmonary artery와 차이 정도는 기본 파악</p>
+      <p style="margin-bottom:8px;">• <strong>이차폐소엽 CT</strong> (2020): 1회 확인. 세부 구조물 암기보다 개념 이해 수준으로 충분</p>
+      <p>• <strong>Calcification 종류</strong> (2023): eccentric, central, laminated, popcorn — 5가지 용어만 파악해두면 충분</p>
+    </div>
+
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <span class="footer-brand">KAISTUDY_WJ</span>
+  </div>
+
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
