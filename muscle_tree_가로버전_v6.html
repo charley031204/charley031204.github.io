@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>근육 동정 알고리즘 (Smart Focus & Center)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>근육 동정 알고리즘 (Mobile Support & Classic UI)</title>
     <style>
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
@@ -15,28 +15,22 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
+            -webkit-user-select: none;
+            user-select: none; 
         }
 
         .header {
             text-align: center;
-            padding: 20px 0 10px 0;
+            padding: 16px 0 10px 0;
             background: #fff;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             z-index: 100;
         }
 
-        .header h1 {
-            color: #0f172a;
-            margin: 0 0 5px 0;
-            font-size: 22px;
-        }
+        .header h1 { color: #0f172a; margin: 0 0 4px 0; font-size: 20px; }
+        .header p { margin: 0; color: #64748b; font-size: 13px; }
 
-        .header p {
-            margin: 0;
-            color: #64748b;
-            font-size: 14px;
-        }
-
+        /* 클래식 사이즈로 롤백된 컨트롤 영역 */
         .controls-top {
             display: flex;
             justify-content: center;
@@ -69,6 +63,7 @@
             margin-bottom: 4px;
         }
 
+        /* 클래식 사이즈로 롤백된 버튼 */
         .btn {
             padding: 8px 16px;
             background-color: #fff;
@@ -80,7 +75,7 @@
             transition: all 0.2s;
         }
 
-        .btn:hover { background-color: #3b82f6; color: #fff; }
+        .btn:active, .btn:hover { background-color: #3b82f6; color: #fff; }
         
         .btn-zoom {
             width: 40px;
@@ -93,7 +88,7 @@
             border-color: #cbd5e1;
             color: #475569;
         }
-        .btn-zoom:hover { background: #f1f5f9; color: #0f172a; border-color: #94a3b8; }
+        .btn-zoom:active, .btn-zoom:hover { background: #f1f5f9; color: #0f172a; border-color: #94a3b8; }
         .btn-zoom.active { background: #3b82f6; color: white; border-color: #3b82f6; }
 
         .viewport {
@@ -102,6 +97,7 @@
             position: relative;
             cursor: grab;
             background-color: #f1f5f9;
+            touch-action: none; 
         }
         .viewport:active { cursor: grabbing; }
 
@@ -138,13 +134,7 @@
         .tree > ul { padding-left: 0; }
         .tree > ul > li::before, .tree > ul > li::after { display: none; }
 
-        .tree li {
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 15px 0;
-        }
-
+        .tree li { display: flex; align-items: center; position: relative; padding: 15px 0; }
         .tree li::before { content: ''; position: absolute; left: -80px; top: 50%; width: 80px; border-top: 2px solid #94a3b8; }
         .tree li::after { content: ''; position: absolute; left: -80px; top: 0; bottom: 0; border-left: 2px solid #94a3b8; }
         .tree li:first-child::after { top: 50%; }
@@ -152,14 +142,14 @@
 
         .node {
             background: #fff;
-            border-radius: 10px;
-            padding: 16px 24px;
+            border-radius: 12px;
+            padding: 18px 24px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             position: relative;
             z-index: 1;
             cursor: pointer;
             border-left: 6px solid #cbd5e1;
-            min-width: 280px;
+            min-width: 260px;
             white-space: nowrap; 
             transition: all 0.2s;
         }
@@ -173,12 +163,12 @@
             margin-bottom: 8px;
         }
 
-        .badge-step { background: #1e293b; color: #fff; }
+        .badge-step { background: #1e293b; color: #fff; font-size: 12px; }
         .badge-cond { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
-        .badge-warn { background: #fef2f2; color: #ef4444; border: 1px solid #fecaca; } /* 주의 강조용 뱃지 */
+        .badge-warn { background: #fef2f2; color: #ef4444; border: 1px solid #fecaca; }
 
-        .node-title { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-        .node-desc { font-size: 13px; color: #64748b; line-height: 1.4; }
+        .node-title { font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+        .node-desc { font-size: 14px; color: #64748b; line-height: 1.4; }
 
         .node-root { border-left-color: #8b5cf6; background: #f5f3ff; }
         .node-decision { border-left-color: #3b82f6; }
@@ -187,18 +177,19 @@
         .node.has-children::after {
             content: '−';
             position: absolute;
-            right: -14px;
+            right: -16px;
             top: 50%;
             transform: translateY(-50%);
             background: #fff;
             border: 2px solid #94a3b8;
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            font-size: 18px;
             color: #475569;
         }
 
@@ -208,18 +199,29 @@
             color: #3b82f6;
             background: #eff6ff;
         }
+
+        /* 모바일 최적화 (트리 여백과 노드 사이즈만 조절, 버튼 크기 변경 제거) */
+        @media (max-width: 768px) {
+            .node { padding: 14px 18px; min-width: 220px; }
+            .node-title { font-size: 16px; }
+            .node-desc { font-size: 13px; }
+            .tree-container { padding: 40px; }
+            .tree ul { padding-left: 50px; }
+            .tree li::before { left: -50px; width: 50px; }
+            .tree li::after { left: -50px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="header">
     <h1>근육 동정 알고리즘</h1>
-    <p>주행 방향(Direction) → 위치(Location) → 분절(Spanning) 순서의 소거법</p>
+    <p>주행 방향 → 위치 → 분절 순서의 소거법</p>
 </div>
 
 <div class="controls-top">
-    <button class="btn" onclick="expandAll()">모든 단계 펼치기</button>
-    <button class="btn" onclick="collapseAll()">모든 단계 접기</button>
+    <button class="btn" onclick="expandAll()">모두 펼치기</button>
+    <button class="btn" onclick="collapseAll()">모두 접기</button>
 </div>
 
 <div class="zoom-controls">
@@ -330,12 +332,21 @@
                                     <ul>
                                         <li>
                                             <div class="node node-decision has-children collapsed">
-                                                <span class="badge badge-cond">가장 긺 (4~6개 분절)</span>
+                                                <span class="badge badge-cond">가장 긺 (4~6개 분절 건너뜀)</span>
                                                 <div class="node-title">반극근 (Semispinalis)</div>
                                             </div>
                                             <div class="children-wrapper">
                                                 <ul>
-                                                    <li><div class="node node-leaf"><span class="badge badge-cond">가장 두꺼우며 후두골 덮음</span><div class="node-title">Semispinalis capitis</div></div></li>
+                                                    <li>
+                                                        <div class="node node-leaf">
+                                                            <span class="badge badge-cond">TP → 후두골 직행</span>
+                                                            <div class="node-title">Semispinalis capitis</div>
+                                                            <div class="node-desc" style="white-space: normal; max-width: 260px; margin-top: 8px; border-top: 1px dashed #cbd5e1; padding-top: 8px;">
+                                                                <b style="color:#ef4444;">※ 형태적 예외 주의:</b><br>
+                                                                종지가 두개골이라 4~6분절 룰과 무관하게 <b>기립근처럼 길고 거대한 수직 덩어리</b>로 보임. 목 뒤를 꽉 채우는 가장 큰 근육으로 감별.
+                                                            </div>
+                                                        </div>
+                                                    </li>
                                                     <li><div class="node node-leaf"><span class="badge badge-cond">경추부 극돌기 종지</span><div class="node-title">Semispinalis cervicis</div></div></li>
                                                     <li><div class="node node-leaf"><span class="badge badge-cond">흉추부 극돌기 종지</span><div class="node-title">Semispinalis thoracis</div></div></li>
                                                 </ul>
@@ -404,6 +415,11 @@
     const btnAutoFit = document.getElementById('btnAutoFit');
     const zoomLevelText = document.getElementById('zoomLevel');
 
+    // 모바일 가독성 보호용 스케일
+    function getMinScale() {
+        return window.innerWidth < 768 ? 0.35 : 0.15; 
+    }
+
     function updateTransform() {
         container.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
         zoomLevelText.innerText = Math.round(currentScale * 100) + '%';
@@ -422,10 +438,11 @@
         const vWidth = viewport.clientWidth;
         const vHeight = viewport.clientHeight;
         
-        const scaleX = (vWidth - 100) / treeRect.width;
-        const scaleY = (vHeight - 100) / treeRect.height;
+        const padding = window.innerWidth < 768 ? 40 : 100;
+        const scaleX = (vWidth - padding) / treeRect.width;
+        const scaleY = (vHeight - padding) / treeRect.height;
         
-        currentScale = Math.max(0.2, Math.min(scaleX, scaleY, 1));
+        currentScale = Math.max(getMinScale(), Math.min(scaleX, scaleY, 1));
         
         translateX = (vWidth - (treeRect.width * currentScale)) / 2;
         translateY = (vHeight - (treeRect.height * currentScale)) / 2;
@@ -438,9 +455,7 @@
 
     function focusOnElement(element, wrapper) {
         const containerRect = container.getBoundingClientRect();
-        
         const nodeRect = element.getBoundingClientRect();
-        // wrapper가 전달되지 않았거나(접을 때), wrapper가 없는 경우 nodeRect만 사용
         const wrapperRect = wrapper ? wrapper.getBoundingClientRect() : nodeRect;
         
         const targetLeft = Math.min(nodeRect.left, wrapperRect.left);
@@ -461,14 +476,14 @@
         
         const vWidth = viewport.clientWidth;
         const vHeight = viewport.clientHeight;
-        const padding = 100;
+        const padding = window.innerWidth < 768 ? 40 : 100;
         
         let targetScale = currentScale;
         
         if (localWidth * currentScale > vWidth - padding || localHeight * currentScale > vHeight - padding) {
             const scaleX = (vWidth - padding) / localWidth;
             const scaleY = (vHeight - padding) / localHeight;
-            targetScale = Math.max(0.2, Math.min(currentScale, scaleX, scaleY));
+            targetScale = Math.max(getMinScale(), Math.min(currentScale, scaleX, scaleY));
         }
         
         currentScale = targetScale;
@@ -492,13 +507,8 @@
                 isAutoFit = false;
                 btnAutoFit.classList.remove('active');
                 
-                if (isOpening) {
-                    // 펼칠 때는 노드와 하위 래퍼 전체가 보이도록 포커스
-                    setTimeout(() => focusOnElement(this, wrapper), 320);
-                } else {
-                    // 접을 때는 방금 클릭한 그 노드(본인)만 화면 중앙에 오도록 포커스
-                    setTimeout(() => focusOnElement(this, this), 320);
-                }
+                if (isOpening) setTimeout(() => focusOnElement(this, wrapper), 320);
+                else setTimeout(() => focusOnElement(this, this), 320);
             }
         });
     });
@@ -524,7 +534,7 @@
     function zoom(delta) {
         isAutoFit = false;
         const newScale = currentScale + delta;
-        currentScale = Math.max(0.2, Math.min(newScale, 3));
+        currentScale = Math.max(getMinScale(), Math.min(newScale, 3));
         updateTransform();
     }
 
@@ -539,37 +549,92 @@
 
     let isDragging = false;
     let startX, startY;
+    let initialPinchDistance = null;
+    let initialScale = 1;
 
-    viewport.addEventListener('mousedown', (e) => {
+    function getEventPoint(e) {
+        if (e.touches && e.touches.length > 0) {
+            return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+        return { x: e.clientX, y: e.clientY };
+    }
+
+    function getPinchDistance(e) {
+        if (e.touches.length < 2) return 0;
+        return Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+        );
+    }
+
+    function handleStart(e) {
+        if (e.target.closest('.node')) return;
+        if (e.type === 'touchstart') e.preventDefault(); 
+
+        if (e.touches && e.touches.length === 2) {
+            isDragging = false;
+            initialPinchDistance = getPinchDistance(e);
+            initialScale = currentScale;
+            return;
+        }
+
         isDragging = true;
-        startX = e.clientX - translateX;
-        startY = e.clientY - translateY;
+        const pt = getEventPoint(e);
+        startX = pt.x - translateX;
+        startY = pt.y - translateY;
         container.style.transition = 'none';
-    });
+    }
 
-    window.addEventListener('mousemove', (e) => {
+    function handleMove(e) {
+        if (e.type === 'touchmove') e.preventDefault();
+
+        if (e.touches && e.touches.length === 2 && initialPinchDistance) {
+            isAutoFit = false;
+            btnAutoFit.classList.remove('active');
+            container.style.transition = 'none';
+            
+            const currentDistance = getPinchDistance(e);
+            const scaleChange = currentDistance / initialPinchDistance;
+            
+            currentScale = Math.max(getMinScale(), Math.min(initialScale * scaleChange, 3));
+            updateTransform();
+            return;
+        }
+
         if (!isDragging) return;
-        e.preventDefault();
+        
         isAutoFit = false;
         btnAutoFit.classList.remove('active');
         
-        translateX = e.clientX - startX;
-        translateY = e.clientY - startY;
+        const pt = getEventPoint(e);
+        translateX = pt.x - startX;
+        translateY = pt.y - startY;
         container.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
-    });
+    }
 
-    window.addEventListener('mouseup', () => {
+    function handleEnd(e) {
+        if (e.touches && e.touches.length < 2) {
+            initialPinchDistance = null;
+        }
         if (isDragging) {
             isDragging = false;
             container.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
         }
-    });
+    }
+
+    viewport.addEventListener('mousedown', handleStart);
+    window.addEventListener('mousemove', handleMove, { passive: false });
+    window.addEventListener('mouseup', handleEnd);
+
+    viewport.addEventListener('touchstart', handleStart, { passive: false });
+    window.addEventListener('touchmove', handleMove, { passive: false });
+    window.addEventListener('touchend', handleEnd);
 
     viewport.addEventListener('wheel', (e) => {
         e.preventDefault();
         const delta = e.deltaY < 0 ? 0.05 : -0.05;
         zoom(delta);
-    });
+    }, { passive: false });
 
     window.onload = calculateAutoFit;
 </script>
