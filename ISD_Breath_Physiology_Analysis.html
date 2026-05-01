@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이상도 교수님 호흡생리 기출 분석</title>
+<style>
+:root {
+  --bg-body: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); background-color: var(--bg-body); color: var(--text-primary); line-height: 1.5; padding: 2rem 1rem; }
+.wrap { max-width: 820px; margin: 0 auto; background: var(--bg-card); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; letter-spacing: -0.5px; }
+.sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+.tabs { display: flex; gap: 8px; margin-bottom: 2rem; flex-wrap: wrap; background: var(--bg-secondary); padding: 6px; border-radius: var(--radius-lg); }
+.tab { flex: 1; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 500; border: none; border-radius: var(--radius-md); cursor: pointer; background: transparent; color: var(--text-secondary); transition: all 0.2s ease; }
+.tab:hover { color: var(--text-primary); }
+.tab.active { background: var(--bg-card); color: var(--primary); font-weight: 600; box-shadow: var(--shadow-sm); }
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 2rem; }
+.stat-card { flex: 1; min-width: 120px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; transition: transform 0.2s ease; }
+.stat-card:hover { transform: translateY(-2px); }
+.stat-card .num { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-card .lbl { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+.freq-container { background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1.5rem; border: 1px solid var(--border); }
+.freq-title { font-size: 15px; font-weight: 600; margin-bottom: 1.2rem; display: block; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.freq-bar-wrap { margin-bottom: 0.9rem; }
+.freq-bar-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; display: flex; justify-content: space-between; font-weight: 500; }
+.freq-bar-bg { background: var(--border); border-radius: 99px; height: 10px; overflow: hidden; }
+.freq-bar-fill { height: 100%; border-radius: 99px; transition: width 0.8s ease-out; }
+.table-wrap { overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.repeat-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
+.repeat-table th { padding: 12px 16px; font-weight: 600; font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-bottom: 2px solid var(--border); }
+.repeat-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-primary); line-height: 1.6; }
+.repeat-table tr:last-child td { border-bottom: none; }
+.repeat-table tr:hover td { background: var(--bg-secondary); }
+.badge { display: inline-flex; align-items: center; justify-content: center; padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.b-all { background: #d1fae5; color: #065f46; }
+.b-two { background: #dbeafe; color: #1e40af; }
+.b-one { background: #f3f4f6; color: #6b7280; }
+.q-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.q-chip { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border); font-weight: 500; }
+.topic-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-sm); }
+.topic-card h4 { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+.topic-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.topic-card strong { color: var(--text-primary); font-weight: 600; }
+.tip-green { border-left: 4px solid var(--success); }
+.tip-green h4 { color: #065f46; }
+.tip-blue { border-left: 4px solid var(--primary); }
+.tip-blue h4 { color: #1e40af; }
+.tip-orange { border-left: 4px solid var(--warning); }
+.tip-orange h4 { color: #92400e; }
+.desc-text { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+.matrix-wrap { overflow-x: auto; margin-top: 1.5rem; }
+.matrix-table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center; }
+.matrix-table th { padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--border); font-weight: 600; color: var(--text-secondary); }
+.matrix-table td { padding: 10px 14px; border: 1px solid var(--border); font-weight: 500; }
+.matrix-high { background: #d1fae5; color: #065f46; }
+.matrix-mid { background: #dbeafe; color: #1e40af; }
+.matrix-low { background: #f3f4f6; color: #6b7280; }
+.matrix-diag { background: var(--bg-tertiary); color: var(--text-tertiary); }
+.year-section { margin-bottom: 1.5rem; }
+.year-section h4 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+.unique-list { list-style: none; padding: 0; }
+.unique-list li { font-size: 13.5px; color: var(--text-secondary); padding: 8px 12px; border-bottom: 1px solid var(--border); line-height: 1.55; }
+.unique-list li:last-child { border-bottom: none; }
+.qnum { font-weight: 600; color: var(--text-primary); margin-right: 8px; }
+.figure-badge { font-size: 11px; margin-right: 6px; background: #ede9fe; color: #6d28d9; border-radius: 4px; padding: 2px 6px; font-weight: 600; }
+.footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; align-items: center; }
+.footer-brand { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.05em; font-weight: 500; }
+.section-divider { text-align: center; font-size: 12px; font-weight: 600; color: var(--text-secondary); background: var(--bg-tertiary); padding: 8px; border: 1px solid var(--border); border-radius: 4px; margin: 8px 0; }
+.orig-list { list-style: none; padding: 0; margin-top: 8px; }
+.orig-list li { font-size: 13px; color: var(--text-secondary); padding: 5px 0; border-bottom: 1px dashed var(--border); }
+.orig-list li:last-child { border-bottom: none; }
+.year-tag { font-size: 11px; font-weight: 700; margin-right: 6px; color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h2>이상도 교수님 호흡생리 기출 분석 (2021·2022·2023·2025)</h2>
+  <p class="sub">4개년 기출문제의 출제 유형 및 반복 경향 분석 | 총 115문항 분석</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="show('overview')">전체 개요</button>
+    <button class="tab" onclick="show('repeat')">반복 출제 문항</button>
+    <button class="tab" onclick="show('unique')">신규 문항</button>
+    <button class="tab" onclick="show('types')">문항 유형별</button>
+    <button class="tab" onclick="show('tips')">시험 전략</button>
+  </div>
+
+  <!-- 탭 1: 전체 개요 -->
+  <div class="section active" id="sec-overview">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num" style="color:var(--success)">68%</div>
+        <div class="lbl">평균 반복률</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">5개</div>
+        <div class="lbl">4년 연속 주제</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">6개</div>
+        <div class="lbl">3년 출제 주제</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">17개</div>
+        <div class="lbl">전체 반복 주제군</div>
+      </div>
+    </div>
+
+    <p class="desc-text">이상도 교수님은 <strong>HPV·V/Q ratio·호흡 중추·화학수용기·폐용량 계산</strong>의 5대 핵심 주제를 매년 반복 출제합니다. 연도별 형식(객관식→T/F→단답형)은 바뀌지만 묻는 개념은 동일하며, <strong>Fick 법칙·Bohr effect·CO₂ 운반</strong>도 3년 이상 꾸준히 출제됩니다. 2025년은 전체 20문항 중 75%가 기출 반복 주제였습니다.</p>
+
+    <!-- 연도별 반복률 바 차트 -->
+    <div class="freq-container">
+      <span class="freq-title">연도별 기출 반복률</span>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2025년 (20문항 중 15개 반복)</span><span style="color:var(--success);font-weight:700;">75%</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2023년 (23문항 중 16개 반복)</span><span style="color:var(--success);font-weight:700;">70%</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:70%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2022년 (32문항 중 20개 반복)</span><span style="color:var(--primary);font-weight:700;">62%</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:62%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>2021년 (40문항 중 22개 반복)</span><span style="color:var(--primary);font-weight:700;">55%</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:55%;background:var(--primary)"></div></div>
+      </div>
+    </div>
+
+    <!-- 연도×연도 겹침 매트릭스 -->
+    <div class="freq-container" style="margin-top:1.5rem;">
+      <span class="freq-title">연도×연도 주제 겹침 매트릭스 (공통 출제 주제 수)</span>
+      <div class="matrix-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>기준 연도</th>
+              <th>2021</th>
+              <th>2022</th>
+              <th>2023</th>
+              <th>2025</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>2021</th>
+              <td class="matrix-diag">—</td>
+              <td class="matrix-mid">10</td>
+              <td class="matrix-high">12</td>
+              <td class="matrix-mid">9</td>
+            </tr>
+            <tr>
+              <th>2022</th>
+              <td class="matrix-mid">10</td>
+              <td class="matrix-diag">—</td>
+              <td class="matrix-high">16</td>
+              <td class="matrix-mid">9</td>
+            </tr>
+            <tr>
+              <th>2023</th>
+              <td class="matrix-high">12</td>
+              <td class="matrix-high">16</td>
+              <td class="matrix-diag">—</td>
+              <td class="matrix-high">10</td>
+            </tr>
+            <tr>
+              <th>2025</th>
+              <td class="matrix-mid">9</td>
+              <td class="matrix-mid">9</td>
+              <td class="matrix-high">10</td>
+              <td class="matrix-diag">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--text-tertiary);margin-top:8px;">* 녹색(≥12): 높은 겹침 / 파랑(8-11): 중간 겹침</p>
+    </div>
+
+    <!-- 주제별 출제 빈도 -->
+    <div class="freq-container" style="margin-top:1.5rem;">
+      <span class="freq-title">핵심 주제별 출제 빈도</span>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>HPV / 폐혈관 조절</span><span>4/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>V/Q ratio (shunt vs dead space)</span><span>4/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>호흡 중추 DRG/VRG</span><span>4/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>화학수용기 (Chemoreceptors)</span><span>4/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>폐용량 계산 (IC/VC/FRC/dead space)</span><span>4/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:100%;background:var(--success)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Compliance / Surfactant</span><span>3/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Bohr effect / O₂-Hb 해리 곡선</span><span>3/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Fick's law / 확산 (Diffusion)</span><span>3/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>CO₂ 운반 / Chloride shift</span><span>3/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Pneumothorax (기흉)</span><span>3/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>O₂ delivery 계산 (a-vDO₂, CO)</span><span>3/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:75%;background:var(--primary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>폐쇄성 vs 제한성 폐질환</span><span>2/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:50%;background:var(--text-tertiary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Cough reflex</span><span>2/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:50%;background:var(--text-tertiary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Epinephrine / 기관지 조절</span><span>2/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:50%;background:var(--text-tertiary)"></div></div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-bar-label"><span>Pulmonary vs bronchial circulation</span><span>2/4년</span></div>
+        <div class="freq-bar-bg"><div class="freq-bar-fill" style="width:50%;background:var(--text-tertiary)"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 2: 반복 출제 문항 -->
+  <div class="section" id="sec-repeat">
+    <p class="desc-text">2개년 이상 반복 출제된 주제입니다. <span class="badge b-all">4년 연속</span>은 확정 출제, <span class="badge b-two">3년 출제</span>도 최우선 암기 대상입니다.</p>
+
+    <div class="table-wrap">
+      <table class="repeat-table">
+        <thead>
+          <tr><th>주제</th><th>빈도</th><th>연도별 원문 발문</th></tr>
+        </thead>
+        <tbody>
+
+          <tr><td colspan="3" style="background:var(--bg-tertiary);font-weight:700;font-size:12px;color:var(--text-secondary);padding:10px 16px;text-align:center;">★ 4년 연속 출제 (매년 반드시 나옴)</td></tr>
+
+          <!-- HPV -->
+          <tr>
+            <td><strong>HPV / 폐혈관 조절</strong><br><span style="font-size:12px;color:var(--text-tertiary);">Hypoxic Pulmonary Vasoconstriction</span></td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q10</span>폐포 PO₂가 낮아질 때 폐순환에서 나타나는 생리적 반응은?</li>
+                <li><span class="year-tag">2023 Q7</span>pulmonary artery 수축을 유발하는 원인으로 옳은 것은? (decreased PO₂ + increased PCO₂)</li>
+                <li><span class="year-tag">2022 Q3</span>환기량이 감소한 폐포 주변 모세혈관으로 가는 혈류량은 증가한다. (O/X)</li>
+                <li><span class="year-tag">2021 Q33</span>폐 소동맥 확장을 유발하는 폐 모세혈관의 상태로 옳은 것은?</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: PO₂↓ → 폐동맥 수축(HPV) / PO₂↑ + PCO₂↓ → 폐동맥 이완 (전신 혈관과 반대)</div>
+            </td>
+          </tr>
+
+          <!-- V/Q ratio -->
+          <tr>
+            <td><strong>V/Q ratio</strong><br><span style="font-size:12px;color:var(--text-tertiary);">Shunt / Dead space / 분포</span></td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q6</span>V/Q 비율이 1보다 훨씬 커졌을 때 나타나는 현상은? → physiological dead space 증가</li>
+                <li><span class="year-tag">2025 Q7</span>심각한 폐렴으로 공기 없고 혈액 공급만 이루어지는 상황은? → Physiological shunt</li>
+                <li><span class="year-tag">2023 Q9</span>Va/Q 정상범위, 상/하부 분포, bronchial obstruction 시 변화</li>
+                <li><span class="year-tag">2022 Q13</span>Ventilation이 상부로 갈수록 증가한다. (O/X)</li>
+                <li><span class="year-tag">2022 Q14</span>Perfusion이 상부로 갈수록 증가한다. (O/X)</li>
+                <li><span class="year-tag">2022 Q15</span>V/Q가 상부로 갈수록 증가한다. (O/X)</li>
+                <li><span class="year-tag">2021 Q35</span>V/Q 비율에 대해 가장 적절한 것은? (정상값, CO₂ 분압 변화, 상하부 비교)</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 평균 0.8 / V/Q=0 shunt / V/Q=∞ dead space / 상부 높음 / 하부 낮음</div>
+            </td>
+          </tr>
+
+          <!-- DRG/VRG 호흡 중추 -->
+          <tr>
+            <td><strong>호흡 중추 DRG/VRG</strong><br><span style="font-size:12px;color:var(--text-tertiary);">Respiratory centers, Phrenic nerve</span></td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q15</span>연수(medulla)의 호흡 중추는 호흡의 기본 리듬을 생성한다. [5지선다]</li>
+                <li><span class="year-tag">2023 Q11</span>호흡 조절 설명 중 가장 옳은 것 - chemosensitive area, DRG, VRG, pneumotaxic</li>
+                <li><span class="year-tag">2022 Q1</span>VRG가 주로 작용하는 근육은? → abdominal m. + internal IC m.</li>
+                <li><span class="year-tag">2022 Q2</span>Diaphragm의 수축과 이완을 조절하는 것은? → phrenic nerve (C3-C5)</li>
+                <li><span class="year-tag">2021 Q32</span>DRG 활성화 시 수축하는 근육은? → diaphragm</li>
+                <li><span class="year-tag">2021 Q13</span>VRG는 흡기와 호기 모두에 작용한다. (O/X)</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: DRG → diaphragm (phrenic C3-C5) / VRG → 복근+내늑간근 (강제호흡)</div>
+            </td>
+          </tr>
+
+          <!-- Chemoreceptors -->
+          <tr>
+            <td><strong>화학수용기</strong><br><span style="font-size:12px;color:var(--text-tertiary);">Peripheral / Central chemoreceptors</span></td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q16</span>말초 화학수용기가 중추보다 더 민감하게 반응하는 자극은? → PO₂ 급격한 감소</li>
+                <li><span class="year-tag">2025 Q17</span>혈액 내 CO₂ 분압이 높아지면 발생하는 생리적 반응은?</li>
+                <li><span class="year-tag">2023 Q11</span>혈액 내 CO₂ 증가 인지 → 호흡 증가: chemosensitive area in medullary oblongata</li>
+                <li><span class="year-tag">2022 Q17</span>고지대에서 PCO₂ 감소해도 정상 호흡 유지 - 관여 중추는?</li>
+                <li><span class="year-tag">2021 Q37</span>Chemoreceptor 활성과 가장 관련이 적은 것은? → H⁺ in blood (BBB 통과 불가)</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 말초 = PO₂ 감지 / 중추 = CO₂/H⁺ in CSF / 혈중 H⁺는 BBB 불통과</div>
+            </td>
+          </tr>
+
+          <!-- 폐용량 계산 -->
+          <tr>
+            <td><strong>폐용량 계산</strong><br><span style="font-size:12px;color:var(--text-tertiary);">IC, VC, FRC, RV, Dead space, Alveolar ventilation</span></td>
+            <td><span class="badge b-all">4년 연속</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q5</span>정상 호기 후 최대로 더 들이마실 수 있는 공기의 양은? → IRV</li>
+                <li><span class="year-tag">2023 Q18-23</span>TV/IRV/ERV/He dilution/PaCO₂/PeCO₂ 이용 IC, VC, FRC, RV, Dead space, Alveolar ventilation 계산</li>
+                <li><span class="year-tag">2022 Q16</span>PaCO₂=40, PeCO₂=32, VT=500 mL → physiological dead space = 100 mL (Bohr equation)</li>
+                <li><span class="year-tag">2021 Q16-23</span>TV/IRV/ERV/He dilution/PaCO₂/PeCO₂/RR 이용 전체 폐용량 + dead space + alveolar ventilation 계산</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: Bohr eq: VD=VT×(PaCO₂-PeCO₂)/PaCO₂ / FRC: He dilution / Alveolar V = RR×(TV-VD)</div>
+            </td>
+          </tr>
+
+          <tr><td colspan="3" style="background:var(--bg-tertiary);font-weight:700;font-size:12px;color:var(--text-secondary);padding:10px 16px;text-align:center;">▲ 3년 출제 주제 (최우선 암기)</td></tr>
+
+          <!-- Compliance/Surfactant -->
+          <tr>
+            <td><strong>Compliance / Surfactant</strong><br><span style="font-size:12px;color:var(--text-tertiary);">표면장력, Type II pneumocyte</span></td>
+            <td><span class="badge b-two">3년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q3</span>Compliance가 감소하는 경우는? → 폐섬유증</li>
+                <li><span class="year-tag">2025 Q4</span>폐포 표면장력을 감소시켜 팽창을 용이하게 하는 물질은? → Surfactant</li>
+                <li><span class="year-tag">2023 Q4</span>폐의 유순도가 가장 큰 것은? → 식염수로 채워진 폐</li>
+                <li><span class="year-tag">2022 Q10</span>식염수로 채웠을 때 공기보다 compliance가 크다. (O/X) → O</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 식염수 → 표면장력=0 → compliance 최대 / Surfactant: Type II pneumocyte, DPPC</div>
+            </td>
+          </tr>
+
+          <!-- Bohr effect -->
+          <tr>
+            <td><strong>Bohr effect / O₂-Hb 해리 곡선</strong><br><span style="font-size:12px;color:var(--text-tertiary);">우측/좌측 이동 인자</span></td>
+            <td><span class="badge b-two">3년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q13</span>조직에서 CO₂↑ 시 Hb가 O₂를 더 많이 해리시키는 기전은? → CO₂↑로 인한 pH↓가 친화도↓</li>
+                <li><span class="year-tag">2023 Q16</span>CO₂ 분압 변화로 O₂-Hb 해리 곡선이 이동하는 현상은? → Bohr effect</li>
+                <li><span class="year-tag">2021 Q36</span>O₂-Hb 해리 곡선에서 다른 방향으로 이동시키는 인자는? → increased pH (좌측 이동)</li>
+                <li><span class="year-tag">2021 Q34</span>기체교환에 영향을 주는 방식이 다른 것은? → pulmonary edema (막 두께 증가, 나머지는 Bohr effect)</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 우측 이동= CO₂↑, 온도↑, 2,3-BPG↑, pH↓ / pH↑만 좌측 이동</div>
+            </td>
+          </tr>
+
+          <!-- Fick's law -->
+          <tr>
+            <td><strong>Fick's law / 확산</strong><br><span style="font-size:12px;color:var(--text-tertiary);">V ∝ A·D·ΔP / T</span></td>
+            <td><span class="badge b-two">3년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q9</span>확산 속도를 가장 크게 감소시키는 병리학적 요인은? → 확산 거리(T) 증가</li>
+                <li><span class="year-tag">2023 Q8</span>폐포-모세혈관 간 O₂ 이동 속도에 미치는 영향이 가장 다른 하나는? → distance of diffusion (반비례)</li>
+                <li><span class="year-tag">2021 Q9</span>O₂의 diffusing capacity는 CO₂보다 크다. (O/X) → X (CO₂가 약 20배 큼)</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: T만 반비례 (나머지 모두 비례) / CO₂ diffusing capacity ≈ O₂의 20배</div>
+            </td>
+          </tr>
+
+          <!-- CO2 운반 -->
+          <tr>
+            <td><strong>CO₂ 운반 / Chloride shift</strong><br><span style="font-size:12px;color:var(--text-tertiary);">HCO₃⁻ 70%, Hamburger shift</span></td>
+            <td><span class="badge b-two">3년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q11</span>CO₂ 유입 시 HCO₃⁻ 운반을 위해 적혈구 밖으로 나가는 이온은? → Cl⁻ (Chloride shift)</li>
+                <li><span class="year-tag">2025 Q12</span>혈액에서 CO₂의 주요 운반 형태는? → HCO₃⁻ 형태 (70%)</li>
+                <li><span class="year-tag">2022 Q12</span>혈액 내 CO₂ 분압 증가 시 RBC Cl⁻ 농도는 감소한다. (O/X) → X (증가)</li>
+                <li><span class="year-tag">2021 Q12</span>CO₂는 70% 이상이 Hb와 결합하여 이동한다. (O/X) → X (HCO₃⁻ 형태가 70%)</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: CO₂ → HCO₃⁻ 70% / CO₂↑ → Cl⁻ IN (RBC) / O₂ → Hb 결합 97%</div>
+            </td>
+          </tr>
+
+          <!-- Pneumothorax -->
+          <tr>
+            <td><strong>Pneumothorax (기흉)</strong><br><span style="font-size:12px;color:var(--text-tertiary);">Intrapleural pressure, Tension PTX</span></td>
+            <td><span class="badge b-two">3년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2025 Q1</span>흉강 내 압력(intrapleural pressure) 설명으로 가장 옳은 것은? → 흡기 시 더 음압이 된다</li>
+                <li><span class="year-tag">2023 Q15</span>폐의 흉강에 공기가 차는 질병은? → 기흉(Pneumothorax)</li>
+                <li><span class="year-tag">2022 Q5</span>Pleural cavity에 공기 유입 → lung collapse하는 질병은? → Pneumothorax</li>
+                <li><span class="year-tag">2021 Q40</span>기흉(pneumothorax)에 대해 서술하시오.</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 흉강 내 공기 → 음압 소실(-4→0 mmHg) → 폐 허탈 / Tension PTX → 종격동 편위 → 응급</div>
+            </td>
+          </tr>
+
+          <!-- O2 delivery calculation -->
+          <tr>
+            <td><strong>O₂ Delivery 계산</strong><br><span style="font-size:12px;color:var(--text-tertiary);">a-vDO₂, CO, Fick principle</span></td>
+            <td><span class="badge b-two">3년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2023 Q17</span>폐동맥 pO₂=30, 폐정맥 pO₂=95 - 혈액 100 mL당 운반 O₂양? → 8.0 mL (19.4-11.4)</li>
+                <li><span class="year-tag">2022 Q19</span>운동 전후 비교 - 100 mL당 O₂ 운반량 배수(2배), 총 O₂ 공급량 배수(4배)</li>
+                <li><span class="year-tag">2021 Q24-28</span>안정/최대 운동 시 CO, 호흡막 O₂ 이동량, a-vDO₂, 총 O₂ 공급량 비교 계산</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 총 O₂ 공급 = CO × a-vDO₂ / 운동 시 CO↑ × a-vDO₂↑ → 총 공급 크게 증가</div>
+            </td>
+          </tr>
+
+          <tr><td colspan="3" style="background:var(--bg-tertiary);font-weight:700;font-size:12px;color:var(--text-secondary);padding:10px 16px;text-align:center;">▼ 2년 출제 주제</td></tr>
+
+          <!-- Obstructive vs Restrictive -->
+          <tr>
+            <td><strong>폐쇄성 vs 제한성 폐질환</strong></td>
+            <td><span class="badge b-one">2년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2023 Q10</span>폐쇄성 폐질환 환자 - 폐용적↑에도 MEF 감소 (O)</li>
+                <li><span class="year-tag">2023 Q12</span>폐쇄성 폐질환 원인을 모두 고르시오 → smooth muscle 수축, edema, inflammation, mucus 모두</li>
+                <li><span class="year-tag">2022 Q6-9</span>폐쇄성 vs 제한성 특징 T/F 4문항</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: 폐쇄성 FEV₁/FVC&lt;0.7 / 제한성 FEV₁/FVC 정상 + TLC↓</div>
+            </td>
+          </tr>
+
+          <!-- Cough reflex -->
+          <tr>
+            <td><strong>Cough reflex</strong></td>
+            <td><span class="badge b-one">2년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2023 Q13</span>기침 반사에서 관여하는 것을 모두 고르시오 → forced inspiration + vocal cord closure (+ abdominal/EIC)</li>
+                <li><span class="year-tag">2021 Q39</span>Cough reflex 과정에서 작용하는 호흡근은? → diaphragm + abdominal + external IC + internal IC 모두</li>
+              </ul>
+            </td>
+          </tr>
+
+          <!-- Epinephrine -->
+          <tr>
+            <td><strong>Epinephrine / 기관지 조절</strong></td>
+            <td><span class="badge b-one">2년 출제</span></td>
+            <td>
+              <ul class="orig-list">
+                <li><span class="year-tag">2023 Q5</span>기관지 평활근에 영향이 가장 다른 하나 → epinephrine (확장, 나머지 수축)</li>
+                <li><span class="year-tag">2021 Q4</span>에피네프린을 투여하면 기관지 수축을 유도할 수 있다. (O/X) → X</li>
+              </ul>
+              <div style="font-size:12px;color:var(--success);margin-top:6px;font-weight:600;">정답 핵심: Epinephrine → β₂ → 기관지 확장 / ACh·histamine·leukotrienes → 수축</div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 탭 3: 신규 문항 -->
+  <div class="section" id="sec-unique">
+    <p class="desc-text">다른 연도와 겹치지 않는 신규(unique) 문항입니다. 다음 시험에서 출제될 가능성은 낮지만, 교수님의 새로운 출제 경향을 보여줍니다.</p>
+
+    <div class="year-section">
+      <h4>2025년 신규 문항 <span class="badge b-one" style="font-size:11px;">5개</span></h4>
+      <ul class="unique-list">
+        <li><span class="qnum">Q2</span>안정 시 호흡의 일(work of breathing) — elastic work 65% / resistive work 35% / 호기 수동적</li>
+        <li><span class="qnum">Q8</span>해수면 건조 공기의 산소 분압(PO₂) = 0.21 × 760 = 159.6 mmHg (Dalton's law)</li>
+        <li><span class="qnum">Q14</span>일산화탄소(CO) 중독이 치명적인 이유 — Hb 친화도 200-250배 / PO₂는 정상 유지</li>
+        <li><span class="qnum">Q18</span>CO₂ 분압 상승 → 환기량 증가 경로 (PCO₂↑ → 중추 화학수용기 자극 → 환기↑)</li>
+        <li><span class="qnum">Q20</span>고지대 장기 거주 적응 현상 → 폐환기량 증가 (EPO↑, 2,3-DPG↑, 폐혈관저항↑)</li>
+      </ul>
+    </div>
+
+    <div class="year-section">
+      <h4>2023년 신규 문항 <span class="badge b-one" style="font-size:11px;">7개</span></h4>
+      <ul class="unique-list">
+        <li><span class="qnum">Q2</span>날숨을 유도하는 근육 변화 → external IC 이완 + abdominal m. 수축</li>
+        <li><span class="qnum">Q3</span>Transpulmonary pressure = elastic recoil pressure (정지 시 균형)</li>
+        <li><span class="qnum">Q6</span>Pulmonary capillary 특성 → low blood pressure, high flow rate</li>
+        <li><span class="qnum">Q14</span>운동 시 일어나는 변화 → ΔP↑, 혈류↑, 모세혈관 동원↑, diffusing capacity↑ 모두</li>
+        <li><span class="qnum">Q16</span>Bohr effect 명칭 단답형 (명칭 직접 서술)</li>
+        <li><span class="qnum">Q17</span>폐동맥/폐정맥 pO₂ 주어질 때 100 mL당 O₂ 운반량 계산</li>
+        <li><span class="qnum">Q18-23</span>폐용량 일괄 계산 (IC, VC, FRC, RV, Dead space, Alveolar ventilation)</li>
+      </ul>
+    </div>
+
+    <div class="year-section">
+      <h4>2022년 신규 문항 <span class="badge b-one" style="font-size:11px;">12개</span></h4>
+      <ul class="unique-list">
+        <li><span class="qnum">Q11</span>A-a gradient — 가스 교환 감소 시 증가한다 (O/X) → O</li>
+        <li><span class="qnum">Q18</span>PEF(Peak Expiratory Flow) — 청년>노인, 키 클수록 높음, 남성>여성</li>
+        <li><span class="qnum">Q28</span>들숨 시 transpulmonary pressure 지속 증가 (O/X) → O / CO₂가 alveolar ventilation에 더 큰 영향</li>
+        <li><span class="qnum">Q6B</span>폐용적 감소 시 MEF 감소 (O/X) → O (radial traction 감소)</li>
+        <li><span class="qnum">Q19</span>운동 전후 a-vDO₂ 및 총 O₂ 공급량 배수 계산</li>
+        <li><span class="qnum">Q16</span>Bohr equation으로 physiological dead space 계산</li>
+        <li><span class="qnum">Q17</span>고지대 acclimatization 시 관여하는 중추 (말초→중추 화학수용기 재조정)</li>
+      </ul>
+    </div>
+
+    <div class="year-section">
+      <h4>2021년 신규 문항 <span class="badge b-one" style="font-size:11px;">18개</span></h4>
+      <ul class="unique-list">
+        <li><span class="qnum">Q2</span>서있는 자세에서 transpulmonary pressure 상부→하부로 갈수록 증가한다 (O/X) → X</li>
+        <li><span class="qnum">Q5</span>Pulmonary capillary는 bronchial capillary보다 혈압이 높다 (O/X) → X</li>
+        <li><span class="qnum">Q6</span>서있는 사람 폐 상부 혈류 없음, 하부 혈류 집중 (O/X) → O</li>
+        <li><span class="qnum">Q7</span>Mitral valve 기능 이상은 폐부종을 유발한다 (O/X) → O</li>
+        <li><span class="qnum">Q8</span>Alveolar ventilation 4 L/min 일정 시 O₂ 흡수 증가 → 폐포 O₂ 분압 증가 (O/X) → X</li>
+        <li><span class="qnum">Q14</span>O₂ 급격히 감소 환경 이동 → 호흡 증가 후 호흡곤란 발생 (O/X) → O</li>
+        <li><span class="qnum">Q24-28</span>안정/최대 운동 심박출량, 호흡막 O₂ 이동, a-vDO₂, 총 O₂ 공급 계산 (6배, 18배)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 탭 4: 문항 유형별 -->
+  <div class="section" id="sec-types">
+
+    <div class="topic-card">
+      <h4>① 5지 객관식 (MCQ) — 2025년 전체 / 2023년 일부</h4>
+      <p><strong>2025년:</strong> 전체 20문항이 5지 객관식. 개념 정확도 테스트가 핵심. 선지에 반대 개념이 섞여 있어 키워드 단순 암기로는 함정 회피 불가.</p>
+      <div class="q-row" style="margin-top:10px;">
+        <span class="q-chip">2025: 20문항 전체</span>
+        <span class="q-chip">2023: Q1-Q14 (14문항)</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h4>② 4지 객관식 (영어 선택지) — 2022년 일부 / 2023년 일부</h4>
+      <p>영어 보기로 출제되며 2023년 Q1, Q2, Q5-Q9 등에서 사용됨. 의학 영어 용어 숙지 필수. <strong>Physiological dead space, HPV, surfactant, VRG</strong> 등 영문 표기 익혀두기.</p>
+      <div class="q-row" style="margin-top:10px;">
+        <span class="q-chip">2023: Q1, Q2, Q5, Q6, Q7, Q8, Q9, Q11, Q13, Q14</span>
+        <span class="q-chip">2021: Q32, Q36, Q37, Q39</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h4>③ T/F 형식 (O/X 판단) — 2021·2022년 주력</h4>
+      <p>2022년(~32문항)과 2021년(~40문항)에서 대부분의 문항이 O/X 판단 형식. <strong>함정 패턴:</strong> "상부로 갈수록 증가" (환기/관류), "기흉 시 음압이 더 됨", "CO₂ 대부분 Hb 결합", "epinephrine → 기관지 수축" 등이 모두 X 함정.</p>
+      <div class="q-row" style="margin-top:10px;">
+        <span class="q-chip">2022: Q3, Q6B, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q28 등</span>
+        <span class="q-chip">2021: Q2, Q4, Q5, Q6, Q7, Q8, Q9, Q12, Q13, Q14 등</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h4>④ 계산 문제 (서술/단답형) — 매년 출제</h4>
+      <p>4개년 모두 계산 문제 출제. <strong>Bohr equation</strong>(dead space), <strong>Helium dilution</strong>(FRC), <strong>Alveolar ventilation</strong>(RR×(VT-VD)), <strong>O₂ delivery</strong>(CO × a-vDO₂) 4가지 공식은 필수 암기 및 계산 연습 필요.</p>
+      <div class="q-row" style="margin-top:10px;">
+        <span class="q-chip">2025: Q8 (분압 계산)</span>
+        <span class="q-chip">2023: Q17-23</span>
+        <span class="q-chip">2022: Q16, Q19</span>
+        <span class="q-chip">2021: Q16-28</span>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <h4>⑤ 단답형 서술 — 2021·2022·2023년</h4>
+      <p>개념 명칭 직접 쓰기 (Pneumothorax, Bohr effect 등) 또는 단답 설명 서술. 정확한 의학 용어 및 영문 표기 필수.</p>
+      <div class="q-row" style="margin-top:10px;">
+        <span class="q-chip">2023: Q15(기흉), Q16(Bohr effect)</span>
+        <span class="q-chip">2022: Q2(phrenic nerve), Q5(pneumothorax), Q17(acclimatization)</span>
+        <span class="q-chip">2021: Q33, Q40(기흉 서술)</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 탭 5: 시험 전략 -->
+  <div class="section" id="sec-tips">
+
+    <div class="topic-card tip-green">
+      <h4>최우선 암기 — 4년 연속 확정 출제 5대 주제</h4>
+      <p style="margin-bottom:10px;">① <strong>HPV</strong>: PO₂↓ → 폐동맥 수축 / PO₂↑+PCO₂↓ → 폐동맥 이완. 전신 혈관과 반대 방향 강조.</p>
+      <p style="margin-bottom:10px;">② <strong>V/Q ratio</strong>: 정상 0.8 / V/Q=0 (shunt) / V/Q=∞ (dead space) / 상부↑ 하부↓ 암기.</p>
+      <p style="margin-bottom:10px;">③ <strong>DRG/VRG</strong>: DRG→diaphragm(phrenic C3-C5) / VRG→복근+내늑간근(강제호흡). Pneumotaxic=흡기 억제.</p>
+      <p style="margin-bottom:10px;">④ <strong>Chemoreceptors</strong>: 말초=PO₂ 감지(경동맥체) / 중추=CO₂·H⁺ in CSF / 혈중 H⁺ BBB 불통과 → 관련 가장 적음.</p>
+      <p>⑤ <strong>폐용량 계산 공식 4개</strong>: Bohr eq / He dilution / Alveolar V / Fick principle. 숫자 대입 연습 필수.</p>
+    </div>
+
+    <div class="topic-card tip-blue">
+      <h4>T/F 고정 답안 — 2022·2021년 패턴 대비</h4>
+      <p style="margin-bottom:8px;"><strong style="color:var(--danger);">False (X):</strong> "환기 감소 부위 혈류는 증가한다" / "상부로 갈수록 Ventilation·Perfusion 증가" / "Pulmonary capillary 혈압이 bronchial보다 높다" / "CO₂ 70% 이상 Hb 결합" / "Epinephrine → 기관지 수축" / "제한성 FEV₁/FVC 감소" / "O₂ diffusing capacity > CO₂"</p>
+      <p style="margin-bottom:8px;"><strong style="color:var(--success);">True (O):</strong> "식염수 compliance > 공기 compliance" / "V/Q 상부로 갈수록 증가" / "폐쇄성에서 폐용적↑ + MEF↓" / "A-a gradient 가스교환 감소 시 증가" / "Mitral valve 기능 이상 → 폐부종"</p>
+    </div>
+
+    <div class="topic-card tip-blue">
+      <h4>계산 공식 4개 — 반드시 손으로 풀어보기</h4>
+      <p style="margin-bottom:8px;"><strong>① Bohr equation (Dead space)</strong>: VD = VT × (PaCO₂ − PeCO₂) / PaCO₂</p>
+      <p style="margin-bottom:8px;"><strong>② Helium dilution (FRC)</strong>: FRC = Vspir × (Ci − Cf) / Cf</p>
+      <p style="margin-bottom:8px;"><strong>③ Alveolar ventilation</strong>: VA = RR × (VT − VD)</p>
+      <p><strong>④ O₂ delivery (Fick)</strong>: Total O₂ = CO × a-vDO₂ (CO = HR × SV)</p>
+    </div>
+
+    <div class="topic-card tip-orange">
+      <h4>이상도 교수님 출제 스타일 특징</h4>
+      <p style="margin-bottom:8px;">• <strong>연도마다 형식 변경</strong>: 2021·2022 T/F 위주 → 2023 영어 4지선다 → 2025 한국어 5지선다. 개념 자체에 집중.</p>
+      <p style="margin-bottom:8px;">• <strong>반대 개념 함정</strong>: 전신 vs 폐 혈관 반응, 상부 vs 하부 분포, 폐쇄성 vs 제한성 혼동 유도 선지 자주 등장.</p>
+      <p style="margin-bottom:8px;">• <strong>계산 문제 필수</strong>: 4개년 모두 계산 문제 출제. 공식 암기만으로는 부족, 숫자 대입 훈련 필요.</p>
+      <p style="margin-bottom:8px;">• <strong>영어 용어 병행</strong>: HPV, DRG, VRG, transpulmonary pressure 등 영문 표기와 한국어 표기 모두 숙지.</p>
+      <p>• <strong>2023↔2022 겹침 최대(16개)</strong>: 직전 2년이 가장 많이 겹침. 2023년 기출이 2025년 복습에 핵심.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span class="footer-brand">KAISTUDY_WJ</span>
+  </div>
+
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
