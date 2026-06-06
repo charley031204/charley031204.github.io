@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>소화 조직학 · 플로우 암기 (안미정 P)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Gowun+Dodum&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+<style>
+@layer reset, tokens, base, layout, cards, cloze, controls, motion;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+  ul { margin: 0; padding-inline-start: 1.1em; }
+}
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+    --sans: "Gowun Dodum", system-ui, sans-serif;
+    --serif: "Noto Serif KR", Georgia, serif;
+    --eng: "Darker Grotesque", system-ui, sans-serif;
+
+    --bg:        light-dark(oklch(97% 0.012 250deg), oklch(16% 0.02 265deg));
+    --bg-card:   light-dark(oklch(99.5% 0.006 250deg), oklch(21% 0.025 265deg));
+    --ink:       light-dark(oklch(26% 0.03 265deg), oklch(92% 0.02 250deg));
+    --ink-soft:  light-dark(oklch(46% 0.03 265deg), oklch(72% 0.02 250deg));
+    --line:      light-dark(oklch(89% 0.02 260deg), oklch(32% 0.03 265deg));
+    --accent:    light-dark(oklch(55% 0.16 265deg), oklch(72% 0.15 265deg));
+    --accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
+
+    --warn:  light-dark(oklch(52% 0.2 25deg),  oklch(72% 0.17 25deg));
+    --tip:   light-dark(oklch(58% 0.15 75deg), oklch(80% 0.15 85deg));
+    --note:  light-dark(oklch(52% 0.12 175deg),oklch(76% 0.12 175deg));
+    --extra: light-dark(oklch(55% 0.02 265deg),oklch(68% 0.02 265deg));
+    --fix:   light-dark(oklch(52% 0.14 250deg),oklch(78% 0.13 250deg));
+    --done:  light-dark(oklch(56% 0.16 150deg),oklch(76% 0.15 150deg));
+
+    --eosin: light-dark(oklch(64% 0.17 5deg), oklch(74% 0.16 5deg));
+    --baso:  light-dark(oklch(52% 0.16 300deg),oklch(75% 0.15 300deg));
+
+    --step:  clamp(1rem, 0.95rem + 0.25cqi, 1.125rem);
+    --body:  clamp(1rem, 0.92rem + 0.5cqi, 1.25rem);
+    --radius: 18px;
+    --shadow: 0 14px 40px -22px light-dark(oklch(30% 0.05 265deg / .6), oklch(2% 0 0 / .8));
+  }
+}
+
+@layer base {
+  html, body { block-size: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: var(--body); line-height: 1.7;
+    -webkit-font-smoothing: antialiased; overflow: hidden;
+  }
+  h1,h2,h3 { text-wrap: balance; line-height: 1.2; }
+  p, li { text-wrap: pretty; }
+  strong { font-weight: 700; color: var(--ink); }
+  .en { font-family: var(--eng); font-weight: 700; letter-spacing: .01em; font-size: 1.08em; }
+}
+
+@layer layout {
+  .app { block-size: 100dvb; display: grid; grid-template-rows: auto auto 1fr auto auto; }
+
+  header.top {
+    display: flex; align-items: baseline; gap: 1ch; flex-wrap: wrap;
+    padding: clamp(.5rem, 1.4cqi, .9rem) clamp(1rem, 3cqi, 2rem) .25rem;
+  }
+  header.top h1 { font-family: var(--serif); font-weight: 200; font-size: var(--step); letter-spacing: .02em; }
+  header.top h1 b { font-family: var(--eng); font-weight: 800; color: var(--accent); }
+  header.top .sub { color: var(--ink-soft); font-size: .85rem; margin-inline-start: auto; }
+
+  .stepper {
+    display: flex; gap: .4ch; overflow-x: auto; scrollbar-width: none;
+    padding: .3rem clamp(1rem, 3cqi, 2rem);
+  }
+  .stepper::-webkit-scrollbar { display: none; }
+  .stepper button {
+    flex: 0 0 auto; display: inline-flex; align-items: center; gap: .5ch;
+    padding: .28rem .8rem; border-radius: 999px; font-size: .88rem;
+    color: var(--ink-soft); border: 1px solid var(--line);
+    transition: background .25s, color .25s, border-color .25s;
+  }
+  .stepper button .ic { font-size: 1.05em; }
+  .stepper button[aria-current="true"] {
+    color: light-dark(white, oklch(18% 0.02 265deg));
+    background: var(--accent); border-color: transparent; font-weight: 600;
+  }
+  .stepper button[data-done="1"]:not([aria-current="true"]) { border-color: var(--done); color: var(--done); }
+  .stepper button[data-done="1"] .ic::after { content: " ✓"; }
+
+  .deck {
+    display: flex; gap: 0; overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: inline mandatory; scroll-behavior: smooth;
+    scrollbar-width: none; block-size: 100%;
+    container: deck / inline-size;
+  }
+  .deck::-webkit-scrollbar { display: none; }
+}
+
+@layer cards {
+  .card {
+    flex: 0 0 100cqi; scroll-snap-align: center; scroll-snap-stop: always;
+    block-size: 100%; display: grid; place-items: center;
+    padding: clamp(.5rem, 1.8cqi, 1.4rem); overflow: hidden;
+    container: card / size;
+    --cardw: 56ch;                 /* 모바일 기본 */
+  }
+  @container card (width > 680px)  { .card { --cardw: 76ch; } }   /* 아이패드 */
+  @container card (width > 1100px) { .card { --cardw: 94ch; } }   /* PC */
+
+  .card .inner {
+    --fit: 1;
+    font-size: calc(var(--body) * var(--fit));   /* auto-fit: 화면 높이에 맞춰 통째로 축소 */
+    inline-size: min(var(--cardw), 94cqi);
+    max-block-size: 100%; overflow: hidden;
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 1.6em;
+  }
+  .card .inner.scrollable { overflow-y: auto; scrollbar-width: thin; }
+
+  .card .kicker {
+    font-family: var(--eng); font-weight: 800; text-transform: uppercase;
+    letter-spacing: .1em; font-size: .66em; color: var(--accent);
+    display: flex; align-items: center; gap: 1ch; flex-wrap: wrap;
+  }
+  .card .kicker .num { color: var(--ink-soft); }
+  .card h2 { font-family: var(--serif); font-weight: 200; font-size: 2em; margin-block: .15em .1em; }
+  .card h2.ctitle { font-size: 1.5em; font-family: var(--sans); font-weight: 700; }
+  .card h3 { font-size: 1.3em; margin-block: .6em .3em; }
+  .card .inner > p, .card .inner > ul,
+  .card .content > p, .card .content > ul { margin-block: .5em; }
+
+  .cover .inner { text-align: center; border-style: dashed; }
+  .cover h2 { font-size: 3em; }
+  .cover .big-ic { font-size: 4em; line-height: 1; }
+  .cover .en { display: block; color: var(--ink-soft); font-size: 1.15em; margin-block-start: .3em; }
+
+  table { inline-size: 100%; border-collapse: collapse; margin-block: .55em; font-size: .95em; }
+  th, td { border: 1px solid var(--line); padding: .45em .6em; text-align: start; vertical-align: top; }
+  thead th { background: var(--accent-soft); font-weight: 700; }
+  tbody tr:nth-child(even) { background: color-mix(in oklch, var(--ink) 4%, transparent); }
+
+  .reveal { border-inline-start: 4px solid var(--bar, var(--accent)); border-radius: 10px;
+    background: color-mix(in oklch, var(--bar, var(--accent)) 9%, transparent); margin-block: .6em; overflow: clip; }
+  .reveal > summary { list-style: none; cursor: pointer; padding: .65em .85em;
+    font-weight: 600; color: var(--bar, var(--accent)); display: flex; gap: .6ch; align-items: center; }
+  .reveal > summary::-webkit-details-marker { display: none; }
+  .reveal > summary::after { content: "펼치기 ▸"; margin-inline-start: auto; font-size: .8em; font-weight: 400; opacity: .8; }
+  .reveal[open] > summary::after { content: "접기 ▾"; }
+  .reveal .body { padding: 0 .85em .75em; color: var(--ink); }
+  .reveal.warn  { --bar: var(--warn); }
+  .reveal.tip   { --bar: var(--tip); }
+  .reveal.note  { --bar: var(--note); }
+  .reveal.fix   { --bar: var(--fix); }
+  .reveal.extra { --bar: var(--extra); }
+
+  .pink { color: var(--eosin); font-weight: 700; }
+  .purple { color: var(--baso); font-weight: 700; }
+
+  .done-btn { margin-block-start: .9em; display: inline-flex; gap: .6ch; align-items: center;
+    padding: .55em 1.15em; border-radius: 999px; border: 2px solid var(--done); color: var(--done);
+    font-weight: 600; transition: background .25s, color .25s; }
+  .done-btn[aria-pressed="true"] { background: var(--done); color: light-dark(white, oklch(18% 0.02 265deg)); }
+  .done-btn[aria-pressed="true"] .lbl::after { content: " 완료!"; }
+  .done-btn[aria-pressed="false"] .lbl::after { content: " 완료로 표시"; }
+}
+
+@layer cloze {
+  .card-tools { display: flex; gap: .6ch; margin-block: .35em .9em; flex-wrap: wrap; }
+  .card-tools button { font-size: .78em; padding: .35em .9em; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--ink-soft); transition: background .2s, color .2s; }
+  .card-tools button:hover { background: var(--accent-soft); color: var(--accent); }
+
+  .cloze {
+    font: inherit; display: inline; padding: .02em .35em; border-radius: 6px;
+    background: var(--accent-soft); color: transparent;
+    border-block-end: 2px dashed var(--accent);
+    text-shadow: 0 0 .55em color-mix(in oklch, var(--ink) 60%, transparent);
+    transition: color .18s, background .18s, text-shadow .18s; user-select: none;
+  }
+  .cloze::before { content: "?"; color: var(--accent); font-family: var(--eng); font-weight: 800; }
+  .cloze.show {
+    color: var(--accent); background: transparent; text-shadow: none;
+    border-block-end-color: color-mix(in oklch, var(--accent) 40%, transparent); font-weight: 700;
+  }
+  .cloze.show::before { content: ""; }
+}
+
+@layer controls {
+  .nav {
+    display: flex; align-items: center; gap: 1ch; justify-content: center;
+    padding: .45rem clamp(1rem, 3cqi, 2rem) max(.5rem, env(safe-area-inset-bottom));
+  }
+  .nav .arrow { inline-size: 2.6rem; block-size: 2.6rem; border-radius: 50%;
+    border: 1px solid var(--line); display: grid; place-items: center; font-size: 1.3rem;
+    background: var(--bg-card); transition: background .2s, transform .12s; }
+  .nav .arrow:hover { background: var(--accent-soft); }
+  .nav .arrow:active { transform: scale(.92); }
+  .nav .arrow:disabled { opacity: .35; cursor: default; }
+  .nav .count { font-family: var(--eng); font-weight: 700; font-size: 1.1rem;
+    min-inline-size: 7ch; text-align: center; color: var(--ink-soft); }
+  .progress { block-size: 4px; background: var(--line); }
+  .progress > i { display: block; block-size: 100%; inline-size: 0; background: var(--accent); transition: inline-size .2s; }
+
+  .icon-btn { padding: .3rem .6rem; border-radius: 8px; font-size: 1.1rem; }
+  .icon-btn:hover { background: var(--accent-soft); }
+}
+
+@layer motion {
+  @media (prefers-reduced-motion: no-preference) {
+    .card .inner { animation: enter linear both; animation-timeline: view(inline);
+      animation-range: entry 5% cover 38%; }
+    @keyframes enter {
+      from { opacity: 0; transform: translateX(8cqi) scale(.94); filter: blur(3px); }
+      to   { opacity: 1; transform: none; filter: none; }
+    }
+    .cloze.show { animation: pop .25s ease; }
+    @keyframes pop { from { transform: scale(1.18); } to { transform: none; } }
+  }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <h1>소화기계 조직학 · <b>FLOW</b> 암기</h1>
+    <span class="sub">안미정 교수 · 최종정리본 기반</span>
+    <button class="icon-btn" id="theme" title="다크/라이트 전환" aria-label="테마 전환">🌙</button>
+  </header>
+
+  <nav class="stepper" id="stepper" aria-label="장기 챕터"></nav>
+
+  <main class="deck" id="deck" tabindex="0" aria-label="학습 슬라이드"></main>
+
+  <div class="progress"><i id="bar"></i></div>
+  <div class="nav">
+    <button class="arrow" id="prev" aria-label="이전">‹</button>
+    <span class="count" id="count">1 / 1</span>
+    <button class="arrow" id="next" aria-label="다음">›</button>
+  </div>
+</div>
+
+<script>
+/* ---------- 데이터: 장기별 챕터 → 카드 ----------
+   {{용어}} = 클릭형 빈칸(cloze).  kind: cover|concept|table|warn|tip|note|fix|summary  */
+const CH = [
+  { id:"intro", ic:"🗺️", name:"기본구조", en:"Overview" },
+  { id:"esoph", ic:"🫔", name:"식도", en:"Esophagus" },
+  { id:"stom",  ic:"🫃", name:"위", en:"Stomach" },
+  { id:"small", ic:"🌿", name:"소장", en:"Small intestine" },
+  { id:"large", ic:"🧻", name:"대장", en:"Large intestine" },
+  { id:"panc",  ic:"🍐", name:"췌장", en:"Pancreas" },
+  { id:"liver", ic:"🫀", name:"간", en:"Liver" },
+  { id:"gall",  ic:"💧", name:"담낭", en:"Gallbladder" },
+  { id:"sum",   ic:"🏁", name:"종합", en:"Summary" },
+];
+
+const D = [
+/* ===== 0. INTRO ===== */
+{ch:"intro", kind:"cover", title:"소화기계 조직학", html:`
+  <div class="big-ic">🗺️</div>
+  <h2>소화기계 조직학</h2>
+  <span class="en">DIGESTIVE HISTOLOGY · Esophagus → Anal canal + Liver·Pancreas·Gallbladder</span>
+  <p style="margin-block-start:1em;color:var(--ink-soft)">←/→ 키 또는 좌우 버튼으로 한 장씩 넘기며 학습하세요. <strong>?</strong> 빈칸을 클릭하면 정답이 보입니다.</p>`},
+
+{ch:"intro", kind:"concept", title:"소화관 공통 4층 구조", html:`
+  <p>소화관(<span class="en">alimentary tract</span>)은 전 구간이 안쪽→바깥쪽으로 <strong>4개 층</strong> 공통 구조를 가진다.</p>
+  <table><thead><tr><th>층</th><th>구성</th></tr></thead><tbody>
+  <tr><td><span class="en">{{Mucosa}}</span> (점막)</td><td>{{Epithelium}} + {{Lamina propria}} + {{Muscularis mucosae}}</td></tr>
+  <tr><td><span class="en">{{Submucosa}}</span> (점막밑층)</td><td>결합조직, 혈관, 신경, 일부 gland</td></tr>
+  <tr><td><span class="en">{{Muscularis propria}}</span> (근육층)</td><td>{{Inner circular}} + {{Outer longitudinal}} — 방향 다른 두 층</td></tr>
+  <tr><td><span class="en">{{Serosa}}</span> (장막)</td><td>복막 상피 + 결합조직 (최외층)</td></tr>
+  </tbody></table>`},
+
+{ch:"intro", kind:"warn", title:"전체 강의의 핵심 흐름", html:`
+  <p>“정상을 알아야지만이 비정상을 알 수 있다” — 조직학 → 병리까지 연결.</p>
+  <p><strong>Mucosa 층의 {{epithelium(상피)}}가 부위마다 달라지는 것</strong>이 전체 강의의 핵심 흐름이다.</p>`},
+
+{ch:"intro", kind:"table", title:"부위별 상피 비교 지도", html:`
+  <table><thead><tr><th>부위</th><th>상피 형태</th></tr></thead><tbody>
+  <tr><td>Esophagus (식도)</td><td>{{Non-keratinized stratified squamous}} epithelium</td></tr>
+  <tr><td>Stomach (위)</td><td>{{Simple columnar}} epithelium</td></tr>
+  <tr><td>Small intestine (소장)</td><td>Simple columnar + {{brush border(microvilli)}}</td></tr>
+  <tr><td>Large intestine (대장)</td><td>Simple columnar ({{villi 없음}})</td></tr>
+  <tr><td>Anal canal (항문관)</td><td>→ {{Non-keratinized stratified squamous}} epithelium</td></tr>
+  </tbody></table>`},
+
+{ch:"intro", kind:"tip", title:"💡 시험포인트 — 양 끝단", html:`
+  <p>식도(위쪽)와 항문관(아래쪽)은 모두 <strong>{{stratified squamous epithelium}}</strong> — 외부와 접촉하는 소화관의 <strong>양 끝단</strong>!</p>`},
+
+{ch:"intro", kind:"summary", title:"기본구조 정리", html:`
+  <p>핵심 3가지를 떠올려보자.</p>
+  <ul>
+  <li>공통 4층: {{mucosa}} · {{submucosa}} · {{muscularis propria}} · {{serosa}}</li>
+  <li>Mucosa 3요소: epithelium + {{lamina propria}} + {{muscularis mucosae}}</li>
+  <li>강의 핵심: 부위별 {{상피}} 차이</li>
+  </ul>`},
+
+/* ===== 1. ESOPHAGUS ===== */
+{ch:"esoph", kind:"cover", title:"식도", html:`<div class="big-ic">🫔</div><h2>식도</h2><span class="en">ESOPHAGUS</span>`},
+
+{ch:"esoph", kind:"concept", title:"식도 조직학 특징", html:`
+  <ul>
+  <li>상피: <strong>{{Non-keratinized stratified squamous}} epithelium</strong> — 소화관 내 <strong>유일</strong> (나머지는 simple columnar)</li>
+  <li>Submucosa: {{식도샘(esophageal gland)}} 발달 → 점액 분비</li>
+  <li>근육층: 두 층 방향이 달라 현미경에서 명확히 구분</li>
+  <li>외막: serosa 대신 {{adventitia}} (복막 외 위치)</li>
+  </ul>`},
+
+{ch:"esoph", kind:"table", title:"식도 근육층 — 위치별 근육 종류", html:`
+  <p>쉬는 시간에 교수님이 직접 추가하신 내용.</p>
+  <table><thead><tr><th>위치</th><th>근육 종류</th></tr></thead><tbody>
+  <tr><td>상부 1/3</td><td>{{Skeletal muscle}} (수의근 — 연하 조절)</td></tr>
+  <tr><td>중부 1/3</td><td>{{Skeletal + Smooth}} (혼합)</td></tr>
+  <tr><td>하부 1/3</td><td>{{Smooth muscle}}</td></tr>
+  <tr><td>Anal canal</td><td>→ {{Skeletal muscle}} 재전환 (외항문괄약근)</td></tr>
+  </tbody></table>`},
+
+{ch:"esoph", kind:"warn", title:"🔴 교수님 강조", html:`
+  <p>소화관 대부분은 smooth muscle이지만 <strong>식도 상부 1/3 + 항문 부위만 {{skeletal muscle}}</strong>.</p>`},
+
+{ch:"esoph", kind:"summary", title:"식도 정리", html:`
+  <ul><li>상피 = {{non-keratinized stratified squamous}}</li>
+  <li>외막 = {{adventitia}}</li>
+  <li>상부 1/3 근육 = {{skeletal}}</li></ul>`},
+
+/* ===== 2. STOMACH ===== */
+{ch:"stom", kind:"cover", title:"위", html:`<div class="big-ic">🫃</div><h2>위</h2><span class="en">STOMACH</span>`},
+
+{ch:"stom", kind:"table", title:"위 부위별 Gland 형태", html:`
+  <table><thead><tr><th>구역</th><th>Gland 형태</th><th>특징</th></tr></thead><tbody>
+  <tr><td>Cardiac</td><td>{{Simple branched tubular}}</td><td>식도 특징 유사</td></tr>
+  <tr><td>Fundus/Body</td><td>{{Simple (unbranched) tubular}}</td><td>Chief·Parietal cell 풍부</td></tr>
+  <tr><td>Pyloric</td><td>{{Simple branched tubular}}</td><td>장 특징 유사, 위오목 깊음</td></tr>
+  </tbody></table>`},
+
+{ch:"stom", kind:"warn", title:"🔴 교수님 강조 — 부위 구분", html:`
+  <p><strong>Body = {{Simple (unbranched) tubular gland}}</strong>, Cardiac/Pyloric = {{Branched gland}}. gland 분지 형태로 위 부위 구분 가능.</p>`},
+
+{ch:"stom", kind:"concept", title:"Gastric pit vs Gland 위치", html:`
+  <p>표면(lumen)에서 아래로:</p>
+  <ul>
+  <li>Gastric pit ← {{Surface mucous cell}}</li>
+  <li>Neck ← {{Mucous neck cell}}</li>
+  <li>Principal part ← {{Parietal cell + Chief cell}}</li>
+  <li>Base ← {{Chief cell + Enteroendocrine cell}}</li>
+  </ul>`},
+
+{ch:"stom", kind:"table", title:"위샘 4세포 요약", html:`
+  <table><thead><tr><th>세포</th><th>형태/위치</th><th>분비물</th><th>염색</th></tr></thead><tbody>
+  <tr><td><strong>Chief cell</strong></td><td>{{피라미드형}}(아래 넓음), base</td><td>{{Pepsinogen}}</td><td class="purple">{{Basophilic}}</td></tr>
+  <tr><td><strong>Parietal cell</strong><br>(={{Oxyntic cell}})</td><td>원형, 중앙 핵, neck~body</td><td>{{HCl}} + {{Intrinsic factor}}</td><td class="pink">{{강한 eosinophilic}}</td></tr>
+  <tr><td>Mucous neck cell</td><td>{{사다리꼴}}(위 넓음), neck</td><td>점액</td><td>{{PAS}} (+)</td></tr>
+  <tr><td>Enteroendocrine</td><td>base, pyloric 다수</td><td>Gastrin 등 호르몬</td><td>{{Silver staining}}</td></tr>
+  </tbody></table>`},
+
+{ch:"stom", kind:"tip", title:"💡 시험포인트", html:`
+  <p>H&E에서 <span class="pink">동글동글하고 핑크 진한 세포 덩어리</span> → <strong>{{위(stomach)}}</strong> 강력 의심 (parietal cell의 강한 eosinophilic).</p>
+  <p>Chief = {{피라미드형}}(위 좁고 아래 넓음) ↔ Mucous neck = {{사다리꼴}}(위 넓고 아래 좁음) 으로 구분.</p>`},
+
+{ch:"stom", kind:"fix", title:"⚡ 강의 정정 — Chief cell 형태", html:`
+  <p>일부 표에 “역피라미드형”으로 오기재됨. 교수님 발화: <strong>“위쪽 좁고 아래 바닥 넓은 {{피라미드형}}”</strong>이 맞다.</p>`},
+
+{ch:"stom", kind:"summary", title:"위 정리", html:`
+  <ul>
+  <li>HCl 분비 = {{Parietal cell}} (= oxyntic), 강한 {{eosinophilic}}</li>
+  <li>Pepsinogen 분비 = {{Chief cell}}, {{basophilic}}, 피라미드형</li>
+  <li>Body gland = {{simple unbranched tubular}}</li>
+  </ul>`},
+
+/* ===== 3. SMALL INTESTINE ===== */
+{ch:"small", kind:"cover", title:"소장", html:`<div class="big-ic">🌿</div><h2>소장</h2><span class="en">SMALL INTESTINE</span>`},
+
+{ch:"small", kind:"concept", title:"소장의 표면적 증가 구조", html:`
+  <ul>
+  <li>{{Plicae circulares}} (윤상주름): 소장에만 발달, 대장에서 소실 — mucosa+submucosa가 함께 융기</li>
+  <li>{{Villi}} (융모): circular fold 위 개별 돌기, 중심에 {{central lacteal(중심유미관)}}</li>
+  <li>{{Crypt of Lieberkühn}} (장샘): villi 사이 함입, {{stem cell}} 위치</li>
+  </ul>`},
+
+{ch:"small", kind:"warn", title:"🔴 교수님 강조 — Lamina propria", html:`
+  <p>소장에서는 <strong>{{lamina propria}}가 융모 꼭대기까지</strong> 올라가 있음 (혈관·신경 통로).</p>`},
+
+{ch:"small", kind:"table", title:"소장 구성 세포", html:`
+  <table><thead><tr><th>세포</th><th>위치</th><th>식별 포인트</th></tr></thead><tbody>
+  <tr><td>Enterocyte (흡수세포)</td><td>Villi 상피</td><td>{{Brush border}}</td></tr>
+  <tr><td>Goblet cell</td><td>흡수세포 사이</td><td>{{투명한 컵 모양}}</td></tr>
+  <tr><td><strong>Paneth cell</strong></td><td>{{Crypt base}}</td><td class="pink">{{강한 eosinophilic 과립}}</td></tr>
+  <tr><td>M cell</td><td>{{Peyer's patch}} 위</td><td>항원 샘플링</td></tr>
+  <tr><td>Stem cell</td><td>Crypt base</td><td>상피 재생</td></tr>
+  </tbody></table>`},
+
+{ch:"small", kind:"warn", title:"🔴 교수님 강조 — Paneth cell", html:`
+  <p><strong>Paneth cell = {{Crypt of Lieberkühn 가장 깊은 바닥}}</strong>, 강한 eosinophilic 과립이 {{첨부(관강 쪽)}}에 집중. 분비물 = {{defensin}} 등 항균 펩타이드.</p>`},
+
+{ch:"small", kind:"table", title:"Duodenum vs Jejunum", html:`
+  <table><thead><tr><th>특징</th><th>Duodenum</th><th>Jejunum</th></tr></thead><tbody>
+  <tr><td>Goblet cell</td><td>{{거의 없음}}</td><td>다수</td></tr>
+  <tr><td>Submucosal gland</td><td>{{Brunner's gland 발달}}</td><td>{{없음}}</td></tr>
+  </tbody></table>`},
+
+{ch:"small", kind:"tip", title:"💡 시험포인트 — Duodenum 식별", html:`
+  <p><strong>{{Brunner's gland(submucosal gland)}} 있음 + Goblet cell 거의 없음 → Duodenum!</strong> 이후 jejunum부터 goblet cell 증가.</p>`},
+
+{ch:"small", kind:"table", title:"신경 얼기 2종", html:`
+  <table><thead><tr><th>신경 얼기</th><th>위치</th><th>별칭</th></tr></thead><tbody>
+  <tr><td>Submucosal plexus</td><td>Submucosa 내</td><td>{{Meissner's}} plexus</td></tr>
+  <tr><td>Myenteric plexus</td><td>{{두 근육층 사이}}</td><td>{{Auerbach's}} plexus</td></tr>
+  </tbody></table>`},
+
+{ch:"small", kind:"summary", title:"소장 정리", html:`
+  <ul>
+  <li>소장에만 = {{villi}} / {{plicae circulares}}</li>
+  <li>Crypt base 항균세포 = {{Paneth cell}}</li>
+  <li>지방 흡수 경로 = {{central lacteal}}</li>
+  </ul>`},
+
+/* ===== 4. LARGE INTESTINE ===== */
+{ch:"large", kind:"cover", title:"대장", html:`<div class="big-ic">🧻</div><h2>대장</h2><span class="en">LARGE INTESTINE</span>`},
+
+{ch:"large", kind:"concept", title:"대장 상피 — 소장과 비교", html:`
+  <ul>
+  <li>상피: Simple columnar (소장과 동일)</li>
+  <li>{{Villi 없음}}, {{plicae circulares 없음}} → 평평</li>
+  <li>{{Goblet cell}} 매우 많음 (거의 goblet cell로 구성)</li>
+  <li><strong>{{Paneth cell}} 없음</strong> (소장에만 있음)</li>
+  </ul>`},
+
+{ch:"large", kind:"warn", title:"🔴 교수님 강조 — 1차 판별", html:`
+  <p><strong>villi 없고 goblet cell 가득 → {{대장}}!</strong></p>
+  <p><strong>{{Paneth cell}}은 소장에만, 대장엔 없음</strong> — 반드시 기억.</p>`},
+
+{ch:"large", kind:"table", title:"소장 vs 대장 핵심 비교", html:`
+  <table><thead><tr><th>특징</th><th>소장</th><th>대장</th></tr></thead><tbody>
+  <tr><td>Villi</td><td>{{있음}}</td><td>{{없음}}</td></tr>
+  <tr><td>Goblet cell</td><td>중간</td><td>{{매우 많음}}</td></tr>
+  <tr><td>Paneth cell</td><td>{{있음}}</td><td>{{없음}}</td></tr>
+  <tr><td>Myenteric plexus 발달</td><td>덜</td><td>{{잘 발달}}</td></tr>
+  <tr><td>Taenia coli</td><td>없음</td><td>{{있음}}</td></tr>
+  </tbody></table>`},
+
+{ch:"large", kind:"note", title:"💬 대장 goblet cell이 많은 이유", html:`
+  <p>주 기능 = {{수분 흡수}} → 내용물이 딱딱해짐 → goblet cell 점액으로 변 표면 코팅 → 상피 손상 방지 & 배출 용이.</p>`},
+
+{ch:"large", kind:"concept", title:"Appendix · Anal canal", html:`
+  <ul>
+  <li><strong>Appendix:</strong> 대장 구조 동일하나 {{lymph 소절 매우 풍부}}</li>
+  <li><strong>Taenia coli:</strong> 외종주근이 {{3개의 띠}}로 뭉친 구조 (특정 절편에서만 관찰)</li>
+  <li><strong>Anal canal:</strong> simple columnar → {{non-keratinized stratified squamous}}로 전환. IAS={{평활근}}, EAS={{골격근}}</li>
+  </ul>`},
+
+{ch:"large", kind:"summary", title:"대장 정리", html:`
+  <ul>
+  <li>대장에 없는 세포 = {{Paneth cell}}</li>
+  <li>대장에만 = {{taenia coli}}</li>
+  <li>Myenteric plexus 더 발달 = {{대장}}</li>
+  </ul>`},
+
+/* ===== 5. PANCREAS ===== */
+{ch:"panc", kind:"cover", title:"췌장", html:`<div class="big-ic">🍐</div><h2>췌장</h2><span class="en">PANCREAS</span>`},
+
+{ch:"panc", kind:"table", title:"Exocrine vs Endocrine", html:`
+  <table><thead><tr><th>구분</th><th>구조</th><th>세포</th><th>분비물</th></tr></thead><tbody>
+  <tr><td><strong>Exocrine</strong></td><td>{{Acinus}} → duct</td><td>{{Acinar + Centroacinar}} cell</td><td>소화효소(이자액)</td></tr>
+  <tr><td><strong>Endocrine</strong></td><td>{{Islets of Langerhans}}</td><td>{{α / β / δ}} cell</td><td>Glucagon/Insulin/Somatostatin</td></tr>
+  </tbody></table>`},
+
+{ch:"panc", kind:"concept", title:"Acinus 세부 + 분비 경로", html:`
+  <ul>
+  <li>Acinar cell: 기저부 {{Rough ER}} → 효소 합성, 첨단부 {{Zymogen granule}} → 분비</li>
+  <li>{{Centroacinar cell}}: intercalated duct가 꽈리 중앙으로 들어간 부위 세포</li>
+  <li>경로: Acinar → {{Intercalated duct}} → Interlobular duct → Main duct → {{Duodenum}}</li>
+  <li>특징: {{myoepithelial cell 없음}}</li>
+  </ul>`},
+
+{ch:"panc", kind:"warn", title:"🔴 교수님 강조", html:`
+  <p>Exocrine의 major 세포 두 가지 = <strong>{{Acinar cell}} + {{Centroacinar cell}}</strong>.</p>`},
+
+{ch:"panc", kind:"tip", title:"💡 시험포인트 — Islets 식별", html:`
+  <p>H&E에서 주변 acinus보다 <strong>{{밝고 옅게 염색}}되는 원형 섬</strong> = Islets of Langerhans.</p>
+  <p>α/β/δ 구분은 H&E 불가 → {{면역조직화학(immunohistochemistry)}} 필요.</p>`},
+
+{ch:"panc", kind:"summary", title:"췌장 정리", html:`
+  <ul>
+  <li>Exocrine 단위 = {{Acinus}}, 효소원 과립 = {{zymogen granule}}</li>
+  <li>Endocrine = {{Islets of Langerhans}} (β=인슐린)</li>
+  <li>세포 타입 구분 = {{면역염색}}</li>
+  </ul>`},
+
+/* ===== 6. LIVER ===== */
+{ch:"liver", kind:"cover", title:"간", html:`<div class="big-ic">🫀</div><h2>간</h2><span class="en">LIVER</span>`},
+
+{ch:"liver", kind:"concept", title:"Hepatic lobule 구조", html:`
+  <ul>
+  <li>육각형 단위, 중앙에 {{Central vein}}</li>
+  <li>가장자리 꼭짓점에 {{Portal triad}}</li>
+  <li>{{Hepatocyte}}: 두 줄(plate)로 방사상 배열</li>
+  <li>{{Sinusoid}}: 간세포판 사이 혈관 통로</li>
+  <li>혈류: Portal triad → {{Sinusoid}} → {{Central vein}}</li>
+  </ul>`},
+
+{ch:"liver", kind:"table", title:"Portal triad — 글자 없이 구분", html:`
+  <table><thead><tr><th>구조</th><th>상피/근육층</th><th>RBC</th></tr></thead><tbody>
+  <tr><td>{{Bile duct}}</td><td>{{Simple cuboidal}} / 근육 없음</td><td>없음</td></tr>
+  <tr><td>Hepatic artery</td><td>내피 / 근육층 {{두꺼움}}, 소형</td><td>(+)</td></tr>
+  <tr><td>Portal vein</td><td>내피 / 근육층 {{얇음}}, 대형</td><td>(+)</td></tr>
+  <tr><td>Lymphatic duct</td><td>내피 / 근육 없음</td><td>{{없음(투명)}}</td></tr>
+  </tbody></table>`},
+
+{ch:"liver", kind:"warn", title:"🔴 교수님 강조", html:`
+  <p>“글자가 없어도 알아야 해요!” — {{상피 모양}} + {{근육층 두께}} + {{RBC 유무}}로 혈관/담관/림프관 구분.</p>
+  <p>현미경에서 {{Simple cuboidal epithelium}} 보이면 = Bile duct.</p>`},
+
+{ch:"liver", kind:"concept", title:"Sinusoid 미세구조", html:`
+  <ul>
+  <li>내피세포에 {{Fenestration(창)}} → 유창성, {{기저막 없음}} → 물질교환 극대화</li>
+  <li>{{Space of Disse}}: 내피와 간세포 사이, 간세포 {{microvilli}} 돌출, stellate cell 위치</li>
+  <li>{{Kupffer cell}}: sinusoid 내 대식세포, 활성화 시 통통해져 실질로 이주</li>
+  </ul>`},
+
+{ch:"liver", kind:"concept", title:"담즙 배출 경로", html:`
+  <p>혈류와 <strong>반대</strong> 방향:</p>
+  <p>Hepatocyte → {{Bile canaliculus}} → {{Canal of Hering}} → Bile ductule → Interlobular bile duct → {{Gallbladder}}</p>
+  <p>{{Bile canaliculus}}는 {{tight junction}}으로 봉인 → 담즙이 혈관으로 새지 않음.</p>`},
+
+{ch:"liver", kind:"table", title:"간 손상 모델", html:`
+  <table><thead><tr><th>모델</th><th>방법</th><th>패턴</th></tr></thead><tbody>
+  <tr><td>약물성</td><td>{{CCl₄}}</td><td>{{Central vein 중심 괴사}}</td></tr>
+  <tr><td>지방간</td><td>MCD diet</td><td>지방변성 ({{Oil Red O}}로 확인)</td></tr>
+  </tbody></table>`},
+
+{ch:"liver", kind:"summary", title:"간 정리", html:`
+  <ul>
+  <li>소엽 중앙 = {{central vein}}, 가장자리 = {{portal triad}}</li>
+  <li>Bile duct 상피 = {{simple cuboidal}}</li>
+  <li>Sinusoid 대식세포 = {{Kupffer cell}}</li>
+  <li>CCl₄ 손상 위치 = {{central vein 중심}}</li>
+  </ul>`},
+
+/* ===== 7. GALLBLADDER ===== */
+{ch:"gall", kind:"cover", title:"담낭", html:`<div class="big-ic">💧</div><h2>담낭</h2><span class="en">GALLBLADDER</span>`},
+
+{ch:"gall", kind:"concept", title:"담낭 — 4층이 아니다", html:`
+  <ul>
+  <li>기능: 담즙 {{저장·농축}}</li>
+  <li><strong>{{Submucosa 없음}}</strong> — 일반 소화관과 가장 큰 차이</li>
+  <li>상피: {{Simple columnar}} 단일 종류 (goblet/Paneth 등 없음)</li>
+  <li>첨단부 {{미세융모}} 발달 → 수분/전해질 재흡수</li>
+  </ul>`},
+
+{ch:"gall", kind:"warn", title:"🔴 교수님 강조", html:`
+  <p><strong>“Submucosa layer가 명확하게 없어요”</strong> — 소화관 중 유일하게 {{submucosa}}가 없는 기관. 상피는 {{simple columnar}} 하나뿐.</p>`},
+
+{ch:"gall", kind:"summary", title:"담낭 정리", html:`
+  <ul>
+  <li>Submucosa 없는 소화기관 = {{Gallbladder}}</li>
+  <li>상피 = {{simple columnar}} 단일</li>
+  </ul>`},
+
+/* ===== 8. SUMMARY ===== */
+{ch:"sum", kind:"cover", title:"종합 비교", html:`<div class="big-ic">🏁</div><h2>종합 비교</h2><span class="en">PUT IT TOGETHER</span>`},
+
+{ch:"sum", kind:"table", title:"부속 기관 핵심 비교", html:`
+  <table><thead><tr><th></th><th>Pancreas</th><th>Liver</th><th>Gallbladder</th></tr></thead><tbody>
+  <tr><td>기본 단위</td><td>{{Acinus}}</td><td>{{Hepatic lobule}}</td><td>—</td></tr>
+  <tr><td>외분비 세포</td><td>Acinar cell</td><td>{{Hepatocyte}}</td><td>—</td></tr>
+  <tr><td>특징 구조</td><td>{{Centroacinar cell}}</td><td>{{Sinusoid/Kupffer}}</td><td>{{Submucosa 없음}}</td></tr>
+  <tr><td>Duct 상피</td><td>Simple cuboidal</td><td>{{Simple cuboidal}}</td><td>{{Simple columnar}}</td></tr>
+  </tbody></table>`},
+
+{ch:"sum", kind:"concept", title:"부위 동정 1초 룰", html:`
+  <ul>
+  <li>핑크 진한 둥근 세포 덩어리 → {{위(parietal cell)}}</li>
+  <li>Villi + crypt base 빨간 과립 → {{소장(Paneth cell)}}</li>
+  <li>Villi 없고 goblet 가득 → {{대장}}</li>
+  <li>밝은 원형 섬 in 췌장 → {{Islets of Langerhans}}</li>
+  <li>Simple cuboidal duct in 간 → {{Bile duct}}</li>
+  <li>Submucosa 없음 → {{Gallbladder}}</li>
+  </ul>`},
+
+{ch:"sum", kind:"summary", title:"끝! 수고했어요", html:`
+  <p>각 부위별 특징 중심으로 정리 완료. 모든 챕터를 ✅ 완료로 표시했다면 스텝퍼에 체크가 보일 거예요.</p>
+  <p style="color:var(--ink-soft)">다시 처음부터: 왼쪽 끝으로 스와이프하거나 스텝퍼의 🗺️를 누르세요.</p>`},
+];
+
+/* ---------- 렌더링 ---------- */
+const KIND_LABEL = {warn:"🔴 교수님 강조", tip:"💡 시험포인트", note:"💬 부가 설명", fix:"⚡ 강의 정정", extra:"📚 수업 외"};
+const REVEAL = new Set(["warn","tip","note","fix","extra"]);
+
+const deck = document.getElementById('deck');
+const stepper = document.getElementById('stepper');
+let store = {};
+try { store = JSON.parse(localStorage.getItem('digst_v1')||'{}'); } catch(e){ store = {}; }
+const done = new Set(store.done||[]);
+
+function clozeify(html){
+  return html.replace(/\{\{([\s\S]+?)\}\}/g, (_,t)=>`<button class="cloze" type="button" aria-label="빈칸, 눌러서 정답 보기">${t}</button>`);
+}
+
+D.forEach((card, i)=>{
+  const sec = document.createElement('section');
+  sec.className = 'card' + (card.kind==='cover' ? ' cover':'');
+  sec.dataset.ch = card.ch; sec.dataset.i = i;
+  const inner = document.createElement('div');
+  inner.className = 'inner';
+  const chMeta = CH.find(c=>c.id===card.ch);
+
+  if(card.kind==='cover'){
+    inner.innerHTML = card.html;
+  } else if(REVEAL.has(card.kind)){
+    inner.innerHTML = `<p class="kicker">${chMeta.ic} ${chMeta.name}<span class="num">· ${KIND_LABEL[card.kind]}</span></p>
+      <details class="reveal ${card.kind}"><summary>${card.title}</summary><div class="body">${clozeify(card.html)}</div></details>`;
+  } else {
+    inner.innerHTML = `<p class="kicker">${chMeta.ic} ${chMeta.name}</p>
+      <h2 class="ctitle">${card.title}</h2>
+      <div class="card-tools"><button data-act="show">전체 공개</button><button data-act="hide">다시 가리기</button></div>
+      <div class="content">${clozeify(card.html)}</div>`;
+  }
+
+  const isLastOfCh = !D[i+1] || D[i+1].ch !== card.ch;
+  if(isLastOfCh && card.ch!=='sum'){
+    const b = document.createElement('button');
+    b.className='done-btn'; b.dataset.ch=card.ch;
+    b.setAttribute('aria-pressed', done.has(card.ch)?'true':'false');
+    b.innerHTML = `<span>✅</span><span class="lbl"></span>`;
+    inner.appendChild(b);
+  }
+  sec.appendChild(inner);
+  deck.appendChild(sec);
+});
+
+CH.forEach(c=>{
+  const b=document.createElement('button');
+  b.dataset.ch=c.id; b.dataset.done = done.has(c.id)?'1':'0';
+  b.innerHTML=`<span class="ic">${c.ic}</span>${c.name}`;
+  b.onclick=()=>{ const t=deck.querySelector(`.card[data-ch="${c.id}"]`); t && t.scrollIntoView({behavior:'smooth',inline:'center'}); };
+  stepper.appendChild(b);
+});
+
+/* ---------- 인터랙션 ---------- */
+deck.addEventListener('click', e=>{
+  const cz=e.target.closest('.cloze'); if(cz){ cz.classList.toggle('show'); return; }
+  const act=e.target.closest('[data-act]');
+  if(act){ const card=act.closest('.card'); const show=act.dataset.act==='show';
+    card.querySelectorAll('.cloze').forEach(c=>c.classList.toggle('show', show)); return; }
+  const db=e.target.closest('.done-btn');
+  if(db){ const ch=db.dataset.ch; const on=db.getAttribute('aria-pressed')!=='true';
+    db.setAttribute('aria-pressed', on?'true':'false');
+    on?done.add(ch):done.delete(ch);
+    const sb=stepper.querySelector(`button[data-ch="${ch}"]`); if(sb) sb.dataset.done=on?'1':'0';
+    persist(); }
+  if(e.target.closest('summary')){ const cc=e.target.closest('.card'); if(cc) requestAnimationFrame(()=>fitCard(cc)); }
+});
+
+const cards=[...deck.querySelectorAll('.card')];
+const prev=document.getElementById('prev'), next=document.getElementById('next');
+const count=document.getElementById('count'), bar=document.getElementById('bar');
+let cur=0;
+
+/* ---------- auto-fit: 카드를 화면 높이에 맞춰 통째로 축소 ---------- */
+const MIN_FIT=0.5;
+function fitCard(card){
+  const inner=card.querySelector('.inner'); if(!inner) return;
+  inner.classList.remove('scrollable');
+  inner.style.setProperty('--fit','1');
+  const cs=getComputedStyle(card);
+  const pad=(parseFloat(cs.paddingTop)||0)+(parseFloat(cs.paddingBottom)||0);
+  const avail=card.clientHeight - pad - 4;
+  const natural=inner.scrollHeight;
+  if(!natural||avail<=0) return;
+  let fit=Math.min(1, (avail/natural)*0.97);
+  if(fit<MIN_FIT){ fit=MIN_FIT; inner.classList.add('scrollable'); }
+  inner.style.setProperty('--fit', fit.toFixed(3));
+}
+function fitAll(){ cards.forEach(fitCard); }
+
+function go(n){ cur=Math.max(0,Math.min(cards.length-1,n)); cards[cur].scrollIntoView({behavior:'smooth',inline:'center'}); }
+prev.onclick=()=>go(cur-1); next.onclick=()=>go(cur+1);
+
+const io=new IntersectionObserver(es=>{
+  es.forEach(en=>{ if(en.isIntersecting){
+    cur=+en.target.dataset.i;
+    count.textContent=`${cur+1} / ${cards.length}`;
+    bar.style.inlineSize=((cur+1)/cards.length*100)+'%';
+    prev.disabled=cur===0; next.disabled=cur===cards.length-1;
+    const ch=en.target.dataset.ch;
+    stepper.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current', b.dataset.ch===ch?'true':'false'));
+    const sb=stepper.querySelector(`button[data-ch="${ch}"][aria-current="true"]`);
+    sb && sb.scrollIntoView({inline:'center',block:'nearest'});
+    fitCard(en.target);
+  }});
+},{root:deck,threshold:.6});
+cards.forEach(c=>io.observe(c));
+
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight'){ go(cur+1); }
+  else if(e.key==='ArrowLeft'){ go(cur-1); }
+  else if(e.key===' '){ const c=cards[cur].querySelector('.cloze:not(.show)'); if(c){e.preventDefault(); c.classList.add('show');} }
+});
+
+/* 테마 토글 (기본: 화이트 모드) */
+const themeBtn=document.getElementById('theme');
+function isDark(){ return store.theme==='dark'; }
+function applyTheme(){ const d=isDark(); document.documentElement.style.colorScheme=d?'dark':'light'; themeBtn.textContent=d?'☀️':'🌙'; }
+applyTheme();
+themeBtn.onclick=()=>{ store.theme = isDark()?'light':'dark'; applyTheme(); persist(); requestAnimationFrame(fitAll); };
+
+function persist(){ store.done=[...done]; try{ localStorage.setItem('digst_v1', JSON.stringify(store)); }catch(e){} }
+
+/* 초기 + 리사이즈(회전 포함) + 웹폰트 로드 후 재측정 */
+let rT; addEventListener('resize', ()=>{ clearTimeout(rT); rT=setTimeout(fitAll, 120); });
+count.textContent=`1 / ${cards.length}`;
+fitAll();
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fitAll); }
+addEventListener('load', fitAll);
+deck.focus();
+</script>
+</body>
+</html>
