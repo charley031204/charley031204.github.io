@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소화기계 발생 — 슬라이드 정리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Gowun+Dodum&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+<style>
+@layer reset, tokens, base, layout, components, utils;
+
+@layer reset {
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body,h1,h2,h3,p,ul,ol{margin:0}
+  ul{padding:0;list-style:none}
+  button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}
+}
+
+@layer tokens {
+  :root{
+    color-scheme: light;
+
+    /* ── 유체 타이포 스케일 ── */
+    --step--1: clamp(0.80rem, 0.77rem + 0.16vi, 0.90rem);
+    --step-0:  clamp(0.95rem, 0.91rem + 0.22vi, 1.06rem);
+    --step-1:  clamp(1.08rem, 1.00rem + 0.38vi, 1.30rem);
+    --step-2:  clamp(1.30rem, 1.15rem + 0.72vi, 1.72rem);
+    --step-3:  clamp(1.62rem, 1.33rem + 1.45vi, 2.45rem);
+    --step-4:  clamp(2.05rem, 1.50rem + 2.75vi, 3.60rem);
+
+    /* ── 간격 ── */
+    --sp-1: clamp(0.40rem, 0.37rem + 0.15vi, 0.50rem);
+    --sp-2: clamp(0.70rem, 0.63rem + 0.32vi, 0.95rem);
+    --sp-3: clamp(1.00rem, 0.88rem + 0.55vi, 1.45rem);
+    --sp-4: clamp(1.50rem, 1.28rem + 1.00vi, 2.30rem);
+    --sp-5: clamp(2.20rem, 1.75rem + 2.10vi, 3.60rem);
+
+    --r-1:10px; --r-2:16px; --r-3:22px;
+
+    /* ── 색 (oklch) ── */
+    --bg:        oklch(98.4% 0.006 220);
+    --surface:   oklch(100% 0 0);
+    --surface-2: oklch(96.8% 0.009 222);
+    --ink:       oklch(30% 0.030 248);
+    --ink-soft:  oklch(44% 0.028 242);
+    --dim:       oklch(56% 0.024 236);
+    --line:      oklch(91.5% 0.011 232);
+
+    --teal:      oklch(58% 0.098 190);
+    --teal-deep: oklch(45% 0.082 194);
+    --accent:    oklch(49% 0.092 193);
+
+    --amber:     oklch(82% 0.135 82);
+    --amber-bg:  oklch(97.2% 0.034 86);
+    --amber-ink: oklch(44% 0.098 64);
+
+    --rose:      oklch(57% 0.190 18);
+    --indigo:    oklch(52% 0.150 280);
+    --orange:    oklch(64% 0.140 58);
+
+    --fg: var(--teal);
+    --mg: var(--indigo);
+    --hg: var(--orange);
+
+    /* ── 폰트 (여기만 바꾸면 전체 변경) ── */
+    --font:        "Gowun Dodum", sans-serif;                    /* 본문·표 */
+    --font-display:"Darker Grotesque", "Gowun Dodum", sans-serif;/* 영문·숫자·제목 */
+    --font-serif:  "Noto Serif KR", serif;                       /* 큰 한글 타이틀 */
+
+    --shadow-1: 0 1px 2px oklch(40% 0.03 245 / .05), 0 1px 1px oklch(40% 0.03 245 / .04);
+    --shadow-2: 0 2px 6px oklch(40% 0.03 245 / .06), 0 14px 30px -16px oklch(40% 0.03 245 / .28);
+    --shadow-3: 0 6px 16px oklch(40% 0.03 245 / .08), 0 28px 56px -22px oklch(40% 0.03 245 / .34);
+  }
+}
+
+@layer base {
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: var(--step-0);
+    line-height: 1.78;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{text-wrap:balance; line-height:1.12}
+  p{text-wrap:pretty}
+  ::selection{background: oklch(82% 0.13 82 / .45)}
+  :where(button,.chip,.nav-dot,.search):focus-visible{
+    outline:2px solid var(--teal); outline-offset:2px; border-radius:6px;
+  }
+}
+
+@layer layout {
+  .deck{position:relative}
+  .slide{
+    display:none;
+    min-block-size:100vh;
+    padding-block: var(--sp-4) calc(var(--sp-5) + 3.6rem);
+    padding-inline: var(--sp-3);
+  }
+  .slide.active{display:block}
+  @media (prefers-reduced-motion: no-preference){
+    .slide.active{animation: slidein .38s ease both}
+    @keyframes slidein{from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none}}
+  }
+  .inner{
+    max-inline-size: 75rem;
+    margin-inline: auto;
+    container: page / inline-size;
+  }
+}
+
+@layer components {
+  /* ── 제목 ── */
+  .kicker{
+    font-family:var(--font-display); font-weight:700;
+    font-size:var(--step-1); letter-spacing:.10em; text-transform:uppercase;
+    color:var(--teal);
+  }
+  .slide-title{
+    font-family:var(--font-serif); font-weight:200;
+    font-size:var(--step-4); line-height:1.1; letter-spacing:-.01em;
+    margin-block:.08em .3em; color:var(--ink);
+  }
+  .slide-sub{ color:var(--dim); font-size:var(--step-0); max-inline-size:64ch; margin-block-end:var(--sp-4) }
+
+  /* ── 하단 네비 ── */
+  .navbar{
+    position:fixed; inset-inline:0; inset-block-end:0; z-index:60;
+    display:flex; gap:var(--sp-2); align-items:center; justify-content:center;
+    padding:var(--sp-2);
+    background:oklch(100% 0 0 / .80); backdrop-filter:blur(14px) saturate(1.4);
+    border-block-start:1px solid var(--line);
+  }
+  .nav-btn{
+    inline-size:2.7rem; block-size:2.5rem; display:grid; place-items:center;
+    font-family:var(--font-display); font-weight:800; font-size:var(--step-2);
+    color:var(--ink-soft); background:var(--surface);
+    border:1px solid var(--line); border-radius:var(--r-1); box-shadow:var(--shadow-1);
+    transition:border-color .15s, color .15s, transform .1s;
+    &:hover{border-color:var(--teal); color:var(--teal)}
+    &:active{transform:translateY(1px)}
+  }
+  .nav-dots{display:flex; gap:.5rem; align-items:center}
+  .nav-dot{
+    inline-size:.7rem; block-size:.7rem; border-radius:50%;
+    background:oklch(86% 0.02 232);
+    transition:inline-size .25s, background .25s, border-radius .25s;
+    &.on{background:var(--teal); inline-size:2rem; border-radius:99px}
+  }
+  .nav-count{
+    font-family:var(--font-display); font-weight:700; font-size:var(--step-1);
+    color:var(--dim); min-inline-size:3.6rem; text-align:center;
+  }
+
+  /* ── 표지 카드 ── */
+  .cover-grid{ display:grid; gap:var(--sp-2); margin-block-start:var(--sp-2); grid-template-columns:repeat(2,1fr) }
+  @container page (width < 34rem){ .cover-grid{grid-template-columns:1fr} }
+  .pt-card{
+    position:relative; background:var(--surface);
+    border:1px solid var(--line); border-inline-start:4px solid var(--teal);
+    border-radius:var(--r-2); box-shadow:var(--shadow-1);
+    padding:var(--sp-2) var(--sp-3) var(--sp-2) calc(2.6rem + var(--sp-2));
+    transition:box-shadow .2s, transform .2s;
+    &:hover{box-shadow:var(--shadow-2); transform:translateY(-2px)}
+    b{color:var(--accent)}
+    .n{
+      position:absolute; inset-inline-start:var(--sp-2); inset-block-start:var(--sp-2);
+      inline-size:2rem; block-size:2rem; display:grid; place-items:center;
+      font-family:var(--font-display); font-weight:800; font-size:var(--step-2);
+      color:var(--teal-deep); line-height:1; border-radius:var(--r-1);
+      background:color-mix(in oklch, var(--teal) 14%, white);
+    }
+  }
+  .cover-hint{ margin-block-start:var(--sp-3); color:var(--dim); font-size:var(--step-0) }
+  .cover-hint kbd{
+    font-family:var(--font-display); font-weight:700;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:6px;
+    padding:.05em .55em; box-shadow:var(--shadow-1);
+  }
+
+  /* ── 섹션별 필터바 ── */
+  .filterbar{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--r-2); box-shadow:var(--shadow-1);
+    padding:var(--sp-3); margin-block-end:var(--sp-3);
+  }
+  .fb-head{
+    display:flex; align-items:center; gap:.5rem; margin-block-end:var(--sp-2);
+    font-family:var(--font-display); font-weight:700; font-size:var(--step-1); color:var(--ink-soft);
+    &::before{content:""; inline-size:.55rem; block-size:.55rem; border-radius:50%; background:var(--teal)}
+  }
+  .search{
+    inline-size:100%; padding:.7em 1em; margin-block-end:var(--sp-2);
+    font-family:var(--font); font-size:var(--step-0); color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:var(--r-1);
+    transition:border-color .15s, background .15s;
+    &::placeholder{color:var(--dim)}
+    &:focus{outline:none; border-color:var(--teal); background:var(--surface)}
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:.5rem}
+  .chip{
+    padding:.4em 1em; border-radius:99px; white-space:nowrap; user-select:none;
+    font-size:var(--step--1); color:var(--ink-soft);
+    background:var(--surface-2); border:1px solid var(--line);
+    transition:background .15s, color .15s, border-color .15s;
+    &:hover{border-color:var(--dim); color:var(--ink)}
+    &.on{color:white; border-color:transparent; box-shadow:var(--shadow-1)}
+    &.seg-fg.on{background:var(--fg)}
+    &.seg-mg.on{background:var(--mg)}
+    &.seg-hg.on{background:var(--hg)}
+    &.mech.on{background:var(--rose)}
+    &.exam-only.on{background:var(--amber-ink)}
+    &.reset{border-style:dashed; background:transparent}
+  }
+  .meta{margin-block-start:var(--sp-2); font-size:var(--step--1); color:var(--dim)}
+
+  /* ── 표 ── */
+  .tbl-scroll{
+    overflow-x:auto; background:var(--surface);
+    border:1px solid var(--line); border-radius:var(--r-2); box-shadow:var(--shadow-2);
+  }
+  table{border-collapse:collapse; inline-size:100%; font-size:var(--step-0)}
+  th,td{padding:var(--sp-2) var(--sp-3); text-align:start; vertical-align:top}
+  td{text-wrap:pretty}
+  thead th{
+    position:sticky; inset-block-start:0; z-index:1; white-space:nowrap;
+    font-family:var(--font); font-weight:700; font-size:var(--step-0);
+    color:var(--ink-soft); background:var(--surface-2);
+    box-shadow:inset 0 -1px 0 var(--line);
+  }
+  tbody td{border-block-start:1px solid var(--line)}
+  tbody tr:first-child td{border-block-start:none}
+  tbody tr{transition:background .12s}
+  tbody tr:nth-child(even):not(.mech-head){background:color-mix(in oklch, var(--surface-2) 42%, white)}
+  tbody tr:hover:not(.mech-head){background:color-mix(in oklch, var(--teal) 6%, white)}
+  td b{color:var(--accent); font-weight:700}
+  td .lead{display:block; font-family:var(--font-display); font-weight:800; font-size:var(--step-1); line-height:1.15; color:var(--ink)}
+  td .ko{display:block; color:var(--dim); font-size:var(--step--1)}
+
+  .seg-tag{
+    display:inline-block; padding:.15em .7em; border-radius:99px; white-space:nowrap;
+    font-family:var(--font-display); font-weight:800; font-size:var(--step--1);
+    letter-spacing:.02em; color:white;
+  }
+  .t-fg{background:var(--fg)} .t-mg{background:var(--mg)} .t-hg{background:var(--hg)}
+  .badge{
+    display:inline-block; margin-inline-start:.4em; padding:.05em .6em; border-radius:99px;
+    font-family:var(--font-display); font-weight:800; font-size:var(--step--1);
+    color:white; background:var(--rose);
+  }
+
+  /* 시험포인트 콜아웃 */
+  .pin{
+    display:block; position:relative; margin-block-start:.25em;
+    padding:.6em .85em .6em 2.1em;
+    font-size:var(--step--1); line-height:1.65;
+    color:var(--amber-ink); background:var(--amber-bg);
+    border-radius:var(--r-1); border-inline-start:3px solid var(--amber);
+    &::before{content:"★"; position:absolute; inset-inline-start:.7em; inset-block-start:.62em; color:var(--amber)}
+    b{color:oklch(42% 0.12 60); font-weight:700}
+  }
+  mark{background:oklch(88% 0.14 86); color:oklch(35% 0.08 64); border-radius:4px; padding:0 .22em; font-weight:700}
+
+  .mech-head td{
+    font-family:var(--font-display); font-weight:800; font-size:var(--step-1);
+    color:var(--rose); letter-spacing:.01em;
+    background:color-mix(in oklch, var(--rose) 8%, white);
+    border-block:1px solid color-mix(in oklch, var(--rose) 22%, white);
+  }
+
+  /* ── Rotation 비교 ── */
+  .cmp-cards{ display:grid; gap:var(--sp-3); margin-block-end:var(--sp-3); grid-template-columns:repeat(2,1fr) }
+  @container page (width < 44rem){ .cmp-cards{grid-template-columns:1fr} }
+  .cmp{
+    --c:var(--teal);
+    background:var(--surface); border:1px solid var(--line); border-block-start:5px solid var(--c);
+    border-radius:var(--r-3); box-shadow:var(--shadow-2); padding:var(--sp-3);
+    &.stomach{--c:var(--fg)} &.midgut{--c:var(--mg)}
+    h3{font-family:var(--font-display); font-weight:800; font-size:var(--step-2); color:var(--ink)}
+    .dir{
+      display:inline-block; margin-block:.4em 1em; padding:.2em .9em; border-radius:99px;
+      font-family:var(--font-display); font-weight:800; font-size:var(--step-1);
+      color:white; background:var(--c);
+    }
+  }
+  .steps li{
+    position:relative; padding-inline-start:1.6em; padding-block-end:1em;
+    border-inline-start:2px solid var(--line); margin-inline-start:.4em;
+    &:last-child{border-color:transparent; padding-block-end:0}
+    &::before{content:""; position:absolute; inset-inline-start:-.45em; inset-block-start:.4em;
+      inline-size:.78em; block-size:.78em; border-radius:50%; background:var(--c)}
+  }
+  .cmp .steps{ }
+  .steps .wk{font-family:var(--font-display); font-weight:800; font-size:var(--step-0); color:var(--c)}
+  .steps b{color:var(--ink); font-weight:700}
+  .cmp-table td:first-child{font-weight:700; color:var(--dim); white-space:nowrap}
+  .recall{
+    margin-block-start:var(--sp-2); padding:var(--sp-3); border-radius:var(--r-2);
+    color:oklch(96% 0.02 190); box-shadow:var(--shadow-2); font-size:var(--step-0);
+    background:linear-gradient(135deg, var(--teal-deep), oklch(38% 0.07 202));
+    b{font-family:var(--font-display); font-weight:800; font-size:var(--step-1); color:oklch(90% 0.12 86)}
+  }
+  .foot{margin-block-start:var(--sp-4); text-align:center; color:var(--dim); font-size:var(--step--1)}
+
+  /* ── 시기별 매트릭스(타임라인) ── */
+  .matrix{font-size:var(--step--1); line-height:1.5}
+  .matrix th,.matrix td{white-space:normal; min-inline-size:8.6rem; vertical-align:top}
+  .matrix thead th{text-align:center; font-family:var(--font-display); font-size:var(--step-0)}
+  .matrix thead th:first-child{
+    text-align:start; position:sticky; inset-inline-start:0; z-index:3;
+    background:var(--surface-2); min-inline-size:9.5rem;
+  }
+  .matrix tbody th{
+    position:sticky; inset-inline-start:0; z-index:2; text-align:start; white-space:nowrap;
+    background:var(--surface); min-inline-size:9.5rem;
+    border-inline-start:4px solid var(--seg,var(--line));
+    box-shadow:1px 0 0 var(--line);
+  }
+  .matrix tbody tr:nth-child(even) th{background:color-mix(in oklch, var(--surface-2) 42%, white)}
+  .matrix tr[data-seg~="fg"] th{--seg:var(--fg)}
+  .matrix tr[data-seg~="mg"] th{--seg:var(--mg)}
+  .matrix tr[data-seg~="hg"] th{--seg:var(--hg)}
+  .matrix .org{display:block; font-family:var(--font-display); font-weight:800; font-size:var(--step-0); color:var(--ink); line-height:1.12}
+  .matrix .org-ko{display:block; color:var(--dim); font-size:var(--step--1)}
+  .matrix td{color:var(--ink-soft)}
+  .matrix td .day{color:var(--dim); font-size:.9em; white-space:nowrap}
+  .matrix td.e{color:oklch(82% 0.008 230); text-align:center}
+  .matrix td.hot{background:var(--amber-bg); color:var(--amber-ink); font-weight:700}
+  .matrix td.hot b{color:oklch(42% 0.12 60)}
+
+  /* ── 표 가로 스크롤(드래그+휠+가장자리 힌트) ── */
+  .tbl-wrap{position:relative}
+  .tbl-scroll{cursor:grab; overscroll-behavior-x:contain}
+  .tbl-scroll.dragging{cursor:grabbing; user-select:none; scroll-behavior:auto}
+  .edge{
+    position:absolute; inset-block:0; inline-size:2.4rem; z-index:4;
+    pointer-events:none; opacity:0; transition:opacity .25s;
+    border-radius:var(--r-2);
+  }
+  .edge-l{inset-inline-start:0; background:linear-gradient(to right, oklch(25% 0.03 245 / .16), transparent)}
+  .edge-r{inset-inline-end:0; background:linear-gradient(to left,  oklch(25% 0.03 245 / .16), transparent)}
+  .tbl-wrap.more-l .edge-l{opacity:1}
+  .tbl-wrap.more-r .edge-r{opacity:1}
+  .scroll-hint{
+    position:absolute; inset-block-start:.5rem; inset-inline-end:.7rem; z-index:5;
+    pointer-events:none; opacity:0; transition:opacity .4s;
+    font-family:var(--font-display); font-weight:700; font-size:var(--step--1);
+    color:var(--teal-deep); background:oklch(100% 0 0 / .88);
+    border:1px solid var(--line); border-radius:99px; padding:.12em .8em; box-shadow:var(--shadow-1);
+  }
+  .tbl-wrap.more-r:not(.scrolled) .scroll-hint{opacity:1}
+}
+
+@layer utils {
+  .hidden{display:none !important}
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- ===== 슬라이드 0: 표지 ===== -->
+  <section class="slide active">
+    <div class="inner">
+      <div class="kicker">Digestive System Embryology</div>
+      <div class="slide-title">소화기계 발생</div>
+      <div class="slide-sub">안미정 교수 · 본1 소화 발생 최종정리본 기반 · 발생 4~10주 · 슬라이드 6장</div>
+
+      <div class="cover-grid">
+        <div class="pt-card"><span class="n">1</span><b>혈관 3개</b> = 분절 기준<br>Celiac→Foregut / SMA→Midgut / IMA→Hindgut</div>
+        <div class="pt-card"><span class="n">2</span><b>Esophagus recanalization</b> = 8주 말<br>실패 → atresia / stenosis</div>
+        <div class="pt-card"><span class="n">3</span><b>위 rotation</b> = 시계방향 90°<br>greater curvature → 좌측</div>
+        <div class="pt-card"><span class="n">4</span><b>장(midgut) rotation</b> = 반시계 270°<br>배꼽내 90° + 복강 180°</div>
+        <div class="pt-card"><span class="n">5</span><b>Cecum은 SMA 지배</b><br>대장이지만 소장 싹에서 기원!</div>
+        <div class="pt-card"><span class="n">6</span><b>Hirschsprung's</b> = 신경절세포 결여<br>neural crest 이동 실패</div>
+      </div>
+
+      <div class="cover-hint">
+        <kbd>←</kbd> <kbd>→</kbd> 방향키 또는 하단 버튼으로 슬라이드 이동 · 각 표 위의 필터바로 원하는 내용만 표시
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 슬라이드 1: 표1 ===== -->
+  <section class="slide">
+    <div class="inner">
+      <div class="kicker">Table 1</div>
+      <div class="slide-title">분절 · 장기 · 혈관 마스터표</div>
+      <div class="slide-sub">발생 시작 4주(primitive gut) · 완료 10주 · 입(stomodeum)·항문(proctodeum)만 ectoderm, 나머지 endoderm</div>
+
+      <div class="filterbar" data-target="t1">
+        <div class="fb-head">표1 필터 — 분절 선택</div>
+        <div class="chips">
+          <span class="chip seg-fg" data-f="seg" data-v="fg">Foregut</span>
+          <span class="chip seg-mg" data-f="seg" data-v="mg">Midgut</span>
+          <span class="chip seg-hg" data-f="seg" data-v="hg">Hindgut</span>
+          <span class="chip reset">↺ 초기화</span>
+        </div>
+        <div class="meta"></div>
+      </div>
+
+      <div class="tbl-scroll"><table id="t1">
+        <thead><tr><th>분절</th><th>지배 혈관</th><th>유래 장기</th><th>배엽 기원</th><th>핵심 포인트</th></tr></thead>
+        <tbody>
+          <tr data-seg="fg" data-exam="1"><td><span class="seg-tag t-fg">Foregut</span></td>
+            <td><b>Celiac trunk</b><br><span class="ko">복강동맥간, aorta 첫 분지</span></td>
+            <td>Oral cavity·pharynx·tongue·tonsil·salivary gland, 상·하부 호흡기, esophagus, stomach, duodenum(CBD 개구부 근위부), liver·biliary, pancreas, spleen</td>
+            <td>Endoderm<br><span class="ko">입오목 stomodeum은 ectoderm</span></td>
+            <td><span class="pin">pharynx·호흡기·diaphragm 위 식도는 celiac <b>제외</b></span></td></tr>
+          <tr data-seg="mg" data-exam="1"><td><span class="seg-tag t-mg">Midgut</span></td>
+            <td><b>SMA</b><br><span class="ko">상장간막동맥</span></td>
+            <td>Duodenum(CBD 원위부), jejunum, ileum, <b>cecum</b><span class="badge">함정</span>, appendix, ascending colon, transverse colon Rt 2/3</td>
+            <td>Endoderm</td>
+            <td><span class="pin">Cecum=대장이지만 소장 싹에서 기원 → <b>SMA 지배</b></span></td></tr>
+          <tr data-seg="hg" data-exam="1"><td><span class="seg-tag t-hg">Hindgut</span></td>
+            <td><b>IMA</b><br><span class="ko">하장간막동맥</span></td>
+            <td>Transverse colon Lt 1/3, descending colon, sigmoid colon, rectum, anal canal 상부, 방광·요도 상피 대부분</td>
+            <td>Endoderm<br><span class="ko">anal canal 하부+항문은 ectoderm</span></td>
+            <td><span class="pin">요로계 상피 기원도 <b>hindgut</b></span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- ===== 슬라이드 2: 표2 ===== -->
+  <section class="slide">
+    <div class="inner">
+      <div class="kicker">Table 2</div>
+      <div class="slide-title">장기별 발생과정표</div>
+      <div class="slide-sub">식도부터 항문관까지 — 시기·rotation·발생 특이점</div>
+
+      <div class="filterbar" data-target="t2">
+        <div class="fb-head">표2 필터 — 분절·시험포인트·검색</div>
+        <input class="search" placeholder="🔍 표2 검색 — 장기·키워드 (예: recanalization, 8주, vagus, insulin)">
+        <div class="chips">
+          <span class="chip seg-fg" data-f="seg" data-v="fg">Foregut</span>
+          <span class="chip seg-mg" data-f="seg" data-v="mg">Midgut</span>
+          <span class="chip seg-hg" data-f="seg" data-v="hg">Hindgut</span>
+          <span class="chip exam-only" data-f="exam" data-v="1">⭐ 시험포인트만</span>
+          <span class="chip reset">↺ 초기화</span>
+        </div>
+        <div class="meta"></div>
+      </div>
+
+      <div class="tbl-scroll"><table id="t2">
+        <thead><tr><th>장기</th><th>분절</th><th>핵심 발생 사건</th><th>시기</th><th>특이점 / 시험포인트</th></tr></thead>
+        <tbody>
+          <tr data-seg="fg" data-exam="1"><td><span class="lead">Esophagus</span><span class="ko">식도</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>원시인두 꼬리쪽 발생 → trachea와 함께 하강, <b>tracheoesophageal septum</b>으로 기도·식도 분리 → 상피~근육 꽉 찬 채 성장 → <b>recanalization</b>(관강 재형성)</td>
+            <td>4주~<br>7주 elongation<br><b>8주 말 recanalization</b></td>
+            <td><span class="pin">근육층: Upper 1/3 skeletal(mesoderm)·Mid 혼재·Lower 1/3 smooth(splanchnic). recanalization 실패→<b>atresia/stenosis</b></span></td></tr>
+          <tr data-seg="fg" data-exam="1"><td><span class="lead">Stomach</span><span class="ko">위</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Foregut distal 일자 싹 → dorsal border 빠른 성장으로 <b>greater curvature</b> 형성 → <b>시계방향 90° rotation</b>. Mesogastrium 회전 → omental bursa(lesser sac) 형성</td>
+            <td>4주 싹<br>40일 회전시작<br>52일 가로 완성</td>
+            <td><span class="pin">시계 90°: G.curv→좌측, L.curv→우측. Lt vagus→앞벽, Rt vagus→뒤벽. dorsal mesogastrium→omental bursa(epiploic foramen으로 복막강과 교통), ventral→lesser omentum+falciform lig. ⚠️교과서 기준 G.curv는 회전 후 <b>좌측</b>(교수님 발화엔 '우측' 표현 있으나 교과서 권장)</span></td></tr>
+          <tr data-seg="fg"><td><span class="lead">Duodenum</span><span class="ko">십이지장</span></td><td><span class="seg-tag t-fg">FG</span>+<span class="seg-tag t-mg">MG</span></td>
+            <td>Foregut caudal + Midgut cranial 연합(경계=CBD 개구부 원위), C-shape loop, 위 rotation 시 우측 회전 → retroperitoneum. lumen 폐쇄→vacuolation→<b>recanalization</b></td>
+            <td>4주초<br>5~6주 recanalization</td>
+            <td><span class="pin">혈관: <b>Celiac+SMA 둘 다</b> 분포(두 기원 반영). recanalization 실패→duodenal atresia/stenosis</span></td></tr>
+          <tr data-seg="fg"><td><span class="lead">Liver &amp; Biliary</span><span class="ko">간·담도</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td><b>Hepatic diverticulum</b>(ventral outgrowth): cranial part→liver(간세포판 endoderm; Kupffer·조혈은 septum transversum), caudal part→GB+cystic duct. Bile duct=hepatic+cystic 연결</td>
+            <td>4주초 / 6주 조혈<br>9주 무게 체중 1/10<br>12주 bile 형성 / 13주 배출</td>
+            <td><span class="pin">Meconium=<b>dark green</b>(담즙색). Ventral mesentery→lesser omentum(hepatogastric+hepatoduodenal lig, portal triad)+falciform lig(free border=umbilical vein)</span></td></tr>
+          <tr data-seg="fg"><td><span class="lead">Pancreas</span><span class="ko">이자</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Dorsal bud(먼저·위) + Ventral bud(bile duct 근처). 십이지장 우회전 → ventral bud가 dorsal 뒤로 이동. <b>Ventral→uncinate+head 일부</b>, <b>Dorsal→나머지 대부분</b>. Main duct=ventral+dorsal distal, accessory=dorsal proximal</td>
+            <td>Insulin 10주 분비<br>Glucagon 15주<br>Somatostatin 조기</td>
+            <td><span class="pin">조직형성: buds endoderm→acini, tubule 분리세포군→islets(Langerhans). 모체 DM→β-cell hypertrophy</span></td></tr>
+          <tr data-seg="fg"><td><span class="lead">Spleen</span><span class="ko">비장</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Dorsal mesogastrium 두 layer 사이 <b>mesenchymal cell</b> 유래(lymphoid organ이지만 간엽 기원). 위 rotation 시 splenorenal lig 형성</td>
+            <td>5주(다소 늦게)<br>lobulation 출생 전 소실</td>
+            <td><span class="pin">Late fetal까지 주 조혈기관, adult도 <b>extramedullary hematopoiesis</b> 가능</span></td></tr>
+          <tr data-seg="mg" data-exam="1"><td><span class="lead">Cecum &amp; Appendix</span><span class="ko">맹장·충수</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td>Caudal limb antimesenteric border에 <b>cecal diverticulum</b> → cecum+appendix 발생, ileum 연결. Appendix 늘어나며 rotation과 함께 우하방 이동(처음 subhepatic)</td>
+            <td>6주 중간 cecal diverticulum<br>12주 appendix 신장</td>
+            <td><span class="pin">혈관=<b>SMA</b>(대장이지만 소장 싹 기원). Retrocecal appendix 64%(최다)</span></td></tr>
+          <tr data-seg="mg" data-exam="1"><td><span class="lead">Midgut loop</span><span class="ko">중간창자 회전</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td>배 공간 부족→<b>physiological umbilical herniation</b>(정상!) → 배꼽내 반시계 90° → 10주 복강 귀환(소장이 SMA 뒤로 먼저) → 추가 반시계 180° = <b>총 270° 반시계</b></td>
+            <td>5~6주 탈출<br>10주 복귀<br>11주 180° 추가</td>
+            <td><span class="pin">위 시계 90° ↔ 장 반시계 270° 비교가 시험 핵심. Mesentery 부착선=ileocecal→duodenojejunal oblique line</span></td></tr>
+          <tr data-seg="hg" data-exam="1"><td><span class="lead">Cloaca</span><span class="ko">배설강 분리</span></td><td><span class="seg-tag t-hg">HG</span></td>
+            <td>Cloaca = hindgut 종말 확장부. <b>Urorectal septum</b>으로 분리: <b>Dorsal→rectum</b>+anal canal 상부, <b>Ventral→urogenital sinus</b>. Cloacal membrane=endoderm+proctodeum ectoderm. Urorectal septum+cloacal membrane 융합→perineal body</td>
+            <td>4주 cloaca<br>7주 anal membrane<br>8주 말 파열</td>
+            <td><span class="pin">Ventral=비뇨생식, Dorsal=소화기. Anal membrane 파열 실패→<b>imperforate anus</b></span></td></tr>
+          <tr data-seg="hg"><td><span class="lead">Anal canal</span><span class="ko">항문관</span></td><td><span class="seg-tag t-hg">HG</span></td>
+            <td>Superior 2/3(~25mm)=hindgut(endoderm) / Inferior 1/3(~13mm)=proctodeum(ectoderm). 경계=<b>pectinate line</b></td>
+            <td>—</td>
+            <td><span class="pin">Pectinate line 기준 혈관·신경·림프·상피 모두 다름. Anocutaneous line(white line)=항문 2cm 상방, columnar→squamous</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- ===== 슬라이드 3: 표3 ===== -->
+  <section class="slide">
+    <div class="inner">
+      <div class="kicker">Table 3</div>
+      <div class="slide-title">발생 이상(기형) 통합표</div>
+      <div class="slide-sub">공통 기전별 7그룹 — 같은 기전끼리 묶어서 외우기</div>
+
+      <div class="filterbar" data-target="t3">
+        <div class="fb-head">표3 필터 — 기전·분절·검색</div>
+        <input class="search" placeholder="🔍 표3 검색 — 기형·키워드 (예: Meckel, vitelline, Down, 황달)">
+        <div class="chips">
+          <span class="chip mech" data-f="mech" data-v="recanal">①Recanalization</span>
+          <span class="chip mech" data-f="mech" data-v="rotation">②Rotation</span>
+          <span class="chip mech" data-f="mech" data-v="return">③복귀/복벽</span>
+          <span class="chip mech" data-f="mech" data-v="remnant">④잔재소실</span>
+          <span class="chip mech" data-f="mech" data-v="septum">⑤분리</span>
+          <span class="chip mech" data-f="mech" data-v="neural">⑥신경절</span>
+          <span class="chip mech" data-f="mech" data-v="etc">⑦기타</span>
+          <span class="chip seg-fg" data-f="seg" data-v="fg">FG</span>
+          <span class="chip seg-mg" data-f="seg" data-v="mg">MG</span>
+          <span class="chip seg-hg" data-f="seg" data-v="hg">HG</span>
+          <span class="chip exam-only" data-f="exam" data-v="1">⭐ 시험포인트만</span>
+          <span class="chip reset">↺ 초기화</span>
+        </div>
+        <div class="meta"></div>
+      </div>
+
+      <div class="tbl-scroll"><table id="t3">
+        <thead><tr><th>기형</th><th>분절</th><th>기전 / 발생학</th><th>증상·특징</th><th>빈도·비고</th></tr></thead>
+        <tbody>
+          <tr class="mech-head" data-mech="recanal"><td colspan="5">① Recanalization 실패 — 관강이 안 뚫림 (atresia=완전폐쇄 / stenosis=불완전협착)</td></tr>
+          <tr data-seg="fg" data-mech="recanal" data-exam="1"><td><span class="lead">Esophageal atresia</span><span class="ko">식도폐쇄</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>8주 recanalization 완전 실패 → 관 완전 폐쇄</td>
+            <td>양수 못 삼킴 → <b>polyhydramnios</b>(양수과다). 수술 시 85%+ 생존</td>
+            <td>1/3,000~4,500. TE fistula 85%+ 동반</td></tr>
+          <tr data-seg="fg" data-mech="recanal"><td><span class="lead">Esophageal stenosis</span><span class="ko">식도협착</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>8주 불완전 recanalization → 일부만 열림</td><td>주로 distal 1/3</td><td>—</td></tr>
+          <tr data-seg="fg" data-mech="recanal"><td><span class="lead">Duodenal stenosis</span><span class="ko">샘창자협착</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Defective vacuolation → 불완전 recanalization (annular pancreas 원인도)</td>
+            <td>담즙 포함 구토. 협착 3rd·4th part</td><td>—</td></tr>
+          <tr data-seg="fg" data-mech="recanal" data-exam="1"><td><span class="lead">Duodenal atresia</span><span class="ko">샘창자폐쇄</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Duodenal lumen 완전 폐쇄</td>
+            <td>출생 수시간 내 구토(거의 항상 담즙). <b>Double bubble sign</b></td>
+            <td>Down 20~30%, 조산 20%, 가족형 AR. 2nd·3rd part</td></tr>
+          <tr data-seg="hg" data-mech="recanal"><td><span class="lead">Imperforate anus 등</span><span class="ko">항문막힘·폐쇄·협착</span></td><td><span class="seg-tag t-hg">HG</span></td>
+            <td>Anal membrane 파열 실패 / recanalization 실패 / urorectal septum 비정상</td>
+            <td>Low form / High form, 맹낭으로 끝남, rectal atresia 동반 가능</td>
+            <td>1/5,000, male&gt;female</td></tr>
+
+          <tr class="mech-head" data-mech="rotation"><td colspan="5">② Rotation 실패 — 회전이 안 되거나 거꾸로</td></tr>
+          <tr data-seg="mg" data-mech="rotation"><td><span class="lead">Nonrotation</span><span class="ko">left-sided colon</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td>회전이 일어나지 않음</td>
+            <td>대개 <b>무증상</b>, but <b>volvulus</b>→SMA 폐색→장 허혈 위험</td><td>—</td></tr>
+          <tr data-seg="mg" data-mech="rotation"><td><span class="lead">Reversal rotation</span><span class="ko">역회전</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td><b>시계방향</b> 회전(정상의 반대)</td>
+            <td>Duodenum이 SMA 앞쪽, transverse colon이 SMA 뒤쪽 → transverse colon 폐색</td><td>—</td></tr>
+          <tr data-seg="mg" data-mech="rotation"><td><span class="lead">Subhepatic / Mobile cecum</span><span class="ko">간밑·유동 막창자</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td>Cecum이 liver 하면 부착 / ascending colon 불완전 고정</td>
+            <td>Appendectomy 어려움 / Rt inguinal hernia·volvulus</td>
+            <td>Subhepatic 6%, mobile 10%</td></tr>
+
+          <tr class="mech-head" data-mech="return"><td colspan="5">③ 복귀 / 복벽 폐쇄 실패 — 장이 밖에 남음</td></tr>
+          <tr data-seg="mg" data-mech="return" data-exam="1"><td><span class="lead">Omphalocele</span><span class="ko">제대탈장</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td>Physiological herniation 후 복강 복귀 실패</td>
+            <td>탈출 장기가 <b>amnion(양막)으로 덮임</b>. 산전진단→출생 즉시 복원술</td>
+            <td>장 1/5,000, 간+장 1/10,000</td></tr>
+          <tr data-seg="mg" data-mech="return" data-exam="1"><td><span class="lead">Gastroschisis</span><span class="ko">배벽갈림증</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td>제대 주변 복벽이 안 닫힘</td>
+            <td><b>덮개 없이 장기 직접 노출</b>(제대와 별개). vs omphalocele=막 있음</td><td>—</td></tr>
+
+          <tr class="mech-head" data-mech="remnant"><td colspan="5">④ 잔재 소실 실패 — vitelline duct가 안 사라짐</td></tr>
+          <tr data-seg="mg" data-mech="remnant" data-exam="1"><td><span class="lead">Meckel's diverticulum</span><span class="ko">ileal diverticulum</span></td><td><span class="seg-tag t-mg">MG</span></td>
+            <td><b>Vitelline duct(난황관) proximal 잔재</b>. 변형: 주머니 / 섬유끈 / 완전 누공(omphaloenteric fistula)</td>
+            <td>Appendicitis 유사 염증. gastric·pancreatic tissue 포함→<b>ulceration·bleeding</b>. 손가락모양 3~6cm</td>
+            <td><b>Rule of 2</b>: 2%, 2세, 2inch, 2feet(ileocecal 40~50cm 근위, antimesenteric). male 3~5배</td></tr>
+
+          <tr class="mech-head" data-mech="septum"><td colspan="5">⑤ 분리(septum) 실패 — 격벽이 제대로 못 나눔</td></tr>
+          <tr data-seg="fg" data-mech="septum" data-exam="1"><td><span class="lead">Tracheoesophageal fistula</span><span class="ko">기도식도샛길</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Tracheoesophageal septum 분리 실패 → 기도-식도 연결</td>
+            <td>Esophageal atresia와 85%+ 동반</td><td>—</td></tr>
+          <tr data-seg="hg" data-mech="septum"><td><span class="lead">Anal fistula / Ectopic anus</span><span class="ko">항문샛길·이소성</span></td><td><span class="seg-tag t-hg">HG</span></td>
+            <td>Urorectal septum 분리 이상</td>
+            <td>항문이 vulva·urethra·peritoneum 등 비정상 부위와 연결</td><td>—</td></tr>
+          <tr data-seg="fg" data-mech="septum"><td><span class="lead">Extrahepatic biliary atresia</span><span class="ko">간바깥쓸개관폐쇄</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Porta hepatis 위/동일부 duct 폐쇄</td>
+            <td>출생 직후 <b>황달(jaundice)</b>. 수술 교정</td><td>1/10,000~15,000</td></tr>
+
+          <tr class="mech-head" data-mech="neural"><td colspan="5">⑥ 신경절 / 세포이동 실패</td></tr>
+          <tr data-seg="hg" data-mech="neural" data-exam="1"><td><span class="lead">Hirschsprung's disease</span><span class="ko">선천거대잘록창자</span></td><td><span class="seg-tag t-hg">HG</span></td>
+            <td><b>Neural crest cell 두개미부 이동(craniocaudal) 실패</b> → rectum/colon plexus에 <b>ganglion cell 결여</b></td>
+            <td>이환 분절 운동성↓ → 변비·장폐색, 근위부 colon 확장(megacolon)</td>
+            <td>신생아 대장폐색 최다(33%), M:F=4:1</td></tr>
+
+          <tr class="mech-head" data-mech="etc"><td colspan="5">⑦ 기타 — 비후·이주·신장 이상</td></tr>
+          <tr data-seg="fg" data-mech="etc"><td><span class="lead">Hypertrophic pyloric stenosis</span><span class="ko">선천비대날문협착</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Pylorus 현저한 비후(sphincter hypertrophy)</td>
+            <td><b>Projectile vomiting</b>(분사형 구토), 출생 수주 내. 수술 교정</td>
+            <td>1/500 남아, 1/750 여아(남&gt;여)</td></tr>
+          <tr data-seg="fg" data-mech="etc"><td><span class="lead">Annular pancreas</span><span class="ko">고리이자</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Ventral bud 비정상 migration → 십이지장 2nd part를 끈모양으로 둘러쌈</td>
+            <td>Duodenal atresia/stenosis 유발 가능</td><td>—</td></tr>
+          <tr data-seg="fg" data-mech="etc"><td><span class="lead">Short esophagus</span><span class="ko">짧은식도증</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>7주 이후 elongation 실패</td>
+            <td>Congenital hiatal hernia 연관</td><td>—</td></tr>
+          <tr data-seg="fg" data-mech="etc"><td><span class="lead">Accessory pancreas / hepatic duct</span><span class="ko">덧이자조직·덧간관</span></td><td><span class="seg-tag t-fg">FG</span></td>
+            <td>Bud 합쳐짐 과정 이상</td>
+            <td>이자: stomach·duodenum wall·Meckel diverticulum / 덧간관: Rt lobe→GB</td><td>—</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- ===== 슬라이드 5: 시기별 타임라인 ===== -->
+  <section class="slide">
+    <div class="inner">
+      <div class="kicker">Timeline</div>
+      <div class="slide-title">주차별 발생 타임라인</div>
+      <div class="slide-sub">X축=시기 · Y축=장기. 같은 시기에 여러 장기가 <b>동시 발생</b>함을 한눈에. ⭐강조 셀=핵심 마일스톤 · (nn일)=정확 일자</div>
+
+      <div class="filterbar" data-target="ttime">
+        <div class="fb-head">타임라인 필터 — Gut(분절) 출신별 보기</div>
+        <div class="chips">
+          <span class="chip seg-fg" data-f="seg" data-v="fg">Foregut</span>
+          <span class="chip seg-mg" data-f="seg" data-v="mg">Midgut</span>
+          <span class="chip seg-hg" data-f="seg" data-v="hg">Hindgut</span>
+          <span class="chip reset">↺ 초기화</span>
+        </div>
+        <div class="meta"></div>
+      </div>
+
+      <div class="tbl-scroll"><table id="ttime" class="matrix">
+        <thead><tr>
+          <th>장기 \ 시기</th><th>4주</th><th>5–6주</th><th>7주</th><th>8주</th><th>9–10주</th><th>11–12주</th><th>13주+</th>
+        </tr></thead>
+        <tbody>
+          <tr data-seg="all fg mg hg"><th scope="row"><span class="org">전체 개요</span><span class="org-ko">Overview</span></th><td>primitive gut 발생 시작 · 3분절(FG/MG/HG) 구분</td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td>발생 완료 <span class="day">(10주)</span></td><td class="e">·</td><td class="e">·</td></tr>
+          <tr data-seg="fg"><th scope="row"><span class="org">Esophagus</span><span class="org-ko">식도</span></th><td>발생 시작</td><td class="e">·</td><td>elongation 완성</td><td class="hot"><b>recanalization</b> <span class="day">(8주 말)</span></td><td class="e">·</td><td class="e">·</td><td class="e">·</td></tr>
+          <tr data-seg="fg"><th scope="row"><span class="org">Stomach</span><span class="org-ko">위</span></th><td>distal foregut 싹 <span class="day">(4주 중반)</span></td><td>dorsal 성장→greater curvature · 시계 회전 시작 <span class="day">(40일)</span></td><td>수직 90° 진행 <span class="day">(48일)</span></td><td class="hot"><b>시계 90° 완성</b>→가로 위치, omental bursa 형성 <span class="day">(52일)</span></td><td class="e">·</td><td class="e">·</td><td class="e">·</td></tr>
+          <tr data-seg="fg"><th scope="row"><span class="org">Duodenum</span><span class="org-ko">십이지장</span></th><td>발생 시작 · FG+MG 연합 <span class="day">(4주초)</span></td><td class="hot">lumen 폐쇄→vacuolation→<b>recanalization</b></td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td class="e">·</td></tr>
+          <tr data-seg="fg"><th scope="row"><span class="org">Liver · Biliary</span><span class="org-ko">간·담도</span></th><td>hepatic diverticulum <span class="day">(4주초)</span></td><td>hemopoiesis 시작 <span class="day">(6주)</span> · 빠른 성장(5–10주)</td><td class="e">·</td><td class="e">·</td><td>무게=체중 1/10 <span class="day">(9주)</span></td><td class="hot"><b>bile formation</b> 시작 <span class="day">(12주)</span></td><td class="hot">bile 십이지장 배출 <span class="day">(13주)</span> · meconium dark green</td></tr>
+          <tr data-seg="fg"><th scope="row"><span class="org">Pancreas</span><span class="org-ko">이자</span></th><td>dorsal + ventral bud 발생</td><td>십이지장 우회전→ventral bud 뒤로 이동, ducts 합쳐짐</td><td class="e">·</td><td class="e">·</td><td class="hot"><b>insulin</b> 분비 <span class="day">(10주)</span></td><td class="e">·</td><td>glucagon 발견 <span class="day">(15주)</span> · somatostatin 조기</td></tr>
+          <tr data-seg="fg"><th scope="row"><span class="org">Spleen</span><span class="org-ko">비장</span></th><td class="e">·</td><td>발생 <span class="day">(5주)</span> · dorsal mesogastrium mesenchyme</td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td>lobulation 출생 전 소실 · late fetal까지 조혈</td></tr>
+          <tr data-seg="mg"><th scope="row"><span class="org">Midgut loop</span><span class="org-ko">중간창자 회전</span></th><td>midgut loop 형성(등쪽 배벽 부착)</td><td class="hot"><b>physiological herniation</b>(배꼽 탈출, 정상) + 배꼽내 반시계 90° <span class="day">(6주 coelom 연결)</span></td><td class="e">·</td><td class="e">·</td><td>복강 귀환 시작 <span class="day">(10주)</span> · 소장이 SMA 뒤로 먼저</td><td class="hot">추가 반시계 180° → <b>총 270° 완성</b> <span class="day">(11주)</span></td><td class="e">·</td></tr>
+          <tr data-seg="mg"><th scope="row"><span class="org">Cecum · Appendix</span><span class="org-ko">맹장·충수</span></th><td class="e">·</td><td>cecal diverticulum 발생→cecum+appendix <span class="day">(6주 중간)</span></td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td>appendix 신장·우하방 이동 <span class="day">(12주)</span></td><td class="e">·</td></tr>
+          <tr data-seg="mg"><th scope="row"><span class="org">Vitelline duct</span><span class="org-ko">난황관</span></th><td>배꼽-장 연결관(omphaloenteric duct)</td><td class="e">·</td><td class="e">·</td><td class="e">·</td><td>10주까지 유지 → 이후 소실 <span class="day">(실패 시 Meckel)</span></td><td class="e">·</td><td class="e">·</td></tr>
+          <tr data-seg="hg"><th scope="row"><span class="org">Cloaca · Anal canal</span><span class="org-ko">배설강·항문관</span></th><td>cloaca 형성(allantois+hindgut) · cloacal membrane</td><td>urorectal septum 분리: dorsal→rectum / ventral→UG sinus</td><td>anal membrane 형성</td><td class="hot"><b>anal membrane 파열</b>→항문관 개통 <span class="day">(8주 말)</span></td><td class="e">·</td><td class="e">·</td><td class="e">·</td></tr>
+        </tbody>
+      </table></div>
+      <div class="meta" style="margin-block-start:var(--sp-2)">읽는 법 — 빈 칸(·)=해당 시기 사건 없음 · 행 좌측 색=Gut(FG 청록 / MG 보라 / HG 주황) · 첫 열·헤더 고정</div>
+    </div>
+  </section>
+
+  <!-- ===== 슬라이드 4: Rotation 비교 ===== -->
+  <section class="slide">
+    <div class="inner">
+      <div class="kicker">Compare</div>
+      <div class="slide-title">Rotation 비교 — 위 vs 장</div>
+      <div class="slide-sub">발생학 최대 난관. 방향·각도·시기를 나란히 놓고 외우면 헷갈리지 않는다</div>
+
+      <div class="cmp-cards">
+        <div class="cmp stomach">
+          <h3>위 Stomach</h3>
+          <span class="dir">시계방향 ↻ 90°</span>
+          <ul class="steps">
+            <li><span class="wk">40일</span> — Foregut distal 일자 싹. <b>Dorsal border(G.curv)</b>가 빠르게 성장.</li>
+            <li><span class="wk">48일</span> — 시계방향 회전 시작, 약간 수직.</li>
+            <li><span class="wk">52일</span> — 시계 90° 완성. <b>G.curv→좌측</b>, L.curv→우측. 위가 가로로 누움.</li>
+            <li><span class="wk">결과</span> — Lt vagus→앞벽, Rt vagus→뒤벽. Mesogastrium 회전 → <b>omental bursa(lesser sac)</b> 형성.</li>
+          </ul>
+        </div>
+        <div class="cmp midgut">
+          <h3>장 Midgut loop</h3>
+          <span class="dir">반시계방향 ↺ 270°</span>
+          <ul class="steps">
+            <li><span class="wk">5~6주</span> — 배 공간 부족 → <b>physiological umbilical herniation</b>(배꼽 탈출, 정상!).</li>
+            <li><span class="wk">배꼽 내</span> — 반시계 <b>90°</b>. cranial limb→우측, caudal limb→좌측.</li>
+            <li><span class="wk">10~11주</span> — 복강 귀환, 소장이 SMA 뒤로 먼저 복귀 + 반시계 90°.</li>
+            <li><span class="wk">추가</span> — 다시 반시계 90° → <b>총 270°</b>. Cecum 좌상→우하 이동, mesentery 고정 완성.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tbl-scroll" style="margin-bottom:16px"><table class="cmp-table">
+        <thead><tr><th>비교 항목</th><th>위 Stomach</th><th>장 Midgut</th></tr></thead>
+        <tbody>
+          <tr><td>회전 방향</td><td><b>시계방향(clockwise) ↻</b></td><td><b>반시계방향(counterclockwise) ↺</b></td></tr>
+          <tr><td>총 각도</td><td><b>90°</b></td><td><b>270°</b> (배꼽내 90° + 복강 180°)</td></tr>
+          <tr><td>시기</td><td>40~52일</td><td>5~6주 탈출 → 10~11주 복귀</td></tr>
+          <tr><td>축 / 기준</td><td>장축(longitudinal) + 전후축</td><td>SMA(superior mesenteric a.) 축</td></tr>
+          <tr><td>핵심 결과</td><td>G.curv→좌측, omental bursa 형성, vagus 앞/뒤 분포</td><td>Cecum 좌상→우하, physiological herniation은 정상</td></tr>
+          <tr><td>관련 기형</td><td>(rotation 자체 기형은 드묾)</td><td>Nonrotation, reversal rotation, volvulus, omphalocele</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="recall">
+        🧠 한 줄 암기 — <b>위는 시계 90, 장은 반시계 270.</b> 위는 90°만(작게), 장은 270°(크게 세 번). 둘이 반대 방향이라는 점이 시험의 함정 포인트.
+      </div>
+
+      <div class="foot">소화기계 발생 슬라이드 정리 · 안미정P 최종정리본 기반 · 내용 100% 보존 · 학습용</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- 네비게이션 -->
+<div class="navbar">
+  <button class="nav-btn" id="prev" aria-label="이전">‹</button>
+  <div class="nav-dots" id="dots"></div>
+  <span class="nav-count" id="navcount">1 / 5</span>
+  <button class="nav-btn" id="next" aria-label="다음">›</button>
+</div>
+
+<script>
+/* ===== 슬라이드 네비게이션 ===== */
+const slides=[...document.querySelectorAll('.slide')];
+const dotsWrap=document.getElementById('dots');
+let cur=0;
+slides.forEach((_,i)=>{const b=document.createElement('button');b.className='nav-dot'+(i===0?' on':'');
+  b.onclick=()=>go(i);dotsWrap.appendChild(b);});
+document.getElementById('navcount').textContent='1 / '+slides.length;
+function go(i){
+  cur=(i+slides.length)%slides.length;
+  slides.forEach((s,j)=>s.classList.toggle('active',j===cur));
+  [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('on',j===cur));
+  document.getElementById('navcount').textContent=(cur+1)+' / '+slides.length;
+  window.scrollTo({top:0,behavior:'instant'});
+}
+document.getElementById('prev').onclick=()=>go(cur-1);
+document.getElementById('next').onclick=()=>go(cur+1);
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')go(cur+1);
+  else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1);
+});
+
+/* ===== 섹션별 필터바 (각 표 독립) ===== */
+document.querySelectorAll('.filterbar').forEach(bar=>{
+  const table=document.getElementById(bar.dataset.target);
+  const meta=bar.querySelector('.meta');
+  const search=bar.querySelector('.search');
+  const st={seg:new Set(),mech:new Set(),exam:false,q:''};
+
+  bar.querySelectorAll('.chip[data-f]').forEach(c=>c.addEventListener('click',()=>{
+    const f=c.dataset.f,v=c.dataset.v;
+    if(f==='exam'){st.exam=!st.exam;c.classList.toggle('on',st.exam);}
+    else{const s=st[f];s.has(v)?s.delete(v):s.add(v);c.classList.toggle('on',s.has(v));}
+    apply();
+  }));
+  bar.querySelector('.reset').addEventListener('click',()=>{
+    st.seg.clear();st.mech.clear();st.exam=false;st.q='';
+    if(search)search.value='';
+    bar.querySelectorAll('.chip[data-f]').forEach(c=>c.classList.remove('on'));
+    apply();
+  });
+  if(search)search.addEventListener('input',e=>{st.q=e.target.value.trim();apply();});
+
+  function clearMark(tr){tr.querySelectorAll('mark').forEach(m=>m.replaceWith(m.textContent));tr.normalize();}
+  function addMark(tr,q){
+    const rx=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    tr.querySelectorAll('td').forEach(td=>{
+      [...td.childNodes].forEach(n=>{
+        if(n.nodeType===3&&rx.test(n.textContent)){
+          const sp=document.createElement('span');sp.innerHTML=n.textContent.replace(rx,'<mark>$1</mark>');
+          n.replaceWith(sp);
+        }
+      });
+    });
+  }
+  function apply(){
+    const q=st.q.toLowerCase();let shown=0,visByMech={};
+    const rows=[...table.querySelectorAll('tbody tr')];
+    rows.forEach(tr=>{
+      clearMark(tr);
+      if(tr.classList.contains('mech-head'))return;
+      const seg=tr.dataset.seg||'',mech=tr.dataset.mech||'',exam=tr.dataset.exam==='1';
+      let ok=true;
+      if(st.seg.size)ok=ok&&[...st.seg].some(s=>seg.includes(s));
+      if(st.mech.size)ok=ok&&st.mech.has(mech);
+      if(st.exam)ok=ok&&exam;
+      if(q)ok=ok&&tr.textContent.toLowerCase().includes(q);
+      tr.classList.toggle('hidden',!ok);
+      if(ok){shown++;visByMech[mech]=true;if(q)addMark(tr,st.q);}
+    });
+    rows.filter(r=>r.classList.contains('mech-head')).forEach(h=>{
+      const m=h.dataset.mech;
+      h.classList.toggle('hidden', st.mech.size? !st.mech.has(m): !visByMech[m]);
+    });
+    const p=[];
+    if(st.seg.size)p.push('분절:'+[...st.seg].join(','));
+    if(st.mech.size)p.push('기전:'+st.mech.size+'개');
+    if(st.exam)p.push('⭐시험포인트');
+    if(st.q)p.push('검색:"'+st.q+'"');
+    meta.textContent=(p.length?p.join(' · ')+' → ':'')+'표시된 행 '+shown+'개';
+  }
+  apply();
+});
+
+/* ===== 표 가로 스크롤: 드래그 + 휠 + 가장자리 힌트 ===== */
+document.querySelectorAll('.tbl-scroll').forEach(sc=>{
+  const wrap=document.createElement('div'); wrap.className='tbl-wrap';
+  sc.parentNode.insertBefore(wrap, sc); wrap.appendChild(sc);
+  const el=name=>{const d=document.createElement('div'); d.className=name; wrap.appendChild(d); return d;};
+  el('edge edge-l'); el('edge edge-r');
+  const hint=el('scroll-hint'); hint.textContent='↔ 잡고 드래그';
+
+  function update(){
+    const max=sc.scrollWidth - sc.clientWidth;
+    wrap.classList.toggle('more-l', sc.scrollLeft > 2);
+    wrap.classList.toggle('more-r', sc.scrollLeft < max - 2);
+  }
+  sc.addEventListener('scroll', ()=>{ wrap.classList.add('scrolled'); update(); }, {passive:true});
+  if(window.ResizeObserver) new ResizeObserver(update).observe(sc);
+  window.addEventListener('resize', update);
+  setTimeout(update, 60);
+
+  /* 드래그 스크롤 */
+  let down=false, sx=0, sl=0, moved=false;
+  sc.addEventListener('pointerdown', e=>{
+    if(e.button!==0) return;
+    down=true; moved=false; sx=e.clientX; sl=sc.scrollLeft;
+  });
+  sc.addEventListener('pointermove', e=>{
+    if(!down) return;
+    const dx=e.clientX - sx;
+    if(!moved && Math.abs(dx) > 5){ moved=true; sc.classList.add('dragging'); try{sc.setPointerCapture(e.pointerId);}catch(_){} }
+    if(moved){ sc.scrollLeft = sl - dx; e.preventDefault(); }
+  });
+  const endDrag=()=>{ down=false; sc.classList.remove('dragging'); };
+  sc.addEventListener('pointerup', endDrag);
+  sc.addEventListener('pointercancel', endDrag);
+
+});
+</script>
+</body>
+</html>
