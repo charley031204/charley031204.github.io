@@ -1,0 +1,2376 @@
+
+
+
+reaction.Controller = function (conf, messageSet) {
+    this._conf = conf || reaction.conf();
+    messageSet = messageSet || reaction.message;
+    var message = this._selectMessage(messageSet, this._conf.language);
+
+    this._reactionButtons = new reaction.Buttons(this._conf, message);
+    this._reactionCaptcha = new reaction.Captcha(this._conf, message);
+
+    
+    this._reactionFriends = reaction.Friends ? new reaction.Friends(this._conf, message) : null;
+    this._attachEvent();
+};
+
+
+reaction.Controller.prototype = {
+    constructor: reaction.Controller,
+
+    
+    _selectMessage: function (messageSet, language) {
+        var bothAllowLang = {
+            "zh_hans": "zh-hans",
+            "zh_hant": "zh-hant"
+        };
+
+        if (bothAllowLang[language]) {
+            language = bothAllowLang[language];
+        }
+
+        return messageSet[language] || messageSet.en;
+    },
+
+    _attachEvent: function () {
+        
+        var clicklogHandler = jQuery.proxy(function (event, params) {
+            this._clicklog(event, params);
+        }, this);
+
+        
+        var $reactionButtons = jQuery(this._reactionButtons);
+        $reactionButtons
+            .on("clickReaction", clicklogHandler)
+            .on("captchaReaction", jQuery.proxy(function (event, captchaInfos) {
+                this._reactionCaptcha.load(captchaInfos);
+            }, this));
+
+        
+        var $reactionCaptcha = jQuery(this._reactionCaptcha);
+        $reactionCaptcha
+            .on("requestPreviousReaction", jQuery.proxy(function () {
+                
+                this._reactionButtons.requestPreviousReaction();
+            }, this))
+            .on("clearPreviousReaction", jQuery.proxy(function () {
+                
+                this._reactionButtons.clearPreviousReaction();
+            }, this));
+
+        if (this._reactionFriends) {
+            $reactionButtons.on("successReaction", jQuery.proxy(function (event, params) {
+                if (!params.isNeoid && params.friendsLayerId) {
+                    if (params.isAdding) {
+                        this._reactionFriends.show(params);
+                    } else {
+                        this._reactionFriends.hide(params);
+                    }
+                }
+            }, this));
+
+            
+            jQuery(this._reactionFriends)
+                .on("connectLineId", clicklogHandler)
+                .on("closeLineIdConnectionWithCache", clicklogHandler)
+                .on("closeLineIdConnection", clicklogHandler)
+                .on("shareTimelineOnce", clicklogHandler)
+                .on("shareTimelineAlways", clicklogHandler)
+                .on("closeTimelineShareWithCache", clicklogHandler)
+                .on("closeTimelineShare", clicklogHandler)
+                .on("setTimelineShare", clicklogHandler)
+                .on("launchApp", clicklogHandler);
+        }
+    },
+
+    _detachEvent: function () {
+        jQuery(this._reactionButtons).off();
+        jQuery(this._reactionFriends).off();
+    },
+
+    _destroy: function () {
+        this._detachEvent();
+        this._reactionButtons._destroy();
+
+        
+        
+    },
+
+    
+    _clicklog: function (customEvent, params) {
+        var event = params.event,
+            target = params.target,
+            log = jQuery(target).attr("data-log"),
+            parsedLog;
+
+        if (!log) {
+            return;
+        }
+
+        
+        if (customEvent.type === "clickReaction") {
+            parsedLog = log.split("|");
+            log = params.isAdding ? parsedLog[0] : parsedLog[1];
+        }
+
+        !!(log) && reaction.clicklog(target, log, event);
+    },
+
+    
+    update: function (context, isAllRefresh) {
+        this._reactionButtons.update(context, isAllRefresh);
+        return this;
+    },
+
+    
+    hideLayers: function () {
+        if (this._reactionButtons && typeof this._reactionButtons.hideLayers === "function") {
+            return this._reactionButtons.hideLayers();
+        }
+        return false;
+    }
+};
+
+
+
+
+
+
+
+reaction.templates = function (messages) {
+    var templates = {
+        snsIdConnection: "<div class='u_likeit_wrap'><div class='u_linkage'>" +
+            "<p class='u_txt'>" + messages.linkWithLineLayer.msgInfo + "</p>" +
+            "<a href='#' class='u_btn_linkage _connectLineId' data-log='LYE.line'>" + messages.linkWithLineLayer.btnLink + "</a>" +
+            "<div class='u_chk'><input type='checkbox' id='u_month_hide' checked='checked' class='_closeLineIdConnectionWithCache' data-log='LYE.never'><label for='u_month_hide' onclick='void(0)'>" + messages.common.chkboxDontShow + "</label><a href='#' class='u_btn_close _closeLineIdConnection' data-log='LYE.close'>" + messages.common.btnClose + "</a></div></div></div>",
+        timelineShare: "<div class='u_likeit_wrap'><div class='u_sharing'>" +
+            "<p class='u_txt'>" + messages.shareLayer.shareConfirm + "</p>" +
+            "<div class='u_btn_area'><a href='#' class='u_btn_one _shareTimelineOnce' data-log='LSE.share'>" + messages.shareLayer.btnOnceShare + "</a><a href='#' class='u_btn_auto _shareTimelineAlways' data-log='LSE.auto'>" + messages.shareLayer.btnAutoShare + "</a></div>" +
+            "<div class='u_chk'><input type='checkbox' id='u_month_hide' checked='checked' class='_closeTimelineShareWithCache' data-log='LSE.never'><label for='u_month_hide' onclick='void(0)'>" + messages.common.chkboxDontShow + "</label><a href='#' class='u_btn_close _closeTimelineShare' data-log='LSE.close'>" + messages.common.btnClose + "</a></div></div></div>",
+        friendsListError: "<div class='u_likeit_wrap'><p class='u_error'>" + messages.friendsLayer.error + "</p><a href='#' class='u_btn_set _setTimelineShare' data-log='LIK.share'>" + messages.friendsLayer.btnShareSetting + "</a></div>",
+        friendsListLoading: "<div class='u_likeit_wrap'><div class='u_loading'><p class='u_txt'><span class='u_ico_loading'></span>" + messages.friendsLayer.loading + "</p></div><a href='#' class='u_btn_set _setTimelineShare' data-log='LIK.share'>" + messages.friendsLayer.btnShareSetting + "</a></div>",
+        friendsList: "<div class='u_likeit_wrap'><div class='u_friends'>" +
+            "<div style='overflow: hidden; z-index: 0; position: relative; height: 36px;' class='_scrollview'>" +
+            "<div class='_scroller'>" +
+            "<ul class='u_list'>" +
+            "<% for(var i=0, len=friends.length, friend; i < len; i++){ %>" +
+            "<% friend = friends[i]; %>" +
+            "<% isMine = (status !== 'FRIENDS' && status !== 'NONE' && i === 0); %>" +
+            "<li class='u_thmb'>" +
+            "<a href='#' class='_launchApp' <% if(!isMine){ %> data-mid='<%=friend.mid%>' <% } %> data-log='LIK.friends'>" +
+            "<img src='<%=friend.smallPictureUrl%>' width='35' height='35' alt='<%=friend.displayName%>' onerror='this.onerror=null;this.src=\"https://ssl.pstatic.net/static/m/likeit/line_noimg.png\"'>" +
+            "</a>" +
+            "</li>" +
+            "<% } %>" +
+            "</ul>" +
+            "</div>" +
+            "</div>" +
+            "<% if(status === 'ME'){ %>" +
+            "<p class='u_dsc'>" + messages.friendsLayer.me + "</p>" +
+            "<% }else if(status === 'ME_AND_FRIENDS'){ %>" +
+            "<p class='u_dsc'>" + messages.friendsLayer.meAndFriends + "</p>" +
+            "<% }else if(status == 'FRIENDS'){ %>" +
+            "<p class='u_dsc'>" + messages.friendsLayer.friends + "</p>" +
+            "<% } %>" +
+            "<a href='#' class='u_btn_set _setTimelineShare' data-log=LIK.share''>" + messages.friendsLayer.btnShareSetting + "</a>" +
+            "</div></div>",
+        captchaLayer: "<div class='u_likeit_captcha' style='display:block'>" +
+            "<strong class='u_likeit_blind'> " + messages.captcha.layer + "</strong>" +
+            "<div class='u_likeit_captcha_dimmed'></div>" +
+            "<div class='u_likeit_captcha_wrap'>" +
+            "<h3 class='u_likeit_captcha_title'>" + messages.captcha.title + "</h3>" +
+            "<p class='u_likeit_captcha_desc'>" + messages.captcha.desc + "</p>" +
+            "<div class='u_likeit_captcha_img_area'>" +
+            "<div class='u_likeit_captcha_img'>" +
+            "<img src='<%=captchaImageUrl%>' width='300' height='99' alt='captcha'>" +
+            "</div>" +
+            "<a href='#refresh' class='u_likeit_captcha_refresh'>" + messages.captcha.refresh + "</a>" +
+            "</div>" +
+            "<div class='u_likeit_captcha_input_area'>" +
+            "<input id='likeit_captcha_defense' class='u_likeit_captcha_input' type='text'>" +
+            "<label for='likeit_captcha_defense' class='u_likeit_captcha_label'>" + messages.captcha.defense + "</label>" +
+            "</div>" +
+            "<a href='#submit' class='u_likeit_captcha_submit'>" + messages.captcha.submit + "</a>" +
+            "<a href='#close' class='u_likeit_captcha_close'><span class='u_likeit_blind'>" + messages.captcha.close + "</span></a>" +
+            "</div>" +
+            "</div>",
+        certificationLayer: "<div" +
+            " class=\"u_likeit_popup_wrapper _likePopupModule\">\n" +
+            "            <div class=\"u_likeit_popup\">\n" +
+            "                <strong" +
+            " class=\"u_likeit_popup_title\">" + messages.certification.title + "</strong>\n" +
+            "                <p" +
+            " class=\"u_likeit_popup_description\">" + messages.certification.desc + "</p>\n" +
+            "                <a" +
+            " class=\"u_likeit_popup_link_certification" +
+            " _button\">" + messages.certification.btnLink + "</a>\n" +
+            "                <button type=\"button\" class=\"u_likeit_popup_close\">\n" +
+            "                    <span" +
+            " class=\"u_likeit_blind\">" + messages.certification.btnClose + "</span>\n" +
+            "                </button>\n" +
+            "            </div>\n" +
+            "        </div>",
+    };
+
+    
+    var cache = {};
+    var tmpl = function tmpl(str, data) {
+        
+        
+        var fn = !/\W/.test(str) ?
+            cache[str] = cache[str] ||
+                tmpl(document.getElementById(str).innerHTML) :
+
+            
+            
+            new Function("obj",
+                "var p=[],print=function(){p.push.apply(p,arguments);};" +
+                
+                "with(obj){p.push('" +
+                
+                
+                str.replace(/[\r\t\n]/g, " ")
+                    .replace(/'(?=[^%]*%>)/g, "\t")
+                    .split("'").join("\\'")
+                    .split("\t").join("'")
+                    .replace(/<%=(.+?)%>/g, "',$1,'")
+                    .split("<%").join("');")
+                    .split("%>").join("p.push('") +
+                "');}return p.join('');");
+
+        
+        return data ? fn(data) : fn;
+    };
+
+    return {
+        
+        process: function (templateId, data) {
+            return tmpl(templates[templateId], data);
+        }
+    };
+};
+
+
+
+reaction.Captcha = function (configures, message) {
+    this._resources = {
+        image: "/v1/captcha/{serviceId}/image",
+        compare: "/v1/captcha/{serviceId}/compare"
+    };
+    this._conf = configures;
+    this._apiDomain = this._conf._routeDomain || this._conf.domain;
+    this._messages = message;
+    this._templates = reaction.templates(this._messages.templates);
+    this._key = "";
+    this._$elBody = jQuery("body");
+    this._isUseApigw = this._conf.isUseApigw;
+};
+
+reaction.Captcha.prototype = {
+    constructor: reaction.Captcha,
+
+    load: function (captchaInfos) {
+        var requestParams = {
+            abuseTypeCode: captchaInfos.abuseTypeCode
+        };
+
+        jQuery.ajax({
+            url: (this._isUseApigw ? this._conf.apigwInfo.domain : this._apiDomain) + this._resources.image.replace("{serviceId}", captchaInfos.serviceId),
+            dataType: "jsonp",
+            scriptCharset: "utf-8",
+            timeout: 3000,
+            context: this,
+            data: requestParams,
+            success: function (res) {
+                this._createLayer(captchaInfos, res);
+                this._key = res.captchaKey;
+                this._drawImage();
+            },
+            error: function () {
+                alert(this._messages.templates.captcha.err_captcha);
+            }
+        });
+    },
+    _createLayer: function (captchaInfos, result) {
+        this._$elBody.append(this._templates.process("captchaLayer", result));
+        this._attachEvent(captchaInfos);
+    },
+    _deleteLayer: function () {
+        jQuery(".u_likeit_captcha").remove();
+    },
+    _drawImage: function (imgSrc) {
+        var $imgEl = jQuery(".u_likeit_captcha_img");
+
+        if (!!imgSrc) {
+            $imgEl.children("img").attr("src", imgSrc);
+        }
+
+        if (this._conf.isMobile) {
+            $imgEl.children("img").attr("width", "244").attr("height", "90");
+
+        } else {
+            $imgEl.children("img").attr("width", "300").attr("height", "99");
+        }
+    },
+    _refresh: function (captchaInfos) {
+        var requestParams = {
+            abuseTypeCode: captchaInfos.abuseTypeCode
+        };
+
+        jQuery.ajax({
+            url: (this._isUseApigw ? this._conf.apigwInfo.domain : this._apiDomain) + this._resources.image.replace("{serviceId}", captchaInfos.serviceId),
+            dataType: "jsonp",
+            scriptCharset: "utf-8",
+            timeout: 3000,
+            context: this,
+            data: requestParams,
+            success: function (res) {
+                this._drawImage(res.captchaImageUrl);
+                this._key = res.captchaKey;
+            },
+            error: function () {
+                alert(this._messages.templates.captcha.err_image);
+            }
+        });
+    },
+    _submit: function (captchaInfos) {
+        var _$defense = jQuery("#likeit_captcha_defense");
+
+        if (!!!_$defense.val()) {
+            alert(this._messages.templates.captcha.err_empty);
+            return;
+        }
+
+        var requestParams = {
+            captchaKey: this._key,
+            value: _$defense.val(),
+            abuseTypeCode: captchaInfos.abuseTypeCode
+        };
+
+        jQuery.ajax({
+            url: (this._isUseApigw ? this._conf.apigwInfo.domain : this._apiDomain) + this._resources.compare.replace("{serviceId}", captchaInfos.serviceId),
+            dataType: "jsonp",
+            scriptCharset: "utf-8",
+            timeout: 3000,
+            context: this,
+            data: requestParams,
+            success: function (res) {
+                if (res.result === "OK") {
+                    this._requestPreviousReaction();
+                    this._close();
+                } else {
+                    alert(this._messages.templates.captcha.err_wrong);
+                    this._drawImage(res.captchaImageUrl);
+                    this._clearTextbox();
+                    this._key = res.captchaKey;
+                }
+            },
+            error: function () {
+                alert(this._messages.templates.captcha.err_server);
+                this._close();
+            }
+        });
+
+    },
+    _clearTextbox: function () {
+        var _$inputArea = jQuery(".u_likeit_captcha_input_area");
+        var _$defense = jQuery("#likeit_captcha_defense");
+
+        _$defense.val("");
+        _$inputArea.removeClass("u_likeit_captcha_focus");
+    },
+    _close: function () {
+        this._deleteLayer();
+        this._detachEvent();
+        this._clearPreviousReaction();
+    },
+    _rotateHandler: function () {
+        var $layerEl = jQuery(".u_likeit_captcha_wrap");
+        $layerEl.hide();
+        $layerEl.show();
+    },
+    _requestPreviousReaction: function () {
+        jQuery(this).trigger("requestPreviousReaction");
+    },
+    _clearPreviousReaction: function () {
+        jQuery(this).trigger("clearPreviousReaction");
+    },
+    _attachEvent: function (captchaInfos) {
+        var $captcha_input = jQuery(".u_likeit_captcha_input_area");
+        this._$elBody.on("click", ".u_likeit_captcha_close", jQuery.proxy(this._close, this))
+            .on("click", ".u_likeit_captcha_refresh", jQuery.proxy(function () {
+                this._refresh(captchaInfos);
+            }, this))
+            .on("click", ".u_likeit_captcha_submit", jQuery.proxy(function () {
+                this._submit(captchaInfos);
+            }, this))
+            .on("focus", ".u_likeit_captcha_input", function () {
+                $captcha_input.addClass("u_likeit_captcha_focus");
+            })
+            .on("blur", ".u_likeit_captcha_input", function () {
+                if (jQuery(this).val() === "") {
+                    $captcha_input.removeClass("u_likeit_captcha_focus");
+                }
+            });
+
+        if ("onorientationchange" in window) {
+            window.addEventListener("orientationchange", this._rotateHandler);
+        }
+    },
+    _detachEvent: function () {
+        this._$elBody.off("click", ".u_likeit_captcha_close")
+            .off("click", ".u_likeit_captcha_refresh")
+            .off("click", ".u_likeit_captcha_submit")
+            .off("focus", ".u_likeit_captcha_input")
+            .off("blur", ".u_likeit_captcha_input");
+
+        if ("onorientationchange" in window) {
+            window.removeEventListener("orientationchange", this._rotateHandler);
+        }
+    }
+};
+
+
+
+
+reaction.Buttons = function (configures, message) {
+    this._resources = {
+        content: "/v1/search/contents?suppress_response_codes=true",
+        contentAdd: "/v1/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST",
+        contentCancel: "/v1/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=DELETE",
+        contentAddPeriod: "/v1/period/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST",
+        contentCancelPeriod: "/v1/period/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=DELETE",
+        contentAddNolimit: "/v1/nolimit/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST",
+        css: {
+            common_basic: "/css/reaction/mobile/likeit.css",
+            common_multi: "/css/reaction/mobile/likeit_multi.css",
+            service: "/css/reaction/mobile/likeit_{cssId}.css",
+            cssStaticUrl: "https://static-feedback.pstatic.net/css/like/{cssId}/{assignId}/{staticId}/{file}.css"
+        },
+        realNameCheck: {
+            mobile: "https://nid.naver.com/mobile/user/help/realNameCheck?type=2&rurl=",
+            pc: "https://nid.naver.com/user2/help/realNameCheck?type=2&rurl="
+        }
+    };
+    this._conf = configures;
+    this._displayId = this._conf.displayId;
+    this._apiDomain = this._conf._routeDomain || this._conf.domain;
+    this._routePool = this._conf._routePool;
+    this._messages = message;
+    this._isNeoid = (this._conf.authType === "neoid");
+    this._isUseApigw = this._conf.isUseApigw;
+    this._isUseApigw && this._setApigwResource();
+    this._isNeoid && this._setNeoidResources();
+    this._$body = jQuery(document);
+
+    
+    this._longPressThreshold = this._conf.longPressThreshold || 500; 
+    this._pressTimer = null;
+    this._leaveTimer = null;
+    this._isMouseOverFace = false;
+    this._isMouseOverLayer = false;
+    this._isLongPressed = false;
+    this._isPressing = false;
+
+    this._onButtonHandler = jQuery.proxy(this._onButtonHandler, this);
+    this._onNolimitButtonHandler = jQuery.proxy(this._onNolimitButtonHandler, this);
+    this._onHideHandler = jQuery.proxy(this._onHideHandler, this);
+    this._onFaceButtonHandler = jQuery.proxy(this._onFaceButtonHandler, this);
+    this._onFaceButtonTextHandler = jQuery.proxy(this._onFaceButtonTextHandler, this);
+    this._onCertificationHandler = jQuery.proxy(this._onCertificationHandler, this);
+    this._removeLayer = jQuery.proxy(this._removeLayer, this);
+
+    
+    this._onPressStart = jQuery.proxy(this._onPressStart, this);
+    this._onPressEndHandler = jQuery.proxy(this._onPressEndHandler, this);
+    this._onPressEnd = jQuery.proxy(this._onPressEnd, this);
+    this._onMouseLeave = jQuery.proxy(this._onMouseLeave, this);
+    this._onMouseOverFace = jQuery.proxy(this._onMouseOverFace, this);
+    this._onMouseOverLayer = jQuery.proxy(this._onMouseOverLayer, this);
+    this._onContextMenuHandler = jQuery.proxy(this._onContextMenuHandler, this);
+    this._preventDefaultHandler = jQuery.proxy(this._preventDefaultHandler, this);
+    this._dragStartHandler = jQuery.proxy(this._dragStartHandler, this);
+    this._dragEndHandler = jQuery.proxy(this._dragEndHandler, this);
+
+    
+    this._onFaceKeydownHandler = jQuery.proxy(this._onFaceKeydownHandler, this);
+    this._onFaceLayerKeydownHandler = jQuery.proxy(this._onFaceLayerKeydownHandler, this);
+    this._onFaceAccessibleClickHandler = jQuery.proxy(this._onFaceAccessibleClickHandler, this);
+    this._onButtonKeydownHandler = jQuery.proxy(this._onButtonKeydownHandler, this);
+
+    this._attachEvent();
+    this._maxLimitCount = 10;
+    this._nolimitHistory = [];
+    this._pollingNolimit();
+    this._previousReaction = null;
+    this._retryCount = 0;
+    this._cssLaodRetryCount = 0;
+    this._isRetryFinish = false;
+    this._isLoadRetryFinish = false;
+    this._contentsListRetryTimer = null;
+    this._loadRetryTimer = null;
+    this._$targetContentsList = null;
+    this._isReactionRequestRetry = true;
+    this._requestReactionTimeout = 10000;
+    this._serviceOptionType = null;
+    this._reactionTextMap = null;
+};
+
+
+reaction.Buttons.prototype = {
+    constructor: reaction.Buttons,
+
+    _setNeoidResources: function () {
+        jQuery.extend(this._resources, {
+            content: this._conf.authInfo.domain + "/v1/search/contents?suppress_response_codes=true&token=" + this._conf.authInfo.token +
+                "&consumerKey=" + this._conf.authInfo.consumerKey +
+                "&snsCode=" + this._conf.authInfo.snsCode +
+                "&pool=" + this._conf.authInfo.pool,
+            contentAdd: this._conf.authInfo.domain + "/v1/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST&token=" + this._conf.authInfo.token +
+                "&consumerKey=" + this._conf.authInfo.consumerKey +
+                "&snsCode=" + this._conf.authInfo.snsCode +
+                "&pool=" + this._conf.authInfo.pool,
+            contentCancel: this._conf.authInfo.domain + "/v1/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=DELETE&token=" + this._conf.authInfo.token +
+                "&consumerKey=" + this._conf.authInfo.consumerKey +
+                "&snsCode=" + this._conf.authInfo.snsCode +
+                "&pool=" + this._conf.authInfo.pool
+        });
+    },
+
+    _setApigwResource: function () {
+        jQuery.extend(this._resources, {
+            content: this._conf.apigwInfo.domain + "/v1/search/contents?suppress_response_codes=true&pool=" + this._conf.apigwInfo.pool,
+            contentAdd: this._conf.apigwInfo.domain + "/v1/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST&pool=" + this._conf.apigwInfo.pool,
+            contentCancel: this._conf.apigwInfo.domain + "/v1/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=DELETE&&pool=" + this._conf.apigwInfo.pool,
+            contentAddPeriod: this._conf.apigwInfo.domain + "/v1/period/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST&pool=" + this._conf.apigwInfo.pool,
+            contentCancelPeriod: this._conf.apigwInfo.domain + "/v1/period/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=DELETE&pool=" + this._conf.apigwInfo.pool,
+            contentAddNolimit: this._conf.apigwInfo.domain + "/v1/nolimit/services/{serviceId}/contents/{contentsId}?suppress_response_codes=true&_method=POST&pool=" + this._conf.apigwInfo.pool
+        });
+    },
+
+    _attachEvent: function () {
+        this._$body.on("click", this._onHideHandler)
+            .on("click", "." + this._conf.moduleClassname + " a._nolimitButton", this._onNolimitButtonHandler)
+            .on("click", "." + this._conf.moduleClassname + " a._button", this._onButtonHandler)
+            .on("click", "." + this._conf.popupClassname + " a._button", this._onCertificationHandler)
+            .on("click", "." + this._conf.popupClassname + " button", this._removeLayer);
+
+        
+        
+        this._$body
+            .on("click", "." + this._conf.moduleClassname + " a._face", this._onFaceAccessibleClickHandler);
+
+        if (this._conf.isAllowLongPress) {
+            var mouseDown = this._conf.isMobile ? "touchstart" : "mousedown";
+            var mouseUp = this._conf.isMobile ? "touchend" : "mouseup";
+
+            
+            this._$body.on(mouseUp, this._onPressEnd);
+
+            this._$body
+                .on(mouseDown, "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onPressStart)
+                .on(mouseUp, "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onPressEndHandler)
+                .on("selectstart", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._preventDefaultHandler);
+
+            if (!this._conf.isMobile) {
+                this._$body
+                    .on("mouseover", "." + this._conf.moduleClassname + " ._faceLayer", this._onMouseOverLayer)
+                    .on("mouseleave", "." + this._conf.moduleClassname + " ._faceLayer", this._onMouseLeave);
+
+                this._$body
+                    .on("mouseover", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onMouseOverFace)
+                    .on("mouseleave", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onMouseLeave)
+                    .on("contextmenu", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onContextMenuHandler)
+                    .on("dragstart", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._dragStartHandler)
+                    .on("dragend", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._dragEndHandler);
+            } else {
+                this._$body
+                    .on("contextmenu", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._preventDefaultHandler);
+            }
+
+            if (this._conf.callback.clickFaceButtonText) {
+                this._$body
+                    .on("click", "." + this._conf.moduleClassname + " a._face ._count", this._onFaceButtonTextHandler);
+            }
+
+        } else {
+            if (this._conf.callback.clickFaceButtonText) {
+                this._$body
+                    .on("click", "." + this._conf.moduleClassname + " a._face ._count", this._onFaceButtonTextHandler)
+                    .on("click", "." + this._conf.moduleClassname + " a._face ._icons", this._onFaceButtonHandler);
+            } else {
+                this._$body
+                    .on("click", "." + this._conf.moduleClassname + " a._face", this._onFaceButtonHandler);
+            }
+        }
+
+        
+        this._$body
+            .on("keydown", "." + this._conf.moduleClassname + " a._face", this._onFaceKeydownHandler)
+            .on("keydown", "." + this._conf.moduleClassname + " ._faceLayer", this._onFaceLayerKeydownHandler)
+            .on("keydown", "." + this._conf.moduleClassname + " a._button", this._onButtonKeydownHandler);
+    },
+
+    _onHideHandler: function (evt) {
+        var $el = jQuery(evt.target);
+
+        if (this._isLongPressed) {
+            this._isLongPressed = false;
+            return;
+        }
+
+        if (this._conf.isHiddenLayerAfterSelection || (!$el.hasClass("_button") && !$el.hasClass("_face"))) {
+            this._hideLayers();
+        }
+    },
+
+    _onFaceButtonHandler: function (evt) {
+        var $button = jQuery(evt.currentTarget);
+
+        if ($button) {
+            var $layer = $button.closest("." + this._conf.moduleClassname).find("._faceLayer").first();
+
+            var serviceId = $button.closest("[data-sid]").attr("data-sid");
+
+            var isOpen = $layer.is(":visible");
+            if (isOpen) {
+                $layer.hide();
+                $button.attr("aria-expanded", "false");
+                if (this._isSendNlog(serviceId)) {
+                    $button.attr("data-like-click-area", "face.release");
+                }
+
+            } else {
+                this._hideLayers();
+                $layer.show();
+                $button.attr("aria-expanded", "true");
+                if (this._isSendNlog(serviceId)) {
+                    $button.attr("data-like-click-area", "face.close");
+                }
+            }
+
+            var faceLayerToggle = this._conf.callback && this._conf.callback.faceLayerToggle;
+            if (typeof faceLayerToggle === "function") {
+                faceLayerToggle({open: !isOpen, target: $layer[0]});
+            }
+        }
+        evt.stopPropagation();
+    },
+
+    _onFaceButtonTextHandler: function (evt) {
+        var $base = jQuery(evt.currentTarget).closest("." + this._conf.moduleClassname).first();
+        this._conf.callback.clickFaceButtonText($base.attr("data-cid"));
+    },
+
+    _onFaceKeydownHandler: function (evt) {
+        var keyCode = evt.which || evt.keyCode;
+        
+        if (keyCode === 13 || keyCode === 32) {
+            evt.preventDefault();
+            
+            this._faceKeyboardActivated = true;
+            var self = this;
+            setTimeout(function () { self._faceKeyboardActivated = false; }, 0);
+            this._onFaceButtonHandler(evt);
+            
+            var $button = jQuery(evt.currentTarget);
+            var $layer = $button.closest("." + this._conf.moduleClassname).find("._faceLayer").first();
+            if ($layer.is(":visible")) {
+                this._focusFaceLayer($layer);
+            }
+        }
+    },
+
+    _onFaceLayerKeydownHandler: function (evt) {
+        var keyCode = evt.which || evt.keyCode;
+        var $layer = jQuery(evt.target).closest("._faceLayer");
+        if (!$layer.length) {
+            return;
+        }
+        var $buttons = $layer.find("a._button");
+        var $focused = $buttons.filter(":focus");
+        var currentIndex = $focused.length ? $buttons.index($focused) : 0;
+        var moveFocus = function (targetIndex) {
+            $buttons.attr("tabindex", "-1");
+            $buttons.eq(targetIndex).attr("tabindex", "0").focus();
+        };
+
+        switch (keyCode) {
+            case 37: 
+            case 38: 
+                evt.preventDefault();
+                moveFocus(currentIndex > 0 ? currentIndex - 1 : $buttons.length - 1);
+                break;
+            case 39: 
+            case 40: 
+                evt.preventDefault();
+                moveFocus(currentIndex < $buttons.length - 1 ? currentIndex + 1 : 0);
+                break;
+            case 36: 
+                evt.preventDefault();
+                moveFocus(0);
+                break;
+            case 35: 
+                evt.preventDefault();
+                moveFocus($buttons.length - 1);
+                break;
+            case 13: 
+            case 32: 
+                
+                
+                if ($focused.length) {
+                    evt.preventDefault();
+                    $focused.trigger("click");
+                }
+                break;
+            case 9: 
+                this._hideLayers();
+                break;
+            case 27: 
+                evt.preventDefault();
+                evt.stopPropagation();
+                this._hideLayers();
+                var $face = $layer.closest("." + this._conf.moduleClassname).find("._face").first();
+                if ($face.length) {
+                    $face.focus();
+                }
+                break;
+        }
+    },
+
+    
+    _onFaceAccessibleClickHandler: function (evt) {
+        
+        if (this._faceKeyboardActivated) {
+            this._faceKeyboardActivated = false;
+            evt.preventDefault();
+            evt.stopImmediatePropagation();
+            return;
+        }
+
+        
+        
+        
+        
+        if (evt.target !== evt.currentTarget) {
+            return;
+        }
+
+        
+        evt.preventDefault();
+        evt.stopImmediatePropagation();
+        this._onFaceButtonHandler(evt);
+        var $button = jQuery(evt.currentTarget);
+        var $layer = $button.closest("." + this._conf.moduleClassname).find("._faceLayer").first();
+        if ($layer.is(":visible")) {
+            this._focusFaceLayer($layer);
+        }
+    },
+
+    _focusFaceLayer: function ($layer) {
+        
+        
+        
+        
+        var $buttons = $layer.find("a._button");
+        if ($buttons.length) {
+            $buttons.attr("tabindex", "-1");
+            $buttons.first().attr("tabindex", "0").focus();
+        }
+    },
+
+    
+    _onButtonKeydownHandler: function (evt) {
+        var keyCode = evt.which || evt.keyCode;
+        if (keyCode !== 32) {
+            return;
+        }
+        var $button = jQuery(evt.currentTarget);
+        if ($button.closest("._faceLayer").length) {
+            return;
+        }
+        evt.preventDefault();
+        $button.trigger("click");
+    },
+
+    _onMouseOverLayer: function () {
+        this._isMouseOverLayer = true;
+        this._resetTimers();
+    },
+
+    _onMouseOverFace: function (evt) {
+        this._isMouseOverFace = true;
+        this._resetLeaveTimer();
+
+        var $button = jQuery(evt.currentTarget);
+        var $layer = $button.closest("." + this._conf.moduleClassname).find("._faceLayer").first();
+        if (this._isPressing || $layer.is(":visible")) {
+            return;
+        }
+
+        var self = this;
+        this._leaveTimer = setTimeout(function () {
+            if (self._isMouseOverFace) {
+                self._onFaceButtonHandler(evt);
+            }
+        }, this._longPressThreshold);
+    },
+
+    _onPressStart: function (evt) {
+        if (this._isPressing) {
+            
+            return;
+        }
+
+        
+        
+        
+        if (evt.target === evt.currentTarget) {
+            return;
+        }
+
+        var $button = jQuery(evt.currentTarget);
+
+        
+        if (evt.type === "touchstart" && evt.originalEvent && evt.originalEvent.touches && evt.originalEvent.touches.length > 1) {
+            return;
+        }
+
+        this._isLongPressed = false;
+        this._isPressing = true;
+        this._resetTimers();
+
+        var self = this;
+        this._pressTimer = setTimeout(function () {
+            if (!self._isPressing) {
+                return;
+            }
+            self._isLongPressed = true;
+            self._onFaceButtonHandler(evt);
+        }, this._longPressThreshold);
+    },
+
+    _onPressEndHandler: function (evt) {
+        this._onPressEnd(evt);
+        evt.preventDefault();
+        evt.stopPropagation();
+    },
+
+    _onPressEnd: function (evt) {
+        if (!this._isPressing) {
+            return;
+        }
+
+        var $button = jQuery(evt.currentTarget);
+        this._resetPressTimer();
+        this._isPressing = false;
+
+        
+        if (this._isLongPressed) {
+            
+            
+            if (evt.type === "touchend") {
+                evt.preventDefault();
+
+                
+                var self = this;
+                setTimeout(function () {
+                    self._isLongPressed = false;
+                }, 100);
+            }
+        } else if (this._leaveTimer === null) {
+            var $faceLayer = $button.siblings("._faceLayer");
+            var $targetReaction;
+
+            
+            if ($faceLayer.find("a._button.on").length > 0) {
+                $targetReaction = $faceLayer.find("a._button.on").parent();
+            } else {
+                $targetReaction = $faceLayer.children("." + this._conf.defaultReactionType);
+            }
+
+            
+            if ($targetReaction.length === 0) {
+                $targetReaction = $faceLayer.children().first();
+            }
+
+            evt.currentTarget = null;
+            this._onButtonHandler(evt, $targetReaction.children().first()[0]);
+        }
+    },
+
+    _onMouseLeave: function () {
+        this._resetTimers();
+        var self = this;
+        this._leaveTimer = setTimeout(function () {
+            if (self._isMouseOverFace || self._isMouseOverLayer) {
+                self._isMouseOverFace = false;
+                self._isMouseOverLayer = false;
+                self._hideLayers();
+            }
+        }, this._longPressThreshold);
+    },
+
+    _onContextMenuHandler: function () {
+        this._resetPressTimer();
+        this._isPressing = false;
+        this._isLongPressed = false;
+    },
+
+    _preventDefaultHandler: function (evt) {
+        evt.preventDefault();
+    },
+
+    
+    _dragStartHandler: function () {
+        this._resetTimers();
+        this._isPressing = false;
+    },
+
+    _dragEndHandler: function (evt) {
+        var x = evt.clientX;
+        var y = evt.clientY;
+
+        
+        var $target = jQuery(document.elementFromPoint(x, y));
+
+        
+        if (!$target.is("." + this._conf.moduleClassname + " a._face:has(._longpress)") && $target.closest("." + this._conf.moduleClassname + " ._faceLayer").length === 0) {
+            this._onMouseLeave(evt);
+        }
+    },
+
+    _getCountButton: function ($button) {
+        return $button.find("._count").first();
+    },
+
+    
+    _callClickCallback: function (customEventParams) {
+        var callbackResult = this._conf.callback &&
+            this._conf.callback.click &&
+            this._conf.callback.click(customEventParams);
+        return callbackResult === undefined || callbackResult;
+    },
+
+    _checkGuestReactionApproved: function (buttonElement) { 
+        var guestCode = "006";
+        var $target = jQuery(buttonElement);
+        var serviceId = $target.closest("." + this._conf.moduleClassname).attr("data-sid");
+
+        var option = this._serviceOptionType[serviceId];
+        if (option !== undefined) {
+            if (option[guestCode] !== undefined) {
+                return option[guestCode];
+            }
+        }
+        return false;
+    },
+
+    _resetTimers: function () {
+        this._resetPressTimer();
+        this._resetLeaveTimer();
+    },
+
+    _resetPressTimer: function () {
+        if (this._pressTimer) {
+            clearTimeout(this._pressTimer);
+            this._pressTimer = null;
+        }
+    },
+
+    _resetLeaveTimer: function () {
+        if (this._leaveTimer) {
+            clearTimeout(this._leaveTimer);
+            this._leaveTimer = null;
+        }
+    },
+
+    _onButtonHandler: function (evt, button) {
+        var buttonElement = evt.currentTarget || button,
+            isAdding = !jQuery(buttonElement).hasClass(this._conf.iconToggleClassname[0]),
+            customEventParams = {
+                event: evt.originalEvent,
+                target: buttonElement,
+                isAdding: isAdding
+            };
+        jQuery(buttonElement).closest("._face + ._faceLayer").length && this._hideLayers();
+        evt.preventDefault && evt.preventDefault();
+
+        this._isMouseOverFace = false;
+        this._isMouseOverLayer = false;
+        this._isLongPressed = false;
+        this._isPressing = false;
+
+        if (!this._callClickCallback(customEventParams)) {
+            return;
+        }
+
+        if (this._isLogin || this._checkGuestReactionApproved(buttonElement)) {
+            if (isAdding) {
+                this.increase(buttonElement);
+            } else {
+                this.decrease(buttonElement);
+            }
+        } else {
+            this._redirectLogin();
+        }
+
+        
+        jQuery(this).trigger("clickReaction", customEventParams);
+    },
+    _onNolimitButtonHandler: function (evt) {
+        var buttonElement = evt.currentTarget,
+            customEventParams = {
+                event: evt.originalEvent,
+                target: buttonElement,
+                isAdding: true
+            };
+        jQuery(buttonElement).closest("._face + ._faceLayer").length && this._hideLayers();
+        evt.preventDefault();
+
+        if (!this._callClickCallback(customEventParams)) {
+            return;
+        }
+        if (this._isLogin || this._checkGuestReactionApproved(buttonElement)) {
+            this.increaseNolimit(buttonElement);
+        } else {
+            this._redirectLogin();
+        }
+
+        
+        jQuery(this).trigger("clickReaction", customEventParams);
+    },
+
+    _onCertificationHandler: function () {
+        var returnURL = location.href;
+        top.location.href = (this._conf.isMobile ? this._resources.realNameCheck.mobile : this._resources.realNameCheck.pc) + encodeURIComponent(returnURL) + "&surl=" + encodeURIComponent(returnURL);
+    },
+
+    _removeLayer: function () {
+        jQuery("." + this._conf.popupClassname).remove();
+    },
+
+    _hideLayers: function () {
+        var $el;
+        var self = this;
+        jQuery(jQuery.grep(jQuery("." + this._conf.moduleClassname).find("._faceLayer:visible"), function (v) {
+            $el = jQuery(v);
+            return $el.is(":visible") && !!$el.parent().find("._face").length;
+        })).each(function () {
+            $el = jQuery(this);
+            
+            var $buttons = $el.find("a._button");
+            $buttons.attr("tabindex", "-1");
+            $buttons.first().attr("tabindex", "0");
+            $el.hide();
+            var $face = $el.siblings("._face").first();
+            if ($face.length) {
+                $face.attr("aria-expanded", "false");
+            }
+            if (self._conf.callback && typeof self._conf.callback.faceLayerToggle === "function") {
+                self._conf.callback.faceLayerToggle({
+                    open: false,
+                    target: $el[0]
+                });
+            }
+
+            var serviceId = $el.closest("[data-sid]").attr("data-sid");
+            if (self._isSendNlog(serviceId)) {
+                var $face = $el.siblings("._face");
+                if (self._conf.callback.clickFaceButtonText) {
+                    $face.find("._icons").attr("data-like-click-area", "face.release");
+                } else {
+                    $face.attr("data-like-click-area", "face.release");
+                }
+            }
+        });
+    },
+
+    _detachEvent: function () {
+        this._$body
+            .off("click", this._onHideHandler)
+            .off("click", "." + this._conf.moduleClassname + " a._button", this._onButtonHandler)
+            .off("click", "." + this._conf.moduleClassname + " a._nolimitButton", this._onNolimitButtonHandler);
+
+        if (this._conf.isAllowLongPress) {
+            
+            this._$body
+                .off("touchend mouseup", this._onPressEnd);
+
+            this._$body
+                .off("mouseover", "." + this._conf.moduleClassname + " ._faceLayer", this._onMouseOverLayer)
+                .off("mouseleave", "." + this._conf.moduleClassname + " ._faceLayer", this._onMouseLeave);
+
+            this._$body
+                .off("mouseover", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onMouseOverFace)
+                .off("mouseleave", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onMouseLeave)
+                .off("touchstart mousedown", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onPressStart)
+                .off("mouseup touchend", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._onPressEndHandler)
+                .off("contextmenu selectstart", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._preventDefaultHandler)
+                .off("dragstart", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._dragStartHandler)
+                .off("dragend", "." + this._conf.moduleClassname + " a._face:has(._longpress)", this._dragEndHandler);
+
+            if (this._conf.callback.clickFaceButtonText) {
+                this._$body
+                    .off("click", "." + this._conf.moduleClassname + " a._face ._count", this._onFaceButtonTextHandler);
+            }
+        } else {
+            if (this._conf.callback.clickFaceButtonText) {
+                this._$body
+                    .off("click", "." + this._conf.moduleClassname + " a._face ._count", this._onFaceButtonTextHandler)
+                    .off("click", "." + this._conf.moduleClassname + " a._face ._icons", this._onFaceButtonHandler);
+            } else {
+                this._$body
+                    .off("click", "." + this._conf.moduleClassname + " a._face", this._onFaceButtonHandler);
+            }
+        }
+
+        
+        this._$body
+            .off("click", "." + this._conf.moduleClassname + " a._face", this._onFaceAccessibleClickHandler)
+            .off("keydown", "." + this._conf.moduleClassname + " a._face", this._onFaceKeydownHandler)
+            .off("keydown", "." + this._conf.moduleClassname + " ._faceLayer", this._onFaceLayerKeydownHandler)
+            .off("keydown", "." + this._conf.moduleClassname + " a._button", this._onButtonKeydownHandler);
+    },
+
+    
+    _isAndroidConfirmBugInApp: function () {
+        return /Android 5.+Chrome\/40.+NAVER.+inapp/.test(navigator.userAgent);
+    },
+
+    
+    _redirectLogin: function () {
+        if (this._isNeoid) {
+            if (this._isAndroidConfirmBugInApp() || confirm(this._messages.login.neoid)) {
+                this._conf.authInfo.loginHandler();
+            }
+        } else {
+            if (this._isAndroidConfirmBugInApp() || confirm(this._messages.login.nid)) {
+                top.location.href = "https://nid.naver.com/nidlogin.login?" +
+                    (this._conf.isMobile ? "svctype=262144&" : "") +
+                    "url=" + encodeURIComponent(location.href) +
+                    "&locale=" + (this._conf.language === "ko" ? "ko_KR" : "en_US");
+            }
+        }
+    },
+
+    
+    
+    _updateReactionFromClient: function ($buttons, isAdding, $restoreButtons, count, isUpdateServerCount) {
+        var prevButtons = [];
+        var $prevBtn = null;
+        var moduleClass = "." + this._conf.moduleClassname;
+        $buttons.each(jQuery.proxy(function (i, el) {
+            var $button = jQuery(el),
+                $base = $button.closest(moduleClass).first(),
+                isFaceType = this._isFace($base),
+                duplication = $base.attr("data-duplication") || !!this._conf.isDuplication;
+            duplication = typeof duplication === "boolean" ? duplication : (duplication + "").toLowerCase() === "true";
+            if (!duplication) {
+                if ($restoreButtons) {
+                    this._cleanReaction($restoreButtons.get(i), isAdding === false ? false : undefined, count);
+                } else {
+                    
+                    $prevBtn = $base.find((isFaceType ? "._faceLayer " : "") + "." + this._conf.iconToggleClassname[0]);
+                    $prevBtn = $prevBtn.is($button) ? $prevBtn.not($button) : $prevBtn;
+                    if (!isFaceType) {
+                        
+                        var $parent = $button.parent();
+                        $prevBtn = $prevBtn.filter(function (k, v) {
+                            var $prev = jQuery(v);
+                            var $prevParent = $prev.parent();
+                            return (($prevParent.attr("data-sid") !== $parent.attr("data-sid")) ||
+                                ($prevParent.attr("data-cid") !== $parent.attr("data-cid")) ||
+                                ($prev.attr("data-type") !== $button.attr("data-type")));
+                        });
+                    }
+                    this._cleanReaction($prevBtn, true, count);
+                }
+            }
+            prevButtons.push($prevBtn);
+
+            var currentCount = this._toNum(this._getCountButton($button).text());
+            var isDisplayMax = currentCount >= this._conf.maxCount;
+            var clientCnt = isDisplayMax ? currentCount : currentCount + (isAdding ? count : -count);
+            var displayCount = isUpdateServerCount ? count : clientCnt;
+
+            this._updateButton($base, $button, isAdding, displayCount);
+
+            
+            isFaceType && this._updateFaceButton($base.find("._face").first(), undefined, undefined, undefined, $base.attr("data-markUserReaction"));
+        }, this));
+
+        return jQuery(prevButtons);
+    },
+
+    _cleanReaction: function ($buttons, isAdding, count) {
+        var self = this,
+            $el, $count;
+        $buttons.length && $buttons
+            .each(function (k, e) {
+                $el = jQuery(e).toggleClass(self._conf.iconToggleClassname.join(" "));
+                $count = self._getCountButton($el);
+                $count.text(self._formattedCount(self._toNum($count.text()) + (typeof isAdding === "undefined" ? 0 : (isAdding ? -count : count))));
+            });
+    },
+
+    
+    _selectApiKey: function (isAdding, countType) {
+        var postfix = !!countType ? countType.charAt(0).toUpperCase() + countType.substring(1, countType.length) : "";
+
+        if (isAdding) {
+            return "contentAdd" + postfix;
+        } else {
+            return "contentCancel" + postfix;
+        }
+    },
+
+    
+    _afterNolimitReqeust: function () {
+        clearTimeout(this._nolimitTimer);
+        this._nolimitHistory = [];
+        this._wait = false;
+        this._pollingNolimit();
+    },
+
+    
+    requestPreviousReaction: function () {
+        if (!this._previousReaction) {
+            return;
+        }
+        this._requestReaction(this._previousReaction.buttonElement, this._previousReaction.isAdding);
+    },
+
+    
+    clearPreviousReaction: function () {
+        this._previousReaction = null;
+    },
+
+    
+    _setPreviousReaction: function (buttonElement, isAdding) {
+        this._previousReaction = {
+            buttonElement: buttonElement,
+            isAdding: isAdding
+        };
+    },
+
+    
+    _requestReaction: function (buttonElement, isAdding) {
+        var $target = jQuery(buttonElement),
+            $base = $target.closest("." + this._conf.moduleClassname),
+            $buttons = jQuery().add($target),
+            serviceId = $base.attr("data-sid"),
+            contentId = $base.attr("data-cid"),
+            parentContentsId = $base.attr("data-pid"),
+            categoryId = $base.attr("data-catgid") || "",
+            displayId = $base.attr("data-did") || this._displayId || serviceId,
+            friendsLayerId = $base.attr("data-friendslayer-id") || "",
+            reactionType = $target.attr("data-type"),
+            reactionViewType = $target.attr("data-viewtype") || "",
+            duplication = $base.attr("data-duplication") || !!this._conf.isDuplication,
+            contentCountType = $base.attr("data-ccounttype"),
+            count = 1,
+            history = [],
+            isNolimitType = contentCountType === "nolimit",
+            btnClassName = isNolimitType ? "._nolimitButton" : "._button",
+            runtimeStatus = "";
+
+        if (isNolimitType) {
+            count = this._nolimitHistory.length,
+                history = this._nolimitHistory,
+                runtimeStatus = this._conf.runtimeStatus();
+        }
+
+        var requestParams = {
+                displayId: displayId,
+                reactionType: reactionType,
+                categoryId: categoryId,
+                guestToken: reaction._guestToken,
+                timestamp: reaction._timestamp,
+                _ch: this._conf.isMobile ? "mbw" : "pcw",
+                isDuplication: typeof duplication === "boolean" ? duplication : (duplication + "").toLowerCase() === "true",
+                lang: this._conf.language,
+                countType: contentCountType || "default",
+                count: count,
+                history: isNolimitType ? history.join("|") : "",
+                runtimeStatus: runtimeStatus
+            },
+            customEventParams = {
+                $base: $base,
+                $target: $target,
+                serviceId: serviceId,
+                contentId: contentId,
+                displayId: displayId,
+                friendsLayerId: friendsLayerId,
+                reactionType: reactionType,
+                reactionViewType: reactionViewType,
+                isAdding: isAdding,
+                isNeoid: this._isNeoid
+            },
+            apiKey = this._selectApiKey(isAdding, contentCountType);
+
+        if (isAdding) {
+            requestParams.isPostTimeline = !!(friendsLayerId);
+        }
+
+        if (!!reactionViewType) {
+            requestParams.viewType = reactionViewType;
+        }
+
+        if (!!parentContentsId) {
+            requestParams.parentContentsId = parentContentsId;
+        }
+
+        
+        var $sameButton = jQuery("." + this._conf.moduleClassname).not($base).filter(function () {
+            var $others = jQuery(this);
+            return $others.attr("data-sid") === serviceId && $others.attr("data-cid") === contentId;
+        }).find(btnClassName + "[data-type=" + reactionType + "]");
+        if ($sameButton.length) {
+            $buttons = $buttons.add($sameButton);
+        }
+
+        
+        var $prevButtons;
+        if (!isNolimitType) {
+            $prevButtons = this._updateReactionFromClient($buttons, isAdding, undefined, count, false);
+        }
+
+        
+        isNolimitType && this._afterNolimitReqeust();
+
+        
+        jQuery.ajax({
+            url: (this._isNeoid || this._isUseApigw ? "" : this._apiDomain) + this._resources[apiKey].replace("{serviceId}", serviceId).replace("{contentsId}", encodeURIComponent(contentId)),
+            dataType: "jsonp",
+            scriptCharset: "utf-8",
+            timeout: 3000,
+            data: requestParams,
+            context: this,
+            success: function (res) {
+                if (!res.errorCode || res.errorCode === 4042 || res.errorCode === 4004) {
+                    
+                    if (res.snsInfo) {
+                        customEventParams.snsInfo = res.snsInfo;
+                    }
+
+                    
+                    isNolimitType && this._updateReactionFromClient($buttons, isAdding, undefined, res.count, true);
+
+                    jQuery(this).trigger("successReaction", customEventParams);
+
+                    
+                    this._conf.callback && this._conf.callback.clicked && this._conf.callback.clicked({
+                        targets: $buttons.get(),
+                        content: res
+                    });
+                    this._triggerParentCallback(res);
+                } else if (res.errorCode === 4010) { 
+                    
+                    !isNolimitType && this._updateReactionFromClient($buttons, !isAdding, $prevButtons, count, false);
+                    this._redirectLogin();
+                } else if (res.errorCode === 4016) { 
+                    
+                    !isNolimitType && this._updateReactionFromClient($buttons, !isAdding, $prevButtons, count, false);
+                    jQuery("body").append(reaction.templates(this._messages.templates).process("certificationLayer", {}));
+                } else if (res.errorCode === 4038) { 
+                    
+                    this._setPreviousReaction(buttonElement, isAdding);
+                    res.moreInfos[0].serviceId = serviceId;
+                    jQuery(this).trigger("captchaReaction", res.moreInfos[0]);
+                    !isNolimitType && this._updateReactionFromClient($buttons, !isAdding, $prevButtons, count, false);
+                } else if (res.errorCode === 4013 && this._isReactionRequestRetry) { 
+                    this._isReactionRequestRetry = false;
+                    this._finishContentsListRetry();
+                    this._requestContentList(this._$targetContentsList);
+                    this._clearTargetContentsList();
+
+                    var intervalCount = 1;
+                    var intervalTime = 500;
+                    var maxIntervalCount = this._requestReactionTimeout / intervalTime + 2; 
+                    var self = this;
+                    var $buttonEl = jQuery(buttonElement);
+
+                    var intervalId = setInterval(function () {
+                        self._requestReactionIntervalId = intervalId;
+                        if (intervalCount > maxIntervalCount) { 
+                            clearInterval(intervalId);
+                            !isNolimitType && self._updateReactionFromClient($buttons, !isAdding, $prevButtons, count, false);
+                            alert(res.message);
+                            jQuery(self).trigger("errorReaction", customEventParams);
+                            return;
+                        }
+
+                        if ($buttonEl.parents().attr("data-loaded") === "1") {
+                            clearInterval(intervalId);
+                            var _isAdding = true;
+                            if (isNolimitType) {
+                                _isAdding = $buttonEl.attr("aria-selected") === "true" ? false : true; 
+                            } else {
+                                _isAdding = $buttonEl.attr("aria-pressed") === "true" ? false : true; 
+                            }
+                            self._requestReaction(buttonElement, _isAdding);
+                            return;
+                        }
+                        intervalCount++;
+                    }, intervalTime);
+                } else {
+                    if (typeof this._requestReactionIntervalId !== "undefined") {
+                        clearInterval(this._requestReactionIntervalId);
+                    } else {
+                        
+                        !isNolimitType && this._updateReactionFromClient($buttons, !isAdding, $prevButtons, count, false);
+                    }
+                    alert(res.message);
+                    
+                    jQuery(this).trigger("errorReaction", customEventParams);
+                }
+            },
+            error: function () {
+                
+                !isNolimitType && this._updateReactionFromClient($buttons, !isAdding, $prevButtons, count, false);
+                alert(this._messages.error);
+                jQuery(this).trigger("errorReaction", customEventParams);
+            }
+        });
+    },
+
+    
+    _getRequestQueue: function ($target) {
+        if ($target == null) {
+            return [];
+        }
+
+        var self = this,
+            requestQueue = [],
+            domainQueue = [],
+            domainQueueIndex = -1,
+            serviceIndex = -1;
+
+        $target.each(function () {
+            var $base = jQuery(this),
+                domain = $base.attr("data-domain") || self._apiDomain,
+                serviceId = $base.attr("data-sid"),
+                contentId = $base.attr("data-cid"),
+                parentId = $base.attr("data-pid"),
+                duplication = $base.attr("data-duplication") || !!self._conf.isDuplication,
+                contentCountType = $base.attr("data-ccounttype"),
+                contentIds,
+                parentIds;
+            duplication = typeof duplication === "boolean" ? duplication : (duplication + "").toLowerCase() === "true";
+
+            domainQueueIndex = jQuery.inArray(domain, domainQueue);
+            if (domainQueueIndex < 0 || (requestQueue[domainQueueIndex].duplication !== duplication)) {	
+                domainQueue.push(domain);
+                domainQueueIndex = domainQueue.length - 1;
+                requestQueue[domainQueueIndex] = {
+                    "domain": domain,
+                    "duplication": duplication,
+                    "services": []
+                };
+            }
+
+            serviceIndex = jQuery.map(requestQueue[domainQueueIndex].services, function (v) {
+                return v.serviceId;
+            }).indexOf(serviceId);
+
+            if (serviceIndex < 0) {
+                requestQueue[domainQueueIndex].services.push({
+                    "serviceId": serviceId,
+                    "contentIds": [],
+                    "parentIds": []
+                });
+                serviceIndex = requestQueue[domainQueueIndex].services.length - 1;
+            }
+
+            
+            contentIds = requestQueue[domainQueueIndex].services[serviceIndex].contentIds;
+            parentIds = requestQueue[domainQueueIndex].services[serviceIndex].parentIds;
+
+            
+            contentId = !!contentCountType ? contentId + "(" + contentCountType + ")" : contentId;
+            (!~jQuery.inArray(contentId, contentIds)) && contentIds.push(contentId);
+            parentId && (!~jQuery.inArray(parentId, parentIds)) && parentIds.push(parentId);
+        });
+        return requestQueue;
+    },
+
+    
+    _convertToParamString: function (services, idName) {
+        var params = [];
+        for (var i = 0, nLen = services.length; i < nLen; i++) {
+            services[i][idName].length && params.push(services[i].serviceId + "[" + services[i][idName].join(",") + "]");
+        }
+        return params.join("|");
+    },
+
+    
+    _convertToMapData: function (contents) {
+        var convertedData = {};
+
+        jQuery.each(contents, function (i, content) {
+            var reactionData = {};
+            var isParent = !!("parentReactions" in content);
+
+            jQuery.each(content[isParent ? "parentReactions" : "reactions"], function (j, data) {
+                reactionData[data.reactionType] = data;
+            });
+            if (isParent) {
+                convertedData[content.serviceId] = convertedData[content.serviceId] || {};
+                convertedData[content.serviceId][content.parentContentsId] = reactionData;
+            } else {
+                convertedData[content.serviceId + "_" + content.contentsId] = reactionData;
+            }
+            convertedData[content.serviceId + "_reactionTextMap"] = content.reactionTextMap;
+            convertedData[content.serviceId + "_customized"] = content.customized;
+            convertedData[content.serviceId + "_differentPlatform"] = content.differentPlatform;
+        });
+        return convertedData;
+    },
+
+    _triggerParentCallback: function (res) {
+        
+        this._conf.callback && res.parentContents && this._conf.callback.updateParent &&
+        this._conf.callback.updateParent(this._convertToMapData(res.parentContents));
+    },
+    
+    _finishContentsListRetry: function () {
+        clearTimeout(this._contentsListRetryTimer);
+        this._isRetryFinish = true;
+    },
+    
+    _contentsListRetry: function ($target) {
+        this._setTargetContentsList($target);
+
+        try {
+            var retryLimit = 3,
+                retryInterval = 7000;
+
+            if (this._isRetryFinish) {
+                return;
+            }
+            if (this._retryCount >= retryLimit) {
+                this._finishContentsListRetry();
+                return;
+            }
+
+            this._retryCount = this._retryCount + 1;
+            var self = this;
+            this._contentsListRetryTimer = setTimeout(function () {
+                self._requestContentList($target);
+            }, (this._retryCount * retryInterval));
+        } catch (e) {
+            this._finishContentsListRetry();
+        }
+    },
+    
+    _setTargetContentsList: function ($target) {
+        this._$targetContentsList = $target;
+    },
+    
+    _clearTargetContentsList: function () {
+        this._$targetContentsList = null;
+    },
+    
+    _requestContentList: function ($target) {
+        var requestQueue = this._getRequestQueue($target),
+            fallback = jQuery.proxy(function () {
+                this._contentsListRetry($target);
+            }, this),
+            callback = jQuery.proxy(function (res) {
+
+                if (!res.errorCode) {
+                    this._isLogin = res.isLogin;
+                    this._serviceOptionType = Object.assign(res.serviceOptionType, this._serviceOptionType);
+
+                    
+                    this._drawButtons($target, this._convertToMapData(res.contents));
+
+                    
+                    reaction._guestToken = res.guestToken || "";
+                    reaction._timestamp = res.timestamp || "";
+
+                    
+                    this._conf.callback && this._conf.callback.updated && this._conf.callback.updated({
+                        targets: $target.get(),
+                        contents: res.contents
+                    });
+                    this._triggerParentCallback(res);
+
+                    
+                    var cssConfs = res.cssConfs;
+                    if (cssConfs != null) {
+                        for (var i = 0; i < cssConfs.length; i++) {
+                            var serviceId = cssConfs[i].cssId.replace("_PC", "").replace("_MOBILE", "");
+
+                            
+                            if (cssConfs[i].url && cssConfs[i].url.trim()) {
+                                this._isExistResource(cssConfs[i].url) ? this._loadCssFile(cssConfs[i].url) : this._loadSourceCss(serviceId);
+                            } else if (cssConfs[i].staticId != null) {
+                                var url = this._resources.css.cssStaticUrl;
+                                url = url
+                                    .replace("{cssId}", serviceId)
+                                    .replace("{assignId}", cssConfs[i].assignId)
+                                    .replace("{staticId}", cssConfs[i].staticId)
+                                    .replace("{file}", serviceId);
+
+                                this._isExistResource(url) ? this._loadCssFile(url) : this._loadSourceCss(serviceId);
+                            } else {  
+                                this._loadSourceCss(serviceId);
+                            }
+                        }
+                    } else {  
+                        this._loadSourceCss(null);
+                    }
+                }
+            }, this);
+
+        
+        for (var i = 0, data, parent, nLen = requestQueue.length; i < nLen; i++) {
+            data = {
+                q: this._convertToParamString(requestQueue[i].services, "contentIds"),
+                isDuplication: requestQueue[i].duplication,
+                cssIds: this._makeCssIdList(this._conf.cssId)
+            };
+
+            
+            if (typeof this._displayId === "string" && this._displayId.trim() !== "") {
+                
+                data.displayId = this._displayId;
+            } else if (!this._isUseApigw && !this._isNeoid && !!this._routePool) { 
+                data.pool = this._routePool;
+            }
+
+            parent = this._convertToParamString(requestQueue[i].services, "parentIds");
+            parent && (data.pq = parent);
+            jQuery.ajax({
+                url: this._isNeoid || this._isUseApigw ? this._resources.content : requestQueue[i].domain + this._resources.content,
+                dataType: "jsonp",
+                scriptCharset: "utf-8",
+                timeout: this._requestReactionTimeout,
+                data: data,
+                context: this,
+                success: callback,
+                error: fallback
+            });
+        }
+    },
+
+    _makeCssIdList: function (cssId) {
+        var cssIdList = [];
+        var suffix = this._conf.isMobile ? "_MOBILE" : "_PC";
+
+        
+        if (!!cssId) {
+            if (this._conf.previewCssUrl) {
+                cssIdList.push(/face|multi/.test(this._conf.type) ? "MULTI" + suffix : "BASIC" + suffix);
+                this._loadCssFile(this._conf.previewCssUrl);
+            } else {
+                cssIdList.push(/face|multi/.test(this._conf.type) ? "MULTI" + suffix : "BASIC" + suffix);
+                var cssIds = cssId.split(",");
+
+                for (var i = 0; i < cssIds.length; i++) {
+                    cssIdList.push(cssIds[i].toUpperCase() + suffix);
+                }
+            }
+        }
+        return cssIdList.join(",");
+    },
+
+    _loadCssFile: function (url) {
+        var headElement = document.head || document.getElementsByTagName("head")[0],
+            createdElement = document.createElement("link"),
+            isFullUrl = /^(http|https)/.test(url),
+            staticUrl = isFullUrl ? url : (this._conf.staticDomain || this._apiDomain) + url,
+            isHttps = isFullUrl ? /^(https)/.test(url) : /^(https)/.test(this._apiDomain);
+
+        createdElement.type = "text/css";
+        createdElement.rel = "stylesheet";
+        createdElement.className = "like_css";
+        createdElement.href = isHttps ? staticUrl.replace("/css/reaction/", "/css/ssl/reaction/") : staticUrl;
+
+        headElement.appendChild(createdElement);
+
+        var link_length = document.getElementsByClassName("like_css").length;
+        document.getElementsByClassName("like_css").item(link_length - 1).onload = function () {
+            jQuery("._reactionModule").css("visibility", "visible");
+        };
+    },
+
+    _finishLoadRetry: function () {
+        clearTimeout(this._loadRetryTimer);
+        this._isLoadRetryFinish = true;
+    },
+
+    _retryLoadResource: function ($target) {
+        try {
+            var retryLimit = 3,
+                retryInterval = 7000;
+
+            if (this._isLoadRetryFinish) {
+                return;
+            }
+
+            if (this._cssLaodRetryCount >= retryLimit) {
+                this._finishLoadRetry();
+                return;
+            }
+            this._cssLaodRetryCount = this._cssLaodRetryCount + 1;
+
+            var self = this;
+            this._loadRetryTimer = setTimeout(function () {
+                self._isExistResource($target);
+            }, (this._cssLaodRetryCount * retryInterval));
+        } catch (e) {
+            this._finishLoadRetry();
+        }
+    },
+
+    _isExistResource: function (url) {
+        var result;
+        jQuery.ajax({
+            url: url,
+            async: false,
+            context: this,
+            success: function () {
+                result = true;
+            },
+            error: function () {
+                this._retryLoadResource(url);
+                result = false;
+            }
+        });
+        return result;
+    },
+
+    
+    _loadSourceCss: function (serviceId) {
+        if (serviceId == null) {
+            this._loadCssFile(this._getCssUrl(/face|multi/.test(this._conf.type) ? this._resources.css.common_multi : this._resources.css.common_basic));
+            if (!!this._conf.cssId) {
+                var cssIds = this._conf.cssId.split(",");
+                for (var i = 0; i < cssIds.length; i++) {
+                    this._loadCssFile(this._getCssUrl(this._resources.css.service.replace("{cssId}", cssIds[i].toLowerCase())));
+                }
+            }
+        } else {
+            if (/basic|multi/.test(serviceId.toLowerCase())) {
+                this._loadCssFile(this._getCssUrl(/face|multi/.test(this._conf.type) ? this._resources.css.common_multi : this._resources.css.common_basic));
+            } else {
+                this._loadCssFile(this._getCssUrl(this._resources.css.service.replace("{cssId}", serviceId.toLowerCase())));
+            }
+        }
+    },
+
+    
+    _getCssUrl: function (url, isMobile) {
+        var cssUrl = "";
+        var buildString = "/staticBuildNumber";
+
+        if (isMobile != null) {
+            cssUrl = (this._conf.isDebugMode ? "" : buildString) + (isMobile ? url : url.replace("/mobile/", "/desktop/"));
+        } else {
+            cssUrl = (this._conf.isDebugMode ? "" : buildString) + (this._conf.isMobile ? url : url.replace("/mobile/", "/desktop/"));
+        }
+        return cssUrl;
+    },
+
+    
+    _drawButtons: function ($target, contents) {
+        var self = this;
+        $target.each(function (i, base) {
+            var $base = jQuery(base),
+                reactionDataSet = contents[$base.attr("data-sid") + "_" + $base.attr("data-cid")],
+                isCustomizedText = contents[$base.attr("data-sid") + "_customized"],
+                isDifferentPlatForm = contents[$base.attr("data-sid") + "_differentPlatform"];
+
+            self._reactionTextMap = !!contents[$base.attr("data-sid") + "_reactionTextMap"] ? contents[$base.attr("data-sid") + "_reactionTextMap"][self._conf.language.replace("_", "-")] : null;
+
+            if (reactionDataSet) {
+                $base.find("._button").each(function (i, button) {
+                    var $button = jQuery(button),
+                        reactionType = $button.attr("data-type"),
+                        reactionData = reactionDataSet[reactionType] || {},
+                        labelType = $button.attr("data-viewtype") || reactionType,
+                        replaceLabel = self._reactionTextMap[labelType];
+
+                    
+                    if (isDifferentPlatForm) {
+                        replaceLabel = self._conf.isMobile ? replaceLabel.m : replaceLabel.pc;
+                    }
+
+                    
+                    if (self._isDrawingByTemplate($base, $button)) {
+                        $button.html(self._conf.buttonTemplate.replace("{label}", self._reactionTextMap[labelType]));
+                    } 
+                    else if (!isCustomizedText && self._isEmptyButton($base, $button)) {
+                        $button.find("._label").html(replaceLabel);
+                    }
+
+                    
+                    self._updateButton($base, $button, reactionData.isReacted, reactionData.count);
+                });
+
+                $base.find("._nolimitButton").each(function (i, button) {
+                    var $button = jQuery(button),
+                        reactionType = $button.attr("data-type"),
+                        reactionData = reactionDataSet[reactionType] || {},
+                        labelType = $button.attr("data-viewtype") || reactionType,
+                        replaceLabel = self._reactionTextMap[labelType];
+
+                    
+                    if (isDifferentPlatForm) {
+                        replaceLabel = self._conf.isMobile ? replaceLabel.m : replaceLabel.pc;
+                    }
+
+                    
+                    if (self._isDrawingByTemplate($base, $button)) {
+                        $button.html(self._conf.buttonTemplate.replace("{label}", self._reactionTextMap[labelType]));
+                    } 
+                    else if (!isCustomizedText && self._isEmptyButton($base, $button)) {
+                        $button.find("._label").html(replaceLabel);
+                    }
+
+                    
+                    self._updateButton($base, $button, reactionData.isReacted, reactionData.count);
+                });
+
+                self._drawFaceButtons($base, reactionDataSet);
+
+                
+                $base.attr("data-loaded", "1");
+
+                var $faceLayer = $base.find("._faceLayer");
+
+                
+                if ($base.attr("data-isOpenFaceLayer") === "true") {
+                    $base.find("._faceLayer").css("display", "block");
+                }
+
+                
+                $base.attr("data-facetype", $faceLayer.length);
+            }
+        });
+    },
+
+    
+    _getCounts: function ($base, reactionDataSet) {
+        var counts = [];
+        if ($base.attr("data-markUserReaction")) {
+            for (var data in reactionDataSet) {
+                if (reactionDataSet[data].isReacted) {
+                    counts.push({
+                        type: data,
+                        count: reactionDataSet[data].count,
+                        isReacted: reactionDataSet[data].isReacted
+                    });
+                }
+            }
+        } else {
+            for (var p in reactionDataSet) {
+                counts.push({
+                    type: p,
+                    count: reactionDataSet[p].count,
+                    isReacted: reactionDataSet[p].isReacted
+                });
+            }
+        }
+        return counts;
+    },
+
+    _drawFaceButtons: function ($base, reactionDataSet) {
+        var $faceButton = $base.find("._face").first();
+        if (!$faceButton.length) {
+            return;
+        }
+
+        var isReacted = false;
+        var totalCount = 0;
+
+        
+        for (var p in reactionDataSet) {
+            if (reactionDataSet[p].isReacted) {
+                isReacted = true;
+            }
+            totalCount += reactionDataSet[p].count;
+        }
+
+        var counts = this._getCounts($base, reactionDataSet);
+
+        
+        if (this._isDrawingByTemplate($base, $faceButton)) {
+            var title = $faceButton.attr("data-label") || "default";
+            $faceButton.html(this._conf.faceButtonTemplate.replace("{label}", this._messages.face[title]));
+        }
+
+        
+        this._makeFaceIcons($base, $faceButton);
+
+        
+        this._updateFaceButton($faceButton, isReacted, counts, totalCount, $base.attr("data-markUserReaction"));
+
+        
+        $faceButton.attr("aria-expanded", "false");
+
+        
+        
+        
+        var $faceLayer = $base.find("._faceLayer").first();
+        if ($faceLayer.length) {
+            $faceLayer.attr("role", "menu");
+            $faceLayer.find("li").attr("role", "none");
+            $faceLayer.find("a._button").each(function (index) {
+                jQuery(this).attr({
+                    "role": "menuitem",
+                    "tabindex": index === 0 ? "0" : "-1"
+                });
+            });
+        }
+
+        
+        var serviceId = $base.attr("data-sid");
+        if (this._isSendNlog(serviceId)) {
+            if (this._conf.callback.clickFaceButtonText) {
+                $faceButton.removeAttr("data-like-click-area");
+                $base.find("a._face ._count").attr("data-like-click-area", "count.release");
+                $base.find("a._face ._icons").attr("data-like-click-area", "face.release");
+            } else {
+                $faceButton.attr("data-like-click-area", "face.release");
+            }
+        }
+    },
+
+    
+    _makeFaceIcons: function ($base, $button) {
+        var max = $base.attr("data-faceButtonMaxIconCount") || this._conf.faceButtonMaxIconCount;
+        if (max <= 0) {
+            return;
+        }
+        if ($base.attr("data-loaded") !== "1") {
+            var $icons = $button.find("._icons").first();
+            var $children = $icons.children();
+            var diff = max - $children.length;
+            if (diff > 0) { 
+                var $icon = $children.first();
+                for (var i = 0; i < diff; i++) {
+                    $icon.clone().hide().appendTo($icons);
+                }
+            } else if (diff < 0) {	
+                jQuery($children.splice(max)).each(function (i, v) {
+                    jQuery(v).remove();
+                });
+            }
+        }
+    },
+
+    
+    _isEmptyButton: function ($base) {
+        return $base.attr("data-loaded") !== "1";
+    },
+
+    
+    _isDrawingByTemplate: function ($base, $button) {
+        
+        
+        return $base.attr("data-loaded") !== "1" && !jQuery.trim($button.html());
+    },
+
+    
+    _updateButton: function ($base, $button, isReacted, count) {
+        if (!$button.length) {
+            return;
+        }
+        var visibleOptionOfButton = this._getVisibleOptionOfButton($button);
+        this._updateClassButton($button, isReacted, this._isFace($base) || this._isNolimit($base) ? "aria-selected" : "aria-pressed", $base.attr("data-sid"));
+        this._updateIconInButton($button, isReacted, visibleOptionOfButton);
+        this._updateLabelInButton($button, count, visibleOptionOfButton);
+        this._updateCountInButton($button, count, visibleOptionOfButton);
+        this._updateHighlightButton($base, $button, count);
+    },
+
+    
+    _updateFaceButton: function ($button, isReacted, counts, totalCount, isMarkUserReaction) {
+        if (!$button.length) {
+            return;
+        }
+        counts = counts || [];
+        var $count;
+
+        
+        if (typeof isReacted === "undefined" && Array.isArray(counts) && counts.length === 0) {
+            isReacted = ($button.parent().find("._button." + this._conf.iconToggleClassname[0]).length > 0);
+            totalCount = 0;
+            var self = this;
+            var num = 0;
+
+            
+            $button.parent().find("._button ._count").each(function (i, v) {
+                $count = jQuery(v);
+                num = self._toNum($count.text());
+                totalCount += num;
+            });
+
+            
+            $button.parent().find("._button ._count").each(function (i, v) {
+                $count = jQuery(v);
+                var btnType = $count.parent().attr("data-type");
+                num = self._toNum($count.text());
+                var btnReacted = $count.closest("a._button").is(".on");
+                if (isMarkUserReaction) {
+                    if (isReacted) {
+                        counts.push({
+                            type: btnType,
+                            count: num,
+                            isReacted: btnReacted
+                        });
+                    }
+                } else {
+                    counts.push({
+                        type: btnType,
+                        count: num,
+                        isReacted: btnReacted
+                    });
+                }
+            });
+        }
+
+        
+        counts = jQuery.grep(counts, function (v) {
+            if (isMarkUserReaction) {
+                return v.isReacted;
+            }
+            return v.count !== 0;
+        }).sort(function (p, n) {
+            if (p.count === n.count) {
+                
+                if (p.type === "like") {
+                    return -1;
+                } else if (n.type === "like") {
+                    return 1;
+                }
+                return 0;
+            } else {
+                return n.count - p.count;
+            }
+        });
+
+        var title = $button.attr("data-label") || "default";
+        $count = this._getCountButton($button);
+        if (totalCount) {
+            $count.html(this._formattedCount(totalCount, $button.attr("data-maxcount")))
+                .addClass("num");
+        } else {
+            $count.html(this._messages.face[title])
+                .removeClass("num");
+        }
+        var $base = $button.closest("." + this._conf.moduleClassname).first();
+        this._updateFaceButtonIcons($base, $button, counts);	
+        this._updateClassButton($button, isReacted, this._isNolimit($base) ? "aria-selected" : "aria-pressed", $base.attr("data-sid"));
+    },
+
+    
+    _updateFaceButtonIcons: function ($base, $facebutton, counts) {
+        var $icons = $facebutton.find("._icons").first();
+        if (!$icons.length) {
+            return;
+        }
+        var $children = $icons.children();
+        var $el;
+        var type;
+
+        for (var i = 0, len = $base.attr("data-faceButtonMaxIconCount") || this._conf.faceButtonMaxIconCount, dataLen = counts.length; i < len; i++) {
+            if (dataLen > i) {
+                $el = $children.eq(i).show();
+                type = counts[i].type;
+                this._updateIconsByType($el, type);
+                $el.css("zIndex", len - i + 1)
+                    .find("span").html(this._reactionTextMap[type]);
+            } else {
+                if (i === 0) {
+                    if (dataLen === 0) {	
+                        this._conf.isZeroFace ? this._updateIconsByType($children.eq(i), "zeroface") : this._updateIconsByType($children.eq(i), "like");
+                    }
+                } else {
+                    $children.eq(i).hide();
+                }
+            }
+        }
+    },
+
+    
+    _updateIconsByType: function ($el, type) {
+        var el = $el.get(0);
+        var classes = el.className.split(" ");
+        el.className = jQuery.grep(classes, function (v) {
+            return !/^__reaction__/.test(v);
+        }).join(" ") + " __reaction__" + type;
+    },
+
+    
+    _updateCountInButton: function ($button, count, visibleOptionOfButton) {
+        var $count = this._getCountButton($button),
+            reactionCount = count || 0,
+            isShown = !(visibleOptionOfButton.isHiddenCount || (reactionCount === 0 && (visibleOptionOfButton.isHiddenZeroCount || visibleOptionOfButton.isUsedLabelAsZeroCount)));
+        $count.length && $count.html(this._formattedCount(reactionCount, $button.attr("data-maxcount"))).toggle(isShown);
+    },
+
+    
+    _updateHighlightButton: function ($base, $button, count) {
+        if (!this._serviceOptionType || !this._serviceOptionType[$base.attr("data-sid")] || !this._serviceOptionType[$base.attr("data-sid")]["012"]) {
+            return;
+        }
+
+        if (this._isFace($base)) {
+            return;
+        }
+
+        if (!this._conf.highlightCount || this._conf.highlightCount < 1) {
+            return;
+        }
+
+        if (!count) {
+            return;
+        }
+
+        var highlightClassname = this._conf.highlightClassname || "";
+
+        if (count < this._conf.highlightCount) {
+            $button.removeClass(highlightClassname);
+        } else {
+            $button.addClass(highlightClassname);
+        }
+    },
+
+    
+    _formattedCount: function (count, max) {
+        var minCount = 0,
+            maxCount = max || this._conf.maxCount,
+            sourceCount = Math.max(minCount, Math.min(count, maxCount)).toString(),
+            formatted = sourceCount.replace(/(\d)(?=(\d{3})+$)/igm, "$1,"), 
+            moreSymbol = (count >= maxCount) ? "+" : "";
+        return formatted + moreSymbol;
+    },
+
+    
+    _getValueOfPrioritizedOption: function ($element, optionName) {
+        var globalOptionValue = this._conf[optionName],
+            localOptionValue = $element.attr("data-" + optionName),
+            applyingOptionValue = globalOptionValue;
+
+        
+        if (localOptionValue !== undefined && localOptionValue !== null) {
+            applyingOptionValue = (typeof localOptionValue === "boolean" && !!localOptionValue) || (localOptionValue === "true") || !!(parseInt(localOptionValue, 10));
+        }
+
+        return applyingOptionValue;
+    },
+
+    
+    _getVisibleOptionOfButton: function ($button) {
+        return {
+            isHiddenIcon: this._getValueOfPrioritizedOption($button, "isHiddenIcon"),
+            isHiddenLabel: this._getValueOfPrioritizedOption($button, "isHiddenLabel"),
+            isHiddenCount: this._getValueOfPrioritizedOption($button, "isHiddenCount"),
+            isHiddenZeroCount: this._getValueOfPrioritizedOption($button, "isHiddenZeroCount"),
+            isUsedLabelAsZeroCount: this._getValueOfPrioritizedOption($button, "isUsedLabelAsZeroCount"),
+            isHiddenLabelAsZeroCount: this._getValueOfPrioritizedOption($button, "isHiddenLabelAsZeroCount")
+        };
+    },
+
+    
+    _updateIconInButton: function ($button, isReacted, visibleOptionOfButton) {
+        var $icon = $button.find("._icon"),
+            isShown = !visibleOptionOfButton.isHiddenIcon;
+
+        $icon.length && $icon.toggle(isShown);
+    },
+
+    _updateClassButton: function ($button, isReacted, accessibility, serviceId) {
+        var toggleClassname = this._conf.iconToggleClassname,
+            onClassname = toggleClassname[0] || "",
+            offClassname = toggleClassname[1] || "",
+            parents = $button.parents(),
+            reactType = $button.attr("data-type"),
+            countType = "normal",
+            clickType = isReacted ? "un" : "";
+
+        for (var i = 0; i < parents.length; i++) {
+            var count,
+                p = jQuery(parents[i]);
+
+            count = p.attr("data-ccounttype");
+            if (count !== undefined) {
+                countType = count;
+                if (count === "nolimit") {
+                    clickType = "";
+                }
+                break;
+            }
+        }
+
+        if (this._isSendNlog(serviceId) && !$button.hasClass("_face")) {
+            $button.attr("data-like-click-area", countType + "." + clickType + reactType);
+        }
+
+        if (isReacted) {
+            $button.addClass(onClassname).removeClass(offClassname).attr(accessibility, "true");
+        } else {
+            $button.addClass(offClassname).removeClass(onClassname).attr(accessibility, "false");
+        }
+    },
+
+    
+    _updateLabelInButton: function ($button, count, visibleOptionOfButton) {
+        var reactionCount = count || 0,
+            $label = $button.find("._label"),
+            isShown = true;
+
+        if (visibleOptionOfButton.isHiddenLabel) {
+            isShown = false;
+        } else {
+            var isZeroReaction = reactionCount === 0;
+
+            if (visibleOptionOfButton.isUsedLabelAsZeroCount) {
+                isShown = isZeroReaction;
+            } else if (visibleOptionOfButton.isHiddenLabelAsZeroCount) {
+                isShown = !isZeroReaction;
+            }
+        }
+        $label.length && $label.toggle(isShown);
+    },
+
+    
+    _update: function ($target) {
+        var totalCount = $target.length,
+            contentCountPerOnceRequest = this._conf.contentCountPerOnceRequest,
+            requestCount = Math.ceil(totalCount / contentCountPerOnceRequest),
+            i, startIndex, endIndex;
+        if (!totalCount) {
+            return;
+        }
+
+        
+        for (i = 0; i < requestCount; i++) {
+            startIndex = Math.max(0, i * contentCountPerOnceRequest);
+            endIndex = Math.min(startIndex + contentCountPerOnceRequest, totalCount);
+
+            this._requestContentList($target.slice(startIndex, endIndex));
+        }
+    },
+
+    
+    _getFilteredTarget: function (context, isAllRefresh, pollingNolimit) {
+        var $target = jQuery();
+
+        if (!context) { 
+            $target = $target.add("." + this._conf.moduleClassname);
+        } else { 
+            jQuery(context).each(jQuery.proxy(function (i, target) {
+                if (jQuery(target).hasClass(this._conf.moduleClassname)) {
+                    $target = $target.add(target);
+                } else {
+                    $target = $target.add("." + this._conf.moduleClassname, target);
+                }
+            }, this));
+        }
+
+        if (pollingNolimit) {
+            $target = $target.filter("[data-ccounttype='nolimit']");
+        }
+
+        
+        if (!isAllRefresh) {
+            $target = $target.filter("[data-loaded!='1']");
+        }
+        return $target;
+    },
+
+    
+    update: function (context, isAllRefresh, pollingNolimit) {
+        this._update(this._getFilteredTarget(context, isAllRefresh, pollingNolimit));
+    },
+
+    
+    increase: function (buttonElement) {
+        this._requestReaction(buttonElement, true);
+    },
+
+    
+    increaseNolimit: function (buttonElement) {
+        var history = [];
+        if (this._nolimitHistory.length < this._maxLimitCount) {
+            history.push(new Date().getTime());
+            this._conf.runtime() && history.push(this._conf.runtime());
+            this._nolimitHistory.push(history.join(","));
+        }
+
+        this._increseNolimitCount(buttonElement);
+
+        if (!this._wait) {
+            this._wait = true;
+
+            this._nolimitTimer = setTimeout(jQuery.proxy(function () {
+                clearInterval(this._nolimitPolling);
+                this._requestReaction(buttonElement, true);
+            }, this), 1000);
+        }
+    },
+
+    
+    _increseNolimitCount: function (buttonElement) {
+        var $target = jQuery(buttonElement),
+            $buttons = jQuery().add($target),
+            isAdding = true,
+            count = 1;
+
+        this._updateReactionFromClient($buttons, isAdding, undefined, count, false);
+    },
+
+    
+    _pollingNolimit: function () {
+        if (!this._conf.isUseNolimitCountPolling) {
+            return;
+        }
+
+        clearInterval(this._nolimitPolling);
+        var pollingTime = (this._conf.nolimitCountPollingTime < 10 ? 10 : this._conf.nolimitCountPollingTime) * 1000; 
+        this._nolimitPolling = setInterval(jQuery.proxy(function () {
+            this.update(undefined, true, true);
+        }, this), pollingTime);
+    },
+
+    
+    decrease: function (buttonElement) {
+        this._requestReaction(buttonElement, false);
+    },
+
+    _isFace: function ($base) {
+        return $base.attr("data-facetype") === "1";
+    },
+
+    _isNolimit: function ($base) {
+        return $base.attr("data-ccounttype") === "nolimit";
+    },
+
+    _toNum: function (str) {
+        if (!str) {
+            return 0;
+        }
+        return Number(str.replace(/[^-\.\d]/g, ""));
+    },
+
+    _destroy: function () {
+        this._detachEvent();
+    },
+
+    hideLayers: function () {
+        this._hideLayers();
+    },
+
+    
+    _isSendNlog: function (serviceId) {
+        return this._conf.forceSendNlog ||
+            (this._serviceOptionType && this._serviceOptionType[serviceId] && this._serviceOptionType[serviceId]["026"]);
+    }
+};
+

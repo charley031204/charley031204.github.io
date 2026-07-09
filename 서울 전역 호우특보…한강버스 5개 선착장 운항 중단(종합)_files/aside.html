@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://news.naver.com/aside?oid=001 -->
+<html lang="ko" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>네이버 뉴스</title>
+    
+
+
+<script async="" src="./nlog-v2.js.다운로드"></script><script async="" src="./nlog.js.다운로드"></script><script async="" src="./nil-1.2.4.js.다운로드"></script><script async="" src="./ntm_b7032129a433.js.다운로드"></script><script>
+	function isMobileDevice() {
+		return /^.*(iPhone|iPod|iPad|Android).*/.test(navigator.userAgent);
+	}
+</script>
+<script>
+	(function () {
+		try {
+			if (isMobileDevice() && isAbleApplyPrefersColorScheme()) {
+				
+				document.querySelector("html").classList.add("DARK_THEME");
+			}
+		} catch(e) {}
+
+		function isAbleApplyPrefersColorScheme() {
+			
+			if (window.matchMedia("(prefers-color-scheme)").matches === false) {
+				return false;
+			}
+
+			var userAgent = navigator.userAgent;
+
+			if (userAgent.indexOf("NAVER") > -1) {
+				
+				if (/.*NAVER\([a-zA-Z]*;\s[a-zA-Z]*;\s([0-9]*);/.test(userAgent)) {
+					return Number(RegExp.$1) >= 1000;
+				}
+			} else {
+				
+				return document.cookie.indexOf("NSCS=1") > -1;
+			}
+
+			return false;
+		}
+	})();
+</script>
+<script>
+    var g_ssc = 'news.v3_aside' || null;
+    </script>
+    
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+<!--<base target="_top">--><base href="." target="_top">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://mimgnews.pstatic.net/image/news/m/2023/favicon/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="./aside.css">
+    
+
+<script>
+
+document.documentElement.setAttribute('data-useragent', navigator.userAgent);
+
+
+function showNoImage(elImg, type) {
+    switch (type) {
+        
+        case "remove":
+            try {
+                elImg.parentNode.removeChild(elImg);
+            } catch(e) {}
+            break;
+
+        
+        case "removeParent":
+            try {
+                elImg.parentNode.outerHTML = '';
+            } catch(e) {}
+            break;
+
+        
+        case "alt":
+            elImg.outerHTML = ('<span class="noimage_text {imgClassName}">' + (elImg.alt || "") + '</span>')
+                
+                .replace('{imgClassName}', elImg.className);
+            break;
+
+		
+		case "class" :
+			var outerHTMLSource = Number(elImg.getAttribute("height")) > 0?
+				
+				'<span class="noimage_wrap {imgClassName}" style="height:' + elImg.getAttribute("height") + 'px;"><span class="noimage"></span></span>':
+				'<span class="noimage_wrap {imgClassName}"><span class="noimage"></span></span>';
+			elImg.outerHTML = outerHTMLSource.replace('{imgClassName}', elImg.className);
+			break;
+
+        case "pressname" :
+            var pressname = elImg.getAttribute("data-pressname");
+            elImg.outerHTML = '<span class="cnb_broadcast_noimg"><span class="noimg_text">' + pressname + '</span></span>';
+            break;
+
+        case "noHeight":
+            
+            elImg.outerHTML = '<span class="noimage_wrap"><span class="noimage"></span></span>';
+            break;
+
+        case "displayFallback":
+            elImg.style.display = "none";
+            var elWrapper = elImg.closest("._NOIMAGE_WRAPPER");
+            if (elWrapper) {
+                var elFallback = elWrapper.querySelector("._NOIMAGE_FALLBACK");
+                if (elFallback) {
+                    elFallback.style.display = "block";
+                }
+            }
+            break;
+
+        
+        default:
+            
+            elImg.outerHTML = Number(elImg.getAttribute("height")) > 0?
+                
+                '<span class="noimage_wrap" style="height:' + elImg.getAttribute("height") + 'px;"><span class="noimage"></span></span>':
+                '<span class="noimage_wrap"><span class="noimage"></span></span>';
+    }
+}
+
+
+function doAfterLoadEnd(callback, callbackOnPersisted) {
+    var eventName = "onpageshow" in window ? "pageshow" : "load";
+
+    callback = callback || function(){};
+    callbackOnPersisted = callbackOnPersisted || function(){};
+
+    window.addEventListener(eventName, function(e) {
+        try{
+            if(Boolean(e.persisted)){ 
+                callbackOnPersisted();
+                return;
+            }
+        }catch(e){}
+
+        callback();
+    });
+}
+</script>
+<script src="./aside.statistics.js.다운로드"></script>
+    </head>
+
+<body>
+<div class="news_common_aside_wrapper _aside_wrapper" style=""><div class="news_common_aside _contents" style=""> 
+    <div class="subscriptionlist">
+            <div class="s_wrap">
+                <div class="s_title _press_title">
+                    <a href="https://media.naver.com/channel/settings" onclick="nclk(event, &#39;rig.setmediatit&#39;, &#39;&#39;, &#39;&#39;)" class="s_title_link">
+                        <h5 class="s_h">구독 언론사</h5>
+                        <span class="s_count">7</span>
+                    </a>
+                </div>
+                <div class="_press_list"><ul class="s_list _list">
+    <li class="s_item">
+        <a href="https://media.naver.com/press/001" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_001_100_20250307145612.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">연합뉴스</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/press/421" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_421_100_20250307145710.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">뉴스1</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/press/032" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_032_100_20250307145554.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">경향신문</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/press/437" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_437_100_20260305143306.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">JTBC</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/press/025" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_025_100_20250307145712.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">중앙일보</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/press/020" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_020_100_20250307145700.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">동아일보</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/press/055" class="s_item_a" onclick="nclk(event, &#39;rig.setmedia&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_055_100_20250326142328.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">SBS</div>
+        </a>
+    </li>
+</ul></div> 
+            </div>
+            <div class="s_wrap">
+                <div class="s_title _journalist_title">
+                    <a href="https://media.naver.com/channel/extraSettings" onclick="nclk(event, &#39;rig.setjounalist&#39;, &#39;&#39;, &#39;&#39;)" class="s_title_link">
+                        <h5 class="s_h">구독 기자</h5>
+                        <span class="s_count">0</span>
+                    </a>
+                </div>
+                <a href="https://media.naver.com/channel/extraSettings" onclick="nclk(event, &#39;rig.jsub&#39;, &#39;&#39;, &#39;&#39;)" class="s_error">관심있는 기자를 구독해 보세요</a>
+            </div>
+            <div class="s_wrap">
+                <div class="s_title _series_title">
+                    <a href="https://media.naver.com/channel/seriesSetting" onclick="nclk(event, &#39;rig.setseries&#39;, &#39;&#39;, &#39;&#39;)" class="s_title_link">
+                        <h5 class="s_h">구독 연재</h5>
+                        <span class="s_count">0</span>
+                    </a>
+                </div>
+                <a href="https://media.naver.com/channel/seriesSetting" onclick="nclk(event, &#39;rig.ssub&#39;, &#39;&#39;, &#39;&#39;)" class="s_error">관심있는 연재를 구독해 보세요</a>
+            </div>
+            <div class="s_wrap">
+                <div class="s_title _issue_title">
+                    <a href="https://media.naver.com/channel/issueSetting" onclick="nclk(event, &#39;rig.setissue&#39;, &#39;&#39;, &#39;&#39;)" class="s_title_link">
+                        <h5 class="s_h">구독 이슈</h5>
+                        <span class="s_count">13</span>
+                    </a>
+                    <button type="button" onclick="nclk(event, &#39;rig.issueref&#39;, &#39;&#39;, &#39;&#39;)" class="s_refreshbutton _refresh_btn">새로보기</button>
+                </div>
+                <div class="_issue_list"><ul class="s_list _list">
+    <li class="s_item">
+        <a href="https://media.naver.com/issue/092/102" class="s_item_a" onclick="nclk(event, &#39;rig.issue&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_092_100_20250307145628.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">반도체 전쟁</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/issue/025/1182" class="s_item_a" onclick="nclk(event, &#39;rig.issue&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_025_100_20250307145712.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">트럼프발 관세전쟁</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/issue/032/83" class="s_item_a" onclick="nclk(event, &#39;rig.issue&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_032_100_20250307145554.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">트럼프발 관세전쟁</div>
+        </a>
+    </li>
+    <li class="s_item">
+        <a href="https://media.naver.com/issue/001/1422" class="s_item_a" onclick="nclk(event, &#39;rig.issue&#39;, &#39;&#39;, &#39;&#39;)">
+            <div class="s_item_thumb _NOIMAGE_WRAPPER">
+                <img src="./logo_001_100_20250307145612.png" class="s_item_img" alt="" onerror="showNoImage(this)">
+            </div>
+            <div class="s_item_text">한미 관세협상</div>
+        </a>
+    </li>
+</ul></div>
+                <div class="s_desc _journalist_series_info_layer">
+                    <button type="button" onclick="nclk(event, &#39;rig.jsinfo&#39;, &#39;&#39;, &#39;&#39;)" class="s_desc_button _toggle_btn">노출 기준</button>
+                    <div class="s_desc_layer _layer is_hidden">
+                        <button type="button" onclick="nclk(event, &#39;rig.jsinfox&#39;, &#39;&#39;, &#39;&#39;)" class="s_desc_close _close_btn">닫기</button>
+                        <p class="s_desc_p">구독 기자/구독 연재/구독 이슈는 랜덤으로 각각 최대 20개 정렬됩니다. 구독 설정 페이지에서 추가로 볼 수 있습니다.</p>
+                    </div>
+                </div>            </div>
+        <a href="https://media.naver.com/channel/settings" onclick="nclk(event, &#39;rig.editset&#39;, &#39;&#39;, &#39;&#39;)" class="s_settingbutton">구독 설정</a>
+    </div>
+</div></div>
+<script src="./aside.vendor.js.다운로드"></script>
+        <script src="./aside.main.js.다운로드"></script>
+    <script>
+doAfterLoadEnd(function(){
+    Aside("/channel/rightbar?officeId=001");
+});
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    window.ntm_news = window.ntm_news || [];
+
+    doAfterLoadEnd(function () {
+        var ntmUrl = "https://ntm.pstatic.net/scripts/ntm_b7032129a433.js";
+
+        
+        
+        
+
+        ntmInit(ntmUrl);
+    });
+</script>
+
+
+</body></html>
