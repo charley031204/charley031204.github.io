@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="bk" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="rd" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#c0392b"/>
+    </marker>
+    <marker id="bl" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2471a3"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="20" font-weight="bold" fill="#1a1a1a" text-anchor="middle">HPA축과 외인성 스테로이드 — 왜 갑자기 끊으면 쓰러지는가</text>
+  <text x="450" y="52" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#555555" text-anchor="middle">교안 p.7 그림 39-3 + p.8 · p.26 — 25-9가 이 그림의 오른쪽 절반에서 나왔다</text>
+
+  <!-- axis spine -->
+  <rect x="230" y="80" width="250" height="46" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="355" y="102" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a" text-anchor="middle">시상하부 실방핵 (PVN)</text>
+  <text x="355" y="119" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#2471a3" text-anchor="middle">CRH (+ AVP)</text>
+
+  <line x1="355" y1="126" x2="355" y2="172" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#bk)"/>
+  <text x="368" y="152" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">CRH-R1 (Gs → cAMP)</text>
+
+  <rect x="230" y="172" width="250" height="46" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="355" y="194" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a" text-anchor="middle">뇌하수체 전엽</text>
+  <text x="355" y="211" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#2471a3" text-anchor="middle">POMC → ACTH (t½ ≈ 10분)</text>
+
+  <line x1="355" y1="218" x2="355" y2="264" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#bk)"/>
+  <text x="368" y="244" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">MC₂R (Gs → cAMP → PKA) · StAR 활성화</text>
+
+  <rect x="230" y="264" width="250" height="60" rx="8" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text x="355" y="286" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a" text-anchor="middle">부신피질</text>
+  <text x="355" y="304" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#c0392b" text-anchor="middle">다발층 · 그물층 — ACTH가 먹여 살린다</text>
+  <text x="355" y="319" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#8e44ad" text-anchor="middle">사구층은 Ang II · K⁺가 따로 먹여 살린다</text>
+
+  <line x1="355" y1="324" x2="355" y2="366" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#bk)"/>
+
+  <rect x="255" y="366" width="200" height="42" rx="8" fill="#f5b7b1" stroke="#922b21" stroke-width="2.4"/>
+  <text x="355" y="393" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#7b241c" text-anchor="middle">코티솔 (cortisol)</text>
+
+  <!-- negative feedback loop (left) -->
+  <path d="M255,387 L180,387 L180,103 L226,103" fill="none" stroke="#1e8449" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#bl)"/>
+  <path d="M180,195 L226,195" fill="none" stroke="#1e8449" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#bl)"/>
+  <text x="14" y="240" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1e8449">⊖ 음성되먹임</text>
+  <text x="14" y="262" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="10" fill="#1e8449">CRH mRNA·방출 ↓ (수분)</text>
+  <text x="14" y="280" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="10" fill="#1e8449">POMC 전사 ↓ (수시간~수일)</text>
+
+  <!-- exogenous GC (right) -->
+  <rect x="560" y="150" width="300" height="70" rx="8" fill="#fadbd8" stroke="#922b21" stroke-width="2.6"/>
+  <text x="710" y="176" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#922b21" text-anchor="middle">외인성 당질코르티코이드</text>
+  <text x="710" y="198" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#922b21" text-anchor="middle">prednisolone 등을 약리학적 용량으로</text>
+  <text x="710" y="214" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#922b21" text-anchor="middle">장기간 복용</text>
+
+  <path d="M556,168 L490,110 L484,103" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#rd)"/>
+  <path d="M556,190 L484,193" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#rd)"/>
+  <text x="512" y="140" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">⊖ ⊖</text>
+
+  <path d="M710,220 L710,258 L500,258 L500,286 L484,286" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#rd)"/>
+  <text x="600" y="278" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#c0392b">ACTH가 끊기면 → 위축</text>
+
+  <!-- atrophy box -->
+  <rect x="530" y="318" width="340" height="100" rx="8" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text x="548" y="343" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">부신피질 위축</text>
+  <text x="548" y="366" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">다발층(코티솔) · 그물층(안드로겐)이 말라붙는다</text>
+  <text x="548" y="388" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#8e44ad">사구층은 Ang II·K⁺로 유지 → 알도스테론은 남는다</text>
+  <text x="548" y="410" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">→ 25-9의 ⑤ "Na 배설 증가"가 답이 아닌 이유</text>
+
+  <!-- crisis -->
+  <rect x="40" y="444" width="820" height="110" rx="8" fill="#fef5e7" stroke="#b9770e" stroke-width="2.2"/>
+  <text x="60" y="470" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#b9770e">여기서 약을 갑자기 끊으면 — 급성 부신기능부전 (25-9)</text>
+  <text x="60" y="496" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">위축된 부신은 당장 코티솔을 못 만든다. 바깥에서 들어오던 공급마저 끊기니 <tspan font-weight="bold" fill="#c0392b">코티솔이 0에 가까워진다.</tspan></text>
+  <text x="60" y="520" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">→ <tspan font-weight="bold">전신무력감 · 저혈압 · 식욕부진 · 발열 · 근육통 · 관절통 · 체중감소</tspan></text>
+  <text x="60" y="544" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">HPA 축이 되살아나는 데 <tspan font-weight="bold">수개월</tspan>이 걸린다 → 장기 사용 후에는 반드시 천천히 감량한다.</text>
+
+  <!-- treatment -->
+  <rect x="40" y="572" width="820" height="110" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2.2"/>
+  <text x="60" y="598" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#2471a3">위기가 터졌을 때의 순서 (교안 p.20 · 소크라티브 N12 8번)</text>
+  <text x="60" y="624" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">① 즉시 탈수 교정 — 심혈관 모니터링 + <tspan font-weight="bold">생리식염수 시간당 1 L</tspan>  (저혈압·순환 붕괴가 먼저 죽인다)</text>
+  <text x="60" y="648" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">② 당질코르티코이드 — <tspan font-weight="bold">코티솔 100 mg 일시정맥</tspan> → 24시간 동안 100~200 mg</text>
+  <text x="60" y="672" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">③ 광질코르티코이드 — 일일 코티솔이 <tspan font-weight="bold">50 mg 미만으로 감량된 뒤</tspan> 시작 (순서상 맨 마지막)</text>
+</svg>

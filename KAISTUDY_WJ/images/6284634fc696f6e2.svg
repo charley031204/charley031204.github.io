@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="inh" markerWidth="10" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M6,0 L6,12" stroke="#c0392b" stroke-width="3" fill="none"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: "Malgun Gothic", "맑은 고딕", sans-serif; fill: #1a1a1a; }
+    .t  { font-size: 20px; font-weight: bold; }
+    .st { font-size: 13px; fill: #555555; }
+    .n  { font-size: 14px; font-weight: bold; }
+    .b  { font-size: 13px; }
+    .sm { font-size: 12px; fill: #555555; }
+    .d  { font-size: 13px; font-weight: bold; fill: #c0392b; }
+    .line { stroke: #1a1a1a; stroke-width: 1.8; fill: none; }
+    .iline { stroke: #c0392b; stroke-width: 2; fill: none; }
+  </style>
+
+  <text class="t"  x="20" y="30">요산 대사와 통풍 약물의 작용점</text>
+  <text class="st" x="20" y="50">위 가로줄은 「요산이 만들어지고 처리되는 길」, 아래는 「요산이 관절에서 염증이 되는 길」. 약은 전부 이 두 줄 어딘가에 붙는다.</text>
+
+  <!-- drug boxes above chain -->
+  <rect x="345" y="66" width="270" height="34" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.8"/>
+  <text class="d" x="360" y="88">Allopurinol · Febuxostat — XO 억제</text>
+  <path class="iline" d="M420,100 L400,128" marker-end="url(#inh)"/>
+  <path class="iline" d="M545,100 L570,128" marker-end="url(#inh)"/>
+
+  <rect x="700" y="66" width="165" height="34" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.8"/>
+  <text class="d" x="712" y="88">Pegloticase · Rasburicase</text>
+  <path class="iline" d="M782,100 L800,128" marker-end="url(#arw)" stroke="#1e8449"/>
+
+  <!-- chain -->
+  <rect x="25"  y="136" width="120" height="46" rx="5" fill="#f4f6f7" stroke="#5d6d7e" stroke-width="1.5"/>
+  <text class="n" x="42" y="165">Purine</text>
+  <rect x="205" y="136" width="150" height="46" rx="5" fill="#f4f6f7" stroke="#5d6d7e" stroke-width="1.5"/>
+  <text class="n" x="220" y="165">Hypoxanthine</text>
+  <rect x="415" y="136" width="120" height="46" rx="5" fill="#f4f6f7" stroke="#5d6d7e" stroke-width="1.5"/>
+  <text class="n" x="435" y="165">Xanthine</text>
+  <rect x="595" y="136" width="125" height="46" rx="5" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text class="n" x="612" y="165" fill="#ca6f1e">Uric acid</text>
+  <rect x="770" y="136" width="95" height="46" rx="5" fill="#e9f7ef" stroke="#1e8449" stroke-width="1.5"/>
+  <text class="n" x="783" y="158" fill="#1e8449">Allantoin</text>
+  <text class="sm" x="783" y="174" fill="#1e8449">수용성</text>
+
+  <path class="line" d="M145,159 L200,159" marker-end="url(#arw)"/>
+  <path class="line" d="M355,159 L410,159" marker-end="url(#arw)"/>
+  <text class="d" x="368" y="152">XO</text>
+  <path class="line" d="M535,159 L590,159" marker-end="url(#arw)"/>
+  <text class="d" x="548" y="152">XO</text>
+  <path class="line" d="M720,159 L765,159" marker-end="url(#arw)"/>
+  <text class="sm" x="716" y="200">uricase — 사람에게는 없다</text>
+
+  <!-- two branches from uric acid -->
+  <path class="line" d="M640,182 L640,196 L350,196 L350,218" marker-end="url(#arw)"/>
+  <path class="line" d="M670,182 L670,218" marker-end="url(#arw)"/>
+
+  <!-- kidney branch -->
+  <rect x="235" y="222" width="230" height="52" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="1.6"/>
+  <text class="b"  x="248" y="244">신장 근위세뇨관 재흡수</text>
+  <text class="sm" x="248" y="262">→ 요산이 몸에 그대로 남는다</text>
+  <rect x="25" y="226" width="180" height="44" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.8"/>
+  <text class="d"  x="38" y="244">Probenecid</text>
+  <text class="sm" x="38" y="261">요산 배설 촉진</text>
+  <path class="iline" d="M205,248 L228,248" marker-end="url(#inh)"/>
+
+  <!-- joint branch -->
+  <rect x="545" y="222" width="300" height="52" rx="5" fill="#fdebd0" stroke="#ca6f1e" stroke-width="1.6"/>
+  <text class="b"  x="558" y="244">관절 · 연골에 monosodium urate 결정 침착</text>
+  <text class="sm" x="558" y="262">과요산혈증이 선행요건 — 대부분 배설 장애가 원인</text>
+  <path class="line" d="M695,274 L695,298" marker-end="url(#arw)"/>
+
+  <rect x="545" y="302" width="300" height="52" rx="5" fill="#fdf2e9" stroke="#ca6f1e" stroke-width="1.6"/>
+  <text class="b"  x="558" y="324">활막세포(synoviocyte)가 결정을 탐식</text>
+  <text class="sm" x="558" y="342">→ PG · 용해소체 효소 · IL-1 분비</text>
+  <path class="line" d="M695,354 L695,378" marker-end="url(#arw)"/>
+
+  <rect x="545" y="382" width="300" height="56" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.6"/>
+  <text class="b"  x="558" y="404">다형핵백혈구 · 단핵포식세포가 관절강으로 유입</text>
+  <text class="sm" x="558" y="422">→ 염증 증폭 = 급성 통풍성 관절염</text>
+
+  <rect x="215" y="304" width="250" height="44" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.8"/>
+  <text class="d"  x="228" y="322">NSAID — indomethacin</text>
+  <text class="sm" x="228" y="339">PG 생성 + 결정 탐식 억제</text>
+  <path class="iline" d="M465,326 L538,326" marker-end="url(#inh)"/>
+
+  <rect x="215" y="386" width="250" height="48" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.8"/>
+  <text class="d"  x="228" y="405">Colchicine</text>
+  <text class="sm" x="228" y="422">tubulin 결합 → 미세소관 중합 억제</text>
+  <path class="iline" d="M465,410 L538,410" marker-end="url(#inh)"/>
+
+  <!-- summary strip -->
+  <rect x="25" y="456" width="205" height="66" rx="5" fill="#ffffff" stroke="#aab7c4" stroke-width="1.4"/>
+  <text class="b"  x="38" y="476">① 생성 억제</text>
+  <text class="sm" x="38" y="494">Allopurinol · Febuxostat</text>
+  <text class="sm" x="38" y="511">— XO 억제</text>
+
+  <rect x="242" y="456" width="205" height="66" rx="5" fill="#ffffff" stroke="#aab7c4" stroke-width="1.4"/>
+  <text class="b"  x="255" y="476">② 배설 촉진</text>
+  <text class="sm" x="255" y="494">Probenecid</text>
+  <text class="sm" x="255" y="511">— 근위세뇨관 재흡수 억제</text>
+
+  <rect x="459" y="456" width="205" height="66" rx="5" fill="#ffffff" stroke="#aab7c4" stroke-width="1.4"/>
+  <text class="b"  x="472" y="476">③ 요산 자체를 분해</text>
+  <text class="sm" x="472" y="494">Pegloticase · Rasburicase</text>
+  <text class="sm" x="472" y="511">— 재조합 urate oxidase</text>
+
+  <rect x="676" y="456" width="189" height="66" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.6"/>
+  <text class="b"  x="689" y="476" fill="#c0392b">④ 염증만 끈다</text>
+  <text class="sm" x="689" y="494">Colchicine · NSAID</text>
+  <text class="sm" x="689" y="511">— 요산 농도는 못 건드린다</text>
+</svg>

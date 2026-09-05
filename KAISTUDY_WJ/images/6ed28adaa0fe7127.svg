@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 630" width="900" height="630">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ar2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#2c3e50"/>
+</marker>
+</defs>
+<style>
+.t{font-family:"Malgun Gothic","맑은 고딕",sans-serif;}
+.ttl{font-size:18px;font-weight:bold;fill:#1a1a1a;}
+.band{font-size:13px;font-weight:bold;fill:#5d6d7e;}
+.bx{font-size:14px;fill:#1a1a1a;font-weight:bold;}
+.sub{font-size:11.5px;fill:#424949;}
+.en{font-size:12.5px;fill:#c0392b;font-weight:bold;}
+.cell{font-size:12.5px;fill:#1a1a1a;}
+.note{font-size:12.5px;fill:#1a1a1a;}
+</style>
+
+<text class="t ttl" x="20" y="28">키닌 — 생성 · 분해 · 수용체 (ACE 억제제 기침이 나오는 자리)</text>
+
+<text class="t band" x="22" y="58">① 생성 — 전구체와 효소가 계마다 다르다</text>
+
+<!-- plasma row -->
+<rect x="25" y="70" width="210" height="50" fill="#eaf2f8" stroke="#2471a3" rx="4"/>
+<text class="t bx" x="130" y="92" text-anchor="middle">고분자량 kininogen</text>
+<text class="t sub" x="130" y="110" text-anchor="middle">HMWK · 120 kDa · 간 생성, 혈류에만</text>
+<line x1="237" y1="95" x2="340" y2="95" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<text class="t en" x="288" y="87" text-anchor="middle">혈장 칼리크레인</text>
+<rect x="345" y="70" width="200" height="50" fill="#fdedec" stroke="#c0392b" stroke-width="2.5" rx="4"/>
+<text class="t bx" x="445" y="92" text-anchor="middle" fill="#c0392b">Bradykinin (9 AA)</text>
+<text class="t sub" x="445" y="110" text-anchor="middle">Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg</text>
+
+<!-- tissue row -->
+<rect x="25" y="145" width="210" height="50" fill="#eafaf1" stroke="#1e8449" rx="4"/>
+<text class="t bx" x="130" y="167" text-anchor="middle">저분자량 kininogen</text>
+<text class="t sub" x="130" y="185" text-anchor="middle">LMWK · 66 kDa · 조직 국소 생성</text>
+<line x1="237" y1="170" x2="340" y2="170" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<text class="t en" x="288" y="162" text-anchor="middle">조직 칼리크레인</text>
+<rect x="345" y="145" width="200" height="50" fill="#eafaf1" stroke="#1e8449" rx="4"/>
+<text class="t bx" x="445" y="167" text-anchor="middle">Kallidin (10 AA)</text>
+<text class="t sub" x="445" y="185" text-anchor="middle">= Lys-bradykinin</text>
+
+<line x1="445" y1="143" x2="445" y2="123" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+
+<rect x="560" y="64" width="315" height="56" fill="#f4f6f7" stroke="#aeb6bf" rx="4"/>
+<text class="t cell" x="572" y="86">사람에서 혈장 = bradykinin, 소변 = kallidin</text>
+<text class="t cell" x="572" y="108">칼리크레인은 혈압강하물질이 아니라 분해효소다</text>
+
+<text class="t sub" x="560" y="146">aminopeptidase가 kallidin의 N말단 Lys를 자르면</text>
+<text class="t sub" x="560" y="164">bradykinin이 된다 — 매우 느리게 일어난다</text>
+
+<text class="t band" x="22" y="228">② 분해와 수용체</text>
+
+<!-- fan arrows -->
+<line x1="415" y1="197" x2="185" y2="246" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="445" y1="197" x2="442" y2="246" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="475" y1="197" x2="700" y2="246" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+
+<!-- B2 -->
+<rect x="25" y="250" width="255" height="112" fill="#eaf2f8" stroke="#2471a3" stroke-width="2" rx="4"/>
+<text class="t bx" x="38" y="272">B2 수용체 — 구성적</text>
+<text class="t cell" x="38" y="292">정상 조직에 상시 존재</text>
+<text class="t cell" x="38" y="310">급성 염증 · 혈관확장 · 급성 통증</text>
+<text class="t cell" x="38" y="328">친화력 bradykinin ﹥ kallidin</text>
+<text class="t cell" x="38" y="346">Gq → PLC → IP3 → Ca²⁺↑ · 탈민감화 있음</text>
+
+<!-- Kininase I -->
+<rect x="325" y="250" width="235" height="70" fill="#fef9e7" stroke="#b9770e" stroke-width="2" rx="4"/>
+<text class="t bx" x="338" y="272">Kininase I</text>
+<text class="t cell" x="338" y="292">carboxypeptidase M · N</text>
+<text class="t cell" x="338" y="310">C말단 Arg 1개 제거</text>
+
+<!-- Kininase II -->
+<rect x="610" y="250" width="265" height="70" fill="#fdedec" stroke="#c0392b" stroke-width="2.5" rx="4"/>
+<text class="t bx" x="623" y="272" fill="#c0392b">Kininase II = ACE</text>
+<text class="t cell" x="623" y="292">폐·혈관내피에서 C말단 2개(Phe-Arg) 절단</text>
+<text class="t cell" x="623" y="310">→ 불활성화 · 키닌 반감기 15초</text>
+
+<line x1="442" y1="320" x2="442" y2="358" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<rect x="310" y="360" width="265" height="46" fill="#f4f6f7" stroke="#5d6d7e" rx="4"/>
+<text class="t bx" x="442" y="382" text-anchor="middle">des-Arg⁹-bradykinin</text>
+<text class="t sub" x="442" y="400" text-anchor="middle">(kallidin → des-Arg¹⁰-kallidin)</text>
+
+<line x1="442" y1="406" x2="442" y2="440" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<rect x="300" y="442" width="285" height="112" fill="#eafaf1" stroke="#1e8449" stroke-width="2" rx="4"/>
+<text class="t bx" x="313" y="464">B1 수용체 — 유도성</text>
+<text class="t cell" x="313" y="484">정상 조직에는 거의 없다</text>
+<text class="t cell" x="313" y="502">조직손상·시토카인·내독소로 발현</text>
+<text class="t cell" x="313" y="520">만성 염증 · 만성 통증 · 콜라겐 합성</text>
+<text class="t cell" x="313" y="538">탈민감화 없다 → 작용이 오래 간다</text>
+
+<line x1="742" y1="320" x2="742" y2="358" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar2)"/>
+<rect x="628" y="360" width="230" height="46" fill="#f4f6f7" stroke="#5d6d7e" rx="4"/>
+<text class="t bx" x="743" y="382" text-anchor="middle">불활성 조각</text>
+<text class="t sub" x="743" y="400" text-anchor="middle">Bradykinin(1-7) · Kallidin(1-8)</text>
+
+<line x1="742" y1="406" x2="742" y2="426" stroke="#2c3e50" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#ar2)"/>
+<rect x="610" y="430" width="265" height="124" fill="#fdedec" stroke="#c0392b" stroke-width="2" rx="4"/>
+<text class="t bx" x="623" y="452" fill="#c0392b">ACE 한 효소, 두 시스템</text>
+<text class="t cell" x="623" y="474">RAS : Ang I → Ang II  (활성화)</text>
+<text class="t cell" x="623" y="494">KKS : bradykinin → 조각 (불활성화)</text>
+<text class="t cell" x="623" y="518">ACE 억제제 → bradykinin 축적</text>
+<text class="t cell" x="623" y="538">→ 마른기침 · 혈관부종</text>
+
+<rect x="20" y="566" width="860" height="56" fill="#f4f6f7" stroke="#aeb6bf"/>
+<text class="t note" x="34" y="588">· <tspan font-weight="bold">Kininase I은 단순 분해효소가 아니라 B2 → B1 스위치다.</tspan> C말단 Arg 하나가 잘리면 B2에는 못 붙고 B1의 선택적 효현제가 된다.</text>
+<text class="t note" x="34" y="610">· <tspan font-weight="bold" fill="#c0392b">C1-INH 결핍 → 혈장 칼리크레인 과다 → bradykinin 과다 = 유전혈관부종.</tspan> 급성 발작 치료제가 B2 길항제 icatibant다.</text>
+</svg>

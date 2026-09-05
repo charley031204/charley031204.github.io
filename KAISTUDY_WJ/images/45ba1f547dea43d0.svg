@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#5d6d7e"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="21" font-weight="bold" fill="#1a1a1a">NSAID 화학군 계통도 — 계열이 곧 성격이다</text>
+
+  <!-- root -->
+  <rect x="200" y="46" width="500" height="46" fill="#eaf2f8" stroke="#2471a3" stroke-width="2" rx="6"/>
+  <text x="450" y="66" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1b4f72">NSAID — 거의 전부가 약한 유기산, 혈장단백 결합 약 98%</text>
+  <text x="450" y="84" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">유일한 예외 = Nabumetone (비산성 prodrug)</text>
+  <line x1="450" y1="92" x2="450" y2="112" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="120" y1="114" x2="780" y2="114" stroke="#5d6d7e" stroke-width="2"/>
+
+  <!-- ROW 1 -->
+  <line x1="120" y1="114" x2="120" y2="134" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="340" y1="114" x2="340" y2="134" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="560" y1="114" x2="560" y2="134" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="780" y1="114" x2="780" y2="134" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- cell 1 : salicylate -->
+  <rect x="20" y="136" width="200" height="186" fill="#fdf6ec" stroke="#b9770e" stroke-width="2" rx="5"/>
+  <rect x="20" y="136" width="200" height="30" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+  <text x="120" y="157" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#7e5109">Salicylic acid</text>
+  <text x="32" y="188" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Aspirin</text>
+  <text x="32" y="207" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">비가역 아세틸화 · 8일</text>
+  <text x="32" y="234" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Diflunisal</text>
+  <text x="32" y="253" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">salicylic acid로</text>
+  <text x="32" y="270" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">전환되지 않는다</text>
+  <text x="32" y="291" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">항염증 크고</text>
+  <text x="32" y="308" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">해열은 거의 없다</text>
+
+  <!-- cell 2 : acetic acid -->
+  <rect x="240" y="136" width="200" height="186" fill="#fdf6ec" stroke="#b9770e" stroke-width="2" rx="5"/>
+  <rect x="240" y="136" width="200" height="30" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+  <text x="340" y="157" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#7e5109">Acetic acid</text>
+  <text x="252" y="188" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Indomethacin</text>
+  <text x="252" y="207" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">COX-1 우세 · 강력</text>
+  <text x="252" y="224" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">부작용 35–50%</text>
+  <text x="252" y="251" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Etodolac</text>
+  <text x="252" y="270" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1e8449">COX-2 : COX-1 = 10 : 1</text>
+  <text x="252" y="295" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Sulindac</text>
+  <text x="252" y="313" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">prodrug · COX-1 우세</text>
+
+  <!-- cell 3 : propionic acid -->
+  <rect x="460" y="136" width="200" height="186" fill="#fdf6ec" stroke="#b9770e" stroke-width="2" rx="5"/>
+  <rect x="460" y="136" width="200" height="30" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+  <text x="560" y="157" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#7e5109">Propionic acid</text>
+  <text x="472" y="186" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a"><tspan font-weight="bold">Ibuprofen</tspan> — t½ 2h, 활성형 S(+)</text>
+  <text x="472" y="209" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a"><tspan font-weight="bold">Naproxen</tspan> — t½ 14h, 1일 2회</text>
+  <text x="472" y="232" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a"><tspan font-weight="bold">Ketoprofen</tspan> — LOX도 억제</text>
+  <text x="472" y="255" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a"><tspan font-weight="bold">Fenoprofen</tspan> — 간질성 신염</text>
+  <text x="472" y="278" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a"><tspan font-weight="bold">Flurbiprofen</tspan> — 안약 · 신경계</text>
+  <text x="472" y="301" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a"><tspan font-weight="bold">Oxaprozin</tspan> — t½ 40–60h</text>
+
+  <!-- cell 4 : oxicam -->
+  <rect x="680" y="136" width="200" height="186" fill="#fdf6ec" stroke="#b9770e" stroke-width="2" rx="5"/>
+  <rect x="680" y="136" width="200" height="30" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+  <text x="780" y="157" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#7e5109">Enolic acid (oxicam)</text>
+  <text x="692" y="188" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Meloxicam</text>
+  <text x="692" y="207" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1e8449">1일 7.5 mg에서</text>
+  <text x="692" y="224" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1e8449">COX-2 우선 억제</text>
+  <text x="692" y="241" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">t½ 15–20h · 1일 1회</text>
+  <text x="692" y="270" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Piroxicam</text>
+  <text x="692" y="289" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">COX-1 우세</text>
+  <text x="692" y="309" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">같은 계열, 반대 성격</text>
+
+  <!-- ROW 2 bus -->
+  <line x1="120" y1="340" x2="780" y2="340" stroke="#5d6d7e" stroke-width="2" stroke-dasharray="5,4"/>
+  <line x1="450" y1="322" x2="450" y2="340" stroke="#5d6d7e" stroke-width="2"/>
+  <line x1="120" y1="340" x2="120" y2="360" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="340" y1="340" x2="340" y2="360" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="560" y1="340" x2="560" y2="360" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="780" y1="340" x2="780" y2="360" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- cell 5 : fenamate -->
+  <rect x="20" y="362" width="200" height="160" fill="#f4f8fb" stroke="#2471a3" stroke-width="2" rx="5"/>
+  <rect x="20" y="362" width="200" height="30" fill="#d6e6f5" stroke="#2471a3" stroke-width="2"/>
+  <text x="120" y="383" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1b4f72">Fenamate</text>
+  <text x="32" y="412" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Meclofenamate</text>
+  <text x="32" y="431" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Mefenamic acid</text>
+  <text x="32" y="456" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">COX + PLA2 동시 억제</text>
+  <text x="32" y="477" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">설사 · 복통이 더 흔함</text>
+  <text x="32" y="498" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">경구 항응고제 약효 ↑</text>
+
+  <!-- cell 6 : coxib -->
+  <rect x="240" y="362" width="200" height="160" fill="#f4f8fb" stroke="#2471a3" stroke-width="2" rx="5"/>
+  <rect x="240" y="362" width="200" height="30" fill="#d6e6f5" stroke="#2471a3" stroke-width="2"/>
+  <text x="340" y="383" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1b4f72">Coxib (COX-2 선택적)</text>
+  <text x="252" y="412" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Celecoxib</text>
+  <text x="252" y="431" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">Etoricoxib · Polmacoxib</text>
+  <text x="252" y="456" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1e8449">위장관 부작용 현저히 ↓</text>
+  <text x="252" y="477" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">심장보호효과는 없다</text>
+  <text x="252" y="500" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">퇴출 — Rofecoxib · Valdecoxib</text>
+
+  <!-- cell 7 : nonacidic prodrug -->
+  <rect x="460" y="362" width="200" height="160" fill="#eef8f1" stroke="#1e8449" stroke-width="2" rx="5"/>
+  <rect x="460" y="362" width="200" height="30" fill="#cdebd8" stroke="#1e8449" stroke-width="2"/>
+  <text x="560" y="383" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#145a32">비산성 prodrug</text>
+  <text x="472" y="412" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Nabumetone</text>
+  <text x="472" y="435" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">유일한 비산성 NSAID</text>
+  <text x="472" y="456" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">간에서 6-MNA로 전환</text>
+  <text x="472" y="477" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">t½ 24h 이상 · 1일 1회</text>
+  <text x="472" y="498" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">장간순환 없음 · 위궤양 ↓↓</text>
+
+  <!-- cell 8 : others -->
+  <rect x="680" y="362" width="200" height="160" fill="#f7f7f7" stroke="#7f8c8d" stroke-width="2" rx="5"/>
+  <rect x="680" y="362" width="200" height="30" fill="#e4e6e6" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="780" y="383" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#424949">그 밖</text>
+  <text x="692" y="410" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Ketorolac</text>
+  <text x="692" y="428" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">진통 전용 · 5일 제한</text>
+  <text x="692" y="453" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Phenylbutazone</text>
+  <text x="692" y="471" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">pyrazolone · 사용 중지</text>
+  <text x="692" y="495" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#7f8c8d">para-aminophenol =</text>
+  <text x="692" y="512" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#7f8c8d">Acetaminophen (28장 소관)</text>
+
+  <!-- footer -->
+  <rect x="20" y="538" width="860" height="46" fill="#fff6d9" stroke="#c9a227" stroke-width="2" rx="6"/>
+  <text x="450" y="558" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#7d5a00">🎙️ 각론은 &quot;이 약물은 어떻습니까?&quot; 하고 틀린 것을 고르는 형태로 나온다</text>
+  <text x="450" y="577" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5b4a20">그러니 표에서 유일한 · 가장 · 예외로 적힌 항목이 1순위 — 빨간 글씨가 그 자리다</text>
+</svg>

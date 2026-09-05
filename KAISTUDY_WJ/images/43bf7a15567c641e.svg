@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="arb" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#2471a3"/>
+    </marker>
+    <marker id="argr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#7f8c8d"/>
+    </marker>
+    <marker id="inh" markerWidth="8" markerHeight="16" refX="4" refY="8" orient="auto">
+      <line x1="4" y1="0" x2="4" y2="16" stroke="#c0392b" stroke-width="3.5"/>
+    </marker>
+  </defs>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+    <text x="25" y="26" font-size="16" font-weight="bold" fill="#1a1a1a">Clomiphene — 차단제인데 왜 배란이 일어나는가 (교안 p.29)</text>
+
+    <!-- clomiphene -->
+    <rect x="25" y="50" width="175" height="48" rx="6" fill="#fbe9e6" stroke="#c0392b" stroke-width="2"/>
+    <text x="112" y="80" font-size="15" text-anchor="middle" fill="#c0392b" font-weight="bold">Clomiphene</text>
+    <line x1="202" y1="74" x2="244" y2="74" stroke="#c0392b" stroke-width="3" marker-end="url(#inh)"/>
+
+    <!-- hypothalamus -->
+    <rect x="250" y="48" width="235" height="64" rx="6" fill="#eef2f7" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="367" y="74" font-size="15" text-anchor="middle" fill="#1a1a1a" font-weight="bold">시상하부 (ER)</text>
+    <text x="367" y="97" font-size="12.5" text-anchor="middle" fill="#c0392b">ER 차단 → 「부족」 오판</text>
+
+    <line x1="367" y1="112" x2="367" y2="156" stroke="#2471a3" stroke-width="2.5" marker-end="url(#arb)"/>
+    <text x="380" y="139" font-size="14" fill="#2471a3" font-weight="bold">GnRH ↑</text>
+
+    <!-- pituitary -->
+    <rect x="250" y="158" width="235" height="48" rx="6" fill="#eef2f7" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="367" y="188" font-size="15" text-anchor="middle" fill="#1a1a1a" font-weight="bold">뇌하수체 전엽</text>
+
+    <line x1="367" y1="206" x2="367" y2="250" stroke="#2471a3" stroke-width="2.5" marker-end="url(#arb)"/>
+    <text x="380" y="233" font-size="14" fill="#2471a3" font-weight="bold">LH · FSH ↑</text>
+
+    <!-- ovary -->
+    <rect x="250" y="252" width="235" height="48" rx="6" fill="#eef2f7" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="367" y="282" font-size="15" text-anchor="middle" fill="#1a1a1a" font-weight="bold">난소 — 난포 발달</text>
+
+    <line x1="367" y1="300" x2="367" y2="344" stroke="#1e8449" stroke-width="2.5" marker-end="url(#ar)"/>
+
+    <rect x="250" y="346" width="235" height="48" rx="6" fill="#e6f2ea" stroke="#1e8449" stroke-width="2"/>
+    <text x="367" y="376" font-size="15" text-anchor="middle" fill="#1e8449" font-weight="bold">배 란</text>
+
+    <!-- feedback loop -->
+    <polyline points="487,276 630,276 630,70 492,70" fill="none" stroke="#7f8c8d" stroke-width="2.5" marker-end="url(#argr)"/>
+    <text x="644" y="176" font-size="13" fill="#7f8c8d">estrogen</text>
+    <text x="644" y="196" font-size="13" fill="#7f8c8d">음성되먹임</text>
+    <text x="644" y="216" font-size="13" fill="#7f8c8d">(농도는 정상)</text>
+
+    <line x1="548" y1="56" x2="548" y2="84" stroke="#c0392b" stroke-width="3.5"/>
+    <text x="500" y="106" font-size="12.5" fill="#c0392b">읽히지 않는다</text>
+
+    <text x="25" y="428" font-size="13.5" fill="#1a1a1a">· 농도를 낮추는 것이 아니라 <tspan font-weight="bold" fill="#c0392b">신호를 가린다</tspan> — 그래서 차단제인데 상위 호르몬이 올라간다.</text>
+    <text x="25" y="452" font-size="13.5" fill="#1a1a1a">· 대비: letrozole은 estrogen <tspan font-weight="bold">농도</tspan>를 낮추고, GnRH 작용제는 탈감작으로 LH·FSH를 <tspan font-weight="bold">낮춘다</tspan>(방향 반대).</text>
+  </g>
+</svg>

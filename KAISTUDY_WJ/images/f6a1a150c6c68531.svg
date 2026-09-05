@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <text x="450" y="32" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="bold" fill="#1a1a1a" text-anchor="middle">CO 중독 — 산소해리곡선의 좌측 이동과 SpO₂ 함정</text>
+
+  <line x1="90" y1="390" x2="530" y2="390" stroke="#1a1a1a" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="90" y1="390" x2="90" y2="62" stroke="#1a1a1a" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="300" y="416" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">조직 쪽 산소분압 PO₂ (mmHg) →</text>
+  <text x="30" y="230" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" transform="rotate(-90 30 230)" text-anchor="middle">혈액이 실은 산소량 (%)</text>
+
+  <line x1="90" y1="230" x2="510" y2="230" stroke="#999999" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="76" y="234" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#666666" text-anchor="end">50</text>
+  <text x="76" y="82" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#666666" text-anchor="end">100</text>
+  <text x="76" y="394" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#666666" text-anchor="end">0</text>
+  <text x="258" y="408" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#666666" text-anchor="middle">40</text>
+  <text x="510" y="408" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#666666" text-anchor="middle">100</text>
+
+  <polyline points="90,390 111,372 132,348 153,313 174,278 195,241 216,208 237,177 258,150 279,133 300,121 321,113 342,105 363,99 384,93 405,90 426,86 447,84 468,81 489,80 510,78" fill="none" stroke="#2471a3" stroke-width="3"/>
+  <polyline points="90,390 111,374 132,358 153,338 174,320 195,306 216,294 237,286 258,275 279,268 300,262 321,257 342,252 363,249 384,246 405,244 426,241 447,240 468,238 489,237 510,236" fill="none" stroke="#c0392b" stroke-width="3"/>
+
+  <text x="418" y="70" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#2471a3">정상 Hb</text>
+  <text x="360" y="272" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#c0392b">CO-Hb 존재 시</text>
+
+  <line x1="240" y1="230" x2="160" y2="230" stroke="#c0392b" stroke-width="2.5" marker-end="url(#a2)"/>
+  <text x="200" y="222" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="middle">좌측 이동</text>
+  <text x="196" y="256" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#c0392b" text-anchor="middle">조직에서 산소를 놓지 않는다</text>
+
+  <text x="300" y="132" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#c0392b" text-anchor="middle">↕ 실을 수 있는 총량 자체가 줄어든다</text>
+
+  <rect x="560" y="60" width="320" height="200" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="580" y="86" font-family="Malgun Gothic, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">함정 — SpO₂는 정상으로 나온다</text>
+  <text x="580" y="112" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">맥박산소측정기는 CO-Hb와 O₂-Hb의</text>
+  <text x="580" y="132" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">흡광 특성을 구별하지 못한다</text>
+  <text x="580" y="156" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#c0392b">→ CO-Hb를 산화Hb로 잘못 읽어 98%</text>
+  <text x="580" y="182" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">정상 SpO₂는 CO 중독을 배제하는</text>
+  <text x="580" y="202" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">근거가 되지 못한다</text>
+  <text x="580" y="228" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#1e8449">진단 — CO-oximetry로 CO-Hb 직접 측정</text>
+  <text x="580" y="250" font-family="Malgun Gothic, sans-serif" font-size="12" fill="#666666">(교안 p.47 [임상 함정] 박스)</text>
+
+  <rect x="560" y="274" width="320" height="140" rx="6" fill="#e8f6ee" stroke="#1e8449" stroke-width="2"/>
+  <text x="580" y="300" font-family="Malgun Gothic, sans-serif" font-size="15" font-weight="bold" fill="#1e8449">치료</text>
+  <text x="580" y="324" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">① 발생원 제거  ② 100% 산소 공급</text>
+  <text x="580" y="350" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">고압산소요법(HBO) 적응증</text>
+  <text x="580" y="372" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">의식소실 · 신경학적 이상 · 심근허혈</text>
+  <text x="580" y="392" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">임신부 · CO-Hb 25% 초과</text>
+
+  <rect x="90" y="440" width="790" height="80" rx="6" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="110" y="464" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">원인물질  CO — 무색 · 무미 · 무취라 감지 자체가 불가능</text>
+  <text x="110" y="486" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">표적  헤모글로빈 — O₂와 경쟁, 친화력 약 220배, 거의 비가역적 결합 → 조직 저산소증</text>
+  <text x="110" y="508" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a">임상상  두통 → 의식장애 → 시야혼란 → 빈맥 → 기절(CO-Hb 40%) → 뇌·심근 손상(60% 이상)</text>
+</svg>

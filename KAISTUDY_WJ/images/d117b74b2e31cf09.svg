@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ar3" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 z" fill="#2c3e50"/>
+</marker>
+</defs>
+<style>
+.t{font-family:"Malgun Gothic","맑은 고딕",sans-serif;}
+.ttl{font-size:18px;font-weight:bold;fill:#1a1a1a;}
+.bx{font-size:14px;fill:#1a1a1a;font-weight:bold;}
+.rc{font-size:14px;font-weight:bold;}
+.cell{font-size:12.5px;fill:#1a1a1a;}
+.sm{font-size:11.5px;fill:#424949;}
+.note{font-size:12.5px;fill:#1a1a1a;}
+</style>
+
+<text class="t ttl" x="20" y="28">위 벽세포의 위산분비 세 경로와 H2 길항제의 작용점</text>
+
+<!-- vagus -->
+<rect x="55" y="55" width="200" height="44" fill="#eafaf1" stroke="#1e8449" rx="4"/>
+<text class="t bx" x="155" y="83" text-anchor="middle">미주신경 (ACh)</text>
+
+<!-- gastrin -->
+<rect x="400" y="55" width="230" height="44" fill="#fef9e7" stroke="#b9770e" rx="4"/>
+<text class="t bx" x="515" y="83" text-anchor="middle">G세포 → Gastrin</text>
+<text class="t sm" x="645" y="72">위강의 아미노산이 G세포를 자극하고</text>
+<text class="t sm" x="645" y="88">위강이 산성이면 되먹임으로 억제된다</text>
+
+<!-- ECL -->
+<line x1="180" y1="99" x2="255" y2="146" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar3)"/>
+<line x1="450" y1="99" x2="375" y2="146" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar3)"/>
+<rect x="180" y="148" width="230" height="52" fill="#fdedec" stroke="#c0392b" stroke-width="2.5" rx="4"/>
+<text class="t bx" x="295" y="172" text-anchor="middle" fill="#c0392b">ECL 세포</text>
+<text class="t cell" x="295" y="192" text-anchor="middle">→ 히스타민 분비</text>
+
+<!-- direct arrows -->
+<line x1="115" y1="99" x2="193" y2="252" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#ar3)"/>
+<text class="t sm" x="60" y="185">직접</text>
+<line x1="545" y1="99" x2="372" y2="252" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#ar3)"/>
+<text class="t sm" x="520" y="185">직접</text>
+<line x1="395" y1="200" x2="520" y2="252" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar3)"/>
+
+<!-- parietal cell -->
+<rect x="120" y="272" width="520" height="122" fill="#f4f6f7" stroke="#5d6d7e" stroke-width="2" rx="6"/>
+<text class="t cell" x="136" y="382" font-weight="bold">벽세포 (Parietal cell)</text>
+
+<rect x="150" y="256" width="100" height="32" fill="#eafaf1" stroke="#1e8449" stroke-width="2" rx="4"/>
+<text class="t rc" x="200" y="278" text-anchor="middle" fill="#1e8449">M3</text>
+<rect x="310" y="256" width="120" height="32" fill="#fef9e7" stroke="#b9770e" stroke-width="2" rx="4"/>
+<text class="t rc" x="370" y="278" text-anchor="middle" fill="#b9770e">CCK-B</text>
+<rect x="480" y="256" width="110" height="32" fill="#fdedec" stroke="#c0392b" stroke-width="3" rx="4"/>
+<text class="t rc" x="535" y="278" text-anchor="middle" fill="#c0392b">H2</text>
+
+<line x1="200" y1="288" x2="330" y2="322" stroke="#2c3e50" stroke-width="1.6" marker-end="url(#ar3)"/>
+<line x1="370" y1="288" x2="385" y2="322" stroke="#2c3e50" stroke-width="1.6" marker-end="url(#ar3)"/>
+<line x1="535" y1="288" x2="450" y2="322" stroke="#2c3e50" stroke-width="1.6" marker-end="url(#ar3)"/>
+
+<rect x="270" y="324" width="250" height="40" fill="#ffffff" stroke="#5d6d7e" rx="4"/>
+<text class="t cell" x="395" y="349" text-anchor="middle" font-weight="bold">H⁺/K⁺-ATPase (proton pump)</text>
+
+<line x1="522" y1="344" x2="640" y2="344" stroke="#2c3e50" stroke-width="2" marker-end="url(#ar3)"/>
+<text class="t bx" x="650" y="349">HCl → 위강</text>
+
+<!-- H2 antagonist -->
+<rect x="690" y="240" width="185" height="76" fill="#fdedec" stroke="#c0392b" stroke-width="2" rx="4"/>
+<text class="t bx" x="702" y="262" fill="#c0392b">H2 길항제</text>
+<text class="t cell" x="702" y="282">cimetidine · ranitidine</text>
+<text class="t cell" x="702" y="302">famotidine · nizatidine</text>
+<line x1="688" y1="272" x2="600" y2="272" stroke="#c0392b" stroke-width="2.5"/>
+<line x1="600" y1="262" x2="600" y2="282" stroke="#c0392b" stroke-width="3.5"/>
+
+<rect x="20" y="410" width="860" height="112" fill="#f4f6f7" stroke="#aeb6bf"/>
+<text class="t note" x="34" y="432">· ACh와 gastrin은 ECL세포를 거쳐 히스타민으로도 가고 벽세포로 <tspan font-weight="bold">직접</tspan>으로도 간다(점선). 그래서 히스타민은 「최종 물질」이 아니라</text>
+<text class="t note" x="34" y="450">  <tspan font-weight="bold">「주요 매개체」</tspan>다 — 🎙️ 교수님이 슬라이드 표현을 그렇게 고치셨다.</text>
+<text class="t note" x="34" y="474">· H2 길항제가 gastrin·콜린성 위산분비까지 줄이는 것은 <tspan font-weight="bold">ECL세포에서 나온 히스타민의 H2 결합을 막기 때문</tspan>이지 M3를 직접 차단해서가</text>
+<text class="t note" x="34" y="492">  아니다 — 25-7의 선지 ③(M3 직접 억제)이 노린 지점이다.</text>
+<text class="t note" x="34" y="514">· 야간분비는 히스타민 의존성이 커서 억제 효과가 크고 식사자극분비 억제는 작다 → 그래서 <tspan font-weight="bold">취침 전 복용</tspan>이 표준이다.</text>
+</svg>

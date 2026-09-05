@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" width="880" height="600">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#c0392b"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#2471a3"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="21" font-weight="bold" fill="#1a1a1a">Aspirin — 비가역 아세틸화가 왜 8일을 가는가</text>
+
+  <!-- top chain -->
+  <rect x="30" y="48" width="150" height="52" fill="#eaf2f8" stroke="#2471a3" stroke-width="2" rx="5"/>
+  <text x="105" y="70" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1b4f72">Aspirin (ASA)</text>
+  <text x="105" y="90" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">pKa 3.5</text>
+
+  <line x1="182" y1="74" x2="228" y2="74" stroke="#2471a3" stroke-width="2" marker-end="url(#a2)"/>
+  <text x="205" y="66" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#2471a3">esterase</text>
+
+  <rect x="232" y="48" width="200" height="52" fill="#f7f7f7" stroke="#7f8c8d" stroke-width="2" rx="5"/>
+  <text x="332" y="70" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">acetic acid + salicylate</text>
+  <text x="332" y="90" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">salicylate는 albumin에 결합</text>
+
+  <line x1="434" y1="74" x2="480" y2="74" stroke="#c0392b" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="457" y="66" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#c0392b">acetyl기</text>
+
+  <rect x="484" y="48" width="366" height="52" fill="#fdeaea" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="667" y="70" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#922b21">COX 활성부위를 공유결합으로 아세틸화</text>
+  <text x="667" y="90" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#333333">약이 빠져나가도 그 효소는 되살아나지 않는다</text>
+
+  <!-- split -->
+  <line x1="440" y1="102" x2="440" y2="124" stroke="#5d6d7e" stroke-width="2"/>
+  <line x1="225" y1="124" x2="655" y2="124" stroke="#5d6d7e" stroke-width="2"/>
+  <line x1="225" y1="124" x2="225" y2="146" stroke="#5d6d7e" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="655" y1="124" x2="655" y2="146" stroke="#5d6d7e" stroke-width="2" marker-end="url(#a2)"/>
+
+  <!-- LEFT : platelet -->
+  <rect x="30" y="150" width="390" height="300" fill="#fdf4f4" stroke="#c0392b" stroke-width="2" rx="6"/>
+  <rect x="30" y="150" width="390" height="36" fill="#f5b7b1" stroke="#c0392b" stroke-width="2"/>
+  <text x="225" y="175" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#922b21">혈소판 — 핵이 없다</text>
+
+  <ellipse cx="225" cy="228" rx="72" ry="30" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="225" y="226" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">COX-1 (아세틸화)</text>
+  <text x="225" y="245" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">✕ 재합성 불가</text>
+
+  <line x1="225" y1="259" x2="225" y2="284" stroke="#c0392b" stroke-width="2" marker-end="url(#a1)"/>
+  <text x="225" y="304" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#922b21">TXA2 생성 차단 → 응집 억제</text>
+
+  <text x="48" y="336" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">핵이 없으니 단백질을 새로 만들지 못한다.</text>
+  <text x="48" y="358" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">그 혈소판은 죽을 때까지 끝난 것이다.</text>
+  <text x="48" y="386" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">회복 = 골수에서 새 혈소판이 나오는 시간</text>
+  <rect x="48" y="398" width="354" height="38" fill="#ffffff" stroke="#c0392b" stroke-width="2" rx="4"/>
+  <text x="225" y="423" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#922b21">교안 p.46 — 저용량에서 8일간 지속</text>
+
+  <!-- RIGHT : endothelium -->
+  <rect x="460" y="150" width="390" height="300" fill="#f4f8fb" stroke="#2471a3" stroke-width="2" rx="6"/>
+  <rect x="460" y="150" width="390" height="36" fill="#aed6f1" stroke="#2471a3" stroke-width="2"/>
+  <text x="655" y="175" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#1b4f72">혈관 내피세포 — 핵이 있다</text>
+
+  <ellipse cx="655" cy="228" rx="72" ry="30" fill="#ffffff" stroke="#2471a3" stroke-width="2"/>
+  <text x="655" y="226" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">COX (아세틸화)</text>
+  <text x="655" y="245" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1e8449">○ 재합성 가능</text>
+
+  <line x1="655" y1="259" x2="655" y2="284" stroke="#2471a3" stroke-width="2" marker-end="url(#a2)"/>
+  <text x="655" y="304" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1b4f72">PGI2 생성이 곧 회복된다</text>
+
+  <text x="478" y="336" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">핵이 있으니 효소를 새로 찍어낸다.</text>
+  <text x="478" y="358" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">그래서 저용량에서는 균형이 한쪽으로 기운다.</text>
+  <text x="478" y="386" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#2471a3">TXA2는 죽고 PGI2는 살아난다 = 항혈전</text>
+  <rect x="478" y="398" width="354" height="38" fill="#fdfbf5" stroke="#a08a55" stroke-width="2" rx="4"/>
+  <text x="655" y="423" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5b4a20">내피의 재합성은 교안 밖 — 교과서 보충</text>
+
+  <!-- bottom -->
+  <rect x="30" y="466" width="820" height="52" fill="#fff6d9" stroke="#c9a227" stroke-width="2" rx="6"/>
+  <text x="440" y="488" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#7d5a00">🎙️ &quot;수술하기 전에는 aspirin은 복용을 중단해야 합니다&quot;</text>
+  <text x="440" y="509" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5b4a20">약이 몸에서 사라지는 것과 효소가 되살아나는 것은 다른 문제다 — 25-38 · 25-42 · 소크라티브 N05 2·3번의 자리</text>
+
+  <!-- dose ladder -->
+  <rect x="30" y="530" width="820" height="56" fill="#f7f7f7" stroke="#7f8c8d" stroke-width="1.5" rx="6"/>
+  <text x="46" y="551" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#424949">용량 사다리</text>
+  <text x="150" y="551" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">저용량 100 mg — 항혈소판</text>
+  <text x="390" y="551" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">600 mg q4h — 진통 · 해열</text>
+  <text x="630" y="551" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">4 g/일 — 항염증</text>
+  <text x="46" y="575" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">같은 약인데 용량이 올라갈수록 반감기도 늘어난다 — 600 mg 약 5시간 vs 4 g 약 16시간 (포화 동력학)</text>
+</svg>

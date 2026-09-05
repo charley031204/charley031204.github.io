@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 580" width="880" height="580" font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="down" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 1 0 L 5 9 L 9 0 z" fill="#2471a3"/>
+    </marker>
+  </defs>
+
+  <text x="36" y="32" font-size="19" font-weight="bold" fill="#1a1a1a">갑상샘호르몬 생합성 단계와 약물 차단점</text>
+  <text x="36" y="54" font-size="12" fill="#555555">교안 p.8 「생합성 저해 약물 작용점 정리」를 한국어 블록으로 재정리 — 위에서 아래로 한 단계씩 읽는다</text>
+
+  <!-- row 1 -->
+  <rect x="36" y="76" width="340" height="76" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="52" y="106" font-size="15" font-weight="bold" fill="#1a1a1a">① 요오드화물 취득 (trapping)</text>
+  <text x="52" y="130" font-size="13" fill="#1a1a1a">기저측면 NIS — Na⁺ 전위차 이용</text>
+  <rect x="460" y="76" width="384" height="76" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="476" y="102" font-size="14" font-weight="bold" fill="#c0392b">음이온 억제제 ⊣ NIS</text>
+  <text x="476" y="124" font-size="12" fill="#1a1a1a">perchlorate(ClO₄⁻) · thiocyanate(SCN⁻)</text>
+  <text x="476" y="144" font-size="12" fill="#1a1a1a">pertechnetate(TcO₄⁻) — 재생불량빈혈로 거의 안 씀</text>
+  <line x1="460" y1="114" x2="386" y2="114" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="382" y1="102" x2="382" y2="126" stroke="#c0392b" stroke-width="3.5"/>
+
+  <line x1="206" y1="152" x2="206" y2="170" stroke="#2471a3" stroke-width="2.5" marker-end="url(#down)"/>
+
+  <!-- row 2 -->
+  <rect x="36" y="172" width="340" height="76" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="52" y="202" font-size="15" font-weight="bold" fill="#1a1a1a">② 산화·유기화 → ③ 커플링</text>
+  <text x="52" y="226" font-size="13" fill="#1a1a1a">TPO가 촉매 — MIT+DIT→T3, DIT+DIT→T4</text>
+  <rect x="460" y="172" width="384" height="76" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="476" y="198" font-size="14" font-weight="bold" fill="#c0392b">Thioamide ⊣ TPO</text>
+  <text x="476" y="220" font-size="12" fill="#1a1a1a">methimazole · carbimazole · PTU</text>
+  <text x="476" y="240" font-size="12" fill="#1a1a1a">두 단계를 한꺼번에 막는다 (유기화 + 커플링)</text>
+  <line x1="460" y1="210" x2="386" y2="210" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="382" y1="198" x2="382" y2="222" stroke="#c0392b" stroke-width="3.5"/>
+
+  <line x1="206" y1="248" x2="206" y2="266" stroke="#2471a3" stroke-width="2.5" marker-end="url(#down)"/>
+
+  <!-- row 3 -->
+  <rect x="36" y="268" width="340" height="76" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="52" y="298" font-size="15" font-weight="bold" fill="#1a1a1a">④ 교질 저장 → ⑤ 분비 (유리)</text>
+  <text x="52" y="322" font-size="13" fill="#1a1a1a">리소좀 thiol endopeptidase, TSH가 촉진</text>
+  <rect x="460" y="268" width="384" height="76" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="476" y="294" font-size="14" font-weight="bold" fill="#c0392b">고용량 요오드화물 ⊣ 유리</text>
+  <text x="476" y="316" font-size="12" fill="#1a1a1a">유기화 억제(Wolff-Chaikoff) + 분비 억제</text>
+  <text x="476" y="336" font-size="12" fill="#1a1a1a">유일하게 즉시 분비를 막는 약</text>
+  <line x1="460" y1="306" x2="386" y2="306" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="382" y1="294" x2="382" y2="318" stroke="#c0392b" stroke-width="3.5"/>
+
+  <line x1="206" y1="344" x2="206" y2="362" stroke="#2471a3" stroke-width="2.5" marker-end="url(#down)"/>
+
+  <!-- row 4 -->
+  <rect x="36" y="364" width="340" height="76" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="52" y="394" font-size="15" font-weight="bold" fill="#1a1a1a">말초 T4 → T3 전환</text>
+  <text x="52" y="418" font-size="13" fill="#1a1a1a">D1 = 외측고리 탈요오드화 (활성화)</text>
+  <rect x="460" y="364" width="384" height="76" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="476" y="390" font-size="14" font-weight="bold" fill="#c0392b">PTU · amiodarone · β차단제</text>
+  <text x="476" y="412" font-size="12" fill="#1a1a1a">corticosteroid · 요오드 조영제(ipodate)</text>
+  <text x="476" y="432" font-size="12" fill="#1a1a1a">이 다섯이 곧 rT3가 올라가는 상황이다</text>
+  <line x1="460" y1="402" x2="386" y2="402" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="382" y1="390" x2="382" y2="414" stroke="#c0392b" stroke-width="3.5"/>
+
+  <!-- bottom bar -->
+  <rect x="36" y="460" width="808" height="68" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="52" y="488" font-size="15" font-weight="bold" fill="#1e8449">단계가 아니라 세포 자체를 없애는 길 — 방사성 요오드 ¹³¹I</text>
+  <text x="52" y="512" font-size="12" fill="#1a1a1a">경구 투여 → NIS로 소포세포에만 농축 → β⁻선이 조직을 파괴 (물리적 반감기 8일). 임신·수유부 금기.</text>
+
+  <text x="36" y="556" font-size="12" fill="#555555">TH는 요오드를 함유하는 유일한 호르몬이고 NIS는 갑상샘에만 있다 — 그래서 ¹³¹I가 갑상샘만 골라서 때린다.</text>
+</svg>

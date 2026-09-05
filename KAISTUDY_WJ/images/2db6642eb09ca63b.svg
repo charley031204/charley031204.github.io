@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" width="860" height="540" font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 9 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="32" font-size="19" font-weight="bold" fill="#1a1a1a">말초 탈요오드화 — 어느 고리를 떼느냐가 활성과 불활성을 가른다</text>
+  <text x="40" y="54" font-size="12" fill="#555555">교안 p.13 구조식이 보여주지 않는 층: 담당 효소 D1·D2·D3와 그 조직, 그리고 PTU가 어느 쪽만 막는지</text>
+
+  <!-- T4 box -->
+  <rect x="330" y="76" width="200" height="64" rx="6" fill="#f4f0fa" stroke="#6c3483" stroke-width="2"/>
+  <text x="430" y="104" font-size="16" font-weight="bold" fill="#6c3483" text-anchor="middle">T4 — 전구호르몬</text>
+  <text x="430" y="126" font-size="12" fill="#1a1a1a" text-anchor="middle">반감기 7일 · 저장 800 μg</text>
+
+  <line x1="390" y1="142" x2="230" y2="190" stroke="#444444" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="470" y1="142" x2="630" y2="190" stroke="#444444" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- T3 box -->
+  <rect x="50" y="196" width="340" height="96" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="66" y="226" font-size="16" font-weight="bold" fill="#1e8449">T3 — 활성형 (Activation)</text>
+  <text x="66" y="252" font-size="13" fill="#1a1a1a">외측고리(5′)를 떼어낸다</text>
+  <text x="66" y="276" font-size="12" fill="#1a1a1a">활성 4배 · 반감기 1일 · 혈중의 80%가 말초 생성분</text>
+
+  <!-- rT3 box -->
+  <rect x="470" y="196" width="340" height="96" rx="6" fill="#f2f2f2" stroke="#7f7f7f" stroke-width="2.5"/>
+  <text x="486" y="226" font-size="16" font-weight="bold" fill="#5d5d5d">rT3 — 불활성 (Inactivation)</text>
+  <text x="486" y="252" font-size="13" fill="#1a1a1a">내측고리(5)를 떼어낸다</text>
+  <text x="486" y="276" font-size="12" fill="#1a1a1a">생물학적 활성이 전혀 없다</text>
+
+  <!-- enzyme boxes -->
+  <rect x="50" y="306" width="340" height="80" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="66" y="332" font-size="14" font-weight="bold" fill="#2471a3">담당 효소 — D1 · D2</text>
+  <text x="66" y="354" font-size="12" fill="#c0392b">D1: 간·신장·갑상샘·뇌하수체 → PTU가 억제</text>
+  <text x="66" y="374" font-size="12" fill="#1a1a1a">D2: 중추·갈색지방·골격근 → PTU 영향 없음</text>
+
+  <rect x="470" y="306" width="340" height="80" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="486" y="332" font-size="14" font-weight="bold" fill="#2471a3">담당 효소 — D3</text>
+  <text x="486" y="354" font-size="12" fill="#1a1a1a">중추조직에서 T4를 rT3로 돌린다</text>
+  <text x="486" y="374" font-size="12" fill="#1a1a1a">불활성화 전용 경로</text>
+
+  <!-- bottom bar 1 -->
+  <rect x="50" y="402" width="760" height="46" rx="6" fill="#fff8e1" stroke="#b7791f" stroke-width="2"/>
+  <text x="66" y="431" font-size="13" fill="#1a1a1a">정상 배분 — T4의 약 40%가 T3로, 약 40%가 rT3로, 나머지 20%는 간에서 포합되어 담즙으로 배설</text>
+
+  <!-- bottom bar 2 -->
+  <rect x="50" y="462" width="760" height="58" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="66" y="486" font-size="13" font-weight="bold" fill="#c0392b">rT3가 올라가는 상황 = 말초 전환이 막히는 상황 (교안 p.13)</text>
+  <text x="66" y="508" font-size="12" fill="#1a1a1a">amiodarone · 요오드 조영제(ipodate) · β차단제 · corticosteroid · 중증질환 · 기아</text>
+</svg>

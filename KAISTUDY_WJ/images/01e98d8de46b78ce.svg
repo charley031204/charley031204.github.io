@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+    <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">금속별 4칸 — 노출원 → 표적 → 임상상(결정타) → 해독제</text>
+    <text x="450" y="52" text-anchor="middle" font-size="13" fill="#555555">붉은 글자가 그 금속을 확정하는 표지다. 소크라티브 N14 19번은 다섯 선지가 각각 다른 금속의 세트다.</text>
+
+    <!-- header -->
+    <rect x="20" y="66" width="95" height="36" fill="#34495e"/>
+    <rect x="115" y="66" width="200" height="36" fill="#34495e"/>
+    <rect x="315" y="66" width="360" height="36" fill="#34495e"/>
+    <rect x="675" y="66" width="205" height="36" fill="#34495e"/>
+    <text x="67" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">금속</text>
+    <text x="215" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">노출원 → 표적</text>
+    <text x="495" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">임상상 — 결정타</text>
+    <text x="777" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">해독제</text>
+
+    <!-- Pb -->
+    <rect x="20" y="102" width="860" height="78" fill="#eaf1f8" stroke="#bbbbbb"/>
+    <text x="67" y="132" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a5276">Pb 납</text>
+    <text x="67" y="152" text-anchor="middle" font-size="11" fill="#555555">뼈 저장</text>
+    <text x="67" y="168" text-anchor="middle" font-size="11" fill="#555555">반감기 수십 년</text>
+    <text x="123" y="126" font-size="13" fill="#1a1a1a">소아 : 마른 페인트 조각 섭취</text>
+    <text x="123" y="146" font-size="13" fill="#1a1a1a">성인 : 납 먼지 · 배터리 · 도장</text>
+    <text x="123" y="167" font-size="12" fill="#1a5276">→ heme 효소(ALAD·ferrochelatase)</text>
+    <text x="323" y="126" font-size="13" font-weight="bold" fill="#c0392b">3징 : wrist drop · 반점적혈구 빈혈 · Burton line</text>
+    <text x="323" y="147" font-size="13" fill="#1a1a1a">소아 : 급성 뇌병증(사망률 높음) · 발달 지연</text>
+    <text x="323" y="167" font-size="13" fill="#1a1a1a">공통 : 급성 복통(colic) · 소적혈구성 빈혈</text>
+    <text x="777" y="134" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">succimer 경구</text>
+    <text x="777" y="155" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">CaNa₂EDTA 정주</text>
+
+    <!-- As -->
+    <rect x="20" y="180" width="860" height="86" fill="#fdf3f2" stroke="#bbbbbb"/>
+    <text x="67" y="214" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b">As 비소</text>
+    <text x="67" y="234" text-anchor="middle" font-size="11" fill="#555555">As³⁺ 이 더 유독</text>
+    <text x="67" y="250" text-anchor="middle" font-size="11" fill="#555555">발암원</text>
+    <text x="123" y="212" font-size="13" fill="#1a1a1a">석탄 연소 · 산업 / arsine gas</text>
+    <text x="123" y="233" font-size="12" fill="#c0392b">→ SH기 효소(pyruvate DH)</text>
+    <text x="123" y="252" font-size="12" fill="#c0392b">→ 모세혈관 · 위장관 · 피부</text>
+    <text x="323" y="203" font-size="13" font-weight="bold" fill="#c0392b">급성 : 구토 + rice-water stool → 탈수·shock</text>
+    <text x="323" y="223" font-size="13" fill="#1a1a1a">호기·대변에서 달콤한 마늘 냄새</text>
+    <text x="323" y="243" font-size="13" fill="#1a1a1a">만성 : 과각화증 · 색소침착 · Mees line · 발암</text>
+    <text x="323" y="261" font-size="13" fill="#1a1a1a">arsine gas : 대량 용혈 → 신부전</text>
+    <text x="777" y="216" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">dimercaprol (BAL)</text>
+    <text x="777" y="237" text-anchor="middle" font-size="13" fill="#1a1a1a">+ 수분 · 전해질</text>
+
+    <!-- Hg -->
+    <rect x="20" y="266" width="860" height="78" fill="#f2f9f4" stroke="#bbbbbb"/>
+    <text x="67" y="296" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e8449">Hg 수은</text>
+    <text x="67" y="317" text-anchor="middle" font-size="11" fill="#c0392b">형태 = 표적</text>
+    <text x="67" y="333" text-anchor="middle" font-size="11" fill="#c0392b">장기</text>
+    <text x="123" y="290" font-size="13" fill="#1a1a1a">증기 : 아말감 → 폐 · CNS</text>
+    <text x="123" y="311" font-size="13" fill="#1a1a1a">무기 : 살충제 · 전지 → 신장</text>
+    <text x="123" y="332" font-size="13" fill="#1a1a1a">유기 : 어패류 → CNS · 태아</text>
+    <text x="323" y="290" font-size="13" fill="#1a1a1a">증기 : 흉통 · 호흡곤란 · 급성 폐렴</text>
+    <text x="323" y="311" font-size="13" fill="#1a1a1a">무기 : 출혈성 위장관염 → 급성 신부전</text>
+    <text x="323" y="332" font-size="13" font-weight="bold" fill="#c0392b">유기 : 구심성 시야협착 · 운동실조 · 난청</text>
+    <text x="777" y="290" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e8449">급성 : dimercaprol</text>
+    <text x="777" y="311" text-anchor="middle" font-size="13" fill="#1a1a1a">만성 : penicillamine</text>
+    <text x="777" y="332" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">유기 : 효과 의문</text>
+
+    <!-- Fe -->
+    <rect x="20" y="344" width="860" height="66" fill="#fffaf0" stroke="#bbbbbb"/>
+    <text x="67" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#b9770e">Fe 철</text>
+    <text x="67" y="394" text-anchor="middle" font-size="11" fill="#555555">유소아 사고</text>
+    <text x="123" y="370" font-size="13" fill="#1a1a1a">FeSO₄ 정제 과량 (유소아)</text>
+    <text x="123" y="392" font-size="12" fill="#b9770e">→ 위장관 점막 · 간 · 혈관</text>
+    <text x="323" y="370" font-size="13" font-weight="bold" fill="#c0392b">구토 · 위장관 출혈 · gray cyanosis</text>
+    <text x="323" y="392" font-size="13" fill="#1a1a1a">5단계 중 ② 잠복기의 거짓 호전이 함정</text>
+    <text x="777" y="370" text-anchor="middle" font-size="13" font-weight="bold" fill="#b9770e">deferoxamine 정주</text>
+    <text x="777" y="392" text-anchor="middle" font-size="13" fill="#1a1a1a">만성 : deferasirox</text>
+
+    <!-- Cd -->
+    <rect x="20" y="410" width="860" height="78" fill="#fdfaea" stroke="#bbbbbb"/>
+    <text x="67" y="440" text-anchor="middle" font-size="15" font-weight="bold" fill="#7d6608">Cd 카드뮴</text>
+    <text x="67" y="461" text-anchor="middle" font-size="11" fill="#555555">이타이이타이</text>
+    <text x="123" y="436" font-size="13" fill="#1a1a1a">담배 · 조개류 · 제련 · 오염 쌀</text>
+    <text x="123" y="458" font-size="12" fill="#7d6608">→ 폐 · 신세뇨관 → 뼈</text>
+    <text x="123" y="478" font-size="12" fill="#7d6608">급성 흡입 → 폐부종</text>
+    <text x="323" y="436" font-size="13" fill="#1a1a1a">만성 : 폐기종 · 섬유증 / 단백뇨 · 아미노산뇨</text>
+    <text x="323" y="457" font-size="13" font-weight="bold" fill="#c0392b">이타이이타이 : 골연화증 · 다발성 골절</text>
+    <text x="323" y="478" font-size="13" fill="#1a1a1a">조기 지표 = β₂-microglobulin뇨</text>
+    <text x="777" y="446" text-anchor="middle" font-size="13" fill="#1a1a1a">킬레이터 효과 제한적</text>
+    <text x="777" y="467" text-anchor="middle" font-size="13" fill="#1a1a1a">노출 차단이 핵심</text>
+
+    <!-- Cu / Tl -->
+    <rect x="20" y="488" width="860" height="56" fill="#f4f4f4" stroke="#bbbbbb"/>
+    <text x="67" y="512" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Cu 구리</text>
+    <text x="67" y="534" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Tl 탈륨</text>
+    <text x="123" y="512" font-size="12" fill="#1a1a1a">Wilson병(ATP7B) → 간·기저핵·각막</text>
+    <text x="123" y="534" font-size="12" fill="#1a1a1a">쥐약 → 말초신경 · 모낭</text>
+    <text x="323" y="512" font-size="13" fill="#1a1a1a">Kayser-Fleischer ring (각막 구리 고리)</text>
+    <text x="323" y="534" font-size="13" font-weight="bold" fill="#c0392b">탈모 · 통증성 말초신경병증</text>
+    <text x="777" y="512" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e8449">penicillamine · trientine</text>
+    <text x="777" y="534" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">Prussian blue</text>
+
+    <!-- footer -->
+    <rect x="20" y="558" width="860" height="42" fill="#1a5276" rx="5"/>
+    <text x="450" y="584" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">한 줄 표지 — 납 wrist drop · 비소 rice-water stool · 유기수은 시야협착 · 철 gray cyanosis · 카드뮴 골연화증 · 탈륨 탈모</text>
+
+  </g>
+</svg>

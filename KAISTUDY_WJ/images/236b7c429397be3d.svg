@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    text { font-family: "Malgun Gothic", "맑은 고딕", sans-serif; fill: #1a1a1a; }
+    .t  { font-size: 20px; font-weight: bold; }
+    .st { font-size: 13px; fill: #555555; }
+    .h  { font-size: 15px; font-weight: bold; }
+    .hs { font-size: 12px; }
+    .b  { font-size: 13px; }
+    .bb { font-size: 13px; font-weight: bold; }
+    .sm { font-size: 12px; fill: #555555; }
+  </style>
+
+  <text class="t" x="20" y="30">DMARD 계통도 — 무엇으로 만들었고, 어디를 겨냥하는가</text>
+  <text class="st" x="20" y="52">이우주 9판의 세 갈래. 분류 기준은 「분자의 종류(합성 저분자 / 항체·융합단백)」와 「표적이 세포 밖인가 안인가」다.</text>
+
+  <!-- csDMARD -->
+  <rect x="20" y="68" width="260" height="46" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text class="h"  x="34" y="90" fill="#2471a3">csDMARD · 전통적 합성</text>
+  <text class="hs" x="34" y="107" fill="#2471a3">화학합성 저분자 · 광범위 면역억제</text>
+
+  <rect x="20" y="122" width="260" height="300" rx="6" fill="#ffffff" stroke="#aab7c4" stroke-width="1.5"/>
+  <text class="bb" x="34" y="146" fill="#c0392b">Methotrexate — 1차 선택</text>
+  <text class="sm" x="34" y="164">엽산 대사 차단(DHFR · AICAR</text>
+  <text class="sm" x="34" y="180">transformylase · thymidylate synthase)</text>
+  <text class="b"  x="34" y="206">Leflunomide</text>
+  <text class="sm" x="34" y="222">활성대사물 A77-1726 → DHODH 억제</text>
+  <text class="b"  x="34" y="248">Hydroxychloroquine · chloroquine</text>
+  <text class="sm" x="34" y="264">반응까지 3–6개월 · 안구 독성</text>
+  <text class="b"  x="34" y="290">Sulfasalazine</text>
+  <text class="sm" x="34" y="306">장내세균이 5-ASA + sulfapyridine으로 절단</text>
+  <text class="b"  x="34" y="332">Azathioprine — TPMT 의존</text>
+  <text class="b"  x="34" y="356">Cyclosporine · tacrolimus — 신독성</text>
+  <text class="b"  x="34" y="380">Cyclophosphamide — 출혈성 방광염</text>
+  <text class="b"  x="34" y="404">Mycophenolate mofetil</text>
+
+  <!-- bDMARD -->
+  <rect x="310" y="68" width="260" height="46" rx="6" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text class="h"  x="324" y="90" fill="#c0392b">bDMARD · 생물학적</text>
+  <text class="hs" x="324" y="107" fill="#c0392b">항체 · 융합단백 (주사) · 세포 밖 표적</text>
+
+  <rect x="310" y="122" width="260" height="300" rx="6" fill="#ffffff" stroke="#aab7c4" stroke-width="1.5"/>
+  <text class="bb" x="324" y="146" fill="#c0392b">TNF-α 길항제 5종</text>
+  <text class="sm" x="324" y="164">adalimumab · golimumab — 완전 인간항체</text>
+  <text class="sm" x="324" y="180">infliximab — 키메라 (마우스 25%)</text>
+  <text class="sm" x="324" y="196">etanercept — p75 수용체 + IgG1 Fc 융합</text>
+  <text class="sm" x="324" y="212">certolizumab — PEG-Fab (Fc 없음)</text>
+  <text class="b"  x="324" y="240">Tocilizumab</text>
+  <text class="sm" x="324" y="256">IL-6 수용체 항체 · CYP450 활성 변화 주의</text>
+  <text class="b"  x="324" y="282">Anakinra · canakinumab · rilonacept</text>
+  <text class="sm" x="324" y="298">IL-1 축 — 파골세포 활성 차단</text>
+  <text class="b"  x="324" y="324">Abatacept</text>
+  <text class="sm" x="324" y="340">CTLA-4 + IgG1 Fc → CD80/86 선점 → CD28 차단</text>
+  <text class="b"  x="324" y="366">Rituximab</text>
+  <text class="sm" x="324" y="382">항 CD20 → B림프구 제거 (CDC · ADCC)</text>
+  <text class="sm" x="324" y="406" fill="#c0392b">전부 단백질 제제 → 경구 불가</text>
+
+  <!-- tsDMARD -->
+  <rect x="600" y="68" width="260" height="46" rx="6" fill="#e9f7ef" stroke="#1e8449" stroke-width="2"/>
+  <text class="h"  x="614" y="90" fill="#1e8449">tsDMARD · 표적합성</text>
+  <text class="hs" x="614" y="107" fill="#1e8449">저분자 · 경구 · 세포 안 신호전달 표적</text>
+
+  <rect x="600" y="122" width="260" height="300" rx="6" fill="#ffffff" stroke="#aab7c4" stroke-width="1.5"/>
+  <text class="bb" x="614" y="146" fill="#1e8449">JAK 억제제</text>
+  <text class="b"  x="614" y="172">Baricitinib — JAK1 · JAK2</text>
+  <text class="b"  x="614" y="196">Tofacitinib — JAK1 · JAK3</text>
+  <text class="b"  x="614" y="220">Upadacitinib — JAK1 선택적</text>
+  <rect x="614" y="238" width="232" height="72" rx="5" fill="#f4f9f6" stroke="#1e8449" stroke-width="1.2"/>
+  <text class="sm" x="626" y="258">JAK1 · JAK2 · JAK3 · TYK2</text>
+  <text class="sm" x="626" y="276">→ STAT 인산화 → cytokine 신호</text>
+  <text class="sm" x="626" y="294" fill="#1e8449">JAK 억제제가 이 축을 끊는다</text>
+  <text class="sm" x="614" y="334" fill="#c0392b">생물학적 DMARD나 다른 JAK 억제제와는</text>
+  <text class="sm" x="614" y="350" fill="#c0392b">병용투여하지 않는다</text>
+  <text class="sm" x="614" y="378">경구 저분자라는 점이 bDMARD와의</text>
+  <text class="sm" x="614" y="394">가장 큰 실무적 차이다</text>
+
+  <!-- bottom bar -->
+  <rect x="20" y="442" width="840" height="94" rx="6" fill="#fdf6e3" stroke="#b7950b" stroke-width="1.8"/>
+  <text class="bb" x="36" y="466">세 갈래에 공통으로 붙는 것</text>
+  <text class="b"  x="36" y="490">· 효과가 나타나기까지 6주~6개월 → 그동안 염증을 잡으려 glucocorticoid를 단기간 함께 쓴다</text>
+  <text class="b"  x="36" y="512">· 부작용은 결국 한 줄로 모인다 — 면역을 낮추므로 감염 위험 증가. 시작 전 잠복결핵 검사가 원칙이다</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="arw2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: "Malgun Gothic", "맑은 고딕", sans-serif; fill: #1a1a1a; }
+    .t  { font-size: 20px; font-weight: bold; }
+    .st { font-size: 13px; fill: #555555; }
+    .h  { font-size: 16px; font-weight: bold; }
+    .b  { font-size: 13px; }
+    .bb { font-size: 13px; font-weight: bold; }
+    .sm { font-size: 12px; fill: #555555; }
+    .line { stroke: #1a1a1a; stroke-width: 1.8; fill: none; }
+  </style>
+
+  <text class="t"  x="20" y="30">급성 발작기 vs 만성 요산강하 — 두 국면을 절대 섞지 않는다</text>
+  <text class="st" x="20" y="50">통풍 문항은 거의 전부 「지금이 어느 국면인가」를 먼저 가리게 만든다. 국면이 정해지면 약은 자동으로 갈린다.</text>
+
+  <rect x="300" y="64" width="280" height="44" rx="6" fill="#f4f6f7" stroke="#5d6d7e" stroke-width="1.8"/>
+  <text class="h" x="330" y="92">통풍 환자 — 지금 발작 중인가?</text>
+  <path class="line" d="M400,108 L400,124 L225,124 L225,146" marker-end="url(#arw2)"/>
+  <path class="line" d="M480,108 L480,124 L655,124 L655,146" marker-end="url(#arw2)"/>
+  <text class="bb" x="150" y="140" fill="#c0392b">예 — 급성 발작 중</text>
+  <text class="bb" x="580" y="140" fill="#2471a3">아니오 — 발작 사이 · 만성</text>
+
+  <!-- LEFT: acute -->
+  <rect x="25" y="150" width="400" height="250" rx="6" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text class="h"  x="40" y="176" fill="#c0392b">급성기 — 염증을 끈다</text>
+  <text class="sm" x="40" y="196">관절이 붉고 붓고 극심한 통증. 목표는 발작 해소 하나뿐이다.</text>
+  <text class="bb" x="40" y="222">Colchicine</text>
+  <text class="sm" x="40" y="240">tubulin 결합 → 백혈구 이동·탐식 차단. 0.5–1.2 mg을 1–2시간마다</text>
+  <text class="sm" x="40" y="256">반복하되 통증이 사라지거나 설사가 나면 중단. 치료범위가 좁아 2차 요법제</text>
+  <text class="bb" x="40" y="280">NSAID — indomethacin</text>
+  <text class="sm" x="40" y="298">colchicine이 듣지 않을 때 대체.</text>
+  <text class="sm" x="40" y="314">ASA · salicylate · tolmetin은 제외 (ASA는 저용량에서 요산 배설을 오히려 억제)</text>
+  <text class="bb" x="40" y="338">Glucocorticoid</text>
+  <text class="sm" x="40" y="356">위 둘을 쓸 수 없을 때 — 교안 p.44–49에는 없는 임상 보충</text>
+  <rect x="40" y="366" width="370" height="24" rx="4" fill="#ffffff" stroke="#c0392b" stroke-width="1.4"/>
+  <text class="bb" x="50" y="383" fill="#c0392b">요산 농도는 하나도 안 내려간다 — 그것이 이 국면의 목표가 아니다</text>
+
+  <!-- RIGHT: chronic -->
+  <rect x="455" y="150" width="400" height="250" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text class="h"  x="470" y="176" fill="#2471a3">만성기 — 요산을 낮춘다</text>
+  <text class="sm" x="470" y="196">목표는 재발 방지와 결석 예방. 장기전이다.</text>
+  <text class="bb" x="470" y="222">생성 억제 — Allopurinol (표준 치료제)</text>
+  <text class="sm" x="470" y="240">100 mg으로 시작해 매주 100 mg씩 최고 800 mg까지. 6-MP 병용 시 75% 감량</text>
+  <text class="bb" x="470" y="264">생성 억제 — Febuxostat (비퓨린계)</text>
+  <text class="sm" x="470" y="282">대부분 비활성 대사물로 대사 → 신기능 장애 환자도 사용 가능</text>
+  <text class="bb" x="470" y="306">배설 촉진 — Probenecid</text>
+  <text class="sm" x="470" y="324">정상 신기능에서. 유기산 분비 경쟁 → penicillin 농도를 올린다</text>
+  <text class="bb" x="470" y="348">분해 — Pegloticase · Rasburicase</text>
+  <text class="sm" x="470" y="366">난치성 만성 통풍 / 소아 혈액암의 종양용해증후군</text>
+  <rect x="470" y="374" width="370" height="18" rx="4" fill="#ffffff" stroke="#2471a3" stroke-width="1.2"/>
+  <text class="sm" x="480" y="388" fill="#2471a3">시작 초기에는 colchicine 또는 NSAID로 예방요법을 함께 시작한다</text>
+
+  <!-- bottom rule -->
+  <rect x="25" y="414" width="830" height="88" rx="6" fill="#fdf6e3" stroke="#b7950b" stroke-width="1.8"/>
+  <text class="bb" x="42" y="438">두 국면이 만나는 자리 — 여기가 함정이다</text>
+  <text class="b"  x="42" y="462">① 급성 발작 중에는 요산 강하제를 새로 시작하지 않는다. 요산이 급격히 변동하면 발작이 오히려 악화된다.</text>
+  <text class="b"  x="42" y="486">② 반대로 이미 복용 중이던 환자는 발작이 와도 중단하지 않고 유지한 채, 그 위에 급성기 약을 얹는다.</text>
+</svg>

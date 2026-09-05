@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 580" width="880" height="580">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+</marker>
+<marker id="inh" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<rect x="0" y="0.5" width="2.2" height="9" fill="#c0392b"/>
+</marker>
+</defs>
+<g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+<text x="440" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">콩팥에서의 PG — NSAID 가 신기능을 떨어뜨리는 이유</text>
+
+<rect x="25" y="46" width="400" height="34" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="225" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#2471a3">정상 — PG 가 살아 있을 때</text>
+
+<rect x="455" y="46" width="400" height="34" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+<text x="655" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#c0392b">COX 저해제 투여 후</text>
+
+<rect x="60" y="100" width="330" height="44" rx="5" fill="#e8f4ea" stroke="#1e8449" stroke-width="1.6"/>
+<text x="225" y="119" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e8449">콩팥 수질 · 피질에서 PG 합성</text>
+<text x="225" y="137" text-anchor="middle" font-size="14" fill="#1e8449">PGE1 · PGE2 · PGI2</text>
+
+<rect x="490" y="100" width="330" height="44" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="1.6"/>
+<text x="655" y="119" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">NSAID ⊣ COX</text>
+<text x="655" y="137" text-anchor="middle" font-size="14" fill="#c0392b">혈관 확장성 PG 가 사라진다</text>
+
+<line x1="225" y1="146" x2="225" y2="172" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="655" y1="146" x2="655" y2="172" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="60" y="174" width="330" height="46" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="225" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">세동맥 확장 (구심성 세동맥)</text>
+<text x="225" y="213" text-anchor="middle" font-size="13" fill="#666666">교안 표현 = 혈관 확장으로 사구체 여과 증가</text>
+
+<rect x="490" y="174" width="330" height="46" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="655" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">확장이 풀린다</text>
+<text x="655" y="213" text-anchor="middle" font-size="13" fill="#666666">여과압을 떠받치던 힘이 없어진다</text>
+
+<line x1="225" y1="222" x2="225" y2="248" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="655" y1="222" x2="655" y2="248" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="90" y="250" width="270" height="46" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="225" y="269" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">사구체 여과율 유지</text>
+<text x="225" y="288" text-anchor="middle" font-size="14" fill="#2471a3">물 · 나트륨 배설 증가</text>
+
+<rect x="520" y="250" width="270" height="46" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+<text x="655" y="269" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b">사구체 여과율 급감</text>
+<text x="655" y="288" text-anchor="middle" font-size="14" fill="#c0392b">콩팥기능 현저히 악화</text>
+
+<line x1="428" y1="200" x2="486" y2="200" stroke="#c0392b" stroke-width="2.4" marker-end="url(#arw)"/>
+
+<rect x="25" y="320" width="400" height="106" rx="6" fill="#fafafa" stroke="#999999" stroke-width="1.3"/>
+<text x="40" y="343" font-size="15" font-weight="bold" fill="#1a1a1a">콩팥 PG 의 나머지 일</text>
+<text x="40" y="366" font-size="14" fill="#2471a3">PGE2 · PGI2 = 콩팥 피질의 주된 eicosanoid</text>
+<text x="40" y="386" font-size="14" fill="#2471a3">→ renin 분비 증가 (평소엔 b1 수용체가 직접 조절)</text>
+<text x="40" y="408" font-size="14" fill="#c0392b">TXA2 = 콩팥 내 혈관 수축 → 콩팥기능 저하</text>
+
+<rect x="455" y="320" width="400" height="106" rx="6" fill="#fafafa" stroke="#999999" stroke-width="1.3"/>
+<text x="470" y="343" font-size="15" font-weight="bold" fill="#1a1a1a">PG 처럼 생겼지만 COX 산물이 아닌 것</text>
+<text x="470" y="366" font-size="14" fill="#1a1a1a">8-epi-PGF2a = free radical 이 인지질에서 비효소적으로</text>
+<text x="470" y="386" font-size="14" fill="#1a1a1a">만드는 isoprostane → TX 와 비슷하게 혈관 수축</text>
+<text x="470" y="408" font-size="14" fill="#c0392b">COX 를 막아도 줄지 않는다 · 간신병변증의 신부전 유도</text>
+
+<rect x="25" y="440" width="830" height="120" rx="6" fill="#fdf6e3" stroke="#c0392b" stroke-width="1.6"/>
+<text x="42" y="464" font-size="15" font-weight="bold" fill="#c0392b">왜 하필 노인과 콩팥기능저하 환자인가</text>
+<text x="42" y="489" font-size="14" fill="#1a1a1a">건강한 콩팥은 여과압이 넉넉해 PG 가 없어도 버틴다.</text>
+<text x="42" y="511" font-size="14" fill="#1a1a1a">이미 혈류가 줄어든 콩팥은 확장성 PG 에 매달려 겨우 여과압을 유지하고 있다 —</text>
+<text x="42" y="533" font-size="14" fill="#1a1a1a">그 버팀목을 NSAID 가 걷어차는 순간 여과가 무너진다. 교안이 이 두 집단만 따로 경고해 둔 이유다.</text>
+<text x="42" y="553" font-size="13" fill="#666666">교안 p.30 「노인과 콩팥기능저하 환자에게 COX 저해제 투여시 콩팥기능 현저하게 악화」</text>
+
+</g>
+</svg>

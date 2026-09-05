@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="19" font-weight="bold" fill="#1a1a1a" text-anchor="middle">뇌하수체 전엽 6호르몬 — 수용체가 갈라놓는 두 갈래</text>
+
+  <rect x="330" y="50" width="240" height="44" rx="8" fill="#fdebd0" stroke="#b9770e" stroke-width="2.5"/>
+  <text x="450" y="78" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#7e5109" text-anchor="middle">뇌하수체 전엽</text>
+
+  <line x1="400" y1="94" x2="230" y2="140" stroke="#c0392b" stroke-width="3" marker-end="url(#a2)"/>
+  <line x1="500" y1="94" x2="670" y2="140" stroke="#1a1a1a" stroke-width="3" marker-end="url(#a1)"/>
+
+  <!-- 왼쪽 갈래: GH · PRL -->
+  <rect x="30" y="145" width="380" height="92" rx="8" fill="#fadbd8" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="220" y="169" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#922b21" text-anchor="middle">GH · PRL — 단량체(monomer)</text>
+  <text x="220" y="192" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#922b21" text-anchor="middle">사이토카인 수용체 상과</text>
+  <text x="220" y="213" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#922b21" text-anchor="middle">이량체화 → JAK2 자가인산화 → STAT</text>
+  <text x="220" y="231" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#922b21" text-anchor="middle">구조도 서로 매우 유사 (태반 lactogen과도)</text>
+
+  <line x1="220" y1="237" x2="220" y2="288" stroke="#c0392b" stroke-width="3" marker-end="url(#a2)"/>
+
+  <rect x="55" y="292" width="330" height="66" rx="8" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="220" y="316" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#922b21" text-anchor="middle">말초 표적세포에 직접 작용</text>
+  <text x="220" y="338" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">GH → 간·근육·뼈·지방 / PRL → 젖샘</text>
+  <text x="220" y="354" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle">중간에 표적 내분비샘이 없다</text>
+
+  <rect x="55" y="374" width="330" height="72" rx="8" fill="#fef9e7" stroke="#b9770e" stroke-width="2"/>
+  <text x="220" y="396" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#7e5109" text-anchor="middle">되먹임이 다르다</text>
+  <text x="220" y="417" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#7e5109" text-anchor="middle">GH — IGF-1이 되먹임 (이중 음성)</text>
+  <text x="220" y="437" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#7e5109" text-anchor="middle">PRL — 표적기관 되먹임이 아예 없다</text>
+
+  <!-- 오른쪽 갈래: TSH FSH LH ACTH -->
+  <rect x="490" y="145" width="380" height="92" rx="8" fill="#d6eaf8" stroke="#2471a3" stroke-width="2.5"/>
+  <text x="680" y="169" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#1a4e73" text-anchor="middle">TSH · FSH · LH · ACTH</text>
+  <text x="680" y="192" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a4e73" text-anchor="middle">G 단백질 연결 수용체 (Gs)</text>
+  <text x="680" y="213" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a4e73" text-anchor="middle">→ cAMP 상승</text>
+  <text x="680" y="231" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a4e73" text-anchor="middle">표적 호르몬에 의해 되먹임 억제된다</text>
+
+  <line x1="680" y1="237" x2="680" y2="288" stroke="#2471a3" stroke-width="3" marker-end="url(#a1)"/>
+
+  <rect x="515" y="292" width="330" height="66" rx="8" fill="#ffffff" stroke="#2471a3" stroke-width="2"/>
+  <text x="680" y="316" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a4e73" text-anchor="middle">표적 내분비샘을 한 번 거친다</text>
+  <text x="680" y="338" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">갑상샘 / 부신겉질 / 생식샘</text>
+  <text x="680" y="354" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle">→ T4 · 코티솔 · 성호르몬</text>
+
+  <rect x="515" y="374" width="330" height="72" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="680" y="396" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a4e73" text-anchor="middle">구조도 두 무리로 갈린다</text>
+  <text x="680" y="417" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a4e73" text-anchor="middle">TSH·FSH·LH — α·β 이질이량체</text>
+  <text x="680" y="437" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1a4e73" text-anchor="middle">α는 거의 동일 → β가 특이성을 결정</text>
+
+  <rect x="515" y="456" width="330" height="44" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="680" y="474" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1a4e73" text-anchor="middle">ACTH — POMC 유래</text>
+  <text x="680" y="492" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a4e73" text-anchor="middle">앞쪽 13개 아미노산 = α-MSH → 색소침착</text>
+
+  <!-- 하단 -->
+  <rect x="30" y="518" width="840" height="66" rx="6" fill="#f4f6f6" stroke="#95a5a6" stroke-width="1.5"/>
+  <text x="44" y="539" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">이 한 장에 소크라티브 N08 1·2·3번이 전부 들어 있다.</text>
+  <text x="44" y="558" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">1번 — 직접 작용하는 둘은? (왼쪽 갈래 = GH·PRL)   ·   2번 — 당단백질 호르몬의 특이성은? (오른쪽 = β 소단위)</text>
+  <text x="44" y="577" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">3번 — GH 신호의 첫 단계는? (왼쪽 = 이량체화 + JAK2, Gs·cAMP가 아니다)</text>
+</svg>

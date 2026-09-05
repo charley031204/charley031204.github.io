@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <text x="440" y="34" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="21" font-weight="bold" fill="#1a1a1a">COX-1 vs COX-2 — 이 강의를 관통하는 하나의 축</text>
+
+  <!-- header row -->
+  <rect x="25" y="52" width="150" height="42" fill="#f2f2f2" stroke="#8a8a8a" stroke-width="1"/>
+  <rect x="180" y="52" width="330" height="42" fill="#d6e6f5" stroke="#2471a3" stroke-width="2"/>
+  <rect x="515" y="52" width="330" height="42" fill="#fadbd8" stroke="#c0392b" stroke-width="2"/>
+  <text x="100" y="79" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a">항목</text>
+  <text x="345" y="79" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="18" font-weight="bold" fill="#1b4f72">COX-1</text>
+  <text x="680" y="79" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="18" font-weight="bold" fill="#922b21">COX-2</text>
+
+  <!-- row 1 -->
+  <rect x="25" y="98" width="150" height="46" fill="#fafafa" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="180" y="98" width="330" height="46" fill="#ffffff" stroke="#2471a3" stroke-width="1"/>
+  <rect x="515" y="98" width="330" height="46" fill="#ffffff" stroke="#c0392b" stroke-width="1"/>
+  <text x="100" y="127" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">발현 양상</text>
+  <text x="345" y="127" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a">항상 발현 — 기본구성형</text>
+  <text x="680" y="127" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a">자극에 의해 발현 — 유도형</text>
+
+  <!-- row 2 -->
+  <rect x="25" y="148" width="150" height="46" fill="#fafafa" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="180" y="148" width="330" height="46" fill="#ffffff" stroke="#2471a3" stroke-width="1"/>
+  <rect x="515" y="148" width="330" height="46" fill="#ffffff" stroke="#c0392b" stroke-width="1"/>
+  <text x="100" y="177" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">분포</text>
+  <text x="345" y="177" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" fill="#1a1a1a">위장관 등 신체 전반 — 인체보호</text>
+  <text x="680" y="177" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" fill="#1a1a1a">염증부위 · 면역세포</text>
+
+  <!-- row 3 -->
+  <rect x="25" y="198" width="150" height="46" fill="#fafafa" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="180" y="198" width="330" height="46" fill="#ffffff" stroke="#2471a3" stroke-width="1"/>
+  <rect x="515" y="198" width="330" height="46" fill="#ffffff" stroke="#c0392b" stroke-width="1"/>
+  <text x="100" y="227" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">무엇에 반응하나</text>
+  <text x="345" y="227" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" fill="#1a1a1a">체액성 자극</text>
+  <text x="680" y="227" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" fill="#1a1a1a">성장인자 · LPS · cytokine</text>
+
+  <!-- row 4 -->
+  <rect x="25" y="248" width="150" height="46" fill="#fafafa" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="180" y="248" width="330" height="46" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+  <rect x="515" y="248" width="330" height="46" fill="#e6f5ea" stroke="#1e8449" stroke-width="2"/>
+  <text x="100" y="277" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">막았을 때</text>
+  <text x="345" y="277" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#c0392b">위장관 부작용 — 잃는 것</text>
+  <text x="680" y="277" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#1e8449">항염증 · 진통 — 얻는 것</text>
+
+  <!-- row 5 -->
+  <rect x="25" y="298" width="150" height="46" fill="#fafafa" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="180" y="298" width="330" height="46" fill="#ffffff" stroke="#2471a3" stroke-width="1"/>
+  <rect x="515" y="298" width="330" height="46" fill="#ffffff" stroke="#c0392b" stroke-width="1"/>
+  <text x="100" y="327" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">우세 억제 약물</text>
+  <text x="345" y="327" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" fill="#1a1a1a">Indomethacin · Sulindac</text>
+  <text x="680" y="327" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" fill="#1a1a1a">Celecoxib · Rofecoxib</text>
+
+  <!-- row 6 : textbook supplement -->
+  <rect x="25" y="348" width="150" height="58" fill="#f7f2e7" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="180" y="348" width="330" height="58" fill="#fdfbf5" stroke="#a08a55" stroke-width="1"/>
+  <rect x="515" y="348" width="330" height="58" fill="#fdfbf5" stroke="#a08a55" stroke-width="1"/>
+  <text x="100" y="372" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5b4a20">활성부위 크기</text>
+  <text x="100" y="392" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#8a7440">(교과서 보충)</text>
+  <text x="345" y="372" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5b4a20">통로가 좁다 (523번 자리가 큼)</text>
+  <text x="345" y="392" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5b4a20">coxib의 부피 큰 곁사슬이 못 들어감</text>
+  <text x="680" y="372" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5b4a20">523번이 Val — 옆에 곁주머니가 열림</text>
+  <text x="680" y="392" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5b4a20">coxib이 이 주머니에 끼워져 선택성 확보</text>
+
+  <!-- banner -->
+  <rect x="25" y="424" width="820" height="56" fill="#fff6d9" stroke="#c9a227" stroke-width="2" rx="6"/>
+  <text x="435" y="450" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="18" font-weight="bold" fill="#7d5a00">🎙️ &quot;효과는 COX-2, 위장관 부작용은 COX-1&quot;</text>
+  <text x="435" y="471" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5b4a20">교안 p.46의 결론 한 줄 · 27장과 28장 전체가 이 문장 위에 올라간다</text>
+</svg>

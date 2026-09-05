@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" width="880" height="600">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a1a1a"/>
+    </marker>
+    <marker id="arR" markerWidth="10" markerHeight="10" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+    <marker id="arG" markerWidth="10" markerHeight="10" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1e8449"/>
+    </marker>
+  </defs>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+    <text x="440" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#1a1a1a">시안화물 — 작용점 하나, 해독 3축</text>
+    <text x="440" y="52" text-anchor="middle" font-size="13" fill="#555555">CN⁻는 Fe³⁺에 달라붙는다. 세 해독제는 전부 "Fe³⁺를 어디에 두느냐" 싸움이다.</text>
+
+    <!-- mitochondria box -->
+    <rect x="30" y="70" width="400" height="222" fill="#f7f9fb" stroke="#34495e" stroke-width="2" rx="8"/>
+    <text x="230" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#34495e">미토콘드리아 전자전달계</text>
+
+    <rect x="55" y="110" width="62" height="46" fill="#d5dbdb" stroke="#7f8c8d"/>
+    <text x="86" y="139" text-anchor="middle" font-size="14" fill="#1a1a1a">I</text>
+    <rect x="127" y="110" width="52" height="46" fill="#d5dbdb" stroke="#7f8c8d"/>
+    <text x="153" y="139" text-anchor="middle" font-size="14" fill="#1a1a1a">II · III</text>
+    <rect x="191" y="110" width="136" height="46" fill="#f5b7b1" stroke="#c0392b" stroke-width="2.5"/>
+    <text x="259" y="130" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#c0392b">복합체 IV</text>
+    <text x="259" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">cytochrome oxidase</text>
+    <rect x="339" y="110" width="68" height="46" fill="#d5dbdb" stroke="#7f8c8d"/>
+    <text x="373" y="132" text-anchor="middle" font-size="13" fill="#1a1a1a">ATP</text>
+    <text x="373" y="149" text-anchor="middle" font-size="13" fill="#1a1a1a">합성효소</text>
+
+    <line x1="117" y1="133" x2="125" y2="133" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#ar)"/>
+    <line x1="179" y1="133" x2="189" y2="133" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#ar)"/>
+    <line x1="327" y1="133" x2="337" y2="133" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#ar)"/>
+
+    <text x="230" y="240" text-anchor="middle" font-size="13" fill="#1a1a1a">O₂ + 4e⁻ → H₂O 를 담당하는 마지막 관문</text>
+
+    <!-- CN block -->
+    <rect x="185" y="184" width="150" height="34" fill="#c0392b" rx="5"/>
+    <text x="260" y="207" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">CN⁻ 가 Fe³⁺에 결합</text>
+    <line x1="260" y1="184" x2="260" y2="162" stroke="#c0392b" stroke-width="3" marker-end="url(#arR)"/>
+
+    <text x="230" y="262" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">→ 세포호흡 정지 : 산소가 있어도 쓰지 못한다</text>
+    <text x="230" y="281" text-anchor="middle" font-size="13" fill="#1a1a1a">CO는 혈액(Hb)을 막고, CN⁻는 세포 안을 막는다</text>
+
+    <!-- clinical signs -->
+    <rect x="450" y="70" width="400" height="222" fill="#fdfefe" stroke="#2471a3" stroke-width="2" rx="8"/>
+    <text x="650" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">그래서 나타나는 소견</text>
+
+    <rect x="470" y="108" width="360" height="42" fill="#fadbd8" stroke="#c0392b"/>
+    <text x="650" y="126" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#c0392b">정맥혈이 밝은 적색</text>
+    <text x="650" y="143" text-anchor="middle" font-size="13" fill="#1a1a1a">조직이 O₂를 못 꺼내 쓰니 그대로 실려 돌아온다</text>
+
+    <rect x="470" y="156" width="360" height="34" fill="#eaf2f8" stroke="#2471a3"/>
+    <text x="650" y="178" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2471a3">bitter almond (쓴 아몬드) 냄새</text>
+
+    <rect x="470" y="196" width="360" height="34" fill="#f4f6f6" stroke="#7f8c8d"/>
+    <text x="650" y="218" text-anchor="middle" font-size="13" fill="#1a1a1a">일시적 중추 자극 → 저산소성 경련 → 사망</text>
+
+    <text x="650" y="252" text-anchor="middle" font-size="13" fill="#1a1a1a">노출원 : 살충 · 살서제, 금속 광택제, 사진 현상액</text>
+    <text x="650" y="271" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">질소 함유 플라스틱 연소 = 화재 현장의 숨은 위험</text>
+
+    <!-- antidote header -->
+    <rect x="30" y="300" width="820" height="34" fill="#1a5276" rx="5"/>
+    <text x="440" y="323" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">해독 3축 — ① 산소를 넣는다  ② CN⁻을 다른 Fe³⁺로 꾀어낸다  ③ 무독한 형태로 바꿔 버린다</text>
+
+    <!-- axis 1 -->
+    <rect x="30" y="346" width="255" height="130" fill="#eaf2f8" stroke="#2471a3" stroke-width="2" rx="6"/>
+    <text x="157" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#2471a3">① 100% O₂ 즉시</text>
+    <text x="157" y="394" text-anchor="middle" font-size="13" fill="#1a1a1a">기전을 되돌리지는 못하지만</text>
+    <text x="157" y="412" text-anchor="middle" font-size="13" fill="#1a1a1a">남은 효소를 밀어 돌린다</text>
+    <text x="157" y="440" text-anchor="middle" font-size="13" fill="#555555">— 모든 치료의 0번 —</text>
+    <text x="157" y="462" text-anchor="middle" font-size="13" fill="#1a1a1a">화재 현장이면 CO 동반 의심</text>
+
+    <!-- axis 2 -->
+    <rect x="298" y="346" width="272" height="130" fill="#fdf2f2" stroke="#c0392b" stroke-width="2" rx="6"/>
+    <text x="434" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">② Nitrite — 미끼를 만든다</text>
+    <text x="434" y="392" text-anchor="middle" font-size="13" fill="#1a1a1a">amyl nitrite · Na nitrite</text>
+    <text x="310" y="414" font-size="13" fill="#1a1a1a">Hb(Fe²⁺) → Met-Hb(Fe³⁺)</text>
+    <line x1="310" y1="424" x2="470" y2="424" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arR)"/>
+    <text x="310" y="443" font-size="13" font-weight="bold" fill="#c0392b">CN⁻이 효소 대신 Met-Hb로 옮겨간다</text>
+    <text x="310" y="464" font-size="13" fill="#555555">= 일부러 만든 Fe³⁺ 미끼로 빼내는 것</text>
+
+    <!-- axis 3 -->
+    <rect x="583" y="346" width="267" height="130" fill="#f2f9f4" stroke="#1e8449" stroke-width="2" rx="6"/>
+    <text x="716" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e8449">③ Na thiosulfate — 버린다</text>
+    <text x="595" y="394" font-size="13" fill="#1a1a1a">CN⁻ + S₂O₃²⁻</text>
+    <line x1="705" y1="389" x2="765" y2="389" stroke="#1e8449" stroke-width="1.5" marker-end="url(#arG)"/>
+    <text x="725" y="382" text-anchor="middle" font-size="13" fill="#1e8449">rhodanese</text>
+    <text x="775" y="394" font-size="13" font-weight="bold" fill="#1e8449">SCN⁻</text>
+    <text x="595" y="418" font-size="13" fill="#1a1a1a">무독한 티오시안산으로 바꿔 소변 배설</text>
+    <text x="595" y="442" font-size="13" fill="#1a1a1a">②가 붙잡아 둔 CN⁻을 ③이 치운다</text>
+    <text x="595" y="464" font-size="13" fill="#555555">→ 둘은 세트로 쓴다</text>
+
+    <!-- hydroxocobalamin -->
+    <rect x="30" y="490" width="820" height="46" fill="#fef9e7" stroke="#b9770e" stroke-width="2" rx="6"/>
+    <text x="440" y="510" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#b9770e">현재 국제 표준 1차 해독제 — Hydroxocobalamin (Cyanokit) : CN⁻과 결합해 무독한 cyanocobalamin(비타민 B₁₂)으로</text>
+    <text x="440" y="529" text-anchor="middle" font-size="13" fill="#1a1a1a">혈압을 떨어뜨리지 않고, Met-Hb을 만들지 않는다 → 화재 연기흡입(CO 동반)에서는 nitrite 대신 반드시 이쪽</text>
+
+    <!-- verdict -->
+    <rect x="30" y="548" width="820" height="38" fill="#1a1a1a" rx="5"/>
+    <text x="440" y="572" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#ffffff">시험 답안은 9판 기준(O₂ → nitrite → thiosulfate), 임상 판단은 hydroxocobalamin. 이 순서를 뒤집지 마라.</text>
+
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580" font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <text x="40" y="32" font-size="19" font-weight="bold" fill="#1a1a1a">Methimazole vs PTU — 표에서 뒤집힌 칸은 딱 하나다</text>
+  <text x="40" y="54" font-size="12" fill="#555555">초록 = 그 약이 유리한 칸 · 빨강 = 불리한 칸. 위에서 네 줄은 전부 methimazole이 초록인데, ★ 태반 통과 한 줄에서만 색이 뒤집힌다.</text>
+
+  <!-- header -->
+  <rect x="40" y="76" width="200" height="48" fill="#e9e9e9" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="76" width="310" height="48" fill="#e9e9e9" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="76" width="310" height="48" fill="#e9e9e9" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="106" font-size="14" font-weight="bold" fill="#1a1a1a">항목</text>
+  <text x="256" y="106" font-size="15" font-weight="bold" fill="#1a1a1a">Methimazole</text>
+  <text x="566" y="106" font-size="15" font-weight="bold" fill="#1a1a1a">PTU</text>
+
+  <!-- row 1 -->
+  <rect x="40" y="124" width="200" height="52" fill="#f7f7f7" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="124" width="310" height="52" fill="#eafaf1" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="124" width="310" height="52" fill="#fdecea" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="155" font-size="13" font-weight="bold" fill="#1a1a1a">효력 (potency)</text>
+  <text x="256" y="155" font-size="13" fill="#1e8449">약 10배 크다</text>
+  <text x="566" y="155" font-size="13" fill="#c0392b">기준</text>
+
+  <!-- row 2 -->
+  <rect x="40" y="176" width="200" height="52" fill="#f7f7f7" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="176" width="310" height="52" fill="#eafaf1" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="176" width="310" height="52" fill="#fdecea" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="207" font-size="13" font-weight="bold" fill="#1a1a1a">혈장 반감기</text>
+  <text x="256" y="207" font-size="13" fill="#1e8449">6시간</text>
+  <text x="566" y="207" font-size="13" fill="#c0392b">1.5시간</text>
+
+  <!-- row 3 -->
+  <rect x="40" y="228" width="200" height="52" fill="#f7f7f7" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="228" width="310" height="52" fill="#eafaf1" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="228" width="310" height="52" fill="#fdecea" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="259" font-size="13" font-weight="bold" fill="#1a1a1a">투여 횟수</text>
+  <text x="256" y="259" font-size="13" fill="#1e8449">1일 1회로 충분</text>
+  <text x="566" y="259" font-size="13" fill="#c0392b">1일 여러 번</text>
+
+  <!-- row 4 -->
+  <rect x="40" y="280" width="200" height="52" fill="#f7f7f7" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="280" width="310" height="52" fill="#eafaf1" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="280" width="310" height="52" fill="#fdecea" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="311" font-size="13" font-weight="bold" fill="#1a1a1a">간독성</text>
+  <text x="256" y="311" font-size="12" fill="#1e8449">담즙정체성 간손상 (더 가볍다)</text>
+  <text x="566" y="311" font-size="12" fill="#c0392b">중증 간염 → 1차 선택약에서 밀림</text>
+
+  <!-- row 5 : FLIPPED -->
+  <rect x="40" y="332" width="200" height="56" fill="#fff8e1" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="332" width="310" height="56" fill="#fdecea" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="332" width="310" height="56" fill="#eafaf1" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="366" font-size="13" font-weight="bold" fill="#b7791f">★ 태반 통과</text>
+  <text x="256" y="359" font-size="12" fill="#c0392b">통과함 — 선천성 기형 위험</text>
+  <text x="256" y="378" font-size="12" fill="#c0392b">(FDA pregnancy category D)</text>
+  <text x="566" y="359" font-size="12" fill="#1e8449">단백결합이 강해 적게 통과</text>
+  <text x="566" y="378" font-size="12" fill="#1e8449">→ 임신 제1삼분기의 선택약</text>
+  <rect x="40" y="332" width="820" height="56" fill="none" stroke="#b7791f" stroke-width="3.5"/>
+
+  <!-- row 6 -->
+  <rect x="40" y="388" width="200" height="52" fill="#f7f7f7" stroke="#888888" stroke-width="1.5"/>
+  <rect x="240" y="388" width="310" height="52" fill="#eafaf1" stroke="#888888" stroke-width="1.5"/>
+  <rect x="550" y="388" width="310" height="52" fill="#fdecea" stroke="#888888" stroke-width="1.5"/>
+  <text x="56" y="419" font-size="13" font-weight="bold" fill="#1a1a1a">일반 선택</text>
+  <text x="256" y="419" font-size="12" fill="#1e8449">1차 선택약 (성인·소아 모두)</text>
+  <text x="566" y="419" font-size="12" fill="#c0392b">제1삼분기 · 중독발작 · MMI 부작용자</text>
+
+  <!-- footer block -->
+  <rect x="40" y="464" width="820" height="76" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="56" y="492" font-size="14" font-weight="bold" fill="#2471a3">표 밖의 추가 작용 (+) — 말초 D1 억제로 T4 → T3 전환까지 차단: PTU에만 있다</text>
+  <text x="56" y="516" font-size="12" fill="#1a1a1a">뒤집힌 칸은 태반 통과 하나뿐이다. D1 억제는 표의 칸이 뒤집힌 것이 아니라 PTU에만 따로 얹힌 두 번째 작용이며,</text>
+  <text x="56" y="534" font-size="12" fill="#1a1a1a">갑상샘중독발작에서 PTU를 고르는 근거가 된다.</text>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif" fill="#1a1a1a">
+
+    <text x="440" y="28" font-size="19" font-weight="bold" text-anchor="middle">Ergot alkaloid 수용체 프로파일 — 네 칸으로 읽는 표 (교안 p.21)</text>
+    <text x="440" y="50" font-size="13" text-anchor="middle" fill="#6c3483">같은 ergoline 골격에서 갈라진 약들이 α · dopamine · 5-HT2 세 축에 서로 다른 부호로 붙는다</text>
+
+    <rect x="30" y="62" width="160" height="38" fill="#e8eef4" stroke="#555555"/>
+    <rect x="190" y="62" width="105" height="38" fill="#e8eef4" stroke="#555555"/>
+    <rect x="295" y="62" width="105" height="38" fill="#e8eef4" stroke="#555555"/>
+    <rect x="400" y="62" width="140" height="38" fill="#e8eef4" stroke="#555555"/>
+    <rect x="540" y="62" width="110" height="38" fill="#fdeceb" stroke="#c0392b" stroke-width="2"/>
+    <rect x="650" y="62" width="200" height="38" fill="#e8eef4" stroke="#555555"/>
+    <text x="110" y="86" font-size="14" font-weight="bold" text-anchor="middle">Ergot alkaloid</text>
+    <text x="242" y="86" font-size="14" font-weight="bold" text-anchor="middle">α 수용체</text>
+    <text x="347" y="86" font-size="14" font-weight="bold" text-anchor="middle">Dopamine</text>
+    <text x="470" y="86" font-size="14" font-weight="bold" text-anchor="middle">5-HT2</text>
+    <text x="595" y="86" font-size="14" font-weight="bold" text-anchor="middle" fill="#c0392b">자궁수축</text>
+    <text x="750" y="86" font-size="14" font-weight="bold" text-anchor="middle">임상에서 무엇으로 쓰나</text>
+
+    <rect x="30" y="100" width="160" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="190" y="100" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="295" y="100" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="400" y="100" width="140" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="540" y="100" width="110" height="46" fill="#fafafa" stroke="#999999"/>
+    <rect x="650" y="100" width="200" height="46" fill="#ffffff" stroke="#999999"/>
+    <text x="110" y="129" font-size="14" font-weight="bold" text-anchor="middle">Bromocriptine</text>
+    <text x="242" y="129" font-size="15" text-anchor="middle" fill="#2471a3">−</text>
+    <text x="347" y="129" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e8449">+++</text>
+    <text x="470" y="129" font-size="15" text-anchor="middle" fill="#2471a3">−</text>
+    <text x="595" y="129" font-size="15" text-anchor="middle">0</text>
+    <text x="750" y="129" font-size="13" text-anchor="middle">뇌하수체 D2 효능 → prolactin 억제</text>
+
+    <rect x="30" y="146" width="160" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="190" y="146" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="295" y="146" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="400" y="146" width="140" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="540" y="146" width="110" height="46" fill="#fdeceb" stroke="#c0392b" stroke-width="2"/>
+    <rect x="650" y="146" width="200" height="46" fill="#ffffff" stroke="#999999"/>
+    <text x="110" y="175" font-size="14" font-weight="bold" text-anchor="middle">Ergonovine</text>
+    <text x="242" y="175" font-size="15" text-anchor="middle" fill="#1e8449">+</text>
+    <text x="347" y="175" font-size="15" text-anchor="middle" fill="#1e8449">+</text>
+    <text x="470" y="175" font-size="15" text-anchor="middle" fill="#6c3483">− (PA)</text>
+    <text x="595" y="175" font-size="15" font-weight="bold" text-anchor="middle" fill="#c0392b">+++</text>
+    <text x="750" y="175" font-size="13" text-anchor="middle">후기 자궁출혈 (산과 전용)</text>
+
+    <rect x="30" y="192" width="160" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="190" y="192" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="295" y="192" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="400" y="192" width="140" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="540" y="192" width="110" height="46" fill="#fdeceb" stroke="#c0392b" stroke-width="2"/>
+    <rect x="650" y="192" width="200" height="46" fill="#ffffff" stroke="#999999"/>
+    <text x="110" y="221" font-size="14" font-weight="bold" text-anchor="middle">Ergotamine</text>
+    <text x="242" y="221" font-size="15" text-anchor="middle" fill="#6c3483">−− (PA)</text>
+    <text x="347" y="221" font-size="15" text-anchor="middle">0</text>
+    <text x="470" y="221" font-size="15" text-anchor="middle" fill="#6c3483">+ (PA)</text>
+    <text x="595" y="221" font-size="15" font-weight="bold" text-anchor="middle" fill="#c0392b">+++</text>
+    <text x="750" y="221" font-size="13" text-anchor="middle">예측가능·지속·강력한 혈관수축</text>
+
+    <rect x="30" y="238" width="160" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="190" y="238" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="295" y="238" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="400" y="238" width="140" height="46" fill="#f2f0f8" stroke="#6c3483" stroke-width="2"/>
+    <rect x="540" y="238" width="110" height="46" fill="#fafafa" stroke="#999999"/>
+    <rect x="650" y="238" width="200" height="46" fill="#ffffff" stroke="#999999"/>
+    <text x="110" y="261" font-size="14" font-weight="bold" text-anchor="middle">LSD</text>
+    <text x="110" y="277" font-size="12" text-anchor="middle">(lysergic acid diethylamide)</text>
+    <text x="242" y="266" font-size="15" text-anchor="middle">0</text>
+    <text x="347" y="266" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e8449">+++</text>
+    <text x="470" y="258" font-size="14" text-anchor="middle" fill="#2471a3">−−− (말초)</text>
+    <text x="470" y="276" font-size="14" font-weight="bold" text-anchor="middle" fill="#c0392b">++ in CNS</text>
+    <text x="595" y="266" font-size="15" text-anchor="middle" fill="#1e8449">+</text>
+    <text x="750" y="266" font-size="13" text-anchor="middle">중추 5-HT2A 부분효능 → 환각</text>
+
+    <rect x="30" y="284" width="160" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="190" y="284" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="295" y="284" width="105" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="400" y="284" width="140" height="46" fill="#ffffff" stroke="#999999"/>
+    <rect x="540" y="284" width="110" height="46" fill="#fafafa" stroke="#999999"/>
+    <rect x="650" y="284" width="200" height="46" fill="#ffffff" stroke="#999999"/>
+    <text x="110" y="313" font-size="14" font-weight="bold" text-anchor="middle">Methysergide</text>
+    <text x="242" y="313" font-size="15" text-anchor="middle">+/0</text>
+    <text x="347" y="313" font-size="15" text-anchor="middle">+/0</text>
+    <text x="470" y="313" font-size="15" text-anchor="middle" fill="#6c3483">−−− (PA)</text>
+    <text x="595" y="313" font-size="15" text-anchor="middle">+/0</text>
+    <text x="750" y="313" font-size="13" text-anchor="middle">편두통 예방 (급성기 아님)</text>
+
+    <rect x="30" y="348" width="820" height="52" rx="6" fill="#f7f7f7" stroke="#888888"/>
+    <text x="45" y="368" font-size="13">기호 읽는 법 — <tspan fill="#1e8449" font-weight="bold">+ 효능(작용제)</tspan> · <tspan fill="#2471a3" font-weight="bold">− 길항</tspan> · 0 작용 없음 · 기호 개수 = 그 수용체에 대한 상대 친화력</text>
+    <text x="45" y="390" font-size="13"><tspan fill="#6c3483" font-weight="bold">PA = 부분효능제</tspan> — 부호가 −라도 자극 성분을 함께 가진다. 이 한 칸이 25-28의 정답 근거다.</text>
+
+    <rect x="30" y="410" width="820" height="54" rx="6" fill="#fffbe6" stroke="#b7950b" stroke-width="2"/>
+    <text x="45" y="430" font-size="14" font-weight="bold" fill="#c0392b">★ 교안 p.21 본문 — "5-HT2 agonist·partial agonist 효과 약물은 자궁에 강력한 자극"</text>
+    <text x="45" y="452" font-size="13">→ 자궁수축 +++인 둘(ergonovine · ergotamine)이 5-HT2 칸에 PA를 달고 있는 것은 우연이 아니다. 🎙️ "자궁 관련해서 물어보면 이 두 개가 답"</text>
+
+  </g>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="900" height="530">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="arB" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#2471a3"/>
+    </marker>
+    <marker id="arL" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#1e8449"/>
+    </marker>
+    <marker id="inh" markerWidth="12" markerHeight="12" refX="4" refY="6" orient="auto">
+      <path d="M2,0 L2,12" stroke="#c0392b" stroke-width="3" fill="none"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="32" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="19" font-weight="bold" fill="#1a1a1a">RANK–RANKL–OPG 축과 골다공증 약물의 작용점</text>
+  <text x="450" y="56" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#555555">골모세포가 내는 신호(RANKL·OPG)가 파골세포의 운명을 정한다 — 모든 약이 이 축의 한 지점에 꽂힌다</text>
+
+  <!-- 상단 lane: OPG · Estrogen -->
+  <rect x="385" y="100" width="100" height="52" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="435" y="122" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1e8449">OPG</text>
+  <text x="435" y="141" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">미끼수용체</text>
+
+  <rect x="545" y="100" width="190" height="52" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="640" y="121" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">Estrogen · SERM</text>
+  <text x="640" y="140" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">OPG ↑ · RANKL ↓</text>
+  <line x1="543" y1="126" x2="491" y2="126" stroke="#2471a3" stroke-width="2.5" marker-end="url(#arB)"/>
+
+  <text x="750" y="123" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">골모세포에 작용해</text>
+  <text x="750" y="141" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">비율 자체를 바꾼다</text>
+
+  <!-- 골모세포 → OPG 폴리라인 -->
+  <polyline points="270,188 270,126 383,126" fill="none" stroke="#1e8449" stroke-width="2.5" marker-end="url(#arL)"/>
+  <!-- OPG ⊣ RANKL -->
+  <line x1="435" y1="154" x2="435" y2="186" stroke="#c0392b" stroke-width="2.5" marker-end="url(#inh)"/>
+  <text x="500" y="180" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a">RANKL을 먼저 가로챈다 — RANKL / OPG 비율이 뼈흡수의 세기</text>
+
+  <!-- 본 축 lane -->
+  <rect x="25" y="190" width="130" height="64" rx="6" fill="#f4f6f7" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="90" y="214" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Sclerostin</text>
+  <text x="90" y="233" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#555555">골세포(osteocyte)가</text>
+  <text x="90" y="248" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#555555">분비</text>
+
+  <line x1="157" y1="222" x2="194" y2="222" stroke="#c0392b" stroke-width="2.5" marker-end="url(#inh)"/>
+  <text x="176" y="180" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#c0392b">Wnt 차단</text>
+
+  <rect x="200" y="190" width="140" height="64" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="270" y="216" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1e8449">골모세포</text>
+  <text x="270" y="236" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">osteoblast</text>
+
+  <line x1="342" y1="222" x2="381" y2="222" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <rect x="385" y="190" width="100" height="64" rx="6" fill="#fdedec" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="435" y="218" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">RANKL</text>
+  <text x="435" y="238" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1a1a1a">골모세포가 발현</text>
+
+  <line x1="487" y1="222" x2="526" y2="222" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="506" y="180" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#555555">결합</text>
+
+  <rect x="530" y="190" width="140" height="64" rx="6" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text x="600" y="214" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">파골전구세포</text>
+  <text x="600" y="234" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">표면 수용체 = RANK</text>
+
+  <line x1="672" y1="222" x2="711" y2="222" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="691" y="180" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#555555">분화·융합</text>
+
+  <rect x="715" y="190" width="160" height="64" rx="6" fill="#fadbd8" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="795" y="214" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">성숙 파골세포</text>
+  <text x="795" y="236" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">→ 뼈흡수 ↑</text>
+
+  <!-- 약물 밴드 -->
+  <line x1="90" y1="306" x2="90" y2="260" stroke="#c0392b" stroke-width="2.5" marker-end="url(#inh)"/>
+  <line x1="270" y1="306" x2="270" y2="258" stroke="#1e8449" stroke-width="2.5" marker-end="url(#arL)"/>
+  <line x1="435" y1="306" x2="435" y2="260" stroke="#c0392b" stroke-width="2.5" marker-end="url(#inh)"/>
+  <line x1="795" y1="306" x2="795" y2="260" stroke="#c0392b" stroke-width="2.5" marker-end="url(#inh)"/>
+
+  <rect x="15" y="308" width="150" height="76" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="90" y="330" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">Romosozumab</text>
+  <text x="90" y="350" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1a1a1a">항 sclerostin 항체</text>
+  <text x="90" y="370" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1e8449">Wnt 회복 → 형성 ↑</text>
+
+  <rect x="185" y="308" width="170" height="76" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="270" y="330" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">Teriparatide</text>
+  <text x="270" y="350" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1a1a1a">간헐 PTH · Abaloparatide</text>
+  <text x="270" y="370" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1e8449">cAMP ↑ → IGF-1 ↑</text>
+
+  <rect x="360" y="308" width="150" height="76" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="435" y="330" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">Denosumab</text>
+  <text x="435" y="350" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1a1a1a">항 RANKL 항체</text>
+  <text x="435" y="370" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#c0392b">OPG를 흉내 낸다</text>
+
+  <rect x="705" y="308" width="180" height="76" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="795" y="330" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">Bisphosphonate</text>
+  <text x="795" y="350" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#1a1a1a">FPP synthase 차단</text>
+  <text x="795" y="370" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#c0392b">파골세포 자멸사</text>
+
+  <!-- 요약 밴드 -->
+  <rect x="25" y="415" width="850" height="90" rx="8" fill="#fbfcfc" stroke="#aab7b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="45" y="440" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a">읽는 법 — 화살표 끝이 ▶ 이면 밀고, ⊥ 이면 막는다.</text>
+  <text x="45" y="463" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a">왼쪽 셋(Romosozumab · Teriparatide · Estrogen/SERM)은 골모세포 쪽을 건드리고, 오른쪽 둘(Denosumab · Bisphosphonate)은 파골세포 쪽을 끊는다.</text>
+  <text x="45" y="486" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a">RANKL을 올리는 것 — 비타민 D · PTH(지속) · PGE₂ · IL-1 / 내리는 것 — 에스트로겐(동시에 OPG는 올린다).</text>
+</svg>

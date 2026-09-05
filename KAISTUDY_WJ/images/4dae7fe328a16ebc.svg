@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="arR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1e8449"/>
+    </marker>
+  </defs>
+  <text x="450" y="32" font-family="Malgun Gothic, sans-serif" font-size="19" font-weight="bold" fill="#1a1a1a" text-anchor="middle">유기인계 vs 카바메이트 — 결합 방식과 aging 시간축</text>
+
+  <rect x="40" y="52" width="390" height="56" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="235" y="76" font-family="Malgun Gothic, sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">유기인계 organophosphates</text>
+  <text x="235" y="97" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">dichlorvos · malathion · parathion</text>
+
+  <rect x="470" y="52" width="390" height="56" rx="6" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="665" y="76" font-family="Malgun Gothic, sans-serif" font-size="15" font-weight="bold" fill="#2471a3" text-anchor="middle">카바메이트 carbamates</text>
+  <text x="665" y="97" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">aldicarb · carbaryl · dimetan · isolan</text>
+
+  <line x1="235" y1="108" x2="235" y2="138" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="665" y1="108" x2="665" y2="138" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="40" y="142" width="390" height="52" rx="6" fill="#ffffff" stroke="#c0392b" stroke-width="2"/>
+  <text x="235" y="164" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" fill="#c0392b" text-anchor="middle">AChE 에스터 부위 인산화</text>
+  <text x="235" y="184" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">phosphorylation — 비가역</text>
+
+  <rect x="470" y="142" width="390" height="52" rx="6" fill="#ffffff" stroke="#2471a3" stroke-width="2"/>
+  <text x="665" y="164" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" fill="#2471a3" text-anchor="middle">AChE 에스터 부위 카르바모일화</text>
+  <text x="665" y="184" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">carbamylation — 가역</text>
+
+  <path d="M235,194 L235,214 L450,214 L450,236" fill="none" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M665,194 L665,214 L450,214" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+  <rect x="150" y="240" width="600" height="64" rx="6" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="450" y="263" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a" text-anchor="middle">AChE 억제 → 시냅스 ACh 축적 → 콜린성 위기 (공통)</text>
+  <text x="450" y="288" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">DUMBBELS · 설사 배뇨 축동 서맥 기관지분비 구토 눈물 타액분비</text>
+
+  <text x="40" y="345" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">시간축 — 결합한 뒤에 무엇이 달라지는가</text>
+
+  <text x="40" y="378" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">유기인계</text>
+  <line x1="130" y1="398" x2="860" y2="398" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="130" y="382" width="330" height="32" fill="#e8f6ee" stroke="#1e8449" stroke-width="2"/>
+  <text x="295" y="403" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#1e8449" text-anchor="middle">2-PAM 유효 — 인산기를 떼어 효소 재생</text>
+  <rect x="460" y="382" width="390" height="32" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="655" y="403" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="middle">영구적 억제 — 2-PAM 무효 (수일~수주 지속)</text>
+  <line x1="460" y1="370" x2="460" y2="382" stroke="#c0392b" stroke-width="2"/>
+  <text x="460" y="364" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="middle">aging — 알킬기 이탈</text>
+
+  <text x="40" y="463" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">카바메이트</text>
+  <line x1="130" y1="483" x2="860" y2="483" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="130" y="467" width="250" height="32" fill="#eaf2fa" stroke="#2471a3" stroke-width="2"/>
+  <text x="255" y="488" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#2471a3" text-anchor="middle">수분~수시간 내 자연 가수분해</text>
+  <rect x="380" y="467" width="470" height="32" fill="#e8f6ee" stroke="#1e8449" stroke-width="2"/>
+  <text x="615" y="488" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#1e8449" text-anchor="middle">효소가 저절로 회복 — 2-PAM 불필요 (carbaryl에서는 유해 가능)</text>
+
+  <rect x="40" y="518" width="820" height="46" rx="6" fill="#f4f4f4" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="450" y="538" font-family="Malgun Gothic, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Atropine은 효소가 아니라 무스카린 수용체를 막는 약 — 시간축과 무관하게 양쪽 모두 필수 · 대량</text>
+  <text x="450" y="557" font-family="Malgun Gothic, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">두 계열이 갈리는 칸은 오직 둘 — 되돌릴 수 있는가, 그리고 2-PAM이 필요한가</text>
+</svg>

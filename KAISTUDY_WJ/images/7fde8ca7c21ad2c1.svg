@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 640" width="880" height="640">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+</marker>
+<marker id="inh" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<rect x="0" y="0.5" width="2.2" height="9" fill="#c0392b"/>
+</marker>
+</defs>
+<g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+<text x="440" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">TXA2 와 PGI2 — 마주 보는 두 산물</text>
+
+<rect x="30" y="46" width="380" height="42" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+<text x="220" y="73" text-anchor="middle" font-size="16" font-weight="bold" fill="#c0392b">혈소판 (platelet) — 무핵</text>
+
+<rect x="470" y="46" width="380" height="42" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="660" y="73" text-anchor="middle" font-size="16" font-weight="bold" fill="#2471a3">혈관 내피세포 (endothelium)</text>
+
+<line x1="220" y1="90" x2="220" y2="114" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="660" y1="90" x2="660" y2="114" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="120" y="116" width="200" height="38" rx="5" fill="#e8f4ea" stroke="#1e8449" stroke-width="1.6"/>
+<text x="220" y="141" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e8449">COX-1 (기본구성형)</text>
+
+<rect x="560" y="116" width="200" height="38" rx="5" fill="#e8f4ea" stroke="#1e8449" stroke-width="1.6"/>
+<text x="660" y="141" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e8449">COX-2 기여 큼</text>
+
+<line x1="220" y1="156" x2="220" y2="178" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="660" y1="156" x2="660" y2="178" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="145" y="180" width="150" height="40" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+<text x="220" y="206" text-anchor="middle" font-size="16" font-weight="bold" fill="#c0392b">TXA2</text>
+
+<rect x="585" y="180" width="150" height="40" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="660" y="206" text-anchor="middle" font-size="16" font-weight="bold" fill="#2471a3">PGI2</text>
+
+<line x1="220" y1="222" x2="220" y2="244" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="660" y1="222" x2="660" y2="244" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="90" y="246" width="260" height="60" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.4"/>
+<text x="220" y="267" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">TP 수용체 · Gq</text>
+<text x="220" y="288" text-anchor="middle" font-size="14" fill="#1a1a1a">PLC → 세포내 Ca2+ 증가</text>
+
+<rect x="530" y="246" width="260" height="60" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.4"/>
+<text x="660" y="267" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">IP 수용체 · Gs</text>
+<text x="660" y="288" text-anchor="middle" font-size="14" fill="#1a1a1a">AC → cAMP 증가 → Ca2+ 감소</text>
+
+<line x1="220" y1="308" x2="220" y2="330" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="660" y1="308" x2="660" y2="330" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="70" y="332" width="300" height="58" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+<text x="220" y="353" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b">혈소판 응집 촉진</text>
+<text x="220" y="375" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b">혈관 수축</text>
+
+<rect x="510" y="332" width="300" height="58" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="660" y="353" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">혈소판 응집 억제</text>
+<text x="660" y="375" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">혈관 확장</text>
+
+<rect x="30" y="414" width="820" height="98" rx="6" fill="#fafafa" stroke="#c0392b" stroke-width="1.6"/>
+<text x="45" y="437" font-size="15" font-weight="bold" fill="#c0392b">저용량 aspirin 이 왜 항혈소판제가 되는가</text>
+<text x="45" y="460" font-size="14" fill="#1a1a1a">Aspirin ⊣ COX — 아세틸화 = 비가역 (다른 NSAID 는 가역)</text>
+<text x="45" y="482" font-size="14" fill="#c0392b">혈소판은 무핵 → COX 를 다시 만들지 못함 → 그 혈소판이 교체될 때까지 TXA2 가 끊긴다</text>
+<text x="45" y="502" font-size="14" fill="#2471a3">내피세포는 핵이 있어 COX 를 재합성 → PGI2 는 회복된다 (증가가 아니라 상대적 보존)</text>
+
+<rect x="30" y="524" width="820" height="98" rx="6" fill="#fafafa" stroke="#999999" stroke-width="1.3"/>
+<text x="45" y="547" font-size="15" font-weight="bold" fill="#1a1a1a">거꾸로 — COX-2 선택적 억제제 (celecoxib) 는 왜 심장보호효과가 없는가</text>
+<text x="45" y="570" font-size="14" fill="#2471a3">내피의 PGI2 (항응집) 는 막히는데</text>
+<text x="45" y="592" font-size="14" fill="#c0392b">혈소판의 TXA2 (응집 촉진) 는 COX-1 산물이라 그대로 남는다 → 저울이 응집 쪽으로 기운다</text>
+<text x="45" y="612" font-size="13" fill="#444444">위장관 부작용은 현저히 적다 · 심혈관계 부작용으로 rofecoxib · valdecoxib 는 시장 철회 (교안 p.21)</text>
+
+</g>
+</svg>

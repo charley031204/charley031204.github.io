@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="900" height="680">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#c0392b"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1e8449"/>
+    </marker>
+    <marker id="a3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="20" font-weight="bold" fill="#1a1a1a" text-anchor="middle">11β-HSD 두 종류 — 같은 코티솔이 조직마다 켜지고 꺼진다</text>
+  <text x="450" y="52" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#555555" text-anchor="middle">교안 p.11 그림 39-4 — 소크라티브 N12 3번과 7번이 이 그림 하나에서 갈라져 나온다</text>
+
+  <!-- central interconversion -->
+  <rect x="110" y="90" width="240" height="70" rx="8" fill="#f5b7b1" stroke="#922b21" stroke-width="2.4"/>
+  <text x="230" y="120" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#7b241c" text-anchor="middle">Cortisol</text>
+  <text x="230" y="142" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#7b241c" text-anchor="middle">활성형 — GR·MR 둘 다 붙는다</text>
+
+  <rect x="550" y="90" width="240" height="70" rx="8" fill="#eeeeee" stroke="#666666" stroke-width="2.4"/>
+  <text x="670" y="120" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#333333" text-anchor="middle">Cortisone</text>
+  <text x="670" y="142" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#333333" text-anchor="middle">불활성 — GR에도 MR에도 안 붙는다</text>
+
+  <path d="M354,110 L546,110" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#a1)"/>
+  <text x="450" y="100" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">11β-HSD2  (끈다)</text>
+
+  <path d="M546,142 L354,142" fill="none" stroke="#1e8449" stroke-width="3" marker-end="url(#a2)"/>
+  <text x="450" y="164" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1e8449" text-anchor="middle">11β-HSD1  (켠다)</text>
+
+  <!-- 4 tissue panels -->
+  <rect x="40" y="205" width="400" height="150" rx="8" fill="#fdedec" stroke="#c0392b" stroke-width="1.8"/>
+  <text x="58" y="230" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">① 콩팥 집합관 · 대장 상피 — 11β-HSD2</text>
+  <text x="58" y="254" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">코티솔 → 코티손으로 미리 꺼 버린다</text>
+  <text x="58" y="276" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">MR은 알도스테론과 코티솔을 구별하지 못하는데,</text>
+  <text x="58" y="296" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">혈중 코티솔이 알도스테론보다 훨씬 진하다.</text>
+  <text x="58" y="318" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#c0392b">→ MR 앞을 지키는 문지기 (N12 3번)</text>
+  <text x="58" y="342" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#8e44ad">감초 glycyrrhizin ⊣ 11β-HSD2 → 가성 알도스테론증</text>
+
+  <rect x="460" y="205" width="400" height="150" rx="8" fill="#eafaf1" stroke="#1e8449" stroke-width="1.8"/>
+  <text x="478" y="230" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1e8449">② 간 · 염증조직 — 11β-HSD1</text>
+  <text x="478" y="254" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">코티손 → 활성형 코티솔로 되살린다</text>
+  <text x="478" y="276" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">염증성 사이토카인이 혈관 평활근·대식세포에서</text>
+  <text x="478" y="296" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">HSD1은 올리고 HSD2는 내린다 → 국소 작용 증대</text>
+  <text x="478" y="318" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1e8449">→ 11-케토 전구약물을 활성화하는 곳도 여기다</text>
+  <text x="478" y="342" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#2471a3">Cortisone → Cortisol  ·  Prednisone → Prednisolone</text>
+
+  <rect x="40" y="375" width="400" height="132" rx="8" fill="#fdf2e0" stroke="#b9770e" stroke-width="1.8"/>
+  <text x="58" y="400" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#b9770e">③ 피부 — 11β-HSD1이 없다 (시험 단골)</text>
+  <text x="58" y="424" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">되살릴 효소가 없으니 11-케토(=O) 제제는</text>
+  <text x="58" y="444" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">피부에서 끝내 활성화되지 못한다.</text>
+  <text x="58" y="468" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#c0392b">도포용은 11-히드록시(–OH)형이어야 한다</text>
+  <text x="58" y="492" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">코티손 · 프레드니손을 발라도 듣지 않는 이유</text>
+
+  <rect x="460" y="375" width="400" height="132" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="1.8"/>
+  <text x="478" y="400" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#2471a3">④ 태반 — 11β-HSD2가 지키는 관문</text>
+  <text x="478" y="424" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">넘어오는 활성형 스테로이드를 되돌려 놓는다.</text>
+  <text x="478" y="446" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">프레드니솔론 → 프레드니손으로 되돌아감 → 태아 안전</text>
+  <text x="478" y="468" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">덱사메타손 · 베타메타손 → 거의 안 잘려 그대로 통과</text>
+  <text x="478" y="492" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#2471a3">→ 임신 중 약물 선택이 정반대가 되는 이유 (N12 7번)</text>
+
+  <!-- bottom rule -->
+  <rect x="40" y="530" width="820" height="124" rx="8" fill="#fbfbfb" stroke="#999999" stroke-width="1.4"/>
+  <text x="60" y="556" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a">한 줄로 외우는 법</text>
+  <text x="60" y="582" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#c0392b">2형은 지키는 효소</tspan> — 코티솔을 꺼서 수용체(콩팥의 MR)와 태아(태반)를 지킨다. 지킬 곳에 배치돼 있다.</text>
+  <text x="60" y="606" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#1e8449">1형은 켜는 효소</tspan> — 코티손을 되살려 간과 염증 현장에서 작용을 키운다. 쓸 곳에 배치돼 있다.</text>
+  <text x="60" y="634" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#2471a3">11번 탄소가 <tspan font-weight="bold">–OH면 그 자체로 활성, =O면 불활성</tspan>이고, =O를 –OH로 되돌리는 것이 바로 간의 11β-HSD1이다.</text>
+</svg>

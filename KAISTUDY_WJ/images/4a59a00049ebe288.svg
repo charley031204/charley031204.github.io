@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>
+.t{font-family:"Malgun Gothic","맑은 고딕",sans-serif;}
+.ttl{font-size:18px;font-weight:bold;fill:#1a1a1a;}
+.band{font-size:14px;font-weight:bold;fill:#1a1a1a;}
+.hd{font-size:13px;fill:#ffffff;font-weight:bold;}
+.cell{font-size:13px;fill:#1a1a1a;}
+.bold{font-size:13px;fill:#1a1a1a;font-weight:bold;}
+.note{font-size:12.5px;fill:#1a1a1a;}
+</style>
+
+<text class="t ttl" x="20" y="28">삼중반응과 혈압 하강 — 같은 H1인데 세포가 다르고, 혈관은 두 수용체가 나눠 만든다</text>
+
+<text class="t band" x="22" y="58">① 삼중반응 (Triple response, Lewis 1927) — 히스타민 진피내 주사 · 셋 다 H1</text>
+
+<rect x="25" y="70" width="850" height="30" fill="#34495e"/>
+<text class="t hd" x="38" y="90">현상</text>
+<text class="t hd" x="230" y="90">관여 세포</text>
+<text class="t hd" x="435" y="90">기전</text>
+
+<rect x="25" y="100" width="850" height="36" fill="#ffffff" stroke="#d5d8dc"/>
+<text class="t bold" x="38" y="124">① 국소 붉은 반점 (red spot)</text>
+<text class="t cell" x="230" y="124">모세관 내피세포</text>
+<text class="t cell" x="435" y="124">H1 → eNOS 활성화 → NO↑ → 평활근 이완 → 모세관 확장</text>
+
+<rect x="25" y="136" width="850" height="36" fill="#f4f6f7" stroke="#d5d8dc"/>
+<text class="t bold" x="38" y="160">② 발적 (flare, red flush)</text>
+<text class="t cell" x="230" y="160">감각신경종말</text>
+<text class="t cell" x="435" y="160">H1 자극 → 축삭반사(antidromic) → 인접 세동맥 확장</text>
+
+<rect x="25" y="172" width="850" height="36" fill="#ffffff" stroke="#d5d8dc"/>
+<text class="t bold" x="38" y="196">③ 팽진 (wheal, swelling)</text>
+<text class="t cell" x="230" y="196">모세관후세정맥 내피세포</text>
+<text class="t cell" x="435" y="196">내피세포 수축 → 세포간격↑ → 혈장·체액 유출 → 부종</text>
+
+<rect x="25" y="216" width="850" height="46" fill="#fef9e7" stroke="#b9770e"/>
+<text class="t note" x="38" y="236">팽진은 <tspan font-weight="bold">확장이 아니라 누출</tspan>이다 — ①③을 가르는 축이 여기다. 발적과 피내주사 가려움은 신경종말 효과라서</text>
+<text class="t note" x="38" y="254">모든 H1 길항제가 효과적으로 억제한다 (교안 p.45).</text>
+
+<text class="t band" x="22" y="298">② 혈압 하강 — 혈관확장을 두 수용체가 나눠 만든다</text>
+
+<rect x="25" y="312" width="405" height="116" fill="#fdedec" stroke="#c0392b" stroke-width="2" rx="4"/>
+<text class="t bold" x="40" y="336" fill="#c0392b">혈관 내피세포 · H1</text>
+<text class="t cell" x="40" y="358">Gq → 세포내 Ca²⁺↑ → eNOS 활성화</text>
+<text class="t cell" x="40" y="380">NO 생성 → 평활근으로 확산 → cGMP↑</text>
+<text class="t cell" x="40" y="408" font-weight="bold">일시적 혈관 확장</text>
+
+<rect x="470" y="312" width="405" height="116" fill="#eaf2f8" stroke="#2471a3" stroke-width="2" rx="4"/>
+<text class="t bold" x="485" y="336" fill="#2471a3">혈관 평활근 · H2</text>
+<text class="t cell" x="485" y="358">Gs → adenylyl cyclase → cAMP↑ → PKA</text>
+<text class="t cell" x="485" y="380">고용량 히스타민에서 활성화된다</text>
+<text class="t cell" x="485" y="408" font-weight="bold">지속적 혈관 확장</text>
+
+<rect x="25" y="442" width="850" height="46" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+<text class="t note" x="40" y="462" font-weight="bold">한쪽만 막으면 남은 경로로 혈압이 계속 떨어진다 → H1 길항제와 H2 길항제를 동시에 투여해야 완전히 차단된다.</text>
+<text class="t note" x="40" y="480">미세혈관 확장 → 말초저항↓ · 투과성↑ · 혈압↓ / 일부 정맥은 오히려 수축해 체액의 혈관외유출과 부종을 만든다.</text>
+
+<text class="t note" x="25" y="514">고용량에서는 H1 작용으로 방실전도 지연·부정맥이 나오고, 혈장 유출로 정맥 복귀·심박출량이 급감하면 히스타민 쇼크다.</text>
+</svg>

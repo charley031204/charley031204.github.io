@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" width="900" height="660">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1e8449"/>
+    </marker>
+    <marker id="r" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#c0392b"/>
+    </marker>
+    <marker id="k" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="20" font-weight="bold" fill="#1a1a1a" text-anchor="middle">임신 중 스테로이드 — 태아용과 모체용이 정반대인 이유</text>
+  <text x="450" y="52" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#555555" text-anchor="middle">교안 p.24 ★ "시험 출제 빈출" — 관문은 태반 11β-HSD2 하나다 (소크라티브 N12 7번)</text>
+
+  <!-- lane headers -->
+  <rect x="40" y="72" width="380" height="46" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="230" y="102" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#2471a3" text-anchor="middle">목적 ① 태아의 폐성숙을 시킨다</text>
+
+  <rect x="480" y="72" width="380" height="46" rx="8" fill="#fdedec" stroke="#c0392b" stroke-width="2"/>
+  <text x="670" y="102" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#c0392b" text-anchor="middle">목적 ② 모체의 질환을 치료한다</text>
+
+  <!-- drug boxes -->
+  <rect x="70" y="140" width="320" height="52" rx="8" fill="#d4e6f1" stroke="#1b4f72" stroke-width="2.4"/>
+  <text x="230" y="163" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#1b4f72" text-anchor="middle">Betamethasone · Dexamethasone</text>
+  <text x="230" y="183" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1b4f72" text-anchor="middle">모체에게 주사한다 (목적지는 태아)</text>
+
+  <rect x="510" y="140" width="320" height="52" rx="8" fill="#fadbd8" stroke="#922b21" stroke-width="2.4"/>
+  <text x="670" y="163" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#922b21" text-anchor="middle">Prednisone</text>
+  <text x="670" y="183" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#922b21" text-anchor="middle">11-케토형 전구약물 (그대로는 불활성)</text>
+
+  <!-- maternal liver step -->
+  <line x1="230" y1="192" x2="230" y2="238" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#k)"/>
+  <text x="242" y="218" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">모체 간을 거쳐도 그대로</text>
+
+  <line x1="670" y1="192" x2="670" y2="238" stroke="#1e8449" stroke-width="2.5" marker-end="url(#g)"/>
+  <text x="682" y="212" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#1e8449">모체 간 11β-HSD1</text>
+  <text x="682" y="230" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1e8449">→ Prednisolone (활성)</text>
+
+  <rect x="90" y="238" width="280" height="38" rx="6" fill="#ffffff" stroke="#1b4f72" stroke-width="1.6"/>
+  <text x="230" y="262" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a" text-anchor="middle">활성형 그대로 모체 혈중에</text>
+
+  <rect x="530" y="238" width="280" height="38" rx="6" fill="#ffffff" stroke="#922b21" stroke-width="1.6"/>
+  <text x="670" y="262" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">Prednisolone — 모체에서는 잘 듣는다</text>
+
+  <!-- placenta band -->
+  <rect x="40" y="300" width="820" height="66" rx="10" fill="#f4ecf7" stroke="#6c3483" stroke-width="2.6"/>
+  <text x="450" y="326" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#6c3483" text-anchor="middle">태반 관문 — 11β-HSD2</text>
+  <text x="450" y="350" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#6c3483" text-anchor="middle">넘어오는 활성형 스테로이드를 불활성형으로 되돌려 태아를 지킨다</text>
+
+  <line x1="230" y1="276" x2="230" y2="298" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#k)"/>
+  <line x1="670" y1="276" x2="670" y2="298" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#k)"/>
+
+  <!-- pass / block -->
+  <line x1="230" y1="366" x2="230" y2="412" stroke="#1e8449" stroke-width="4" marker-end="url(#g)"/>
+  <text x="244" y="386" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#1e8449">거의 잘리지 않는다</text>
+  <text x="244" y="404" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1e8449">= 11β-HSD2 저항성</text>
+
+  <line x1="670" y1="366" x2="670" y2="412" stroke="#c0392b" stroke-width="4" marker-end="url(#r)"/>
+  <text x="684" y="386" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#c0392b">Prednisolone → Prednisone</text>
+  <text x="684" y="404" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#c0392b">다시 불활성으로 되돌아간다</text>
+
+  <!-- fetus -->
+  <rect x="70" y="414" width="320" height="86" rx="8" fill="#d4efdf" stroke="#186a3b" stroke-width="2.4"/>
+  <text x="230" y="440" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#186a3b" text-anchor="middle">태아에 활성형이 도달한다</text>
+  <text x="230" y="462" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">→ 폐 계면활성제 성숙 촉진 (목적 달성)</text>
+  <text x="230" y="486" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#c0392b" text-anchor="middle">단, 과량은 태아발달에 악영향 → 용량 적정화 필수</text>
+
+  <rect x="510" y="414" width="320" height="86" rx="8" fill="#fdebd0" stroke="#b9770e" stroke-width="2.4"/>
+  <text x="670" y="440" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#b9770e" text-anchor="middle">태아에 활성형이 도달하지 않는다</text>
+  <text x="670" y="462" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle">태아 간은 아직 기능하지 않아 11β-HSD1이 없다</text>
+  <text x="670" y="486" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">→ 되돌아온 prednisone을 활성화하지 못한다</text>
+
+  <!-- bottom summary -->
+  <rect x="40" y="524" width="820" height="112" rx="8" fill="#fbfbfb" stroke="#999999" stroke-width="1.4"/>
+  <text x="60" y="550" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a">뒤집히는 이유는 한 문장이다</text>
+  <text x="60" y="578" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a">태아에게 <tspan font-weight="bold" fill="#1b4f72">약을 보내야 할 때</tspan>는 관문에 안 잘리는 것을, 태아에게 <tspan font-weight="bold" fill="#922b21">약이 가면 안 될 때</tspan>는 관문이 되돌려 놓는 것을 고른다.</text>
+  <text x="60" y="604" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#c0392b">✗ 옛 강의록의 "단백결합이 적어 태반 통과가 많다"는 기전 오류 — 결정 요인은 단백결합이 아니라 <tspan font-weight="bold">11β-HSD2 저항성</tspan>이다.</text>
+  <text x="60" y="628" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">같은 논리가 피부에도 적용된다 — 피부에는 되살릴 11β-HSD1이 없으므로 11-케토형(코티손·프레드니손) 연고는 듣지 않는다.</text>
+</svg>

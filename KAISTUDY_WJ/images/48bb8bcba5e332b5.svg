@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" width="900" height="490">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>
+.t{font-family:"Malgun Gothic","맑은 고딕",sans-serif;}
+.hd{font-size:13.5px;fill:#ffffff;font-weight:bold;}
+.cell{font-size:12.5px;fill:#1a1a1a;}
+.rec{font-size:19px;font-weight:bold;}
+.note{font-size:12.5px;fill:#1a1a1a;}
+.ttl{font-size:18px;font-weight:bold;fill:#1a1a1a;}
+</style>
+
+<text class="t ttl" x="20" y="28">히스타민 수용체 H1–H4 — G단백 · 2차전령 · 분포 · 대표 약물</text>
+
+<!-- header -->
+<rect x="20" y="42" width="860" height="34" fill="#34495e"/>
+<text class="t hd" x="65" y="64" text-anchor="middle">수용체</text>
+<text class="t hd" x="118" y="64">G단백 → 2차전령</text>
+<text class="t hd" x="328" y="64">주요 분포</text>
+<text class="t hd" x="518" y="64">주요 작용</text>
+<text class="t hd" x="688" y="64">대표 약물</text>
+
+<!-- H1 row -->
+<rect x="20" y="76" width="860" height="74" fill="#fdedec" stroke="#d5d8dc"/>
+<text class="t rec" x="65" y="120" text-anchor="middle" fill="#c0392b">H1</text>
+<text class="t cell" x="118" y="98">Gq/11 → PLC 활성화</text>
+<text class="t cell" x="118" y="116">PIP2 → IP3 + DAG</text>
+<text class="t cell" x="118" y="134">세포내 Ca²⁺↑ · PKC</text>
+<text class="t cell" x="328" y="98">혈관내피, 평활근,</text>
+<text class="t cell" x="328" y="116">감각신경말단</text>
+<text class="t cell" x="328" y="134">새겉질 · 해마 (시냅스이후)</text>
+<text class="t cell" x="518" y="98">알레르기·염증, 가려움</text>
+<text class="t cell" x="518" y="116">혈관투과성↑ (팽진)</text>
+<text class="t cell" x="518" y="134">각성 · 식욕억제</text>
+<text class="t cell" x="688" y="98">길항 pyrilamine,</text>
+<text class="t cell" x="688" y="116">diphenhydramine,</text>
+<text class="t cell" x="688" y="134">cetirizine, fexofenadine</text>
+
+<!-- H2 row -->
+<rect x="20" y="150" width="860" height="74" fill="#eaf2f8" stroke="#d5d8dc"/>
+<text class="t rec" x="65" y="194" text-anchor="middle" fill="#2471a3">H2</text>
+<text class="t cell" x="118" y="180">Gs → adenylyl cyclase</text>
+<text class="t cell" x="118" y="198">활성화 → cAMP↑</text>
+<text class="t cell" x="118" y="216">→ PKA</text>
+<text class="t cell" x="328" y="180">위 벽세포</text>
+<text class="t cell" x="328" y="198">혈관 평활근, 심장</text>
+<text class="t cell" x="328" y="216">해마 · 대뇌겉질 (시냅스이후)</text>
+<text class="t cell" x="518" y="180">위산분비 촉진</text>
+<text class="t cell" x="518" y="198">지속적 혈관확장</text>
+<text class="t cell" x="518" y="216">심박수·수축력↑</text>
+<text class="t cell" x="688" y="180">길항 cimetidine,</text>
+<text class="t cell" x="688" y="198">ranitidine, famotidine,</text>
+<text class="t cell" x="688" y="216">nizatidine</text>
+
+<!-- H3 row -->
+<rect x="20" y="224" width="860" height="74" fill="#eafaf1" stroke="#d5d8dc"/>
+<text class="t rec" x="65" y="268" text-anchor="middle" fill="#1e8449">H3</text>
+<text class="t cell" x="118" y="254">Gi/o → adenylyl</text>
+<text class="t cell" x="118" y="272">cyclase 억제</text>
+<text class="t cell" x="118" y="290">→ cAMP↓</text>
+<text class="t cell" x="328" y="254">중추 시냅스이전</text>
+<text class="t cell" x="328" y="272">기저핵 · 해마</text>
+<text class="t cell" x="328" y="290">대뇌겉질 · 변연계</text>
+<text class="t cell" x="518" y="254">자가수용체 —</text>
+<text class="t cell" x="518" y="272">히스타민 유리 억제</text>
+<text class="t cell" x="518" y="290">기본활성도가 높다</text>
+<text class="t cell" x="688" y="254">효현 (R)-α-methyl-</text>
+<text class="t cell" x="688" y="272">histamine · betahistine</text>
+<text class="t cell" x="688" y="290">역효현 pitolisant</text>
+
+<!-- H4 row -->
+<rect x="20" y="298" width="860" height="74" fill="#fef9e7" stroke="#d5d8dc"/>
+<text class="t rec" x="65" y="342" text-anchor="middle" fill="#b9770e">H4</text>
+<text class="t cell" x="118" y="328">Gi/o → adenylyl</text>
+<text class="t cell" x="118" y="346">cyclase 억제</text>
+<text class="t cell" x="118" y="364">→ cAMP↓</text>
+<text class="t cell" x="328" y="328">골수</text>
+<text class="t cell" x="328" y="346">백혈구 · 호산구</text>
+<text class="t cell" x="328" y="364">비만세포</text>
+<text class="t cell" x="518" y="328">화학주성(chemotaxis)</text>
+<text class="t cell" x="518" y="346">알레르기·염증</text>
+<text class="t cell" x="518" y="364">가려움 · 신경병성 통증</text>
+<text class="t cell" x="688" y="328">JNJ-7777120, toreforant</text>
+<text class="t cell" x="688" y="346">— 전임상·2상에서</text>
+<text class="t cell" x="688" y="364">연이어 탈락</text>
+
+<!-- note -->
+<rect x="20" y="386" width="860" height="88" fill="#f4f6f7" stroke="#aeb6bf"/>
+<text class="t note" x="34" y="408">· H3 ↔ H4 상동성 약 40% — 가르는 축은 <tspan font-weight="bold">분포</tspan>다. H3 = 중추 시냅스이전 / H4 = 골수·백혈구·호산구.</text>
+<text class="t note" x="34" y="430">· H1은 무스카린 수용체와, H2는 5-HT1 수용체와 더 닮았다. 친화력은 H3/H4 ≫ H1/H2 (약 1000배).</text>
+<text class="t note" x="34" y="452">· <tspan font-weight="bold" fill="#c0392b">H1(Gq → PLC → IP3 → Ca²⁺)은 브라디키닌 B2와 같은 경로다</tspan> — 두 물질의 공통 기전을 묻는 25-32의 판정 기준.</text>
+</svg>

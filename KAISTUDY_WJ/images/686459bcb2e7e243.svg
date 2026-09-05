@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="19" font-weight="bold" fill="#1a1a1a">비타민 D의 2단계 수산화 — 장기 순서와 효소 순서가 나란히 간다</text>
+  <text x="450" y="53" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#555555">피부 → 간 → 콩팥 / 25 → 1α  ·  숫자가 큰 쪽이 먼저다 (교안 p.16–17)</text>
+
+  <!-- 1 피부 -->
+  <rect x="25" y="95" width="155" height="72" rx="6" fill="#f4f6f7" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="102" y="120" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#555555">피부</text>
+  <text x="102" y="141" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" font-weight="bold" fill="#1a1a1a">7-DHC</text>
+  <text x="102" y="158" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#555555">7-dehydrocholesterol</text>
+
+  <line x1="182" y1="131" x2="222" y2="131" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a1)"/>
+  <text x="202" y="106" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" font-weight="bold" fill="#b7950b">자외선</text>
+
+  <!-- 2 D3 -->
+  <rect x="226" y="95" width="155" height="72" rx="6" fill="#f4f6f7" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="303" y="120" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#555555">혈중</text>
+  <text x="303" y="141" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" font-weight="bold" fill="#1a1a1a">비타민 D₃</text>
+  <text x="303" y="158" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#555555">cholecalciferol</text>
+
+  <line x1="383" y1="131" x2="423" y2="131" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a1)"/>
+  <text x="403" y="99" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#2471a3">간</text>
+  <text x="403" y="114" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" font-weight="bold" fill="#2471a3">25-hydroxylase</text>
+
+  <!-- 3 25(OH)D -->
+  <rect x="427" y="95" width="165" height="72" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2.5"/>
+  <text x="509" y="120" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#2471a3">25(OH)D</text>
+  <text x="509" y="139" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">calcifediol</text>
+  <text x="509" y="158" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#c0392b">비활성형</text>
+
+  <line x1="594" y1="131" x2="644" y2="131" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a1)"/>
+  <text x="619" y="99" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#1e8449">콩팥</text>
+  <text x="619" y="114" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" font-weight="bold" fill="#1e8449">1α-hydroxylase</text>
+
+  <!-- 4 calcitriol -->
+  <rect x="648" y="95" width="225" height="72" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2.5"/>
+  <text x="760" y="120" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1e8449">1,25(OH)₂D</text>
+  <text x="760" y="139" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">calcitriol</text>
+  <text x="760" y="158" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#1e8449">활성형 — VDR에 결합</text>
+
+  <!-- 불활성화 가지 -->
+  <line x1="509" y1="169" x2="509" y2="220" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#a2)"/>
+  <text x="522" y="196" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#7f8c8d">24-hydroxylase</text>
+  <rect x="390" y="222" width="245" height="56" rx="6" fill="#f4f6f7" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="512" y="245" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#555555">24,25(OH)₂D₃ — 불활성화 경로</text>
+  <text x="512" y="266" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11.5" fill="#555555">고칼슘·고인산혈증이면 대사가 이쪽으로 돌아간다</text>
+
+  <!-- 스위치 -->
+  <line x1="619" y1="200" x2="619" y2="145" stroke="#b7950b" stroke-width="2" stroke-dasharray="5 3"/>
+  <rect x="648" y="200" width="230" height="98" rx="6" fill="#fef9e7" stroke="#b7950b" stroke-width="2"/>
+  <text x="763" y="222" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#b7950b">1α-hydroxylase의 스위치</text>
+  <text x="663" y="246" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#1e8449">켠다</text>
+  <text x="700" y="246" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">저칼슘 · 저인산 ·</text>
+  <text x="700" y="264" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">PTH ↑ · FGF23 ↓</text>
+  <text x="663" y="286" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#c0392b">끈다</text>
+  <text x="700" y="286" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1a1a1a">고칼슘 · 고인산 · FGF23 ↑</text>
+
+  <!-- 임상 결론 -->
+  <rect x="25" y="315" width="850" height="70" rx="8" fill="#fbfcfc" stroke="#aab7b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="45" y="339" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a">마지막 활성화 단계를 콩팥이 쥐고 있다 → 만성콩팥질환이면 1α-hydroxylase가 사라져 활성형이 안 만들어진다 → 저칼슘혈증 → 이차성 부갑상샘기능항진증.</text>
+  <text x="45" y="362" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12.5" fill="#1a1a1a">그래서 CKD와 부갑상샘기능저하증에서는 앞 단계를 건너뛴 calcitriol(활성형)을 그대로 넣는다. 피부·간은 멀쩡하니 부족한 것은 마지막 한 걸음뿐이다.</text>
+</svg>

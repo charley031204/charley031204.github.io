@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" width="880" height="620">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+</marker>
+</defs>
+<g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+<text x="440" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">PAF — 인지질에서 두 걸음, 그리고 여섯 방향의 작용</text>
+
+<rect x="40" y="48" width="360" height="46" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="220" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">전구체</text>
+<text x="220" y="86" text-anchor="middle" font-size="13" fill="#1a1a1a">1-O-alkyl-2-acyl-glycerophosphocholine</text>
+
+<line x1="220" y1="96" x2="220" y2="132" stroke="#333333" stroke-width="2.2" marker-end="url(#arw)"/>
+<text x="232" y="118" font-size="14" font-weight="bold" fill="#c0392b">PLA2 활성화</text>
+
+<rect x="40" y="134" width="170" height="44" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="1.8"/>
+<text x="125" y="161" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">Lyso-PAF</text>
+
+<rect x="230" y="134" width="170" height="44" rx="5" fill="#e8f4ea" stroke="#1e8449" stroke-width="1.8"/>
+<text x="315" y="155" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e8449">Arachidonic acid</text>
+<text x="315" y="172" text-anchor="middle" font-size="13" fill="#1e8449">→ eicosanoid 경로로</text>
+
+<line x1="125" y1="180" x2="125" y2="216" stroke="#333333" stroke-width="2.2" marker-end="url(#arw)"/>
+<text x="137" y="203" font-size="13" font-weight="bold" fill="#c0392b">lyso-PAF acetyltransferase</text>
+
+<rect x="30" y="218" width="380" height="56" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2.2"/>
+<text x="220" y="240" text-anchor="middle" font-size="16" font-weight="bold" fill="#c0392b">PAF</text>
+<text x="220" y="262" text-anchor="middle" font-size="13" fill="#c0392b">1-O-alkyl-2-acetyl-sn-glycero-phosphocholine</text>
+
+<rect x="440" y="48" width="410" height="132" rx="6" fill="#fafafa" stroke="#999999" stroke-width="1.3"/>
+<text x="455" y="71" font-size="15" font-weight="bold" fill="#1a1a1a">합성 부위 — 백혈구 계열이 중심</text>
+<text x="455" y="95" font-size="13" fill="#444444">platelet · neutrophil · monocyte · mast cell</text>
+<text x="455" y="115" font-size="13" fill="#444444">eosinophil · vascular endothelial cell</text>
+<text x="455" y="135" font-size="13" fill="#444444">renal mesangial cell · medullary cell</text>
+<text x="455" y="162" font-size="13" fill="#666666">합성 자극 — chemotactic peptide, thrombin, collagen</text>
+
+<rect x="440" y="196" width="410" height="78" rx="6" fill="#fdf6e3" stroke="#c0392b" stroke-width="1.5"/>
+<text x="455" y="219" font-size="14" font-weight="bold" fill="#c0392b">관상동맥에서의 용량 의존적 반전</text>
+<text x="455" y="242" font-size="13" fill="#1a1a1a">소량 → 혈관 확장 → 혈류 증가</text>
+<text x="455" y="263" font-size="13" fill="#1a1a1a">고농도 → 혈소판 응집 · TXA2 형성 → 혈류 감소</text>
+
+<line x1="220" y1="276" x2="220" y2="304" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="440" y1="276" x2="440" y2="304" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<line x1="660" y1="276" x2="660" y2="304" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="30" y="306" width="270" height="94" rx="5" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+<text x="45" y="328" font-size="14" font-weight="bold" fill="#c0392b">심혈관계</text>
+<text x="45" y="350" font-size="13" fill="#1a1a1a">효과적인 혈관 확장제</text>
+<text x="45" y="370" font-size="13" fill="#1a1a1a">혈관 투과성 증가 · 혈압 하강</text>
+<text x="45" y="390" font-size="13" fill="#1a1a1a">폐 = 미세혈관 수축 · 점액분비 증가</text>
+
+<rect x="310" y="306" width="270" height="94" rx="5" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+<text x="325" y="328" font-size="14" font-weight="bold" fill="#c0392b">혈소판 · 백혈구</text>
+<text x="325" y="350" font-size="13" fill="#1a1a1a">강력한 혈소판 응집 (TXA2 유리 동반)</text>
+<text x="325" y="370" font-size="13" fill="#1a1a1a">PMN 백혈구 응집 · LT 유리</text>
+<text x="325" y="390" font-size="13" fill="#1a1a1a">superoxide 생성</text>
+
+<rect x="590" y="306" width="260" height="94" rx="5" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+<text x="605" y="328" font-size="14" font-weight="bold" fill="#c0392b">화학주성 인자</text>
+<text x="605" y="352" font-size="13" fill="#1a1a1a">호산구 (eosinophil)</text>
+<text x="605" y="372" font-size="13" fill="#1a1a1a">호중구 (neutrophil)</text>
+<text x="605" y="392" font-size="13" fill="#1a1a1a">단핵구 (monocyte)</text>
+
+<rect x="30" y="414" width="410" height="94" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="2"/>
+<text x="45" y="436" font-size="14" font-weight="bold" fill="#c0392b">평활근 — 시험이 방향을 뒤집는 자리</text>
+<text x="45" y="459" font-size="14" font-weight="bold" fill="#1a1a1a">위장 · 자궁 · 폐 평활근을 수축시킨다 (이완이 아니다)</text>
+<text x="45" y="481" font-size="13" fill="#1a1a1a">PG 합성 억제제에 의해 이 수축이 억제된다</text>
+<text x="45" y="501" font-size="13" fill="#c0392b">위에서는 강력한 위장궤양 유발물질로 작용</text>
+
+<rect x="460" y="414" width="390" height="94" rx="5" fill="#ffffff" stroke="#999999" stroke-width="1.3"/>
+<text x="475" y="436" font-size="14" font-weight="bold" fill="#1a1a1a">콩팥계</text>
+<text x="475" y="460" font-size="13" fill="#1a1a1a">콩팥혈류량 (RBF) 감소</text>
+<text x="475" y="480" font-size="13" fill="#1a1a1a">사구체여과율 (GFR) 감소</text>
+<text x="475" y="500" font-size="13" fill="#1a1a1a">소변량 감소 · 나트륨 배설 감소</text>
+
+<rect x="30" y="522" width="820" height="78" rx="6" fill="#fafafa" stroke="#2471a3" stroke-width="1.5"/>
+<text x="45" y="545" font-size="15" font-weight="bold" fill="#2471a3">한 인지질에서 두 물질이 동시에 갈라진다</text>
+<text x="45" y="569" font-size="14" fill="#1a1a1a">PLA2 가 한 번 켜지면 lyso-PAF 와 arachidonic acid 가 함께 나온다 — PAF 와 eicosanoid 는 형제 산물이다.</text>
+<text x="45" y="591" font-size="14" fill="#1a1a1a">그래서 PAF 의 작용에는 TXA2 유리 · LT 유리처럼 eicosanoid 를 경유하는 몫이 섞여 있다.</text>
+
+</g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" width="800" height="470">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+    <text x="25" y="26" font-size="16" font-weight="bold" fill="#1a1a1a">SERM 조직선택성 — 같은 약이 조직마다 반대로 작동한다</text>
+
+    <!-- header -->
+    <rect x="25" y="44" width="160" height="38" fill="#e9edf2" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="105" y="68" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">약물 \ 조직</text>
+    <rect x="185" y="44" width="118" height="38" fill="#e9edf2" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="244" y="68" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">유방</text>
+    <rect x="303" y="44" width="118" height="38" fill="#e9edf2" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="362" y="68" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">자궁내막</text>
+    <rect x="421" y="44" width="118" height="38" fill="#e9edf2" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="480" y="68" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">뼈</text>
+    <rect x="539" y="44" width="118" height="38" fill="#e9edf2" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="598" y="68" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">시상하부</text>
+    <rect x="657" y="44" width="118" height="38" fill="#e9edf2" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="716" y="68" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">간 · 응고</text>
+
+    <!-- row 1 tamoxifen -->
+    <rect x="25" y="82" width="160" height="52" fill="#f7f8fa" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="36" y="106" font-size="14" fill="#1a1a1a" font-weight="bold">Tamoxifen</text>
+    <text x="36" y="124" font-size="12" fill="#555555">유방암 치료</text>
+    <rect x="185" y="82" width="118" height="52" fill="#fbdcd8" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="244" y="114" font-size="14" text-anchor="middle" fill="#c0392b" font-weight="bold">길항 ⊣</text>
+    <rect x="303" y="82" width="118" height="52" fill="#d5f0dd" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="362" y="107" font-size="14" text-anchor="middle" fill="#1e8449" font-weight="bold">작용 →</text>
+    <text x="362" y="125" font-size="11" text-anchor="middle" fill="#1e8449">자궁내막암 위험</text>
+    <rect x="421" y="82" width="118" height="52" fill="#eaf7ef" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="480" y="114" font-size="14" text-anchor="middle" fill="#1e8449">작용 →</text>
+    <rect x="539" y="82" width="118" height="52" fill="#fdeeec" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="598" y="114" font-size="14" text-anchor="middle" fill="#c0392b">길항 ⊣</text>
+    <rect x="657" y="82" width="118" height="52" fill="#d5f0dd" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="716" y="107" font-size="14" text-anchor="middle" fill="#1e8449" font-weight="bold">작용 →</text>
+    <text x="716" y="125" font-size="11" text-anchor="middle" fill="#1e8449">혈전 위험</text>
+
+    <!-- row 2 raloxifene -->
+    <rect x="25" y="134" width="160" height="52" fill="#f7f8fa" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="36" y="158" font-size="14" fill="#1a1a1a" font-weight="bold">Raloxifene</text>
+    <text x="36" y="176" font-size="12" fill="#555555">폐경 후 골다공증</text>
+    <rect x="185" y="134" width="118" height="52" fill="#fbdcd8" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="244" y="166" font-size="14" text-anchor="middle" fill="#c0392b" font-weight="bold">길항 ⊣</text>
+    <rect x="303" y="134" width="118" height="52" fill="#fbdcd8" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="362" y="166" font-size="14" text-anchor="middle" fill="#c0392b" font-weight="bold">길항 ⊣</text>
+    <rect x="421" y="134" width="118" height="52" fill="#d5f0dd" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="480" y="166" font-size="14" text-anchor="middle" fill="#1e8449" font-weight="bold">작용 →</text>
+    <rect x="539" y="134" width="118" height="52" fill="#f0f0f0" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="598" y="166" font-size="14" text-anchor="middle" fill="#888888">—</text>
+    <rect x="657" y="134" width="118" height="52" fill="#eaf7ef" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="716" y="160" font-size="14" text-anchor="middle" fill="#1e8449">작용 →</text>
+    <text x="716" y="177" font-size="11" text-anchor="middle" fill="#1e8449">혈전 위험</text>
+
+    <!-- row 3 clomiphene -->
+    <rect x="25" y="186" width="160" height="52" fill="#fff8e1" stroke="#1a1a1a" stroke-width="1.2"/>
+    <text x="36" y="210" font-size="14" fill="#1a1a1a" font-weight="bold">Clomiphene</text>
+    <text x="36" y="228" font-size="12" fill="#c0392b">배란 유도 · 25-54</text>
+    <rect x="185" y="186" width="118" height="52" fill="#f0f0f0" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="244" y="218" font-size="14" text-anchor="middle" fill="#888888">—</text>
+    <rect x="303" y="186" width="118" height="52" fill="#f0f0f0" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="362" y="218" font-size="14" text-anchor="middle" fill="#888888">—</text>
+    <rect x="421" y="186" width="118" height="52" fill="#f0f0f0" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="480" y="218" font-size="14" text-anchor="middle" fill="#888888">—</text>
+    <rect x="539" y="186" width="118" height="52" fill="#fbdcd8" stroke="#c0392b" stroke-width="3"/>
+    <text x="598" y="211" font-size="14" text-anchor="middle" fill="#c0392b" font-weight="bold">길항 ⊣</text>
+    <text x="598" y="229" font-size="11" text-anchor="middle" fill="#c0392b">되먹임 차단</text>
+    <rect x="657" y="186" width="118" height="52" fill="#f0f0f0" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="716" y="218" font-size="14" text-anchor="middle" fill="#888888">—</text>
+
+    <!-- extra rows -->
+    <rect x="25" y="252" width="750" height="38" rx="4" fill="#f7f8fa" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="36" y="276" font-size="13" fill="#1a1a1a"><tspan font-weight="bold">Ospemifene</tspan> — 질 상피 작용제. 폐경 후 질위축·성교통 (교안은 이름만 싣는다)</text>
+    <rect x="25" y="294" width="750" height="38" rx="4" fill="#f7f8fa" stroke="#aaaaaa" stroke-width="1.2"/>
+    <text x="36" y="318" font-size="13" fill="#1a1a1a"><tspan font-weight="bold">Bazedoxifene</tspan> — 자궁내막 길항. 결합형 estrogen과 복합제로 progestin 대신 자궁을 지킨다</text>
+
+    <!-- legend -->
+    <rect x="25" y="350" width="22" height="16" fill="#d5f0dd" stroke="#1a1a1a" stroke-width="1"/>
+    <text x="54" y="363" font-size="13" fill="#1a1a1a">작용제(agonist)</text>
+    <rect x="180" y="350" width="22" height="16" fill="#fbdcd8" stroke="#1a1a1a" stroke-width="1"/>
+    <text x="209" y="363" font-size="13" fill="#1a1a1a">길항제(antagonist)</text>
+    <rect x="355" y="350" width="22" height="16" fill="#f0f0f0" stroke="#aaaaaa" stroke-width="1"/>
+    <text x="384" y="363" font-size="13" fill="#1a1a1a">교안에 없음</text>
+    <rect x="500" y="350" width="22" height="16" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.5"/>
+    <text x="529" y="363" font-size="13" fill="#1a1a1a">굵은 테두리 = 교안이 직접 명시한 칸</text>
+
+    <text x="25" y="396" font-size="13" fill="#1a1a1a">· 교안 근거는 세 줄뿐이다 — tamoxifen(유방 길항 · 자궁내막 작용 · 혈전), raloxifene(뼈 작용 · 자궁·유방 길항),</text>
+    <text x="35" y="416" font-size="13" fill="#1a1a1a">clomiphene(시상하부 ER 경쟁결합). 옅은 칸은 계열 이해를 위한 보충이다.</text>
+    <text x="25" y="442" font-size="13" fill="#c0392b">· 모든 칸을 다 만족하는 SERM은 아직 없다 — tamoxifen은 자궁내막에서, raloxifene은 유방암 치료력에서 걸린다.</text>
+  </g>
+</svg>

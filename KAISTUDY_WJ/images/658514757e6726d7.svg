@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+    <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">킬레이터 매트릭스 — 투여경로 · 용해도 · 표적 금속 · 주의점</text>
+    <text x="450" y="52" text-anchor="middle" font-size="13" fill="#555555">이우주 9판 표 5-9 기준 · 굵은 글자가 1차 선택</text>
+
+    <!-- header -->
+    <rect x="20" y="66" width="170" height="40" fill="#2471a3"/>
+    <rect x="190" y="66" width="105" height="40" fill="#2471a3"/>
+    <rect x="295" y="66" width="100" height="40" fill="#2471a3"/>
+    <rect x="395" y="66" width="220" height="40" fill="#2471a3"/>
+    <rect x="615" y="66" width="265" height="40" fill="#2471a3"/>
+    <text x="105" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">약물</text>
+    <text x="242" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">투여경로</text>
+    <text x="345" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">용해도</text>
+    <text x="505" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">표적 금속</text>
+    <text x="747" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">주의점 · 결정타</text>
+
+    <!-- BAL -->
+    <rect x="20" y="106" width="860" height="58" fill="#fdf2f2" stroke="#cccccc"/>
+    <text x="30" y="130" font-size="14" font-weight="bold" fill="#c0392b">Dimercaprol (BAL)</text>
+    <text x="30" y="150" font-size="12" fill="#555555">bidentate · SH 2개</text>
+    <text x="242" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">근육주사 전용</text>
+    <text x="345" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">지용성(유성)</text>
+    <text x="505" y="140" text-anchor="middle" font-size="13" fill="#1a1a1a">비소·수은·금 (납은 EDTA 병용)</text>
+    <text x="625" y="132" font-size="13" fill="#1a1a1a">땅콩기름 용매 → 알레르기 금기</text>
+    <text x="625" y="152" font-size="13" fill="#1a1a1a">지용성 → 세포 내 침투 · 부작용 多</text>
+
+    <!-- Succimer -->
+    <rect x="20" y="164" width="860" height="58" fill="#eaf4fb" stroke="#cccccc"/>
+    <text x="30" y="188" font-size="14" font-weight="bold" fill="#2471a3">Succimer (DMSA)</text>
+    <text x="30" y="208" font-size="12" fill="#555555">bidentate · BAL 유도체</text>
+    <text x="242" y="198" text-anchor="middle" font-size="13" font-weight="bold" fill="#2471a3">경구</text>
+    <text x="345" y="198" text-anchor="middle" font-size="13" font-weight="bold" fill="#2471a3">수용성</text>
+    <text x="505" y="198" text-anchor="middle" font-size="13" fill="#1a1a1a">납 1차 (조기면 비소·수은)</text>
+    <text x="625" y="190" font-size="13" fill="#1a1a1a">BAL보다 훨씬 덜 유독 → 외래 가능</text>
+    <text x="625" y="210" font-size="13" font-weight="bold" fill="#c0392b">25-3 : BAL과 정확히 반대인 두 칸</text>
+
+    <!-- EDTA -->
+    <rect x="20" y="222" width="860" height="58" fill="#ffffff" stroke="#cccccc"/>
+    <text x="30" y="246" font-size="14" font-weight="bold" fill="#1a1a1a">CaNa₂EDTA</text>
+    <text x="30" y="266" font-size="12" fill="#555555">polydentate</text>
+    <text x="242" y="256" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">정맥주사</text>
+    <text x="345" y="256" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">극성 높음</text>
+    <text x="505" y="256" text-anchor="middle" font-size="13" fill="#1a1a1a">납 (세포외액만)</text>
+    <text x="625" y="248" font-size="13" font-weight="bold" fill="#c0392b">Na₂EDTA 오투여 = 저칼슘혈증·심정지</text>
+    <text x="625" y="268" font-size="13" fill="#1a1a1a">신세뇨관 괴사 → 5일 이하 · 수분 공급</text>
+
+    <!-- Penicillamine -->
+    <rect x="20" y="280" width="860" height="58" fill="#f4fbf6" stroke="#cccccc"/>
+    <text x="30" y="304" font-size="14" font-weight="bold" fill="#1e8449">Penicillamine</text>
+    <text x="30" y="324" font-size="12" fill="#555555">bidentate</text>
+    <text x="242" y="314" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e8449">경구</text>
+    <text x="345" y="314" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e8449">수용성</text>
+    <text x="505" y="314" text-anchor="middle" font-size="13" fill="#1a1a1a">구리 (Wilson병)</text>
+    <text x="625" y="306" font-size="13" fill="#1a1a1a">신독성 · 범혈구감소 · SLE · B₆ 길항</text>
+    <text x="625" y="326" font-size="13" fill="#1a1a1a">대안 : trientine · 아연(흡수 차단)</text>
+
+    <!-- Deferoxamine -->
+    <rect x="20" y="338" width="860" height="58" fill="#fffaf0" stroke="#cccccc"/>
+    <text x="30" y="362" font-size="14" font-weight="bold" fill="#b9770e">Deferoxamine</text>
+    <text x="30" y="382" font-size="12" fill="#555555">polydentate · 세균 유래</text>
+    <text x="242" y="372" text-anchor="middle" font-size="13" font-weight="bold" fill="#b9770e">정주</text>
+    <text x="345" y="372" text-anchor="middle" font-size="13" font-weight="bold" fill="#b9770e">수용성</text>
+    <text x="505" y="372" text-anchor="middle" font-size="13" fill="#1a1a1a">철에만 선택적 (Al³⁺ 낮음)</text>
+    <text x="625" y="364" font-size="13" fill="#1a1a1a">Hb·cytochrome의 Fe는 못 건드림</text>
+    <text x="625" y="384" font-size="13" font-weight="bold" fill="#c0392b">25-34 : 소아 철분 알약 과량 섭취</text>
+
+    <!-- Deferasirox -->
+    <rect x="20" y="396" width="860" height="44" fill="#ffffff" stroke="#cccccc"/>
+    <text x="30" y="423" font-size="13" fill="#1a1a1a">Deferasirox·Deferiprone</text>
+    <text x="242" y="423" text-anchor="middle" font-size="13" fill="#1a1a1a">경구</text>
+    <text x="345" y="423" text-anchor="middle" font-size="13" fill="#1a1a1a">수용성</text>
+    <text x="505" y="423" text-anchor="middle" font-size="13" fill="#1a1a1a">만성 철과잉</text>
+    <text x="625" y="423" font-size="13" fill="#1a1a1a">급성 표준은 여전히 정주 DFO</text>
+
+    <!-- Prussian blue -->
+    <rect x="20" y="440" width="860" height="44" fill="#eef3fa" stroke="#cccccc"/>
+    <text x="30" y="467" font-size="14" font-weight="bold" fill="#1a5276">Prussian blue</text>
+    <text x="242" y="467" text-anchor="middle" font-size="13" fill="#1a1a1a">경구</text>
+    <text x="345" y="467" text-anchor="middle" font-size="13" fill="#1a1a1a">비흡수</text>
+    <text x="505" y="467" text-anchor="middle" font-size="13" fill="#1a1a1a">탈륨 (Tl)</text>
+    <text x="625" y="467" font-size="13" font-weight="bold" fill="#c0392b">킬레이터가 아닌 이온교환체</text>
+
+    <!-- footer -->
+    <rect x="20" y="498" width="860" height="46" fill="#1a5276" rx="5"/>
+    <text x="450" y="518" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#ffffff">암기의 축 4줄 — BAL = 비소·수은·금  /  succimer·EDTA = 납  /  penicillamine = 구리  /  deferoxamine = 철</text>
+    <text x="450" y="537" text-anchor="middle" font-size="13" fill="#d6eaf8">이 네 줄이 9판 표 5-9의 전부다. 소크라티브 N14 17번은 이 네 줄만으로 다섯 선지가 판정된다.</text>
+
+  </g>
+</svg>

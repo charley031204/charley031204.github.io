@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" width="880" height="600">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="blk" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto">
+      <path d="M1,0 L1,10" stroke="#c0392b" stroke-width="3" fill="none"/>
+    </marker>
+  </defs>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif" fill="#1a1a1a">
+
+    <text x="440" y="28" font-size="19" font-weight="bold" text-anchor="middle">5-HT 생합성과 대사 — 속도제한 한 곳, 갈래 두 개</text>
+
+    <rect x="330" y="46" width="220" height="38" rx="6" fill="#eef3f8" stroke="#2471a3" stroke-width="2"/>
+    <text x="440" y="70" font-size="15" font-weight="bold" text-anchor="middle">L-Tryptophan (식이 필수아미노산)</text>
+
+    <path d="M440,84 L440,128" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a2)"/>
+    <text x="560" y="98" font-size="14" font-weight="bold" fill="#c0392b">tryptophan hydroxylase (TPH)</text>
+    <text x="560" y="116" font-size="13">BH₄ + O₂ → BH₂ · 5번 위치에 OH 부착</text>
+    <text x="322" y="100" font-size="14" font-weight="bold" text-anchor="end" fill="#c0392b">★ 속도제한 단계</text>
+    <text x="322" y="118" font-size="13" text-anchor="end">여기가 전체 생산량을 정한다</text>
+
+    <rect x="30" y="132" width="252" height="70" rx="6" fill="#fdeceb" stroke="#c0392b" stroke-width="2"/>
+    <text x="156" y="151" font-size="13" font-weight="bold" text-anchor="middle" fill="#c0392b">합성 차단제 — TPH를 막는다</text>
+    <text x="156" y="169" font-size="13" text-anchor="middle">p-chlorophenylalanine (PCPA)</text>
+    <text x="156" y="187" font-size="13" text-anchor="middle">p-chloroamphetamine</text>
+    <path d="M282,140 L400,140" stroke="#c0392b" stroke-width="2" marker-end="url(#blk)"/>
+    <text x="300" y="132" font-size="12" fill="#c0392b">독성이 커서 임상 사용 불가</text>
+
+    <rect x="320" y="132" width="240" height="38" rx="6" fill="#ffffff" stroke="#666666" stroke-width="1.6"/>
+    <text x="440" y="156" font-size="15" font-weight="bold" text-anchor="middle">L-5-Hydroxytryptophan (5-HTP)</text>
+
+    <path d="M440,170 L440,214" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a2)"/>
+    <text x="560" y="184" font-size="14" font-weight="bold">aromatic L-amino acid decarboxylase</text>
+    <text x="560" y="202" font-size="13">PLP(비타민 B₆) 의존 · CO₂ 이탈</text>
+
+    <rect x="310" y="218" width="260" height="44" rx="6" fill="#f2f0f8" stroke="#6c3483" stroke-width="2.5"/>
+    <text x="440" y="238" font-size="16" font-weight="bold" text-anchor="middle">5-Hydroxytryptamine</text>
+    <text x="440" y="255" font-size="14" font-weight="bold" text-anchor="middle" fill="#6c3483">= Serotonin (5-HT)</text>
+
+    <path d="M440,262 L440,286" stroke="#1a1a1a" stroke-width="2.5"/>
+    <path d="M215,286 L665,286" stroke="#1a1a1a" stroke-width="2.5"/>
+    <path d="M215,286 L215,314" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a2)"/>
+    <path d="M665,286 L665,314" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#a2)"/>
+    <text x="225" y="304" font-size="14" font-weight="bold" fill="#c0392b">MAO</text>
+    <text x="675" y="304" font-size="14" font-weight="bold" fill="#1e8449">5-HT N-acetylase</text>
+
+    <text x="215" y="336" font-size="15" font-weight="bold" text-anchor="middle" fill="#c0392b">주 경로 — 분해와 배설</text>
+    <text x="665" y="336" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e8449">분지 경로 — 송과체</text>
+
+    <rect x="90" y="348" width="250" height="38" rx="6" fill="#ffffff" stroke="#666666" stroke-width="1.6"/>
+    <text x="215" y="372" font-size="13" font-weight="bold" text-anchor="middle">5-Hydroxyindole acetaldehyde</text>
+
+    <path d="M215,386 L215,424" stroke="#1a1a1a" stroke-width="2" marker-end="url(#a2)"/>
+    <text x="225" y="410" font-size="13">aldehyde dehydrogenase</text>
+
+    <rect x="90" y="428" width="250" height="40" rx="6" fill="#fdeceb" stroke="#c0392b" stroke-width="2.5"/>
+    <text x="215" y="453" font-size="15" font-weight="bold" text-anchor="middle" fill="#c0392b">5-HIAA (최종 대사물)</text>
+
+    <path d="M215,468 L215,502" stroke="#1a1a1a" stroke-width="2" marker-end="url(#a2)"/>
+
+    <rect x="60" y="506" width="310" height="66" rx="6" fill="#fffbe6" stroke="#b7950b" stroke-width="2"/>
+    <text x="215" y="525" font-size="13" font-weight="bold" text-anchor="middle">소변으로 배설</text>
+    <text x="215" y="543" font-size="13" text-anchor="middle">배설되는 양 = 체내 5-HT 생성량</text>
+    <text x="215" y="561" font-size="13" font-weight="bold" text-anchor="middle" fill="#c0392b">→ Carcinoid 진단에 이용 (25-46)</text>
+
+    <rect x="545" y="348" width="240" height="38" rx="6" fill="#ffffff" stroke="#666666" stroke-width="1.6"/>
+    <text x="665" y="372" font-size="14" font-weight="bold" text-anchor="middle">N-Acetyl-5-HT</text>
+
+    <path d="M665,386 L665,424" stroke="#1a1a1a" stroke-width="2" marker-end="url(#a2)"/>
+    <text x="675" y="410" font-size="13">HIOMT (O-methyltransferase)</text>
+
+    <rect x="545" y="428" width="240" height="40" rx="6" fill="#eaf6ef" stroke="#1e8449" stroke-width="2.5"/>
+    <text x="665" y="453" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e8449">Melatonin</text>
+
+    <path d="M665,468 L665,502" stroke="#1a1a1a" stroke-width="2" marker-end="url(#a2)"/>
+
+    <rect x="510" y="506" width="310" height="66" rx="6" fill="#eaf6ef" stroke="#1e8449" stroke-width="2"/>
+    <text x="665" y="525" font-size="13" font-weight="bold" text-anchor="middle">솔방울샘 (pineal gland)</text>
+    <text x="665" y="543" font-size="13" text-anchor="middle">5-HT가 melatonin의 전구체 역할</text>
+    <text x="665" y="561" font-size="13" font-weight="bold" text-anchor="middle" fill="#c0392b">melanin(멜라닌)과 혼동 금지</text>
+
+  </g>
+</svg>

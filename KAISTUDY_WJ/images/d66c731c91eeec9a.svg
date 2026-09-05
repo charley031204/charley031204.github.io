@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>
+.t{font-family:"Malgun Gothic","맑은 고딕",sans-serif;}
+.ttl{font-size:18px;font-weight:bold;fill:#1a1a1a;}
+.hd{font-size:14px;fill:#ffffff;font-weight:bold;}
+.k{font-size:13px;fill:#1a1a1a;font-weight:bold;}
+.cell{font-size:12.5px;fill:#1a1a1a;}
+.note{font-size:12.5px;fill:#1a1a1a;}
+</style>
+
+<text class="t ttl" x="20" y="28">H1 수용체 길항제 — 1세대 vs 2세대 (갈리는 것은 약력학이 아니라 분포다)</text>
+
+<rect x="20" y="44" width="860" height="34" fill="#34495e"/>
+<text class="t hd" x="32" y="66">항목</text>
+<text class="t hd" x="212" y="66">1세대</text>
+<text class="t hd" x="552" y="66">2세대</text>
+
+<!-- row1 -->
+<rect x="20" y="78" width="860" height="46" fill="#ffffff" stroke="#d5d8dc"/>
+<line x1="200" y1="78" x2="200" y2="78" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="106">BBB 통과</text>
+<text class="t cell" x="212" y="106">지용성 → 그대로 통과한다</text>
+<text class="t cell" x="552" y="100">친지질성 낮고 P-glycoprotein 기질</text>
+<text class="t cell" x="552" y="118">→ 뇌로 거의 들어가지 못한다</text>
+
+<!-- row2 -->
+<rect x="20" y="124" width="860" height="46" fill="#f4f6f7" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="152">진정작용</text>
+<text class="t cell" x="212" y="146">강하다 — diphenhydramine ·</text>
+<text class="t cell" x="212" y="164">promethazine · hydroxyzine +++</text>
+<text class="t cell" x="552" y="152">거의 없다 = 비진정성 항히스타민제</text>
+
+<!-- row3 -->
+<rect x="20" y="170" width="860" height="34" fill="#ffffff" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="192">작용지속시간</text>
+<text class="t cell" x="212" y="192">4–6시간</text>
+<text class="t cell" x="552" y="192">12–24시간</text>
+
+<!-- row4 -->
+<rect x="20" y="204" width="860" height="46" fill="#f4f6f7" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="232">항무스카린 작용</text>
+<text class="t cell" x="212" y="226">있다 → 멀미·구토 예방에 쓴다</text>
+<text class="t cell" x="212" y="244">입안건조 · 요저류도 여기서 나온다</text>
+<text class="t cell" x="552" y="232">없다 → 멀미에는 듣지 않는다</text>
+
+<!-- row5 -->
+<rect x="20" y="250" width="860" height="34" fill="#ffffff" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="272">국소마취작용</text>
+<text class="t cell" x="212" y="272">강하다 — Na⁺ 통로 차단 (diphenhydramine)</text>
+<text class="t cell" x="552" y="272">—</text>
+
+<!-- row6 -->
+<rect x="20" y="284" width="860" height="64" fill="#f4f6f7" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="312">대사 · 배설</text>
+<text class="t cell" x="212" y="306">간 microsomal 효소로 대사</text>
+<text class="t cell" x="212" y="324">약물상호작용이 더 잘 일어난다</text>
+<text class="t cell" x="552" y="306">교안은 CYP3A4 대사로 적음 (아래 정정)</text>
+<text class="t cell" x="552" y="324">40% 미만 : cetirizine · acrivastine</text>
+<text class="t cell" x="552" y="342">10% 미만 : fexofenadine, levocetirizine, epinastine</text>
+
+<!-- row7 -->
+<rect x="20" y="348" width="860" height="64" fill="#ffffff" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="376">대표 약물</text>
+<text class="t cell" x="212" y="370">diphenhydramine, dimenhydrinate,</text>
+<text class="t cell" x="212" y="388">chlorpheniramine, promethazine,</text>
+<text class="t cell" x="212" y="406">hydroxyzine, cyproheptadine, meclizine</text>
+<text class="t cell" x="552" y="370">cetirizine, levocetirizine, loratadine,</text>
+<text class="t cell" x="552" y="388">desloratadine, fexofenadine, ebastine,</text>
+<text class="t cell" x="552" y="406">olopatadine, azelastine, ketotifen</text>
+
+<!-- row8 -->
+<rect x="20" y="412" width="860" height="64" fill="#f4f6f7" stroke="#d5d8dc"/>
+<text class="t k" x="32" y="440">주의</text>
+<text class="t cell" x="212" y="434">대량 복용 시 반대로 흥분 · 불면</text>
+<text class="t cell" x="212" y="452">노인은 진정·항콜린에 민감,</text>
+<text class="t cell" x="212" y="470">치매 위험과 용량-반응 관계</text>
+<text class="t cell" x="552" y="434">terfenadine · astemizole — CYP3A4 억제제</text>
+<text class="t cell" x="552" y="452">병용 시 혈중농도↑ → 다형성 심실빈맥</text>
+<text class="t cell" x="552" y="470">→ 시장 철수</text>
+
+<line x1="200" y1="78" x2="200" y2="476" stroke="#aeb6bf"/>
+<line x1="540" y1="78" x2="540" y2="476" stroke="#aeb6bf"/>
+
+<rect x="20" y="490" width="860" height="96" fill="#f4f6f7" stroke="#aeb6bf"/>
+<text class="t note" x="34" y="512">· <tspan font-weight="bold">2세대가 덜 졸린 이유는 수용체가 달라서도, 반감기가 짧아서도 아니다 — 뇌에 못 들어가기 때문이다.</tspan> 친화력은 그대로 있다.</text>
+<text class="t note" x="34" y="534">· Fexofenadine은 terfenadine의 활성 대사물이라 효과는 같으면서 간 대사를 거의 거치지 않아 부정맥 위험이 없다.</text>
+<text class="t note" x="34" y="556">· Dimenhydrinate = diphenhydramine + 8-chlorotheophylline — 진정을 각성 성분으로 상쇄시킨 염(salt), 멀미약으로 정착.</text>
+<text class="t note" x="34" y="578">· 🎙️ 정정 — 예전 3세대(fexofenadine·loratadine·levocetirizine)라는 말은 지금 책에 없다. 전부 2세대로 통일.</text>
+</svg>

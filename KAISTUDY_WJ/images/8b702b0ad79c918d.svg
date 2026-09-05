@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" width="900" height="760">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+</marker>
+<marker id="inh" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<rect x="0" y="0.5" width="2.2" height="9" fill="#c0392b"/>
+</marker>
+</defs>
+<g font-family="Malgun Gothic, 맑은 고딕, sans-serif">
+
+<text x="450" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">NO — L-arginine 에서 평활근 이완까지, 그리고 약물의 자리</text>
+
+<rect x="30" y="48" width="200" height="42" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="130" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">L-Arginine</text>
+
+<line x1="232" y1="69" x2="342" y2="69" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<text x="287" y="58" text-anchor="middle" font-size="13" fill="#555555">NADPH · O2</text>
+
+<rect x="344" y="48" width="180" height="42" rx="5" fill="#e8f4ea" stroke="#1e8449" stroke-width="2"/>
+<text x="434" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e8449">NOS (heme 함유)</text>
+
+<line x1="526" y1="69" x2="626" y2="69" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+
+<rect x="628" y="48" width="240" height="42" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="748" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">L-Citrulline + NO</text>
+
+<rect x="344" y="112" width="180" height="36" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="1.6"/>
+<text x="434" y="136" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">L-NMMA</text>
+<line x1="434" y1="110" x2="434" y2="94" stroke="#c0392b" stroke-width="2.2" marker-end="url(#inh)"/>
+
+<rect x="628" y="112" width="240" height="52" rx="5" fill="#f4f4f4" stroke="#888888" stroke-width="1.3"/>
+<text x="748" y="131" text-anchor="middle" font-size="13" fill="#444444">NO donor — nitroprusside,</text>
+<text x="748" y="150" text-anchor="middle" font-size="13" fill="#444444">organic nitrate, nitrosothiol</text>
+<line x1="748" y1="110" x2="748" y2="94" stroke="#333333" stroke-width="1.8" marker-end="url(#arw)"/>
+
+<line x1="748" y1="166" x2="748" y2="196" stroke="#333333" stroke-width="2.4" marker-end="url(#arw)"/>
+
+<rect x="560" y="198" width="320" height="46" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="720" y="218" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">Guanylyl cyclase 의 heme Fe</text>
+<text x="720" y="237" text-anchor="middle" font-size="13" fill="#2471a3">NO 는 철을 공격한다 = 철 든 효소가 표적</text>
+
+<rect x="330" y="198" width="200" height="46" rx="5" fill="#fdeaea" stroke="#c0392b" stroke-width="1.6"/>
+<text x="430" y="227" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">Methylene blue</text>
+<line x1="534" y1="221" x2="556" y2="221" stroke="#c0392b" stroke-width="2.2" marker-end="url(#inh)"/>
+
+<line x1="720" y1="246" x2="720" y2="272" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<rect x="600" y="274" width="240" height="40" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="720" y="300" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">GTP → cGMP</text>
+
+<line x1="720" y1="316" x2="720" y2="342" stroke="#333333" stroke-width="2" marker-end="url(#arw)"/>
+<rect x="600" y="344" width="240" height="40" rx="5" fill="#fdf6e3" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="720" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">PKG 활성화</text>
+
+<line x1="720" y1="386" x2="720" y2="412" stroke="#333333" stroke-width="2.4" marker-end="url(#arw)"/>
+<rect x="580" y="414" width="280" height="46" rx="5" fill="#eaf3fb" stroke="#2471a3" stroke-width="2"/>
+<text x="720" y="434" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">평활근 이완 · 혈압 감소</text>
+<text x="720" y="452" text-anchor="middle" font-size="13" fill="#2471a3">혈소판 응집 억제 · 호중구 유착 억제</text>
+
+<rect x="330" y="274" width="200" height="66" rx="5" fill="#f4f4f4" stroke="#888888" stroke-width="1.3"/>
+<text x="430" y="294" text-anchor="middle" font-size="14" font-weight="bold" fill="#444444">PDE5</text>
+<text x="430" y="313" text-anchor="middle" font-size="13" fill="#444444">cGMP 를 분해</text>
+<text x="430" y="332" text-anchor="middle" font-size="13" fill="#c0392b">Viagra ⊣ PDE5 → cGMP 유지</text>
+<line x1="534" y1="296" x2="596" y2="296" stroke="#888888" stroke-width="1.8" marker-end="url(#arw)"/>
+
+<rect x="30" y="198" width="270" height="120" rx="6" fill="#fafafa" stroke="#999999" stroke-width="1.3"/>
+<text x="45" y="221" font-size="14" font-weight="bold" fill="#1a1a1a">NO 의 불활성화</text>
+<text x="45" y="244" font-size="13" fill="#c0392b">superoxide 가 NO 를 없앤다</text>
+<text x="45" y="264" font-size="13" fill="#2471a3">→ SOD 는 그 superoxide 를 치우므로</text>
+<text x="45" y="282" font-size="13" fill="#2471a3">   NO 효력을 오히려 높인다</text>
+<text x="45" y="305" font-size="13" fill="#c0392b">NO + superoxide → peroxynitrite</text>
+
+<rect x="30" y="490" width="840" height="112" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="450" y="512" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">NOS 세 아형 — 발현 방식과 칼슘 요구성이 갈린다</text>
+<line x1="30" y1="522" x2="870" y2="522" stroke="#1a1a1a" stroke-width="1.2"/>
+<line x1="240" y1="522" x2="240" y2="602" stroke="#cccccc" stroke-width="1"/>
+<line x1="450" y1="522" x2="450" y2="602" stroke="#cccccc" stroke-width="1"/>
+<line x1="660" y1="522" x2="660" y2="602" stroke="#cccccc" stroke-width="1"/>
+<line x1="30" y1="546" x2="870" y2="546" stroke="#cccccc" stroke-width="1"/>
+
+<text x="45" y="540" font-size="14" font-weight="bold" fill="#444444">성질</text>
+<text x="345" y="540" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">nNOS (NOS1)</text>
+<text x="555" y="540" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">iNOS</text>
+<text x="765" y="540" text-anchor="middle" font-size="14" font-weight="bold" fill="#2471a3">eNOS</text>
+
+<text x="45" y="566" font-size="13" fill="#444444">조직</text>
+<text x="345" y="566" text-anchor="middle" font-size="13" fill="#1a1a1a">신경세포 · 상피세포</text>
+<text x="555" y="566" text-anchor="middle" font-size="13" fill="#c0392b">대식세포 · 평활근</text>
+<text x="765" y="566" text-anchor="middle" font-size="13" fill="#2471a3">내피세포</text>
+
+<text x="45" y="586" font-size="13" fill="#444444">발현</text>
+<text x="345" y="586" text-anchor="middle" font-size="13" fill="#1a1a1a">항시 발현</text>
+<text x="555" y="586" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">전사적으로 유도</text>
+<text x="765" y="586" text-anchor="middle" font-size="13" fill="#2471a3">항시 발현</text>
+
+<text x="45" y="600" font-size="13" fill="#444444">칼슘 요구성</text>
+<text x="345" y="600" text-anchor="middle" font-size="13" fill="#1a1a1a">유</text>
+<text x="555" y="600" text-anchor="middle" font-size="13" font-weight="bold" fill="#c0392b">무 (cytokine)</text>
+<text x="765" y="600" text-anchor="middle" font-size="13" fill="#2471a3">유</text>
+
+<rect x="30" y="620" width="840" height="122" rx="6" fill="#fdeaea" stroke="#c0392b" stroke-width="1.8"/>
+<text x="45" y="644" font-size="15" font-weight="bold" fill="#c0392b">패혈성 쇼크 — 저혈압은 NO 가 모자라서가 아니라 너무 많아서다 (교안 p.49)</text>
+<text x="45" y="670" font-size="14" fill="#1a1a1a">G(-) 세균 LPS · 염증성 cytokine  →  iNOS 발현 유도 (대식세포 · 혈관 평활근)</text>
+<text x="45" y="692" font-size="14" fill="#1a1a1a">→  과량의 NO  →  guanylyl cyclase → cGMP  →  광범위 혈관 확장  →  저혈압 · 쇼크 · 사망</text>
+<text x="45" y="716" font-size="14" fill="#c0392b">항시 발현되는 eNOS 가 아니라 유도되는 iNOS 라는 점이 갈림길이다.</text>
+<text x="45" y="736" font-size="13" fill="#666666">L-NMMA · methylene blue · hemoglobin 이 연구되었으나 표준 치료는 아니다.</text>
+
+</g>
+</svg>

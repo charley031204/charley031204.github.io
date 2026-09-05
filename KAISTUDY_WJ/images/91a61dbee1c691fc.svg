@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" width="900" height="490">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+  <g font-family="Malgun Gothic, 맑은 고딕, sans-serif" fill="#1a1a1a">
+
+    <text x="450" y="28" font-size="19" font-weight="bold" text-anchor="middle">5-HT 수용체 7아형 — 이온통로 하나, G단백 셋</text>
+
+    <rect x="280" y="46" width="340" height="40" rx="6" fill="#eef3f8" stroke="#2471a3" stroke-width="2"/>
+    <text x="450" y="72" font-size="16" font-weight="bold" text-anchor="middle">5-HT 수용체 7아형 (5-HT1 ~ 5-HT7)</text>
+
+    <path d="M450,86 L450,104" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M127,104 L773,104" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M127,104 L127,122" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+    <path d="M342,104 L342,122" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+    <path d="M557,104 L557,122" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+    <path d="M773,104 L773,122" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+
+    <rect x="30" y="126" width="195" height="46" rx="6" fill="#fdeceb" stroke="#c0392b" stroke-width="2.5"/>
+    <text x="127" y="145" font-size="14" font-weight="bold" text-anchor="middle" fill="#c0392b">5-HT3 — 이것만 예외</text>
+    <text x="127" y="163" font-size="13" text-anchor="middle" fill="#c0392b">리간드개폐 이온통로</text>
+
+    <rect x="245" y="126" width="195" height="46" rx="6" fill="#eef3f8" stroke="#2471a3" stroke-width="2"/>
+    <text x="342" y="145" font-size="14" font-weight="bold" text-anchor="middle">5-HT1 (A · B · D · E · F)</text>
+    <text x="342" y="163" font-size="13" text-anchor="middle" fill="#2471a3">Gi → cAMP ↓</text>
+
+    <rect x="460" y="126" width="195" height="46" rx="6" fill="#f2f0f8" stroke="#6c3483" stroke-width="2"/>
+    <text x="557" y="145" font-size="14" font-weight="bold" text-anchor="middle">5-HT2 (A · B · C)</text>
+    <text x="557" y="163" font-size="13" text-anchor="middle" fill="#6c3483">Gq → IP₃ ↑ (cAMP 아님)</text>
+
+    <rect x="675" y="126" width="195" height="46" rx="6" fill="#eaf6ef" stroke="#1e8449" stroke-width="2"/>
+    <text x="772" y="145" font-size="14" font-weight="bold" text-anchor="middle">5-HT4 · 5-HT6 · 5-HT7</text>
+    <text x="772" y="163" font-size="13" text-anchor="middle" fill="#1e8449">Gs → cAMP ↑</text>
+
+    <path d="M127,172 L127,192" stroke="#1a1a1a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M342,172 L342,192" stroke="#1a1a1a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M557,172 L557,192" stroke="#1a1a1a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M772,172 L772,192" stroke="#1a1a1a" stroke-width="1.6" marker-end="url(#ar)"/>
+
+    <rect x="30" y="196" width="195" height="66" rx="5" fill="#ffffff" stroke="#999999"/>
+    <text x="127" y="215" font-size="13" text-anchor="middle">Na⁺ · Ca²⁺ 유입, K⁺ 유출</text>
+    <text x="127" y="233" font-size="13" text-anchor="middle">→ 곧바로 탈분극</text>
+    <text x="127" y="251" font-size="13" text-anchor="middle" fill="#c0392b">2차 전령을 거치지 않음</text>
+
+    <rect x="245" y="196" width="195" height="66" rx="5" fill="#ffffff" stroke="#999999"/>
+    <text x="342" y="215" font-size="13" text-anchor="middle">cAMP ↓ + K⁺ 통로 열림</text>
+    <text x="342" y="233" font-size="13" text-anchor="middle">→ 과분극 · 신경 억제</text>
+    <text x="342" y="251" font-size="13" text-anchor="middle">두개혈관 수축(1B/1D)</text>
+
+    <rect x="460" y="196" width="195" height="66" rx="5" fill="#ffffff" stroke="#999999"/>
+    <text x="557" y="215" font-size="13" text-anchor="middle">IP₃ · DAG → 세포내 Ca²⁺ ↑</text>
+    <text x="557" y="233" font-size="13" text-anchor="middle">→ 평활근 수축</text>
+    <text x="557" y="251" font-size="13" text-anchor="middle">→ 혈소판 응집</text>
+
+    <rect x="675" y="196" width="195" height="66" rx="5" fill="#ffffff" stroke="#999999"/>
+    <text x="772" y="215" font-size="13" text-anchor="middle">cAMP ↑</text>
+    <text x="772" y="233" font-size="13" text-anchor="middle">→ ACh 분비 촉진(5-HT4)</text>
+    <text x="772" y="251" font-size="13" text-anchor="middle">→ 위장운동 촉진</text>
+
+    <rect x="30" y="276" width="195" height="52" rx="5" fill="#fafafa" stroke="#cccccc"/>
+    <text x="127" y="295" font-size="13" text-anchor="middle">최후영역(구토중추)</text>
+    <text x="127" y="313" font-size="13" text-anchor="middle">구심성 미주신경 · 소장</text>
+
+    <rect x="245" y="276" width="195" height="52" rx="5" fill="#fafafa" stroke="#cccccc"/>
+    <text x="342" y="295" font-size="13" text-anchor="middle">봉선핵 · 해마 · 기저핵</text>
+    <text x="342" y="313" font-size="13" text-anchor="middle">두개혈관 · 흑질</text>
+
+    <rect x="460" y="276" width="195" height="52" rx="5" fill="#fafafa" stroke="#cccccc"/>
+    <text x="557" y="295" font-size="13" text-anchor="middle">혈소판 · 평활근 · 뇌피질</text>
+    <text x="557" y="313" font-size="13" text-anchor="middle">위저 · 맥락막</text>
+
+    <rect x="675" y="276" width="195" height="52" rx="5" fill="#fafafa" stroke="#cccccc"/>
+    <text x="772" y="295" font-size="13" text-anchor="middle">장 신경계 · 평활근 · 뇌</text>
+    <text x="772" y="313" font-size="13" text-anchor="middle">5-HT5는 기전 unknown</text>
+
+    <rect x="30" y="344" width="195" height="70" rx="5" fill="#fdeceb" stroke="#c0392b" stroke-width="1.6"/>
+    <text x="127" y="363" font-size="13" font-weight="bold" text-anchor="middle">길항 ondansetron</text>
+    <text x="127" y="381" font-size="13" text-anchor="middle">granisetron · tropisetron</text>
+    <text x="127" y="401" font-size="13" text-anchor="middle" fill="#c0392b">수술 · 항암 구역/구토</text>
+
+    <rect x="245" y="344" width="195" height="70" rx="5" fill="#eef3f8" stroke="#2471a3" stroke-width="1.6"/>
+    <text x="342" y="363" font-size="13" font-weight="bold" text-anchor="middle">효능 buspirone (1A)</text>
+    <text x="342" y="381" font-size="13" font-weight="bold" text-anchor="middle">효능 sumatriptan (1B/1D)</text>
+    <text x="342" y="401" font-size="13" text-anchor="middle" fill="#2471a3">항불안 · 급성 편두통</text>
+
+    <rect x="460" y="344" width="195" height="70" rx="5" fill="#f2f0f8" stroke="#6c3483" stroke-width="1.6"/>
+    <text x="557" y="363" font-size="13" font-weight="bold" text-anchor="middle">길항 ketanserin</text>
+    <text x="557" y="381" font-size="13" text-anchor="middle">cyproheptadine · ritanserin</text>
+    <text x="557" y="401" font-size="13" text-anchor="middle" fill="#6c3483">LSD = 중추 2A 부분효능</text>
+
+    <rect x="675" y="344" width="195" height="70" rx="5" fill="#eaf6ef" stroke="#1e8449" stroke-width="1.6"/>
+    <text x="772" y="363" font-size="13" font-weight="bold" text-anchor="middle">효능 cisapride (4)</text>
+    <text x="772" y="381" font-size="13" text-anchor="middle">tegaserod = 4 부분효능</text>
+    <text x="772" y="401" font-size="13" text-anchor="middle" fill="#1e8449">길항 clozapine (5-HT7)</text>
+
+    <rect x="30" y="432" width="840" height="44" rx="5" fill="#fffbe6" stroke="#b7950b" stroke-width="1.6"/>
+    <text x="450" y="451" font-size="14" font-weight="bold" text-anchor="middle">🎙️ "5-HT3만 이온통로, 나머지는 Gs/Gi에 따라 cyclic AMP가 올라가고 떨어지고 — 그것만 구별해서 기억하면 된다"</text>
+    <text x="450" y="469" font-size="13" text-anchor="middle" fill="#6c3483">단, 5-HT2만은 cAMP 축이 아니라 Gq → IP₃다 (교안 p.15). 네 갈래로 기억하는 편이 안전하다.</text>
+
+  </g>
+</svg>

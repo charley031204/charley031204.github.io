@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 800" width="920" height="800">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="arb" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2471a3"/>
+    </marker>
+  </defs>
+
+  <text x="460" y="30" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="20" font-weight="bold" fill="#1a1a1a" text-anchor="middle">부신피질 생합성 3갈래와 합성억제제의 차단점</text>
+  <text x="460" y="52" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#555555" text-anchor="middle">교안 p.5 그림 39-1 + p.32–33 합성억제약물 — 소크라티브 N12 1·2·9번과 25-4가 전부 이 한 장에서 나온다</text>
+
+  <!-- spine -->
+  <rect x="360" y="70" width="200" height="36" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="460" y="93" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Cholesterol (C27)</text>
+
+  <line x1="460" y1="106" x2="460" y2="152" stroke="#2471a3" stroke-width="2.5" marker-end="url(#arb)"/>
+  <text x="474" y="122" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" font-weight="bold" fill="#2471a3">P450scc (CYP11A)</text>
+  <text x="474" y="140" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#555555">★ 속도제한단계 · StAR가 기질을 대준다</text>
+  <text x="446" y="122" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#c0392b" text-anchor="end">aminoglutethimide ⊣</text>
+  <text x="446" y="140" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#c0392b" text-anchor="end">mitotane ⊣  ·  ketoconazole(고용량) ⊣</text>
+
+  <rect x="360" y="152" width="200" height="36" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="460" y="175" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Pregnenolone (C21)</text>
+
+  <!-- distribution bus -->
+  <path d="M460,188 L460,206 L100,206 L100,500" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="100" y1="253" x2="146" y2="253" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="100" y1="368" x2="146" y2="368" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="100" y1="483" x2="146" y2="483" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <text x="106" y="232" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1e8449">3β-HSD</text>
+  <text x="106" y="347" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1e8449">17α-hydroxylase + 3β-HSD</text>
+  <text x="106" y="462" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#1e8449">17α-hydroxylase</text>
+  <text x="94" y="232" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#c0392b" text-anchor="end">trilostane ⊣</text>
+
+  <!-- row 1 : zona glomerulosa -->
+  <text x="18" y="248" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#8e44ad">사구층</text>
+  <text x="18" y="266" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#8e44ad">glomerulosa</text>
+
+  <rect x="146" y="234" width="128" height="38" rx="5" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.6"/>
+  <text x="210" y="258" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">Progesterone</text>
+  <line x1="274" y1="253" x2="326" y2="253" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="300" y="226" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#1e8449" text-anchor="middle">21-hydroxylase</text>
+
+  <rect x="330" y="234" width="128" height="38" rx="5" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.6"/>
+  <text x="394" y="252" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">DOC</text>
+  <text x="394" y="266" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="10" fill="#555555" text-anchor="middle">deoxycorticosterone</text>
+  <line x1="458" y1="253" x2="522" y2="253" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="492" y="226" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#1e8449" text-anchor="middle">11β-hydroxylase</text>
+  <text x="492" y="292" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" font-weight="bold" fill="#c0392b" text-anchor="middle">⊣ metyrapone</text>
+
+  <rect x="526" y="234" width="132" height="38" rx="5" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.6"/>
+  <text x="592" y="258" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">Corticosterone</text>
+  <line x1="658" y1="253" x2="726" y2="253" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="694" y="226" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#1e8449" text-anchor="middle">aldosterone synthase</text>
+  <text x="694" y="292" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="10" fill="#8e44ad" text-anchor="middle">CYP11B2 — 사구층에만 있다</text>
+
+  <rect x="730" y="230" width="150" height="46" rx="5" fill="#e8daef" stroke="#8e44ad" stroke-width="2.4"/>
+  <text x="805" y="259" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#6c3483" text-anchor="middle">Aldosterone</text>
+
+  <!-- row 2 : zona fasciculata -->
+  <text x="18" y="363" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">다발층</text>
+  <text x="18" y="381" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#c0392b">fasciculata</text>
+
+  <rect x="146" y="349" width="170" height="38" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.6"/>
+  <text x="231" y="373" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">17α-OH-progesterone</text>
+  <line x1="316" y1="368" x2="386" y2="368" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="351" y="341" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#1e8449" text-anchor="middle">21-hydroxylase (CYP21)</text>
+  <text x="351" y="407" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="10" fill="#555555" text-anchor="middle">결핍 = 선천성 부신과다형성의 90%</text>
+
+  <rect x="390" y="349" width="150" height="38" rx="5" fill="#fdedec" stroke="#c0392b" stroke-width="1.6"/>
+  <text x="465" y="373" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">11-deoxycortisol</text>
+  <line x1="540" y1="368" x2="622" y2="368" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="581" y="341" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#1e8449" text-anchor="middle">11β-hydroxylase (CYP11B1)</text>
+  <text x="581" y="407" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" font-weight="bold" fill="#c0392b" text-anchor="middle">⊣ metyrapone  ·  ⊣ mitotane</text>
+
+  <rect x="626" y="345" width="140" height="46" rx="5" fill="#f5b7b1" stroke="#922b21" stroke-width="2.4"/>
+  <text x="696" y="374" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#7b241c" text-anchor="middle">Cortisol</text>
+
+  <!-- row 3 : zona reticularis -->
+  <text x="18" y="478" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#b9770e">그물층</text>
+  <text x="18" y="496" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#b9770e">reticularis</text>
+
+  <rect x="146" y="464" width="180" height="38" rx="5" fill="#fdf2e0" stroke="#b9770e" stroke-width="1.6"/>
+  <text x="236" y="488" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle">17α-OH-pregnenolone</text>
+  <line x1="326" y1="483" x2="416" y2="483" stroke="#1a1a1a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="371" y="456" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#1e8449" text-anchor="middle">17,20-lyase (CYP17)</text>
+  <text x="371" y="522" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" font-weight="bold" fill="#c0392b" text-anchor="middle">⊣ ketoconazole</text>
+
+  <rect x="420" y="460" width="230" height="46" rx="5" fill="#fae5c3" stroke="#b9770e" stroke-width="2.4"/>
+  <text x="535" y="480" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#7e5109" text-anchor="middle">DHEA · DHEAS</text>
+  <text x="535" y="497" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#7e5109" text-anchor="middle">androstenedione (C19 안드로겐)</text>
+
+  <text x="668" y="480" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#555555">말초에서 testosterone ·</text>
+  <text x="668" y="496" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="11" fill="#555555">estradiol로 전환되는 전구호르몬</text>
+
+  <!-- legend -->
+  <rect x="40" y="556" width="840" height="216" rx="8" fill="#fbfbfb" stroke="#999999" stroke-width="1.4"/>
+  <text x="60" y="582" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">합성억제약물 — 어느 단계를 막는가 (25-4의 판정 기준)</text>
+
+  <text x="60" y="608" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#c0392b">Aminoglutethimide</tspan>  ⊣ P450scc (CYP11A) + aromatase (CYP19) — 맨 첫 단계, 모든 부신피질호르몬이 함께 줄어든다</text>
+  <text x="60" y="632" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#c0392b">Metyrapone</tspan>  ⊣ 11β-hydroxylase (CYP11B) — 11-deoxycortisol이 쌓인다 → 진단검사(심야 경구 2~3 g)의 원리</text>
+  <text x="60" y="656" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#c0392b">Ketoconazole</tspan>  ⊣ CYP17 (17,20-lyase), 고용량에서 CYP11A — 항진균제라 선택성이 낮다 → 간독성 · 약물상호작용</text>
+  <text x="60" y="680" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#c0392b">Mitotane</tspan>  ⊣ P450scc · 11β-hydroxylase · 3β-HSD — DDT 유도체, 부신피질 세포 자체를 죽인다</text>
+  <text x="60" y="704" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#1a1a1a"><tspan font-weight="bold" fill="#c0392b">Trilostane</tspan>  ⊣ 3β-HSD — 사람 사용은 취소, 지금은 개의 쿠싱증후군에 쓴다</text>
+
+  <text x="60" y="730" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" fill="#2471a3">원칙 — 이 효소들이 전부 CYP450이라 억제제는 간 CYP450도 함께 막아 독성을 낸다.</text>
+  <text x="60" y="748" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="12" font-weight="bold" fill="#2471a3">그래서 후기 단계를 막는 약이 초기 단계 억제약보다 선택성이 높다.</text>
+</svg>
