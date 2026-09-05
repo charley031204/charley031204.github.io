@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="박종선 교수님 약리학2 · 중금속중독. 설명과 표, 강의 이미지를 함께 읽는 정리본.">
+<meta name="color-scheme" content="light dark"><title>중금속중독 · 약리학 노트</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('pharm-theme')||'light'}catch(e){}</script>
+<script src="assets/app.js" defer></script>
+</head>
+<body data-course="heavy-metals">
+<a class="skip-link" href="#answer">본문으로 건너뛰기</a>
+<div class="sidebar-shade" id="sidebar-shade" hidden></div>
+<aside class="sidebar" id="sidebar" aria-label="강의 목록">
+  <div class="sidebar-head"><a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg><span>약리학 노트</span></a><button class="icon-button mobile-close" id="close-sidebar" aria-label="강의 목록 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+  <p class="sidebar-subtitle">박종선 교수님 · 약리학2</p>
+  <label class="course-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="course-search" type="search" placeholder="강의 찾기" aria-label="강의 제목 검색"></label>
+  <nav class="course-nav" aria-label="전체 강의"><p class="nav-group">오타코이드</p><a class="course-link" href="index.html"><span>히스타민과 항히스타민제</span><small>08.18</small></a><a class="course-link" href="serotonin.html"><span>세로토닌과 맥각 알칼로이드</span><small>08.21</small></a><a class="course-link" href="eicosanoids.html"><span>Eicosanoids</span><small>08.21</small></a><a class="course-link" href="vasoactive-peptides.html"><span>혈관작용펩타이드</span><small>08.21</small></a><p class="nav-group">항염증약</p><a class="course-link" href="nsaid-1.html"><span>NSAID · 기본 기전과 Aspirin</span><small>08.25</small></a><a class="course-link" href="nsaid-2.html"><span>NSAID · 류마티스와 통풍</span><small>08.25</small></a><p class="nav-group">내분비</p><a class="course-link" href="pituitary.html"><span>시상하부와 뇌하수체</span><small>08.26</small></a><a class="course-link" href="thyroid.html"><span>갑상샘호르몬</span><small>08.26</small></a><a class="course-link" href="diabetes.html"><span>췌장호르몬과 당뇨병</span><small>09.02</small></a><a class="course-link" href="adrenal.html"><span>부신피질호르몬</span><small>09.02</small></a><a class="course-link" href="bone.html"><span>뼈와 무기질</span><small>09.02</small></a><a class="course-link" href="gonadal.html"><span>생식샘호르몬</span><small>09.02</small></a><p class="nav-group">독성학</p><a class="course-link" href="toxicology.html"><span>독성학 개론</span><small>09.03</small></a><a class="course-link" href="heavy-metals.html" aria-current="page"><span>중금속중독</span><small>09.03</small></a><p id="no-courses" hidden>일치하는 강의가 없어요.</p></nav>
+  <div class="sidebar-bottom"><span class="status-dot"></span>14개 강의 · 나의 학습 노트</div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="topbar-left"><button class="icon-button" id="toggle-sidebar" aria-label="강의 목록 열기 또는 닫기" aria-expanded="false" aria-controls="sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button><span class="topbar-title">약리학2 <span class="muted">/ 독성학</span></span></div><div class="topbar-actions"><button class="text-button" id="toggle-toc" aria-controls="toc" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>목차</span></button><button class="icon-button" id="theme-toggle" aria-label="어두운 화면으로 전환" title="화면 테마 전환"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button><button class="icon-button" id="print-page" aria-label="이 강의 인쇄" title="인쇄"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/></svg></button></div></header>
+  <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  <main class="reading-layout" id="main">
+    <article class="conversation" aria-label="중금속중독 강의 정리">
+      <div class="lecture-topline">09.03 강의 <span>·</span> 박종선 교수님</div>
+      <h1 class="lecture-title">중금속중독</h1>
+      <div class="user-message">이 강의, 흐름을 따라 이해할 수 있게 설명해 줘.<br>시험 포인트랑 그림도 같이 보고 싶어.</div>
+      <div class="assistant-label"><span class="assistant-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span><span>함께 읽는 강의 노트</span><span class="answer-meta">그림 7개</span></div>
+      <p class="answer-intro">좋아요. <strong>중금속중독</strong>, 순서대로 살펴볼게요.<br>설명을 읽다가 그림이 작게 보이면 눌러서 크게 볼 수 있어요.</p>
+      <div class="prose" id="answer"><details class="lecture-info"><summary>강의 범위·키워드·시험 안내</summary><p class="source-title">약리학2 중금속 중독과 킬레이터 — 강의 정리 (강의록 기반)</p>
+<p><strong>교수:</strong> 박종선</p>
+<p><strong>강의 범위:</strong> 킬레이터 각론(succimer · penicillamine · trientine/아연 · EDTA · deferoxamine)과 해독제 표 5-9 · 납 · 비소 · 수은 · 철 · 카드뮴 · 시안화물 (교안 p.6–21 중 지정 묶음)</p>
+<p><strong>강의 흐름:</strong> 먼저 킬레이터를 하나씩 살펴볼게요. 다섯 약은 서로 달라 보이지만, <strong>"어떤 금속에 붙느냐 · 어디로 넣느냐 · 세포 안까지 가느냐"</strong> 세 가지 기준으로 구분할 수 있어요. 그 각론이 p.11의 표 5-9 한 장으로 수렴하면서 1부가 끝나요. 2부는 방향을 뒤집어 금속 쪽에서 다시 봐요 — 납·비소·수은·철·카드뮴을 차례로 놓고 각 금속마다 〈원인물질 → 표적 → 임상상 → 해독제〉 네 칸을 채워 볼게요.<br/><br/> 마지막에 금속이 아닌 시안화물이 붙는데, 이것만 유일하게 표적이 효소 하나(cytochrome oxidase)로 특정되고 해독제가 세 갈래로 갈려요.</p>
+<p><strong>핵심 키워드:</strong> chelator · bidentate · polydentate · dimercaprol(BAL) · succimer(DMSA) · penicillamine · trientine · 아연·metallothionein · CaNa₂EDTA · deferoxamine · Prussian blue · Wilson병 · ALAD · ferrochelatase · wrist drop · basophilic stippling · Burton line · 전혈 납 농도 · rice-water stool · Mees line · methylmercury · 미나마타병 · gray cyanosis · 이타이이타이병 · β₂-microglobulin · cytochrome oxidase · Met-Hb · thiosulfate · hydroxocobalamin</p>
+<p><strong>시험 포인트:</strong> 25장짜리 짧은 강의에 25년 기출 5문항이 몰려 있어요 — p.6 succimer의 제형(25-3), p.10 deferoxamine(25-34), p.14 납에서 두 문항(25-24 소아 진단 · 25-52 성인 임상상), p.15 비소 급성(25-8). 소크라티브 N14는 17·18·19·20번 네 문항이며 각각 표 5-9 · EDTA 제형 · 금속별 소견 감별 · 시안화물에 걸린다.</p>
+<blockquote class="callout note">
+<p><strong>표기 규칙</strong> — 일반 불릿과 표는 <strong>교안 그대로</strong>(시험 기준). <code>↳</code>는 그 항목이 왜 그런지 붙인 <strong>부가 설명</strong>, <code>&gt; 🧠 이해 포인트</code>는 여러 항목을 하나로 꿰는 설명, <code>&gt; 💡 시험 포인트</code>는 교안이 따로 떼어 강조한 자리와 기출이 나온 자리예요. 삽입된 그림 중 파일명에 <code>_p0NN</code>(페이지 번호)이 들어간 것은 <strong>교안 원본 도해</strong>이고, 파일명에 <code>_gen_</code>이 붙은 것은 이 정리본에서 <strong>직접 작성한 정리 도해</strong>예요.<br/><br/> 캡션에 교안 그림 번호와 페이지를 달았어요.</p>
+<p><strong>이 정리본이 다루지 않는 구간</strong> — p.1–2(도입·파트 표지), p.3–5(킬레이터 총론·BAL·Lewisite 사례 — 25년 0문항 · 소크라티브 0문항. 단 succimer를 이해하는 데 필요한 두 줄만 §1에서 대비로 끌어 써요), p.12·p.20(파트 표지), p.16(Aqua Toffana·대장금 사례 — 0문항), p.22–23(탈륨·와파린·스트리크닌 — 소크라티브 N14 19번의 오답 감별에 필요한 <strong>탈륨 한 줄</strong>만 §4 도해에 남겼다), p.24–25(사례 연구·요약 — 납 진단 기준 한 줄만 §2에서 참조).<br/><br/> 이 구간은 이번 학습 범위에서 제외해 두세요.</p>
+</blockquote>
+
+</details><h2 id="section-1">1. 킬레이터 각론 — 다섯 약과 표 5-9</h2>
+<p class="section-source"><em>p.6–11 · 소크라티브 N14 17번(p.11, 17) · 18번(p.9, 14) · <strong>25-3(p.6) · 25-34(p.10)</strong></em></p>
+<h3 id="section-2">Succimer (DMSA) — 경구로 쓰는 BAL ★25-3 (p.6)</h3>
+<ul>
+<li>2,3-dimercaptosuccinic acid — <strong>수용성 · bidentate · 경구 투여 가능한 BAL의 유도체</strong><ul>
+<li class="explanation">BAL(p.4)과 <strong>금속을 붙잡는 부분은 같아요</strong>. SH(thiol) 두 개로 금속을 집는 bidentate라는 점이 같아요. 차이는 나머지 골격에 있어요. succimer는 그 자리에 카복실기 두 개가 붙어 물에 녹는다. <strong>집게는 그대로 두고 몸통만 물에 녹게 바꾼 약</strong>이라고 생각하면 돼요.</li>
+</ul>
+</li>
+<li>소아·성인 납 중독 시 <strong>경구 투여 — 1차 선택</strong>, 혈중 납 감소 효능이 주사용 EDTA와 비슷해요</li>
+<li>중독 후 <strong>수시간 내 투여</strong>하면 비소·수은 중독에도 유효<ul>
+<li class="explanation">"수시간 내"라는 단서가 붙는 이유 — 금속이 이미 조직 단백질의 SH기에 자리 잡고 나면 혈중에서 붙잡을 것이 남지 않아요. 그래서 비소·수은의 1차는 여전히 BAL이고 succimer는 조기 투여에 한한 대안이에요.</li>
+</ul>
+</li>
+<li>독성: BAL보다 훨씬 덜 유독 — 위장관 장애, 중추신경 효과, 피부발진, 간효소 상승</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속중독_박종선_p006_a" decoding="async" height="473" loading="lazy" src="images/691c6330a7bb1513.png" width="528"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 8 Succimer(DMSA)의 구조 (교안 p.6) — 위아래로 튀어나온 <strong>SH 두 개</strong>가 금속을 무는 집게고(= bidentate), 좌우의 <code>HO–C=O</code> 카복실기 <strong>두 개</strong>가 이 분자가 물에 녹도록 해 줘요. BAL(p.4)은 같은 SH 두 개를 갖고도 이 자리에 <strong><code>HO</code> 하나뿐</strong>이라 물에 안 녹는다 — 이온화되는 카복실기 두 개 대 알코올 하나, 그 차이가 수용성과 지용성을 갈랐다.</figcaption></figure>
+
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Dimercaprol (BAL, p.4)</th>
+<th><strong>Succimer (DMSA, p.6)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>용해도</td>
+<td>지용성(oily liquid)</td>
+<td><strong>수용성</strong></td>
+</tr>
+<tr>
+<td>투여경로</td>
+<td><strong>근육주사 전용</strong></td>
+<td><strong>경구</strong></td>
+</tr>
+<tr>
+<td>주 적응증</td>
+<td>급성 비소·수은 중독, 금 / 납은 EDTA와 병용</td>
+<td><strong>납 중독 1차</strong></td>
+</tr>
+<tr>
+<td>독성</td>
+<td>발생률 높음, 세포 내로 신속 침투</td>
+<td>훨씬 덜 유독</td>
+</tr>
+<tr>
+<td>특유의 금기</td>
+<td>땅콩기름 용매 → <strong>땅콩 알레르기 금기</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-3이 물은 것은 딱 이 표의 위 두 줄이에요.</strong> "납 중독 환자에게 쓰는 succimer의 특성"에서 정답은 <strong>수용성·경구제</strong>이고, 오답 ①(지용성·주사제)은 BAL의 특성을 그대로 가져다 놓은 거예요. 나머지 오답 셋은 <strong>선택성</strong>을 이용해 다른 약과 헷갈리게 해요 — Fe 선택 = deferoxamine, Cu 선택 = penicillamine, Al 선택은 <strong>아예 존재하지 않는다</strong>(deferoxamine조차 Al³⁺에는 활성이 낮다고 교안이 못박음).<br/>
+↳ 왜 succimer 쪽이 "발전형"인가까지 붙이면 안 틀려요 — 교안 p.3의 <strong>이상적인 킬레이터 조건 ①이 "수용성이 높을 것"</strong>이에요. BAL은 이 첫 조건부터 어기고 있고, succimer는 그 결함을 고친 유도체다.<br/><br/> 그래서 외래에서 알약으로 소아를 치료할 수 있게 됐어요.</p>
+</blockquote>
+<h3 id="section-3">Penicillamine — 구리를 잡는 약 (p.7)</h3>
+<ul>
+<li>bidentate · 수용성 · 위장관 흡수, <strong>미변화체로 배설</strong> / 페니실린 대사산물에서 유래</li>
+<li><strong>Wilson병 등 구리 중독의 1차</strong> / 금·비소·납에는 보조 요법</li>
+<li>독성이 흔하고 심하다: 단백뇨 동반 신독성, <strong>범혈구감소증</strong>, SLE·용혈성 빈혈 등 자가면역, <strong>비타민 B₆ 길항</strong><ul>
+<li class="explanation">이 약은 부작용이 흔하고 심하다는 점을 함께 기억해 주세요. 그래서 요즘은 Wilson병 초기 치료가 trientine이나 아연으로 옮겨가는 추강해요. 시험 답안은 9판 기준으로 penicillamine이 1차지만, 이 흐름은 알아둬야 해요.</li>
+</ul>
+</li>
+<li>Wilson병 = <strong>ATP7B 변이</strong> → 담즙으로 구리를 못 버림 → 간·기저핵·각막(<strong>Kayser–Fleischer ring</strong>)에 축적</li>
+</ul>
+<h3 id="section-4">Trientine과 아연 — 꺼내기 vs 못 들어오게 하기 (p.8)</h3>
+<ul>
+<li><strong>Trientine</strong>: 구리를 잡는 <strong>polydentate</strong>. penicillamine을 견디지 못하는 환자에서 사용, 부작용이 더 적어요</li>
+<li><strong>아연은 킬레이터가 아니에요.</strong> 장 점막세포에서 <strong>metallothionein 생성을 유도</strong>해 구리가 흡수되지 않고 대변으로 나가게 해요 → <strong>유지요법</strong><ul>
+<li class="explanation">p.8은 이 두 작용의 차이를 중심으로 읽어 보세요. 킬레이션은 <strong>이미 몸 안에 있는 금속을 꺼내는 것</strong>이고, 아연은 <strong>애초에 못 들어오게 막는 것</strong>이에요. 급성기·중증에는 꺼내야 하고, 평생 가는 유지기에는 막는 쪽이 안전하고 싸다.</li>
+</ul>
+</li>
+<li>평생 치료가 필요하며 임의 중단 시 급성 간부전으로 진행할 수 있어요</li>
+</ul>
+<h3 id="section-5">Edetate (EDTA) — 납의 주사용 킬레이터 (p.9)</h3>
+<ul>
+<li>매우 유효한 <strong>polydentate</strong> — <strong>Ca²⁺을 포함한</strong> 2가·3가 양이온의 trap</li>
+<li>화학적으로 <strong>극성이 매우 높아요</strong> → 납 중독 시 <strong>반드시 주사</strong>, <strong>세포 내부로 못 들어가 세포외액의 금속만 제거</strong><ul>
+<li class="explanation">이 성질로 두 가지를 함께 설명할 수 있어요. 극성이 높기 때문에 ① 장에서 흡수가 안 되고(= 경구 불가), ② 지질막을 못 넘는다(= 세포 안에는 못 감). 그래서 뼈나 세포 안에 박힌 납은 혈액으로 다시 나올 때까지 기다려야 하고, 치료가 한 번에 끝나지 않아요.</li>
+</ul>
+</li>
+<li><strong>치명적 혼동</strong>: Na₂EDTA(이나트륨염)를 잘못 투여하면 혈중 칼슘을 급격히 제거해 <strong>치명적 저칼슘혈증·심정지</strong> → 반드시 <strong>CaNa₂EDTA</strong></li>
+<li>독성: <strong>신독성(신세뇨관 괴사)</strong> → 적절한 수분 공급, <strong>치료 기간 5일 이하</strong>, 고용량에서 심전도 변화</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속중독_박종선_p009_a" decoding="async" height="551" loading="lazy" src="images/0ace085c396cc0bd.png" width="1153"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 13 Ethylenediamine 골격과 금속 배위 (교안 p.9) — 두 개의 질소가 점선 화살표로 가운데 금속 <code>M</code>을 <strong>양쪽에서 동시에 붙잡는</strong> 모양이 킬레이션의 원형이에요. EDTA는 이 팔을 여섯 개로 늘린 polydentate라 강하게 결합하며, <strong>바로 그 세기 때문에 납만 골라 잡지 못하고 칼슘까지 끌고 가요.</strong> 소크라티브 N14 18번이 이 성질에서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>소크라티브 N14 18번</strong> — CaNa₂EDTA로 쓰는 이유는 오직 하나, <strong>EDTA가 칼슘까지 포획해 저칼슘혈증을 일으키기 때문</strong>이에요. 미리 칼슘을 채워 두면 납과 <strong>교환</strong>만 일어난다.</p>
+<p>나머지 선지는 다음 세 가지를 확인하면 돼요 — 칼슘을 붙여도 ① 신세뇨관 괴사는 <strong>남고</strong>(그래서 5일 제한이 따로 있어요), ② 여전히 <strong>세포 안에 못 들어가고</strong>, ③ 여전히 <strong>경구로 못 쓴다</strong>(경구는 succimer). 그리고 킬레이션의 목적은 납을 뼈에 밀어 넣는 것이 아니라 몸 밖으로 빼는 거예요.<br/>
+↳ 여기 딸려 나오는 함정 하나(p.14) — <strong>납에 노출된 근로자에게 경구 chelator로 예방하는 것은 금지</strong>예요.<br/><br/> 킬레이터가 오히려 장에서 납의 흡수를 촉진할 수 있기 때문이며, 대신 <strong>칼슘 다량 섭취</strong>가 권장돼요.</p>
+</blockquote>
+<h3 id="section-6">Deferoxamine — 철에만 반응하는 킬레이터 ★25-34 (p.10)</h3>
+<ul>
+<li><strong>Polydentate</strong>, 세균(<em>Streptomyces pilosus</em>) 유래 siderophore</li>
+<li><strong>철에 선택적·특이적</strong> (Al³⁺에는 활성이 낮아요) / <strong>Hb·cytochrome 안의 Fe와는 반응하지 못해요 → 그래서 안전해요</strong><ul>
+<li class="explanation">"선택성"이 두 수준에서 나타난다는 점을 짚어 볼게요. <strong>금속 간 선택성</strong>(철만 잡는다)과 <strong>같은 철 안에서의 선택성</strong>(단백질에 박힌 철은 못 건드리고 유리 철만 잡는다). 두 번째 층이 없었다면 이 약은 헤모글로빈을 해체하는 독약이 됐을 거예요.</li>
+</ul>
+</li>
+<li><strong>급성 철분 중독 시 주사</strong> — 특히 유소아가 철분 알약을 실수로 과량 섭취한 경우</li>
+<li>독성: 피부 반응(홍조·홍반·소양증), 장기 투여 시 <strong>망막 변성</strong>, 간·신기능 이상, 중증 응고장애, <strong>급속 정주 시 histamine 유리로 저혈압성 shock</strong><ul>
+<li class="explanation">"급속히 주지 마라"가 실제로 투여할 때 지켜야 할 원칙이에요. 부작용이 용량이 아니라 <strong>주입 속도</strong>에서 나와요.</li>
+</ul>
+</li>
+<li>만성 철과잉(수혈성 혈색소증)에는 <strong>경구 deferasirox·deferiprone</strong>, 급성 표준은 여전히 <strong>정주 deferoxamine</strong></li>
+<li>특징적 소견: DFO-철 복합체(ferrioxamine)가 배설되며 소변이 <strong>적갈색('vin rosé')</strong> → 치료 반응 지표</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속중독_박종선_p010_a" decoding="async" height="487" loading="lazy" src="images/a64ff2e09ba767ce.png" width="570"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 14 Deferoxamine(DFO)의 구조 (교안 p.10) — 앞의 bidentate 약들과 눈에 띄게 다른 점은 <strong>길이</strong>예요. 긴 사슬을 따라 OH·O·N이 반복되며 여러 개의 배위 자리를 만들고, 이 사슬이 철 하나를 <strong>감싸듯이 둘러싼다</strong>. 자리 수가 많을수록 단단히 붙잡는다는 p.3의 원칙이 눈에 보이는 형태.</figcaption></figure>
+
+<h3 id="section-7">킬레이터 정리 — 금속별 1차 선택 (p.11, 표 5-9)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>금속</th>
+<th>1차 선택 킬레이터</th>
+<th>투여경로</th>
+<th>보조·대안</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>납 (lead)</td>
+<td>succimer (경구) / CaNa₂EDTA (주사)</td>
+<td>경구·정주</td>
+<td>dimercaprol (중증·뇌병증 시 EDTA와 <strong>병용</strong>)</td>
+<td>치료 기간 5일 이하, 신기능 감시</td>
+</tr>
+<tr>
+<td>비소 (arsenic)</td>
+<td><strong>dimercaprol (BAL)</strong></td>
+<td>근주</td>
+<td>succimer (조기 투여 시)</td>
+<td>급성기 조기 투여가 핵심</td>
+</tr>
+<tr>
+<td>수은 (mercury)</td>
+<td>dimercaprol / succimer</td>
+<td>근주·경구</td>
+<td>penicillamine (만성 무기수은)</td>
+<td><strong>유기수은에는 효과가 의문시됨</strong></td>
+</tr>
+<tr>
+<td>구리 (copper)</td>
+<td><strong>penicillamine</strong></td>
+<td>경구</td>
+<td>trientine, 아연(유지요법)</td>
+<td>Wilson병</td>
+</tr>
+<tr>
+<td>철 (iron)</td>
+<td><strong>deferoxamine</strong></td>
+<td>정주</td>
+<td>deferasirox·deferiprone (만성)</td>
+<td>급성 중독은 정주</td>
+</tr>
+<tr>
+<td>탈륨 (thallium)</td>
+<td><strong>Prussian blue</strong> (ferric ferrocyanide)</td>
+<td>경구</td>
+<td>혈액투석, 강제 이뇨</td>
+<td><strong>킬레이터가 아닌 이온교환체</strong></td>
+</tr>
+<tr>
+<td>금 (gold)</td>
+<td>dimercaprol</td>
+<td>근주</td>
+<td>penicillamine</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>암기의 축 네 줄</strong>: <code>BAL = 비소·수은·금</code> / <code>succimer·EDTA = 납</code> / <code>penicillamine = 구리</code> / <code>deferoxamine = 철</code></li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속_박종선_gen_킬레이터매트릭스" decoding="async" height="560" loading="lazy" src="images/658514757e6726d7.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>킬레이터 매트릭스 — 투여경로 · 용해도 · 표적 금속 · 주의점 (교안 p.4·6–11을 한 장으로 재배열, 자체 작성 도해) — 위 표가 "금속 → 약"이라면 이 그림은 <strong>"약 → 성질"</strong> 방향이에요. 시험은 두 방향을 다 물어요. <strong>25-3은 두 번째·세 번째 열</strong>(투여경로·용해도)에서 BAL과 succimer가 정확히 반대인 것을, <strong>25-34는 deferoxamine 행</strong>을, <strong>소크라티브 N14 17번은 맨 아래 암기의 축 네 줄</strong>을 그대로 물어요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>다섯 약을 세 가지 기준으로 정리해 볼게요.</strong> 킬레이터를 외운다는 건 사실 세 가지만 정하는 일이에요. ① <strong>어떤 금속에 붙나</strong> — 이건 위 표 네 줄이 전부고, 예외는 Prussian blue(탈륨, 애초에 킬레이터가 아니에요)뿐이에요.</p>
+<p>② <strong>어디로 넣나</strong> — 물에 녹으면 먹이고(succimer·penicillamine·deferasirox), 안 녹거나 극성이 너무 세면 찌른다(BAL은 지용성이라 근주, EDTA는 극성이 너무 세서 정주). ③ <strong>세포 안까지 가나</strong> — BAL은 지용성이라 세포 안까지 들어가고(그래서 잘 듣지만 부작용도 많아요), EDTA는 세포외액에만 머문다.<br/><br/><br/>
+이 세 칸이 정해지면 부작용까지 따라와요. 세포 안에 들어가는 약은 전신 부작용이 많고(BAL), 신장으로 몰려 나가는 약은 신독성이 문제고(EDTA), 선택성이 좋은 약은 조용하다(deferoxamine). <strong>약을 외우지 말고 성질을 외우면 표가 복원돼요.</strong></p>
+<p>💡 시험 포인트: <strong>소크라티브 N14 17번</strong>은 표 5-9의 짝을 뒤섞은 문항이에요. 다섯 선지 중 두 개(구리–deferoxamine / 철–penicillamine)가 <strong>서로의 짝을 맞바꾼</strong> 형태로 나왔으니, 이 두 쌍만 확실히 해두면 절반이 걸러져요. 나머지 함정은 <strong>"납 – dimercaprol 단독"</strong> — 납에서 BAL은 <strong>중증·뇌병증에서 EDTA와 병용</strong>하는 보조지 단독 1차가 아니에요. <code>단독</code>이라는 한 단어가 오답을 만들어요.</p>
+<p>그리고 이 문항에는 중금속이 아닌 짝(<strong>이소니아지드 – pyridoxine</strong>, 아편계 – naloxone)이 섞여 들어오므로 N13 총론 표와 함께 봐야 해요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-8">2. 납 (lead) — 소아와 성인이 다르게 나타난다</h2>
+<p class="section-source"><em>p.13–14 · 소크라티브 N14 19번(p.13–14) · <strong>25-24(p.14) · 25-52(p.14)</strong></em></p>
+<h3 id="section-9">중금속의 공통 특성 (p.13)</h3>
+<ul>
+<li>생체 내 <strong>생리적 역할이 없어요</strong> / 조혈기·간·신경계·신장·위장관·생식기계 독성</li>
+<li>생체 내 중요 효소·조절 단백질의 <strong>SH기와 결합해 불활성화</strong>시킨다<ul>
+<li class="explanation">이 내용은 강의 전체를 연결하는 기본 원리예요. 금속이 SH기를 점령하는 게 독성의 기전이고, 킬레이터가 SH기를 두 개 달고 나타나 <strong>금속을 경쟁적으로 가로채는 것</strong>이 치료의 기전이에요. 독과 약이 같은 화학을 써요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-10">납의 분자 기전과 급성 중독 (p.13)</h3>
+<ul>
+<li>노출: 산업 현장의 <strong>납 먼지 흡입</strong>(성인) / 유소아가 <strong>건조된 납 함유 페인트 조각 섭취</strong></li>
+<li>급성: <strong>복통(colic)</strong>, 중추신경 증상 → <strong>소아에서는 급성 뇌병증(encephalopathy)으로 나타나며 사망률이 높아요</strong> → 즉각적 chelation</li>
+<li>분자 기전: heme 합성 경로의 두 효소를 억제 — <strong>δ-aminolevulinic acid dehydratase (ALAD)</strong> · <strong>ferrochelatase</strong><ul>
+<li class="explanation">그래서 혈중 ALA와 적혈구 프로토포르피린(<strong>ZPP</strong>)이 올라가고 <strong>소적혈구성 빈혈</strong>이 생겨요. <strong>철이 모자라서 생긴 빈혈이 아니에요</strong> — 철은 충분한데 heme에 끼워 넣는 마지막 단계(ferrochelatase)가 막혀 있는 거예요. 25-24의 오답 "혈장 철 농도"가 정확히 이 지점을 노린다.</li>
+</ul>
+</li>
+<li><strong>Ca²⁺을 모방</strong>해 신경전달과 골 대사를 교란, <strong>뼈에 저장되어 반감기가 수십 년</strong><ul>
+<li class="explanation">뼈에 들어가면 킬레이터가 닿지 않는다(EDTA는 세포외액만 봐요). 그래서 한 번 오염되면 혈중 농도가 떨어져도 몇 년에 걸쳐 뼈에서 조금씩 새어 나와요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-11">만성 중독 — plumbism (p.14) ★25-52 (p.14)</h3>
+<ul>
+<li>무기 납의 만성 중독으로, <strong>급성보다 훨씬 흔해요</strong></li>
+<li>징후: 말초 신경병증, 식욕부진, 빈혈, tremor, 체중 감소, 위장관 증상</li>
+<li><strong>소아 만성</strong>: 성장 지체, 신경감지 이상, 발달 지연 → <strong>소아에서는 succimer를 chelator로 사용</strong></li>
+<li><strong>고전적 3징후</strong>: ① <strong>wrist drop</strong>(요골신경 마비) ② <strong>basophilic stippling</strong>(호염기성 반점 적혈구) 동반 빈혈 ③ <strong>Burton line</strong>(잇몸의 청회색 납선)</li>
+<li>치료: 오염원 제거 + chelation(EDTA·dimercaprol·penicillamine) / <strong>경구 chelator에 의한 예방은 금지</strong></li>
+<li><strong>유기 납</strong>: 휘발유 anti-knocking agent인 tetraethyl·tetramethyl lead(무연 휘발유에는 없음) → 피부·폐로 신속 흡수 → <strong>환각·두통·경련·혼수</strong>, 치료는 오염원 제거와 경련 조치</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>축</th>
+<th><strong>소아 납중독</strong></th>
+<th><strong>성인 납중독</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전형적 노출</td>
+<td>마른 페인트 조각을 <strong>입에 넣음</strong></td>
+<td>페인트 제거·배터리 공장의 <strong>먼지·흄 흡입</strong></td>
+</tr>
+<tr>
+<td>전면에 나오는 증상</td>
+<td><strong>중추신경</strong> — 급성 뇌병증(사망률 높음), 발달 지연·성장 지체</td>
+<td><strong>말초신경·조혈</strong> — wrist drop, 빈혈, 복통</td>
+</tr>
+<tr>
+<td>대표 문항</td>
+<td><strong>25-24</strong> — 페인트 조각 먹은 아이의 빈혈·복통</td>
+<td><strong>25-52</strong> — 배터리 공장 48세, 복통·손목처짐</td>
+</tr>
+<tr>
+<td>킬레이터</td>
+<td><strong>succimer 경구</strong></td>
+<td>succimer 또는 CaNa₂EDTA</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 소아는 뇌, 성인은 말초신경인가.</strong> 같은 금속인데 갈리는 이유는 노출 경로가 아니라 <strong>대상의 상태</strong>예요. 소아는 ① 혈액뇌장벽이 아직 미성숙하고 ② 뇌가 한창 만들어지는 중이며 ③ 체중당 섭취량이 크고 ④ 장에서 납 흡수율 자체가 성인보다 높아요.<br/><br/> 그래서 같은 양이 들어와도 <strong>중추신경에 먼저 도달하고 더 큰 손상을 일으켜요.</strong> 성인은 그 관문이 튼튼하니 납이 오래 돌면서 말초신경의 축삭과 골수의 heme 합성 같은 <strong>"계속 돌아가야 하는 공장"</strong>을 손상시켜요.</p>
+<p>그래서 소아는 뇌병증·발달 지연, 성인은 wrist drop·빈혈로 나타난다.<br/>
+Wrist drop이 하필 손목인 것도 우연이 아니에요. 납은 <strong>운동신경 우세</strong>로 침범하고, 요골신경은 상완골을 감고 지나가 물리적으로 취약해요. 그 결과 손목을 드는 근육만 먼저 무너져 손이 툭 떨어져요.</p>
+<p>💡 시험 포인트: <strong>25-24와 25-52는 같은 p.14에서 나왔는데 각도가 정반대다.</strong> 하나는 소아·진단, 하나는 성인·임상상이에요. 그런데 <strong>정답은 둘 다 "전혈(혈중) 납 농도"</strong> — 문항을 가르는 것은 검사가 아니라 <strong>vignette다</strong>. 즉 이 두 문항이 실제로 훈련시키는 것은 "납을 의심할 줄 아는가"이지 "무슨 검사를 아는가"가 아니에요.<br/>
+↳ 진단 기준은 교안 <strong>p.24 사례편</strong>에 있어요 — <strong>전혈 납 농도가 중요한 진단법</strong>이고, <strong>ZPP·말초혈액도말(호염기성 반점적혈구)·신기능은 보조</strong>예요. 1차 조치는 검사가 아니라 <strong>노출 차단</strong>이에요.<br/>
+↳ 치료 문턱값이 교안에 <strong>두 개</strong> 나오니 구분해 두세요. <strong>p.24 사례편(9판 본문)은 80 µg/dL 초과 시 succimer 또는 CaNa₂EDTA</strong>, <strong>p.6은 현대 CDC 기준으로 참고치(BLRV) 3.5 µg/dL · 킬레이션은 통상 45 µg/dL 이상</strong>이에요.<br/><br/> 시험 답안은 교안 본문(80)을 따르되, "<strong>안전한 혈중 납 농도는 없다</strong>"는 것이 현재 입장이라는 점을 함께 기억하면 돼요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-12">3. 비소 (arsenic) — rice-water stool 한 단어</h2>
+<p class="section-source"><em>p.15 · 소크라티브 N14 19번(p.15) · <strong>25-8(p.15)</strong></em></p>
+<ul>
+<li>노출: 석탄 연소 시 대기 방출, 다양한 산업 / <strong>3가(As³⁺)가 5가(As⁵⁺)보다 유독</strong></li>
+<li><strong>급성 중독</strong>: 중증 위장관 장애, <strong>구토</strong>, <strong>"rice water" stools</strong>, <strong>모세혈관 손상</strong> → <strong>탈수와 shock</strong><ul>
+<li class="explanation">왜 콜레라처럼 쌀뜨물 설사가 생기는지 볼게요 — 비소가 위장관 점막의 <strong>모세혈관을 직접 망가뜨려</strong> 혈장 성분이 장관으로 통째로 쏟아져요. 즉 세균 독소가 아니라 <strong>혈관 손상</strong>이 만든 대량 삼출이고, 그래서 곧장 탈수·쇼크로 가요. 치료의 절반이 수분·전해질인 이유가 여기 있어요.</li>
+</ul>
+</li>
+<li>호기와 대변에서 <strong>달콤하면서도 마늘과 유사한 냄새</strong></li>
+<li>치료: <strong>유지요법(수분·전해질) + dimercaprol chelation</strong><ul>
+<li class="explanation">BAL이 비소의 해독제인 것은 역사 그대로다(p.5). 비소(As³⁺)가 pyruvate dehydrogenase 같은 <strong>SH기 효소를 불활성화</strong>하는데, BAL의 SH기가 그 자리를 경쟁적으로 가로챈다.</li>
+</ul>
+</li>
+<li><strong>만성 중독</strong>: 인간 발암원(<strong>피부암·폐암·방광암</strong>), 피부 변화, 탈모, 골수 억제, 발열, 만성 오심</li>
+<li>만성의 특징적 소견: <strong>과각화증·색소침착</strong>(손·발바닥), <strong>Mees line</strong>(손톱을 가로지르는 흰 줄), 감각-운동 혼합형 말초신경병증</li>
+<li><strong>Arsine gas (AsH₃)</strong>: 금속 제련·반도체 생산에서 발생 — <strong>대량 용혈 → 신부전</strong>, 유지요법으로 대처<ul>
+<li class="explanation">같은 비소인데 임상상이 완전히 달라요. 가스 형태라 폐로 들어와 <strong>적혈구를 직접 깨뜨린다.</strong> 25-8의 오답 ①(혈뇨)이 노리는 지점이 바로 이것 — 혈뇨·용혈은 arsine gas의 상이지 경구 비소 급성 중독의 상이 아니에요.</li>
+</ul>
+</li>
+<li>독이 약이 되다: <strong>As₂O₃(ATO)</strong>는 급성 전골수구성 백혈병(APL)의 표준 치료제 — <strong>PML-RARα 융합단백</strong>을 분해해 분화 유도</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-8의 결정타는 "rice-water stool" 한 단어</strong>예요. 급성 비소 = <strong>구토 + 쌀뜨물 설사</strong>. 나머지 오답 넷은 전부 <strong>다른 물질의 상</strong>으로 유도해요 — 혈뇨는 <strong>arsine gas</strong>(용혈·신부전), 시력장애(구심성 시야협착)와 청력소실은 <strong>유기수은</strong>(미나마타병), 근육통은 교안 어디에도 없어요.<br/>
+↳ 비소 3종 세트로 묶어두면 어느 각도로 물어도 잡힌다: <strong>급성 = rice-water stool + 마늘 냄새</strong>, <strong>만성 = Mees line + 과각화증·색소침착</strong>, <strong>가스 = 용혈·신부전</strong>.</p>
+</blockquote>
+<hr/>
+<h2 id="section-13">4. 수은 · 철 · 카드뮴 — 금속마다 표지 하나</h2>
+<p class="section-source"><em>p.17–19 · 소크라티브 N14 19번(p.17, 19) · <strong>25-34(p.19)</strong></em></p>
+<h3 id="section-14">수은 — 형태가 곧 표적장기 (p.17)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>형태</th>
+<th>대표 노출원</th>
+<th>주 흡수 경로</th>
+<th>표적장기</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>원소수은(증기)</strong></td>
+<td>치과 아말감, 온도계, 형광등</td>
+<td><strong>흡입(폐)</strong></td>
+<td>폐 · 중추신경</td>
+<td>흉통·호흡곤란·급성 폐렴. <strong>경구로는 거의 흡수 안 됨</strong></td>
+</tr>
+<tr>
+<td><strong>무기수은(Hg²⁺ 염)</strong></td>
+<td>목재 보존, 살충제, 수은 전지</td>
+<td>경구</td>
+<td><strong>신장 · 위장관</strong></td>
+<td>mercuric chloride 급성 섭취 → 중증 출혈성 위장관염 → <strong>급성 신부전</strong></td>
+</tr>
+<tr>
+<td><strong>유기수은(methylmercury)</strong></td>
+<td>종자 소독, <strong>어패류</strong></td>
+<td>경구</td>
+<td><strong>중추신경 · 태아</strong></td>
+<td><strong>지용성이 커 혈액뇌장벽·태반 통과.</strong> 감각이상·시야협착·운동실조</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>만성(무기): 잇몸·치아 이상, 위장관 기능 장애, 신경학적·행동학적 변화 — 과거 모자 제조공의 <strong>"Mad Hatter"</strong></li>
+<li>치료: 급성은 <strong>dimercaprol</strong> / 만성은 <strong>penicillamine·succimer</strong> / <strong>유기수은은 chelation의 효과가 의문시돼요</strong><ul>
+<li class="explanation">왜 유기수은만 손을 못 쓰는가 — 이미 <strong>중추신경 안에</strong> 들어가 버렸기 때문이에요. 킬레이터는 혈액과 세포외액에서 금속을 낚는 도구인데, 혈액뇌장벽 너머에 자리 잡은 것은 낚을 수가 없어요. 그래서 유기수은은 치료가 아니라 <strong>예방(어종 섭취 관리·임신 중 노출 회피)</strong>의 영역이에요.</li>
+</ul>
+</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속중독_박종선_p018a" decoding="async" height="251" loading="lazy" src="images/f1ce9fbbc814ede5.png" width="2473"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>미나마타병의 생물농축 흐름도 (교안 p.18) — 왼쪽에서 오른쪽으로 <strong>공장 폐수 → 세균 → 어패류 → 사람 → 중독</strong> 한 줄이에요. 결정적인 칸은 두 번째 — 공장이 버린 것은 <strong>무기수은</strong>인데 해저 세균이 이를 <strong>메틸수은으로 바꿔</strong> 놓아요. 형태가 바뀌는 순간 지용성이 되어 먹이사슬을 타고 농축되고, 사람 몸에서는 뇌와 태반을 통과해요.<br/><br/> 임상상(Hunter–Russell 증후군: 사지 말단 감각이상·구심성 시야협착·운동실조·구음장애·난청)이 소크라티브 N14 19번 ①번 선지와 25-8 ④⑤번 선지의 정체예요.</figcaption></figure>
+
+<h3 id="section-15">철 (p.19) ★25-34 (p.19)</h3>
+<ul>
+<li><strong>FeSO₄ 정제 과량 섭취</strong> — 유소아에서 특히 문제 / 만성 과량 시 hemosiderosis·hemochromatosis</li>
+<li>급성: 구토, <strong>위장관 출혈</strong>, 혼수, <strong>gray cyanosis</strong> → 중증 위장관 괴사, 폐렴, 황달, 발작</li>
+<li><strong>급성 철중독의 5단계</strong>: ① 위장관기(0.5~6h, 구토·혈변) → ② <strong>잠복기(6~24h, 겉으로는 호전)</strong> → ③ 쇼크·대사산증기(6~72h) → ④ 간부전기(12~96h) → ⑤ 유문협착·장폐색기(2~8주)<ul>
+<li class="explanation">②단계의 <strong>거짓 호전</strong>이 이 병에서 특히 주의할 부분이에요. 아이가 멀쩡해 보인다고 퇴원시키면 몇 시간 뒤 쇼크로 돌아와요. 시험에서는 "겉으로 좋아졌다"는 문장이 나오면 오히려 급성 철중독을 떠올리라는 신호예요.</li>
+</ul>
+</li>
+<li>치료: <strong>deferoxamine</strong></li>
+</ul>
+<h3 id="section-16">카드뮴 (p.19)</h3>
+<ul>
+<li>노출: <strong>담배</strong>, 오염된 음식(조개류·간·신장), 금속 제련</li>
+<li>급성 흡입(먼지·증기): 호흡기 자극 → <strong>폐부종으로 사망</strong> / 경구 시 위장관 자극</li>
+<li>만성: <strong>폐</strong>(호흡곤란·폐기종·섬유증)와 <strong>신장</strong>(단백뇨·당뇨·아미노산뇨 — 세뇨관 손상)</li>
+<li>치료: chelator를 쓰나 <strong>효과는 제한적</strong></li>
+<li><strong>이타이이타이병</strong>: 광산 폐수의 카드뮴이 쌀을 오염 → 신세뇨관 손상 → <strong>칼슘·인 소실 → 골연화증·다발성 골절</strong> / 조기 지표는 <strong>β₂-microglobulin뇨</strong><ul>
+<li class="explanation">뼈가 무너지는데 원인이 <strong>신장</strong>이라는 것이 이 병의 논리예요. 세뇨관이 망가지면 칼슘과 인을 붙잡아 두지 못해 소변으로 새고, 그 결손을 메우려 뼈에서 계속 꺼내 쓰다 골연화증이 와요. β₂-microglobulin은 정상이라면 세뇨관에서 재흡수되는 작은 단백질이라, 이게 소변에 나오면 <strong>세뇨관이 새고 있다는 가장 이른 신호</strong>예요.</li>
+</ul>
+</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속_박종선_gen_금속별4칸" decoding="async" height="620" loading="lazy" src="images/01e98d8de46b78ce.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>금속별 4칸 요약 — 노출원 → 표적 → 임상상 → 해독제 (교안 p.13–19·22를 한 장으로 재배열, 자체 작성 도해) — 붉은 글자 한 줄씩이 그 금속을 <strong>확정하는 표지</strong>예요. 소크라티브 N14 19번은 이 표를 세로로 잘라낸 문항이에요 — 다섯 선지가 각각 유기수은 · 비소 · 납 · 카드뮴 · 탈륨의 소견 세트이고, 문제는 그중 납을 고르라는 것뿐이에요. <strong>25-34는 Fe 행의 마지막 칸</strong>, <strong>25-8은 As 행의 임상상 칸</strong>에서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-34</strong>는 "유소아 + 철분 보충제 과량 + 구토·위장관 출혈 → <strong>deferoxamine</strong>"이라는 한 줄이에요. 오답 넷이 전부 다른 금속의 짝(BAL=비소·수은, succimer=납, penicillamine=구리, EDTA=납)이므로, §1의 <strong>암기의 축 네 줄</strong>이 그대로 답을 만들어요.<br/><br/> 이 문항은 p.10(약)에서도 p.19(금속)에서도 나올 수 있는 자리라는 점을 기억해 주세요.<br/>
+<strong>소크라티브 N14 19번</strong>은 위 도해 전체를 한 문항으로 압축한 거예요. 다음 소견을 기준으로 구분해 보세요 — <strong>wrist drop이 보이면 납</strong>, <strong>쌀뜨물 설사·마늘 냄새면 비소</strong>, <strong>시야협착·난청이면 유기수은</strong>, <strong>골연화증·β₂-microglobulin뇨면 카드뮴</strong>, <strong>탈모면 탈륨</strong>.</p>
+</blockquote>
+<hr/>
+<h2 id="section-17">5. 시안화물 (cyanide) — 작용점 하나, 해독 3축</h2>
+<p class="section-source"><em>p.21 · 소크라티브 N14 20번(p.21)</em></p>
+<ul>
+<li>근원: 살충·살서제, 금속 광택제, 사진 현상·인화 용액, 훈증 소독제 / <strong>질소 함유 플라스틱류 연소 시 발생 — 화재 현장의 숨은 위험</strong></li>
+<li>기전: <strong>Fe³⁺에 대한 강한 친화성</strong> → 미토콘드리아의 <strong>cytochrome oxidase(3가형)에 강력히 결합</strong> → 산소 이용 차단 → <strong>세포는 산소가 있어도 쓰지 못해요</strong><ul>
+<li class="explanation">전자전달계의 <strong>마지막 관문(복합체 IV)</strong>이 막히면 그 앞의 사슬 전체가 정체돼요. 산소는 폐에서 실려 조직까지 정상적으로 배달됐는데 받아 쓸 곳이 닫힌 상태예요. 그래서 <strong>혈액은 멀쩡하고 세포만 질식해요.</strong></li>
+</ul>
+</li>
+<li>흡수: <strong>KCN 등 알칼리염은 섭취 시에만 유독</strong>하나, <strong>여타의 CN⁻은 모든 경로로 흡수 가능</strong></li>
+<li>경과: 일시적 중추신경 자극 후 <strong>저산소성 경련</strong> → 사망</li>
+<li>징후: <strong>정맥혈이 밝은 적색</strong> · <strong>bitter almond</strong>의 특징적인 냄새<ul>
+<li class="explanation">정맥혈 색깔을 보면 기전도 연결해서 이해할 수 있어요. 조직이 산소를 안 꺼내 썼으니 <strong>동맥혈 그대로 정맥으로 돌아와요.</strong> CO 중독과 갈리는 지점이 바로 여기 — <strong>CO는 혈액(Hb)을 점령하고, CN⁻는 세포 안(미토콘드리아)을 점령해요.</strong></li>
+</ul>
+</li>
+<li>치료 (9판 기준): ① 즉각 <strong>100% O₂</strong> ② <strong>amyl nitrite 또는 Na nitrite</strong> — Met-Hb(Fe³⁺)를 만들어 CN⁻을 붙잡는다 ③ <strong>Na thiosulfate</strong> — CN⁻을 무독한 <strong>SCN⁻(thiocyanate)</strong>로 전환해 배설</li>
+<li>현재 국제 표준 1차 해독제는 <strong>hydroxocobalamin(Cyanokit)</strong> — CN⁻과 결합해 무독한 <strong>cyanocobalamin(비타민 B₁₂)</strong> 형성, 혈압 저하를 일으키지 않아요</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_중금속_박종선_gen_시안화물해독3축" decoding="async" height="600" loading="lazy" src="images/b90a6a1f2bc04a4a.svg" width="880"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>시안화물의 작용점과 해독 3축 (교안 p.21을 도해화, 자체 작성) — 왼쪽 위, CN⁻이 붙는 자리는 전자전달계의 <strong>복합체 IV 하나뿐</strong>이에요. 아래 세 상자가 해독의 세 방향인데, 읽는 법은 <strong>"Fe³⁺를 어디에 둘 것인가"</strong>예요. ② nitrite는 헤모글로빈을 일부러 Met-Hb(Fe³⁺)로 바꿔 <strong>미끼를 만들고</strong>, ③ thiosulfate는 rhodanese를 통해 그 CN⁻을 SCN⁻로 <strong>버린다</strong><br/><br/> — 그래서 둘은 세트로 써요. 맨 아래 hydroxocobalamin은 미끼를 만들 필요 없이 자기가 직접 CN⁻을 물고 나가요. 소크라티브 N14 20번이 이 그림 전체에서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>해독제 세 개가 각각 다른 층을 건드려요.</strong> ① 산소는 <strong>막힌 효소를 뚫지 못해요.</strong> 그래도 100% O₂를 먼저 주는 이유는 아직 살아 있는 효소를 최대한 밀어 돌리고, 화재 현장이라면 동반된 CO를 몰아내야 하기 때문이에요. ② Nitrite는 <strong>CN⁻을 옮기는</strong> 약이에요. 없애는 게 아니라 미토콘드리아의 Fe³⁺에서 혈액 속 Met-Hb의 Fe³⁺로 이사시킬 뿐이라, 이것만 쓰면 결국 다시 풀려 나와요.</p>
+<p>③ Thiosulfate가 <strong>실제로 없애는</strong> 유일한 약이에요. 황을 붙여 티오시안산으로 만들어 소변으로 버린다.<br/>
+그래서 순서가 논리적으로 정해진다 — <strong>효소를 비우고(②) → 치운다(③).</strong> 반대로 하면 치울 CN⁻이 아직 효소에 붙어 있어 소용이 없어요.</p>
+<p>💡 시험 포인트: <strong>소크라티브 N14 20번</strong>의 정답은 기전(cytochrome oxidase·Fe³⁺)과 두 진단 단서(<strong>밝은 적색 정맥혈 · bitter almond</strong>)를 한 선지에 담은 거예요. 오답이 노리는 네 가지 뒤집기를 그대로 기억해 주세요 — ① <strong>Hb에 결합</strong>은 CO의 기전, ② <strong>검붉은 정맥혈·아세톤 냄새</strong>는 색과 냄새를 둘 다 바꿔치기, ③ <strong>특이 해독제가 없다</strong>는 거짓, ④ <strong>KCN의 흡수 경로를 통째로 반대로</strong> 서술(알칼리염은 <strong>섭취 시에만</strong> 유독해요).<br/>
+↳ 그리고 순서를 헷갈리지 마라: <strong>시험 답안은 9판 기준(O₂ → nitrite → thiosulfate), 임상 판단은 hydroxocobalamin.</strong> 특히 <strong>화재 연기흡입</strong>에 동반된 시안 중독에서는 nitrite가 메트헤모글로빈혈증을 만들어 <strong>이미 CO로 떨어진 산소운반능을 더 악화</strong>시키므로 피해야 해요 — 이 단서가 vignette에 "화재"라는 단어로 들어오면 답이 갈려요.</p>
+</blockquote></div>
+      <div class="answer-footer"><a href="originals/heavy-metals.md" download="0903_중금속중독_박종선_강의정리(p6-21).md"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>원본 MD</a><button id="back-top" class="text-button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>처음으로</button></div>
+      <nav class="lecture-pagination" aria-label="이전·다음 강의"><a class="previous-course" href="toxicology.html">← 독성학 개론</a><p class="reading-end">마지막 강의까지 읽었어요.</p></nav>
+    </article>
+    <aside class="toc" id="toc" aria-label="이 강의 목차"><div class="toc-heading"><span>이 강의에서</span><button class="icon-button toc-close" id="close-toc" aria-label="목차 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><nav><a href="#section-1">1. 킬레이터 각론 — 다섯 약과 표 5-9</a><a href="#section-8">2. 납 (lead) — 소아와 성인이 다르게 나타난다</a><a href="#section-12">3. 비소 (arsenic) — rice-water stool 한 단어</a><a href="#section-13">4. 수은 · 철 · 카드뮴 — 금속마다 표지 하나</a><a href="#section-17">5. 시안화물 (cyanide) — 작용점 하나, 해독 3축</a></nav><a class="toc-top" href="#main">맨 위로 ↑</a></aside>
+  </main>
+  <div class="find-dock"><form class="find-form" role="search" id="find-form"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="find-input" type="search" aria-label="이 강의 본문 검색" placeholder="이 강의에서 궁금한 용어 찾기" autocomplete="off"><output id="find-count" aria-live="polite"></output><button type="button" id="find-prev" class="icon-button" aria-label="이전 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button><button type="submit" class="find-next" aria-label="다음 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg></button></form><p class="dock-caption">강의 자료를 바탕으로 문체를 다듬은 개인 학습용 정리본</p></div>
+</div>
+<dialog class="image-dialog" id="image-dialog" aria-label="강의 이미지 확대"><div class="image-dialog-bar"><span>강의 그림</span><div><a id="image-original" target="_blank" rel="noopener">원본 크기로 열기 ↗</a><button class="icon-button" id="close-image" aria-label="확대 이미지 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div></div><div class="image-canvas"><img id="zoomed-image" alt=""></div></dialog>
+</body></html>

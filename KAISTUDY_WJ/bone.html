@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="박종선 교수님 약리학2 · 뼈와 무기질. 설명과 표, 강의 이미지를 함께 읽는 정리본.">
+<meta name="color-scheme" content="light dark"><title>뼈와 무기질 · 약리학 노트</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('pharm-theme')||'light'}catch(e){}</script>
+<script src="assets/app.js" defer></script>
+</head>
+<body data-course="bone">
+<a class="skip-link" href="#answer">본문으로 건너뛰기</a>
+<div class="sidebar-shade" id="sidebar-shade" hidden></div>
+<aside class="sidebar" id="sidebar" aria-label="강의 목록">
+  <div class="sidebar-head"><a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg><span>약리학 노트</span></a><button class="icon-button mobile-close" id="close-sidebar" aria-label="강의 목록 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+  <p class="sidebar-subtitle">박종선 교수님 · 약리학2</p>
+  <label class="course-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="course-search" type="search" placeholder="강의 찾기" aria-label="강의 제목 검색"></label>
+  <nav class="course-nav" aria-label="전체 강의"><p class="nav-group">오타코이드</p><a class="course-link" href="index.html"><span>히스타민과 항히스타민제</span><small>08.18</small></a><a class="course-link" href="serotonin.html"><span>세로토닌과 맥각 알칼로이드</span><small>08.21</small></a><a class="course-link" href="eicosanoids.html"><span>Eicosanoids</span><small>08.21</small></a><a class="course-link" href="vasoactive-peptides.html"><span>혈관작용펩타이드</span><small>08.21</small></a><p class="nav-group">항염증약</p><a class="course-link" href="nsaid-1.html"><span>NSAID · 기본 기전과 Aspirin</span><small>08.25</small></a><a class="course-link" href="nsaid-2.html"><span>NSAID · 류마티스와 통풍</span><small>08.25</small></a><p class="nav-group">내분비</p><a class="course-link" href="pituitary.html"><span>시상하부와 뇌하수체</span><small>08.26</small></a><a class="course-link" href="thyroid.html"><span>갑상샘호르몬</span><small>08.26</small></a><a class="course-link" href="diabetes.html"><span>췌장호르몬과 당뇨병</span><small>09.02</small></a><a class="course-link" href="adrenal.html"><span>부신피질호르몬</span><small>09.02</small></a><a class="course-link" href="bone.html" aria-current="page"><span>뼈와 무기질</span><small>09.02</small></a><a class="course-link" href="gonadal.html"><span>생식샘호르몬</span><small>09.02</small></a><p class="nav-group">독성학</p><a class="course-link" href="toxicology.html"><span>독성학 개론</span><small>09.03</small></a><a class="course-link" href="heavy-metals.html"><span>중금속중독</span><small>09.03</small></a><p id="no-courses" hidden>일치하는 강의가 없어요.</p></nav>
+  <div class="sidebar-bottom"><span class="status-dot"></span>14개 강의 · 나의 학습 노트</div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="topbar-left"><button class="icon-button" id="toggle-sidebar" aria-label="강의 목록 열기 또는 닫기" aria-expanded="false" aria-controls="sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button><span class="topbar-title">약리학2 <span class="muted">/ 내분비</span></span></div><div class="topbar-actions"><button class="text-button" id="toggle-toc" aria-controls="toc" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>목차</span></button><button class="icon-button" id="theme-toggle" aria-label="어두운 화면으로 전환" title="화면 테마 전환"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button><button class="icon-button" id="print-page" aria-label="이 강의 인쇄" title="인쇄"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/></svg></button></div></header>
+  <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  <main class="reading-layout" id="main">
+    <article class="conversation" aria-label="뼈와 무기질 강의 정리">
+      <div class="lecture-topline">09.02 강의 <span>·</span> 박종선 교수님</div>
+      <h1 class="lecture-title">뼈와 무기질</h1>
+      <div class="user-message">이 강의, 흐름을 따라 이해할 수 있게 설명해 줘.<br>시험 포인트랑 그림도 같이 보고 싶어.</div>
+      <div class="assistant-label"><span class="assistant-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span><span>함께 읽는 강의 노트</span><span class="answer-meta">그림 12개</span></div>
+      <p class="answer-intro">좋아요. <strong>뼈와 무기질</strong>, 순서대로 살펴볼게요.<br>설명을 읽다가 그림이 작게 보이면 눌러서 크게 볼 수 있어요.</p>
+      <div class="prose" id="answer"><details class="lecture-info"><summary>강의 범위·키워드·시험 안내</summary><p class="source-title">약리학2 뼈·무기질 대사와 골다공증 치료제 — 강의 정리 (강의록 기반)</p>
+<p><strong>교수:</strong> 박종선</p>
+<p><strong>강의 범위:</strong> PTH(구조·분비조절·이중성) · 비타민 D · FGF23와 burosumab · 표 42-1 세 호르몬 비교 · 칼시토닌과 이차 조절자 · 골다공증과 RANK–RANKL–OPG 축 · 골다공증 치료제 전군 · 무기질 대사장애(고·저칼슘혈증 · CKD-MBD · 파제트병) (교안 p.12–40 중 지정 묶음)</p>
+<p><strong>강의 흐름:</strong> 먼저 혈중 칼슘 변화에 반응하는 PTH부터 살펴볼게요. 같은 호르몬이 지속 노출이냐 간헐 투여냐에 따라 뼈를 깎기도 하고 짓기도 한다는 <strong>이중성</strong>을 먼저 짚어 두고 — 교안이 직접 "시험 단골"이라 적어 둔 자리예요 — 이어 비타민 D와 FGF23을 붙여 세 호르몬을 표 42-1 한 장에서 비교해 볼게요.<br/><br/> 칼시토닌과 이차 조절자(당질코르티코이드·에스트로겐)로 조절자 목록을 닫은 뒤, 후반부는 골다공증으로 넘어가 <strong>RANK–RANKL–OPG 축</strong> 하나를 세우고 그 위에 bisphosphonate · denosumab · romosozumab · teriparatide · SERM을 차례로 연결해 볼게요.<br/><br/> 마지막은 무기질 대사장애를 고칼슘혈증 → 저칼슘혈증 → CKD-MBD → 파제트병 순으로 살펴볼게요.</p>
+<p><strong>핵심 키워드:</strong> PTH(1-84) · pre-pro-PTH · CaSR · PTH 이중성 · RANKL/OPG 비율 · teriparatide · abaloparatide · 7-DHC · 25-hydroxylase · 1α-hydroxylase · calcitriol · VDR · TRPV6 · FGF23 · Klotho · PHEX · burosumab · 표 42-1 · 연어 calcitonin · 당질코르티코이드 · estrogen · RANK · OPG · denosumab · bisphosphonate(P–C–P) · farnesyl pyrophosphate synthase · sclerostin · Wnt · romosozumab · raloxifene · bazedoxifene · cinacalcet · etelcalcetide · PTHrP · CKD-MBD · sevelamer · 파제트병</p>
+<p><strong>시험 포인트:</strong> 25년 기출 3문항(p.27–28 bisphosphonate 복용법 <strong>25-41</strong> · p.29 denosumab 기전 <strong>25-44</strong> · p.36 저칼슘혈증 치료 <strong>25-21</strong>)과 소크라티브 N10 11문항 전부가 이 범위에서 나왔어요. 무게중심은 세 곳 — <strong>PTH의 이중성</strong>(13번), <strong>RANK–RANKL–OPG 축</strong>(14번), <strong>골다공증 약물의 표적 구분</strong>(15·17·18번).</p>
+<blockquote class="callout note">
+<p><strong>표기 규칙</strong> — 일반 불릿과 표는 <strong>교안 그대로</strong>(시험 기준). <code>↳</code>는 그 항목이 왜 그런지 붙인 <strong>부가 설명</strong>, <code>&gt; 🧠 이해 포인트</code>는 여러 항목을 하나로 꿰는 설명, <code>&gt; 💡 시험 포인트</code>는 교안의 ★ 표시와 기출이 나온 자리예요. 삽입된 그림은 대부분 <strong>교안 원본 도해</strong>이며, 캡션에 교안 그림 번호와 페이지를 달았어요. 파일명에 <code>gen_</code>이 붙은 세 장만 이 정리본에서 새로 그린 도해예요.</p>
+<p><strong>이 정리본이 다루지 않는 구간</strong> — p.3–7(무기질 개관·뼈 구성·뼈 재형성: 25년 0문항 · 소크라티브 0문항), p.8–11(세 호르몬 개관 — 내용이 p.12–20과 표 42-1에 그대로 다시 나와요), p.41–42(사례 연구). 이 구간은 이번 학습 범위에서 제외해 두세요.</p>
+</blockquote>
+
+</details><h2 id="section-1">1. PTH — 구조·분비조절, 그리고 시험 단골인 이중성</h2>
+<p class="section-source"><em>p.12–15 · 소크라티브 N10 13번(p.12, 14)</em></p>
+<h3 id="section-2">구조 — 왜 앞의 34개만 잘라 쓰는가</h3>
+<ul>
+<li>부갑상샘에서 분비되는 <strong>84개 아미노산</strong> 펩타이드 호르몬</li>
+<li>115개 아미노산의 <strong>pre-pro-PTH</strong>로 합성 → 분비 소포체에서 단백분해효소가 N말단을 절단 → 최종 84개</li>
+<li>분비된 PTH는 콩팥·간의 효소로 <strong>N말단 절편(PTH 1-34)</strong>, C말단 절편, PTH(7-84) 절편으로 쪼개진다</li>
+<li><strong>N말단 1-27 서열이 생물학적 활성과 수용체 결합에 중요</strong> — 이 부위가 없는 C말단 PTH는 수용체에 결합하지 않고 오히려 PTH 작용을 방해해요<ul>
+<li class="explanation">그래서 임상 제제가 <strong>PTH(1-34) = teriparatide</strong>인 거예요. 활성 부위를 모두 담은 최소 조각이기 때문이지, 1-34가 1-84와 다른 작용을 해서가 아니에요. 소크라티브 13번 ⑤번 선지가 정확히 이 오해("1-34와 1-84가 정반대")를 노렸다. <strong>방향이 반대인 쪽은 C말단 절편</strong>이에요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-3">분비 조절 — CaSR가 혈중 칼슘을 읽는다</h3>
+<ul>
+<li>부갑상샘 세포는 G단백연결 <strong>칼슘감지수용체(CaSR)</strong>를 많이 발현해 혈중 칼슘을 감지해요</li>
+<li>혈중 칼슘 ↓ → PTH 분비 급격히 증가. 지속적 저칼슘혈증은 부갑상샘의 <strong>증식과 비대</strong>를 초래</li>
+<li>혈중 칼슘 ↑ → CaSR 활성화 → 세포 내 유리 칼슘 ↑ → PTH 분비 감소<ul>
+<li class="explanation">이 감소는 합성을 끈 것이 아니라, <strong>이미 만들어 저장해 둔 PTH가 칼슘-민감 단백분해효소에 분해된</strong> 결과로 봐요. 저장된 재고를 폐기하는 방식으로 반응한다고 생각하면 이해하기 쉬워요.</li>
+</ul>
+</li>
+<li>※ 이 CaSR가 그대로 <strong>cinacalcet · etelcalcetide(칼슘모방제)의 표적</strong>이에요 (p.33)<ul>
+<li class="explanation">칼슘모방제는 CaSR를 알로스테릭하게 켜서 "칼슘이 충분하다"고 속인다 → PTH 분비 ↓. 4장의 CKD-MBD 치료와 여기서 이미 연결돼요.</li>
+</ul>
+</li>
+<li>자주 나오는 오타 정정 — 부갑상샘 안에서 일어나는 것은 비타민 D <strong>생성</strong>이 아니라 <strong>활성화</strong>(VDR·CYP27B1 발현) → PTH 생성 억제 · CaSR 발현 촉진</li>
+</ul>
+<h3 id="section-4">PTH의 이중성 — 교안이 직접 "시험 단골"이라 적은 자리 (p.13–14)</h3>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p013_full" decoding="async" height="1125" loading="lazy" src="images/edadaafbef554567.png" width="2000"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 6 PTH의 이중성 — 같은 호르몬, 정반대의 결과 (교안 p.13) — <strong>이 강의 전체에서 가장 중요한 한 장.</strong> 왼쪽 빨간 곡선은 계속 높게 유지되는 PTH, 오른쪽 초록 곡선은 하루 한 번 짧게 올랐어요 내리는 PTH다. <strong>곡선 모양만 다르고 호르몬도 수용체도 같은데</strong><br/><br/> 아래로 이어지는 상자가 정반대로 가요 — 왼쪽은 RANKL ↑·OPG ↓ → 뼈 소실, 오른쪽은 cAMP ↑ → IGF-1 ↑ → 골량 ↑. 하단 상자의 "방향을 결정하는 것은 용량이 아니라 노출 패턴이다"가 정답 문장이에요. 소크라티브 N10 13번이 여기서 나왔어요.</figcaption></figure>
+
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>고농도 · 지속 노출</strong></th>
+<th><strong>저농도 · 간헐 투여</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신호</td>
+<td>골모세포 <strong>RANKL ↑ · OPG ↓</strong></td>
+<td>세포내 <strong>cAMP ↑ → IGF-1 ↑</strong></td>
+</tr>
+<tr>
+<td>세포 반응</td>
+<td>파골세포 분화·활성 ↑</td>
+<td>골모세포 분화 촉진 · 생존 ↑</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>뼈에서 칼슘·무기인산염 유리 → <strong>뼈 소실</strong></td>
+<td>뼈기질 생성 → <strong>골량·골밀도 ↑</strong></td>
+</tr>
+<tr>
+<td>임상 대응</td>
+<td>부갑상샘기능항진증 환자의 뼈 소실</td>
+<td><strong>Teriparatide(PTH 1-34) 1일 1회 20 μg 피하</strong></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 같은 호르몬이 반대로 가는가.</strong> PTH 수용체(PTH1R)는 파골세포가 아니라 <strong>골모세포에 있어요.</strong> 즉 PTH는 파골세포를 직접 건드리지 못하고 반드시 골모세포를 거친다.<br/>
+<strong>지속 노출</strong>이면 골모세포는 RANKL을 계속 뿜고 OPG는 줄인다. RANKL/OPG 비율이 계속 높게 유지되니 파골세포가 끊임없이 만들어지고, 골모세포 자신은 그 신호를 계속 내는 데만 소모돼요 → 흡수가 형성을 이긴다.<br/>
+<strong>간헐 노출</strong>이면 첨두가 짧아 RANKL 상승이 유지되지 못하고 끝나요.<br/><br/> 대신 cAMP → IGF-1 축이 켜져 전구세포에서 골모세포로의 분화와 생존만 남아요 → 형성이 흡수를 이긴다.<br/>
+그래서 teriparatide는 <strong>"하루 1회 20 μg"이라는 간헐·저용량 조건을 지켜야만</strong> 골형성 촉진제로 작동해요. 용량이 아니라 <strong>패턴</strong>이 약의 정체를 정해요.</p>
+</blockquote>
+<ul>
+<li>표현의 범위를 확인해 볼게요 — "소량의 PTH는 뼈 흡수를 자극하지 않고 뼈 형성만 증가시킨다"는 서술은 <strong>과장이에요.</strong> 정확히는 투여 양상에 따라 <strong>우세한 방향이 달라지는</strong> 것이고, 파골세포에서의 PTH 수용체 발현은 확인되지 않고 있어요<ul>
+<li class="explanation">소크라티브 13번 ③번 선지("파골세포의 PTH 수용체만 선택적으로 차단")가 여기서 걸린다. 차단약이 아니라 <strong>작용약</strong>이고, 애초에 파골세포에 PTH 수용체가 없어요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-5">PTH의 주요 생리 기능 (p.14)</h3>
+<ul>
+<li>콩팥에서 <strong>칼슘 재흡수 촉진 / 인산염 재흡수 억제</strong></li>
+<li>뼈에서 칼슘 유리 조절 → 세포외액 농도 유지</li>
+<li>→ <strong>혈중 칼슘 ↑, 무기인산염 ↓</strong></li>
+<li><strong>1α-hydroxylase 발현 유도</strong> → 25(OH)D → 1,25(OH)₂D 전환 촉진 → 소장 흡수에 간접 관여<ul>
+<li class="explanation">이 네 줄을 이해하면 2장 표 42-1의 PTH 열 전체가 연결돼요. 장관 흡수를 PTH가 <strong>간접</strong>으로 올리는 이유도 여기 있어요 — PTH 자신이 장을 건드리는 게 아니라 비타민 D를 켜서 시킨다.</li>
+<li class="explanation">그리고 이 네 줄이 5장 <strong>저칼슘혈증 + 고인산혈증</strong>(25-21)의 설명이기도 해요. PTH가 없으면 칼슘 재흡수가 떨어지고 인산염 배설이 막히니 두 방향이 동시에 뒤집혀요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-6">부갑상샘호르몬 제제 (p.15)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>제제</th>
+<th>구성 · 용법</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Teriparatide</strong> (FORTEO)</td>
+<td>인간 PTH(1-34) 재조합단백<br/>1일 1회 20 μg 피하 / 주 1회 56.5 mg</td>
+<td><strong>최초의 골형성 촉진제</strong><br/>폐경 후 골다공증에서 골밀도 ↑, 척추·대퇴골 골절 위험 ↓</td>
+</tr>
+<tr>
+<td><strong>Abaloparatide</strong></td>
+<td>34개 아미노산 합성 <strong>PTHrP 유사체</strong></td>
+<td>PTH 활성에 첫 2개 아미노산이 중요<br/>PTH1R의 <strong>RG 형태</strong>에 선택적 결합</td>
+</tr>
+<tr>
+<td>rhPTH(1-84) (NATPARA)</td>
+<td>인간 PTH(1-84) 재조합단백<br/>25 · 50 · 75 · 100 μg 피하</td>
+<td>부갑상샘기능저하증·골다공증용<br/>2019년 리콜 후 생산 종료</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p015a" decoding="async" height="557" loading="lazy" src="images/47b51f373e631f49.png" width="932"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 7 Teriparatide vs Abaloparatide — 수용체 형태 선택성 (교안 p.15) — 같은 PTH1R인데 왼쪽은 <strong>R⁰ 형태</strong>, 오른쪽은 <strong>Rᴳ 형태</strong>에 붙어요. 아래 cAMP 방출 곡선을 보면 답이 나와요 — teriparatide(파랑)는 <strong>넓게 오래</strong>, abaloparatide(초록)는 <strong>좁고 짧게</strong>.<br/><br/> 앞 장의 "지속 vs 간헐"이 분자 수준에서 재현된 그림이에요. 짧은 첨두 쪽이 골흡수를 덜 깨우므로 abaloparatide가 고칼슘혈증이 덜하다는 임상 관찰과 이어져요.</figcaption></figure>
+
+<ul>
+<li>이우주 9판 이후 바뀐 것 (참고용 · 출제 제외) — ① NATPARA는 제조 공정 문제로 2019년 리콜·생산 종료, ② FDA는 2020년 11월 teriparatide의 <strong>골육종 boxed warning과 2년 사용제한을 삭제</strong>했어요</li>
+<li>부작용 — 오심 · 두통 · 하지경련 · <strong>고칼슘혈증</strong> · 혈중 요산 증가<ul>
+<li class="explanation">부작용에 고칼슘혈증이 있는 이유도 호르몬의 작용으로 설명할 수 있어요. PTH를 넣는 약이니 PTH가 하는 일(칼슘 ↑)이 그대로 나와요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 13번의 정답 문장은 <strong>"고농도 지속 = RANKL ↑ → 골흡수 / 저용량 간헐 = cAMP·IGF-1 → 골형성"</strong> 한 줄이에요. 오답 다섯 중 셋이 "수용체가 다르다 / 차단한다 / 1-34와 1-84가 반대다"로 <strong>수용체 쪽을 건드리는데, 수용체는 하나도 안 달라요.</strong> 다른 것은 오직 노출 패턴이에요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-7">2. 비타민 D와 FGF23 — 그리고 표 42-1 한 장</h2>
+<p class="section-source"><em>p.16–20 · 소크라티브 N10 16번(p.16–17) · 12번(p.14, 18, 20) · 15번 일부(p.19)</em></p>
+<h3 id="section-8">비타민 D — 다른 비타민과 다른 점</h3>
+<ul>
+<li>햇빛에 노출된 피부에서 생성되고 간·콩팥에서 활성화되는 <strong>내인성 물질</strong>이에요 → 엄밀히는 비타민이 아니라 호르몬</li>
+<li><strong>항구루병 인자(anti-rickets factor)</strong>라고도 해요</li>
+<li>전구물질 둘 — <strong>7-Dehydrocholesterol</strong>(provitamin D3, 고등동물) → 자외선 → 비타민 D3(<strong>cholecalciferol</strong>) / <strong>Ergosterol</strong>(provitamin D2, 맥아·효모·표고버섯) → 자외선 → 비타민 D2(<strong>ergocalciferol</strong>)</li>
+<li>→ 사람에서 생물학적 활성이 동일하므로 통칭해 비타민 D라 부른다</li>
+</ul>
+<h3 id="section-9">2단계 수산화 — 장기 순서와 효소 순서가 나란히 간다 ★소크라티브 16번 (p.16)</h3>
+<ul>
+<li>간 — <strong>25-hydroxylase</strong> → <strong>25(OH)D (calcifediol), 비활성형</strong></li>
+<li>콩팥 — <strong>1α-hydroxylase</strong> → <strong>1,25(OH)₂D (calcitriol), 활성형</strong></li>
+<li>콩팥 — 24-hydroxylase → 24,25(OH)₂D3 (<strong>불활성화 경로</strong>)</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_gen_비타민D-2단계-수산화" decoding="async" height="400" loading="lazy" src="images/686459bcb2e7e243.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>비타민 D의 2단계 수산화 — 이 정리본에서 새로 그린 도해 (교안 p.16–17 내용). 왼쪽부터 <strong>피부 → 간 → 콩팥</strong>, 효소는 <strong>25 → 1α</strong>. 두 순서가 나란히 간다는 것 하나만 잡으면 소크라티브 16번의 다섯 선지가 전부 갈려요. 아래로 갈라지는 점선이 24-hydroxylase 불활성화 경로이고, 오른쪽 노란 상자가 1α-hydroxylase의 켜고 끄는 조건이에요.<br/><br/> 소크라티브 N10 16번이 이 흐름 하나에서 나왔어요.</figcaption></figure>
+
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p016a" decoding="async" height="1056" loading="lazy" src="images/5e61ad0d41d104f8.png" width="1403"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 1 비타민 D의 활성화 과정 (교안 p.16) — 교안 원본. 위 줄은 7-Dehydrocholesterol이 <strong>Ultraviolet → Pre D₃ → Heat → D₃</strong>로 가는 광화학 단계, 아래 줄은 <strong>D₃ → Liver → 25(OH)D₃ → Kidney</strong>에서 두 갈래로 갈리는 대사 단계다.<br/><br/> 콩팥 분지에 붙은 <code>+PTH, −FGF23</code>와 <code>+P +Ca</code> 표기가 곧 위 도해의 스위치다 — 어느 쪽 조건이 붙었는지에 따라 calcitriol로 갈지 24,25(OH)₂D₃로 갈지가 결정돼요.</figcaption></figure>
+
+<ul>
+<li><strong>1α-hydroxylase의 스위치</strong> (p.17)<ul>
+<li>촉진 — <strong>저칼슘혈증, 저인산혈증, PTH 증가, FGF23 감소</strong></li>
+<li>억제 — 고칼슘혈증, 고인산혈증 (24,25(OH)₂D3 쪽으로 대사를 돌려요)</li>
+<li class="explanation">목록을 하나씩 외우기보다 조절 원리를 먼저 보세요. <strong>"몸에 칼슘·인이 부족하면 켜고, 넘치면 끈다"</strong> 한 문장이에요. PTH는 부족 신호의 대표이므로 켜는 쪽, FGF23은 인이 넘칠 때 나오는 호르몬이므로 끄는 쪽이에요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-10">작용기전과 기관별 작용 (p.17)</h3>
+<ul>
+<li>1,25(OH)₂D3는 세포질의 <strong>비타민 D 수용체(VDR)</strong>와 결합 → 핵으로 이동 → 유전자 전사 조절<ul>
+<li class="explanation">핵수용체를 쓰는 스테로이드형 호르몬이라 효과가 <strong>느리게 나타나고 오래 가요.</strong> 급성 저칼슘혈증에 IV 칼슘을 먼저 쓰고 비타민 D는 만성 관리에 쓰는 이유예요.</li>
+</ul>
+</li>
+<li><strong>소장</strong> — TRPV6 · calbindin-D9k 발현 ↑ → 칼슘 흡수 촉진. 인산염 흡수 증가는 이차적 결과</li>
+<li><strong>뼈</strong> — 골모세포에서 <strong>RANKL ↑ · OPG ↓</strong> → 파골세포 분화 촉진 → 칼슘·인 유리 ↑<ul>
+<li>→ 동시에 뼈형성 신호도 올려요 — RUNX2 · osteocalcin · osteopontin 발현 ↑</li>
+<li class="explanation">뼈에서 비타민 D가 하는 일이 "뼈를 녹이는 것"으로 보이는 게 이상하지만, 이 호르몬의 목표는 뼈가 아니라 <strong>혈중 칼슘</strong>이에요. 장에서 못 채우면 뼈에서 꺼내서라도 채워 볼게요. PTH와 RANKL을 올리는 방향이 같은 것도 그래서다.</li>
+</ul>
+</li>
+<li>고용량의 1,25(OH)₂D3는 <strong>오히려 뼈 무기질화를 감소시킨다</strong> — 용량·기간에 따라 다양하게 나타난다</li>
+<li><strong>부갑상샘</strong> — PTH 합성·분비 억제 (음성되먹임)</li>
+<li><strong>콩팥 원위세뇨관</strong> — TRPV6 · calbindin-D9k/28k 발현 ↑ → 칼슘·인산염 재흡수 ↑</li>
+<li>유도체의 용도 — <strong>Calcipotriene(calcipotriol)</strong> 국소 도포, 건선 등 과증식성 피부질환 / <strong>Doxercalciferol · Paricalcitol</strong> 만성 콩팥질환에 동반된 이차성 부갑상샘기능항진증</li>
+</ul>
+<h3 id="section-11">FGF23 — 인산염을 낮추는 유일한 호르몬 (p.18)</h3>
+<ul>
+<li><strong>251개 아미노산</strong> 단일 펩타이드. 주로 <strong>뼈의 골세포·골모세포</strong>에서 생성되어 혈액을 타고 전신 순환해요</li>
+<li>처음에는 <strong>중간엽종양(mesenchymal tumor)</strong>에서 발견되었어요</li>
+<li>분비 조절 — 촉진: 식이 인산염 섭취 증가, 1,25(OH)₂D3 증가 / 억제: 식이 인산염 제한, <strong>DMP1</strong></li>
+<li>수용체 — <strong>FGFR + Klotho 공동수용체</strong>에 결합 → 콩팥 세뇨관에서 작용<ul>
+<li>→ <strong>나트륨-인 공동수송체 발현 억제</strong> → 인산염 배출 ↑</li>
+<li>→ <strong>1α-hydroxylase 합성 억제</strong> → 활성형 비타민 D 생성 ↓</li>
+<li class="explanation">여기서는 인산염을 <strong>두 경로로</strong> 낮춘다는 점이 핵심이에요. 직접 버리게 하고, 인을 흡수시킬 호르몬(비타민 D)까지 꺼 버린다. 소크라티브 12번이 노린 지점이 정확히 이거예요.</li>
+</ul>
+</li>
+<li>결과 — 혈중 인산염 ↓, 뼈형성 억제. 인산염 항상성의 음성되먹임 축으로 이해돼요</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>FGF23 관련 유전질환</th>
+<th>무엇이 망가졌나</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상염색체 우성 저인산혈증성 구루병</td>
+<td><strong>RXXR 절단부위(aa 176-179)</strong> 돌연변이 → 불활성화 실패</td>
+<td>FGF23 과잉 → 저인산혈증</td>
+</tr>
+<tr>
+<td><strong>X염색체 연관 저인산혈증성 구루병(XLH)</strong></td>
+<td><strong>PHEX(endopeptidase)</strong> 돌연변이 → 불활성화 실패</td>
+<td>FGF23 과잉 → <strong>burosumab 적응증</strong></td>
+</tr>
+<tr>
+<td>종양성 석회증</td>
+<td><strong>GALNT3</strong> 돌연변이(O-글리코실화 효소)</td>
+<td>FGF23 활성 부족 → <strong>고인산혈증</strong></td>
+</tr>
+<tr>
+<td>조로증(premature aging)</td>
+<td>보조수용체 <strong>Klotho</strong> 돌연변이</td>
+<td>신호 불가 → 인산염·1,25(OH)₂D 증가</td>
+</tr>
+<tr>
+<td>뼈연화증</td>
+<td><strong>DMP1</strong> 돌연변이</td>
+<td>FGF23 증가</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p018a" decoding="async" height="487" loading="lazy" src="images/618d3b70900b5542.png" width="737"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 2 Klotho 돌연변이 마우스의 조로 표현형 (교안 p.18) — 위는 Wild Type, 아래는 klotho 유전자에 X가 그어진 klotho mutant인데 <strong>지팡이를 짚은 굽은 마우스</strong>로 그려져 있어요. Klotho가 없으면 FGF23 신호가 전달되지 않아 인산염과 1,25(OH)₂D가 쌓이고, 그 결과가 전신 조로다.<br/><br/> 위 표의 다섯 줄 중 이 한 줄만 <strong>FGF23 자체가 아니라 수용체 쪽</strong>이 망가진 경우라는 점이 구별점이에요.</figcaption></figure>
+
+<ul>
+<li class="explanation">표를 관통하는 축은 <strong>"FGF23이 많으냐 적으냐"</strong> 하나예요. 많으면 인이 빠져나가 <strong>저인산혈증 → 구루병·골연화증</strong>, 적으면 인이 쌓여 <strong>고인산혈증 → 종양성 석회증</strong>. 병명과 함께 변화의 방향을 연결해 보세요.</li>
+</ul>
+<h3 id="section-12">Burosumab — FGF23을 표적으로 한 최초의 약 (p.19)</h3>
+<ul>
+<li><strong>FGF23에 대한 인간 단일클론항체</strong> → FGF23 작용을 중화 → 콩팥 인산염 재흡수 ↑ · 활성형 비타민 D 생성 ↑</li>
+<li>적응증 — <strong>XLH(X염색체 유전성 저인산혈증성 구루병·골연화증)</strong>, 소아 및 성인 FDA 승인</li>
+<li>왜 중요한가 — 기존 XLH 치료는 경구 인산염 + 활성형 비타민 D 보충으로 <strong>결핍을 메울 뿐</strong> 원인(FGF23 과잉)을 건드리지 못했어요 → burosumab은 병태생리의 <strong>상류를 직접 차단하는 첫 약물</strong>이에요</li>
+<li>임상 관찰 — FGF23이 증가한 환자에서 이차성 부갑상샘기능항진증이 와요 / 혈액투석 환자에서 FGF23과 PTH 농도가 <strong>양의 상관관계</strong> / 부갑상샘에도 FGFR·Klotho가 발현되어 있어 부갑상샘도 FGF23의 표적기관으로 봐요</li>
+<li>※ 뼈조직에 대한 FGF23의 직접 작용은 논란이 많아요 — <strong>뼈에서는 Klotho 발현이 현저히 낮아</strong> 직접 작용은 미약할 것으로 봐요<ul>
+<li class="explanation">Klotho가 없으면 FGFR이 있어도 FGF23이 못 들어요. 그래서 "FGF23이 어디에 작용하는가"의 답은 <strong>FGFR이 아니라 Klotho가 있는 곳</strong>이에요 — 콩팥, 그리고 부갑상샘.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-13">표 42-1 — 세 호르몬 한 장 ★소크라티브 12번 (p.20)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>PTH</strong></th>
+<th><strong>비타민 D</strong></th>
+<th><strong>FGF23</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>장관 흡수</strong></td>
+<td>칼슘·인산염 흡수 증가<br/>(1,25(OH)₂D 생성 증가의 <strong>간접</strong>효과)</td>
+<td>칼슘·인산염 흡수 증가<br/>(1,25(OH)₂D의 <strong>직접</strong> 효과)</td>
+<td>칼슘·인산염 흡수 감소<br/>(1,25(OH)₂D 생성 감소의 효과)</td>
+</tr>
+<tr>
+<td><strong>콩팥 배설</strong></td>
+<td>칼슘 배설 감소<br/><strong>인산염 배설 증가</strong></td>
+<td>칼슘·인산염 배설 감소</td>
+<td><strong>인산염 배설 증가</strong></td>
+</tr>
+<tr>
+<td><strong>뼈조직</strong></td>
+<td>고농도: 칼슘·인산염 유리 증가<br/>저농도: 칼슘·인산염 침착 증가</td>
+<td>1,25(OH)₂D에 의해 유리 증가<br/>24,25(OH)₂D에 의해 뼈형성 촉진</td>
+<td>기질 석회화 감소<br/>(저인산혈증에서 기인)</td>
+</tr>
+<tr>
+<td><strong>혈액 내 농도</strong></td>
+<td>칼슘 증가<br/><strong>인산염 감소</strong></td>
+<td>칼슘·인산염 <strong>모두 증가</strong></td>
+<td><strong>인산염 감소</strong></td>
+</tr>
+</tbody>
+</table></div>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_gen_세호르몬-칼슘인-방향매트릭스" decoding="async" height="470" loading="lazy" src="images/f7200f23bf04aaea.svg" width="840"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>세 호르몬의 칼슘·인산염 방향 매트릭스 — 이 정리본에서 새로 그린 도해 (교안 p.20 표 42-1 압축). 위 표에서 <strong>화살표 방향만</strong> 남긴 거예요. 첫 줄(혈중 칼슘)은 셋 다 올리는 쪽이라 아무 구별도 되지 않고, <strong>노란색으로 강조한 둘째 줄(혈중 인산염)에서만 셋이 갈려요</strong> — PTH ↓ · 비타민 D ↑ · FGF23 ↓↓. 소크라티브 N10 12번이 정확히 이 한 줄을 물었어요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 하필 인산염이 판별 칸인가.</strong> 세 호르몬은 전부 "칼슘을 지켜라"라는 같은 명령을 받고 움직인다. 그러니 칼슘 열은 다 같은 방향일 수밖에 없어요. 갈리는 곳은 <strong>그 목표를 이루는 방식</strong>이에요.<br/>
+<strong>PTH</strong>는 뼈를 녹여 칼슘을 꺼내는데, 뼈에서 칼슘만 나올 수는 없고 <strong>인이 딸려 나와요.</strong> 그 인을 그대로 두면 칼슘과 결합해 침착해 버리므로 콩팥에서 인만 버린다 → <strong>Ca ↑ P ↓</strong>.<br/>
+<strong>비타민 D</strong>는 장에서 흡수를 늘리는 방식이라 칼슘도 인도 같이 들어와요 → <strong>Ca ↑ P ↑</strong>.<br/>
+<strong>FGF23</strong>은 애초에 칼슘 담당이 아니라 <strong>인 담당</strong>이에요.<br/><br/> 인이 넘칠 때 뼈가 내보내는 경보로, 인을 버리게 하고 인을 흡수시킬 비타민 D까지 꺼요 → <strong>P ↓↓</strong>.<br/>
+그래서 "PTH가 인을 올린다"고 적는 순간 부갑상샘기능항진증에서 왜 저인산혈증이 오는지 설명할 수 없게 돼요.</p>
+<p>💡 시험 포인트: 소크라티브 16번은 <strong>"간이 25, 콩팥이 1α"</strong> 순서 하나. 가장 잘 걸리는 오답은 장기는 맞고 <strong>효소만 맞바꾼</strong> 거예요. 12번은 <strong>인산염 줄 하나</strong>. 그리고 15번 오답 ⑤가 "FGF23 — 인산염 재흡수 증가"인데, FGF23을 겨눈 약은 <strong>burosumab</strong>이고 FGF23 자체는 재흡수를 <strong>줄이는</strong> 호르몬이라 방향까지 틀린 선지다.</p>
+</blockquote>
+<hr/>
+<h2 id="section-14">3. 칼시토닌과 이차 조절자 — 지위가 뒤바뀐 약들</h2>
+<p class="section-source"><em>p.21–22 · 소크라티브 N10 20번(p.21) · 18번 일부(p.21) · 11번 일부(p.21)</em></p>
+<h3 id="section-15">칼시토닌 — 지위가 뒤바뀐 약 ★소크라티브 20번 (p.21)</h3>
+<ul>
+<li><strong>갑상샘 소포곁세포(parafollicular "C" cell)</strong>에서 분비되는 <strong>32개 아미노산</strong> 펩타이드</li>
+<li><strong>1번과 7번 아미노산 사이의 이황결합</strong>이 생물학적 활성에 필수</li>
+<li><strong>PTH와 반대로, 혈중 칼슘이 높으면 분비가 증가하고 낮으면 감소해요</strong></li>
+<li>사람 calcitonin 반감기 <strong>10분</strong>. <strong>연어 calcitonin은 반감기가 길고 효력이 커 임상에서 흔히 쓰여요</strong><ul>
+<li class="explanation">소크라티브 20번 ④번이 이 둘을 맞바꿔 놓은 선지다. <strong>사람 것이 약하고 연어 것이 강해요</strong> — 종이 멀수록 수용체 결합이 강하고 분해가 느려서 그렇다.</li>
+</ul>
+</li>
+<li>작용 — 파골세포의 <strong>칼시토닌 수용체(CTR)에 직접 작용</strong> → 파골세포 활성·뼈흡수 억제 / 콩팥에서 칼슘·인산염 <strong>재흡수 억제</strong> → <strong>혈청 칼슘·인산염 저하</strong><ul>
+<li class="explanation">골다공증 약 중 <strong>파골세포에 직접 붙는 유일한 축</strong>이에요. Bisphosphonate는 세포 안으로 들어가 죽이고, denosumab은 분화 자체를 막는데, 칼시토닌만 표면 수용체를 켜서 활성을 꺼요. 소크라티브 18번 ②번 선지가 이 차이를 물었어요.</li>
+</ul>
+</li>
+<li>골모세포에서는 칼시토닌 수용체 발현이 미약해요</li>
+<li>기타 — 위에서 gastrin·위산 분비 억제, 장에서 나트륨·칼륨·염화물·수분 분비 증가</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th>칼시토닌의 현재 지위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>잘린 적응증</strong></td>
+<td><strong>골다공증 치료 — 발암 잠재성이 확인되어 사용 금지</strong></td>
+</tr>
+<tr>
+<td><strong>남은 적응증</strong></td>
+<td><strong>파제트병</strong> / <strong>고칼슘혈증</strong>(단독은 부족, 부가 요법으로 유용) / 골다공증성 <strong>척추골절의 급성 통증 완화</strong></td>
+</tr>
+<tr>
+<td>실제 제제</td>
+<td><strong>연어</strong> calcitonin</td>
+</tr>
+<tr>
+<td>투여 전</td>
+<td><strong>피부반응검사</strong>로 알레르기 확인</td>
+</tr>
+<tr>
+<td>부작용</td>
+<td>알레르기 반응, 오심·구토, 식욕부진, 설사, 안면홍조</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li class="explanation">이 약이 쓰이던 자리에서 물러난 이유는 효과 부족이 아니라 <strong>안전성 때문에 적응증 하나가 제외된</strong> 약이에요. 그래서 "골다공증엔 금지, 파제트병엔 여전히 사용"이라는 어긋난 조합이 생겼다. 소크라티브 20번 ⑤번이 이 둘을 정확히 뒤집어 놓았어요.</li>
+<li>※ 구판 슬라이드의 "비타민 D와 칼슘의 병용투여가 반드시 필요하다"는 <strong>불소 항목의 서술이 잘못 붙은 것</strong>이에요 (p.33 참조)</li>
+</ul>
+<h3 id="section-16">당질코르티코이드 — 항뼈흡수제이자 골다공증의 원인 (p.22)</h3>
+<ul>
+<li>비타민 D에 의해 촉진된 <strong>장관 내 칼슘 이동 억제</strong></li>
+<li>콩팥에서 <strong>칼슘 배설 촉진</strong></li>
+<li>뼈에서 <strong>아교질(collagen) 합성 억제</strong></li>
+<li><strong>골모세포·골세포의 자멸사 증가</strong></li>
+<li><strong>PTH에 의한 뼈흡수를 증가시킨다</strong></li>
+<li>→ 장기 복용 시 성인에서 <strong>골다공증</strong>, 소아에서 골격 발달 장애</li>
+<li>치료적으로 쓰이는 자리 — 림프종·사르코이드증 등 <strong>육아종병</strong>에서는 병변에서 1,25(OH)₂D가 과잉 생성돼요 → 육아종병 동반 고칼슘혈증, <strong>비타민 D 중독</strong> 치료에 유용</li>
+<li>※ <strong>급성 고칼슘혈증에는 효과가 없고 만성에 효과가 있어요</strong></li>
+</ul>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>한 약이 원인이면서 치료인 이상한 자리.</strong> 당질코르티코이드의 다섯 줄은 전부 <strong>"칼슘을 몸 밖으로 내보내고 뼈를 못 만들게 한다"</strong> 한 방향이에요. 그러니 혈중 칼슘을 낮추는 데는 쓸모가 있고(고칼슘혈증 치료), 오래 쓰면 뼈가 무너진다(스테로이드 유발 골다공증).<br/><br/> 같은 성질의 앞면과 뒷면이에요.<br/>
+급성에 안 듣고 만성에만 듣는 이유도 같은 논리예요 — <strong>유전자 전사를 바꿔서 작동하는 약</strong>이라 효과가 나오는 데 며칠이 걸린다. 응급 고칼슘혈증에 생리식염수와 bisphosphonate를 먼저 쓰는 이유가 여기 있다(5장).</p>
+</blockquote>
+<h3 id="section-17">에스트로겐 — 기전은 확실하다 (p.22)</h3>
+<ul>
+<li>골모세포에서 <strong>OPG 발현 ↑</strong> → 파골세포 분화 억제</li>
+<li>골모세포에서 <strong>RANKL · IL-6 발현 억제</strong></li>
+<li>골모세포에서 <strong>FasL 발현 증가 → 파골세포 자멸사 촉진</strong></li>
+<li>골모세포·골세포의 자멸사는 <strong>억제</strong></li>
+<li>→ 뼈조직에서 칼슘 유리를 억제해 뼈를 유지해요</li>
+<li>파골세포에서 ER을 특이적으로 제거하면 세포 생존기간이 늘고 활성이 증가해 골소실이 와요</li>
+<li>임상적 함의 — 폐경·난소 절제 → 에스트로겐 결핍 → <strong>급격한 골소실</strong>, 보충하면 개선 / 남성에서도 ER 결핍이나 <strong>aromatase 결핍</strong>은 골조직 유지에 부정적<ul>
+<li class="explanation">남성에서도 뼈를 지키는 것은 결국 <strong>에스트로겐</strong>이에요. Androgen을 estrogen으로 바꾸는 aromatase가 없으면 남성도 골소실이 와요 — 뼈에서 성호르몬의 주역이 누구인지 보여주는 자연 실험이에요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 에스트로겐의 네 줄은 <strong>RANKL/OPG 비율을 양쪽에서 유리하게 바꾼다</strong>는 한 문장으로 압축된다(OPG는 올리고 RANKL은 내려요). 이것이 4장 SERM의 작용 근거이자, <strong>폐경이 골다공증의 대표 원인인 이유</strong>예요. 반면 기전이 이렇게 확실한데도 estrogen은 골다공증 1차 약이 <strong>아니에요</strong> — 소크라티브 11번이 노린 지점이에요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-18">4. 골다공증 — RANK–RANKL–OPG 축 위에 약을 꽂는다</h2>
+<p class="section-source"><em>p.24–33 · 소크라티브 N10 14번(p.26, 30–31) · 18번(p.21, 27) · 17번(p.27, 29, 33) · 15번(p.19, 30, 33) · 10번(p.32) · 11번(p.21, 24, 31–33) · <strong>25-41(p.27–28) · 25-44(p.29)</strong></em></p>
+<h3 id="section-19">골다공증 — 정의와 두 갈래 치료 (p.24)</h3>
+<ul>
+<li>뼈의 <strong>미세 다공성 구조 증가</strong>와 <strong>무기질 함량 감소</strong>를 나타내는 전신 질환 → 약한 충격에도 쉽게 부러진다</li>
+<li><strong>파골세포 활성이 골모세포 활성에 비해 상대적으로 증가</strong>하는 항상성 불균형으로 와요</li>
+<li><strong>척추뼈·대퇴골</strong>에 골절 위험 증가 — <strong>해면골이 많은 부위</strong>이기 때문이에요<ul>
+<li class="explanation">해면골은 표면적이 넓어 재형성이 빨라요. 흡수가 형성보다 우세한 상황에서 <strong>가장 빨리, 가장 많이 깎이는 곳</strong>이 그래서 척추와 대퇴골 경부다.</li>
+</ul>
+</li>
+<li>유발 요인 — 폐경·노화에 따른 성호르몬 감소(남녀 모두), 칼슘·비타민 D 결핍·흡수장애, 운동 부족, <strong>당질코르티코이드 등 약물</strong>, 흡연·과음·만성 염증질환</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>방향</th>
+<th>약물</th>
+<th>한계 / 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>뼈흡수 억제제</strong></td>
+<td>Bisphosphonate · Denosumab<br/>SERM(raloxifene) · Estrogen<br/>Calcitonin(제한적)</td>
+<td>골소실 속도는 늦추지만 <strong>골모세포 활성도 함께 억제</strong>되어 새 뼈를 만들지는 못한다</td>
+</tr>
+<tr>
+<td><strong>뼈형성 촉진제</strong></td>
+<td>Teriparatide · Abaloparatide<br/>Romosozumab</td>
+<td>대량 골소실이나 골절 동반 환자에서 <strong>파골세포 억제제보다 우선 고려</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>[국내 지침 2024]</strong> 골절 <strong>초고위험군은 골형성촉진제로 시작한 뒤 bisphosphonate·denosumab으로 순차 전환</strong><ul>
+<li class="explanation">치료 순서를 이렇게 정한 이유도 살펴볼게요. 흡수 억제제를 먼저 쓰면 골전환 자체가 눌려 있어 뒤이은 골형성촉진제의 효과가 무뎌진다. 반대 순서로 가면 <strong>형성으로 벌어 놓은 골량을 흡수 억제제가 지키는</strong> 구조가 돼요. 6절 denosumab 중단 문제와 같은 논리예요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-20">RANK–RANKL–OPG 축 — 모든 약이 붙는 자리 ★소크라티브 14번 (p.25–26)</h3>
+<ul>
+<li><strong>RANKL</strong> — <strong>골모세포·골세포</strong>가 발현. 파골전구세포의 RANK와 결합해 <strong>성숙한 파골세포로 분화</strong>시킨다</li>
+<li><strong>RANK</strong> — 파골전구세포 표면의 수용체</li>
+<li><strong>OPG</strong> — <strong>골모세포가 생성하는 미끼수용체(decoy).</strong> RANKL에 먼저 결합해 RANK–RANKL 결합을 막아요</li>
+<li>→ <strong>RANKL / OPG 비율이 뼈흡수의 세기를 정해요</strong></li>
+<li>올려요 — <strong>비타민 D · PTH · PGE₂ · IL-1</strong>, 기계적 자극 / 내려요 — <strong>에스트로겐</strong>(OPG는 올리고 RANKL은 내려요)</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_gen_RANK-RANKL-OPG축과약물작용점" decoding="async" height="530" loading="lazy" src="images/8b1e78e7d701de5c.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>RANK–RANKL–OPG 축과 골다공증 약물의 작용점 — 이 정리본에서 새로 그린 도해 (교안 p.25–33 통합). <strong>이 강의의 지도예요.</strong> 가운데 가로줄이 축 자체 — 골모세포가 RANKL을 내고, 그것이 파골전구세포의 RANK에 붙어 성숙 파골세포를 만들고, 뼈흡수가 일어난다.<br/><br/> 위쪽 OPG는 골모세포가 같이 내는 미끼로 RANKL을 가로챈다. 아래 파란 상자 다섯이 약물이고, <strong>화살표 끝이 ▶면 밀고 ⊥면 막아요.</strong> 왼쪽 셋(romosozumab · teriparatide · estrogen/SERM)은 골모세포 쪽, 오른쪽 둘(denosumab · bisphosphonate)은 파골세포 쪽에 붙어요.<br/><br/> 소크라티브 14번(OPG)·15번(romosozumab)·17번(denosumab)·18번(bisphosphonate)과 기출 25-44가 전부 이 한 장 안에서 나왔어요.</figcaption></figure>
+
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p025a" decoding="async" height="1195" loading="lazy" src="images/41c8d9e334dfdb82.png" width="2542"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 3 RANK-RANKL-OPG 축 (교안 p.25) — 교안 원본. 위쪽 골모세포에서 <strong>RANKL과 OPG가 함께</strong> 나오고, RANKL만 아래 파골전구세포의 RANK에 도달한다는 그림이에요. 화살표 옆의 <code>뼈흡수의 세기 = RANKL/OPG</code>가 이 그림의 결론이고, 오른쪽 범례 <code>RANKL ↑: 비타민 D · PTH · PGE₂ · IL-1</code> / <code>OPG ↑ · RANKL ↓: 에스트로겐</code>이 2·3장에서 배운 호르몬들이 이 축의 어느 쪽에 붙는지를 알려준다.<br/><br/> 하단 상자의 denosumab이 OPG와 같은 자리에 서 있는 것이 25-44의 답이에요.</figcaption></figure>
+
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p026b" decoding="async" height="460" loading="lazy" src="images/3f655c584a360595.png" width="1265"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 5 파골세포 신호와 약물 표적 (교안 p.26) — 파골세포 하나를 확대한 그림. 위쪽 <strong>RANKL → RANK → TRAF-6 → NF-κB</strong>가 분화 신호이고 여기에 denosumab이 ⊣로 걸린다. 세포 안쪽 lysosome에서 나오는 <strong>Cathepsin K</strong>가 뼈 콜라겐을 자르는 실행 단계이고 여기에 odanacatib이 걸린다. <strong>막는 층이 달라요</strong><br/><br/> — 하나는 파골세포를 만들지 못하게 하고, 하나는 이미 만들어진 파골세포가 일을 못 하게 해요. 소크라티브 14번의 오답 ③(cathepsin K)이 이 차이에서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 축 하나에 약이 다 꽂히는가.</strong> 뼈는 파골세포가 깎고 골모세포가 짓는 두 세포의 균형인데, 이 둘은 독립적이지 않다. <strong>파골세포는 스스로 분화하지 못하고 골모세포가 주는 RANKL이 있어야만 만들어진다.</strong> 그러니 골모세포가 "얼마나 깎을지"까지 결정하는 셈이에요.<br/>
+그래서 약을 넣을 수 있는 자리가 딱 네 군데다 — ① 골모세포를 밀거나(teriparatide·romosozumab), ② 골모세포가 내는 신호의 비율을 바꾸거나(estrogen·SERM), ③ RANKL 자체를 잡거나(denosumab), ④ 이미 만들어진 파골세포를 죽이거나(bisphosphonate).<br/>
+이 네 작용점을 이해하면 <strong>처음 보는 골다공증 약도 어디에 꽂히는지 물어보면 돼요.</strong> 소크라티브 15번이 romosozumab의 표적을 물으면서 오답에 RANKL(denosumab) · cathepsin K(odanacatib) · CaSR(cinacalcet) · FGF23(burosumab)을 늘어놓은 것도, 결국 "표적과 약을 짝지을 수 있느냐"를 본 거예요.</p>
+</blockquote>
+<h3 id="section-21">Bisphosphonate ① 구조와 기전 ★소크라티브 18번 (p.27)</h3>
+<ul>
+<li>세포 내 ATP 대사산물인 <strong>pyrophosphate는 P–O–P 구조</strong>로, 뼈 표면에 결합해 석회화를 억제해요</li>
+<li>→ 골모세포 전구세포의 <strong>알칼리성 인산가수분해효소</strong>가 pyrophosphate를 분해해야 석회화가 일어난다</li>
+<li><strong>Bisphosphonate는 그 산소를 탄소로 치환한 P–C–P 구조</strong> — <strong>효소로 분해되지 않아요</strong></li>
+<li>→ 뼈에 잘 도달하고 무기질과 결합하되, pyrophosphate와 달리 <strong>석회화는 억제하지 않으면서 골흡수만 억제</strong>해요</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p027a" decoding="async" height="501" loading="lazy" src="images/3ab39bb4452c3566.png" width="709"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 6 P–C–P 핵심 구조 (교안 p.27) — 가운데 <strong>C</strong> 하나가 이 약의 전부예요. 원래 자리에 있던 산소(P–O–P)를 탄소로 바꿔 놓았기 때문에 알칼리성 인산가수분해효소가 이 결합을 자르지 못해요 → 뼈에 붙은 채 수년간 남는다(반감기 1~10년). 위쪽에 붙은 <strong>질소 고리(N)</strong>가 2·3세대 아미노 bisphosphonate의 표식이고, 이 질소가 있어야 mevalonate 경로 차단이라는 둘째 기전이 생겨요.</figcaption></figure>
+
+<ul>
+<li><strong>작용기전 두 갈래</strong><ul>
+<li>① <strong>수산화인회석과 결합</strong> → 파골세포에 의한 용해를 억제 → <strong>모든 세대 공통</strong></li>
+<li>② <strong>파골세포 내로 유입 → mevalonate 경로(farnesyl pyrophosphate synthase) 차단 → 세포자멸사 유도</strong> → <strong>질소를 함유한 아미노 bisphosphonate만의 특성</strong></li>
+</ul>
+</li>
+<li>※ 약물 반감기 <strong>1~10년</strong>으로 뼈의 반감기와 유사해요</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>세대</th>
+<th>약물 · 결합력</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1세대</strong> (변형 곁사슬)</td>
+<td>Etidronate · Clodronate · Tiludronate → 뼈 무기질과 <strong>약하게</strong> 결합</td>
+</tr>
+<tr>
+<td><strong>2세대</strong> (질소 함유)</td>
+<td><strong>Pamidronate · Alendronate · Ibandronate</strong> → 1세대보다 <strong>10~100배</strong> 강한 뼈결합력</td>
+</tr>
+<tr>
+<td><strong>3세대</strong> (질소 고리)</td>
+<td><strong>Risedronate · Zoledronate</strong> → 2세대보다 강력하고 지속시간도 길다</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 파골세포만 죽는가.</strong> Bisphosphonate는 온몸을 도는 게 아니라 <strong>뼈 표면 수산화인회석에 달라붙어 거기 앉아 있는다.</strong> 그 표면을 산으로 녹여 먹는 세포는 파골세포뿐이므로, 약을 통째로 삼키는 세포도 파골세포뿐이에요. 세포 안으로 들어간 아미노 bisphosphonate는 <strong>farnesyl pyrophosphate synthase</strong>를 막아 세포막 단백질의 prenylation(지질 닻 달기)을 못 하게 하고, 골격을 유지하지 못한 파골세포는 자멸해요.<br/><br/><br/>
+이 구조에서 두 가지가 자동으로 따라와요. ① <strong>뼈에 남아요</strong> → 끊어도 효과가 한동안 지속되고 <strong>약물 휴지기(drug holiday)</strong>를 검토할 수 있어요. ② 그런데 너무 오래 눌러 두면 미세손상 수리가 멈춰 <strong>비정형 대퇴골절 · 턱뼈 괴사</strong>가 생겨요. 이 두 줄이 denosumab과의 모든 차이를 만들어요.</p>
+</blockquote>
+<h3 id="section-22">Bisphosphonate ② 적응증·복용법·부작용 ★25-41 (p.27–28)</h3>
+<ul>
+<li>적응증 — <strong>노인성 골다공증, 스테로이드 유발 이차성 골다공증 / 파제트병 / 종양(유방암·전립샘암) 관련 골 용해, 악성종양에 의한 고칼슘혈증</strong></li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>제제</th>
+<th>용량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alendronate</strong></td>
+<td>하루 10 mg 또는 <strong>주 1회 70 mg</strong></td>
+</tr>
+<tr>
+<td><strong>Risedronate</strong></td>
+<td>하루 5 mg / 주 1회 35 mg / 월 1회 150 mg</td>
+</tr>
+<tr>
+<td><strong>Ibandronate</strong></td>
+<td>하루 2.5 mg 또는 월 1회 150 mg, 3개월마다 3 mg 정주</td>
+</tr>
+<tr>
+<td><strong>Zoledronate</strong></td>
+<td>폐경 후 골다공증 치료 <strong>연 1회</strong>, 예방 목적 2년에 1회 정주</td>
+</tr>
+<tr>
+<td><strong>Pamidronate</strong></td>
+<td><strong>악성종양 고칼슘혈증</strong>에 60~90 mg 정맥주입</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>경구 복용법 — 반드시 지도할 것</strong> (장에서 거의 흡수되지 않아 생체이용률이 매우 낮아요)<ol>
+<li><strong>공복 상태의 아침</strong>에 <strong>충분한 물</strong>과 함께 복용</li>
+<li>이후 <strong>30분</strong> 정도는 다른 음식·약물을 복용하지 않아요</li>
+<li><strong>식도염·궤양 예방을 위해 복용 후 곧바로 눕지 않아요</strong></li>
+<li>콩팥으로 배설되므로 <strong>콩팥기능 저하 시 용량 조절·사용 제한</strong></li>
+</ol>
+</li>
+<li>부작용 — 경구: 속쓰림·<strong>식도염</strong>·복통·설사 / 정맥 pamidronate: 피부홍조·독감유사증상·근육관절통 / <strong>턱뼈 괴사</strong>(고용량 zoledronate 정주에서 잘 나타남) / <strong>비정형 대퇴골절</strong> / zoledronate는 콩팥장애 환자에서 저칼슘혈증 유발</li>
+<li>※ 경구 5년·정맥 3년 이상 사용 환자에서는 <strong>약물 휴지기(drug holiday)</strong> 검토</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-41 (p.27–28)</strong> — 67세 여성이 alendronate 복용 후 심한 식도통. 정답은 <strong>"공복에 복용 후 30분간 앉거나 서 있는다"</strong>. 오답 넷은 전부 지침의 반대다 — 식후 복용(흡수 저하) · 복용 후 눕기(식도 정체) · 우유와 복용(칼슘이 흡수를 막아요) · 물 제한(정체 악화).<br/>
+↳ 복용법에 이유를 연결하면 훨씬 기억하기 쉬워요. <strong>용법이 두 문제를 동시에 푼다.</strong> ① <strong>흡수 문제</strong><br/><br/> — 생체이용률이 극도로 낮아 음식·칼슘이 있으면 거의 흡수되지 않아요 → 공복 + 충분한 물 + 30분 금식. ② <strong>국소 자극 문제</strong> — 약이 식도 점막을 직접 자극해요 → 누우면 식도에 정체되어 <strong>미란성 식도염</strong>이 와요 → 30분간 눕지 않아요. 지문의 "심한 식도통"이 곧 교안이 적은 부작용 <code>속쓰림, 식도염</code>의 전형이에요.</p>
+<p>💡 시험 포인트: <strong>소크라티브 18번</strong>은 문두가 <strong>"아미노 bisphosphonate만이 갖는"</strong>이에요. 이 한 마디 때문에 <strong>공통 기전인 ① 수산화인회석 결합이 오답</strong>이 돼요. 정답은 <strong>② mevalonate 경로(farnesyl pyrophosphate synthase) 차단 → 파골세포 자멸사</strong>.<br/><br/> 나머지 오답은 전부 다른 약의 기전이에요 — 칼시토닌 수용체(칼시토닌) · RANKL 중화(denosumab) · cathepsin K(odanacatib).</p>
+</blockquote>
+<h3 id="section-23">Denosumab — 그리고 중단의 함정 ★25-44 (p.29)</h3>
+<ul>
+<li><strong>RANKL에 높은 친화성을 보이는 인간 단일클론항체</strong></li>
+<li>→ <strong>OPG와 유사하게</strong> RANKL–RANK 결합을 감소시켜 파골세포 분화와 골흡수를 억제해요</li>
+<li>3상(FREEDOM)에서 6개월마다 60 mg 피하 3년 투여 → 골밀도 증가, 골절 위험 감소</li>
+<li>제제 — <strong>PROLIA 60 mg</strong>: 6개월 간격 피하주사(폐경 후 골다공증) / <strong>XGEVA 120 mg</strong>: 4주 간격(거대세포종, 다발성골수종·고형암 뼈전이)</li>
+<li>부작용 — 습진, 장내 가스팽창, 연조직염, <strong>비전형적 대퇴골절</strong>, <strong>턱뼈 괴사</strong>, <strong>저칼슘혈증</strong></li>
+</ul>
+<p><strong>중단하면 벌어지는 일 — 교안이 "임상 최중요"로 표시한 자리</strong><br/>
+- <strong>Bisphosphonate와 달리 denosumab은 뼈에 강하게 결합하지 않아요</strong><br/>
+- → 중단하면 <strong>1년 이내에 골밀도가 급격히 감소하고, 척추골절 위험이 오히려 올라가요</strong><br/>
+- → 중단할 경우 척추골절 예방을 위해 <strong>bisphosphonate 같은 골흡수 억제제로 반드시 이어야 해요</strong></p>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Bisphosphonate</strong></th>
+<th><strong>Denosumab</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>뼈 결합</td>
+<td>수산화인회석에 <strong>강하게 결합</strong> (반감기 1~10년)</td>
+<td><strong>결합하지 않는다</strong></td>
+</tr>
+<tr>
+<td>중단 후</td>
+<td>효과가 한동안 남는다 → <strong>약물 휴지기 검토 가능</strong></td>
+<td><strong>1년 이내 급격한 골밀도 감소 · 척추골절 위험 ↑</strong></td>
+</tr>
+<tr>
+<td>콩팥</td>
+<td>콩팥 배설 → 기능 저하 시 용량 조절·제한</td>
+<td><strong>콩팥 배설이 아니다</strong> → 신기능 저하에서도 사용 가능</td>
+</tr>
+<tr>
+<td>효력</td>
+<td>—</td>
+<td>골흡수 억제력은 bisphosphonate만큼 효과적</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>한 줄의 차이가 모든 것을 만들어요.</strong> 두 약을 가르는 사실은 딱 하나, <strong>"뼈에 붙느냐"</strong>예요. 여기서 세 가지가 전부 파생돼요.<br/>
+<strong>① 잔류 효과</strong> — bisphosphonate는 뼈에 박혀 있으므로 끊어도 파골세포가 그것을 먹고 계속 죽어요. Denosumab은 항체라 혈중에서 사라지면 끝이에요.<br/>
+<strong>② 반동 골절</strong> — 3년 동안 파골세포 분화를 눌러 두면 파골전구세포가 <strong>줄지 않고 대기 상태로 쌓인다.</strong><br/><br/> 약이 사라지는 순간 눌려 있던 RANKL 신호가 한꺼번에 풀려 이들이 동시에 성숙해요 → 폭발적 골흡수 → 다발성 척추골절. 원래보다 나빠지는 이유가 이거예요.<br/>
+<strong>③ 신기능</strong> — 콩팥으로 나가지 않으니 신부전 환자에게 쓸 수 있어요. Bisphosphonate가 못 하는 자리예요.<br/>
+그래서 교안이 <strong>"시작할 때 중단 계획까지 함께 세워야 하는 약"</strong>이라고 적었어요.<br/><br/> 장점("뼈에 남지 않는다")이 그대로 약점이 돼요.</p>
+<p>💡 시험 포인트: <strong>25-44 (p.29)</strong> — denosumab의 작용 기전은 <strong>① RANKL 억제</strong>. 오답 넷이 전부 다른 약의 자리예요 — osteoblast 자극(romosozumab·teriparatide) · calcitonin 분비 촉진(무관, 칼시토닌은 C세포에서 나와요) · PTH 수용체 자극(teriparatide·abaloparatide) · estrogen 수용체 활성화(estrogen·raloxifene). <strong>"OPG를 흉내 낸 약"</strong> 한마디로 기억해 두면 도움이 돼요.<br/>
+<strong>소크라티브 17번</strong>은 같은 약의 <strong>중단</strong>을 물어요.<br/><br/> 정답은 <strong>"1년 이내 급격한 골밀도 감소·척추골절 위험 증가 → bisphosphonate로 이어야 한다"</strong>. ①번이 bisphosphonate의 성질(뼈에 강하게 결합)을 denosumab에 붙여 놓은 대표 함정이고, ⑤번은 부작용 방향을 뒤집었어요 — denosumab의 부작용은 고칼슘혈증이 아니라 <strong>저칼슘혈증</strong>이에요.</p>
+</blockquote>
+<h3 id="section-24">골형성 촉진 — Romosozumab과 Wnt 축 ★소크라티브 15번 (p.30)</h3>
+<ul>
+<li><strong>Sclerostin</strong> — <strong>기질 속에 갇힌 성숙한 골세포(osteocyte)</strong>가 분비하는 단백질</li>
+<li>→ <strong>Wnt 신호를 차단해 골모세포 활성을 억제해요</strong> — 과도한 골모세포 작용의 되먹임</li>
+<li><strong>기계적 자극과 PTH는 골세포에서 sclerostin 분비를 억제해요</strong><ul>
+<li class="explanation"><strong>운동이 뼈를 튼튼하게 하는 분자적 이유</strong>가 여기 있어요. 뼈에 힘이 실리면 골세포가 브레이크(sclerostin)를 놓아 Wnt가 켜지고 골모세포가 일해요. 반대로 누워만 있으면 sclerostin이 계속 나와 뼈가 빠진다.</li>
+</ul>
+</li>
+<li><strong>Romosozumab</strong> — sclerostin에 대한 단일클론항체 → <strong>Wnt 신호 회복</strong><ul>
+<li><strong>뼈형성 촉진 + 뼈흡수 억제의 이중작용 — 다른 어떤 골다공증 약도 갖지 못한 조합</strong></li>
+<li>2019년 FDA 승인(<strong>EVENITY</strong>). <strong>월 1회 피하주사 12개월</strong></li>
+<li><strong>[경고] 심근경색·뇌졸중·심혈관 사망 위험 — 최근 1년 내 심근경색·뇌졸중 병력이 있으면 사용하지 않아요</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p030a" decoding="async" height="834" loading="lazy" src="images/e48bcc33a3cfe8ca.png" width="1265"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 8 Wnt 신호와 sclerostin — Romosozumab의 표적 (교안 p.30) — 위쪽 Osteocyte에서 나온 <strong>Sclerostin이 세포막의 LRP 5/6를 막아</strong> Wnt가 Frizzled와 붙어도 신호가 안 내려가게 해요. 그 결과 세포질에서 Axin·GSK-3β가 β-catenin을 계속 분해해요. <strong>Romosozumab이 sclerostin을 잡아채면</strong> 이 차단이 풀려 β-catenin이 쌓이고 핵으로 들어가 Tcf와 함께 전사를 켜요 → 오른쪽 <code>Increased bone formation</code>.<br/><br/> 막는 것을 막아서 켜는 <strong>이중부정 구조</strong>라는 점이 이 그림의 요점이에요. 소크라티브 N10 15번이 여기서 나왔어요.</figcaption></figure>
+
+<h3 id="section-25">개발이 멈춘 약들 — 왜 배우는가 (p.31)</h3>
+<ul>
+<li><strong>Odanacatib (Cathepsin K 억제제)</strong> — Cathepsin K는 파골세포가 분비해 <strong>뼈 콜라겐을 분해</strong>하는 cysteine protease다. 이것만 막으면 흡수는 억제하면서 골모세포는 건드리지 않아요 — <strong>coupling 문제를 피하려는 설계</strong>였어요. 3상에서 <strong>뇌졸중 위험 증가</strong>가 확인되어 <strong>2016년 개발 중단</strong></li>
+<li><strong>Strontium ranelate</strong> — 뼈형성 촉진 + 흡수 억제의 이중작용으로 유럽에서 사용. <strong>심근경색·혈전색전 위험</strong>으로 EMA가 2014년 제한, <strong>2017년 판매 중단</strong></li>
+<li>→ <strong>골다공증 약은 효과보다 안전성에서 무너진다.</strong> 골절 감소라는 이익이 심혈관 위험을 상쇄하지 못한 사례들이에요<ul>
+<li class="explanation">이 한 줄이 romosozumab의 심혈관 경고, 칼시토닌의 발암 잠재성, estrogen의 퇴장과 같은 계보다. <strong>"이 약은 왜 안 쓰는가"</strong>를 묻는 문항이 이 강의에서 반복해 나오는 이유예요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-26">에스트로겐 제제와 SERM — 현재의 위치 ★소크라티브 10번 (p.32)</h3>
+<ul>
+<li><strong>에스트로겐</strong> — 골모세포에서 RANKL·IL-6 발현 억제 / 파골세포 자멸사 ↑ / 골모세포·골세포 자멸사 ↓ → 폐경 후 골다공증 여성에서 뼈 증상 개선<ul>
+<li>그러나 <strong>질출혈, 유방압통, 자궁내막암, 혈전·색전, 관상동맥질환</strong> 같은 심각한 부작용</li>
+<li>→ <strong>뼈에 대한 효과보다 부작용 위험이 더 중요하게 평가되어 골다공증 치료 사용은 점차 제한</strong>되고 있어요</li>
+<li>→ <strong>골다공증의 1차 선택약은 bisphosphonate이며 estrogen이 아니에요</strong></li>
+<li>자궁내막암 위험을 줄이려면 <strong>progesterone과 함께</strong> 투여해요</li>
+</ul>
+</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>SERM</th>
+<th>뼈</th>
+<th>자궁·유방</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raloxifene</strong> (EVISTA)</td>
+<td><strong>ER 작용제</strong> → 척추 무기질 밀도 ↑, <strong>척추 골절 감소</strong></td>
+<td><strong>길항제</strong> → <strong>유방암 발생 위험 낮다</strong></td>
+<td>1일 1회 <strong>60 mg 경구</strong> / 관상동맥질환은 증가시키지 않으나 <strong>정맥혈전·폐색전 위험 증가</strong></td>
+</tr>
+<tr>
+<td><strong>Bazedoxifene</strong></td>
+<td>ER 작용제 → 척추·골절 발생 감소</td>
+<td>길항제</td>
+<td>가장 흔한 부작용 <strong>안면홍조·다리경련</strong></td>
+</tr>
+<tr>
+<td><strong>DUAVEE</strong> (bazedoxifene 20 mg + conjugated estrogen 0.45 mg)</td>
+<td>—</td>
+<td>—</td>
+<td><strong>progesterone 대신 bazedoxifene이 자궁을 보호</strong> / 폐경 후 골다공증 + 피부홍조</td>
+</tr>
+</tbody>
+</table></div>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>에스트로겐 제제</th>
+<th>용량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conjugated equine estrogen (PREMARIN)</td>
+<td>매일 0.625 mg 정제</td>
+</tr>
+<tr>
+<td>Estradiol transdermal (ESTRADERM)</td>
+<td>50 μg 패치</td>
+</tr>
+<tr>
+<td>Estradiol/Levonorgestrel patch (CLIMARA PRO)</td>
+<td>하복부·엉덩이, 주 1회</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>SERM은 "한 약이 조직마다 다른 얼굴을 갖는다"가 전부예요.</strong> 그러니 시험은 늘 <strong>세 칸(뼈 · 유방 · 자궁)의 방향</strong>을 맞게 적었는지만 봐요. Raloxifene은 세 칸이 전부 유리하게 정렬된 드문 약이에요 — <strong>뼈 작용제 · 유방 길항제 · 자궁내막 무작용.</strong><br/><br/><br/>
+대비 대상은 tamoxifen이다. 유방에서는 똑같이 길항제지만 <strong>자궁내막에는 작용을 나타내므로 자궁내막암 위험이 따라붙어요.</strong> 그래서 "폐경 후 골다공증 + 유방암 가족력" 환자에게 raloxifene을 고르는 근거가 성립해요.<br/>
+다만 세 칸이 좋다고 무결점은 아니에요 — <strong>정맥혈전·폐색전 위험은 올려요.</strong> 혈전 병력 환자에게는 피해야 해요.</p>
+</blockquote>
+<h3 id="section-27">칼슘모방제 · 불소 · 기타 비호르몬성 제제 (p.33)</h3>
+<ul>
+<li><strong>칼슘모방제</strong> — <strong>Cinacalcet</strong>: 알로스테릭 조절로 <strong>CaSR 활성 증가</strong> → 부갑상샘에서 <strong>PTH 분비 억제</strong> → 혈중 칼슘·인산염을 정상 농도로 유지하면서 PTH 수치 개선<ul>
+<li>적응증 — <strong>만성 콩팥질환에 의한 이차성 부갑상샘기능항진증, 부갑상샘 종양에 의한 고칼슘혈증</strong></li>
+<li>부작용 — PTH 감소에 따른 <strong>저칼슘혈증</strong>, 구역·구토·설사, 현기증, 식욕부진, 근육통</li>
+<li><strong>Etelcalcetide (PARSABIV)</strong> — 정맥주사형. 혈액투석 환자의 이차성 부갑상샘기능항진증에 <strong>주 3회 투석 후 5 mg 정주</strong></li>
+<li>CaSR은 광범위하게 분포하나 <strong>부갑상샘에서 농도가 가장 높아요</strong></li>
+<li class="explanation">이것이 부작용이 적은 이유예요. 수용체가 온몸에 있어도 <strong>가장 많은 곳에서 효과가 먼저 나므로</strong> 부갑상샘 선택성이 저절로 생겨요.</li>
+</ul>
+</li>
+<li><strong>불소</strong> — 뼈·치아에 축적되어 수산화인회석 결정을 안정화 → 치아우식 저항성 ↑. 적정량에서 골모세포 증식·분화를 증강해 뼈형성 촉진. 동물에서 <strong>30 mg 이하는 정상 뼈, 80 mg 이상은 무기질화 장애로 골연화</strong>. <strong>불소 투여 시 칼슘과 비타민 D를 함께 투여</strong>해야 무기질화 결함을 보완할 수 있어요<ul>
+<li class="explanation">골밀도는 올리지만 <strong>골절 감소가 입증되지 않아</strong> 승인되지 않았어요. "골밀도 = 골절 예방"이 항상 성립하지는 않음을 보여주는 대표 사례다.</li>
+</ul>
+</li>
+<li><strong>Thiazide 이뇨제</strong> — 원위세뇨관 나트륨 재흡수 억제 → 칼슘-나트륨 교환 증가 → <strong>콩팥 칼슘 배설 감소</strong> → 특발성 고칼슘뇨 환자에서 결석 형성 억제<ul>
+<li class="explanation">칼슘을 몸에 붙잡아 두는 약이라, 5장 고칼슘혈증에서는 <strong>악화 요인</strong>으로 다시 등장해요.</li>
+</ul>
+</li>
+<li><strong>Plicamycin(mithramycin)</strong> — DNA에 결합해 RNA 합성을 억제, 파골세포 기능 교란. 혈소판 감소·출혈·간신 손상으로 현재 임상에서 사실상 쓰이지 않아요</li>
+</ul>
+<h3 id="section-28">약물 선택 — 지금 어디에 서 있는가 ★소크라티브 11번 (p.21·24·31–33)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>선지에 자주 나오는 약</th>
+<th>현재 지위</th>
+<th>내려온 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bisphosphonate</strong></td>
+<td><strong>1차 선택</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Estrogen</td>
+<td>1차에서 제외</td>
+<td>유방암·심혈관·혈전 위험</td>
+</tr>
+<tr>
+<td><strong>칼시토닌</strong></td>
+<td><strong>골다공증 적응증 금지</strong></td>
+<td><strong>발암 잠재성</strong></td>
+</tr>
+<tr>
+<td>불소</td>
+<td>1차 약물이 아님</td>
+<td>고용량에서 무기질화 장애·골연화, 골절 감소 미입증</td>
+</tr>
+<tr>
+<td>Strontium ranelate</td>
+<td><strong>2017년 판매 중단</strong></td>
+<td>심근경색·혈전색전 위험</td>
+</tr>
+<tr>
+<td>Odanacatib</td>
+<td><strong>2016년 개발 중단</strong></td>
+<td>뇌졸중 위험</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>소크라티브 11번</strong>은 58세 폐경 여성(자궁 보존), 대퇴골 경부 T-score −2.8에서 무엇으로 시작하느냐를 물어요. 정답은 <strong>bisphosphonate + 칼슘·비타민 D 병용</strong>. 나머지 넷은 전부 <strong>한때 쓰였다가 자리에서 내려온 약</strong>이라는 공통점이 있어요.<br/><br/> 이 문항 하나가 4장 전체의 요약이에요.<br/>
+↳ 문두의 <strong>"자궁 보존"</strong>도 함정 장치다. Estrogen 단독요법은 그 조건에서 자궁내막암 위험을 키운다(그래서 progesterone이나 bazedoxifene을 붙인다). 다만 그 이전에 estrogen은 이미 1차에서 물러난 약이에요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-29">5. 무기질 대사장애 — 고·저칼슘혈증, CKD-MBD, 파제트병</h2>
+<p class="section-source"><em>p.35–40 · 소크라티브 N10 19번(p.35–36) · <strong>25-21(p.36)</strong></em></p>
+<h3 id="section-30">고칼슘혈증 ★소크라티브 19번 (p.35)</h3>
+<ul>
+<li>정상 혈중 칼슘 <strong>8.5~10.5 mg/dL</strong> → <strong>10.5 이상이면 고칼슘혈증</strong></li>
+<li>증상 — 전신쇠약감, 피로, 우울증, 의식장애, 고혈압, 부정맥. <strong>중추신경계 기능을 억제해 혼수·사망</strong>에 이를 수 있어요</li>
+<li><strong>주된 원인 두 가지</strong><ul>
+<li>① <strong>원발성 부갑상샘기능항진증</strong> — PTH 분비가 과도하게 증가</li>
+<li>② <strong>악성종양</strong> — 폐암·유방암·골수종·백혈병. 종양이 PTH와 유사한 서열의 <strong>PTHrP</strong>를 분비해 PTHR과 결합</li>
+</ul>
+</li>
+<li>그 밖에 — 만성신부전, 파제트병, 갑상샘기능<strong>항진</strong>증, 비타민 D 과다증, 부신기능저하증, 우유알칼리증후군</li>
+<li>※ <strong>티아지드 이뇨제</strong>는 소변 칼슘 배설을 줄여 고칼슘혈증을 악화시키는 <strong>흔한 기여요인이지만 주된 원인은 아니에요</strong><ul>
+<li class="explanation">소크라티브 19번 ①번이 정확히 이 구분을 노렸다. <strong>기여요인과 주된 원인을 뒤바꾼</strong> 가장 정교한 함정이에요.</li>
+</ul>
+</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>치료 (혈중 칼슘 15 mg/dL 이상이면 치료 대상)</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>생리식염수 이뇨</strong></td>
+<td>탈수 교정 + 소변량 증가 → 콩팥 칼슘 배설 ↑. <strong>고리이뇨제 병용</strong></td>
+</tr>
+<tr>
+<td><strong>Bisphosphonate</strong></td>
+<td>악성종양 고칼슘혈증에 효과적 — <strong>pamidronate</strong></td>
+</tr>
+<tr>
+<td>칼시토닌</td>
+<td>단독은 부족, <strong>부가 요법</strong>으로 유용</td>
+</tr>
+<tr>
+<td>당질코르티코이드</td>
+<td><strong>급성에는 효과 없고 만성</strong>(육아종병·비타민 D 중독)에 효과</td>
+</tr>
+<tr>
+<td>Cinacalcet</td>
+<td>만성 콩팥질환 환자의 PTH 분비 억제</td>
+</tr>
+<tr>
+<td>인산염 정맥투여</td>
+<td>모든 방법이 실패했을 때</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li class="explanation">치료 순서에도 논리가 있어요. <strong>생리식염수는 즉시 듣고</strong>(이미 여과된 칼슘을 씻어낸다), <strong>bisphosphonate는 하루 이틀 걸리며</strong>(파골세포를 죽여야 해요), <strong>당질코르티코이드는 며칠 걸린다</strong>(전사를 바꿔야 해요). 급할수록 위쪽을 써요.</li>
+<li>※ 질산갈륨·plicamycin은 독성 때문에 현재 거의 쓰이지 않아요</li>
+</ul>
+<h3 id="section-31">저칼슘혈증 ★25-21 (p.36)</h3>
+<ul>
+<li>혈중 칼슘 <strong>8.5 mg/dL 이하</strong></li>
+<li>증상 — <strong>감각이상(paresthesia)</strong>, 신경근 흥분성 증가, <strong>후두연축(laryngospasm)</strong>, 근육경련 및 <strong>강직(tetany)</strong>, 불안, 우울증, 망상<ul>
+<li class="explanation">고칼슘혈증이 신경을 <strong>억제</strong>해 혼수로 가는 것과 정확히 반대다. 칼슘은 신경세포막을 안정화하므로, 부족하면 막이 흥분하기 쉬워져 경련·강직이 와요.</li>
+</ul>
+</li>
+<li><strong>주된 원인</strong> — <strong>부갑상샘기능저하증(주요 원인)</strong> / 비타민 D 결핍, 흡수장애·섭취부족 / 만성신부전 / 신생아·유아에서 인이 많은 우유를 자주 먹여 칼슘 흡수가 부적절한 경우</li>
+<li>치료<ul>
+<li><strong>급성 경련은 즉시</strong> — <strong>10% CaCl₂ 또는 10% Ca-gluconate 정맥주사</strong>. <strong>천천히 주입</strong>해야 심장 부정맥이 생기지 않아요</li>
+<li>무증상 — Ca-gluconate 같은 <strong>경구</strong> 칼슘제제</li>
+<li>부갑상샘기능저하증·만성신부전·비타민 D 대사 이상에 의한 <strong>만성 저칼슘혈증 — 칼슘제제 + 비타민 D 제제 복합 투여</strong></li>
+<li><strong>신속한 치료가 필요할 때는 calcitriol</strong>(24~48시간 내 상승)</li>
+</ul>
+</li>
+<li>칼슘제제 — 흡수는 <strong>구연산칼슘</strong>이 우수하나, 칼슘 함량이 높고 값이 싸며 제산 효과가 있는 <strong>탄산칼슘</strong>이 많이 쓰여요 / 정맥에는 자극이 적은 <strong>글루콘산칼슘</strong> 선호 / <strong>근육주사는 농양을 형성할 수 있어 권장되지 않아요</strong></li>
+<li>※ 19~50세 성인 칼슘 권장섭취량 <strong>하루 1,000 mg</strong>. 장기 과량 복용 시 고칼슘혈증 유발</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-21 (p.36)</strong> — 32세 남성, 부갑상샘기능저하증, <strong>혈중 칼슘 낮고 인이 높아요.</strong> 정답은 <strong>⑤ calcitriol</strong>(선지의 <code>Calctirol</code>은 복기 오타).<br/>
+↳ <strong>왜 저칼슘 + 고인산인가</strong>부터 짚어 보세요. PTH는 콩팥에서 <strong>칼슘 재흡수 촉진 / 인산염 배설 촉진</strong>이다(1장 p.14). PTH가 없으면 이 두 방향이 동시에 뒤집혀요 → <strong>칼슘 ↓ + 인산염 ↑</strong>.<br/><br/> 동시에 <strong>1α-hydroxylase 유도가 사라져</strong> 활성형 비타민 D가 안 만들어지니 장 흡수까지 떨어져요.<br/>
+↳ 그래서 넣어야 할 것은 <strong>콩팥 활성화 단계를 건너뛴 calcitriol</strong>이에요. 2장의 활성화 도해에서 마지막 한 걸음만 못 밟는 상태이므로, 그 완성품을 그대로 넣는다.<br/>
+↳ 오답 넷은 <strong>전부 혈중 칼슘을 더 낮추는 약</strong>이에요 — denosumab(부작용에 저칼슘혈증) · alendronate(뼈흡수 억제) · calcitonin(혈청 Ca·P 저하) · prednisolone(장 흡수 ↓·콩팥 배설 ↑). <strong>방향만 봐도 넷이 한꺼번에 걸러져요.</strong></p>
+<p>💡 시험 포인트: <strong>소크라티브 19번</strong> — 고칼슘혈증의 가장 흔한 두 원인은 <strong>원발성 부갑상샘기능항진증 + 악성종양(PTHrP)</strong>. 오답 절반이 아예 <strong>저칼슘혈증</strong> 쪽 원인이라 방향부터 다르다(비타민 D 결핍, 부갑상샘기능저하증, 흡수장애). 그리고 "갑상샘기능<strong>저하</strong>증"이 아니라 "갑상샘기능<strong>항진</strong>증"이 고칼슘혈증 목록에 있어요.</p>
+</blockquote>
+<h3 id="section-32">인산염 대사장애 (p.37)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>고인산혈증</strong></th>
+<th><strong>저인산혈증</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주된 원인</td>
+<td><strong>만성 콩팥기능부전</strong>(인산염 배설 감소)</td>
+<td>원발성 부갑상샘기능항진증, 비타민 D 결핍증, 특발성 고칼슘뇨</td>
+</tr>
+<tr>
+<td>그 밖에</td>
+<td>부갑상샘기능저하증, 비타민 D 중독증, <strong>종양성 석회증</strong>(FGF23 활성 부족)</td>
+<td><strong>FGF23 활성 증가</strong> — 저인산혈증성 구루병, 종양유발성 뼈연화증 / Fanconi 증후군 / 인산염 결합제·제산제 과다 사용</td>
+</tr>
+<tr>
+<td>임상</td>
+<td>대부분 무증상. 낮아진 칼슘으로 근육 수축·연축, 뼈 약화, <strong>혈관 석회화</strong></td>
+<td>불쾌감, 근육 약화, <strong>골연화증</strong></td>
+</tr>
+<tr>
+<td>치료</td>
+<td>식사 중 인산염 제한 / <strong>인산염 결합제 — sevelamer</strong>, 칼슘 기반 결합제 / CKD 동반 시 <strong>cinacalcet</strong>으로 PTH 억제 / 응급은 거의 불필요(투석 또는 포도당·insulin 주입)</td>
+<td>응급치료 거의 불필요 / 구루병·골연화증 동반 저인산혈증에 <strong>burosumab</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li class="explanation">고인산혈증은 <strong>스스로 악화되는 고리</strong>를 갖는다. 인산염이 오르면 혈중 칼슘이 떨어지고, 그것이 PTH 분비를 자극하고, PTH가 뼈에서 칼슘과 함께 <strong>인을 더 꺼내 와요.</strong> 그래서 CKD에서 인 관리가 그렇게 중요해요.</li>
+</ul>
+<h3 id="section-33">만성콩팥질환–무기질골질환 (CKD-MBD) (p.39)</h3>
+<ul>
+<li><strong>병태생리의 고리</strong><ul>
+<li>콩팥기능장애 → <strong>활성형 비타민 D 생산 감소</strong> → 소장 칼슘 흡수 저하 → <strong>저칼슘혈증</strong></li>
+<li>혈중 칼슘 감소 → 부갑상샘 PTH 합성·분비 자극 → <strong>이차성 부갑상샘기능항진증</strong></li>
+<li>활성형 비타민 D 감소 → <strong>부갑상샘의 CaSR 발현 감소</strong> → <strong>고칼슘혈증에서도 PTH 분비가 지속돼요</strong></li>
+<li>인산염 배설 감소 → <strong>고인산혈증</strong> → 칼슘 인산염 침착 → <strong>FGF23 분비 증가</strong> → 활성 비타민 D 생성 억제 → 혈중 칼슘 저하</li>
+<li>→ 그래서 만성 콩팥질환에서 <strong>골연화증</strong>이 초래되기도 해요</li>
+</ul>
+</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_뼈무기질_박종선_p039a" decoding="async" height="1001" loading="lazy" src="images/ab463fe0c3e0243d.png" width="2429"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 1 CKD-MBD의 병태생리와 치료 표적 (교안 p.39) — <strong>1~2장에서 배운 세 호르몬이 한꺼번에 무너지는 그림.</strong> 왼쪽 <code>콩팥기능 소실</code>에서 두 갈래가 내려가요 — 위 갈래는 <code>1α-hydroxylase 소실 → 활성형 비타민 D ↓ → 장 칼슘 흡수 ↓ → 저칼슘혈증</code>, 아래 갈래는 <code>인산염 배설 ↓ → 고인산혈증 → 뼈에서 FGF23 ↑</code>.<br/><br/> 두 갈래가 가운데 <strong>이차성 부갑상샘기능항진증(PTH ↑↑)</strong>에서 만나고, 거기서 <code>골밀도 ↓ · 골절 · 혈관 석회화</code>로 떨어져요. <strong>FGF23에서 활성형 비타민 D로 향하는 붉은 억제선</strong>이 이 고리를 되돌릴 수 없게 만드는 지점이에요. 하단 네 상자가 그대로 치료 표적이에요.</figcaption></figure>
+
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>치료 표적</th>
+<th>약물</th>
+<th>무엇을 노리나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① <strong>인산염 결합제</strong></td>
+<td><strong>sevelamer</strong>, 칼슘 기반 결합제</td>
+<td>식이 인산염 흡수 차단</td>
+</tr>
+<tr>
+<td>② <strong>활성형 비타민 D 유도체</strong></td>
+<td>calcitriol, <strong>doxercalciferol, paricalcitol</strong>, 22-oxacalcitriol</td>
+<td>활성화 단계를 건너뛴다. 단 <strong>고칼슘·고인산혈증과 장기 석회화</strong>를 유발할 수 있어 사용이 제한적</td>
+</tr>
+<tr>
+<td>③ <strong>칼슘모방제</strong></td>
+<td><strong>cinacalcet, etelcalcetide</strong></td>
+<td>CaSR를 켜서 <strong>PTH 분비를 직접 억제</strong> — 칼슘·비타민 D를 올리지 않으므로 ②의 문제를 피한다</td>
+</tr>
+<tr>
+<td>④ FGF23 억제제</td>
+<td>연구 단계</td>
+<td>(burosumab의 적응증은 XLH이지 CKD가 아니다)</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 칼슘모방제가 따로 필요한가.</strong> 이차성 부갑상샘기능항진증을 잡는 가장 단순한 방법은 칼슘과 활성형 비타민 D를 넣어 부갑상샘에 "충분하다"고 알리는 거예요. 그런데 CKD 환자는 이미 <strong>인을 못 버리는 상태</strong>라, 칼슘과 비타민 D를 올리면 칼슘×인 곱이 커져 <strong>혈관 석회화</strong>가 와요.<br/><br/> 심혈관 사망으로 이어지는 그 합병증이 CKD에서 가장 무서운 거예요.<br/>
+<strong>Cinacalcet은 그 딜레마를 우회해요.</strong> 칼슘을 실제로 올리지 않고 <strong>수용체만 켜서 부갑상샘을 속인다.</strong> 그래서 "칼슘·인산염을 정상 농도로 유지하면서 PTH만 낮춘다"는 표현이 나온 것이고, 부작용이 <strong>저칼슘혈증</strong>인 이유도 같아요 — PTH가 진짜로 줄기 때문이에요.</p>
+</blockquote>
+<h3 id="section-34">파제트병 (p.40)</h3>
+<ul>
+<li>뼈의 특정 부위에서 <strong>파골세포와 골모세포 기능이 함께 항진</strong>되어 뼈조직 변형이 오는 만성 질환</li>
+<li>과도한 파괴와 부분적 재형성으로 <strong>뼈가 확대되지만 물리적 특성은 약해진다</strong> → <strong>크지만 약한 뼈 — 골다공증과는 반대 방향의 문제</strong></li>
+<li>호발 부위 — <strong>골반뼈, 정강이뼈, 머리뼈, 척추뼈</strong></li>
+<li>무증상인 경우도 있으나 뼈 통증·변형·관절염·골절이 와요</li>
+<li>치료 — <strong>bisphosphonate 권장</strong> (대부분 몇 주 이내 뼈 통증 완화). <strong>Tiludronate 400 mg 1일 1회 3개월 경구</strong>, Etidronate 5~10 mg/kg. <strong>칼시토닌도 여기에는 여전히 쓰여요</strong><ul>
+<li class="explanation">골다공증에서 금지된 칼시토닌이 파제트병에서는 살아 있다는 점이 소크라티브 20번의 ⑤번 선지다. 뒤집으면 오답이 돼요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-35">골다공증 치료제 한눈에 정리 (p.40)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>방향</th>
+<th>약물</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>뼈흡수 억제</strong></td>
+<td>Bisphosphonate / <strong>Denosumab(항 RANKL)</strong> / Raloxifene · Bazedoxifene(SERM) / Estrogen(제한적) / Calcitonin(<strong>골다공증 적응증 금지</strong>)</td>
+</tr>
+<tr>
+<td><strong>뼈형성 촉진</strong></td>
+<td><strong>Teriparatide(PTH 1-34)</strong> / <strong>Abaloparatide(PTHrP 유사체)</strong></td>
+</tr>
+<tr>
+<td><strong>이중작용</strong></td>
+<td><strong>Romosozumab(항 sclerostin)</strong></td>
+</tr>
+<tr>
+<td><strong>PTH 분비 억제</strong></td>
+<td>Cinacalcet · Etelcalcetide</td>
+</tr>
+<tr>
+<td><strong>개발 중단</strong></td>
+<td>Odanacatib(2016) / Strontium ranelate(2017 판매중단)</td>
+</tr>
+<tr>
+<td><strong>순차치료 (국내 2024)</strong></td>
+<td>초고위험군 — 골형성촉진제로 시작 → bisphosphonate·denosumab으로 전환</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 이 표가 4장 전체의 정답표다. <strong>약 이름 → 표적 → 방향</strong> 세 칸이 붙어 있으면 소크라티브 14·15·17·18번과 기출 25-44가 전부 풀려요.</p>
+<p><strong>Denosumab = RANKL / Romosozumab = sclerostin / Teriparatide = 간헐 PTH / Raloxifene = ER / Cinacalcet = CaSR / Burosumab = FGF23 / Odanacatib = cathepsin K.</strong> 선지에 낯선 약이 나오면 이 짝지음표에서 찾으면 돼요 — 오답은 늘 <strong>옆 약의 표적을 가져다 붙인 것</strong>이에요.</p>
+</blockquote></div>
+      <div class="answer-footer"><a href="originals/bone.md" download="0902_뼈무기질_박종선_강의정리(p12-40).md"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>원본 MD</a><button id="back-top" class="text-button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>처음으로</button></div>
+      <nav class="lecture-pagination" aria-label="이전·다음 강의"><a class="previous-course" href="adrenal.html">← 부신피질호르몬</a><a class="next-course" href="gonadal.html"><span><small>다음 강의</small>생식샘호르몬</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></nav>
+    </article>
+    <aside class="toc" id="toc" aria-label="이 강의 목차"><div class="toc-heading"><span>이 강의에서</span><button class="icon-button toc-close" id="close-toc" aria-label="목차 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><nav><a href="#section-1">1. PTH — 구조·분비조절, 그리고 시험 단골인 이중성</a><a href="#section-7">2. 비타민 D와 FGF23 — 그리고 표 42-1 한 장</a><a href="#section-14">3. 칼시토닌과 이차 조절자 — 지위가 뒤바뀐 약들</a><a href="#section-18">4. 골다공증 — RANK–RANKL–OPG 축 위에 약을 꽂는다</a><a href="#section-29">5. 무기질 대사장애 — 고·저칼슘혈증, CKD-MBD, 파제트병</a></nav><a class="toc-top" href="#main">맨 위로 ↑</a></aside>
+  </main>
+  <div class="find-dock"><form class="find-form" role="search" id="find-form"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="find-input" type="search" aria-label="이 강의 본문 검색" placeholder="이 강의에서 궁금한 용어 찾기" autocomplete="off"><output id="find-count" aria-live="polite"></output><button type="button" id="find-prev" class="icon-button" aria-label="이전 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button><button type="submit" class="find-next" aria-label="다음 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg></button></form><p class="dock-caption">강의 자료를 바탕으로 문체를 다듬은 개인 학습용 정리본</p></div>
+</div>
+<dialog class="image-dialog" id="image-dialog" aria-label="강의 이미지 확대"><div class="image-dialog-bar"><span>강의 그림</span><div><a id="image-original" target="_blank" rel="noopener">원본 크기로 열기 ↗</a><button class="icon-button" id="close-image" aria-label="확대 이미지 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div></div><div class="image-canvas"><img id="zoomed-image" alt=""></div></dialog>
+</body></html>

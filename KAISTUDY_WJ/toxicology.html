@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="박종선 교수님 약리학2 · 독성학 개론. 설명과 표, 강의 이미지를 함께 읽는 정리본.">
+<meta name="color-scheme" content="light dark"><title>독성학 개론 · 약리학 노트</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('pharm-theme')||'light'}catch(e){}</script>
+<script src="assets/app.js" defer></script>
+</head>
+<body data-course="toxicology">
+<a class="skip-link" href="#answer">본문으로 건너뛰기</a>
+<div class="sidebar-shade" id="sidebar-shade" hidden></div>
+<aside class="sidebar" id="sidebar" aria-label="강의 목록">
+  <div class="sidebar-head"><a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg><span>약리학 노트</span></a><button class="icon-button mobile-close" id="close-sidebar" aria-label="강의 목록 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+  <p class="sidebar-subtitle">박종선 교수님 · 약리학2</p>
+  <label class="course-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="course-search" type="search" placeholder="강의 찾기" aria-label="강의 제목 검색"></label>
+  <nav class="course-nav" aria-label="전체 강의"><p class="nav-group">오타코이드</p><a class="course-link" href="index.html"><span>히스타민과 항히스타민제</span><small>08.18</small></a><a class="course-link" href="serotonin.html"><span>세로토닌과 맥각 알칼로이드</span><small>08.21</small></a><a class="course-link" href="eicosanoids.html"><span>Eicosanoids</span><small>08.21</small></a><a class="course-link" href="vasoactive-peptides.html"><span>혈관작용펩타이드</span><small>08.21</small></a><p class="nav-group">항염증약</p><a class="course-link" href="nsaid-1.html"><span>NSAID · 기본 기전과 Aspirin</span><small>08.25</small></a><a class="course-link" href="nsaid-2.html"><span>NSAID · 류마티스와 통풍</span><small>08.25</small></a><p class="nav-group">내분비</p><a class="course-link" href="pituitary.html"><span>시상하부와 뇌하수체</span><small>08.26</small></a><a class="course-link" href="thyroid.html"><span>갑상샘호르몬</span><small>08.26</small></a><a class="course-link" href="diabetes.html"><span>췌장호르몬과 당뇨병</span><small>09.02</small></a><a class="course-link" href="adrenal.html"><span>부신피질호르몬</span><small>09.02</small></a><a class="course-link" href="bone.html"><span>뼈와 무기질</span><small>09.02</small></a><a class="course-link" href="gonadal.html"><span>생식샘호르몬</span><small>09.02</small></a><p class="nav-group">독성학</p><a class="course-link" href="toxicology.html" aria-current="page"><span>독성학 개론</span><small>09.03</small></a><a class="course-link" href="heavy-metals.html"><span>중금속중독</span><small>09.03</small></a><p id="no-courses" hidden>일치하는 강의가 없어요.</p></nav>
+  <div class="sidebar-bottom"><span class="status-dot"></span>14개 강의 · 나의 학습 노트</div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="topbar-left"><button class="icon-button" id="toggle-sidebar" aria-label="강의 목록 열기 또는 닫기" aria-expanded="false" aria-controls="sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button><span class="topbar-title">약리학2 <span class="muted">/ 독성학</span></span></div><div class="topbar-actions"><button class="text-button" id="toggle-toc" aria-controls="toc" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>목차</span></button><button class="icon-button" id="theme-toggle" aria-label="어두운 화면으로 전환" title="화면 테마 전환"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button><button class="icon-button" id="print-page" aria-label="이 강의 인쇄" title="인쇄"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/></svg></button></div></header>
+  <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  <main class="reading-layout" id="main">
+    <article class="conversation" aria-label="독성학 개론 강의 정리">
+      <div class="lecture-topline">09.03 강의 <span>·</span> 박종선 교수님</div>
+      <h1 class="lecture-title">독성학 개론</h1>
+      <div class="user-message">이 강의, 흐름을 따라 이해할 수 있게 설명해 줘.<br>시험 포인트랑 그림도 같이 보고 싶어.</div>
+      <div class="assistant-label"><span class="assistant-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span><span>함께 읽는 강의 노트</span><span class="answer-meta">그림 8개</span></div>
+      <p class="answer-intro">좋아요. <strong>독성학 개론</strong>, 순서대로 살펴볼게요.<br>설명을 읽다가 그림이 작게 보이면 눌러서 크게 볼 수 있어요.</p>
+      <div class="prose" id="answer"><details class="lecture-info"><summary>강의 범위·키워드·시험 안내</summary><p class="source-title">약리학2 독성학 개론 · 환경독성물질 — 강의 정리 (강의록 기반)</p>
+<p><strong>교수:</strong> 박종선</p>
+<p><strong>강의 범위:</strong> 독성학 용어와 용량–반응 · A형/B형 유해반응 · 과민반응 I~IV형 · 특이물질반응 · FDA 임부 위험등급 · 치료지수(TI)와 안전역(MOS) · 중독 치료 5원칙과 해독제 · 생물농축 · 대기오염 기체(CO·SO₂·NO₂·O₃) · 유기용매(benzene·toluene) · 살충제(유기인계·카바메이트) · 제초제(paraquat) (교안 p.3–64 중 지정 묶음)</p>
+<p><strong>강의 흐름:</strong> Paracelsus의 "용량만이 독이 아닌 것을 정한다"는 한 문장부터 살펴볼게요. 앞부분에서는 총론을 다뤄요 — 독물·독소·독의 용어를 가르고, 약물유해반응을 <strong>용량에 의존하는 A형과 의존하지 않는 B형</strong>으로 나눈 다음, 그 B형의 실체가 과민반응 I~IV형과 유전적 특이물질반응이라는 것을 보여 줘요.<br/><br/> 이어 "얼마면 안전한가"를 숫자로 표현하는 방법을 살펴볼게요 — 임부 위험등급, TI와 MOS, NOAEL·LOAEL·MOE, 그리고 필수 미량원소만의 U자 곡선. 중간에서 중독 환자 앞에 선 의사의 순서(5원칙)와 환경으로 흩어진 독의 거동(생물농축)을 지나면 후반부는 각론이에요.<br/><br/> 흡입되는 기체 → 유기용매 → 살충제 → 제초제 순으로, 물질마다 <strong>〈원인물질 → 표적 → 임상상 → 해독제〉 네 칸</strong>을 똑같이 반복해 채워 볼게요.</p>
+<p><strong>핵심 키워드:</strong> xenobiotics · toxicants/toxins/poisons · Paracelsus · LD₅₀ · 대사적 활성화 · A형(Augmented) · B형(Bizarre) · 과민반응 I~IV형 · idiosyncrasy · 가성콜린에스테라제 · 임부 X등급(isotretinoin) · TI = TD₅₀/ED₅₀ · MOS = LD₁/ED₉₉ · NOAEL · LOAEL · MOE ≥ 100 · U자형 곡선 · 중독치료 5원칙 · biomagnification · CO-oximetry · 고압산소요법 · silo filler's disease · benzene · toluene · 인산화 · aging · 2-PAM · atropine · DUMBBELS · paraquat · redox cycling</p>
+<p><strong>시험 포인트:</strong> 25년 기출 3문항(p.47 CO 중독의 100% 산소 · p.56 유기인계의 atropine + 2-PAM · p.64 paraquat의 폐섬유증)과 소크라티브 N13 16문항(총론 9 · 각론 7)이 전부예요. 각론 7문항은 전부 "물질 하나의 네 칸 중 어느 칸이 뒤집혔는가"를 물어요.</p>
+<blockquote class="callout note">
+<p><strong>표기 규칙</strong> — 일반 불릿과 표는 <strong>교안 그대로</strong>(시험 기준). <code>↳</code>는 그 항목이 왜 그런지 붙인 <strong>부가 설명</strong>, <code>&gt; 🧠 이해 포인트</code>는 여러 항목을 하나로 꿰는 설명, <code>&gt; 💡 시험 포인트</code>는 교안의 강조 표시와 기출이 나온 자리예요. 삽입된 그림은 <strong>교안 원본 도해</strong>와, 기전이 글로만 안 잡히는 자리에 새로 그린 <strong>생성 도해(gen_)</strong> 두 종류이며 캡션에 구분해 두었어요.</p>
+<p><strong>이 정리본이 다루지 않는 구간</strong> — p.39–43(25년 0문항 · 소크라티브 0문항)은 반드시 제외하는 구간이에요. 그 밖에 p.16–18 · 20–26 · 31–35 · 37 · 45–46 · 51–52 · 54–55 · 60–63 · 65–68도 이번 묶음에 포함되지 않으니 학습 범위에서 제외해 두세요. 단 <strong>p.38 해독제 표</strong>와 <strong>p.67 PCB 등식</strong>은 배정된 문항의 정답 근거라서 해당 자리에 최소한으로만 가져왔어요.</p>
+</blockquote>
+
+</details><h2 id="section-1">1. 독성학의 언어 — 용어 · 유해반응 · 예측할 수 없는 쪽</h2>
+<p class="section-source"><em>p.3–15 · 소크라티브 N13 1번(p.3) · 2번(p.9) · 3번(p.14) · 4번(p.15)</em></p>
+<h3 id="section-2">세 용어를 가르는 기준 (p.3)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>용어</th>
+<th>정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>독물 toxicants</strong></td>
+<td>유해한 생물학적 작용을 나타내는 물질. <strong>자연 유래·물리적 물질 모두 포함</strong>. 급성·만성 다양</td>
+</tr>
+<tr>
+<td><strong>독소 toxins</strong></td>
+<td><strong>생물체 유래 특정 단백질</strong>(버섯독소·파상풍독소). 급성 독성</td>
+</tr>
+<tr>
+<td><strong>독 poisons</strong></td>
+<td>아주 <strong>소량</strong> 노출로도 사망(즉사)이나 병을 유발</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>독성학 = <strong>생체이물질(xenobiotics)</strong>이 생체에서 일으키는 유해효과를 탐구하는 과학<ul>
+<li class="explanation">먼저 세 용어가 같은 기준으로 나뉜 것은 아니라는 점을 짚어 볼게요. <strong>독물이 가장 넓은 그릇</strong>이고, 그 안에서 <strong>유래가 생물체인 것</strong>을 떼어낸 것이 독소, <strong>필요한 양이 극히 적은 것</strong>을 떼어낸 것이 독이에요. 나누는 기준이 하나는 "출신", 하나는 "양"이라 서로 겹칠 수 있어요.</li>
+<li class="explanation">생체이물질은 아예 상위 개념이에요 — 해로운지 아닌지와 무관하게 "밖에서 들어온 것" 전부를 가리킨다.</li>
+</ul>
+</li>
+<li>어원: toxicum ← toxikon(활, 독화살) / poison ← potio(음료, 한 번 먹는 약)<ul>
+<li class="explanation">약과 독이 어원부터 한 뿌리라는 것이 이 강의 전체의 밑그림이에요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 1번이 이 표 하나에서 나왔어요. 오답 선지가 <strong>독물의 정의</strong>, <strong>독의 정의</strong>, <strong>생체이물질의 정의</strong>, <strong>부작용의 정의</strong>를 돌려가며 붙였어요. "생물체 유래 + 단백질"이라는 <strong>두 조건이 함께 붙은 것만 독소</strong>예요.</p>
+</blockquote>
+<h3 id="section-3">용량이 독을 만든다 (p.4–7)</h3>
+<p>Paracelsus("모든 것은 독이며, 다만 용량만이 독이 아닌 것을 정한다")와 미트리다테스 6세(독을 소량씩 반복 섭취 = 내성 개념의 원형)는 이 명제의 두 장면이에요. 시험에 나온 부분은 아니므로 이 문장으로 짚고, <strong>숫자가 붙은 두 표</strong>만 챙긴다.</p>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>물질</th>
+<th>무독성·유효</th>
+<th>독성</th>
+<th>치사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>알코올 혈중농도</td>
+<td>0.05%</td>
+<td>0.1%</td>
+<td>0.5%</td>
+</tr>
+<tr>
+<td><strong>일산화탄소 Hb 결합률</strong></td>
+<td><strong>10% 이하</strong></td>
+<td><strong>20~30%</strong></td>
+<td><strong>60% 이상</strong></td>
+</tr>
+<tr>
+<td>Secobarbital 혈중농도</td>
+<td>0.1 mg/dL</td>
+<td>0.7 mg/dL</td>
+<td>1 mg/dL 이상</td>
+</tr>
+<tr>
+<td>아스피린</td>
+<td>0.65 g (2정)</td>
+<td>9.75 g (30정)</td>
+<td>34 g (105정)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>아스피린은 유효~치사가 약 50배로 넓고, secobarbital은 10배로 매우 좁아요<ul>
+<li class="explanation">이 "간격"을 하나의 수로 압축한 것이 2장의 <strong>치료지수(TI)와 안전역(MOS)</strong>예요. 이 표를 보면 그 지표들이 왜 필요한지 이해할 수 있어요.</li>
+<li class="explanation">CO 줄(10 / 20~30 / 60%)은 그대로 4장으로 이어져요. <strong>CO-Hb 60% 이상 = 뇌·심근 손상</strong>은 각론에서 다시 나와요.</li>
+</ul>
+</li>
+<li>LD₅₀ = 노출된 실험동물의 50%가 사망하는 용량. 6등급 중 <strong>니코틴이 6등급(초독성, &lt;5 mg/kg)</strong><ul>
+<li class="explanation">일상에서 접하는 물질이 최고 독성 등급에 있다는 것 자체가 요점이에요. 독성은 물질의 이름이 아니라 <strong>용량과 경로</strong>가 정해요. 그래서 LD₅₀는 종·투여경로에 따라 크게 달라져 사람에게 그대로 외삽할 수 없어요.</li>
+</ul>
+</li>
+<li>약물 자체가 새 질병을 만드는 것 = <strong>의원성 질환(iatrogenic disease)</strong> — 스테로이드의 소화성궤양, phenothiazine의 파킨슨증후군</li>
+</ul>
+<h3 id="section-4">부작용 · 유해반응 · 독작용, 그리고 대사적 활성화 (p.8)</h3>
+<ul>
+<li>주작용(원하는 치료작용) → <strong>부작용(치료작용 외의 모든 작용 = 불원작용)</strong> → <strong>유해반응 ADR</strong>(WHO 1975: 적정용량의 약물이 임상적으로 해를 끼칠 때) → <strong>독작용(과량투여로 나타나는 작용)</strong><ul>
+<li class="explanation">시험에서는 이 구분의 경계가 흐려지는 경우를 자주 물어요. 조제 실수로 과량이 들어갔거나 간·신 기능부전으로 약이 쌓인 경우, 결과는 독작용이지만 <strong>ADR로 인정</strong>돼요.</li>
+</ul>
+</li>
+<li>독작용을 일으키는 주체가 <strong>모약물이 아니라 대사산물</strong>일 수 있어요 = <strong>대사적 활성화(metabolic activation)</strong><ul>
+<li><strong>parathion → paraoxon</strong> (CYP 대사 후 독성 발현)</li>
+<li><strong>acetaminophen → NAPQI</strong> → 글루타티온 고갈 → 간세포 손상</li>
+<li>halothane → 반응성 대사산물 → 간독성</li>
+<li class="explanation">"대사 = 해독"이 항상 맞지 않다는 뜻이에요. 그래서 phenobarbital 등으로 <strong>약물대사가 촉진되면 독성이 더 강해지는</strong> 역설이 생겨요.</li>
+<li class="explanation">이 개념은 뒤의 각론 두 곳과 바로 연결돼요 — <strong>parathion은 6장(유기인계)</strong>, <strong>benzene → benzene oxide·hydroquinone은 5장(골수 독성)</strong>의 실제 범인이에요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-5">용량 의존성 A형 vs 용량 비의존성 B형 (p.9)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>특징</th>
+<th><strong>A형 (Augmented)</strong></th>
+<th><strong>B형 (Bizarre)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>발생빈도</td>
+<td><strong>70~80%</strong></td>
+<td>5~25%</td>
+</tr>
+<tr>
+<td>반응의 개인차</td>
+<td><strong>거의 모든 사람</strong></td>
+<td>일부</td>
+</tr>
+<tr>
+<td>고유 약리작용과의 차이</td>
+<td><strong>작용의 양적 증대</strong></td>
+<td><strong>질적으로 다른 작용</strong></td>
+</tr>
+<tr>
+<td>예측</td>
+<td>가능</td>
+<td>불가능</td>
+</tr>
+<tr>
+<td>신장/간 기능부전 시</td>
+<td><strong>유해성 증가</strong></td>
+<td>간·신 기능과 무관</td>
+</tr>
+<tr>
+<td>예방·치료</td>
+<td><strong>용량 감소</strong></td>
+<td>투약 회피 / 중단</td>
+</tr>
+<tr>
+<td>일반적 치명도</td>
+<td>비교적 낮음</td>
+<td>비교적 높음</td>
+</tr>
+<tr>
+<td>예</td>
+<td>항불안제의 최면효과, 고혈압치료제의 기립성 저혈압</td>
+<td>페니실린의 아나필락시스, 클로람페니콜의 무과립구증</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>여덟 칸은 한 문장에서 파생돼요.</strong> 실질적 감별 기준은 딱 하나, <strong>"용량을 줄이면 해결되는가"</strong>예요. A형은 원래 약리작용이 지나치게 나타난 것이므로 ① 거의 모두에게 생기고 ② 예측 가능하며 ③ 약이 쌓이는 신·간 기능부전에서 심해지고 ④ 감량이 해법이에요.</p>
+<p>B형은 약리작용과 무관한 면역학적·유전적 사건이라 ① 일부에게만 ② 예측 불가 ③ 장기 기능과 무관 ④ 중단 외에 방법이 없고, 그래서 <strong>치명도가 높아요</strong>. 이 두 흐름을 이해해 두면 표의 어느 칸을 물어도 다시 떠올릴 수 있어요.</p>
+<p>💡 시험 포인트: 소크라티브 N13 2번은 문두가 "A형"인데 오답 넷이 <strong>전부 B형 칸</strong>이에요. 특히 "질적으로 다른 작용", "간·신 기능과 무관", "페니실린 아나필락시스"는 B형을 가리키는 표지어이니 나오면 오답으로 제외할 수 있어요.</p>
+</blockquote>
+<h3 id="section-6">독성에 영향을 주는 인자와 화학물질 상호작용 (p.10–12)</h3>
+<ul>
+<li><strong>물질 형태(form)</strong>: 메틸수은 ≫ 무기수은 / <strong>Cr⁶⁺는 부식·폐암, Cr³⁺는 상대적 무독</strong></li>
+<li><strong>노출경로</strong>: 경구는 <strong>간 초회통과로 해독될 수 있으나, 흡입은 폐정맥 → 전신순환으로 이를 우회해요</strong><ul>
+<li class="explanation">4장의 기체들이 왜 그렇게 위험한지가 여기서 이미 설명돼요. 들이마신 독은 간을 건너뛴다.</li>
+</ul>
+</li>
+<li><strong>종(species)·선택독성</strong>: 살충제는 곤충에 치명적이나 포유류에는 상대적으로 약해요 — 종간 차이의 대부분은 <strong>대사의 차이</strong></li>
+<li><strong>나이·성별</strong>: 신생아는 해독계 미성숙 / DDT 간손상은 수컷 쥐가 10배 민감</li>
+<li>노출기간 4범주: <strong>급성(24시간 이내) · 아급성(1개월 이내) · 아만성(1~3개월) · 만성(3개월 이상)</strong><ul>
+<li class="explanation">같은 물질도 기간에 따라 표적장기가 <strong>질적으로</strong> 달라진다. 벤젠은 급성이면 중추신경 억제, 반복 노출이면 백혈병 — 5장에서 그대로 다시 나와요.</li>
+</ul>
+</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>상호작용</th>
+<th>정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상가작용 additivity</td>
+<td>조합이 각 반응의 합과 같을 때 (1+1=2)</td>
+</tr>
+<tr>
+<td><strong>길항작용 antagonism</strong></td>
+<td>한 물질 노출이 다른 물질의 작용을 <strong>감소</strong>시킬 때 (1+1&lt;2)</td>
+</tr>
+<tr>
+<td>강화작용 potentiation</td>
+<td>한 물질이 다른 물질 단독작용보다 더 강화된 작용을 초래 (0+1&gt;1)</td>
+</tr>
+<tr>
+<td>상승작용 synergism</td>
+<td>한 물질이 다른 물질의 작용을 <strong>극적으로</strong> 증가 (1+1≫2)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>상승작용의 예: 알코올 + 항히스타민제/진정제 → 진정효과 급증</li>
+<li><strong>길항작용의 예: 아트로핀이 유기인제 살충제 중독을 길항해요 → 이 원리가 곧 해독제(antidote)</strong><ul>
+<li class="explanation">총론의 이 내용이 이미 6장의 정답과 연결되어 있어요. 해독제란 특별한 종류의 약이 아니라 <strong>길항작용을 임상에 쓴 것</strong>이에요. 그래서 3장의 해독제 표를 "짝 외우기"가 아니라 "무엇을 무엇으로 길항하는가"로 읽으면 돼요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-7">약물 알레르기 — 과민반응 I~IV형 (p.14)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>형</th>
+<th>명칭</th>
+<th>매개</th>
+<th>기전 요약</th>
+<th>최대반응 시기</th>
+<th>대표 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I</strong></td>
+<td>속발성 과민반응 (ImH, anaphylaxis)</td>
+<td><strong>IgE</strong></td>
+<td>비만세포 표면 IgE에 항원 결합 → 히스타민·류코트리엔·PG 유리</td>
+<td><strong>5~30분</strong> (약 2시간 지속)</td>
+<td>페니실린 아나필락시스, 천식, 두드러기, 아토피</td>
+</tr>
+<tr>
+<td><strong>II</strong></td>
+<td>항체의존성 세포독성 (CytH)</td>
+<td>IgG·IgM·IgA</td>
+<td>약물이 <strong>합텐</strong>으로 세포막 단백질과 결합 → 항체 + 보체 → 세포용해</td>
+<td>1~72시간</td>
+<td>퀴니딘·리팜핀 용혈, 페니실린 Coombs 양성, 메틸도파 용혈</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td>면역복합체 과민반응 (ComH)</td>
+<td>IgG·IgM <strong>면역복합체</strong></td>
+<td>혈청단백과 결합 → 복합체가 혈관·관절·신장 침착 → 보체 활성</td>
+<td>1~72시간</td>
+<td>혈청병, 사구체신염, 과민성 폐렴, 류마티스열</td>
+</tr>
+<tr>
+<td><strong>IV</strong></td>
+<td>지연형 T세포 과민반응 (DcmH)</td>
+<td><strong>감작 T림프구</strong></td>
+<td>APC가 항원 제시 → T세포 활성화 → 사이토카인 → 염증세포 동원</td>
+<td><strong>48~72시간</strong> (육아종 4주)</td>
+<td><strong>접촉성 피부염, 결핵반응</strong>, 라텍스·옻나무</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>교안의 암기 요령: I형은 IgE·<strong>분</strong> 단위, II·III형은 IgG/IgM·<strong>시간</strong> 단위, IV형은 T세포·<strong>일</strong> 단위 — <strong>시간축이 곧 기전이에요</strong><ul>
+<li class="explanation">반응에 걸리는 시간이 왜 기전을 알려 주는지 볼게요. I형은 <strong>이미 만들어져 비만세포에 붙어 있는 IgE</strong>가 항원을 만나 과립을 터뜨리는 것이라 즉시다. II·III형은 항체가 항원과 붙고 <strong>보체가 동원되어야</strong> 하니 시간 단위. IV형은 항체가 아예 없고 <strong>세포가 불려와 증식해야</strong> 하므로 일 단위다. 육아종이 4주나 걸리는 것도 같은 이유예요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 3번은 <strong>"48~72시간 + 접촉성 피부염·결핵반응"</strong>만 주고 형을 물었어요. 시간만 봐도 IV형이 확정돼요. 함정은 II·III형의 "1~72시간"이 시간 범위가 겹친다는 점인데, <strong>예시(접촉성 피부염·결핵반응)</strong>가 결정타를 낸다.</p>
+</blockquote>
+<h3 id="section-8">특이물질반응(idiosyncrasy) — 유전이 정하는 반응성 (p.15)</h3>
+<ul>
+<li>정의: 화학물질에 대한 <strong>유전적으로 결정된 비정상적 반응성</strong>. 저용량에 극도의 과민성을, 반대로 고용량에 극심한 부민감성을 보이기도 해요 → <strong>약물유전학(pharmacogenetics)</strong>의 영역</li>
+<li><strong>B형 ADR 대부분이 여기에 속해요</strong></li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>결핍·이상</th>
+<th>유발 약물</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ⅰ 가성콜린에스테라제 결핍</strong></td>
+<td><strong>Succinylcholine</strong></td>
+<td><strong>지속적 근이완 · 무호흡</strong></td>
+</tr>
+<tr>
+<td>Ⅱ 선천성 포르피린증</td>
+<td>바비튜레이트로 악화</td>
+<td>피부 착색·발진, 광과민</td>
+</tr>
+<tr>
+<td>Ⅲ G6PD 결핍</td>
+<td>primaquine, sulfa제, nitrofurantoin</td>
+<td>글루타티온 유지 실패 → <strong>용혈</strong></td>
+</tr>
+<tr>
+<td>Ⅳ 메트헤모글로빈 환원효소 결핍</td>
+<td>아질산염, aniline, primaquine, pyrogallol</td>
+<td>메트헤모글로빈혈증</td>
+</tr>
+<tr>
+<td>Ⅴ 아세틸전이효소(NAT)</td>
+<td><strong>Isoniazid</strong></td>
+<td>느린대사자에서 축적 → <strong>다발성신경염</strong></td>
+</tr>
+<tr>
+<td>Ⅵ 인종 차이</td>
+<td>—</td>
+<td>백인 신속:느린 ≈ 50:50, <strong>동양인은 신속대사자 비율 높음</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li class="explanation">여섯 항목이 전부 <strong>"효소 하나가 없어서 약이 안 치워진다"</strong> 또는 <strong>"방어 물질이 유지되지 않는다"</strong>로 요약돼요. 앞의 것이 Ⅰ·Ⅴ(분해 실패로 약이 남음), 뒤의 것이 Ⅲ·Ⅳ(글루타티온·환원력 유지 실패)다. 이 두 묶음으로 잡으면 증상을 거꾸로 유도할 수 있어요.</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 4번은 <strong>succinylcholine → 지속적 근이완·무호흡</strong>만 주고 결핍 효소를 물었어요. 선지 다섯이 모두 이 표에서 나왔으니 <strong>효소–약물–증상 세 칸의 짝</strong>만 맞추면 돼요. 그리고 이 표가 곧 앞 장 B형 ADR의 실체다 — 용량이 아니라 유전자가 원인이라서 예측이 불가능한 거예요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-9">2. 얼마면 안전한가 — 등급과 지표</h2>
+<p class="section-source"><em>p.19 · 27–30 · 소크라티브 N13 5번(p.19) · 6번(p.27) · 7번(p.28–29) · 8번(p.30)</em></p>
+<h3 id="section-10">FDA 임부 위험등급 A · B · C · D · X (p.19)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>등급</th>
+<th>안전성</th>
+<th>판정 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>위험성이 없음이 나타난 약물</td>
+<td>임신 여성 대조임상시험에서 태아 위험성 없음</td>
+</tr>
+<tr>
+<td>B</td>
+<td>사람에게 위험하다는 증거가 없음</td>
+<td>동물에서 위험했으나 사람에서는 아니거나, 동물에서도 위험 없음</td>
+</tr>
+<tr>
+<td>C</td>
+<td>위험성을 <strong>배제할 수 없음</strong></td>
+<td>동물에서 위험, 사람 대조시험 없음 (유익성이 크면 사용 가능)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>위험성에 대한 <strong>증거가 있음</strong></td>
+<td>임상·시판 후 자료에서 태아 위험 보고 (생명 위협 시 사용 가능)</td>
+</tr>
+<tr>
+<td><strong>X</strong></td>
+<td><strong>임신 중 절대 사용 불가</strong></td>
+<td><strong>태아 위험성이 유익성보다 명백히 상회</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>대부분의 약제는 B·C등급 — <strong>A등급은 전체의 1% 미만</strong>이고, C등급에서도 기형발생이 보고된 경우가 있어요</li>
+<li><strong>X등급의 대표 예: isotretinoin, conjugated estrogen</strong><ul>
+<li class="explanation">등급은 "위험한 정도"가 아니라 <strong>"증거가 어디까지 있는가"</strong>의 순서다. B와 C를 가르는 것도 위험의 크기가 아니라 <strong>사람 대조시험이 있느냐</strong>예요. 그래서 C등급이 안전하다는 뜻이 전혀 아니에요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 5번은 X등급의 예 두 개를 그대로 물었어요. <strong>isotretinoin · conjugated estrogen</strong> 이 두 이름만 확실히. 나머지 선지(metformin·insulin, acetaminophen·penicillin, 스테로이드, ibuprofen·aspirin)는 X등급 목록에 없어요.</p>
+</blockquote>
+<h3 id="section-11">치료지수 TI와 안전역 MOS (p.27)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>지표</th>
+<th>식</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TI (therapeutic index)</strong></td>
+<td><strong>TD₅₀ / ED₅₀</strong></td>
+<td>클수록 안전. 원래는 LD₅₀/ED₅₀이나 임상에서는 치사량 대신 <strong>독성용량(TD)</strong> 사용</td>
+</tr>
+<tr>
+<td><strong>MOS (margin of safety)</strong></td>
+<td><strong>LD₁ / ED₉₉</strong></td>
+<td>TI가 못 보는 <strong>곡선의 기울기</strong>를 보완</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>실제값: <strong>리튬 ≈ 3.0 / 페니실린 = 수천</strong> — 리튬·디기탈리스·항암제 등 낮은 TI 약물은 용량 설정에 특히 주의</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학개론_박종선_p027a" decoding="async" height="973" loading="lazy" src="images/7b0af50c6cc071f5.png" width="1542"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 5-4 용량반응곡선의 기울기와 독성물질 비교 (교안 p.27) — 파란 곡선이 유효용량(ED), 빨간 곡선이 독성용량(TD)이고, 가로 50% 선이 두 곡선을 자른 자리가 각각 ED₅₀·TD₅₀다. <strong>두 세로 점선 사이의 초록 화살표 길이가 곧 TI</strong>예요. 화살표가 길수록 안전하다는 그림이며, 소크라티브 N13 6번이 여기서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>왜 지표가 두 개나 필요한가.</strong> TI는 두 곡선의 <strong>가운데 점(50%)만</strong> 봐요. 그런데 곡선이 완만하면 가운데는 멀어도 <strong>양쪽 끝이 겹칠 수 있어요</strong> — 거의 모두에게 듣는 용량(ED₉₉)이 이미 일부를 죽이는 용량(LD₁)을 넘어서는 상황이에요. MOS는 바로 그 <strong>양 끝</strong>을 본다: "거의 다 듣는 용량"과 "아주 일부만 죽는 용량"의 간격. 그래서 TI가 같아도 기울기가 다르면 MOS가 갈려요.</p>
+<p>1장의 secobarbital(10배)과 아스피린(50배) 비교가 이 지표들의 임상적 얼굴이에요.</p>
+<p>💡 시험 포인트: 소크라티브 N13 6번은 <strong>분자·분모를 뒤집은 선지</strong>로 노렸다. TI는 <strong>TD₅₀이 위</strong>, MOS는 <strong>LD₁이 위</strong>. 뒤집으면 의미가 정반대가 돼요. 또 하나 — <strong>리튬이 3.0, 페니실린이 수천</strong>이지 그 반대가 아니에요.</p>
+</blockquote>
+<h3 id="section-12">규제의 기준값 — NOAEL · LOAEL · BMDL (p.28)</h3>
+<ul>
+<li><strong>NOAEL</strong> (no observed adverse effect level) = 무해용량. 임상연구·동물실험에서 나온 <strong>실제 자료값</strong></li>
+<li><strong>LOAEL</strong> = 최소유해용량</li>
+<li><strong>NOEL / LOEL</strong> = 무영향량 / 최소영향량 — 독성이 아니라 화학물질의 <strong>이로운 효과</strong>를 기술할 때 주로 사용</li>
+<li><strong>BMD / BMDL</strong> = 벤치마크 반응값(BMR, 보통 1·5·10%)에서의 독성발생 용량이 BMD, 그 <strong>하한치</strong>가 BMDL</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학개론_박종선_p028a" decoding="async" height="821" loading="lazy" src="images/3558b9dcf4ac9450.png" width="1195"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>용량반응곡선에서 각 기준치의 위치 (교안 p.28) — 가로축이 용량(mg/kg), 세로축이 반응(%)인 S자 곡선 위에 점 네 개가 <strong>왼쪽에서 오른쪽으로 DNEL(≈8) → NOAEL(≈11) → LOAEL(≈17) → LD₅₀(≈22)</strong> 순서로 찍혀 있어요. 이 순서 자체가 정의다 — 아무 영향 없는 지점에서 시작해, 유해효과가 처음 관찰되는 지점을 지나, 절반이 죽는 지점으로 가요.</figcaption></figure>
+
+<ul>
+<li class="explanation">NOAEL과 LOAEL은 <strong>실험에서 실제로 찍힌 점</strong>이라 실험 설계(용량 간격)에 좌우돼요. BMD/BMDL은 곡선 전체를 모델로 맞춰 뽑아낸 값이라 그 한계를 줄여 줘요 — 그래서 발암성 물질처럼 엄격한 판정에는 BMDL을 써요.</li>
+</ul>
+<h3 id="section-13">노출안전역 MOE와 허용섭취량 (p.29)</h3>
+<ul>
+<li><strong>MOE = NOAEL ÷ 산출된 노출정도</strong> (NOAEL의 단위는 mg/kgBW/day 또는 ppm)</li>
+<li>요구수준: <strong>건강역치물질(발암성·생식독성 없음) MOE ≥ 100 / 생식독성·발암성 물질 MOE ≥ 10,000</strong> (EFSA 기준, BMDL 사용)</li>
+<li>MOE 100 이상을 요구하는 상황: 만성독성자료가 없고 노출이 장기간일 때, <strong>NOAEL을 모르고 LOAEL만 있을 때</strong>, 데이터의 질을 보장할 수 없을 때, 노출이 과소평가될 가능성이 있을 때, 민감한 인구집단을 보호할 필요가 있을 때</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정식명칭</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADI</td>
+<td>acceptable daily intake</td>
+<td>일일섭취허용량(WHO)</td>
+</tr>
+<tr>
+<td>RfD</td>
+<td>reference dose</td>
+<td>대조용량</td>
+</tr>
+<tr>
+<td>DNEL</td>
+<td>derived no-effect level</td>
+<td>무영향도출수준</td>
+</tr>
+<tr>
+<td><strong>MOS</strong></td>
+<td>margin of safety</td>
+<td><strong>안전역 = NOAEL / 인체노출량, 100 이상이면 안전</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li class="explanation">앞 절의 MOS(LD₁/ED₉₉)와 <strong>이름이 같은데 식이 달라요</strong>. 앞의 것은 <strong>약물의 유효–독성 간격</strong>을, 여기의 것은 <strong>환경 노출의 여유분</strong>을 잰다. 문항에서 "NOAEL과 인체노출량"이 주어지면 무조건 이쪽(= MOE) 식이에요.</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 7번은 계산 문항이에요. <strong>NOAEL 2,400 ÷ 노출량 20 = 120 → 100 이상 → 안전.</strong> 노린 것은 나눗셈이 아니라 <strong>판정선(100 / 10,000)을 아는가</strong>예요. 곱셈으로 유도하는 선지, 10,000 기준을 일반 물질에 잘못 대는 선지가 함께 깔려 있어요.</p>
+</blockquote>
+<h3 id="section-14">예외 — 미량원소의 U자형 곡선 (p.30)</h3>
+<ul>
+<li>실무형 용량–반응관계는 <strong>S자</strong>지만, 일부 <strong>필수 미량원소(철분·비타민)</strong>는 <strong>U자</strong>를 그린다</li>
+<li>낮은 용량 → 항상성 유지 실패 → <strong>결핍성 이상반응</strong> ┃ 항상성 도달 → <strong>곡선의 가장 아래(위험 최소)</strong> ┃ 초과 → <strong>과잉성 독성</strong></li>
+<li>약어: <strong>SUL 안전상한치 · RDA 영양권장량 · EAR 평균필요량 · UF 불확실계수</strong></li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학개론_박종선_p030a" decoding="async" height="973" loading="lazy" src="images/b4c83abe69cd11ac.png" width="1542"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 5-8 미량원소의 결핍–과잉 모델 (교안 p.30) — 세로축이 <strong>질병 발생 빈도</strong>, 가로축이 섭취·노출농도다. 왼쪽 가지가 "결핍증", 오른쪽 가지가 "과잉 중독증"이고 <strong>가장 아래 초록 구간이 항상성 유지 범위</strong>예요. 세로축이 위험이라는 것만 확인하면 "곡선의 바닥 = 최대 독성"이라는 오답이 스스로 무너진다. 소크라티브 N13 8번 자리.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: N13 8번의 함정 두 개. ① <strong>바닥은 위험이 최소인 지점</strong>이지 최대가 아니에요. ② 약어가 서로 뒤바뀐 선지 — <strong>SUL이 안전상한치, RDA가 영양권장량, EAR이 평균필요량</strong>이에요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-15">3. 중독 환자 앞에서 · 환경으로 흩어진 독</h2>
+<p class="section-source"><em>p.36 · 44 · 소크라티브 N13 9번(p.36) · 16번(p.44 + p.67)</em></p>
+<h3 id="section-16">약물중독 치료의 5원칙 (p.36)</h3>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학개론_박종선_p036a" decoding="async" height="251" loading="lazy" src="images/05de2cbac91d7680.png" width="2460"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>약물중독 치료의 5원칙 (교안 p.36) — 다섯 상자가 <strong>왼쪽에서 오른쪽으로 한 줄</strong>로 이어진 흐름도다. ① 중요장기 보존(기도·호흡·혈압) → ② 중독증상 식별(병력·표적 증상) → ③ 독물 제거(세척·흡착·배설 촉진) → ④ 해독제 → ⑤ 대증 요법. <strong>순서 자체가 문항</strong>이며 소크라티브 N13 9번이 여기서 나왔어요.</figcaption></figure>
+
+<ul>
+<li>① 중요장기 보존: <strong>기도(air way) 확보와 호흡 유지, 심박동·혈압 안정</strong>이 가장 중요. 콩팥 기능·산염기·전해질 평형, 체온 유지도 이 단계</li>
+<li>② 중독증상 식별: 병력과 표면 증상으로 원인을 유추 / ⑤ 대증 요법: 증상별 보존요법<ul>
+<li class="explanation">해독제가 4번째인 이유를 생각해 볼게요. 직접 생명을 위협하는 것은 독물 자체가 아니라 <strong>호흡·순환의 붕괴</strong>이고, 애초에 <strong>해독제가 존재하는 독물이 오히려 소수</strong>예요. 원인을 모르는 초기에 해독제부터 찾는 것은 필요한 처치를 늦출 수 있어요.</li>
+<li class="explanation">활성탄이나 혈액투석은 전부 ③번(독물 제거)의 수단이에요. 의식이 저하된 환자에게 기도 확보 없이 활성탄을 먹이면 흡인 위험까지 더해진다 — ①이 먼저인 실질적 이유.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: N13 9번은 "가장 먼저 시행할 조치"를 물었고, 오답 넷이 모두 <strong>실제로 하는 처치</strong>예요. 순서표에서 자리를 확인하는 문제지 옳고 그름을 가리는 문제가 아니에요. <strong>진단보다 소생이 앞선다.</strong></p>
+</blockquote>
+<h3 id="section-17">해독제 표 (p.38 — 지정 묶음 밖, 25기출 선지의 출처)</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>독성물질</th>
+<th>해독제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아편계 opioids</td>
+<td><strong>naloxone</strong></td>
+</tr>
+<tr>
+<td><strong>일산화탄소 CO</strong></td>
+<td><strong>100% 산소요법</strong></td>
+</tr>
+<tr>
+<td><strong>β-차단제</strong></td>
+<td><strong>glucagon</strong></td>
+</tr>
+<tr>
+<td>벤조디아제핀계</td>
+<td>flumazenil</td>
+</tr>
+<tr>
+<td>이소니아지드</td>
+<td>pyridoxine</td>
+</tr>
+<tr>
+<td>에틸렌글리콜 · 메탄올</td>
+<td>에탄올 (또는 fomepizole)</td>
+</tr>
+<tr>
+<td>디곡신</td>
+<td>디곡신 특이 항체</td>
+</tr>
+<tr>
+<td><strong>AChE 억제제 (유기인제)</strong></td>
+<td><strong>atropine + pralidoxime(2-PAM)</strong></td>
+</tr>
+<tr>
+<td>아세트아미노펜</td>
+<td><strong>N-아세틸시스테인(NAC)</strong></td>
+</tr>
+<tr>
+<td>시안화물</td>
+<td>아질산염 + 티오황산나트륨</td>
+</tr>
+<tr>
+<td>철분 / 납 / 구리</td>
+<td>deferoxamine / EDTA·succimer / penicillamine</td>
+</tr>
+<tr>
+<td>와파린 / 헤파린</td>
+<td>비타민 K₁ + 신선냉동혈장 / protamine sulfate</td>
+</tr>
+<tr>
+<td>아질산염</td>
+<td>methylene blue</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>(교안 p.38 표 5-9. 이번 묶음 밖이지만 <strong>25-1과 25-30의 오답 선지가 전부 이 표에서 나왔어요</strong> — 표에 있는 줄(naloxone·propranolol)인지 표에 없는 것(epinephrine·activated charcoal)인지로 오답이 갈려요.)</em></p>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 25-1의 오답 ③ naloxone은 <strong>아편계</strong>의 짝, ⑤ propranolol은 아예 <strong>해독제가 아니라 독성물질 쪽</strong>(그 해독제가 glucagon)이다. 25-30의 오답 ④ activated charcoal은 <strong>위장관 내 잔류 독물</strong>용이라 <strong>흡입 기체인 CO에는 쓸 수 없어요</strong>. 표를 "짝"으로만 외우지 말고 <strong>경로(먹은 것 / 마신 것)</strong>까지 붙여 두면 이런 선지가 저절로 걸러져요.</p>
+</blockquote>
+<h3 id="section-18">환경적 고려 — 생체축적과 생물농축 (p.44)</h3>
+<ul>
+<li>환경 독성물질 평가의 4축: <strong>분해성(persistence) · 이동성(mobility) · 생체축적(bioaccumulation) · 생물농축(biomagnification)</strong></li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>영양단계</th>
+<th style="text-align: right;">PCB 농도 (ppm)</th>
+<th style="text-align: right;">상대치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>식물성 플랑크톤</td>
+<td style="text-align: right;">0.0025</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>동물성 플랑크톤</td>
+<td style="text-align: right;">0.123</td>
+<td style="text-align: right;">49.2</td>
+</tr>
+<tr>
+<td>무지개 빙어류</td>
+<td style="text-align: right;">1.04</td>
+<td style="text-align: right;">416</td>
+</tr>
+<tr>
+<td>송어</td>
+<td style="text-align: right;">4.83</td>
+<td style="text-align: right;">1,932</td>
+</tr>
+<tr>
+<td><strong>재갈매기</strong></td>
+<td style="text-align: right;"><strong>124</strong></td>
+<td style="text-align: right;"><strong>49,600</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>식물플랑크톤 → 재갈매기 사이에 <strong>약 5만 배</strong>. <strong>최상위 포식자인 사람이 가장 높은 농도에 노출돼요</strong></li>
+<li>교안이 뒤(p.67)에서 이 현상을 등식으로 못박아 둔다 — <strong>안정 + 지용성 + 대사 안 됨 = 생물농축</strong><ul>
+<li class="explanation">세 조건이 <strong>전부</strong> 있어야 성립한다는 게 요점이에요. 수용성이면 소변으로 빠져 애초에 남지 않고, 대사가 되면 배설 가능한 형태로 바뀌어 사라진다. 지용성이라 <strong>체지방에 쌓이고</strong>, 대사되지 않아 <strong>포식자에게 그대로 넘어가는</strong> 물질만 영양단계마다 농도가 곱해진다.</li>
+<li class="explanation">그래서 축적 부위가 혈장단백이 아니라 <strong>체지방</strong>이라는 점이 결정적이에요. 혈장에 떠 있다면 개체가 죽으면서 흩어지지만, 지방에 박혀 있으면 먹은 쪽으로 통째로 옮겨가요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 16번은 PCB·다이옥신·DDT의 <strong>공통 원인</strong>을 물었어요. 답은 <strong>안정 + 지용성 + 대사 안 됨</strong> 세 조건이며, 오답은 "수용성이 커서"(방향 반대), "간 초회통과로 대사산물 축적"(대사가 안 되는 게 특징이라 전제가 붕괴), "신장 재흡수"(자리가 지방이지 콩팥이 아님)로 각각 한 조건씩 뒤집었어요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-19">4. 흡입되는 독 ① — 기체와 대기오염물질</h2>
+<p class="section-source"><em>p.47–50 · 소크라티브 N13 10번(p.47) · 11번(p.49–50) · <strong>25-30(p.47)</strong></em></p>
+<h3 id="section-20">일산화탄소 CO ★25-30 (p.47) · N13 10번</h3>
+<ul>
+<li>성질: <strong>무색 · 무미 · 무취 — 감지가 불가능해요</strong></li>
+<li>기전: <strong>Hb 결합 시 O₂와 경쟁 — 친화력 약 220배, Hb에 거의 비가역적으로 결합 → 조직 저산소증(hypoxia)</strong></li>
+<li>임상 경과: 두통 → 의식장애 → 시야혼란 → 빈맥 → 기절 → 혼수 → 경련 → 사망</li>
+<li>용량–반응: <strong>CO-Hb 40%에서 쓰러지거나 기절 / 60% 이상이면 뇌와 심근에 손상</strong> (고온·고지대에서 악화)</li>
+<li>허용농도: TLV 25 ppm(8시간) — <strong>교통체증 시 100 ppm까지 증가</strong></li>
+<li>치료: <strong>① 발생원 제거 ② 100% 산소 공급</strong></li>
+<li><strong>고압산소요법(HBO) 적응증: 의식소실 · 신경학적 이상 · 심근허혈 · 임신부 · CO-Hb &gt; 25%</strong></li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학_박종선_gen_CO-산소해리곡선" decoding="async" height="540" loading="lazy" src="images/f6a1a150c6c68531.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>(생성 도해) CO 중독의 산소해리곡선과 SpO₂ 함정 — 파란 정상 곡선에 견주면 빨간 CO-Hb 곡선은 <strong>두 가지가 동시에</strong> 달라진다. ① <strong>위쪽 평탄부가 통째로 내려앉는다</strong>(실을 수 있는 산소 총량이 줄었어요), ② <strong>곡선이 왼쪽으로 밀린다</strong>(남은 Hb가 조직에서 산소를 놓지 않아요). 오른쪽 위 상자가 25-30과 N13 10번이 함께 노린 함정이고, 아래 띠가 이 물질의 네 칸 요약이에요.</figcaption></figure>
+
+<ul>
+<li class="explanation"><strong>좌측 이동이 왜 이중의 타격인가.</strong> CO가 Hb 자리 하나를 차지하면 나머지 자리들의 산소 친화력이 오히려 올라가요. 그래서 조직에 도착해도 산소를 <strong>내려놓지 않아요</strong> — 실은 양이 줄어든 데다, 실은 것마저 못 준다. (좌측 이동 자체는 교안 p.47에 없는 부가 설명이니 답안 문장으로는 "친화력 220배 · 거의 비가역 결합 → 조직 저산소증"을 써요.)</li>
+<li class="explanation">치료가 100% 산소인 이유도 이 그림에서 나와요. 산소분압을 억지로 올려 <strong>CO를 Hb에서 밀어내면 CO-Hb 반감기가 짧아진다</strong>. 고압산소는 그 압력을 더 키운 거예요.</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-30</strong>은 그냥 "치료법"을 물어 답이 <strong>100% 산소</strong>로 단순해요. 진짜 함정은 소크라티브 <strong>N13 10번</strong> 쪽이에요 — <strong>SpO₂ 98%라는 정상 수치</strong>를 주고 판단을 물어요. 맥박산소측정기는 CO-Hb와 O₂-Hb의 흡광 특성을 구별하지 못해 <strong>CO-Hb를 산화Hb로 잘못 읽는다</strong>. 그러니 정상 SpO₂는 CO 중독을 배제하는 근거가 못 되고, 진단은 <strong>CO-oximetry</strong>로 직접 측정해야 해요.</p>
+<p>(교안 p.47이 <strong>[임상 함정]</strong> 박스로 따로 떼어 적어 둔 문장이에요.)</p>
+</blockquote>
+<h3 id="section-21">이산화황 SO₂ (p.49)</h3>
+<ul>
+<li>무색의 <strong>자극성</strong> 기체, 화석연료 연소로 발생</li>
+<li>기전: <strong>인체 점막의 수분과 만나 아황산(sulfurous acid)으로 전환 — 이 아황산이 독성의 원인</strong></li>
+<li><strong>대기 중 5~10 ppm만 있어도 기관지 수축</strong>, 더 노출되면 폐부종, 만성 저농도 노출은 심폐질환 악화</li>
+<li>치료: 발생원 제거 + 자극 증상·염증에 대한 조치</li>
+<li>1952년 <strong>런던 스모그</strong>가 대기오염 규제의 출발점</li>
+</ul>
+<h3 id="section-22">이산화질소 NO₂ · 오존 O₃ (p.50)</h3>
+<ul>
+<li><strong>NO₂</strong> — 갈색 자극성 기체, 화재 시 혹은 농장의 사일로에서 발생. <strong>깊은 폐 자극과 폐부종</strong>. 폐쇄된 저장고에서 고농도에 노출된 농부의 급성 폐부종 = <strong>silo filler's disease</strong></li>
+<li><strong>O₃</strong> — 푸르스름한 자극성 기체, 공기·물 정화장치나 전기장에서 발생. 0.01~0.1 ppm에서 자극·점막건조, 고농도에서 폐기능 저하, 만성 노출은 기관지염·세기관지염·<strong>폐섬유증</strong>·폐기종</li>
+<li>둘 다 <strong>특이적 치료법이 없어요</strong> — 염증과 폐부종 조절만</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>자극가스</th>
+<th>수용성</th>
+<th>주 침착 부위</th>
+<th>첫 증상</th>
+<th>주 손상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SO₂</strong></td>
+<td><strong>높음</strong></td>
+<td>상기도 (눈·코·인후)</td>
+<td>눈물·기침 등 <strong>즉각적 자극</strong></td>
+<td>기관지 수축 (천식 악화)</td>
+</tr>
+<tr>
+<td><strong>NO₂ · O₃</strong></td>
+<td><strong>낮음</strong></td>
+<td>하기도 (세기관지·폐포)</td>
+<td><strong>증상이 늦게 나타남 — 위험</strong></td>
+<td><strong>폐부종 · 폐섬유증</strong></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>수용성 하나가 나머지 네 칸을 전부 정해요.</strong> 물에 잘 녹는 기체는 들어오자마자 상기도의 젖은 점막에 잡힌다 → 눈이 맵고 기침이 난다 → 사람이 그 자리를 벗어난다 → 깊이 못 들어가요. 물에 안 녹는 기체는 상기도를 그냥 통과해요 → <strong>경고가 없어요</strong><br/><br/> → 고농도까지 계속 들이마신다 → 폐포에 도달해 몇 시간 뒤 폐부종으로 나타나요. 즉 <strong>자극이 심한 쪽이 오히려 덜 위험할 수 있다</strong>는 역설이고, 그래서 NO₂·O₃ 노출은 증상이 없어도 <strong>관찰이 필수</strong>예요.</p>
+<p>💡 시험 포인트: 소크라티브 N13 11번이 정확히 이 역설을 물었어요. 오답 선지는 SO₂의 성질(아황산 전환, 즉시 기관지수축, 수용성 높음)을 NO₂·O₃에 붙이거나, <strong>CO의 기전(혈색소 결합)</strong>을 끌어와 섞는다. 자극가스는 혈색소가 아니라 <strong>폐 조직을 직접</strong> 때린다.</p>
+</blockquote>
+<h3 id="section-23">네 칸 정리 — 기체 3종</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>원인물질</th>
+<th>표적</th>
+<th>임상상</th>
+<th>해독제·처치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CO</strong></td>
+<td>헤모글로빈 (친화력 220배, 거의 비가역)</td>
+<td>두통 → 의식장애 → 기절(40%) → 뇌·심근 손상(60%), <strong>SpO₂는 정상</strong></td>
+<td><strong>발생원 제거 + 100% 산소</strong>, 적응증이면 <strong>HBO</strong></td>
+</tr>
+<tr>
+<td><strong>SO₂</strong></td>
+<td>상기도 점막 (수분과 만나 <strong>아황산</strong>)</td>
+<td>눈물·기침 즉시, 5~10 ppm에서 기관지 수축, 천식 악화</td>
+<td>발생원 제거 + 자극·염증 치료 (특이 해독제 없음)</td>
+</tr>
+<tr>
+<td><strong>NO₂ · O₃</strong></td>
+<td>하기도 — 세기관지·폐포</td>
+<td><strong>경고 없이</strong> 노출 → 수 시간 뒤 폐부종, 만성은 폐섬유증·폐기종</td>
+<td><strong>특이 치료법 없음</strong> — 염증·폐부종 조절, 노출 후 관찰</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="section-24">5. 흡입되는 독 ② — 유기용매</h2>
+<p class="section-source"><em>p.53 · 소크라티브 N13 12번(p.53)</em></p>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Benzene</strong></th>
+<th><strong>Toluene</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>급성</td>
+<td>중추신경 <strong>억제</strong> (ataxia · 혼수)</td>
+<td>중추신경 <strong>억제</strong></td>
+</tr>
+<tr>
+<td>장기</td>
+<td><strong>조혈기 독성</strong> — 혈소판감소증 · 백혈구감소증 · <strong>재생불량성 빈혈</strong></td>
+<td><strong>골수억제성 없음</strong> — benzene과 결정적으로 다른 점</td>
+</tr>
+<tr>
+<td>발암</td>
+<td><strong>백혈병 유발원 · IARC Group 1</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>남용(흡입) 시</td>
+<td>—</td>
+<td>소뇌 실조 · 신세뇨관성 산증</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>치료: <strong>노출(발생)원 제거가 유일한 치료법</strong> + 중추신경 억제에 대한 조치(vital signs 유지)<ul>
+<li class="explanation">두 물질은 <strong>급성 작용은 같고, 만성 작용에서 차이가 나요.</strong> 유기용매의 급성 작용이 억제라는 것은 계열 공통 원칙이니(알코올과 같은 결이에요) "흥분"이라 적힌 선지는 물질과 무관하게 잘못된 설명이에요.</li>
+</ul>
+</li>
+<li class="explanation">골수를 때리는 범인은 benzene 자체가 아니라 <strong>대사산물(benzene oxide, hydroquinone)</strong>이에요 — 1장의 <strong>대사적 활성화</strong>가 그대로 재현되는 자리예요. 그래서 "간에서 대사되니 안전해진다"는 직관이 여기서 무너진다.</li>
+</ul>
+<h3 id="section-25">네 칸 정리 — 유기용매</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>원인물질</th>
+<th>표적</th>
+<th>임상상</th>
+<th>해독제·처치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Benzene</strong></td>
+<td>급성 CNS / 만성 <strong>골수</strong> (대사산물이 진짜 범인)</td>
+<td>ataxia·혼수 → 재생불량성 빈혈 · <strong>백혈병</strong></td>
+<td><strong>해독제 없음</strong> — 노출원 제거 + vital sign 유지</td>
+</tr>
+<tr>
+<td><strong>Toluene</strong></td>
+<td>급성 CNS / 남용 시 소뇌·신세뇨관</td>
+<td>ataxia·혼수 → 소뇌 실조 · 신세뇨관성 산증 (<strong>골수억제 없음</strong>)</td>
+<td>동일 — 노출원 제거 + vital sign 유지</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N13 12번은 두 물질을 <strong>통째로 맞바꾼 선지</strong>와 <strong>급성 작용의 방향을 뒤집은 선지</strong>로 노렸다. 외울 문장은 두 개뿐이에요 — <strong>"benzene = 재생불량성 빈혈·백혈병", "toluene = 골수억제 없음."</strong> 그리고 둘 다 특이 해독제가 없어요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-26">6. 농약 — 살충제와 제초제</h2>
+<p class="section-source"><em>p.56–59 · 64 · 소크라티브 N13 13번(p.56–57, 59) · 14번(p.58–59) · 15번(p.64) · <strong>25-1(p.56) · 25-12(p.64)</strong></em></p>
+<h3 id="section-27">유기인 살충제 ★25-1 (p.56) · N13 13번</h3>
+<ul>
+<li>대표: <strong>dichlorvos · malathion · parathion</strong>. <strong>유기염소 살충제보다 흡수속도가 빨라요</strong></li>
+<li>기전: <strong>AChE를 억제 — 에스터 부위를 인산화(phosphorylation)</strong> → <strong>ACh 축적 → 급성 중독증상 (비가역적)</strong></li>
+<li><strong>콜린성 위기 = DUMBBELS: 설사 · 배뇨 · 축동 · 서맥 · 기관지분비 · 구토 · 눈물 · 타액분비</strong></li>
+<li><strong>지연성 신경독성</strong> — 다발신경병증이 특징 (원인물질: <strong>TOCP</strong>)</li>
+<li>치료: <strong>다량의 atropine 주사 + 2-PAM(pralidoxime)으로 콜린에스테라제 재생</strong></li>
+<li><strong>aging</strong> — 인산화된 AChE에서 시간이 지나 <strong>알킬기가 떨어져 나가면</strong>, 그 시점부터는 2-PAM으로도 재활성화되지 않아요 → <strong>조기 투여가 원칙</strong>. 신경작용제(VX 등)는 aging이 매우 빨라요</li>
+<li><strong>parathion → paraoxon 전환</strong>이 1장 대사적 활성화의 대표 예예요</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학개론_박종선_p057a" decoding="async" height="889" loading="lazy" src="images/7cc77330b6514b0f.png" width="889"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>AChE 저해제의 결합 양상 (교안 p.57) — 위에서 아래로 세 칸이 <strong>가수분해에 걸리는 시간</strong> 순서로 늘어서 있어요. <strong>Normal = microseconds</strong>(정상 ACh 분해), <strong>Reversible Inhibitor = minutes</strong>(카바메이트의 카르바모일화), <strong>Irreversible Inhibitor = hours~days</strong>(유기인계의 인산화).<br/><br/> 세 번째 칸의 "hours–days"가 끝이 아니라는 것이 핵심이에요 — 그 사이에 <strong>aging</strong>이 일어나면 시간은 무한대가 돼요.</figcaption></figure>
+
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학_박종선_gen_유기인-카바메이트-aging" decoding="async" height="580" loading="lazy" src="images/4dae7fe328a16ebc.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>(생성 도해) 유기인계 vs 카바메이트 — 결합 방식과 aging 시간축. 위쪽 절반은 두 계열이 <strong>다른 결합으로 시작해 같은 콜린성 위기(DUMBBELS)로 합류</strong>하는 것을, 아래쪽 시간축은 <strong>합류 이후에 왜 갈리는지</strong>를 보여 줘요. 유기인계 축에서 초록 구간이 2-PAM이 듣는 유일한 창이고 그 끝의 빨간 눈금이 aging이다.<br/><br/> 카바메이트 축에는 그런 창이 아예 필요 없어요 — 효소가 스스로 풀려요. 맨 아래 띠가 시험이 늘 확인하는 한 줄이다: <strong>atropine은 수용체 쪽이라 시간과 무관하게 양쪽 모두 필수·대량.</strong></figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-1</strong>은 "침 흘림 · 축동 · 호흡곤란이 나타난 농부"를 주고 치료제를 물었어요 — 답은 <strong>atropine + pralidoxime(2-PAM)</strong>. (시험지 복기의 <code>Pralidoxamine</code>은 pralidoxime의 오타다.) 이 문항은 세 단계로 연결해 보세요: ① 무스카린 증상 나열 = 콜린성 위기 ② 그 원인은 AChE 억제 ③ 해독은 <strong>수용체 차단(atropine) + 효소 재생(2-PAM)</strong><br/><br/> 두 축. 오답 중 <strong>naloxone(아편계의 짝)과 propranolol(β차단제 — 해독제가 아니라 독성물질 쪽이고 그 짝이 glucagon)</strong>은 3장 해독제 표의 다른 줄이고, <strong>epinephrine·furosemide는 그 표에 아예 없어요.</strong></p>
+<p>💡 시험 포인트: 소크라티브 N13 13번은 <strong>"왜 2-PAM을 조기에 투여해야 하는가"</strong>를 물었어요. 답은 <strong>aging</strong>이에요. 시간이 약효를 정하는 이유가 약의 반감기가 아니라 <strong>효소 쪽에서 일어나는 비가역적 변화</strong>라는 점이 이 문항의 전부예요. 오답 중 "아세틸콜린이 고갈되어"는 방향이 반대다 — 이 중독의 병태는 ACh가 모자란 게 아니라 <strong>분해되지 않아 넘치는</strong> 거예요.</p>
+</blockquote>
+<h3 id="section-28">카바메이트 살충제 (p.58) · N13 14번</h3>
+<ul>
+<li>대표: <strong>aldicarb · carbaryl · dimetan · isolan</strong>. 환경 내 반감기가 짧은 <strong>비지속성</strong> 살충제, 저렴해서 자주 쓰임</li>
+<li>기전: <strong>AChE 억제 — 에스터 부위를 카르바모일화(carbamylation)</strong>. 억제 기간이 유기인 살충제보다 짧아 <strong>재활성화가 빨리 일어난다(가역적)</strong></li>
+<li>치료: <strong>atropine이 치료의 중심 · 기도 확보와 mechanical ventilation</strong></li>
+<li><strong>혈액뇌장벽 통과가 상대적으로 적어 중추신경 증상이 유기인계보다 덜해요</strong><ul>
+<li class="explanation">기도 확보와 기계환기가 치료의 절반을 차지하는 이유는 단순해요. <strong>콜린성 위기의 사망 원인이 호흡부전</strong>이기 때문이에요 — 기관지 분비물이 쏟아지고 기관지가 수축하며 호흡근이 마비돼요. 3장 5원칙의 ①번(기도 확보)이 여기서 그대로 반복돼요.</li>
+</ul>
+</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th><strong>유기인계</strong></th>
+<th><strong>카바메이트</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AChE 결합</td>
+<td><strong>인산화</strong> (phosphorylation)</td>
+<td><strong>카르바모일화</strong> (carbamylation)</td>
+</tr>
+<tr>
+<td>가역성</td>
+<td><strong>비가역 — aging 후 영구적</strong></td>
+<td><strong>가역 — 수분~수시간 내 자연 가수분해</strong></td>
+</tr>
+<tr>
+<td>작용 지속</td>
+<td>수일 ~ 수주</td>
+<td>수시간</td>
+</tr>
+<tr>
+<td>중추신경 증상</td>
+<td>현저함</td>
+<td>상대적으로 덜함 (BBB 통과 적음)</td>
+</tr>
+<tr>
+<td>지연성 신경병증</td>
+<td><strong>있음 (TOCP 등)</strong></td>
+<td>일반적으로 없음</td>
+</tr>
+<tr>
+<td><strong>Atropine</strong></td>
+<td>필수 · 대량</td>
+<td>필수 · 대량</td>
+</tr>
+<tr>
+<td><strong>Pralidoxime (2-PAM)</strong></td>
+<td><strong>적응 — aging 전 조기 투여</strong></td>
+<td><strong>일반적으로 권장되지 않음</strong> (carbaryl에서는 유해 가능)</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout exam">
+<p>💡 시험 포인트 — <strong>옛 자료와 충돌하는 자리예요.</strong> 기존 강의록에는 카바메이트 중독에도 "2-PAM으로 콜린에스테라제를 재생"한다고 적혀 있었고, 구 강의록을 옮긴 자료에도 그대로 남아 있어요. <strong>현 교안(9판)이 이를 명시적으로 수정했어요</strong> — 카바모일화 결합은 스스로 빠르게 가수분해되므로 2-PAM이 필요 없고, 특히 <strong>carbaryl 중독에서는 pralidoxime이 임상 경과를 악화시킬 수 있다</strong>는 보고가 있어 권장되지 않아요.</p>
+<p>소크라티브 N13 14번이 정확히 이 수정된 내용을 정답으로 잡았어요. <strong>현 교안 기준으로 답해 주세요.</strong><br/>
+↳ 표에서 atropine 줄은 양쪽이 똑같다는 점도 함께 봐 두세요. <strong>atropine은 감별 기준이 되지 못해요.</strong> 두 계열이 갈리는 칸은 오직 <strong>가역성</strong>과 <strong>2-PAM</strong> 둘이에요.</p>
+</blockquote>
+<h3 id="section-29">제초제 Paraquat ★25-12 (p.64) · N13 15번</h3>
+<ul>
+<li><strong>섭취하지 않는 한 독성이 없어요</strong> — 그러나 <strong>5 mL 정도만 섭취해도 치명적</strong>이고 <strong>해독제가 없어요</strong></li>
+<li>경과: 초기에 <strong>피 섞인 구토와 혈변을 동반한 위장자극</strong> → <strong>2~3일 내에 폐기능 이상이 발생·진행</strong> → <strong>중증 폐섬유증</strong>으로 발전, 종종 사망</li>
+<li>위세척·복막투석 등 최선의 유지요법에도 <strong>생존율 50% 미만</strong></li>
+<li>기전과 금기: <strong>폐포세포에 능동적으로 농축 → 산화환원 순환(redox cycling)으로 활성산소 생성.</strong> 따라서 <strong>고농도 산소 투여는 폐손상과 폐섬유화를 오히려 악화</strong>시키므로, 저산소증이 심각하지 않은 한 산소를 피해요</li>
+<li>실제 처치 순서: ① 조기 위장관 제거 — <strong>활성탄 또는 Fuller's earth(백토)</strong> 흡착 ② 조기 <strong>혈액관류(hemoperfusion)</strong> ③ 면역억제요법(근거 제한적) ④ <strong>산소는 최소한으로</strong></li>
+<li>우리나라에서는 그라목손 음독 자살이 많아 <strong>2011년 등록 취소 · 2012년 판매 금지</strong></li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0903_독성학_박종선_gen_paraquat-redox순환" decoding="async" height="560" loading="lazy" src="images/31f35d0cb602e324.svg" width="900"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>(생성 도해) Paraquat의 redox cycling과 "산소가 금기"인 이유 — 가운데 두 상자 사이를 도는 화살표가 핵심이에요. PQ²⁺가 세포의 전자를 받아 라디칼(PQ⁺•)이 되고, 그 전자를 <strong>산소에 넘기면서 원래 모습으로 돌아가요.</strong> 즉 <strong>파라쿼트는 소모되지 않고 촉매처럼 계속 돌면서</strong><br/><br/> superoxide만 뿜어낸다. 아래에서 위로 올라오는 빨간 화살표가 이 순환의 <strong>연료가 산소</strong>임을 가리키고, 왼쪽 아래 붉은 상자가 그 결론이에요.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-12</strong>는 "가장 중요한 병리 소견"을 물어 답이 <strong>폐섬유증</strong>이에요. 초기 위장자극은 국소 증상일 뿐 예후를 가르지 않아요. 소크라티브 <strong>N13 15번</strong>은 한 단계 더 들어가 <strong>처치의 주의사항</strong>을 물었고 답은 <strong>"고농도 산소가 오히려 악화시킨다"</strong>예요. 오답 ③ "고압산소요법이 표준치료"는 <strong>CO 중독의 답을 여기 갖다 붙인 것</strong>이고, ⑤ "혈액관류는 효과가 없다"는 교안이 ②번 처치로 명시한 것을 뒤집었어요.</p>
+</blockquote>
+<h3 id="section-30">네 칸 정리 — 농약 3종</h3>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>원인물질</th>
+<th>표적</th>
+<th>임상상</th>
+<th>해독제·처치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>유기인계</strong></td>
+<td>AChE — <strong>인산화(비가역)</strong>, aging 후 영구</td>
+<td><strong>DUMBBELS</strong> 콜린성 위기 + 중추신경 증상 현저 + <strong>지연성 신경병증(TOCP)</strong></td>
+<td><strong>atropine(대량) + 2-PAM(aging 전 조기)</strong></td>
+</tr>
+<tr>
+<td><strong>카바메이트</strong></td>
+<td>AChE — <strong>카르바모일화(가역)</strong>, 수분~수시간 자연 회복</td>
+<td>콜린성 위기, 중추신경 증상은 덜함, 지연성 신경병증 없음</td>
+<td><strong>atropine(대량) + 기도 확보·기계환기.</strong> 2-PAM은 권장 안 함</td>
+</tr>
+<tr>
+<td><strong>Paraquat</strong></td>
+<td><strong>폐포세포</strong> — 능동 농축 후 redox cycling</td>
+<td>초기 위장자극(혈성 구토·혈변) → 2~3일 뒤 <strong>중증 폐섬유증</strong> → 사망</td>
+<td><strong>해독제 없음.</strong> 활성탄·백토 → 혈액관류 → <strong>산소는 최소한으로</strong></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>이 강의의 시험축은 전부 "반대 방향 짝"이다.</strong> 마지막으로 이 기준을 따라 자료 전체를 다시 살펴보세요. 각론 7문항이 모두 여기에 걸려 있어요.</p>
+<p><strong>① 산소 — 치료냐 독이냐.</strong> CO 중독에서는 <strong>100% 산소가 곧 해독제</strong>(고압산소까지 가요). Paraquat에서는 <strong>산소가 redox cycling의 연료</strong>라 금기다. 방향이 정반대이므로, 문항이 "고압산소요법"을 선지에 올리면 물질을 먼저 확인해야 해요.</p>
+<p><strong>② 결합 — 가역이냐 비가역이냐.</strong> 카바메이트는 스스로 풀리니 <strong>2-PAM이 불필요</strong>(carbaryl에선 유해 가능), 유기인계는 풀리지 않으니 <strong>2-PAM을 aging 전에</strong> 넣어야 해요. Atropine은 수용체 쪽이라 양쪽 공통 — <strong>감별 기준이 못 돼요.</strong></p>
+<p><strong>③ 경고 — 있느냐 없느냐.</strong> 수용성 높은 SO₂는 상기도에서 잡혀 <strong>눈이 매워 사람을 도망가게 해요</strong>. 수용성 낮은 NO₂·O₃는 경고 없이 폐포까지 들어가 <strong>몇 시간 뒤 폐부종</strong>으로 나타난다. 자극이 심한 쪽이 덜 위험해요.</p>
+<p><strong>④ 시점 — 급성이냐 만성이냐.</strong> Benzene과 toluene은 <strong>급성에서 똑같이 중추신경 억제</strong>이고, <strong>만성에서만 갈린다</strong>(골수 vs 골수억제 없음). 벤젠이 총론 p.12에서 "급성=중추신경 억제, 반복=백혈병"의 예로 이미 나왔던 것과 같은 이야기다.</p>
+<p>그리고 이 네 짝 위에 총론의 한 문장이 얹힌다 — <strong>"용량만이 독이 아닌 것을 정한다."</strong> CO조차 저농도에서는 몸이 스스로 만드는 신호분자이고, 필수 미량원소는 모자라도 병이 된다(U자 곡선). 결국 이 강의가 묻는 것은 물질의 이름이 아니라 <strong>어느 방향으로 얼마나</strong>예요.</p>
+</blockquote></div>
+      <div class="answer-footer"><a href="originals/toxicology.md" download="0903_독성학개론_박종선_강의정리(p3-64).md"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>원본 MD</a><button id="back-top" class="text-button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>처음으로</button></div>
+      <nav class="lecture-pagination" aria-label="이전·다음 강의"><a class="previous-course" href="gonadal.html">← 생식샘호르몬</a><a class="next-course" href="heavy-metals.html"><span><small>다음 강의</small>중금속중독</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></nav>
+    </article>
+    <aside class="toc" id="toc" aria-label="이 강의 목차"><div class="toc-heading"><span>이 강의에서</span><button class="icon-button toc-close" id="close-toc" aria-label="목차 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><nav><a href="#section-1">1. 독성학의 언어 — 용어 · 유해반응 · 예측할 수 없는 쪽</a><a href="#section-9">2. 얼마면 안전한가 — 등급과 지표</a><a href="#section-15">3. 중독 환자 앞에서 · 환경으로 흩어진 독</a><a href="#section-19">4. 흡입되는 독 ① — 기체와 대기오염물질</a><a href="#section-24">5. 흡입되는 독 ② — 유기용매</a><a href="#section-26">6. 농약 — 살충제와 제초제</a></nav><a class="toc-top" href="#main">맨 위로 ↑</a></aside>
+  </main>
+  <div class="find-dock"><form class="find-form" role="search" id="find-form"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="find-input" type="search" aria-label="이 강의 본문 검색" placeholder="이 강의에서 궁금한 용어 찾기" autocomplete="off"><output id="find-count" aria-live="polite"></output><button type="button" id="find-prev" class="icon-button" aria-label="이전 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button><button type="submit" class="find-next" aria-label="다음 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg></button></form><p class="dock-caption">강의 자료를 바탕으로 문체를 다듬은 개인 학습용 정리본</p></div>
+</div>
+<dialog class="image-dialog" id="image-dialog" aria-label="강의 이미지 확대"><div class="image-dialog-bar"><span>강의 그림</span><div><a id="image-original" target="_blank" rel="noopener">원본 크기로 열기 ↗</a><button class="icon-button" id="close-image" aria-label="확대 이미지 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div></div><div class="image-canvas"><img id="zoomed-image" alt=""></div></dialog>
+</body></html>

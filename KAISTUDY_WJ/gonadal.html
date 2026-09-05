@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="박종선 교수님 약리학2 · 생식샘호르몬. 설명과 표, 강의 이미지를 함께 읽는 정리본.">
+<meta name="color-scheme" content="light dark"><title>생식샘호르몬 · 약리학 노트</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('pharm-theme')||'light'}catch(e){}</script>
+<script src="assets/app.js" defer></script>
+</head>
+<body data-course="gonadal">
+<a class="skip-link" href="#answer">본문으로 건너뛰기</a>
+<div class="sidebar-shade" id="sidebar-shade" hidden></div>
+<aside class="sidebar" id="sidebar" aria-label="강의 목록">
+  <div class="sidebar-head"><a href="index.html" class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg><span>약리학 노트</span></a><button class="icon-button mobile-close" id="close-sidebar" aria-label="강의 목록 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+  <p class="sidebar-subtitle">박종선 교수님 · 약리학2</p>
+  <label class="course-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="course-search" type="search" placeholder="강의 찾기" aria-label="강의 제목 검색"></label>
+  <nav class="course-nav" aria-label="전체 강의"><p class="nav-group">오타코이드</p><a class="course-link" href="index.html"><span>히스타민과 항히스타민제</span><small>08.18</small></a><a class="course-link" href="serotonin.html"><span>세로토닌과 맥각 알칼로이드</span><small>08.21</small></a><a class="course-link" href="eicosanoids.html"><span>Eicosanoids</span><small>08.21</small></a><a class="course-link" href="vasoactive-peptides.html"><span>혈관작용펩타이드</span><small>08.21</small></a><p class="nav-group">항염증약</p><a class="course-link" href="nsaid-1.html"><span>NSAID · 기본 기전과 Aspirin</span><small>08.25</small></a><a class="course-link" href="nsaid-2.html"><span>NSAID · 류마티스와 통풍</span><small>08.25</small></a><p class="nav-group">내분비</p><a class="course-link" href="pituitary.html"><span>시상하부와 뇌하수체</span><small>08.26</small></a><a class="course-link" href="thyroid.html"><span>갑상샘호르몬</span><small>08.26</small></a><a class="course-link" href="diabetes.html"><span>췌장호르몬과 당뇨병</span><small>09.02</small></a><a class="course-link" href="adrenal.html"><span>부신피질호르몬</span><small>09.02</small></a><a class="course-link" href="bone.html"><span>뼈와 무기질</span><small>09.02</small></a><a class="course-link" href="gonadal.html" aria-current="page"><span>생식샘호르몬</span><small>09.02</small></a><p class="nav-group">독성학</p><a class="course-link" href="toxicology.html"><span>독성학 개론</span><small>09.03</small></a><a class="course-link" href="heavy-metals.html"><span>중금속중독</span><small>09.03</small></a><p id="no-courses" hidden>일치하는 강의가 없어요.</p></nav>
+  <div class="sidebar-bottom"><span class="status-dot"></span>14개 강의 · 나의 학습 노트</div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="topbar-left"><button class="icon-button" id="toggle-sidebar" aria-label="강의 목록 열기 또는 닫기" aria-expanded="false" aria-controls="sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button><span class="topbar-title">약리학2 <span class="muted">/ 내분비</span></span></div><div class="topbar-actions"><button class="text-button" id="toggle-toc" aria-controls="toc" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>목차</span></button><button class="icon-button" id="theme-toggle" aria-label="어두운 화면으로 전환" title="화면 테마 전환"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button><button class="icon-button" id="print-page" aria-label="이 강의 인쇄" title="인쇄"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/></svg></button></div></header>
+  <div class="progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+  <main class="reading-layout" id="main">
+    <article class="conversation" aria-label="생식샘호르몬 강의 정리">
+      <div class="lecture-topline">09.02 강의 <span>·</span> 박종선 교수님</div>
+      <h1 class="lecture-title">생식샘호르몬</h1>
+      <div class="user-message">이 강의, 흐름을 따라 이해할 수 있게 설명해 줘.<br>시험 포인트랑 그림도 같이 보고 싶어.</div>
+      <div class="assistant-label"><span class="assistant-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg></span><span>함께 읽는 강의 노트</span><span class="answer-meta">그림 9개</span></div>
+      <p class="answer-intro">좋아요. <strong>생식샘호르몬</strong>, 순서대로 살펴볼게요.<br>설명을 읽다가 그림이 작게 보이면 눌러서 크게 볼 수 있어요.</p>
+      <div class="prose" id="answer"><details class="lecture-info"><summary>강의 범위·키워드·시험 안내</summary><p class="source-title">약리학2 생식샘호르몬과 길항제 — 강의 정리 (강의록 기반)</p>
+<p><strong>교수:</strong> 박종선</p>
+<p><strong>강의 범위:</strong> 내인성 estrogen과 aromatase · 합성 estrogen과 작용기전 · estrogen 약리작용·응고·WHI·HRT · SERM·SERD·aromatase 억제제 · Progesterone과 항프로게스틴 · 복합·단독·응급 피임약 · Testosterone/DHT와 항안드로겐 3계열 (교안 p.11–52 중 지정 묶음)</p>
+<p><strong>강의 흐름:</strong> 난소가 만드는 estrogen 세 개(E1·E2·E3)와 그것을 만드는 단 하나의 효소 aromatase부터 살펴볼게요. 이 효소 하나가 뒤에 나올 aromatase 억제제, 폐경 후 estrogen의 출처, 남성 estradiol의 85%를 전부 설명하므로 먼저 짚어 둘게요.<br/><br/> 이어 estrogen이 자궁·지질·뼈·간(응고인자)에 무엇을 하는지를 훑는데, 그 작용 목록이 그대로 HRT의 이득과 위험이 되는 자리에서 WHI를 살펴봐요. 중반부는 같은 ER을 조직마다 다르게 건드리는 SERM·SERD·aromatase 억제제로 넘어가고, progesterone과 그것을 막는 mifepristone을 거쳐 피임약으로 이어져요.<br/><br/> 후반부는 축을 남성으로 바꿔 testosterone → DHT 전환을 세운 뒤, 그 경로의 세 지점을 각각 막는 항안드로겐 3계열로 마무리할게요.</p>
+<p><strong>핵심 키워드:</strong> E1·E2·E3 · estetrol · equilin/equilenin · aromatase · 17β-HSD · ethinyl estradiol · mestranol · quinestrol · DES · ERα/ERβ · ERE · 응고인자 II·VII·IX·X · antithrombin III · WHI · HRT · 자궁내막암 · SERM · tamoxifen · raloxifene · clomiphene · ospemifene · fulvestrant(SERD) · anastrozole·letrozole · danazol · GnRH 작용제(flare) · GnRH 대항제 · progesterone · medroxyprogesterone · levonorgestrel · mifepristone(RU-486) · ulipristal · 복합 경구피임약 4중 방어 · testosterone · 5α-reductase · DHT · SHBG · flutamide · bicalutamide · finasteride · dutasteride · spironolactone · cyproterone acetate · ketoconazole</p>
+<p><strong>시험 포인트:</strong> 25년 기출 4문항이 <strong>25-29</strong>(HRT 장기 사용의 종양 위험, p.20·22) · <strong>25-54</strong>(clomiphene 기전, p.29) · <strong>25-18</strong>(flutamide 기전, p.49) · <strong>25-47</strong>(여성 고안드로겐혈증 약물, p.50)에서 나왔고, 소크라티브 N09 9문항이 내인성 estrogen(1번) · 응고인자(2번) · WHI(3번) · 자궁내막암과 progestin(4번) · clomiphene(5번) · 응급피임(6번) · mifepristone(7번) · DHT(8번) · dutasteride(9번)를 다뤄요. <strong>p.17–23은 교안이 한 줄 요약뿐인데 25-29가 실제로 여기서 나왔어요</strong> — 이 구간은 소크라티브 해설을 근거로 두껍게 채웠다.</p>
+<blockquote class="callout note">
+<p><strong>표기 규칙</strong> — 일반 불릿과 표는 <strong>교안 그대로</strong>(시험 기준). <code>↳</code>는 그 항목이 왜 그런지 붙인 <strong>부가 설명</strong>, <code>&gt; 🧠 이해 포인트</code>는 여러 항목을 하나로 꿰는 설명, <code>&gt; 💡 시험 포인트</code>는 기출과 소크라티브가 나온 자리예요. 삽입된 그림 중 <code>p0XXa.png</code>는 <strong>교안 원본 도해</strong>, <code>gen_*.svg</code>는 교안에 그림이 없어 <strong>새로 그린 도해</strong>이며 캡션에 밝혔어요. 교안이 한 줄뿐인 구간에서 끌어온 숫자에는 <strong>(소크라티브 N번 정답키)</strong>를 달았어요.</p>
+<p><strong>이 정리본이 다루지 않는 구간</strong> — p.4–10(HPG축·생식주기·hCG: 25년 0문항 · 소크라티브 0문항), p.24–25(섹션 표지·빈 페이지), p.32·37·42(섹션 표지), p.53–54(사례 연구). 이 구간은 이번 학습 범위에서 제외해 두세요.</p>
+</blockquote>
+
+</details><h2 id="section-1">1. Estrogen — 내인성 3종, aromatase, 그리고 합성 estrogen</h2>
+<p class="section-source"><em>p.11–16 · 소크라티브 N09 1번(p.11, 13)</em></p>
+<h3 id="section-2">내인성 estrogen 세 가지 (p.11)</h3>
+<ul>
+<li><strong>Estrone (E1)</strong> — estradiol의 대사물, 효력 1/3. <strong>폐경 후 일차 순환 estrogen</strong></li>
+<li><strong>Estradiol (E2)</strong> — 가장 강력. <strong>가임기 여성의 주된 estrogen</strong></li>
+<li><strong>Estriol (E3)</strong> — 태반에서 형성, 임신 중 증가</li>
+<li>활성 비교: <strong>E2 &gt; E1 &gt; E3</strong> / 임신 중 태아 간에서 <strong>estetrol(E4)</strong>도 만들어진다<ul>
+<li class="explanation">이 세 가지를 "여성 일생의 세 시기"로 연결해 두면 구별하기 쉬워요 — <strong>가임기 E2 · 임신 E3(태반) · 폐경 후 E1(지방)</strong>. 폐경 후에 E1이 주역이 되는 이유는 뒤의 aromatase 문단에서 그대로 나와요.</li>
+</ul>
+</li>
+<li>equilin·equilenin은 <strong>말 오줌</strong>에서 얻은 물질이고 ethinyl estradiol은 <strong>합성</strong> estrogen이다 — 셋 다 내인성 estrogen이 아니에요</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th>해당 물질</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>내인성</strong></td>
+<td>Estrone(E1) · Estradiol(E2) · Estriol(E3), 임신 중 estetrol(E4)</td>
+<td>난소·태반·태아 간</td>
+</tr>
+<tr>
+<td><strong>말 오줌 유래</strong></td>
+<td>Equilin · Equilenin</td>
+<td>말 오줌(conjugated estrogens의 성분)</td>
+</tr>
+<tr>
+<td><strong>합성 스테로이드성</strong></td>
+<td>Ethinyl estradiol · Mestranol · Quinestrol</td>
+<td>실험실 합성</td>
+</tr>
+<tr>
+<td><strong>합성 비스테로이드성</strong></td>
+<td>Diethylstilbestrol(DES) · Chlorotriansene · Methallenestril</td>
+<td>실험실 합성</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N09 1번이 이 표 하나로 풀려요. 다섯 선지가 전부 <strong>내인성 둘 사이에 다른 계열 하나를 끼워 넣는</strong> 방식이라, "E1·E2·E3만 내인성"을 아는 것보다 <strong>equilin·equilenin(말 오줌) / EE·mestranol·quinestrol(합성) / DES(비스테로이드성 합성)</strong>를 갈라 외우는 쪽이 실전에서 통해요.</p>
+</blockquote>
+<h3 id="section-3">공통 생합성 경로 — 결국 aromatase 하나 (p.11–12)</h3>
+<ul>
+<li>콜레스테롤 → pregnenolone → <strong>androgen</strong>(androstenedione·testosterone) → <strong>aromatase</strong>가 androgen을 estrogen으로 전환</li>
+<li>Androstenedione ─aromatase→ <strong>Estrone(E1)</strong> / Testosterone ─aromatase→ <strong>17β-Estradiol(E2)</strong></li>
+<li><strong>E1 ⇄ E2는 17β-HSD로 상호전환</strong>돼요</li>
+<li>간에서 CYP2B1·1A·3A에 의해 2-hydroxyestrone·2-hydroxyestradiol로 대사</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘_박종선_gen_estrogen합성-aromatase" decoding="async" height="445" loading="lazy" src="images/cdc92faaf9b05aa4.svg" width="840"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>Estrogen 합성 경로와 aromatase 억제제의 자리 (교안 p.11–12 내용을 새로 그린 도해) — 왼쪽 콜레스테롤에서 내려온 androgen 두 개가 <strong>aromatase라는 단 하나의 문</strong>을 통과해야 estrogen이 돼요. 그 문 위에 aromatase 억제제(anastrozole·letrozole·exemestane·formestane)가 ⊣로 붙고, 오른쪽 E1↔E2 사이의 양방향 화살표가 17β-HSD다.<br/><br/> 아래쪽 곁가지가 5α-reductase → DHT로, 6장 항안드로겐의 무대예요. 소크라티브 N09 1번과 25-54 오답 선지(letrozole·aromatase 억제)가 이 그림에서 갈려요.</figcaption></figure>
+
+<ul>
+<li><strong>aromatase를 막으면 estrogen 생성이 원천 차단</strong>돼요 → 폐경 후 유방암의 표준 치료</li>
+<li>남성 혈중 estradiol의 약 <strong>85%</strong>도 이 경로에서 나와요</li>
+<li><strong>지방조직에 aromatase가 많아</strong> 비만 시 estrogen 노출이 늘어나요</li>
+<li><strong>폐경 후에는 난소가 아니라 지방·부신 유래 androgen의 aromatization이 주 공급원</strong>이에요</li>
+</ul>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>aromatase 한 효소가 이 강의의 절반을 설명해요.</strong> 방향화는 되돌릴 수 없는 한 방향 반응이고, estrogen으로 가는 길이 이것 하나뿐이에요. 그래서 이 경로를 이해하면 이어지는 사실들도 연결해서 볼 수 있어요.</p>
+<p>① 폐경 후에도 estrogen이 남는 것은 지방·부신의 androgen이 계속 방향화되기 때문이고, 그래서 <strong>비만 여성이 폐경 후 유방암·자궁내막암 위험이 높아요</strong>. ② 폐경 후 유방암에서 aromatase 억제제가 표준인 것도 같은 이유예요 — 난소 기능이 이미 멈춘 상태이므로 남은 공급원은 이 경로뿐이라 막으면 거의 0으로 떨어져요.</p>
+<p>반대로 <strong>폐경 전에는 난소가 되먹임으로 더 짜내므로 단독으로 쓰지 못해요</strong>. ③ 남성에게 고용량 androgen을 주면 여성형유방이 생기는 것(p.47)도, DHT만은 그렇지 않은 것(p.43)도 전부 "aromatase가 손댈 수 있는가"의 문제예요.</p>
+</blockquote>
+<h3 id="section-4">합성 estrogen — 왜 굳이 만들었나 (p.13)</h3>
+<ul>
+<li><strong>스테로이드성</strong> — <strong>Ethinyl estradiol</strong>(17α 위치의 ethinyl기가 간 대사에 저항 → 경구 생체이용률↑, <strong>거의 모든 복합 경구피임약의 estrogen 성분</strong>) · <strong>Mestranol</strong>(EE의 3-메틸에테르, 간에서 서서히 대사) · <strong>Quinestrol</strong>(지방조직에 저장, 작용시간이 길다)</li>
+<li><strong>비스테로이드성</strong> — <strong>DES</strong> · Chlorotriansene · Methallenestril → 스테로이드 골격이 없어도 ER에 결합해 estrogen 작용을 낸다</li>
+<li>내인성 estradiol은 경구 투여 시 초회통과 대사로 빠르게 estrone·estriol로 전환된다(미분화 estradiol 생체이용률 <strong>0.1~12%</strong>). 합성 estrogen은 초회통과효과가 훨씬 적어요<ul>
+<li class="explanation">합성 estrogen을 만든 이유가 바로 여기에 있어요. <strong>17α에 ethinyl기 하나를 붙여 간 효소가 작용할 자리를 가린 것</strong>이고, 그래서 경구제로 성립해요. 이 발상은 5장 피임약에서 그대로 반복돼요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-5">DES가 남긴 교훈 (p.14)</h3>
+<ul>
+<li>1938년 Nature에 발표된 강력한 합성 <strong>비스테로이드성</strong> 여성호르몬 → 1948~1972년 <strong>유산 방지</strong> 목적으로 널리 사용</li>
+<li>추후 연구 — <strong>유산 방지 효과 자체가 없었어요</strong></li>
+<li>자궁 내 노출된 여아에서 사춘기~청년기에 <strong>질투명세포샘암(clear cell adenocarcinoma)</strong> 발생(1971 NEJM), 남아에서는 생식기 기형</li>
+<li>현재 <strong>임신 중 사용은 절대 금기</strong><ul>
+<li class="explanation">구조가 estradiol·testosterone과 닮았다는 것과 안전하다는 것은 별개예요. DES는 <strong>태아기 노출이 수십 년 뒤에 발현되는 지연 독성</strong>의 원형이 됐어요. 뒤의 응급피임약 문단(p.40)에 "태아 생식기 암 서술은 삭제"라는 정정이 붙는 이유도 이것 — 그 현상은 <strong>DES에서만</strong> 관찰된 것이지 levonorgestrel·ulipristal의 문제가 아니에요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-6">작용기전 — 핵수용체 ERα·ERβ (p.15)</h3>
+<ul>
+<li>지질용해성 → 막통과 → <strong>ER 결합 → 형태변화 → ER–ER 이합체 → 핵내 ERE(estrogen 반응부위) 결합</strong> → 전사인자·전사보조인자와 함께 유전자 발현 조절</li>
+<li><strong>ERα</strong> — 유방·자궁·간·신장·뼈. 생식기계 발달, 유방세포 증식, 뼈 형성·유지, 심혈관 보호·대사 조절. <strong>유방암 의존성 종양의 치료 표적</strong></li>
+<li><strong>ERβ</strong> — 난소·전립샘·폐·위장관·뇌. 증식 억제, 분화 촉진, 염증반응 조절</li>
+<li><strong>비유전체(신속) 경로</strong> — 시상하부 세포막의 G단백연결 estrogen 수용체가 제2전령 경로로 신속한 작용을 매개. 관상동맥 이완은 내피세포의 <strong>NO·prostacyclin</strong> 합성·유리 증가로 일어난다</li>
+<li>"세포질 수용체에 결합한 뒤 핵으로 이동한다"는 옛 도식이에요. 이우주 9판은 ER을 <strong>핵수용체 대가족</strong>으로 기술해요<ul>
+<li class="explanation">ERα와 ERβ의 분포가 <strong>3장 SERM의 조직선택성을 미리 깔아 놓은 것</strong>이에요. 유방·자궁·뼈가 전부 ERα라면 "유방에서는 막고 뼈에서는 켠다"가 어떻게 가능한가 — 답은 수용체가 아니라 <strong>그 조직에 어떤 전사보조인자(coactivator/corepressor)가 많은가</strong>에 있어요. 같은 약-수용체 복합체가 조직마다 다른 보조인자를 끌어당기므로 결과가 뒤집혀요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-7">약동학 (p.16)</h3>
+<ul>
+<li>경구·점막·피부로 흡수. <strong>경구 estradiol은 estrone·estriol로 전환</strong>되며 <strong>경피·질내·주사 경로는 초회통과 효과를 피해요</strong></li>
+<li>혈장단백 결합력 <strong>98~99%</strong>, 간에서 glucuronide·sulfate 포합 후 배설<ul>
+<li class="explanation">투여 경로는 안전성과도 연결돼요. 2장의 응고인자 증가는 <strong>간을 지나가면서</strong> 일어나므로, 초회통과를 건너뛰는 경피 패치·질정은 경구제보다 혈전 위험이 낮아요.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="section-8">2. Estrogen 약리작용 — 대사·뼈·응고, 그리고 WHI가 바꾼 HRT</h2>
+<p class="section-source"><em>p.17–23 · 소크라티브 N09 2번(p.18) · 3번(p.19–20) · 4번(p.20, 22, 35, 41) · <strong>25-29(p.20, 22)</strong></em></p>
+<p><em>이 구간은 교안이 페이지당 <strong>한 줄 요약</strong>뿐인데 25-29가 실제로 여기서 나왔고 소크라티브도 세 문항(2·3·4번)을 걸었어요. 아래 불릿은 교안 그대로이고 살은 전부 <code>↳</code>·🧠·💡에 실려 있어요. 교안에 없는 숫자에는 출처를 달았어요.</em></p>
+<h3 id="section-9">약리작용 ① 생식기관·대사·뼈 (p.17)</h3>
+<ul>
+<li><strong>자궁내막 증식</strong></li>
+<li><strong>LDL↓ · HDL↑</strong></li>
+<li><strong>파골세포 억제와 골흡수↓</strong><ul>
+<li class="explanation">이 세 줄은 뒤의 내용을 이해할 때 다시 쓰이니 연결해서 봐 주세요. <strong>자궁내막 증식</strong>은 25-29와 소크라티브 4번의 자궁내막암으로, <strong>지질 개선</strong>은 "그런데 왜 심혈관 예방에 실패했나"라는 WHI의 역설로, <strong>골흡수 억제</strong>는 "골밀도 효과는 부정되지 않았다"는 WHI의 살아남은 항목으로 이어져요.</li>
+<li class="explanation">estrogen이 뼈에서 하는 일은 뼈를 <strong>만드는</strong> 것이 아니라 <strong>부수는 쪽을 막는</strong> 것이다(항흡수). 폐경으로 estrogen이 빠지면 파골세포의 브레이크가 풀려 골밀도가 급락해요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-10">약리작용 ② 혈액응고 (p.18)</h3>
+<ul>
+<li><strong>증가</strong>: 응고인자 <strong>II · VII · IX · X</strong>, fibrinogen, plasminogen</li>
+<li><strong>감소</strong>: <strong>antithrombin III</strong>, PAI-1, 혈소판 응집성</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>방향</th>
+<th>물질</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>증가</strong></td>
+<td>응고인자 <strong>II · VII · IX · X</strong>, fibrinogen(I), plasminogen</td>
+</tr>
+<tr>
+<td><strong>감소</strong></td>
+<td><strong>Antithrombin III</strong>, PAI-1, 혈소판 응집성</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li class="explanation">목록을 처음 보면 서로 모순되는 것처럼 보일 수 있어요 — 응고인자도 올리고 섬유소용해(plasminogen↑, PAI-1↓)도 올려요. estrogen은 응고계 <strong>한쪽만 미는 게 아니라 양쪽을 다 올려놓아요</strong>. 문제는 항응고 축(<strong>antithrombin III</strong>)만 유일하게 떨어진다는 것이고, 그래서 균형이 응고 방향으로 기울어 <strong>혈전색전증</strong>(p.22 부작용 첫 줄)이 나와요.</li>
+<li class="explanation">이 작용이 <strong>간에서</strong> 일어난다는 점이 임상으로 이어져요. 경구제는 문맥을 지나 간에 직접 영향을 주지만 경피 패치는 그 단계를 건너뛴다.</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N09 2번이 이 한 줄에서 나왔어요. 다섯 선지를 가르는 <strong>유일한 칼은 "VIII이 증가 목록에 없다"</strong>는 거예요 — 오답 넷이 전부 VIII을 끼워 넣었고, VIII이 빠진 선지가 정답(<strong>II·VII·IX·X</strong>)이었어요. Fibrinogen(=인자 I)은 실제로 오르므로 "I이 들어 있으면 오답"이라고 외우면 오히려 틀려요. <strong>VIII 하나만 보세요.</strong></p>
+</blockquote>
+<h3 id="section-11">WHI — HRT의 판을 바꾼 임상시험 (p.19)</h3>
+<ul>
+<li><strong>WHI는 폐경 여성 HRT RCT. E+P군 2002년, 단독군 2004년 중단</strong></li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>WHI 이후</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>무너진 것</strong></td>
+<td>심혈관질환 <strong>예방</strong> 목적 — 5년 이상 투여군에서 심혈관 문제·심장발작·혈전색전증·<strong>치매</strong> 위험이 오히려 약간 증가</td>
+</tr>
+<tr>
+<td><strong>살아남은 것</strong></td>
+<td><strong>안면홍조 완화 · 골밀도 감소 지연</strong></td>
+</tr>
+<tr>
+<td><strong>현재 권고</strong></td>
+<td>폐경 증상 경감 목적으로 <strong>최소 유효용량을 최단기간</strong></td>
+</tr>
+<tr>
+<td><strong>시작 시점</strong></td>
+<td>60세 미만 또는 폐경 후 10년 이내에 시작하면 이득이 위험을 상회</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>(표의 숫자·권고는 소크라티브 N09 3번 정답키. 교안 p.19는 한 줄 요약만 싣는다.)</em></p>
+<ul>
+<li class="explanation">연령으로 갈린다는 점도 함께 봐 두세요 — 관상동맥질환 위험비가 <strong>50~59세 0.88(유의하지 않음), 70~79세 1.66</strong>이고 WHI 전체 평균값은 평균 63세 집단의 값이었다(소크라티브 N09 3번 정답키). 다만 이것이 "예방 목적으로 쓰라"는 뜻은 아니에요.</li>
+</ul>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>WHI가 뒤집은 것은 "예방"이라는 단어 하나예요.</strong> estrogen이 LDL을 내리고 HDL을 올린다(p.17)는 사실만 보면 심혈관을 지켜줄 것 같았고, 실제로 1990년대까지 그 기대로 처방됐어요. WHI가 보여준 것은 <strong>지질이 좋아지는 것과 사건이 줄어드는 것이 같은 말이 아니라는 것</strong>이에요.</p>
+<p>같은 약이 응고인자를 올리고 antithrombin III를 내리므로(p.18), 이미 죽상경화 반이 깔린 고령 여성에게는 혈전 쪽 손해가 지질 쪽 이득을 삼켜버린다. 그래서 결론이 "쓰지 말라"가 아니라 <strong>"예방하겠다고 쓰지 말라"</strong>가 됐고, 증상 완화라는 원래 적응증은 그대로 남았어요. 시험은 항상 <strong>살아남은 것(안면홍조·골밀도)과 무너진 것(심혈관·치매 예방)을 뒤바꿔</strong> 함정을 만들어요.</p>
+</blockquote>
+<h3 id="section-12">폐경기 호르몬대체요법(HRT) (p.20)</h3>
+<ul>
+<li><strong>안면홍조·질위축 개선</strong></li>
+<li><strong>자궁 보존 여성은 estrogen + progestin 병용</strong><ul>
+<li class="explanation">왜 자궁이 있으면 progestin을 붙이는가 — estrogen 단독은 자궁내막을 <strong>계속 증식</strong>시키는데(p.17) 그 증식을 되돌릴 장치가 없어요. 증식이 오래가면 증식증을 거쳐 암으로 가요.</li>
+<li class="explanation">Estrogen 단독 장기투여 시 <strong>자궁내막암 위험 5~15배</strong>, progestin을 병용하면 <strong>ER↓ + 17β-HSD 활성↑ → estradiol을 estrone으로 전환 → 자궁내막 안정화</strong>(소크라티브 N09 4번 정답키). 1장에서 본 E1⇄E2 상호전환 효소가 여기서 방어 장치로 재등장해요.</li>
+<li class="explanation">뒤집으면 <strong>자궁을 적출한 여성은 estrogen 단독요법이 가능</strong>해요. 이 뒤집기가 실전 함정으로 자주 쓰여요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-13">생식샘기능저하증·기타 적응증 (p.21)</h3>
+<ul>
+<li>사춘기 estrogen 보충, 월경이상, 피임약 성분</li>
+</ul>
+<h3 id="section-14">부작용 및 투약금기 (p.22) ★25-29 (p.20, 22)</h3>
+<ul>
+<li><strong>혈전색전증 · 자궁내막암 · 유방암</strong> / <strong>간질환·임신 금기</strong><ul>
+<li class="explanation">앞의 셋이 1~2장에서 본 작용의 뒷면이에요 — 응고 균형이 기울어 <strong>혈전</strong>, 자궁내막 증식이 지속돼 <strong>자궁내막암</strong>, ERα를 통한 유방세포 증식이 지속돼 <strong>유방암</strong>. 금기의 간질환은 estrogen이 간에서 대사·포합되고 담즙정체를 일으키기 때문이에요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-29</strong>가 나온 자리예요 — "52세 여성, 폐경 후 골다공증 예방 목적 HRT, 장기 사용 시 가장 주의할 부작용?" <strong>정답 ④ 유방암과 자궁내막암 위험 증가</strong>. 오답들이 전부 "그럴듯한 다른 장기"였다(갑상샘 기능저하·백혈구 감소증·간손상·요산 상승).<br/><br/> 판정 기준 이 세 가지를 잡아두면 안 흔들린다.<br/>
+↳ ① 교안이 p.22에 적은 것은 <strong>혈전색전증·자궁내막암·유방암</strong> — 종양 둘이 나란히 있는 선지가 정답이에요.<br/>
+↳ ② <strong>간손상은 부작용이 아니라 금기</strong>예요. 간질환은 "쓰면 안 되는 조건"이지 estrogen이 만들어내는 대표 부작용으로 적혀 있지 않다.<br/><br/> 참고로 간손상은 <strong>flutamide의 부작용</strong>(p.49)이라 6장과 헷갈리게 만든 선지다.<br/>
+↳ ③ 대사 변화는 <strong>LDL↓·HDL↑</strong>(p.17)이지 요산이 아니고, 혈액계 변화는 <strong>응고인자 증가</strong>(p.18)이지 백혈구 감소가 아니에요.</p>
+</blockquote>
+<h3 id="section-15">주요 estrogen 제제 (p.23)</h3>
+<ul>
+<li>Conjugated estrogens · Estradiol · Estradiol valerate · Ethinyl estradiol · Micronized estradiol · 질 크림/링<ul>
+<li class="explanation">제형을 보면 어떤 증상에 쓰는지도 연결해서 이해할 수 있어요. 전신 증상(안면홍조)에는 경구·경피, <strong>질위축 하나만 문제라면 질 크림·링</strong>으로 국소만 써요. 국소 제제는 전신 노출이 적어 앞의 위험 목록에서 상당 부분 비켜가요.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="section-16">3. Estrogen 조절제 — SERM · SERD · aromatase 억제제</h2>
+<p class="section-source"><em>p.26–31 · 소크라티브 N09 5번(p.26, 29–31) · <strong>25-54(p.29)</strong></em></p>
+<h3 id="section-17">SERM — 같은 약이 조직마다 반대로 작동한다 (p.26)</h3>
+<ul>
+<li><strong>SERM</strong>: Tamoxifen · Raloxifene · Bazedoxifene · Ospemifene · <strong>Clomiphene</strong></li>
+<li><strong>Tamoxifen · Toremifene</strong> (p.27) — <strong>유방 ER 길항</strong>; 자궁내막에는 작용(작용제), <strong>혈전 위험</strong></li>
+<li><strong>Raloxifene</strong> (p.28) — <strong>뼈 작용제</strong>, <strong>자궁·유방 길항제</strong></li>
+<li><strong>Clomiphene</strong> (p.29) — ER 경쟁결합으로 되먹임 차단, GnRH·LH·FSH 증가와 배란 유도</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘_박종선_gen_SERM조직선택성" decoding="async" height="470" loading="lazy" src="images/35c99e2810efe5da.svg" width="800"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>SERM 조직선택성 매트릭스 (교안 p.26–29 내용을 새로 그린 도해) — 가로가 조직(유방·자궁내막·뼈·시상하부·간/응고), 세로가 약이에요. <strong>초록 = 작용제, 빨강 = 길항제.</strong> 한 줄을 가로로 읽으면 "같은 약이 조직마다 색이 뒤집힌다"가 보이고, 세로로 읽으면 "이 조직에서 켜지는 약은 무엇인가"가 보여요. <strong>교안이 직접 적은 것은 tamoxifen·raloxifene·clomiphene 세 줄뿐</strong>이고, 나머지 칸(ospemifene·bazedoxifene, 간/응고 열)은 계열 이해를 위한 보충이에요. 25-54와 소크라티브 N09 5번이 맨 아래 clomiphene 줄의 <strong>시상하부 칸 하나</strong>에서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>"조직선택성"은 약의 성질이 아니라 조직의 성질이에요.</strong> SERM은 전부 같은 ER에 붙어요. 그런데 ER-약물 복합체가 만드는 형태가 estrogen이 붙었을 때와 조금 달라서, 그 형태를 <strong>coactivator가 좋아하는 조직에서는 작용제로, corepressor가 좋아하는 조직에서는 길항제로</strong><br/><br/> 읽혀요. 조직마다 보조인자 구성이 다르니 같은 약이 반대로 작동하는 거예요.<br/>
+그래서 계열 전체가 <strong>"원하는 곳에서만 켜는 약"</strong>을 만들려는 시도로 읽혀요 — 유방에서는 끄고(항암) 뼈에서는 켜고(골다공증) 자궁에서는 꺼야(자궁내막암 회피) 이상적인데, tamoxifen은 마지막 하나에 실패했고 raloxifene이 그것을 고쳤다.<br/><br/> 대신 raloxifene은 유방암 <strong>치료</strong>가 아니라 예방 수준에 머문다. <strong>모든 칸을 다 만족하는 SERM은 아직 없다</strong>는 것이 이 표의 결론이에요.</p>
+</blockquote>
+<ul>
+<li class="explanation"><strong>Tamoxifen의 자궁내막 작용</strong>이 이 계열을 임상적으로 이해할 때 가장 중요한 부분이에요. 유방암 환자에게 몇 년씩 주는 약이 자궁내막에서는 작용제로 남아 있으므로 <strong>자궁내막 증식·자궁내막암 위험</strong>을 만들어요. 2장에서 본 "estrogen 단독 = 자궁내막 증식"과 정확히 같은 논리예요.</li>
+<li class="explanation"><strong>혈전 위험</strong>도 마찬가지다. tamoxifen·raloxifene 둘 다 간에서는 작용제처럼 굴어 응고인자를 올린다(p.18의 그 목록). SERM이라고 estrogen의 위험에서 자유로운 게 아니에요.</li>
+<li class="explanation"><strong>Raloxifene</strong>은 이 둘 중 자궁만 해결했어요 — 뼈에서 켜고 자궁·유방에서 끄므로 <strong>폐경 후 골다공증</strong>이 주 적응증이 돼요. 혈전 위험은 그대로 남아요.</li>
+</ul>
+<h3 id="section-18">Clomiphene — 차단제인데 왜 배란을 유도하는가 (p.29) ★25-54 (p.29)</h3>
+<ul>
+<li>ER <strong>경쟁결합</strong>으로 되먹임 차단 → <strong>GnRH · LH · FSH 증가</strong> → 배란 유도</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘_박종선_gen_clomiphene되먹임" decoding="async" height="480" loading="lazy" src="images/43bf7a15567c641e.svg" width="800"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>Clomiphene의 되먹임 도해 (교안 p.29 내용을 새로 그린 도해) — 위에서 아래로 시상하부 → 뇌하수체 → 난소로 내려가고, 오른쪽의 굵은 화살표가 난소 estrogen이 시상하부로 되돌아가는 <strong>음성되먹임 고리</strong>예요. Clomiphene이 시상하부의 ER을 ⊣로 막는 순간 그 고리가 <strong>끊긴 것처럼 보이고</strong>(estrogen 농도는 그대로인데 뇌가 못 읽는다), 시상하부는 "estrogen이 부족하다"고 판단해 GnRH를 올려요 → LH·FSH↑ → 난포 발달 → 배란.<br/><br/> *25-54와 소크라티브 N09 5번이 이 그림 한 장이에요.</figcaption></figure>
+
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>"차단제인데 왜 켜지는가"의 답은 되먹임 고리에 있어요.</strong> Clomiphene은 난소를 자극하는 약이 아니에요. <strong>뇌를 속이는 약</strong>이에요. 혈중 estrogen 농도는 전혀 건드리지 않고, 시상하부가 그 농도를 <strong>읽는 눈만 가린다</strong>. 뇌는 신호가 안 들어오니 estrogen이 모자란 줄 알고 GnRH를 더 뿜고, 그 아래로 LH·FSH가 따라 오르며 난포가 자란다.<br/><br/> 즉 <strong>차단 → 되먹임 해제 → 상위 호르몬 상승 → 하위 효과 증가</strong>라는 방향이 두 번 바뀌는 경로예요.<br/>
+여기서 같은 자리를 노리는 다른 두 약과 3자 비교를 해두면 구별하기 쉬워요.<br/>
+· <strong>Clomiphene</strong> — estrogen <strong>신호</strong>를 막는다(시상하부 ER 차단) → LH·FSH <strong>↑</strong> → 배란 <strong>유도</strong><br/>
+· <strong>Letrozole·anastrozole</strong> — estrogen <strong>농도</strong> 자체를 낮춘다(aromatase 억제, p.30) → 되먹임이 약해져 역시 FSH↑(배란 유도에도 쓰이지만 다른 약물군)<br/>
+· <strong>GnRH 작용제(leuprolide)</strong> — 지속 투여로 수용체를 <strong>탈감작</strong> → LH·FSH <strong>↓</strong> → 배란 <strong>억제</strong>(p.31)<br/>
+방향이 정반대인 마지막 것이 소크라티브 5번의 매력적인 오답이었어요.</p>
+<p>💡 시험 포인트: <strong>25-54가 소크라티브 N09 5번과 거의 같은 문장으로 물었어요 — 각도 변환이 전혀 없는 <code>verbatim</code> 사례다.</strong> 소크라티브는 "시상하부·뇌하수체 전엽의 ER에 경쟁적으로 결합해 음성되먹임을 차단, GnRH·LH·FSH 분비를 증가시킨다", 기출은 "<strong>Estrogen 수용체 차단</strong>"으로 답만 짧아졌다.<br/><br/> 형성평가에서 확인한 기전을 그대로 적용할 수 있는 문항이었어요.<br/>
+↳ 오답 판정 기준 — <strong>난소 직접 자극(X, 작용 부위가 상위 중추다) / FSH 수용체 직접 자극(X, FSH는 결과이지 약이 한 일이 아니에요) / aromatase 억제(X, letrozole이다 — 농도 vs 신호) / GnRH 수용체 탈감작(X, 방향이 반대로 억제다) / LH 억제(X, 그건 경구피임약이에요)</strong>.<br/>
+↳ <strong>복기 손상 주의</strong> — 25-54 문두 끝에 붙은 "3 GnRH 수용체 억제"는 지문이 아니라 <strong>탈락한 선지 ③</strong>이 딸려 붙은 거예요.<br/><br/> 그것 역시 오답이다(clomiphene은 GnRH를 <strong>올린다</strong>). 따라서 현재 ③·④는 원본 ④·⑤다.<br/>
+↳ 임상 수치: clomiphene citrate <strong>하루 100 mg씩 5일</strong> 투여가 일반적이고, FSH를 밖에서 넣는 방식과 달리 <strong>난소과자극증후군(OHSS)은 거의 유발하지 않는다</strong>(소크라티브 N09 5번 정답키).<br/><br/> 내 몸이 내는 만큼만 오르기 때문이에요.</p>
+</blockquote>
+<h3 id="section-19">Fulvestrant(SERD)와 aromatase 억제제 (p.30)</h3>
+<ul>
+<li><strong>Fulvestrant는 ER 분해 촉진</strong> (SERD — selective ER degrader)</li>
+<li><strong>Formestane · Exemestane</strong>, <strong>Anastrozole · Letrozole</strong> 등 aromatase 억제제<ul>
+<li class="explanation">세 계열이 <strong>ER에 대해 무엇을 하는가</strong>로 한 줄에 갈려요. <strong>SERM = 자리만 차지한다(조직마다 작용제/길항제) · SERD = 수용체를 아예 부순다(조직 불문 순수 길항) · aromatase 억제제 = 수용체는 그대로 두고 리간드 공급을 끊어요.</strong> Fulvestrant에 조직선택성이 없는 이유가 여기 있어요 — 없앤 수용체는 어느 조직에서도 켜질 수 없어요.</li>
+<li class="explanation">Aromatase 억제제 넷이 두 쌍으로 적혀 있는 것도 이유가 있어요. <strong>Formestane·exemestane은 스테로이드성(효소에 비가역적으로 붙어요), anastrozole·letrozole은 비스테로이드성(가역적)</strong>이라 서로 교차 저항이 잘 생기지 않아요. <em>(쌍의 성격 구분은 교안 밖 보충.)</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="section-20">Danazol · GnRH 작용제와 대항제 (p.31)</h3>
+<ul>
+<li><strong>Danazol — SERM이 아니에요.</strong> progestin·androgen·glucocorticoid 수용체에 약한 <strong>부분작용제</strong>로 작용하는 testosterone 유도체<ul>
+<li>LH·FSH의 생리주기 중 <strong>surge를 억제</strong> / 스테로이드 생성 효소들의 활성을 억제하되 <strong>aromatase 활성에는 영향이 없어요</strong></li>
+<li><strong>자궁내막증</strong> 치료에 주로 사용, 유방 섬유낭종에도 / 부작용 — <strong>여성의 남성화</strong>(다모증·여드름·목소리 저음화), 부종, 두통, 혈청지질 변화, 간세포 이상 / <strong>임신 중 금기</strong>(여자 태아 남성화)</li>
+</ul>
+</li>
+<li><strong>GnRH 작용제 — 역설적 억제</strong>: Leuprolide · Goserelin · Triptorelin · Nafarelin · Buserelin<ul>
+<li><strong>지속 투여하면 GnRH 수용체가 탈감작 → 생식샘자극호르몬 분비 억제</strong> → 전립샘암, 유방암, 자궁내막증</li>
+<li>투여 초기에는 일시적으로 testosterone이 증가한다(<strong>flare</strong>) — 수 주 뒤 정상 이하로 떨어져요</li>
+</ul>
+</li>
+<li><strong>GnRH 대항제 — 즉시 차단, flare 없음</strong>: Ganirelix · Cetrorelix · Degarelix · Abarelix<ul>
+<li>뇌하수체 GnRH 수용체를 <strong>경쟁적으로 차단</strong>해 LH·FSH를 곧바로 억제</li>
+<li class="explanation">GnRH는 원래 <strong>박동성(pulsatile)</strong>으로 나와야 수용체가 반응해요. 작용제를 계속 투여하면 박동이 사라져 수용체가 내려가버리므로, <strong>켜는 약이 결과적으로 끄는 약</strong>이 돼요. 대항제는 그 과정 없이 처음부터 막으니 flare가 없어요.</li>
+<li class="explanation">전립샘암에서 GnRH 작용제 초기의 flare가 실제 문제가 되기 때문에, <strong>flutamide 같은 AR 대항제를 함께 걸어 그 구간을 막는다</strong>(6장 25-18과 이어져요).</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="section-21">4. Progesterone과 항프로게스틴</h2>
+<p class="section-source"><em>p.33–36 · 소크라티브 N09 7번(p.36)</em></p>
+<h3 id="section-22">Progesterone — 분비·약동학·기전 (p.33–34)</h3>
+<ul>
+<li><strong>Progestogen</strong> = progesterone을 포함한 내인·합성 화합물의 총칭 / <strong>Progestin</strong> = 그중 합성된 것</li>
+<li>가장 중요한 progestogen은 <strong>C21 스테로이드인 progesterone</strong>. 난소·태반에서 주로 생성, <strong>황체기</strong>에 주로 형성(3~22 mg/일)</li>
+<li>임신 시 합성이 크게 증가, <strong>임신 4개월 이후 태반에서 수백 mg</strong> / 남성도 1~5 mg/일</li>
+<li>약동학 — 경구 흡수는 빠르나 <strong>초회통과효과로 생체이용률이 낮아요</strong> → 경구용은 <strong>미분화(micronized)</strong> 제형. 단백결합 96~99%, 반감기 <strong>16~18시간</strong></li>
+<li>기전 — PR(핵·세포질) 결합 → 이합체 → <strong>PRE</strong>에 결합해 유전자 발현 조절. PRE는 corticosteroid 반응부위와 유사하며 특이성은 세포 내 수용체·전사인자 종류에 달려 있어요<ul>
+<li class="explanation">"경구 투여될 수 없다"는 표현은 부정확해요 — <strong>생체이용률이 낮다</strong>는 뜻이고, 미분화 제형으로 해결해요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-23">약리작용 — 자궁·난관·유방·체온 (p.34)</h3>
+<ul>
+<li><strong>자궁</strong>: 증식내막 → <strong>분비내막</strong>으로 변형, 비후·분비선 발달, <strong>자궁수축 억제 → 조산 방지</strong>, 임신 시 자궁내막 안정성 보장</li>
+<li><strong>난관</strong>: 점막내막 분비↑(착상된 수정란 영양 공급), 난관 운동성 <strong>감소</strong></li>
+<li><strong>유방</strong>: estrogen과 함께 소엽·젖샘꽈리 발달 촉진 (실제 젖 분비는 분만 후 prolactin)</li>
+<li><strong>대사·체온</strong>: 기저 insulin 분비↑, <strong>LDL↑ / HDL 약간↓ 또는 영향 없음</strong>, 지단백지방분해효소 활성↑ → 지방 축적, <strong>배란 즈음 기초체온 약 0.6°C 상승</strong><ul>
+<li class="explanation">지질 방향이 <strong>estrogen과 정반대</strong>다(estrogen: LDL↓·HDL↑ / progesterone: LDL↑·HDL 약간↓). HRT에서 progestin을 얹으면 지질 이득이 일부 상쇄되는 이유예요.</li>
+<li class="explanation">기초체온 상승은 시상하부 체온조절중추 작용으로 여겨지며, <strong>배란 유무 판별</strong>에 써요. 체온이 올랐어요 = 황체가 생겼다 = 배란했어요.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-24">합성 progestin과 임상 용도 (p.35)</h3>
+<ul>
+<li>계열 — <strong>19-Nortestosterone 유도체</strong>(norethindrone·desogestrel·lynestrenol·ethynodiol diacetate 등) / <strong>17-Ethinyl testosterone 유도체</strong>(dimethisterone) / <strong>Progesterone 유도체</strong>(medroxyprogesterone acetate·megestrol acetate·hydroxyprogesterone caproate) / <strong>3세대</strong>(desogestrel·gestodene·norgestimate)</li>
+<li>합성 progestin은 <strong>간 초회통과대사가 낮아 더 적은 용량</strong>으로 가능해요</li>
+<li>임상 용도 — <strong>폐경기 HRT(estrogen과 함께: 자궁내막 증식·자궁내막암 예방)</strong> · 경구·비경구 피임약 · 조산 방지(질내 투여) · 불임치료 황체기 유지 · 무배란성 자궁출혈·자궁내막증식증</li>
+</ul>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>제제</th>
+<th>용량 · 사용 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medroxyprogesterone acetate</td>
+<td>경구 2.5·5·10 mg / <strong>근주 150 mg → 3개월마다</strong> 주사 피임</td>
+</tr>
+<tr>
+<td>Norethindrone</td>
+<td>경구 0.35·5 mg — 피임, 월경주기 조절</td>
+</tr>
+<tr>
+<td><strong>Levonorgestrel</strong></td>
+<td>경구 <strong>1.5 mg(응급피임)</strong> / IUD 매일 약 20 μg → 3~5년</td>
+</tr>
+<tr>
+<td>Etonogestrel</td>
+<td><strong>피하 임플란트 68 mg → 3년</strong></td>
+</tr>
+<tr>
+<td>Drospirenone</td>
+<td>경구 3 mg — 피임, 월경전증후군 완화</td>
+</tr>
+<tr>
+<td>Dienogest</td>
+<td>경구 2 mg — 자궁내막증</td>
+</tr>
+<tr>
+<td>Desogestrel</td>
+<td>경구 75 μg — 피임</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Drospirenone 주의</strong>: <strong>aldosterone 대항작용</strong>으로 칼륨을 올릴 수 있어 renin 억제제·ACE 억제제 병용은 피해요<ul>
+<li class="explanation">6장 spironolactone과 같은 성격이에요 — 이 계열은 mineralocorticoid 수용체에도 손을 대므로 <strong>고칼륨혈증</strong>이 따라와요.</li>
+<li class="explanation">19-nortestosterone 유도체가 많은 것도 이유가 있어요. 뼈대가 testosterone이라 <strong>약한 androgen 작용</strong>(여드름·지질 악화)이 섞이고, 3세대는 그 androgen성을 줄이려고 만든 거예요.</li>
+</ul>
+</li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: p.35의 "HRT에서 estrogen과 함께 — 자궁내막 증식·자궁내막암 예방"이 <strong>소크라티브 N09 4번의 정답 근거 그 자체</strong>예요. 2장 p.20과 짝으로 읽어 보세요.</p>
+</blockquote>
+<h3 id="section-25">항프로게스틴 — Mifepristone · Ulipristal (p.36)</h3>
+<ul>
+<li><strong>Mifepristone (RU-486)</strong> — <strong>PR</strong>에 작용해 progesterone 작용 차단 + <strong>glucocorticoid 수용체에도 결합</strong>해 cortisol 작용을 경쟁적으로 대항(<strong>쿠싱증후군 치료 가능</strong>) + 약한 항-androgen 효과. progesterone이 없으면 <strong>PR 부분작용제</strong>로도 작용해 선택적 PR 조절제로 분류되기도 해요</li>
+<li>용법 — 하루 <strong>400~600 mg 4일</strong> 또는 <strong>800 mg 2일</strong> / <strong>misoprostol</strong>(prostaglandin 유도체) 병용 → <strong>임신초기 50일 이내 약 95%</strong>에서 유산 유도</li>
+<li>약동학 — 반감기 <strong>20~40시간</strong>(α1-acid glycoprotein 결합 98%), <strong>CYP3A4</strong> 대사 / 부작용 — 복통, 자궁경련, 질 출혈, 오심·구토·설사</li>
+<li><strong>Ulipristal acetate</strong> — PR에 선택적으로 작용하며 조직에 따라 부분작용제 또는 대항제. GR에도 결합하나 mifepristone보다 약하고, ER·AR·MR에는 작용이 없어요. <strong>응급피임 용량·시간 창은 5장(p.40)에서 다룬다</strong></li>
+</ul>
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N09 7번이 이 한 페이지에서 다섯 선지를 전부 갈랐다. 네 가지만 잡으면 돼요 — <strong>① 단독이 아니라 misoprostol 병용 ② 3개월이 아니라 임신초기 50일 이내(약 95%) ③ GR에도 붙는다(→ 쿠싱증후군에 쓸 수 있어요) ④ 반감기 20~40시간 · CYP3A4</strong>(CYP2D6·2시간이 아니에요).<br/>
+↳ 붙는 수용체를 뒤바꾼 선지(ER 대항제로 자궁내막 위축)도 나왔어요. <strong>Mifepristone·ulipristal = PR / tamoxifen·clomiphene = ER</strong>.<br/><br/> 계열이 달라요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-26">5. 피임약 — 복합 · 단독 · 응급</h2>
+<p class="section-source"><em>p.38–41 · 소크라티브 N09 6번(p.40) · N09 4번의 오답 근거(p.41)</em></p>
+<h3 id="section-27">복합 경구피임약 — 4중 방어 (p.38)</h3>
+<ul>
+<li>구성 — <strong>Estrogen + progestin</strong> 복합제</li>
+<li><strong>Estrogen</strong>은 생식샘자극호르몬 유리를 억제해 <strong>난포 성숙과 배란을 억제</strong></li>
+<li><strong>Progestin</strong>은 자궁경부 점액을 변화시켜 착상을 억제하고 <strong>정자 운동성을 감소</strong></li>
+<li>복용법 — 생리주기 <strong>5일부터 21일간</strong> 복용, 마지막 복용 후 며칠 뒤 생리. 나머지 기간엔 위약·철분제로 순응도 유지</li>
+<li><strong>복합제의 효율성은 환자의 순응도, 즉 복용 일정 준수에 달려 있어요</strong></li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘호르몬_박종선_p038a" decoding="async" height="1042" loading="lazy" src="images/02c0f49e6af63572.png" width="1307"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 복합 경구피임약의 4중 방어 (교안 p.38) — 번호 카드 넷이 서로 다른 층의 방어다. <strong>① 배란</strong>(LH·FSH 억제 → <strong>LH surge 소실</strong> → 무배란성 월경주기) · <strong>② 경관 점액</strong>(진하게 만들어 정자 통과 방해) · <strong>③ 자궁내막</strong>(착상에 불리하게) · <strong>④ 난관</strong>(난자 수송 환경 변화).<br/><br/> ①은 estrogen이, ②③④는 주로 progestin이 만들어요 — 그래서 estrogen을 뺀 mini pill은 ①을 잃고 ②③만 남는다(p.39). 25-54 오답 "LH 억제"가 여기 ① 카드의 내용이에요.</figcaption></figure>
+
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>제형</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단상 monophasic</td>
+<td>주기 내내 일정 용량</td>
+</tr>
+<tr>
+<td>2상 biphasic</td>
+<td>2단계로 progestin 용량 조절</td>
+</tr>
+<tr>
+<td>3상 triphasic</td>
+<td>3단계로 조절 (자연 주기에 근접)</td>
+</tr>
+<tr>
+<td>4상 tetraphasic</td>
+<td>estradiol valerate + dienogest (최근 도입)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="section-28">Progestin 단독 제제(mini pill)와 장기작용 제형 (p.39)</h3>
+<ul>
+<li>estrogen 없이 progestin만 지속 투여 → 자궁경부 점액과 자궁내막을 변화시켜 착상 억제. 보통 저용량 <strong>norethindrone 0.35 mg</strong></li>
+<li><strong>배란을 완전히 억제하지는 못해요</strong> → 복합제보다 주기가 불규칙하고 피임효과가 낮아요</li>
+<li><strong>estrogen 금기(수유부·혈전 병력·35세 이상 흡연)인 경우의 대안</strong></li>
+<li>장기작용 — <strong>EE+etonogestrel 질 고리</strong>(3주 삽입/4주째 제거) · <strong>EE+norelgestromin 경피 패치</strong>(3주 부착/4주째 제거) · <strong>피하 임플란트 etonogestrel 68 mg → 3년</strong> · <strong>근주 medroxyprogesterone 150 mg → 3개월</strong> · <strong>IUD levonorgestrel 20 μg/일 → 3~5년</strong></li>
+<li>흔한 오류 정정 — <strong>levonorgestrel 이식제(Norplant)는 2002년 철수</strong>했어요. 현재 피하 이식제는 <strong>etonogestrel 단일봉이고 지속기간은 5년이 아니라 3년</strong>이에요</li>
+<li>주사제 부작용 — medroxyprogesterone 근주는 <strong>체중 증가·골다공증</strong><ul>
+<li class="explanation">mini pill이 왜 "덜 확실한가"가 4중 방어 그림으로 바로 설명돼요. <strong>estrogen이 담당하던 ① 배란 억제 층이 통째로 빠지기 때문</strong>이에요. 남은 ②③에만 의존하니 복용 시간이 몇 시간만 밀려도 방어가 뚫린다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-29">응급피임약 (p.40)</h3>
+<ul>
+<li><strong>Levonorgestrel 1.5 mg 단회</strong> — 현재 가장 흔히 쓰이는 응급피임약. 가급적 <strong>72시간 이내</strong>, 최대 5일까지 어느 정도 효과. <strong>관계 직후 투여가 가장 확실</strong></li>
+<li><strong>Ulipristal 30 mg 단회</strong> — 무방비 성교 <strong>5일 이내</strong>. 임신 성공률 <strong>62~85% 감소</strong>. <strong>levonorgestrel보다 더 긴 시간 효과</strong>. 기전은 <strong>뇌하수체 LH 분비·난포파열 억제 → 배란 억제·지연</strong>. <strong>심한 간질환에서 금기(CYP3A4)</strong></li>
+<li><strong>구리 IUD 삽입</strong> — <strong>가장 효과적인 응급피임법</strong>, 이후 장기 피임으로 그대로 이어져요</li>
+<li>구판에서 삭제할 것 — <strong>Yuzpe법</strong>(EE 100 μg + norgestrel 1 mg, 12시간 간격 2회)과 "EE 2.5 mg 1일 2회 5일간"은 현행 표준이 아니에요</li>
+<li><strong>응급피임약은 이미 성립된 임신을 중단시키지 못하며</strong> 태아에 해를 준다는 근거도 없다("태아 생식기 암"은 DES의 이야기다 — p.14)</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘호르몬_박종선_p040a" decoding="async" height="1001" loading="lazy" src="images/1e1d29454e6a7841.png" width="2473"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 응급피임법 3가지 (교안 p.40) — 가로 세 칸이 곧 <strong>시간 창의 순서</strong>예요. <strong>① Levonorgestrel 1.5 mg(72시간, 최대 5일) → ② Ulipristal 30 mg(5일, 62~85% 감소, CYP3A4) → ③ 구리 IUD(가장 효과적, 장기 피임 연결)</strong>. 소크라티브 N09 6번이 "<strong>4일(96시간) 후 내원</strong>"이라는 숫자 하나로 ①을 탈락시키고 ②를 고르게 만든 문항이에요.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N09 6번의 판정 기준은 <strong>문항이 준 시간 숫자 하나</strong>예요.</p>
+<p>96시간 = 72시간 창은 지났고 5일 창은 남았어요 → <strong>ulipristal</strong>. 오답 넷도 각각 이유가 달라요 — <strong>Yuzpe법·EE 고용량 5일 요법은 교안이 "삭제할 것"으로 못박은 폐기 항목</strong>, <strong>mifepristone은 응급피임이 아니라 이미 성립된 임신을 종결시키는 약</strong>(목적 자체가 달라요), <strong>"72시간이 지나 방법이 없다"는 것도 오답</strong>(72시간은 levonorgestrel의 권장 창일 뿐이고 ulipristal·구리 IUD가 남아 있어요).</p>
+</blockquote>
+<h3 id="section-30">피임 이외의 이득 · 부작용 · 금기 (p.41)</h3>
+<ul>
+<li>치료적 응용 — <strong>다낭성난소증후군</strong>, 자궁내막증식증, 샘근육증, <strong>여드름·다모증</strong>, 무월경, 월경통</li>
+<li><strong>위험을 낮추는 것</strong> — <strong>난소암 · 난소낭종 · 자궁내막암</strong>, 양성유방질환, 골반염증성질환, 자궁외 임신, 철결핍성 빈혈, 류마티스관절염</li>
+<li>※ 다만 <strong>자궁경부암</strong> 발생이 복합 경구피임약 사용자에게서 증가하였다는 보고가 있어요</li>
+<li>가장 흔한 부작용 — <strong>돌발출혈(breakthrough bleeding)</strong>: 1년 내 복용 중단의 가장 큰 이유. 그 밖에 오심·구토, 두통, 유방압통, 체액저류, 체중변화</li>
+<li>심각한 부작용 — 혈전색전증·심근경색·뇌졸중. <strong>위험은 35세 이상·흡연 여성에서 가장 커요</strong></li>
+<li>금기 — 뇌혈관질환·혈전색전증 병력, 심근경색·관상동맥질환, 유방암·여성 생식기암, 진단되지 않은 질출혈 / 당뇨병·고혈압·편두통은 주의</li>
+<li>교재 배수 표기 주의 — "심근경색 2~4배·뇌졸중 2~10배"는 <strong>1960~70년대 고용량 제제</strong> 연구값이에요. 현행 저용량 제제에서는 절대위험이 훨씬 낮아요</li>
+</ul>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>암 위험의 방향이 약마다 다르다는 것이 이 강의의 반복 함정이에요.</strong> 복합 경구피임약은 <strong>난소암·자궁내막암을 낮추고 자궁경부암은 올린다는 보고</strong>가 있다(p.41). 반대로 <strong>estrogen 단독 HRT는 자궁내막암을 5~15배 올린다</strong>(2장). 같은 자궁내막인데 방향이 정반대인 이유는 단순해요 — <strong>피임약에는 progestin이 들어 있고 estrogen 단독요법에는 없어요.</strong> 자궁내막을 지키는 것은 언제나 progestin이다.</p>
+<p>소크라티브 N09 4번의 오답 ②(난소암)·③(자궁경부암)이 정확히 이 페이지의 문장을 끌어와 만든 함정이었어요.</p>
+</blockquote>
+<hr/>
+<h2 id="section-31">6. Androgen과 항안드로겐</h2>
+<p class="section-source"><em>p.43–52 · 소크라티브 N09 8번(p.43, 47, 51) · 9번(p.49–51) · <strong>25-18(p.49) · 25-47(p.50)</strong></em></p>
+<h3 id="section-32">Testosterone — 합성·결합·대사 (p.43)</h3>
+<ul>
+<li>가장 중요한 androgen — <strong>고환 Leydig 세포에서 95%</strong> 합성·분비(GnRH·LH·FSH 조절). <strong>LH는 스테로이드 생합성, FSH는 정자생성</strong> 촉진</li>
+<li>혈중 androstenedione·DHEA는 효력이 testosterone의 <strong>10% 수준</strong></li>
+<li>혈장 농도 남성 0.6 · 여성 0.1 μg/dL / <strong>98%가 단백 결합, 유리형은 2%</strong> — <strong>SHBG 65%(고친화성)</strong> · 알부민 33%(저친화성). <strong>활성형은 유리 호르몬</strong>, 결합형은 저장고</li>
+<li><strong>활성화</strong> — Testosterone ─<strong>5α-reductase</strong>→ <strong>5α-DHT</strong>. DHT는 <strong>AR 친화도·유전자 활성이 더 높아요</strong><ul>
+<li><strong>뇌 · 뇌하수체 · 신장</strong> — testosterone이 <strong>직접</strong> 결합</li>
+<li><strong>피부 · 전립샘 · 부고환</strong> — <strong>5α-DHT로 전환된 뒤</strong> 결합</li>
+</ul>
+</li>
+<li><strong>방향화</strong> — 간·지방조직 aromatase가 <strong>estradiol</strong>로 전환. <strong>남성 혈중 estradiol의 약 85%</strong>가 이 경로 산물. 고용량 androgen 투여 시 <strong>여성형 유방</strong></li>
+<li>대사 — 분비 30분 내 간에서 androsterone·etiocholanolone으로, 혈중 <strong>반감기 10~20분</strong>, 17-ketosteroid로 포합되어 소변 배설</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘_박종선_gen_androgen대사-항안드로겐3계열" decoding="async" height="530" loading="lazy" src="images/15678cff95582a6a.svg" width="870"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>Androgen 대사 경로와 항안드로겐 3계열의 작용점 (교안 p.43·47·49–52 내용을 새로 그린 도해) — 가운데 세로축이 <strong>콜레스테롤 → (17α-hydroxylase·17,20-lyase) → testosterone → (5α-reductase) → DHT → AR</strong>이고, 오른쪽 곁가지가 <strong>aromatase → estradiol</strong>이에요.<br/><br/> 여기에 세 계열이 각각 다른 높이에서 ⊣로 붙어요 — <strong>① 합성 억제(ketoconazole·spironolactone, 상류) ② 5α-reductase 억제(finasteride·dutasteride, 중간) ③ 수용체 차단(flutamide·bicalutamide·enzalutamide·cyproterone·spironolactone, 말단)</strong>. <strong>Spironolactone만 ①과 ③ 두 곳에 표시돼 있어요</strong> — 그 이중 작용이 25-47의 열쇠다. 25-18(③) · 소크라티브 N09 9번(②)이 이 그림의 서로 다른 높이에서 나왔어요.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: 소크라티브 N09 8번이 이 페이지의 <strong>"어느 조직에서 무엇이 AR에 붙는가"</strong> 표를 뒤섞어 물었어요. 정답은 "<strong>DHT는 A 고리가 변형되어 방향화될 수 없으므로 여성형유방을 유발하지 않는다</strong>"(p.47). 판정 기준은 셋이에요.<br/>
+↳ ① <strong>DHT의 AR 친화도는 testosterone보다 높다</strong>(낮다는 선지는 반대).<br/>
+↳ ② <strong>뇌·뇌하수체·신장은 testosterone이 직접</strong> 붙고, <strong>DHT 전환이 필요한 곳은 피부·전립샘·부고환</strong>이다(조직을 뒤바꾼 선지가 나와요).<br/>
+↳ ③ <strong>남성 estradiol의 85%는 부신 분비가 아니라 간·지방조직 aromatase의 산물</strong>이에요.<br/><br/> 부신은 androstenedione·DHEA 같은 약한 androgen만 낸다.</p>
+</blockquote>
+<h3 id="section-33">작용기전과 약리작용 (p.44)</h3>
+<ul>
+<li>Testosterone·DHT는 핵수용체 대가족의 <strong>AR</strong>과 결합. 결합하지 않은 AR은 <strong>hsp90</strong>과 붙어 있다가 → 호르몬 결합 → hsp90 분리 → 핵 진입 → 이합체 → <strong>androgen 반응부위</strong> 결합 → RNA polymerase 활성↑</li>
+<li><strong>남성화작용(androgenic)과 동화작용(anabolic)의 구별은 엄격하지 않다</strong> — 임상에서 쓰는 유도체는 모두 강력한 androgen으로 작용해요</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘호르몬_박종선_p044a" decoding="async" height="1056" loading="lazy" src="images/183a6a6f8acff9a6.png" width="1307"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>그림 Androgen 작용의 기관별 효과 (교안 p.44) — 네 칸을 각각 하나의 문장으로 읽으면 돼요. <strong>성 분화·2차 성징</strong>(태아 7주부터 분비, 사춘기 후두 확대·근육량↑) · <strong>동화작용</strong>(단백질 합성↑ → <strong>골단 성장 촉진 → 사춘기 급성장 → 결국 골단이 닫혀 성장 멈춤</strong>, 적혈구생성인자↑ → 혈색소↑) · <strong>뼈·피부</strong>(골밀도↑, 남성형 모발, 피지↑ → 여드름) · <strong>간·지질</strong>(<strong>HDL↓·LDL↑</strong>, Sertoli 세포 정자형성 유지).<br/><br/> 두 번째 칸의 "촉진했다가 결국 멈춘다"는 화살표가 p.47 소아 부작용(<strong>골단 조기 폐쇄 → 성장장애</strong>)의 근거예요.</figcaption></figure>
+
+<ul>
+<li class="explanation">지질 방향이 <strong>estrogen과 정확히 반대</strong>다(estrogen: LDL↓·HDL↑ / androgen: HDL↓·LDL↑). 남성호르몬 남용이 심혈관에 나쁜 쪽으로 의심받는 뿌리가 여기 있어요.</li>
+</ul>
+<h3 id="section-34">임상 용도·제제·부작용 (p.45–48)</h3>
+<ul>
+<li>확립된 적응증 — <strong>생식샘기능저하증 보충요법</strong>. 고환 기능 이상으로 LH가 올라 있는 경우 <strong>투여 후 60일 이내에 LH가 정상화되면 치료효과가 있다</strong>고 판정. 노화에 의한 감소의 보충요법은 아직 논란</li>
+<li>동화작용을 노린 사용(노인성 골다공증·만성 쇠약·화상·수술 후) — <strong>근거는 제한적</strong></li>
+<li>도핑 — <strong>WADA 금지약물</strong>. 고용량 남용 시 간기능 이상, 공격성 증가, 기분 변동</li>
+<li>제제 — <strong>cypionate·enanthate 근주</strong>(농도 유지에 선호) / <strong>buccal</strong>(잇몸 부착, 장·간 대사 우회) / 경피 패치·젤·임플란트 / <strong>fluoxymesterone 경구</strong>(반감기 길고 동화강도 2배) / oxymetholone·oxandrolone(동화 3배 이상) / nandrolone·stanozolol(동화 우위로 알려졌으나 인체에서는 완전 androgen 작용제)</li>
+<li><strong>경구 17α-알킬화 유도체는 간독성 부담이 커요</strong></li>
+<li>부작용 — 여성: <strong>다모증·여드름·목소리 굵어짐·월경 불순</strong>(월 200~300 mg 이상) / 소아: <strong>골단 조기 폐쇄 → 성장장애·조기 성적 성숙</strong> / 남성 고용량: <strong>되먹임 억제 → 정자생성 감소·고환 위축·불임</strong>, aromatase로 estradiol 전환 → <strong>여성형유방</strong></li>
+<li>※ <strong>DHT는 A 고리가 변형되어 방향화될 수 없으므로 여성형유방을 유발하지 않아요</strong></li>
+<li><strong>17α-알킬화 스테로이드</strong>는 고빌리루빈혈증(황달)·담즙정체성 간염, 장기 사용 시 <strong>간종양</strong></li>
+<li>상호작용 — androgen은 <strong>warfarin 등 경구 항응고제의 작용을 증강</strong>시켜 출혈 위험↑</li>
+<li>금기 — <strong>임신 여성</strong>(기형유발·태아 남성화), 수유부·영아, <strong>전립샘암</strong>, 간·신장·심혈관 질환</li>
+</ul>
+<blockquote class="callout explain">
+<p>🧠 이해 포인트 — <strong>부작용의 방향이 대상마다 뒤집힌다는 것이 교안이 직접 강조한 지점이에요.</strong> 교안 p.48은 "<strong>여성·소아에서는 남성화가 먼저, 남성에서는 여성화(여성형유방·고환위축)가 먼저 나타난다 → 방향이 반대라는 점이 시험에 자주 나온다</strong>"고 명시했어요.<br/>
+왜 남성에서 여성화가 오는가 — 두 경로가 겹친다.<br/><br/> ① 고용량 testosterone의 남는 몫이 <strong>aromatase로 estradiol이 되고</strong>(여성형유방), ② 외부에서 들어온 androgen이 <strong>되먹임으로 LH·FSH를 눌러</strong> 고환이 일을 멈춘다(고환 위축·불임). 즉 <strong>밖에서 넣으면 안에서 끈다</strong>는 되먹임 원리가 3장 clomiphene과 정반대 방향으로 작동한 거예요.</p>
+</blockquote>
+<h3 id="section-35">항안드로겐 3계열 ★25-18 (p.49) · ★25-47 (p.50)</h3>
+<p>경로에서 어느 단계를 막는지에 따라 세 계열로 나눠 볼게요.</p>
+<div aria-label="비교표 · 가로로 스크롤할 수 있어요" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>계열</th>
+<th>약물</th>
+<th>작용점</th>
+<th>대표 적응증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 스테로이드 합성 억제</strong></td>
+<td><strong>Ketoconazole</strong>(고용량) · <strong>Spironolactone</strong></td>
+<td>콜레스테롤 곁가지 분해효소, <strong>17α-hydroxylase · 17,20-lyase</strong>, 11β-hydroxylase<br/>(spironolactone은 뒤의 둘만)</td>
+<td>스테로이드 반응성 전립샘암(보조) · <strong>여성 다모증</strong></td>
+</tr>
+<tr>
+<td><strong>② 5α-Reductase 억제</strong></td>
+<td><strong>Finasteride</strong>(2·3형) · <strong>Dutasteride</strong>(1형 포함 전부)</td>
+<td>testosterone → DHT 전환</td>
+<td><strong>전립샘비대증 · 남성형 탈모</strong> · 여성 다모증</td>
+</tr>
+<tr>
+<td><strong>③ AR 수용체 차단</strong></td>
+<td><strong>Flutamide</strong> · Apalutamide · <strong>Bicalutamide</strong> · Nilutamide · <strong>Enzalutamide</strong> / <strong>Cyproterone acetate</strong> · <strong>Spironolactone</strong></td>
+<td>수용체 경쟁 차단</td>
+<td><strong>진행성 전립샘암</strong>(GnRH 작용제·고환절제와 병용)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>③ AR 대항제</strong> (p.49) — testosterone·DHT와 <strong>경쟁</strong>해 AR에 선택적 대항작용. 진행된 전이 전립샘암에서 <strong>GnRH 작용제 또는 고환절제와 함께</strong> 사용하며, 병용하면 투여량을 줄일 수 있어요. <strong>Flutamide는 효능이 더 뛰어난 bicalutamide·enzalutamide로 대체되는 중</strong>. 부작용 — 여성형유방·유방압통, 안면홍조, 성기능 장애, <strong>간손상</strong>. <strong>Flutamide는 안드로겐이 높은 여성의 여드름·다모증 치료에도 사용</strong></li>
+<li><strong>Spironolactone</strong> (p.50) — <strong>aldosterone 수용체 대항 + AR 대항작용을 동시에</strong> 보이고, 여기에 <strong>17α-hydroxylase·17,20-lyase 억제 → testosterone·androstenedione 감소</strong>까지 겸해요. <strong>여성의 다모증</strong> 치료에 쓰이며 <strong>월경불순</strong>이 부작용</li>
+<li><strong>Cyproterone acetate</strong> (p.50) — 초창기 <strong>스테로이드성</strong> 항-androgen. <strong>AR 대항 + progestin 효과 + LH·FSH를 억제하는 항생식샘자극 작용</strong>을 함께 갖는다. estrogen과 함께 여성 다모증에, 남성에서는 과도한 성욕 억제에 시도. ※ "flutamide와 같은 작용"이라는 서술은 부정확해요</li>
+<li><strong>② 5α-Reductase 억제제</strong> (p.51) — <strong>Finasteride</strong>는 <strong>제2형·제3형</strong> isoenzyme 억제. <strong>DHT는 전립샘의 주요 남성호르몬</strong> → 전립샘비대증·남성형 탈모, 여성 다모증에도. <strong>Dutasteride</strong>는 <strong>1형을 포함한 모든 5α-reductase 억제</strong> → 더 강력한 DHT 억제, 긴 작용시간. 전립샘비대증에 주로 쓰고 <strong>여성·소아 사용은 권고되지 않아요</strong>. 투여 시 전립샘 부피가 줄고 소변 유량이 증가</li>
+<li><strong>① Ketoconazole</strong> (p.52) — 합성 imidazole 항진균제. <strong>고용량(하루 400 mg × 3회)</strong>에서 부신피질·생식샘 스테로이드 합성 억제. 스테로이드 반응성 전립샘암에 보조적으로 쓰이나 뛰어나지 않고, <strong>부신기능 억제와 간독성</strong> 때문에 흔히 쓰는 약이 아니에요</li>
+<li><strong>복합 호르몬피임제의 항안드로겐 효과</strong> (p.52) — <strong>피임약의 estrogen이 간에서 SHBG 생산을 증가시켜 혈중 유리 androgen 농도를 감소시킨다</strong><ul>
+<li class="explanation">p.43의 "<strong>활성형은 유리 호르몬, 98%는 단백 결합</strong>"이 여기서 치료로 뒤집혀 쓰여요. 총 androgen을 건드리지 않고 <strong>SHBG라는 그릇만 키워</strong> 유리 몫을 줄이는 방식이에요.</li>
+<li class="explanation">교안에는 없지만, ①의 <strong>17α-hydroxylase·17,20-lyase(CYP17)</strong>를 선택적으로 막는 현행 약이 <strong>abiraterone</strong>이에요. ketoconazole이 여러 효소를 뭉뚱그려 막으며 부신기능까지 눌렀던 문제를 표적화로 푼 것.</li>
+</ul>
+</li>
+</ul>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘호르몬_박종선_p049a" decoding="async" height="779" loading="lazy" src="images/ef6567588bb8cb35.png" width="973"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p></figure>
+<figure class="lecture-figure"><p><button aria-label="그림 크게 보기" class="image-open" type="button"><img alt="0902_생식샘호르몬_박종선_p051a" decoding="async" height="945" loading="lazy" src="images/6870c5278b6aae45.png" width="1112"/><span aria-hidden="true" class="image-hint">눌러서 크게 보기</span></button></p><figcaption>Flutamide (교안 p.49) · Finasteride (교안 p.51) — 구조식 두 장을 나란히 두는 이유는 계열 이름의 근거를 눈으로 보기 위해서다. <strong>Flutamide는 방향족 고리 하나에 CF₃·O₂N·아마이드가 붙은 비스테로이드성</strong>이고, <strong>Finasteride는 사환 스테로이드 골격에 질소가 끼어든 형태</strong>예요.<br/><br/> 교안이 cyproterone acetate를 굳이 "<strong>초창기에 개발된 스테로이드성 항-androgen</strong>"이라 부른 것도 이 대비 위에서 읽혀요 — 스테로이드 골격을 가진 항안드로겐은 progestin 작용 같은 <strong>곁작용이 딸려 오고</strong>, 비스테로이드성은 AR만 깔끔하게 막아요.</figcaption></figure>
+
+<blockquote class="callout exam">
+<p>💡 시험 포인트: <strong>25-18과 25-47이 이웃한 두 페이지에서 갈라졌다.</strong> 같은 항안드로겐인데 환자가 달라요.<br/>
+↳ <strong>25-18 (p.49) — 60세 남성 전립샘암 · flutamide의 기전? 정답 ③ 안드로겐 수용체 차단.</strong> 오답 넷이 정확히 다른 계열들이었어요 — <strong>GnRH 수용체 억제 = degarelix·cetrorelix(대항제) / aromatase 억제 = anastrozole·letrozole / 5α-reductase 억제 = finasteride·dutasteride / FSH 억제 = inhibin</strong>.<br/><br/> 위 3계열 표를 세워두면 한 번에 걸러져요.<br/>
+↳ <strong>25-47 (p.50) — 28세 여성, 불규칙 생리·여드름·혈중 안드로겐 상승 · 처방할 약은?</strong> <strong>정답키가 없어 확정되지 않는 문항이에요.</strong> 교안이 spironolactone(p.50)·finasteride(p.51)·flutamide(p.49)를 <strong>모두 여성 다모증 적응증으로 적고 있어</strong> 우열이 교안만으로는 갈리지 않아요.</p>
+<p>다만 지문이 "<strong>혈중 안드로겐 수치 자체가 올라 있다</strong>"고 준 것을 단서로 읽으면 기전 추론으로 ③ <strong>spironolactone</strong>이 남아요 — <strong>flutamide는 AR만 막아 혈중 농도는 그대로</strong>, <strong>finasteride는 DHT 전환만 막아 testosterone을 못 내리는데</strong>, <strong>spironolactone만 17α-hydroxylase·17,20-lyase까지 막아 혈중 testosterone·androstenedione을 실제로 낮춘다.</strong> (clomiphene은 오히려 생식샘 자극을 키우고, letrozole은 aromatase를 막아 androgen 부하를 남긴다.)<br/>
+↳ 선지에는 없지만 교안 p.52의 <strong>복합 호르몬피임제(EE → SHBG↑ → 유리 androgen↓)</strong>가 임상에서는 이 환자의 1차 선택에 가깝다.<br/><br/> 함께 알아두세요.</p>
+<p>💡 시험 포인트: 소크라티브 N09 9번은 <strong>"제1형을 포함한 모든 5α-reductase isoenzyme"</strong>이라는 문두 한 구절이 답을 지정한 문항이에요 → <strong>dutasteride</strong>. 다섯 선지 중 <strong>효소를 막는 것은 dutasteride 하나</strong>이고 나머지 넷은 수용체 쪽이에요.<br/>
+↳ 가장 그럴듯한 함정이 <strong>spironolactone</strong>이었어요.<br/><br/> 이 약도 효소를 막기는 하는데, 그 효소가 5α-reductase가 아니라 <strong>스테로이드 합성 상류의 17α-hydroxylase·17,20-lyase</strong>예요. <strong>"어느 높이의 효소인가"</strong>가 판정선이에요.<br/>
+↳ <strong>Finasteride = 2·3형 / Dutasteride = 1형 포함 전부</strong>.<br/><br/> 이 숫자 한 쌍이 두 약을 가르는 전부예요.</p>
+</blockquote></div>
+      <div class="answer-footer"><a href="originals/gonadal.md" download="0902_생식샘호르몬_박종선_강의정리(p11-52).md"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>원본 MD</a><button id="back-top" class="text-button"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>처음으로</button></div>
+      <nav class="lecture-pagination" aria-label="이전·다음 강의"><a class="previous-course" href="bone.html">← 뼈와 무기질</a><a class="next-course" href="toxicology.html"><span><small>다음 강의</small>독성학 개론</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></nav>
+    </article>
+    <aside class="toc" id="toc" aria-label="이 강의 목차"><div class="toc-heading"><span>이 강의에서</span><button class="icon-button toc-close" id="close-toc" aria-label="목차 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><nav><a href="#section-1">1. Estrogen — 내인성 3종, aromatase, 그리고 합성 estrogen</a><a href="#section-8">2. Estrogen 약리작용 — 대사·뼈·응고, 그리고 WHI가 바꾼 HRT</a><a href="#section-16">3. Estrogen 조절제 — SERM · SERD · aromatase 억제제</a><a href="#section-21">4. Progesterone과 항프로게스틴</a><a href="#section-26">5. 피임약 — 복합 · 단독 · 응급</a><a href="#section-31">6. Androgen과 항안드로겐</a></nav><a class="toc-top" href="#main">맨 위로 ↑</a></aside>
+  </main>
+  <div class="find-dock"><form class="find-form" role="search" id="find-form"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="find-input" type="search" aria-label="이 강의 본문 검색" placeholder="이 강의에서 궁금한 용어 찾기" autocomplete="off"><output id="find-count" aria-live="polite"></output><button type="button" id="find-prev" class="icon-button" aria-label="이전 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg></button><button type="submit" class="find-next" aria-label="다음 검색 결과"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg></button></form><p class="dock-caption">강의 자료를 바탕으로 문체를 다듬은 개인 학습용 정리본</p></div>
+</div>
+<dialog class="image-dialog" id="image-dialog" aria-label="강의 이미지 확대"><div class="image-dialog-bar"><span>강의 그림</span><div><a id="image-original" target="_blank" rel="noopener">원본 크기로 열기 ↗</a><button class="icon-button" id="close-image" aria-label="확대 이미지 닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div></div><div class="image-canvas"><img id="zoomed-image" alt=""></div></dialog>
+</body></html>
