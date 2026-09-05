@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="up" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#c0392b"/>
+    </marker>
+    <marker id="dn" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#1e8449"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="32" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="21" font-weight="bold" fill="#1a1a1a">Aspirin — 용량이 약을 바꾼다</text>
+  <text x="450" y="54" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5d6d7e">교안 p.17 · 19 · 23 · 27 — 같은 약, 세 개의 얼굴 그리고 요산의 정반대 효과</text>
+
+  <text x="40" y="86" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">① 용량 사다리</text>
+
+  <rect x="40" y="98" width="480" height="70" rx="9" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="56" y="122" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1e8449">저용량 40–325 mg (국내 통상 100 mg)</text>
+  <text x="56" y="144" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">항혈소판 — 심근경색 · 뇌졸중 예방, 하루 또는 이틀마다</text>
+  <text x="56" y="162" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5d6d7e">하루 30 mg 만으로도 억제가 축적된다 (p.18)</text>
+
+  <rect x="40" y="178" width="480" height="70" rx="9" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="56" y="202" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#2471a3">진통 · 해열 325–650 mg 을 매 4시간</text>
+  <text x="56" y="224" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">중등도 통증까지. 내장 산통 · 심근경색 통증에는 듣지 않는다</text>
+  <text x="56" y="242" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5d6d7e">600 mg/일 → 반감기 3–5시간 (p.17)</text>
+
+  <rect x="40" y="258" width="480" height="70" rx="9" fill="#fdf2f0" stroke="#c0392b" stroke-width="2"/>
+  <text x="56" y="282" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">항염증 5–6 g/일 · 혈중 15–30 mg/dL</text>
+  <text x="56" y="304" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">4 g 복용 시 반감기 12시간 → 하루 3회 식후 분복</text>
+  <text x="56" y="322" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5d6d7e">3.6 g 이상 → 반감기 12–16시간 (p.17)</text>
+
+  <rect x="546" y="98" width="314" height="230" rx="9" fill="#fbfcfc" stroke="#aab7b8" stroke-width="1.5"/>
+  <text x="562" y="124" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">왜 반감기가 늘어나는가</text>
+  <text x="562" y="150" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">salicylate 는 알부민과 결합한다</text>
+  <text x="562" y="174" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">총 투여량 600 mg 을 넘으면</text>
+  <text x="562" y="196" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#c0392b">배설 경로가 포화된다</text>
+  <text x="562" y="222" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">→ 용량을 두 배 올리면 혈중 농도는</text>
+  <text x="562" y="242" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">　 두 배보다 훨씬 크게 오른다</text>
+  <text x="562" y="272" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#7b241c">항염증 용량이 곧 중독 문턱과 붙어 있는</text>
+  <text x="562" y="292" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#7b241c">이유 — salicylism 은 사고가 아니라 구조다</text>
+  <text x="562" y="316" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5d6d7e">교안 p.17</text>
+
+  <text x="40" y="366" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">② 요산 — 방향이 뒤집히는 지점</text>
+
+  <line x1="70" y1="424" x2="830" y2="424" stroke="#5d6d7e" stroke-width="2"/>
+  <line x1="290" y1="412" x2="290" y2="436" stroke="#5d6d7e" stroke-width="2"/>
+  <line x1="560" y1="412" x2="560" y2="436" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="290" y="454" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">2 g/일</text>
+  <text x="560" y="454" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">4 g/일</text>
+
+  <rect x="80" y="384" width="200" height="32" rx="6" fill="#f9ebea" stroke="#c0392b" stroke-width="2"/>
+  <text x="180" y="406" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#c0392b">혈청 요산치 증가 ↑</text>
+  <text x="180" y="474" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#7b241c">저용량 ASA 는 요산 배설을 막는다</text>
+  <text x="180" y="493" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#7b241c">→ 통풍 환자에게 부적절 (p.14 표)</text>
+
+  <rect x="600" y="384" width="220" height="32" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="710" y="406" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="15" font-weight="bold" fill="#1e8449">혈청 요산치 감소 ↓</text>
+  <text x="710" y="474" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#145a32">고용량에서야 요산배설 효과가 나온다</text>
+  <text x="710" y="493" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#145a32">그러나 그 용량은 이미 독성 구간이다</text>
+
+  <text x="425" y="474" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#5d6d7e">2–4 g 사이는</text>
+  <text x="425" y="493" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#5d6d7e">교안이 규정하지 않는다</text>
+
+  <text x="450" y="524" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1e8449">🎙️ 요산의 용량 의존적 정반대 효과는 단골 함정 — 교안 p.23</text>
+</svg>

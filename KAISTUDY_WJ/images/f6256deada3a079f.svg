@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#5d6d7e"/>
+    </marker>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="21" font-weight="bold" fill="#1a1a1a">NSAID 위장 손상의 두 기전 — 전신과 국소</text>
+  <text x="440" y="54" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#5d6d7e">교안 p.14 · 같은 궤양이지만 원인이 둘이다</text>
+
+  <rect x="340" y="72" width="200" height="42" rx="8" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="440" y="99" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="17" font-weight="bold" fill="#1a1a1a">경구 NSAID 복용</text>
+
+  <line x1="400" y1="114" x2="230" y2="150" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ag)"/>
+  <line x1="480" y1="114" x2="650" y2="150" stroke="#5d6d7e" stroke-width="2" marker-end="url(#ag)"/>
+
+  <rect x="40" y="156" width="380" height="182" rx="10" fill="#fdf2f0" stroke="#c0392b" stroke-width="2"/>
+  <text x="230" y="182" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#c0392b">① 전신적 — COX-1 억제</text>
+  <text x="60" y="209" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">위 상피세포의 COX-1 이 막힌다</text>
+  <text x="60" y="233" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">→ 세포보호 PG (PGI₂ · PGE₂) 감소</text>
+  <text x="72" y="259" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">· 위산분비 증가 ↑</text>
+  <text x="72" y="281" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">· 점막혈류 감소 ↓</text>
+  <text x="72" y="303" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">· 점액분비 감소 ↓</text>
+  <text x="60" y="327" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#7b241c">약을 주사로 넣어도 그대로 일어난다</text>
+
+  <rect x="460" y="156" width="380" height="182" rx="10" fill="#fef9e7" stroke="#b7950b" stroke-width="2"/>
+  <text x="650" y="182" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#9a7d0a">② 국소적 — 직접 접촉 자극</text>
+  <text x="480" y="209" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">경구 NSAID 가 위점막에 직접 닿는다</text>
+  <text x="480" y="233" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">→ 국소자극 · 산(酸)의 역확산</text>
+  <text x="492" y="259" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">· NSAID 는 약한 유기산 (aspirin 은 pKa 3.5)</text>
+  <text x="492" y="281" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">· 위(pH 낮음)에서 비이온화 → 흡수</text>
+  <text x="492" y="303" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" fill="#1a1a1a">· 세포 안에서 이온화 → 갇혀 손상</text>
+  <text x="480" y="327" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#7d6608">장용 코팅정이 겨냥하는 것이 이쪽뿐이다</text>
+
+  <line x1="230" y1="338" x2="400" y2="372" stroke="#c0392b" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="650" y1="338" x2="480" y2="372" stroke="#c0392b" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="250" y="378" width="380" height="44" rx="8" fill="#f9ebea" stroke="#c0392b" stroke-width="2"/>
+  <text x="440" y="406" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="16" font-weight="bold" fill="#c0392b">미란성 위염 · 대변 잠혈 · 위궤양 · 천공</text>
+
+  <rect x="40" y="436" width="800" height="30" rx="6" fill="#f4f6f7" stroke="#aab7b8" stroke-width="1"/>
+  <text x="52" y="456" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13.5" fill="#1a1a1a">덧: PG 생성을 막으면 arachidonic acid 가 lipoxygenase 쪽으로 몰려 대사물이 늘고, 그것이 궤양을 더 촉진한다 (교안 p.14)</text>
+
+  <text x="440" y="492" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="14" font-weight="bold" fill="#1e8449">시험은 ①을 묻는다 — 소크라티브 N05 1번 · 25-20</text>
+  <text x="440" y="511" text-anchor="middle" font-family="Malgun Gothic, 맑은 고딕, sans-serif" font-size="13" fill="#5d6d7e">COX-2 선택적 억제제가 비켜 가는 것도 ①뿐이다. ②는 산성 약물이면 여전히 남는다.</text>
+</svg>
