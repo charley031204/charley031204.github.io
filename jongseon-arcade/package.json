@@ -1,0 +1,14 @@
+{
+  "name": "jongseon-arcade",
+  "version": "1.0.0",
+  "private": true,
+  "description": "설치 없이 즐기는 종선 잡기 게임",
+  "scripts": {
+    "start": "node scripts/server.cjs",
+    "test": "node --test tests/engine.test.cjs tests/audio.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:full": "node tests/full-game.cjs",
+    "test:lifecycle": "node tests/lifecycle.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

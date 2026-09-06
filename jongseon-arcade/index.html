@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f4e9">
+  <title>종선이를 잡아라! · 종선 오락실</title>
+  <link rel="icon" href="assets/hammer.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="engine.js" defer></script>
+  <script src="audio.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><filter id="chroma-key" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" result="keyed" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  2 -2 2 0 1"/><feComposite in="keyed" in2="SourceGraphic" operator="in"/></filter></defs></svg>
+  <main class="arcade">
+    <header class="masthead">
+      <a class="brand" href="./index.html" aria-label="종선 오락실 처음으로"><img src="assets/hammer.svg" alt="" width="34" height="34"><span>종선 오락실<small>JONGSEON ARCADE</small></span></a>
+      <span class="header-note"><span class="status-dot"></span>잠깐 쉬어가는, 한 판</span>
+      <button class="sound-button" id="sound-button" aria-label="소리 설정" aria-expanded="false" aria-controls="sound-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM17 8q4 4 0 8M20 5q7 7 0 14"/></svg><span>소리 설정</span></button>
+      <section class="sound-panel" id="sound-panel" aria-label="소리 설정" hidden>
+        <label><span>타격 효과음</span><input type="checkbox" id="sfx-toggle" checked></label>
+        <label><span>배경 음악</span><input type="checkbox" id="music-toggle" checked></label>
+        <label class="volume-label" for="volume">전체 음량 <output id="volume-value">55%</output></label>
+        <input id="volume" type="range" min="0" max="100" value="55" aria-label="전체 음량">
+      </section>
+    </header>
+
+    <section class="heading" aria-labelledby="title">
+      <div><p class="eyebrow">망치 하나, 스트레스는 저 멀리.</p><h1 id="title">종선이를 <span>잡아라!</span><svg viewBox="0 0 38 42" aria-hidden="true"><path d="m6 26 11-13M20 27l14-4M18 7l3-5"/></svg></h1><p class="subtitle">빼꼼 올라오면, 망설이지 말고 <strong>뿅!</strong></p></div>
+      <div class="personal-best"><span class="trophy" aria-hidden="true">★</span><div><span>나의 최고 기록 <small id="best-mode">보통</small></span><strong><span id="best-score">0</span><small>점</small></strong></div></div>
+    </section>
+
+    <section class="game-shell" aria-label="종선 잡기 게임">
+      <div class="hud">
+        <div class="score-block"><span class="hud-label">SCORE <small>점수</small></span><strong id="score">0</strong><span class="combo" id="combo" hidden>0 COMBO</span></div>
+        <div class="timer-block"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M9 2h6M12 5V2m0 7v5l3 2"/></svg><strong id="time">60<small>초</small></strong><span class="hud-label" id="timer-caption">한 판은 60초</span></div>
+        <div class="life-block"><span class="hud-label">LIFE <small>폭탄 조심!</small></span><div id="lives" class="hearts" aria-label="남은 기회 3개"><span>♥</span><span>♥</span><span>♥</span></div></div>
+        <button class="pause-button" id="pause-button" aria-label="일시정지" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
+      </div>
+
+      <div class="game" id="game" data-status="idle">
+        <div class="sky-art" aria-hidden="true"></div>
+        <div class="cloud cloud-one" aria-hidden="true"></div><div class="cloud cloud-two" aria-hidden="true"></div>
+        <div class="sun" aria-hidden="true"></div>
+        <div class="distant-hill hill-one" aria-hidden="true"></div><div class="distant-hill hill-two" aria-hidden="true"></div>
+        <div class="meadow" aria-hidden="true"></div>
+        <div class="field-decor" aria-hidden="true"><span class="flower flower-one">✿</span><span class="flower flower-two">✿</span><span class="flower flower-three">✿</span><i class="grass grass-one"></i><i class="grass grass-two"></i><i class="grass grass-three"></i><span class="field-sign">종선이 출몰 지역<img src="assets/hammer.svg" alt=""></span></div>
+        <div id="holes" class="holes"></div>
+        <div class="effects" id="effects" aria-hidden="true"></div>
+        <div class="board-message" id="board-message" aria-live="polite"></div>
+
+        <div class="overlay" id="start-overlay">
+          <div class="start-card">
+            <span class="card-kicker"><span></span>오늘의 스트레스, 여기 두고 가세요<span></span></span>
+            <h2>준비됐나요<span>?</span></h2>
+            <p>종선이는 잡고, 폭탄은 피하고!</p>
+            <fieldset class="difficulty"><legend class="sr-only">난이도 선택</legend><label><input type="radio" name="difficulty" value="easy"><span>살살</span></label><label><input type="radio" name="difficulty" value="normal" checked><span>보통</span></label><label><input type="radio" name="difficulty" value="hard"><span>매운맛</span></label></fieldset>
+            <button id="start-button" class="primary-button"><img src="assets/hammer.svg" alt="">게임 시작<span aria-hidden="true">↗</span></button>
+            <small class="start-hint">클릭 · 터치 · 숫자키 1–7</small>
+          </div>
+        </div>
+
+        <div class="overlay count-overlay" id="count-overlay" hidden><span id="count-label">3</span></div>
+
+        <div class="overlay modal-overlay" id="pause-overlay" hidden>
+          <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="pause-title"><span class="modal-symbol">Ⅱ</span><h2 id="pause-title">잠깐, 쉬어가기</h2><p>종선이도 잠시 숨 고르는 중…</p><button id="resume-button" class="primary-button">이어서 하기 <span>▶</span></button><button id="restart-button" class="text-button">처음부터 다시</button></section>
+        </div>
+
+        <div class="overlay modal-overlay" id="result-overlay" hidden>
+          <section class="modal-card result-card" role="dialog" aria-modal="true" aria-labelledby="result-title"><span class="result-kicker" id="result-kicker">한 판 끝!</span><h2 id="result-title">손맛 좀 보셨나요?</h2><div class="result-score"><strong id="result-score">0</strong><span>점</span></div><p id="result-comment">종선이가 다음 판을 기다리고 있어요.</p><dl class="result-stats"><div><dt>최대 콤보</dt><dd id="result-combo">0</dd></div><div><dt>적중률</dt><dd id="result-accuracy">0%</dd></div><div><dt>잡은 종선이</dt><dd id="result-hits">0</dd></div></dl><button id="again-button" class="primary-button">한 판 더! <span>↻</span></button><button id="menu-button" class="text-button">난이도 바꾸기</button></section>
+        </div>
+      </div>
+      <div class="board-footer"><span><i class="key-icon">1</i> – <i class="key-icon">7</i> 숫자키로도 잡아요</span><span><kbd>P</kbd> 또는 <kbd>Esc</kbd> 일시정지</span><span class="footer-right"><span class="status-dot"></span><span id="mode-label">보통 난이도</span></span></div>
+    </section>
+
+    <section class="how-to" aria-label="게임 방법">
+      <h2>이것만 기억해요<span>!</span></h2>
+      <div class="rule"><span class="rule-icon face-rule" aria-hidden="true"></span><p><strong>종선이 <em>+10점</em></strong><span>빼꼼 나왔을 때 뿅!</span></p></div>
+      <div class="rule"><span class="rule-icon star-rule" aria-hidden="true">★</span><p><strong>황금 종선이 <em>+30점</em></strong><span>반짝일 땐 놓치지 마세요</span></p></div>
+      <div class="rule"><span class="rule-icon bomb-rule" aria-hidden="true"><i></i></span><p><strong>폭탄 <em class="danger-text">−30점 · ♥ −1</em></strong><span>건드리면 앗, 뜨거!</span></p></div>
+      <div class="combo-rule"><strong>콤보를 쌓으면 점수도 쑥!</strong><span>6연타부터 2배, 최대 4배 점수</span><small>얼굴을 놓치거나 헛치면 콤보가 끊겨요</small></div>
+    </section>
+    <footer class="page-footer"><span>한 번 더 하다가, 한 시간 가는 곳.</span><span>© 2026 종선 오락실</span></footer>
+  </main>
+  <div class="sr-only" id="announcer" aria-live="polite"></div>
+</body>
+</html>
