@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Drive Embedder for Obsidian 개인용 OAuth 구성의 Google 권한, 데이터 저장, 공개 범위와 삭제 방법을 안내합니다.">
+  <title>개인정보처리방침 · Drive Embedder for Obsidian</title>
+  <link rel="canonical" href="https://charley031204.github.io/drive-embedder/privacy.html">
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#202b37;background:#f6f7f9;line-height:1.75}
+    *{box-sizing:border-box}body{margin:0}main{max-width:800px;margin:0 auto;padding:56px 24px 40px}
+    .eyebrow{font-size:.85rem;color:#516171;letter-spacing:.04em}h1{font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.25;margin:12px 0 24px;overflow-wrap:anywhere}
+    h2{font-size:1.2rem;margin:32px 0 10px}p{margin:12px 0}a{color:#155b9e;text-underline-offset:3px}a:hover{color:#0b3b6a}a:focus-visible{outline:3px solid #edb744;outline-offset:4px}
+    nav{display:flex;flex-wrap:wrap;gap:10px 22px;padding:16px 0;border-block:1px solid #dce2e8;margin:24px 0 30px}nav a[aria-current="page"]{font-weight:700}
+    .notice{border-left:4px solid #bd8220;background:#fff8e9;padding:16px 20px;margin:24px 0}.notice p{margin:0}
+    ul,ol{padding-left:24px}li{margin:8px 0}code{font-size:.88em;background:#eaf0f5;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}
+    footer{margin-top:40px;padding-top:20px;border-top:1px solid #dce2e8;font-size:.9rem;color:#516171}footer p{margin:5px 0}.meta{color:#516171;font-size:.9rem}
+    @media(max-width:480px){main{padding:32px 20px}.notice{padding:14px 16px}nav{gap:8px 18px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Drive Embedder for Obsidian</p>
+    <h1>개인정보처리방침</h1>
+    <p class="meta">시행일: <time datetime="2026-11-02">2026-11-02</time> · 원본 플러그인 v1.0.14 기준</p>
+  </header>
+  <nav aria-label="사이트 메뉴">
+    <a href="./">홈</a>
+    <a href="privacy.html" aria-current="page">개인정보처리방침</a>
+    <a href="terms.html">이용약관</a>
+  </nav>
+  <section aria-labelledby="scope">
+    <h2 id="scope">적용 범위와 운영자</h2>
+    <p>이 방침은 운영자가 자신의 Obsidian에서 사용하는 개인용 Google OAuth 구성과 이 안내 사이트에 적용됩니다. 운영·문의 이메일은 <a href="mailto:jwjbrave03@gmail.com">jwjbrave03@gmail.com</a>입니다. 원본 플러그인은 <a href="https://github.com/reallygood83/obsidian-embedder">reallygood83/obsidian-embedder</a>이며, 운영자는 원본 개발자가 아닙니다.</p>
+  </section>
+  <section aria-labelledby="data">
+    <h2 id="data">처리하는 데이터와 Google 권한</h2>
+    <ul>
+      <li><strong>선택한 파일:</strong> 플러그인은 파일 내용, 이름, 파일 형식과 저장 폴더 정보를 Google Drive에 전송합니다. 반환된 파일 ID와 링크는 임베드 생성에 사용합니다.</li>
+      <li><strong>Drive 권한:</strong> <code>drive.file</code> 권한으로 업로드와 폴더 생성, 파일 정보 조회, 공유 권한 설정을 수행합니다. <a href="https://developers.google.com/workspace/drive/api/guides/api-specific-auth">Google의 권한 설명</a>에 따르면 접근 범위는 앱이 생성하거나 사용자가 앱에 열어준 파일이며, Drive 전체 열람 권한이 아닙니다.</li>
+      <li><strong>계정 확인:</strong> 연결 계정 식별을 위한 <code>userinfo.email</code> 권한을 요청합니다. v1.0.14에는 계정의 이메일과 표시 이름을 조회하는 함수가 있지만, 이 함수는 기본 설정 화면에 연결되어 있지 않으며 이메일을 저장하는 설정 항목도 없습니다.</li>
+      <li><strong>연결 유지:</strong> Google이 발급한 OAuth access token과 refresh token, 만료 시각을 저장하고 Drive 요청과 토큰 갱신에 사용합니다.</li>
+    </ul>
+  </section>
+  <section aria-labelledby="sharing">
+    <h2 id="sharing">파일 공개와 전송 대상</h2>
+    <div class="notice"><p>플러그인은 업로드마다 <code>type=anyone</code>, <code>role=reader</code> 권한을 요청합니다. 성공하면 링크를 가진 누구나 파일을 볼 수 있습니다. 공개 권한 설정이 실패해도 업로드 완료로 표시될 수 있으므로 Google Drive에서 실제 공유 범위를 확인하세요.</p></div>
+    <p>확인한 v1.0.14 소스의 인증·업로드 경로는 Google 서비스에 직접 요청합니다. 이 경로에서 별도 개발자 서버로 파일이나 토큰을 보내는 코드는 확인되지 않았습니다. Google Drive에 저장한 파일과 임베드 조회에는 Google의 데이터 처리가 적용됩니다.</p>
+  </section>
+  <section aria-labelledby="storage">
+    <h2 id="storage">로컬 보관과 삭제</h2>
+    <p>OAuth 토큰과 플러그인 설정은 Obsidian 보관함의 플러그인 설정 파일에 저장됩니다. 기본 설정 폴더에서는 <code>.obsidian/plugins/drive-embedder/data.json</code>이며, 확인한 소스에는 별도 암호화 처리가 없습니다. 보관함 동기화나 백업이 이 파일을 포함하면 토큰과 설정도 함께 복사될 수 있습니다.</p>
+    <p>저장된 설정은 사용자가 지우거나 변경할 때까지 남습니다. 플러그인의 <strong>Disconnect</strong>는 로컬 access token, refresh token과 만료 시각을 지우지만, 다른 설정·동기화 사본·백업까지 지우지는 않습니다.</p>
+    <p>Google의 접근 권한은 <a href="https://myaccount.google.com/connections">Google 계정의 연결 관리</a>에서 별도로 철회할 수 있습니다. 연결을 해제해도 업로드된 Drive 파일이나 공개 권한은 자동으로 삭제되지 않습니다. 사용자가 Google Drive에서 공유 설정을 바꾸거나 파일을 삭제해야 합니다.</p>
+  </section>
+  <section aria-labelledby="website">
+    <h2 id="website">이 사이트와 문의</h2>
+    <p>이 정적 사이트에는 로그인 폼, 파일 업로드, 분석 스크립트, 광고가 없습니다. 호스팅 제공자인 GitHub는 웹 요청을 처리하면서 IP 주소나 접속 시각 등 요청 정보를 처리할 수 있습니다. 자세한 내용은 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보처리방침</a>을 확인하세요.</p>
+    <p>이메일로 문의하면 운영자는 발신 주소와 문의 내용을 확인합니다. 문의할 때 OAuth 토큰이나 공개하지 않을 파일을 보내지 마세요. 데이터 처리에 관한 문의나 설명 정정 요청은 아래 이메일로 받을 수 있습니다.</p>
+  </section>
+  <footer>
+    <p>운영·문의: <a href="mailto:jwjbrave03@gmail.com">jwjbrave03@gmail.com</a></p>
+    <p>마지막 수정: <time datetime="2026-11-02">2026-11-02</time></p>
+  </footer>
+</main>
+</body>
+</html>
